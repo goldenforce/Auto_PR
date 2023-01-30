@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PackageDescription minInstallCenterVersion="8.8.1.01" version="1.0" custom="true">
+	<Package name="P72 Custom Templates" type="Full" version="8.8.1.02" workstation="true" >
+		<Description>P72 Custom Templates</Description>
+		<Component>P72 Custom Templates</Component>
+		<Content>
+			<File path="P72_Custom_Templates.zip" type="Package"/>
+		</Content>
+	</Package>
+	<Deployment>
+		<Prerequisites>
+			<Product id="Datamodel_GSDM" name="Datamodel GSDM" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<Product id="Datamodel_WF" name="Datamodel Workflow" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<Product id="Startersets_GSDM" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<Product id="Startersets_GSO" name="Starterset GoldenSource Objects" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<Product id="P72_Custom_Package" name="P72 Custom GC" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+		   </Product>
+		   <Product id="StandardWF" name="Standard Workflows" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+			</Product>
+		</Prerequisites>
+	</Deployment>
+</PackageDescription>

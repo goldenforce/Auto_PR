@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-12-02 at 11:13:57 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Warrants.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="8XER01eQW1" name="FinancialInstitution" type="segment">
+        <Node id="8XES01eQW1" name="ACTION" type="attribute">
+          <expr><![CDATA[
+if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "YES"))
+	return "UNKNOWN";
+else if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO"))
+	return "REFERENCE";
+else if (!OneHasValue(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive")))
+	return "REFERENCE";
+else if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"),
+		"NO_SILENT"))
+	return "REFERENCE";
+else if (!OneOf(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "YES", "NO",
+		"NO_SILENT"))
+	return ThrowMapError(
+			Strcat(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"),
+					Strcat("--",
+							"Wrong value in Config_Option file against CreateNewIssuer. It is other than permitted value YES, NO, No value and NO_SILENT used in Config_option file.")),
+			"");
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="8XET01eQW1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "FinancialInstitution";]]></expr>
+        </Node>
+        <Node id="8XEU01eQW1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO_SILENT"))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="8XEV01eQW1" name="DATASTATTYP" type="element">
+          <Node id="8XEW01eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XEX01eQW1" name="GOVTAGENCYFILINGIND" type="element">
+          <Node id="8XEY01eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if ((IsFieldDeleted(Securities_Flag_13F) && Strcmp(Securities_Flag_13F__Change_Flag, "Y")) && OneHasValue(Securities_Flag_13F__Previous))
+	return Securities_Flag_13F;
+else if (OneHasValue(Securities_Flag_13F))
+	return Securities_Flag_13F;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XEZ01eQW1" name="INSTDESC" type="element">
+          <Node id="v67J11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name, Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="8XEa01eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XEb01eQW1" name="INSTNME" type="element">
+          <Node id="v67K11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name, Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="8XEc01eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

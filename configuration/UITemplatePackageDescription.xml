@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PackageDescription minInstallCenterVersion="8.8.1.01" version="1.0" custom="true">
+	<Package name="Point72 UI Templates" type="Full" version="8.8.1.02" workstation="true" >
+		<Description>Point72 UI Templates</Description>
+		<Component>Point72 UI Templates</Component>
+		<Content>
+			<File path="P72_UITemplate.zip" type="Package"/>
+		</Content>
+	</Package>
+	<Deployment>
+		<Prerequisites>
+			<Product type="GOLDENSOURCE" name="Datamodel GSDM">
+				<Version min="8.8.1.01"/>
+		    </Product>
+		</Prerequisites>
+	</Deployment>
+</PackageDescription>

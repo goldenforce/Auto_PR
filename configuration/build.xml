@@ -1,0 +1,168 @@
+
+<project name="j4fe" default="build-all">
+	<!-- Specify all paths here, also only specify relative paths -->
+	<property name="build.dir" value="."/>
+	<property location="." file="${build.dir}/build.properties"/>
+
+	<target name="makedir">
+		<echo message="Base Directory : ${base.dir}"/>
+		<echo message="Packages Directory : ${packages.dir}"/>
+		<mkdir dir="${temp.dir}"/>
+		<mkdir dir="${packages.dir}"/>
+		<mkdir dir="${temp.dir}/ReferenceEngine/BRE/java"/>
+	</target>
+
+	<target name="clean">
+		<delete includeemptydirs="true">
+			<fileset dir="${temp.dir}" includes="**/*"/>
+		</delete>
+	</target>
+
+	<target name="prepare">
+		<tstamp>
+			<format property="today" pattern="yyyyMMdd" locale="en,UK"/>
+		</tstamp>
+	</target>
+
+	<!-- packaging GC components -->
+	<target name="build.customgc" depends="prepare">
+	
+		<copy todir="${temp.dir}" overwrite="true">
+			<fileset dir="${base.dir}/configuration/" excludes="build.xml,PackageDescription_GC.xml"/>
+		</copy>
+		
+		<tar destfile="${temp.dir}/P72_Custom_Package.tar.gz" compression="gzip">
+			<tarfileset dir="${temp.dir}">
+				<include name="**"/>
+			</tarfileset>
+		</tar>
+		
+		<!-- move the sfile out of the temporary directory so they do not get packaged in the tar.gz file -->
+		<copy file="./PackageDescription_GC.xml" tofile="${temp.dir}/PackageDescription.xml"/>
+		<copy file="./ReleaseNotes/P72_ReleaseNote_CustomRelease_${version.no}.docx" tofile="${temp.dir}/P72_ReleaseNote_CustomRelease_${version.no}.docx" failonerror="false"/>
+
+		<!-- zip the files together with the release notes and the package description -->
+		<zip destfile="${temp.dir}/P72_Custom_Package_GC_${version.no}.zip">
+			<fileset dir="${temp.dir}/">
+				<include name="P72_Custom_Package.tar.gz"/>
+				<include name="PackageDescription.xml"/>
+				<include name="P72_ReleaseNote_CustomRelease_${version.no}.docx"/>
+			</fileset>
+		</zip>
+
+		<mkdir dir="${packages.dir}/${today}"/>
+		<move file="${temp.dir}/P72_Custom_Package_GC_${version.no}.zip" todir="${packages.dir}/${today}"/>
+	</target>
+	
+	<!-- packaging VD components -->
+	<target name="build.customvd" depends="prepare">
+	
+		<copy todir="${temp.dir}" overwrite="true">
+			<fileset dir="${base.dir}/configuration/" excludes="build.xml,PackageDescription_VD.xml"/>
+		</copy>
+		
+		<tar destfile="${temp.dir}/P72_Custom_Package.tar.gz" compression="gzip">
+			<tarfileset dir="${temp.dir}">
+				<include name="**"/>
+			</tarfileset>
+		</tar>
+		
+		<!-- move the sfile out of the temporary directory so they do not get packaged in the tar.gz file -->
+		<copy file="./PackageDescription_VD.xml" tofile="${temp.dir}/PackageDescription.xml"/>
+		<copy file="./ReleaseNotes/P72_ReleaseNote_CustomRelease_${version.no}.docx" tofile="${temp.dir}/P72_ReleaseNote_CustomRelease_${version.no}.docx" failonerror="false"/>
+
+		<!-- zip the files together with the release notes and the package description -->
+		<zip destfile="${temp.dir}/P72_Custom_Package_VD_${version.no}.zip">
+			<fileset dir="${temp.dir}/">
+				<include name="P72_Custom_Package.tar.gz"/>
+				<include name="PackageDescription.xml"/>
+				<include name="P72_ReleaseNote_CustomRelease_${version.no}.docx"/>
+			</fileset>
+		</zip>
+
+		<mkdir dir="${packages.dir}/${today}"/>
+		<move file="${temp.dir}/P72_Custom_Package_VD_${version.no}.zip" todir="${packages.dir}/${today}"/>
+	</target>
+	
+	<!-- packaging Engine components -->
+	<target name="build.customEngine" depends="prepare">
+	
+		<copy todir="${temp.dir}/ReferenceEngine/BRE/java/" overwrite="true">
+			<fileset dir="${base.dir}/engines/ReferenceEngine/lib/" excludes="build.xml,PackageDescription_Eng.xml"/>
+		</copy>
+		
+		<tar destfile="${temp.dir}/P72_Custom_Package.tar.gz" compression="gzip">
+			<tarfileset dir="${temp.dir}">
+				<include name="**"/>
+			</tarfileset>
+		</tar>
+		
+		<!-- move the sfile out of the temporary directory so they do not get packaged in the tar.gz file -->
+		<copy file="./PackageDescription_Eng.xml" tofile="${temp.dir}/PackageDescription.xml"/>
+		<copy file="./ReleaseNotes/P72_ReleaseNote_CustomRelease_${version.no}.docx" tofile="${temp.dir}/P72_ReleaseNote_CustomRelease_${version.no}.docx" failonerror="false"/>
+
+		<!-- zip the files together with the release notes and the package description -->
+		<zip destfile="${temp.dir}/P72_Custom_Engines_${version.no}.zip">
+			<fileset dir="${temp.dir}/">
+				<include name="P72_Custom_Package.tar.gz"/>
+				<include name="PackageDescription.xml"/>
+				<include name="P72_ReleaseNote_CustomRelease_${version.no}.docx"/>
+			</fileset>
+		</zip>
+
+		<mkdir dir="${packages.dir}/${today}"/>
+		<move file="${temp.dir}/P72_Custom_Engines_${version.no}.zip" todir="${packages.dir}/${today}"/>
+	</target>
+	
+	<!-- packaging UI Template components -->
+	<target name="build.customUI" depends="prepare">
+	
+		<copy todir="${temp.dir}/templates/custom" overwrite="true">
+			<fileset dir="${base.dir}/configuration/gso/UITemplates/" excludes="build.xml,PackageDescription_Eng.xml"/>
+		</copy>
+		
+		<!--<tar destfile="${temp.dir}/P72_Custom_Templates.zip" compression="gzip">
+			<tarfileset dir="${temp.dir}/templates/custom">	
+				<include name="**"/>
+			</tarfileset>
+		</tar>-->
+		
+		
+		<zip destfile="${temp.dir}/P72_Custom_Templates.zip">
+			<fileset dir="${temp.dir}/">	
+				<include name="**"/>
+			</fileset>
+		</zip>
+		
+		<!-- move the sfile out of the temporary directory so they do not get packaged in the tar.gz file -->
+		<copy file="./PackageDescription_UI.xml" tofile="${temp.dir}/PackageDescription.xml"/>
+		<copy file="./ReleaseNotes/P72_ReleaseNote_CustomRelease_${version.no}.docx" tofile="${temp.dir}/P72_ReleaseNote_CustomRelease_${version.no}.docx" failonerror="false"/>
+
+		<!-- zip the files together with the release notes and the package description -->
+		<zip destfile="${temp.dir}/P72_Custom_Templates_${version.no}.zip">
+			<fileset dir="${temp.dir}/">
+				<include name="P72_Custom_Templates.zip"/>
+				<include name="PackageDescription.xml"/>
+				<include name="P72_ReleaseNote_CustomRelease_${version.no}.docx"/>
+			</fileset>
+		</zip>
+
+		<mkdir dir="${packages.dir}/${today}"/>
+		<move file="${temp.dir}/P72_Custom_Templates_${version.no}.zip" todir="${packages.dir}/${today}"/>
+	</target>
+
+	<target name="removetempdir">
+		<delete dir="${temp.dir}"/>
+	</target>
+
+	<target name="build-GC" depends="makedir,clean,build.customgc,removetempdir">
+	</target>
+	<target name="build-VD" depends="makedir,clean,build.customvd,removetempdir">
+	</target>
+	<target name="build-ENG" depends="makedir,clean,build.customEngine,removetempdir">
+	</target>
+	<target name="build-UI" depends="makedir,clean,build.customUI,removetempdir">
+	</target>
+	
+
+</project>

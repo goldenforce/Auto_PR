@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+  <Subscriptions>
+    <Subscription description="" id="++8eRVgGhG5AW01I" name="GS_FLAT_CURRENCY" ruleText="0 0 0 1 1 ? *" sourceId="" type="BATCH" workflow="PublishingWorkflow">
+      <destinations>
+        <destination id="++8ez2RmhG5AW0Fh" outputType="JSON" participantRules="">
+          <downstream connectionFactory="jms/KafkaConnectionFactory1" deadline="" deadlineTime="" description="KafkaCurrencyOut" downstreamDestinationType="JMS" downstreamValue="jms/topic/gs-out-publish-currency" dwdfOid="++8ez2RmhG5AW0Cr" id="++8ez2RmhG5AW0Cs" name="KafkaCurrencyOut" preferredLanguageCode="" preferredVendorId="" subscriberType="" typeFlag="" validityPriority="null"/>
+        </destination>
+      </destinations>
+      <messageTypes/>
+      <filters>
+        <filter dataSourceId="" deltaMode="NONE" entity="++6eT2Dy2etqG000" entityCaption="Currency" entityName="Currency" entityType="BUSINESS_ENTITY" filterEQLJsonText="" filterRuleText="&lt;sql&gt;(data_stat_typ='ACTIVE' or data_stat_typ is null)&lt;/sql&gt;" id="++8eRVgGhG5AW01G" publishingModelName="Currency" ruleText="" screen="fu7V312IG1" tableType="CYCH"/>
+      </filters>
+    </Subscription>
+  </Subscriptions>
+</root>

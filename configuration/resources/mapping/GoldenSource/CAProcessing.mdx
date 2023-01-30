@@ -1,0 +1,3642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="MSF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-09-07 at 02:33:24 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.2.1</Option>
+  </Options>
+  <Input vendorType="XML">
+    <Options>
+      <Option key="DecimalSeparator">.</Option>
+      <Option key="DDLName"/>
+      <Option key="TrimFields">BOTH</Option>
+      <Option key="NullIdentifiers"/>
+      <Option key="TimeStampFormat">%Y%M%D%H%I%S.%f</Option>
+      <Option key="splitter">xml.xml</Option>
+      <Option key="MessageType"/>
+      <Option key="DateTimeFormat">%Y%M%D%H%I%S</Option>
+    </Options>
+    <Layout>
+      <Override/>
+      <record desc="" ident="CAPROCESSINGS" mandatory="false" mapable="true" multiple="true" name="CAPROCESSINGS">
+        <record desc="" ident="CAProcessing" mandatory="false" mapable="true" multiple="true" name="CAProcessing">
+          <record desc="" ident="CorrelationHeader" mandatory="false" mapable="true" multiple="true" name="CorrelationHeader">
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="JobId" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="JobId" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="SequenceNumber" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="SequenceNumber" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="MessageGenerationTimeStamp" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="MessageGenerationTimeStamp" pattern="" pos="0" readonly="false" type="String"/>
+          </record>
+          <record desc="" ident="CorporateActionEvents" mandatory="false" mapable="true" multiple="true" name="CorporateActionEvents">
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="CorporateActionType" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="CorporateActionType" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="MandatoryVoluntaryEventIndicator" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="MandatoryVoluntaryEventIndicator" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="DeclarationImageID" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="DeclarationImageID" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="EffectiveDate" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="EffectiveDate" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="RecordDate" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="RecordDate" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="CADataSource" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="CADataSource" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="CorporateActionInstrumentIdentifierContext" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="CorporateActionInstrumentIdentifierContext" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="CorporateActionInstrumentIdentifier" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="CorporateActionInstrumentIdentifier" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="CAMktIssOID" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="CAMktIssOID" pattern="" pos="0" readonly="false" type="String"/>
+          </record>
+          <record desc="" ident="ChangeDetails" mandatory="false" mapable="true" multiple="true" name="ChangeDetails">
+            <record desc="" ident="Issuer" mandatory="false" mapable="true" multiple="true" name="Issuer">
+              <record desc="" ident="IssuerIdentifiers" mandatory="false" mapable="true" multiple="true" name="IssuerIdentifiers">
+                <field decimals="0" desc="" excludedNullIdentifiers="" ident="BBCompanyIdentifier" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="BBCompanyIdentifier" pattern="" pos="0" readonly="false" type="String"/>
+                <field decimals="0" desc="" excludedNullIdentifiers="" ident="LegalEntityIdentifier" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="LegalEntityIdentifier" pattern="" pos="0" readonly="false" type="String"/>
+              </record>
+            </record>
+            <record desc="" ident="FullInstrument" mandatory="false" mapable="true" multiple="true" name="FullInstrument">
+              <record desc="" ident="InstrumentDetails" mandatory="false" mapable="true" multiple="true" name="InstrumentDetails">
+                <field decimals="0" desc="" excludedNullIdentifiers="" ident="ParValue" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ParValue" pattern="" pos="0" readonly="false" type="String"/>
+              </record>
+              <record desc="" ident="Identifiers" mandatory="false" mapable="true" multiple="true" name="Identifiers">
+                <record desc="" ident="InstrumentLevelIdentifiers" mandatory="false" mapable="true" multiple="true" name="InstrumentLevelIdentifiers">
+                  <field decimals="0" desc="" excludedNullIdentifiers="" ident="ISIN" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ISIN" pattern="" pos="0" readonly="false" type="String"/>
+                </record>
+              </record>
+              <record desc="" ident="EquityFeatures" mandatory="false" mapable="true" multiple="true" name="EquityFeatures">
+                <field decimals="0" desc="" excludedNullIdentifiers="" ident="OutstandActualSharesOutstanding" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OutstandActualSharesOutstanding" pattern="" pos="0" readonly="false" type="String"/>
+              </record>
+            </record>
+            <record desc="" ident="FinancialMarket" mandatory="false" mapable="true" multiple="true" name="FinancialMarket">
+              <record desc="" ident="MarketDetails" mandatory="false" mapable="true" multiple="true" name="MarketDetails">
+                <field decimals="0" desc="" excludedNullIdentifiers="" ident="MICCode" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="MICCode" pattern="" pos="0" readonly="false" type="String"/>
+                <field decimals="0" desc="" excludedNullIdentifiers="" ident="BBEXCH" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="BBEXCH" pattern="" pos="0" readonly="false" type="String"/>
+              </record>
+            </record>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="ChangeIndicator" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ChangeIndicator" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldName" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldName" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewName" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewName" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewInstitutionName" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewInstitutionName" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewAddress" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewAddress" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewBELGIAN" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewBELGIAN" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldBELGIAN" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldBELGIAN" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewCOMMON" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewCOMMON" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldCOMMON" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldCOMMON" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewCUSIP" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewCUSIP" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldCUSIP" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldCUSIP" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewFONDS" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewFONDS" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldFONDS" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldFONDS" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewISIN" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewISIN" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldISIN" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldISIN" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewSEDOL" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewSEDOL" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldSEDOL" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldSEDOL" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewSICOVAM" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewSICOVAM" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldSICOVAM" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldSICOVAM" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewVALOREN" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewVALOREN" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldVALOREN" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldVALOREN" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewWPK" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewWPK" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldWPK" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldWPK" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewExchange" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewExchange" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldExchange" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldExchange" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewTicker" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewTicker" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldTicker" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldTicker" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="NewLotSize" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NewLotSize" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="OldLotSize" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="OldLotSize" pattern="" pos="0" readonly="false" type="String"/>
+          </record>
+          <record desc="" ident="Terms" mandatory="false" mapable="true" multiple="true" name="Terms">
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="Terms" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="Terms" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="TermsDataSource" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="TermsDataSource" pattern="" pos="0" readonly="false" type="String"/>
+            <field decimals="0" desc="" excludedNullIdentifiers="" ident="TermsLineNumber" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="TermsLineNumber" pattern="" pos="0" readonly="false" type="String"/>
+          </record>
+        </record>
+      </record>
+    </Layout>
+  </Input>
+  <Output>
+    <Options>
+      <Option key="TimeStampOutputFormat">%M-%D-%Y %H:%I:%S.%f %A</Option>
+      <Option key="DateTimeOutputFormat">%M-%D-%Y %H:%I:%S %A</Option>
+      <Option key="OutputEncoding">UTF-8</Option>
+      <Option key="DefaultEmptyNumericsToZero">FALSE</Option>
+      <Option key="messageformat">BERepo</Option>
+      <Option key="AddTZIndicators">true</Option>
+      <Option key="AddVendorMnemonic">true</Option>
+    </Options>
+    <MappingFragments/>
+    <OutputDef>
+      <Node displayName="FinancialInstitution" messageformat="BE" name="GoldenSourceObjectMessage" type="message">
+        <Options/>
+        <condition><![CDATA[if (Strcmp(CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType, "CHAN") && StrContainsOneOf(CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID, "NAME"))
+	return "true";
+else
+	return "";]]></condition>
+        <Node name="xmlns" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage";]]></expr>
+        </Node>
+        <Node name="xmlns:xsi" type="attribute">
+          <expr><![CDATA[return "http://www.w3.org/2001/XMLSchema-instance";]]></expr>
+        </Node>
+        <Node name="xsi:schemaLocation" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage.xsd";]]></expr>
+        </Node>
+        <Node name="GSOHeader" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "group";]]></expr>
+          </Node>
+          <Node name="DateFormat" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DefaultTimestamp" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="Language" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityId" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityIdContext" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityName" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityType" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MessageClassification" type="element">
+            <expr><![CDATA[return "CAProcessing";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="TimeZone" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="User" type="element">
+            <expr><![CDATA[return "GS:MBUS:CAX";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="VendorSource" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CADataSource;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeVddbAction" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityTableType" type="element">
+            <expr><![CDATA[return "FINS";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="UpdateModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="FinancialInstitution" type="element">
+          <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.Issuer.IssuerIdentifiers.BBCompanyIdentifier))
+	return "true";
+else
+	return "";]]></condition>
+          <Node name="xmlns" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialInstitution";]]></expr>
+          </Node>
+          <Node name="xsi:schemaLocation" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialInstitution.xsd";]]></expr>
+          </Node>
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "gso";]]></expr>
+          </Node>
+          <Node name="FinancialInstitutionDetails" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="FinancialInstitutionName" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstitutionDescription" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="FinancialInstitutionDescription" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.OldName))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="InstitutionName" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.OldName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "FIDE_MATCH_1";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstitutionLongDescription" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.OldName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstitutionLanguage" type="element">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstitutionDescriptionUsage" type="element">
+              <expr><![CDATA[return "PRIMARY";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="FinancialInstitutionEndDateTime" type="element">
+              <expr><![CDATA[return TimeStamp();]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="FinancialInstitutionDescription" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="InstitutionName" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstitutionLongDescription" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstitutionLanguage" type="element">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstitutionDescriptionUsage" type="element">
+              <expr><![CDATA[return "PRIMARY";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="FinancialInstitutionIdentifiers" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="BBCompanyID" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.Issuer.IssuerIdentifiers.BBCompanyIdentifier;]]></expr>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "REFERENCE";]]></expr>
+              </Node>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="Issuer" messageformat="BE" name="GoldenSourceObjectMessage" type="message">
+        <Options/>
+        <condition><![CDATA[if (Strcmp(CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType, "CHAN") && StrContainsOneOf(CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID, "NAME"))
+	return "true";
+else
+	return "";]]></condition>
+        <Node name="xmlns" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage";]]></expr>
+        </Node>
+        <Node name="xmlns:xsi" type="attribute">
+          <expr><![CDATA[return "http://www.w3.org/2001/XMLSchema-instance";]]></expr>
+        </Node>
+        <Node name="xsi:schemaLocation" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage.xsd";]]></expr>
+        </Node>
+        <Node name="GSOHeader" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "group";]]></expr>
+          </Node>
+          <Node name="DateFormat" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DefaultTimestamp" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="Language" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityId" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityIdContext" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityName" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityType" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MessageClassification" type="element">
+            <expr><![CDATA[return "CAProcessing";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="TimeZone" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="User" type="element">
+            <expr><![CDATA[return "GS:MBUS:CAX";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="VendorSource" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CADataSource;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeVddbAction" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityTableType" type="element">
+            <expr><![CDATA[return "ISSR";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="UpdateModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="Issuer" type="element">
+          <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.Issuer.IssuerIdentifiers.BBCompanyIdentifier))
+	return "true";
+else
+	return "";]]></condition>
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "gso";]]></expr>
+          </Node>
+          <Node name="xmlns" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/Issuer";]]></expr>
+          </Node>
+          <Node name="xsi:schemaLocation" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/Issuer.xsd";]]></expr>
+          </Node>
+          <Node name="IssuerInformation" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IssuerName" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssrIssuerDescription" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssuerDescription" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IssuerFullName" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.OldName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssuerDescription" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.OldName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssuerDescriptionLanguage" type="element">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DescriptionUsage" type="element">
+              <expr><![CDATA[return "PRIMARY";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssuerDescriptionEndDateTime" type="element">
+              <expr><![CDATA[return TimeStamp();]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssuerDescription" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IssuerFullName" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssuerDescription" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewInstitutionName;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssuerDescriptionLanguage" type="element">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DescriptionUsage" type="element">
+              <expr><![CDATA[return "PRIMARY";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssuerDescriptionStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssuerIdentifiers" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="BBCompanyIdentifier" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.Issuer.IssuerIdentifiers.BBCompanyIdentifier;]]></expr>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "REFERENCE";]]></expr>
+              </Node>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="FullInstrument - CHAN" messageformat="BE" name="GoldenSourceObjectMessage" type="message">
+        <Options/>
+        <condition><![CDATA[if (Strcmp(CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType, "CHAN") && (StrContainsOneOf(CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID, "IDCHANGE") || StrContainsOneOf(CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID, "TKRCHANGE")))
+	return "true";
+else
+	return "";]]></condition>
+        <Node name="xmlns" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage";]]></expr>
+        </Node>
+        <Node name="xmlns:xsi" type="attribute">
+          <expr><![CDATA[return "http://www.w3.org/2001/XMLSchema-instance";]]></expr>
+        </Node>
+        <Node name="xsi:schemaLocation" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage.xsd";]]></expr>
+        </Node>
+        <Execute>
+          <expr><![CDATA[return StoreString("BBUNIQUE", Select("", "", "select ISS_ID  from FT_T_ISID where id_ctxt_typ = 'BBUNIQUE' and ISID_OID in (select ISID_OID from FT_T_MIXR where MKT_ISS_OID = :1)", CAPROCESSINGS.CAProcessing.CorporateActionEvents.CAMktIssOID, "", "", "", ""));]]></expr>
+        </Execute>
+        <Execute>
+          <expr><![CDATA[return StoreString("BBGTICK", Select("", "", "select GETP72INSTRTYPE (MKIS.INSTR_ID , '1') ||'|'|| GETP72INSTRTYPE (MKIS.INSTR_ID , '2') ||'|'|| GU_ID ||'|'|| (select cl_value  from FT_T_ISCL where INSTR_ID =MKIS.INSTR_ID  and  indus_cl_set_id = 'BBMKTSCT' and END_TMS is NULL) from FT_T_MKIS MKIS where  END_TMS is null and  MKT_ISS_OID =:1", CAPROCESSINGS.CAProcessing.CorporateActionEvents.CAMktIssOID, "", "", "", ""));]]></expr>
+        </Execute>
+        <Execute>
+          <expr><![CDATA[return StoreString("MIC", Select("", "", "select (select MKT_ID from FT_T_MKID where MKT_ID_CTXT_TYP ='MIC' and MKT_OID in  (select MKT_OID from FT_T_MRKT where MKT_OID = MKIS.MKT_OID ) limit 1)  MIC from FT_T_MKIS MKIS where  END_TMS is null and  MKT_ISS_OID =:1", CAPROCESSINGS.CAProcessing.CorporateActionEvents.CAMktIssOID, "", "", "", ""));]]></expr>
+        </Execute>
+        <Execute>
+          <expr><![CDATA[return StoreString("BBEXCH", Select("", "", "select (select MKT_ID from FT_T_MKID where MKT_ID_CTXT_TYP ='BBEXCH' and MKT_OID in  (select MKT_OID from FT_T_MRKT where MKT_OID = MKIS.MKT_OID ) limit 1)  MIC from FT_T_MKIS MKIS where  END_TMS is null and  MKT_ISS_OID =:1", CAPROCESSINGS.CAProcessing.CorporateActionEvents.CAMktIssOID, "", "", "", ""));]]></expr>
+        </Execute>
+        <Node name="GSOHeader" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "group";]]></expr>
+          </Node>
+          <Node name="DateFormat" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DefaultTimestamp" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="Language" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityId" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CAMktIssOID;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityIdContext" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityName" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityType" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MessageClassification" type="element">
+            <expr><![CDATA[return "CAProcessing";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="TimeZone" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="User" type="element">
+            <expr><![CDATA[return "GS:MBUS:CAX";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="VendorSource" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CADataSource;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeVddbAction" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityTableType" type="element">
+            <expr><![CDATA[return "ISSU";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="UpdateModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="FullInstrument" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "gso";]]></expr>
+          </Node>
+          <Node name="xmlns" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FullInstrument";]]></expr>
+          </Node>
+          <Node name="xsi:schemaLocation" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FullInstrument.xsd";]]></expr>
+          </Node>
+          <Node name="InstrumentDetails" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "true";]]></expr>
+            </Node>
+            <Node name="Issuer" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/Issuer";]]></expr>
+              </Node>
+            </Node>
+            <Node name="PreferredInstrumentName" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="PreferredInstrumentDescription" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="PreferredIdentifierType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="PreferredIdentifierValue" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentType" type="element">
+              <expr><![CDATA[return "MISC";]]></expr>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "REFERENCE";]]></expr>
+              </Node>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentAlphaSearch" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="PrincipalCurrency" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DistributionCurrency" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ParValue" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ParValueType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="UnitOfMeasure" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="UnitSize" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="PricingMethod" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssueDate" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MaturityDate" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentSystemStatus" type="element">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="StatusReason" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="NotTradableIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="WithholdingTaxIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="WhenIssuedIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="CreatedOn" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ActiveUntil" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="RemovalReason" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="RefinitivGlobalIssueInformation" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IncomeType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentPurchaseMethodIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ForeignCustodyIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DecimalPrecision" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="FinalMaturity" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="SourceCurrency" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TargetCurrency" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="UnitaryCurrency" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ConversionType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ReIssueDateTime" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="EuroConversionStatus" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="CreatedDate" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="GuarantorType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ClassType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="Series" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="NotionalIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IlliquidityIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="SecurityForm" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSUDaysToSettlement" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InvestmentClosingDate" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MaturityExpirationExtensionDate" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TradingRestriction" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TypeOfEarningsForLife" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="HybridIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="BBSecurityDescription" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="Objective" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="CreatedDataProvider" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentOriginalDataProvider" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TBAEligibleType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="Tenor" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="PricingMultiplier" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentRateText" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MaturityValueLinkedToType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentActivityStatusDateTime" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="OriginalMaturityExpirationDate" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="StructuredSecurityFeature" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AccessAuthority" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DefaultTradingStatus" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="SecurityLendingEligibleIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MaturityDateType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DataRedistributorId" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="BookEntryClearingCorporation" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MarketTradingEligibleIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AlternativeAssetClassText" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="FinancialInstrumentShortName" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="LiquidationRightRanking" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AVRExemptIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="CreatedByRedistributorID" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="GovernmentSupportIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MonitorRestrictionCode" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MinimumNetWorthBalanceIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MostFavoredLenderProvisionIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="PrincipalBasis" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="RatingMaintenanceProvisionIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="RepackagedSecurityIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="StructuredSecurityIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="SubstitutionClauseIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TransferRestrictionIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentDefaultDateTime" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MarketListType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DeliverabilityReason" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DeliverableIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="WithholdingTaxLeviedAtSource" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentLastChangeDate" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentLastChangeUser" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentDataSource" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentDataStatus" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DaystoSettlementStandardQuantity" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MunicipalBondDescription" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="DescriptionNotes" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentCreatedUser" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="GuaranteedIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="InstrumentMaturityType" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MandatoryConversionIndicator" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="IssueYear" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Identifiers" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="InstrumentLevelIdentifiers" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "group";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="ISIN" type="element">
+                <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FullInstrument.Identifiers.InstrumentLevelIdentifiers.ISIN;]]></expr>
+                <Node name="ACTION" type="attribute">
+                  <expr><![CDATA[return "REFERENCE";]]></expr>
+                </Node>
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "field";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWCOMMON" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewCOMMON))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewCOMMON;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="TSOPTION" type="attribute">
+                <expr><![CDATA[return "Y";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "COMMON";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWISIN" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewISIN))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewISIN;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "ISID7_INSTR_CTX_MKT_USG";]]></expr>
+              </Node>
+              <Node name="TSATTRIBUTE" type="attribute">
+                <expr><![CDATA[return "ISS_ID";]]></expr>
+              </Node>
+              <Node name="TSOPTION" type="attribute">
+                <expr><![CDATA[return "Y";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "ISIN";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWCUSIP" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewCUSIP))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewCUSIP;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "ISID7_INSTR_CTX_MKT_USG";]]></expr>
+              </Node>
+              <Node name="TSATTRIBUTE" type="attribute">
+                <expr><![CDATA[return "ISS_ID";]]></expr>
+              </Node>
+              <Node name="TSOPTION" type="attribute">
+                <expr><![CDATA[return "Y";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "CUSIP";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWBELGIAN" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewBELGIAN))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewBELGIAN;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "BELGIAN";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWFONDS" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewFONDS))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewFONDS;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "FONDS";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWVALOREN" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewVALOREN))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewVALOREN;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="TSOPTION" type="attribute">
+                <expr><![CDATA[return "Y";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "VALOREN";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWWPK" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewWPK))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewWPK;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="TSOPTION" type="attribute">
+                <expr><![CDATA[return "Y";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "WPK";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWSICOVAM" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewSICOVAM))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewSICOVAM;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "SICOVAM";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node disabled="1" displayName="OLDSEDOL" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.OldSEDOL))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FinancialMarket.MarketDetails.MICCode;]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+                <Node name="BBEXCH" type="element">
+                  <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FinancialMarket.MarketDetails.BBEXCH;]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.OldSEDOL;]]></expr>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "DELETE";]]></expr>
+              </Node>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "SEDOL";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.OldSEDOL;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWSEDOL" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewSEDOL) && (OneHasValue(GetStringByKey("MIC")) || OneHasValue(GetStringByKey("BBEXCH"))))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return GetStringByKey("MIC");]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+                <Node name="BBEXCH" type="element">
+                  <expr><![CDATA[return GetStringByKey("BBEXCH");]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewSEDOL;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "SEDOL";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewSEDOL;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node disabled="1" displayName="OLDBBTRDGSYMB" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.OldTicker))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FinancialMarket.MarketDetails.MICCode;]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return StrWord(CAPROCESSINGS.CAProcessing.ChangeDetails.OldTicker, " ", 1);]]></expr>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "DELETE";]]></expr>
+              </Node>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "BBTRDGSYMB";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <expr><![CDATA[return GetStringByKey("BBUNIQUE");]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWBBTRDGSYMB" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker) && (OneHasValue(GetStringByKey("MIC")) || OneHasValue(GetStringByKey("BBEXCH"))))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return GetStringByKey("MIC");]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return StrWord(CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker, " ", 1);]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "BBTRDGSYMB";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <expr><![CDATA[return GetStringByKey("BBUNIQUE");]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node disabled="1" displayName="OLDTICKER" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.OldTicker))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FinancialMarket.MarketDetails.MICCode;]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return StrWord(CAPROCESSINGS.CAProcessing.ChangeDetails.OldTicker, " ", 1);]]></expr>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "DELETE";]]></expr>
+              </Node>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "TICKER";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <expr><![CDATA[return GetStringByKey("BBUNIQUE");]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWTICKER" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker) && (OneHasValue(GetStringByKey("MIC")) || OneHasValue(GetStringByKey("BBEXCH"))))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return GetStringByKey("MIC");]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return StrWord(CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker, " ", 1);]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "TICKER";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <expr><![CDATA[return GetStringByKey("BBUNIQUE");]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node disabled="1" displayName="OLDTICKEREXCH" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.OldTicker))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FinancialMarket.MarketDetails.MICCode;]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.OldTicker;]]></expr>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "DELETE";]]></expr>
+              </Node>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "BBCPTICK";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <expr><![CDATA[return GetStringByKey("BBUNIQUE");]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="NEWTICKEREXCH" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker) && (OneHasValue(GetStringByKey("MIC")) || OneHasValue(GetStringByKey("BBEXCH"))))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return GetStringByKey("MIC");]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "BBCPTICK";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <expr><![CDATA[return GetStringByKey("BBUNIQUE");]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node displayName="P72BBGTICK" name="AllInstrumentIdentifiers" type="element">
+            <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker) && (OneHasValue(GetStringByKey("MIC")) || OneHasValue(GetStringByKey("BBEXCH"))))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="IdentifierMarketLookup" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return GetStringByKey("MIC");]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierValue" type="element">
+              <expr><![CDATA[if ((StrContainsOneOf(StrWord(GetStringByKey("BBGTICK"), "|", 1), "Equity", "Funds") || StrContainsOneOf(StrWord(GetStringByKey("BBGTICK"), "|", 2), "Equity Warrants", "Equity Rights")) && Strcmp(StrWord(GetStringByKey("BBGTICK"), "|", 3), "US"))
+	return Strcat(StrWord(CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker, " ", 1), Strcat(" ", StrWord(GetStringByKey("BBGTICK"), "|", 4)));
+else
+	return Strcat(CAPROCESSINGS.CAProcessing.ChangeDetails.NewTicker, Strcat(" ", StrWord(GetStringByKey("BBGTICK"), "|", 4)));]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierIDContext" type="element">
+              <expr><![CDATA[return "P72BBGTICK";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierInstrumentUsage" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllIdentifierStartDateTime" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="FullInstrument - SPLF" messageformat="BE" name="GoldenSourceObjectMessage" type="message">
+        <Options/>
+        <condition><![CDATA[if (Strcmp(CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType, "SPLF"))
+	return "true";
+else
+	return "";]]></condition>
+        <Node name="xmlns" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage";]]></expr>
+        </Node>
+        <Node name="xmlns:xsi" type="attribute">
+          <expr><![CDATA[return "http://www.w3.org/2001/XMLSchema-instance";]]></expr>
+        </Node>
+        <Node name="xsi:schemaLocation" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage.xsd";]]></expr>
+        </Node>
+        <Node name="GSOHeader" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "group";]]></expr>
+          </Node>
+          <Node name="DateFormat" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DefaultTimestamp" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="Language" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityId" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityIdContext" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityName" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityType" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MessageClassification" type="element">
+            <expr><![CDATA[return "CAProcessing";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="TimeZone" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="User" type="element">
+            <expr><![CDATA[return "GS:MBUS:CAX";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="VendorSource" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CADataSource;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeVddbAction" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityTableType" type="element">
+            <expr><![CDATA[return "ISSU";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="UpdateModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Execute>
+          <expr><![CDATA[return StoreString("BeforeSplit", StrParam(CAPROCESSINGS.CAProcessing.Terms.Terms, "for", -1));]]></expr>
+        </Execute>
+        <Execute>
+          <expr><![CDATA[return StoreString("AfterSplit", StrParam(CAPROCESSINGS.CAProcessing.Terms.Terms, "for", 1));]]></expr>
+        </Execute>
+        <Execute>
+          <expr><![CDATA[return StoreString("Divisor", Float2String(String2Float(GetStringByKey("AfterSplit"), 0) / String2Float(GetStringByKey("BeforeSplit"), 0), 0, 0));]]></expr>
+        </Execute>
+        <Node name="FullInstrument" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "gso";]]></expr>
+          </Node>
+          <Node name="xmlns" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FullInstrument";]]></expr>
+          </Node>
+          <Node name="xsi:schemaLocation" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FullInstrument.xsd";]]></expr>
+          </Node>
+          <Node name="InstrumentDetails" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "true";]]></expr>
+            </Node>
+            <Node name="ParValue" type="element">
+              <expr><![CDATA[return String2Float(CAPROCESSINGS.CAProcessing.ChangeDetails.FullInstrument.InstrumentDetails.ParValue, 0) / String2Float(GetStringByKey("Divisor"), 0);]]></expr>
+              <condition><![CDATA[if (OneHasValue(CAPROCESSINGS.CAProcessing.ChangeDetails.FullInstrument.InstrumentDetails.ParValue))
+	return "true";
+else
+	return "";]]></condition>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Identifiers" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="InstrumentLevelIdentifiers" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "group";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="ISIN" type="element">
+                <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FullInstrument.Identifiers.InstrumentLevelIdentifiers.ISIN;]]></expr>
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "field";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="InstrumentStatisticsAnalytics" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="EquitySplitDate" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="EquitySplitRatio" type="element">
+              <expr><![CDATA[return GetStringByKey("AfterSplit");]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="InstrumentCapitalization" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="CapitalType" type="element">
+              <expr><![CDATA[return "OUTSTAND";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "ISMC_MATCH_KEY";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+            <Node name="CapitalEffectiveDate" type="element">
+              <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.EffectiveDate;]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ActualSharesOutstanding" type="element">
+              <expr><![CDATA[return String2Float(CAPROCESSINGS.CAProcessing.ChangeDetails.FullInstrument.EquityFeatures.OutstandActualSharesOutstanding, 0) * String2Float(GetStringByKey("Divisor"), 0);]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="FullInstrument - DLST" messageformat="BE" name="GoldenSourceObjectMessage" type="message">
+        <Options/>
+        <condition><![CDATA[if (Strcmp(CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType, "DLST"))
+	return "true";
+else
+	return "";]]></condition>
+        <Node name="xmlns" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage";]]></expr>
+        </Node>
+        <Node name="xmlns:xsi" type="attribute">
+          <expr><![CDATA[return "http://www.w3.org/2001/XMLSchema-instance";]]></expr>
+        </Node>
+        <Node name="xsi:schemaLocation" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage.xsd";]]></expr>
+        </Node>
+        <Node name="GSOHeader" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "group";]]></expr>
+          </Node>
+          <Node name="DateFormat" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DefaultTimestamp" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="Language" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityId" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityIdContext" type="element">
+            <expr><![CDATA[return "CRPACTID";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityName" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityType" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MessageClassification" type="element">
+            <expr><![CDATA[return "CAProcessing";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="TimeZone" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="User" type="element">
+            <expr><![CDATA[return "GS:MBUS:CAX";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="VendorSource" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CADataSource;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeVddbAction" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityTableType" type="element">
+            <expr><![CDATA[return "ISSU";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="UpdateModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="FullInstrument" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "gso";]]></expr>
+          </Node>
+          <Node name="xmlns" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FullInstrument";]]></expr>
+          </Node>
+          <Node name="xsi:schemaLocation" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FullInstrument.xsd";]]></expr>
+          </Node>
+          <Node name="Identifiers" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="InstrumentLevelIdentifiers" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "group";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="ISIN" type="element">
+                <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FullInstrument.Identifiers.InstrumentLevelIdentifiers.ISIN;]]></expr>
+                <Node name="ACTION" type="attribute">
+                  <expr><![CDATA[return "REFERENCE";]]></expr>
+                </Node>
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "field";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node disabled="1" name="MarketListing" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="ListedOn" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FinancialMarket.MarketDetails.MICCode;]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="MarketLevelIdentifiers" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "group";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="BBUniqueID" type="element">
+                <expr><![CDATA[if (Strcmp(CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionInstrumentIdentifierContext, "BBUNIQUE"))
+	return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionInstrumentIdentifier;
+else
+	return "";]]></expr>
+                <Node name="ACTION" type="attribute">
+                  <expr><![CDATA[return "REFERENCE";]]></expr>
+                </Node>
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "field";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="MarketStatus" type="element">
+              <expr><![CDATA[return "DELISTED";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "MKIS_MATCH_4";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="AllMarketListing" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="AllMktListExchange" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FinancialMarket";]]></expr>
+              </Node>
+              <Node name="MarketDetails" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "false";]]></expr>
+                </Node>
+                <Node name="MICCode" type="element">
+                  <expr><![CDATA[return CAPROCESSINGS.CAProcessing.ChangeDetails.FinancialMarket.MarketDetails.MICCode;]]></expr>
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "field";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "false";]]></expr>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="AllMktListTradingStatus" type="element">
+              <expr><![CDATA[return "DELISTED";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "true";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "MKIS_MATCH_4";]]></expr>
+              </Node>
+            </Node>
+            <Node name="AllMktListBBUnique" type="element">
+              <expr><![CDATA[if (Strcmp(CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionInstrumentIdentifierContext, "BBUNIQUE"))
+	return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionInstrumentIdentifier;
+else
+	return "";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "REFERENCE";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="FullCorporateAction" messageformat="BE" name="GoldenSourceObjectMessage" type="message">
+        <Options/>
+        <Node name="xmlns" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage";]]></expr>
+        </Node>
+        <Node name="xmlns:xsi" type="attribute">
+          <expr><![CDATA[return "http://www.w3.org/2001/XMLSchema-instance";]]></expr>
+        </Node>
+        <Node name="xsi:schemaLocation" type="attribute">
+          <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/BusinessEntityMessage.xsd";]]></expr>
+        </Node>
+        <Node name="GSOHeader" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "group";]]></expr>
+          </Node>
+          <Node name="DateFormat" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DefaultTimestamp" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="Language" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityId" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityIdContext" type="element">
+            <expr><![CDATA[return "CRPACTID";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityName" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityType" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CorporateActionType;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MessageClassification" type="element">
+            <expr><![CDATA[return "CAProcessing";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="TimeZone" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="User" type="element">
+            <expr><![CDATA[return "GS:MBUS:CAX";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="VendorSource" type="element">
+            <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.CADataSource;]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeVddbAction" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MainEntityTableType" type="element">
+            <expr><![CDATA[return "IADC";]]></expr>
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ChangeModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+          <Node name="UpdateModel" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "field";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="FullCorporateAction" type="element">
+          <Node name="GSO_ELM_TYPE" type="attribute">
+            <expr><![CDATA[return "gso";]]></expr>
+          </Node>
+          <Node name="xmlns" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FullCorporateAction";]]></expr>
+          </Node>
+          <Node name="xsi:schemaLocation" type="attribute">
+            <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/FullCorporateAction.xsd";]]></expr>
+          </Node>
+          <Node name="CAProcessingInformation" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="CorporateActionApplied" type="element">
+              <expr><![CDATA[return "Yes";]]></expr>
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "field";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="CorporateActionLookup" type="element">
+            <Node name="GSO_ELM_TYPE" type="attribute">
+              <expr><![CDATA[return "group";]]></expr>
+            </Node>
+            <Node name="req" type="attribute">
+              <expr><![CDATA[return "false";]]></expr>
+            </Node>
+            <Node name="FullCAToCABase" type="element">
+              <Node name="GSO_ELM_TYPE" type="attribute">
+                <expr><![CDATA[return "rel";]]></expr>
+              </Node>
+              <Node name="req" type="attribute">
+                <expr><![CDATA[return "false";]]></expr>
+              </Node>
+              <Node name="xmlns" type="attribute">
+                <expr><![CDATA[return "http://www.thegoldensource.com/business-entities/CABase";]]></expr>
+              </Node>
+              <Node name="CorporateActionIdentifiers" type="element">
+                <Node name="GSO_ELM_TYPE" type="attribute">
+                  <expr><![CDATA[return "group";]]></expr>
+                </Node>
+                <Node name="req" type="attribute">
+                  <expr><![CDATA[return "true";]]></expr>
+                </Node>
+                <Node name="CorporateActionIdentifiersByDS" type="element">
+                  <Node name="GSO_ELM_TYPE" type="attribute">
+                    <expr><![CDATA[return "group";]]></expr>
+                  </Node>
+                  <Node name="req" type="attribute">
+                    <expr><![CDATA[return "true";]]></expr>
+                  </Node>
+                  <Node name="CorporateActionIdentifier" type="element">
+                    <expr><![CDATA[return CAPROCESSINGS.CAProcessing.CorporateActionEvents.DeclarationImageID;]]></expr>
+                    <Node name="GSO_ELM_TYPE" type="attribute">
+                      <expr><![CDATA[return "field";]]></expr>
+                    </Node>
+                    <Node name="MATCH" type="attribute">
+                      <expr><![CDATA[return "IAID_IDCTXT_ID";]]></expr>
+                    </Node>
+                    <Node name="req" type="attribute">
+                      <expr><![CDATA[return "true";]]></expr>
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+    </OutputDef>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="false" ident="KeyStreaming">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="RecordIdentifier">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="GSDMFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="VDSFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="VDDBFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

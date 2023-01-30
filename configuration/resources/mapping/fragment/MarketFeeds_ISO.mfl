@@ -1,0 +1,2343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="LastChangedTms">2018-04-26 at 11:00:37 IST</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MappingVersion">8.99.24.0</Option>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="MappingDesignerVersion">8.4.1.32REL</Option>
+    <Option key="BaseMDX">./../MarketFeed/MarketFeeds_ISO.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Composite Exchange" id="EGA$01M%W1" name="FinancialMarket" type="segment">
+        <condition id="Js8W91oxe1">
+          <comment><![CDATA[gt 140285]]></comment><![CDATA[if (OneHasValue(MRKT_GRP, GRP_NME, MRKT_GRP_PRT))
+	return "FinancialMarket";
+else
+	return "";]]>
+        </condition>
+        <Node id="Js8X91oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE"))
+	if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "YES"))
+		return "UNKNOWN";
+	else if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "NO"))
+		return "REFERENCE";
+	else if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "PROP_NON_MIC") && OneHasValue(ISO_MRKT_CDE))
+		return ThrowMapError(Strcat(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), Strcat("--", "Value in Config_Option.xml against CreateNewMarket - MarketFeeds is PROP_NON_MIC and ISO MIC is present in mesaage. The message is being rejected.")), "");
+    else if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "PROP_NON_MIC") && !OneHasValue(ISO_MRKT_CDE))
+		return "IGNORE";
+    else if (!OneOf(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "YES", "NO", "PROP_NON_MIC") && (OneHasValue(Strcmp(ACTION, "ADD")) || OneHasValue(Strcmp(ACTION, "UPDATE"))))
+		return ThrowMapError(Strcat(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), Strcat("--", "Wrong value in Config_Option.xml against CreateNewMarket - MarketFeeds. It is other than permitted value YES, NO and PROP_NON_MIC used in Config_option.xml")), "");
+	else
+		return "";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Js8Y91oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if (OneHasValue(MRKT_GRP, GRP_NME, MRKT_GRP_PRT))
+	return "FinancialMarket";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Js8Z91oxe1" name="COPY_FROM" type="attribute"/>
+        <Node id="Js8a91oxe1" name="COPY_TO" type="attribute"/>
+        <Node id="Js8b91oxe1" name="DUP_CHECK" type="attribute"/>
+        <Node id="Js8c91oxe1" name="ENDDATEIND" type="attribute"/>
+        <Node id="Js8d91oxe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="Js8e91oxe1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "PROP_NON_MIC") && !OneHasValue(ISO_MRKT_CDE))
+return "N";
+else 
+return "";]]></expr>
+        </Node>
+        <Node id="Js8f91oxe1" name="LOOKUP" type="attribute"/>
+        <Node id="Js8g91oxe1" name="MATCH" type="attribute"/>
+        <Node id="Js8h91oxe1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="Js8i91oxe1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="Js8j91oxe1" name="ONLY" type="attribute"/>
+        <Node id="Js8k91oxe1" name="PARENT_LINK" type="attribute"/>
+        <Node id="Js8l91oxe1" name="PUBLISH" type="attribute"/>
+        <Node id="Js8m91oxe1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="Js8n91oxe1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="Js8o91oxe1" name="TRANSLATE" type="attribute"/>
+        <Node id="Js8p91oxe1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="Js8q91oxe1" name="TSOPTION" type="attribute"/>
+        <Node id="Js8r91oxe1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="Js8s91oxe1" name="TSTOLERANCE" type="attribute"/>
+        <Node displayName="Composite Exchange" id="Js8t91oxe1" name="FinancialMarket" type="segment">
+          <Node id="Js8u91oxe1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Js8v91oxe1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "FinancialMarket";]]></expr>
+          </Node>
+          <Node id="Js8w91oxe1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Js8x91oxe1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Js8y91oxe1" name="DUP_CHECK" type="attribute"/>
+          <Node id="Js8z91oxe1" name="ENDDATEIND" type="attribute"/>
+          <Node id="Js8$91oxe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="Js8%91oxe1" name="ERROR" type="attribute"/>
+          <Node id="Js8@91oxe1" name="LOOKUP" type="attribute"/>
+          <Node id="Js8&amp;91oxe1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MRKT_MATCH_1";]]></expr>
+          </Node>
+          <Node id="Js8*91oxe1" name="NESTED_ERR_LVL" type="attribute"/>
+          <Node id="Js8-91oxe1" name="NESTED_ERR_TXT" type="attribute"/>
+          <Node id="Js8.91oxe1" name="ONLY" type="attribute"/>
+          <Node id="Js8/91oxe1" name="PARENT_LINK" type="attribute"/>
+          <Node id="Js8(91oxe1" name="PUBLISH" type="attribute"/>
+          <Node id="Js8)91oxe1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="Js8~91oxe1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="Js8?91oxe1" name="TRANSLATE" type="attribute"/>
+          <Node id="Js8&lt;91oxe1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="Js8&gt;91oxe1" name="TSOPTION" type="attribute"/>
+          <Node id="Js80A1oxe1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="Js81A1oxe1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="Js82A1oxe1" name="AUTOORDEREXPIREIND" type="element">
+            <Node id="Js83A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js84A1oxe1" name="CREATEDTMS" type="element">
+            <Node id="Js85A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js86A1oxe1" name="CSDPERMITIND" type="element">
+            <Node id="Js87A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js88A1oxe1" name="CURRMIDOFCNT" type="element">
+            <Node id="Js89A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8AA1oxe1" name="DATACOVERAGETYP" type="element">
+            <Node id="Js8BA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8CA1oxe1" name="DATASRCID" type="element">
+            <Node id="Js8DA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8EA1oxe1" name="DATASTATTYP" type="element">
+            <Node id="Js8FA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8GA1oxe1" name="DAYSETTLEBUYQTY" type="element">
+            <Node id="Js8HA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8IA1oxe1" name="DAYSETTLESLLQTY" type="element">
+            <Node id="Js8JA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8KA1oxe1" name="DAYSMTHBASTYP" type="element">
+            <Node id="Js8LA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8MA1oxe1" name="DAYSYRBASTYP" type="element">
+            <Node id="Js8NA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8OA1oxe1" name="DYCHGLMTCAMT" type="element">
+            <Node id="Js8PA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8QA1oxe1" name="ELECADDRID" type="element">
+            <Node id="Js8RA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8SA1oxe1" name="ELECMATCHIND" type="element">
+            <Node id="Js8TA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8UA1oxe1" name="ELECTRDNGIND" type="element">
+            <Node id="Js8VA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8WA1oxe1" name="ENDBUSDYTME" type="element">
+            <Node id="Js8XA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8YA1oxe1" name="ENDTMS" type="element">
+            <Node id="Js8ZA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8aA1oxe1" name="FINSMKTTYP" type="element">
+            <Node id="Js8bA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8cA1oxe1" name="GUCNT" type="element">
+            <Node id="Js8dA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8eA1oxe1" name="GUID" type="element">
+            <Node id="Js8fA1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return CNTRY_CDE;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8gA1oxe1" name="GUTYP" type="element">
+            <Node id="Js8hA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8iA1oxe1" name="HELDPOSLMTCAMT" type="element">
+            <Node id="Js8jA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8kA1oxe1" name="INSTMNEM" type="element">
+            <Node id="Js8lA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8mA1oxe1" name="INTERNETTRDNGIND" type="element">
+            <Node id="Js8nA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8oA1oxe1" name="LASTCHGTMS" type="element">
+            <Node id="Js8pA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8qA1oxe1" name="LASTCHGUSRID" type="element">
+            <Node id="Js8rA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8sA1oxe1" name="LOCALTMZ" type="element">
+            <Node id="Js8tA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8uA1oxe1" name="MAILADDRID" type="element">
+            <Node id="Js8vA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8wA1oxe1" name="MERGEUNIQOID" type="element">
+            <Node id="Js8xA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8yA1oxe1" name="MIFIDREGULATEDIND" type="element">
+            <Node id="Js8zA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8$A1oxe1" name="MKTDESC" type="element">
+            <Node id="Js8%A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8@A1oxe1" name="MKTLISTEDIND" type="element">
+            <Node id="Js8&amp;A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8*A1oxe1" name="MKTMAKINGTYP" type="element">
+            <Node id="Js8-A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8.A1oxe1" name="MKTNME" type="element">
+            <Node id="Js8/A1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return StrTrimRight(GRP_NME);]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8(A1oxe1" name="MKTOID" type="element">
+            <Node id="Js8)A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8~A1oxe1" name="MKTQUOTETYP" type="element">
+            <Node id="Js8?A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8&lt;A1oxe1" name="MKTSTATTYP" type="element">
+            <Node id="Js8&gt;A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js80B1oxe1" name="MKTTRDNGSTATTYP" type="element">
+            <Node id="Js81B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js82B1oxe1" name="NLSCDE" type="element">
+            <Node id="Js83B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js84B1oxe1" name="ORDERCUTOFFTME" type="element">
+            <Node id="Js85B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js86B1oxe1" name="PHYSTRDNGIND" type="element">
+            <Node id="Js87B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js88B1oxe1" name="PREFINTERFACETYP" type="element">
+            <Node id="Js89B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8AB1oxe1" name="PREFISSCTXTTYP" type="element">
+            <Node id="Js8BB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8CB1oxe1" name="PREFMKTID" type="element">
+            <Node id="Js8DB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8EB1oxe1" name="PREFMKTIDCTXTTYP" type="element">
+            <Node id="Js8FB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8GB1oxe1" name="PREFPLACEMENTTYP" type="element">
+            <Node id="Js8HB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8IB1oxe1" name="PREFSETTLECDE" type="element">
+            <Node id="Js8JB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8KB1oxe1" name="PREFSETTLETYP" type="element">
+            <Node id="Js8LB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8MB1oxe1" name="PREFTRDNGCDE" type="element">
+            <Node id="Js8NB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8OB1oxe1" name="PRNTMKTOID" type="element">
+            <Node id="Js8PB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8QB1oxe1" name="RNDLOTDEPENDENTIND" type="element">
+            <Node id="Js8RB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8SB1oxe1" name="RNDLOTSZCQTY" type="element">
+            <Node id="Js8TB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8UB1oxe1" name="STARTBUSDYTME" type="element">
+            <Node id="Js8VB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8WB1oxe1" name="TRDBOTDYNUM" type="element">
+            <Node id="Js8XB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8YB1oxe1" name="TRDBOTDYTYP" type="element">
+            <Node id="Js8ZB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8aB1oxe1" name="TRDBOTSTRTNUM" type="element">
+            <Node id="Js8bB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8cB1oxe1" name="TRDDTEACRDINTIND" type="element">
+            <Node id="Js8dB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8eB1oxe1" name="TRDLOTSIZECQTY" type="element">
+            <Node id="Js8fB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="g(8jD1?de1" name="FinancialMarketIdentifier" type="segment">
+          <Node id="g(8lD1?de1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="g(8mD1?de1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="g(8nD1?de1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="g(8oD1?de1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+          </Node>
+          <Node id="g(8.D1?de1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+          </Node>
+          <Node id="g(8?D1?de1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="g(8@D1?de1" name="MKTID" type="element">
+            <Node id="g(8*D1?de1" name="VALUE" type="attribute">
+              <expr><![CDATA[return MRKT_GRP;]]></expr>
+            </Node>
+          </Node>
+          <Node id="g(8&amp;D1?de1" name="MKTIDCTXTTYP" type="element">
+            <Node id="g(8-D1?de1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "BBCOMPEXCH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="Js8gB1oxe1" name="GeographicUnit" type="segment">
+          <Node id="Js8hB1oxe1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Js8iB1oxe1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "GeographicUnit";]]></expr>
+          </Node>
+          <Node id="Js8jB1oxe1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "PRNT_GU_CNT,PRNT_GU_ID,PRNT_GU_TYP";]]></expr>
+          </Node>
+          <Node id="Js8kB1oxe1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "GU_CNT,GU_ID,GU_TYP";]]></expr>
+          </Node>
+          <Node id="Js8lB1oxe1" name="ERROR" type="attribute"/>
+          <Node id="Js8mB1oxe1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="Js8nB1oxe1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("11|CONCTNS|NESTED|PRNTGUCNT|1|PRNTGUTYP|COUNTRY", Strcat("|DATASRCID|ISO10383", Strcat("|PRNTGUID|", CNTRY_CDE)));]]></expr>
+          </Node>
+          <Node id="Js8oB1oxe1" name="CALID" type="element">
+            <Node id="Js8pB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8qB1oxe1" name="CITYCDE" type="element">
+            <Node id="Js8rB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8sB1oxe1" name="CITYCDETYP" type="element">
+            <Node id="Js8tB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8uB1oxe1" name="CITYNME" type="element">
+            <Node id="Js8vB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8wB1oxe1" name="CNTRYCDE" type="element">
+            <Node id="Js8xB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8yB1oxe1" name="CNTRYSUBDIVCDE" type="element">
+            <Node id="Js8zB1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8$B1oxe1" name="CNTYCDE" type="element">
+            <Node id="Js8%B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8@B1oxe1" name="CNTYCDETYP" type="element">
+            <Node id="Js8&amp;B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8*B1oxe1" name="CNTYNME" type="element">
+            <Node id="Js8-B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8.B1oxe1" name="CONTINENTCDE" type="element">
+            <Node id="Js8/B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8(B1oxe1" name="CROSSREFID" type="element">
+            <Node id="Js8)B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8~B1oxe1" name="CSDPERMITIND" type="element">
+            <Node id="Js8?B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8&lt;B1oxe1" name="DATASRCID" type="element">
+            <Node id="Js8&gt;B1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js80C1oxe1" name="DATASTATTYP" type="element">
+            <Node id="Js81C1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js82C1oxe1" name="ENDTMS" type="element">
+            <Node id="Js83C1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js84C1oxe1" name="GUCNT" type="element">
+            <Node id="Js85C1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js86C1oxe1" name="GUDESC" type="element">
+            <Node id="Js87C1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js88C1oxe1" name="GUID" type="element">
+            <Node id="Js89C1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8AC1oxe1" name="GUNME" type="element">
+            <Node id="Js8BC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8CC1oxe1" name="GUTYP" type="element">
+            <Node id="Js8DC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8EC1oxe1" name="LASTCHGTMS" type="element">
+            <Node id="Js8FC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8GC1oxe1" name="LASTCHGUSRID" type="element">
+            <Node id="Js8HC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8IC1oxe1" name="NLSCDE" type="element">
+            <Node id="Js8JC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8KC1oxe1" name="POSTALCDE" type="element">
+            <Node id="Js8LC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8MC1oxe1" name="PREFCURRCDE" type="element">
+            <Node id="Js8NC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8OC1oxe1" name="PRNTGUCNT" type="element">
+            <Node id="Js8PC1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8QC1oxe1" name="PRNTGUID" type="element">
+            <Node id="Js8RC1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(CNTRY_CDE, "ZZ"))
+	return "UNKNOWN";
+else if (Strcmp(CNTRY_CDE, ""))
+	return "UNKNOWN";
+else if (Strcmp(MRKT_GRP, "EO"))
+	return "GB";
+else
+	return CNTRY_CDE;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8SC1oxe1" name="PRNTGUTYP" type="element">
+            <Node id="Js8TC1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(CNTRY_CDE, "ZZ"))
+	return "UNKNOWN";
+else
+	return "COUNTRY";]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8UC1oxe1" name="REGIONNME" type="element">
+            <Node id="Js8VC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8WC1oxe1" name="STARTTMS" type="element">
+            <Node id="Js8XC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8YC1oxe1" name="STEPRVCDE" type="element">
+            <Node id="Js8ZC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8aC1oxe1" name="STOPPAYIND" type="element">
+            <Node id="Js8bC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8cC1oxe1" name="TMZTMZ" type="element">
+            <Node id="Js8dC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8eC1oxe1" name="TOWNSHIPNME" type="element">
+            <Node id="Js8fC1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="Js8gC1oxe1" name="AUTOORDEREXPIREIND" type="element">
+          <Node id="Js8hC1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8iC1oxe1" name="CREATEDTMS" type="element">
+          <comment><![CDATA[GM26/03/2014: Mapping changed to reflect the activation date of the exchange.]]></comment>
+          <Node id="Js8jC1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return DateFromString(CREATION_DTE, "%D-%M-%Y");]]></expr>
+          </Node>
+          <Node id="Js8kC1oxe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Js8lC1oxe1" name="CSDPERMITIND" type="element">
+          <Node id="Js8mC1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8nC1oxe1" name="CURRMIDOFCNT" type="element">
+          <Node id="Js8oC1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8pC1oxe1" name="DATACOVERAGETYP" type="element">
+          <Node id="Js8qC1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8rC1oxe1" name="DATASRCID" type="element">
+          <Node id="Js8sC1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return SOURCE;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Js8tC1oxe1" name="DATASTATTYP" type="element">
+          <Node id="Js8uC1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Js8vC1oxe1" name="DAYSETTLEBUYQTY" type="element">
+          <Node id="Js8wC1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8xC1oxe1" name="DAYSETTLESLLQTY" type="element">
+          <Node id="Js8yC1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8zC1oxe1" name="DAYSMTHBASTYP" type="element">
+          <Node id="Js8$C1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8%C1oxe1" name="DAYSYRBASTYP" type="element">
+          <Node id="Js8@C1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8&amp;C1oxe1" name="DYCHGLMTCAMT" type="element">
+          <Node id="Js8*C1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8-C1oxe1" name="ELECADDRID" type="element">
+          <Node id="Js8.C1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8/C1oxe1" name="ELECMATCHIND" type="element">
+          <Node id="Js8(C1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8)C1oxe1" name="ELECTRDNGIND" type="element">
+          <Node id="Js8~C1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8?C1oxe1" name="ENDBUSDYTME" type="element">
+          <Node id="Js8&lt;C1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8&gt;C1oxe1" name="ENDTMS" type="element">
+          <Node id="Js80D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js81D1oxe1" name="FINSMKTTYP" type="element">
+          <Node id="Js82D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js83D1oxe1" name="GUCNT" type="element">
+          <Node id="Js84D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js85D1oxe1" name="GUID" type="element">
+          <Node id="Js86D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js87D1oxe1" name="GUTYP" type="element">
+          <Node id="Js88D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js89D1oxe1" name="HELDPOSLMTCAMT" type="element">
+          <Node id="Js8AD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8BD1oxe1" name="INSTMNEM" type="element">
+          <Node id="Js8CD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8DD1oxe1" name="INTERNETTRDNGIND" type="element">
+          <Node id="Js8ED1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8FD1oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Js8GD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8HD1oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Js8ID1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Js8JD1oxe1" name="LOCALTMZ" type="element">
+          <Node id="Js8KD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8LD1oxe1" name="MAILADDRID" type="element">
+          <Node id="Js8MD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8ND1oxe1" name="MERGEUNIQOID" type="element">
+          <Node id="Js8OD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8PD1oxe1" name="MIFIDREGULATEDIND" type="element">
+          <Node id="Js8QD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8RD1oxe1" name="MKTDESC" type="element">
+          <Node id="Js8SD1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return GRP_NME;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Js8TD1oxe1" name="MKTLISTEDIND" type="element">
+          <Node id="Js8UD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8VD1oxe1" name="MKTMAKINGTYP" type="element">
+          <Node id="Js8WD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8XD1oxe1" name="MKTNME" type="element">
+          <Node id="Js8YD1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return StrTrimRight(GRP_NME);]]></expr>
+          </Node>
+        </Node>
+        <Node id="Js8ZD1oxe1" name="MKTOID" type="element">
+          <Node id="Js8aD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8bD1oxe1" name="MKTQUOTETYP" type="element">
+          <Node id="Js8cD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8dD1oxe1" name="MKTSTATTYP" type="element">
+          <Node id="Js8eD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8fD1oxe1" name="MKTTRDNGSTATTYP" type="element">
+          <Node id="Js8gD1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "CMPOSITE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Js8hD1oxe1" name="NLSCDE" type="element">
+          <Node id="Js8iD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8jD1oxe1" name="ORDERCUTOFFTME" type="element">
+          <Node id="Js8kD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8lD1oxe1" name="PHYSTRDNGIND" type="element">
+          <Node id="Js8mD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8nD1oxe1" name="PREFINTERFACETYP" type="element">
+          <Node id="Js8oD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8pD1oxe1" name="PREFISSCTXTTYP" type="element">
+          <Node id="Js8qD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8rD1oxe1" name="PREFMKTID" type="element">
+          <Node id="Js8sD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8tD1oxe1" name="PREFMKTIDCTXTTYP" type="element">
+          <Node id="Js8uD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8vD1oxe1" name="PREFPLACEMENTTYP" type="element">
+          <Node id="Js8wD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8xD1oxe1" name="PREFSETTLECDE" type="element">
+          <Node id="Js8yD1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8zD1oxe1" name="PREFSETTLETYP" type="element">
+          <Node id="Js8$D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8%D1oxe1" name="PREFTRDNGCDE" type="element">
+          <Node id="Js8@D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8&amp;D1oxe1" name="PRNTMKTOID" type="element">
+          <Node id="Js8*D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8-D1oxe1" name="RNDLOTDEPENDENTIND" type="element">
+          <Node id="Js8.D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8/D1oxe1" name="RNDLOTSZCQTY" type="element">
+          <Node id="Js8(D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8)D1oxe1" name="STARTBUSDYTME" type="element">
+          <Node id="Js8~D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8?D1oxe1" name="TRDBOTDYNUM" type="element">
+          <Node id="Js8&lt;D1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js8&gt;D1oxe1" name="TRDBOTDYTYP" type="element">
+          <Node id="Js80E1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js81E1oxe1" name="TRDBOTSTRTNUM" type="element">
+          <Node id="Js82E1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js83E1oxe1" name="TRDDTEACRDINTIND" type="element">
+          <Node id="Js84E1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Js85E1oxe1" name="TRDLOTSIZECQTY" type="element">
+          <Node id="Js86E1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="ISO Market" id="EGAz01M%W1" name="FinancialMarket" type="segment">
+        <condition id="Js87E1oxe1"><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && OneHasValue(ISO_MRKT_CDE))
+	return "FinancialMarket";
+else
+	return "";]]></condition>
+        <Node id="Js88E1oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE"))
+	if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "YES"))
+		return "UNKNOWN";
+	else if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "NO"))
+		return "REFERENCE";
+	else if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "PROP_NON_MIC") && OneHasValue(ISO_MRKT_CDE))
+		return ThrowMapError(Strcat(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), Strcat("--", "Value in Config_Option.xml against CreateNewMarket - MarketFeeds is PROP_NON_MIC and ISO MIC is present in mesaage. The message is being rejected.")), "");
+    else if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "PROP_NON_MIC") && !OneHasValue(ISO_MRKT_CDE))
+		return "IGNORE";
+    else if (!OneOf(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "YES", "NO", "PROP_NON_MIC") && (OneHasValue(Strcmp(ACTION, "ADD")) || OneHasValue(Strcmp(ACTION, "UPDATE"))))
+		return ThrowMapError(Strcat(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), Strcat("--", "Wrong value in Config_Option.xml against CreateNewMarket - MarketFeeds. It is other than permitted value YES, NO and PROP_NON_MIC used in Config_option.xml")), "");
+	else
+		return "";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Js89E1oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && OneHasValue(ISO_MRKT_CDE))
+	return "FinancialMarket";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Js8AE1oxe1" name="COPY_FROM" type="attribute"/>
+        <Node id="Js8BE1oxe1" name="COPY_TO" type="attribute"/>
+        <Node id="Js8CE1oxe1" name="DUP_CHECK" type="attribute"/>
+        <Node id="Js8DE1oxe1" name="ENDDATEIND" type="attribute">
+          <expr><![CDATA[return "O";]]></expr>
+        </Node>
+        <Node id="Js8EE1oxe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="Js8FE1oxe1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "PROP_NON_MIC") && !OneHasValue(ISO_MRKT_CDE))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Js8GE1oxe1" name="LOOKUP" type="attribute"/>
+        <Node id="Js8HE1oxe1" name="MATCH" type="attribute"/>
+        <Node id="Js8IE1oxe1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="Js8JE1oxe1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="Js8KE1oxe1" name="ONLY" type="attribute"/>
+        <Node id="Js8LE1oxe1" name="PARENT_LINK" type="attribute"/>
+        <Node id="Js8ME1oxe1" name="PUBLISH" type="attribute"/>
+        <Node id="Js8NE1oxe1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="Js8OE1oxe1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="Js8PE1oxe1" name="TRANSLATE" type="attribute"/>
+        <Node id="Js8QE1oxe1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="Js8RE1oxe1" name="TSOPTION" type="attribute"/>
+        <Node id="Js8SE1oxe1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="Js8TE1oxe1" name="TSTOLERANCE" type="attribute"/>
+        <Node displayName="ISO Market" id="Js8UE1oxe1" name="FinancialMarketIdentifier" type="segment">
+          <condition id="Js8VE1oxe1"><![CDATA[if (OneHasValue(ISO_MRKT_CDE))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></condition>
+          <Node id="Js8WE1oxe1" name="ACTION" type="attribute">
+            <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "PROP_NON_MIC") && OneHasValue(ISO_MRKT_CDE))
+		return "";
+else    
+	return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Js8XE1oxe1" name="TYPE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(ISO_MRKT_CDE))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="Js8YE1oxe1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Js8ZE1oxe1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Js8aE1oxe1" name="DUP_CHECK" type="attribute"/>
+          <Node id="Js8bE1oxe1" name="ENDDATEIND" type="attribute"/>
+          <Node id="Js8cE1oxe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="Js8dE1oxe1" name="ERROR" type="attribute"/>
+          <Node id="Js8eE1oxe1" name="LOOKUP" type="attribute"/>
+          <Node id="Js8fE1oxe1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+          </Node>
+          <Node id="Js8gE1oxe1" name="ONLY" type="attribute"/>
+          <Node id="Js8hE1oxe1" name="PARENT_LINK" type="attribute"/>
+          <Node id="Js8iE1oxe1" name="PUBLISH" type="attribute"/>
+          <Node id="Js8jE1oxe1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="Js8kE1oxe1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="Js8lE1oxe1" name="TRANSLATE" type="attribute"/>
+          <Node id="Js8mE1oxe1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="Js8nE1oxe1" name="TSOPTION" type="attribute"/>
+          <Node id="Js8oE1oxe1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="Js8pE1oxe1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="Js8qE1oxe1" name="DATASRCID" type="element">
+            <Node id="Js8rE1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8sE1oxe1" name="DATASTATTYP" type="element">
+            <Node id="Js8tE1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8uE1oxe1" name="ENDTMS" type="element">
+            <Node id="Js8vE1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8wE1oxe1" name="LASTCHGTMS" type="element">
+            <Node id="Js8xE1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8yE1oxe1" name="LASTCHGUSRID" type="element">
+            <Node id="Js8zE1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8$E1oxe1" name="MKIDOID" type="element">
+            <Node id="Js8%E1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8@E1oxe1" name="MKTID" type="element">
+            <Node id="Js8&amp;E1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return ISO_MRKT_CDE;
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8*E1oxe1" name="MKTIDCTXTTYP" type="element">
+            <Node id="Js8-E1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "MIC";]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8.E1oxe1" name="MKTOID" type="element">
+            <Node id="Js8/E1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8(E1oxe1" name="STARTTMS" type="element">
+            <Node id="Js8)E1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName="ISO Market" id="Js8~E1oxe1" name="FinancialMarketIdentifier" type="segment">
+          <condition id="Js8?E1oxe1"><![CDATA[if (ISO_PRNT_MRKT != ISO_MRKT_CDE)
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></condition>
+          <Node id="Js8&lt;E1oxe1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Js8&gt;E1oxe1" name="TYPE" type="attribute">
+            <expr><![CDATA[if (ISO_PRNT_MRKT != ISO_MRKT_CDE)
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="Js80F1oxe1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Js81F1oxe1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "PRNT_MKT_OID";]]></expr>
+          </Node>
+          <Node id="Js82F1oxe1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+          </Node>
+          <Node id="Js83F1oxe1" name="ERROR" type="attribute"/>
+          <Node id="Js84F1oxe1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="Js85F1oxe1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("3|CONCTNS|NESTED|MKTIDCTXTTYP|MIC|PRNTMKTID|", Strcat(ISO_PRNT_MRKT, Strcat("|ACTION|", Strcat(ACTION, "|DATASRCID|ISO10383")))); ]]></expr>
+          </Node>
+          <Node id="Js86F1oxe1" name="DATASRCID" type="element">
+            <Node id="Js87F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js88F1oxe1" name="DATASTATTYP" type="element">
+            <Node id="Js89F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8AF1oxe1" name="ENDTMS" type="element">
+            <Node id="Js8BF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8CF1oxe1" name="LASTCHGTMS" type="element">
+            <Node id="Js8DF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8EF1oxe1" name="LASTCHGUSRID" type="element">
+            <Node id="Js8FF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8GF1oxe1" name="MKIDOID" type="element">
+            <Node id="Js8HF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8IF1oxe1" name="MKTID" type="element">
+            <Node id="Js8JF1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return ISO_PRNT_MRKT;
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8KF1oxe1" name="MKTIDCTXTTYP" type="element">
+            <Node id="Js8LF1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "MIC";]]></expr>
+            </Node>
+          </Node>
+          <Node id="Js8MF1oxe1" name="MKTOID" type="element">
+            <Node id="Js8NF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8OF1oxe1" name="STARTTMS" type="element">
+            <Node id="Js8PF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="Js8QF1oxe1" name="GeographicUnit" type="segment">
+          <Node id="Js8RF1oxe1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Js8SF1oxe1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "GeographicUnit";]]></expr>
+          </Node>
+          <Node id="Js8TF1oxe1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "PRNT_GU_CNT,PRNT_GU_ID,PRNT_GU_TYP";]]></expr>
+          </Node>
+          <Node id="Js8UF1oxe1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "GU_CNT,GU_ID,GU_TYP";]]></expr>
+          </Node>
+          <Node id="Js8VF1oxe1" name="ERROR" type="attribute"/>
+          <Node id="Js8WF1oxe1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="Js8XF1oxe1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("11|CONCTNS|NESTED|PRNTGUCNT|1|PRNTGUTYP|COUNTRY", Strcat("|DATASRCID|ISO10383", Strcat("|PRNTGUID|", CNTRY_CDE)));]]></expr>
+          </Node>
+          <Node id="Js8YF1oxe1" name="CALID" type="element">
+            <Node id="Js8ZF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8aF1oxe1" name="CITYCDE" type="element">
+            <Node id="Js8bF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8cF1oxe1" name="CITYCDETYP" type="element">
+            <Node id="Js8dF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8eF1oxe1" name="CITYNME" type="element">
+            <Node id="Js8fF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8gF1oxe1" name="CNTRYCDE" type="element">
+            <Node id="Js8hF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8iF1oxe1" name="CNTRYSUBDIVCDE" type="element">
+            <Node id="Js8jF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8kF1oxe1" name="CNTYCDE" type="element">
+            <Node id="Js8lF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8mF1oxe1" name="CNTYCDETYP" type="element">
+            <Node id="Js8nF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8oF1oxe1" name="CNTYNME" type="element">
+            <Node id="Js8pF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8qF1oxe1" name="CONTINENTCDE" type="element">
+            <Node id="Js8rF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8sF1oxe1" name="CROSSREFID" type="element">
+            <Node id="Js8tF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8uF1oxe1" name="CSDPERMITIND" type="element">
+            <Node id="Js8vF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8wF1oxe1" name="DATASRCID" type="element">
+            <Node id="Js8xF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8yF1oxe1" name="DATASTATTYP" type="element">
+            <Node id="Js8zF1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8$F1oxe1" name="ENDTMS" type="element">
+            <Node id="Js8%F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8@F1oxe1" name="GUCNT" type="element">
+            <Node id="Js8&amp;F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8*F1oxe1" name="GUDESC" type="element">
+            <Node id="Js8-F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8.F1oxe1" name="GUID" type="element">
+            <Node id="Js8/F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8(F1oxe1" name="GUNME" type="element">
+            <Node id="Js8)F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8~F1oxe1" name="GUTYP" type="element">
+            <Node id="Js8?F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Js8&lt;F1oxe1" name="LASTCHGTMS" type="element">
+            <Node id="Js8&gt;F1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8101oxe1" name="LASTCHGUSRID" type="element">
+            <Node id="Ks8201oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8301oxe1" name="NLSCDE" type="element">
+            <Node id="Ks8401oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8501oxe1" name="POSTALCDE" type="element">
+            <Node id="Ks8601oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8701oxe1" name="PREFCURRCDE" type="element">
+            <Node id="Ks8801oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8901oxe1" name="PRNTGUCNT" type="element">
+            <Node id="Ks8A01oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8B01oxe1" name="PRNTGUID" type="element">
+            <Node id="Ks8C01oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(CNTRY_CDE, "ZZ"))
+	return "UNKNOWN";
+else if (Strcmp(CNTRY_CDE, ""))
+	return "UNKNOWN";
+else
+	return CNTRY_CDE;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8D01oxe1" name="PRNTGUTYP" type="element">
+            <Node id="Ks8E01oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(CNTRY_CDE, "ZZ"))
+	return "UNKNOWN";
+else
+	return "COUNTRY";]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8F01oxe1" name="REGIONNME" type="element">
+            <Node id="Ks8G01oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8H01oxe1" name="STARTTMS" type="element">
+            <Node id="Ks8I01oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8J01oxe1" name="STEPRVCDE" type="element">
+            <Node id="Ks8K01oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8L01oxe1" name="STOPPAYIND" type="element">
+            <Node id="Ks8M01oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8N01oxe1" name="TMZTMZ" type="element">
+            <Node id="Ks8O01oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8P01oxe1" name="TOWNSHIPNME" type="element">
+            <Node id="Ks8Q01oxe1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="Ks8R01oxe1" name="AUTOORDEREXPIREIND" type="element">
+          <Node id="Ks8S01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8T01oxe1" name="CREATEDTMS" type="element">
+          <comment><![CDATA[GM26/03/2014: Mapping changed to reflect the activation date of the exchange.]]></comment>
+          <Node id="Ks8U01oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return DateFromString(CREATION_DTE, "%D-%M-%Y");]]></expr>
+          </Node>
+          <Node id="Ks8V01oxe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8W01oxe1" name="CSDPERMITIND" type="element">
+          <Node id="Ks8X01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Y01oxe1" name="CURRMIDOFCNT" type="element">
+          <Node id="Ks8Z01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8a01oxe1" name="DATACOVERAGETYP" type="element">
+          <Node id="Ks8b01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8c01oxe1" name="DATASRCID" type="element">
+          <Node id="Ks8d01oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ISO10383";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8e01oxe1" name="DATASTATTYP" type="element">
+          <Node id="Ks8f01oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8g01oxe1" name="DAYSETTLEBUYQTY" type="element">
+          <Node id="Ks8h01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8i01oxe1" name="DAYSETTLESLLQTY" type="element">
+          <Node id="Ks8j01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8k01oxe1" name="DAYSMTHBASTYP" type="element">
+          <Node id="Ks8l01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8m01oxe1" name="DAYSYRBASTYP" type="element">
+          <Node id="Ks8n01oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return DAYS_YR_BASIS;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8o01oxe1" name="DYCHGLMTCAMT" type="element">
+          <Node id="Ks8p01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8q01oxe1" name="ELECADDRID" type="element">
+          <Node id="Ks8r01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8s01oxe1" name="ELECMATCHIND" type="element">
+          <Node id="Ks8t01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8u01oxe1" name="ELECTRDNGIND" type="element">
+          <Node id="Ks8v01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8w01oxe1" name="ENDBUSDYTME" type="element">
+          <Node id="Ks8x01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8y01oxe1" name="ENDTMS" type="element">
+          <Node id="Ks8z01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8$01oxe1" name="FINSMKTTYP" type="element">
+          <Node id="Ks8%01oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return FINS_MRKT;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8@01oxe1" name="GUCNT" type="element">
+          <Node id="Ks8&amp;01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8*01oxe1" name="GUID" type="element">
+          <Node id="Ks8-01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8.01oxe1" name="GUTYP" type="element">
+          <Node id="Ks8/01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8(01oxe1" name="HELDPOSLMTCAMT" type="element">
+          <Node id="Ks8)01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8~01oxe1" name="INSTMNEM" type="element">
+          <Node id="Ks8?01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8&lt;01oxe1" name="INTERNETTRDNGIND" type="element">
+          <Node id="Ks8&gt;01oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8011oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Ks8111oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8211oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Ks8311oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8411oxe1" name="LOCALTMZ" type="element">
+          <Node id="Ks8511oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return LOCAL_TMZ;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8611oxe1" name="MAILADDRID" type="element">
+          <Node id="Ks8711oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8811oxe1" name="MERGEUNIQOID" type="element">
+          <Node id="Ks8911oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-071018781" name="MICMKTLVLTYP" type="element">
+          <comment><![CDATA[GT 122609]]></comment>
+          <Node id="-072018781" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(MKT_TYP) && Strcmp(MKT_TYP, "S"))
+	return "S";
+else if (OneHasValue(MKT_TYP) && Strcmp(MKT_TYP, "O"))
+	return "O";
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8A11oxe1" name="MIFIDREGULATEDIND" type="element">
+          <Node id="Ks8B11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8C11oxe1" name="MKTDESC" type="element">
+          <Node id="Ks8D11oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(MRKT_DESC))
+	return MRKT_DESC;
+else
+	return SetSendNullFlag(MRKT_DESC);]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8E11oxe1" name="MKTLISTEDIND" type="element">
+          <Node id="Ks8F11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8G11oxe1" name="MKTMAKINGTYP" type="element">
+          <Node id="Ks8H11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8I11oxe1" name="MKTNME" type="element">
+          <Node id="Ks8J11oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return StrTrimRight(MRKT_NME);]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8K11oxe1" name="MKTOID" type="element">
+          <Node id="Ks8L11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8M11oxe1" name="MKTQUOTETYP" type="element">
+          <Node id="Ks8N11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8O11oxe1" name="MKTSTATTYP" type="element">
+          <Node id="Ks8P11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Q11oxe1" name="MKTTRDNGSTATTYP" type="element">
+          <Node id="Ks8R11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8S11oxe1" name="NLSCDE" type="element">
+          <Node id="Ks8T11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8U11oxe1" name="ORDERCUTOFFTME" type="element">
+          <Node id="Ks8V11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8W11oxe1" name="PHYSTRDNGIND" type="element">
+          <Node id="Ks8X11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Y11oxe1" name="PREFINTERFACETYP" type="element">
+          <Node id="Ks8Z11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8a11oxe1" name="PREFISSCTXTTYP" type="element">
+          <Node id="Ks8b11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8c11oxe1" name="PREFMKTID" type="element">
+          <Node id="Ks8d11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8e11oxe1" name="PREFMKTIDCTXTTYP" type="element">
+          <Node id="Ks8f11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8g11oxe1" name="PREFPLACEMENTTYP" type="element">
+          <Node id="Ks8h11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8i11oxe1" name="PREFSETTLECDE" type="element">
+          <Node id="Ks8j11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8k11oxe1" name="PREFSETTLETYP" type="element">
+          <Node id="Ks8l11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8m11oxe1" name="PREFTRDNGCDE" type="element">
+          <Node id="Ks8n11oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return PREF_TRDNG_CDE;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8o11oxe1" name="PRNTMKTOID" type="element">
+          <Node id="Ks8p11oxe1" name="VALUE" type="attribute">
+            <comment><![CDATA[gt 131605:modified the condtion to nullify the MRKT.PRNT_MKT_OID when the MIC changes]]></comment>
+            <expr><![CDATA[if (Strcmp(ACTION, "UPDATE") && (!OneHasValue(ISO_PRNT_MRKT) || Strcmp(ISO_MRKT_CDE, ISO_PRNT_MRKT)))
+	return SetSendNullFlag("Y");
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8q11oxe1" name="MKTOID" type="element">
+          <Node id="Ks8r11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8s11oxe1" name="MKTNME" type="element">
+          <Node id="Ks8t11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8u11oxe1" name="CREATEDTMS" type="element">
+          <Node id="Ks8v11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8w11oxe1" name="RNDLOTDEPENDENTIND" type="element">
+          <Node id="Ks8x11oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return RND_LOT_DEPENDENT_IND;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8y11oxe1" name="RNDLOTSZCQTY" type="element">
+          <Node id="Ks8z11oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return RND_LOT_SZ_QTY;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8$11oxe1" name="STARTBUSDYTME" type="element">
+          <Node id="Ks8%11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8@11oxe1" name="TRDBOTDYNUM" type="element">
+          <Node id="Ks8&amp;11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8*11oxe1" name="TRDBOTDYTYP" type="element">
+          <Node id="Ks8-11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8.11oxe1" name="TRDBOTSTRTNUM" type="element">
+          <Node id="Ks8/11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8(11oxe1" name="TRDDTEACRDINTIND" type="element">
+          <Node id="Ks8)11oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8~11oxe1" name="TRDLOTSIZECQTY" type="element">
+          <Node id="Ks8?11oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return TRADE_LOT_SZ;]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="ISO Market - ADD/UPDATE" id="EGA%01M%W1" name="FinancialMarketIdentifier" type="segment">
+        <condition id="Ks8&lt;11oxe1"><![CDATA[if (((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && OneHasValue(ISO_MRKT_CDE)) && Strcmp(SOURCE, "ISO10383"))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></condition>
+        <Node id="Ks8&gt;11oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE"))
+	if (Strcmp(Translate(Config_Options, true, "MaintainMarketAlignment", "MarketFeeds"), "ADD"))
+		return "INSERT";
+	else if (Strcmp(Translate(Config_Options, true, "MaintainMarketAlignment", "MarketFeeds"), "REALIGN"))
+		return "UNKNOWN";
+	else if (Strcmp(Translate(Config_Options, true, "MaintainMarketAlignment", "MarketFeeds"), "NONE"))
+		return "IGNORE";   
+    else if (!OneOf(Translate(Config_Options, true, "MaintainMarketAlignment", "MarketFeeds"), "ADD", "REALIGN", "NONE") && (OneHasValue(Strcmp(ACTION, "ADD")) || OneHasValue(Strcmp(ACTION, "UPDATE"))))
+		return ThrowMapError(Strcat(Translate(Config_Options, true, "MaintainMarketAlignment", "MarketFeeds"), Strcat("--", "Wrong value in Config_Option.xml against MaintainMarketAlignment - MarketFeeds. It is other than permitted value ADD, REALIGN, REALIGN_RESTRICTED and NONE used in Config_option.xml")), "");
+	else
+		return "";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Ks8021oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && OneHasValue(ISO_MRKT_CDE))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Ks8121oxe1" name="COPY_FROM" type="attribute"/>
+        <Node id="Ks8221oxe1" name="COPY_TO" type="attribute"/>
+        <Node id="Ks8321oxe1" name="DUP_CHECK" type="attribute"/>
+        <Node id="Ks8421oxe1" name="ENDDATEIND" type="attribute"/>
+        <Node id="Ks8521oxe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="Ks8621oxe1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CreateNewMarket", "MarketFeeds"), "PROP_NON_MIC") && !OneHasValue(ISO_MRKT_CDE))
+	return "N";
+else if (Strcmp(Translate(Config_Options, true, "MaintainMarketAlignment", "MarketFeeds"), "ADD"))
+	return "N";	
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Ks8721oxe1" name="LOOKUP" type="attribute"/>
+        <Node id="Ks8821oxe1" name="MATCH" type="attribute"/>
+        <Node id="Ks8921oxe1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="Ks8A21oxe1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="Ks8B21oxe1" name="ONLY" type="attribute"/>
+        <Node id="Ks8C21oxe1" name="PARENT_LINK" type="attribute"/>
+        <Node id="Ks8D21oxe1" name="PUBLISH" type="attribute"/>
+        <Node id="Ks8E21oxe1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="Ks8F21oxe1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="Ks8G21oxe1" name="TRANSLATE" type="attribute"/>
+        <Node id="Ks8H21oxe1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="Ks8I21oxe1" name="TSOPTION" type="attribute"/>
+        <Node id="Ks8J21oxe1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="Ks8K21oxe1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="Ks8L21oxe1" name="DATASRCID" type="element">
+          <Node id="Ks8M21oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ISO10383";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8N21oxe1" name="DATASTATTYP" type="element">
+          <Node id="Ks8O21oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8P21oxe1" name="ENDTMS" type="element">
+          <Node id="Ks8Q21oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8R21oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Ks8S21oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8T21oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Ks8U21oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8V21oxe1" name="MKIDOID" type="element">
+          <Node id="Ks8W21oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8X21oxe1" name="MKTID" type="element">
+          <Node id="Ks8Y21oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return ISO_MRKT_CDE;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8Z21oxe1" name="MKTIDCTXTTYP" type="element">
+          <Node id="Ks8a21oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return CONTEXT;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8b21oxe1" name="MKTOID" type="element">
+          <Node id="Ks8c21oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8d21oxe1" name="STARTTMS" type="element">
+          <comment><![CDATA[GM26/03/2014: Mapping changed to reflect the activation date of the exchange.]]></comment>
+          <Node id="Ks8e21oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+          <Node id="Ks8f21oxe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="j@7201nce1" name="CREATEDTMS" type="element">
+          <Node id="j@7301nce1" name="VALUE" type="attribute">
+            <expr><![CDATA[return DateFromString(CREATION_DTE, "%D-%M-%Y");]]></expr>
+          </Node>
+          <Node id="j@7401nce1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="ISO Market" id="EGA@01M%W1" name="MRKTCentralCrossReference" type="segment">
+        <condition id="Ks8g21oxe1"><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, WEBSITE, ISO_MRKT_CDE))
+	return "MRKTCentralCrossReference";
+else if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, CITY, ISO_MRKT_CDE))
+	return "MRKTCentralCrossReference";
+else
+	return "";]]></condition>
+        <Node id="Ks8h21oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="Ks8i21oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, WEBSITE, ISO_MRKT_CDE))
+	return "MRKTCentralCrossReference";
+else if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, CITY, ISO_MRKT_CDE))
+	return "MRKTCentralCrossReference";	
+else
+	return "";]]></expr>
+        </Node>
+        <Node displayName="ISO Market" id="Ks8j21oxe1" name="FinancialMarketIdentifier" type="segment">
+          <Node id="Ks8k21oxe1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Ks8l21oxe1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+          </Node>
+          <Node id="Ks8m21oxe1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Ks8n21oxe1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+          </Node>
+          <Node id="Ks8o21oxe1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Ks8p21oxe1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="Ks8q21oxe1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("3|CONCTNS|NESTED|MKTIDCTXTTYP|MIC|MKTID|", Strcat(ISO_MRKT_CDE, Strcat("|ACTION|", Strcat(ACTION, "|DATASRCID|ISO10383"))));]]></expr>
+          </Node>
+          <Node id="Ks8r21oxe1" name="DATASRCID" type="element">
+            <Node id="Ks8s21oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8t21oxe1" name="DATASTATTYP" type="element">
+            <Node id="Ks8u21oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8v21oxe1" name="ENDTMS" type="element">
+            <Node id="Ks8w21oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8x21oxe1" name="LASTCHGTMS" type="element">
+            <Node id="Ks8y21oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8z21oxe1" name="LASTCHGUSRID" type="element">
+            <Node id="Ks8$21oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8%21oxe1" name="MKIDOID" type="element">
+            <Node id="Ks8@21oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8&amp;21oxe1" name="MKTID" type="element">
+            <Node id="Ks8*21oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return ISO_MRKT_CDE;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8-21oxe1" name="MKTIDCTXTTYP" type="element">
+            <Node id="Ks8.21oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return CONTEXT;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8/21oxe1" name="MKTOID" type="element">
+            <Node id="Ks8(21oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8)21oxe1" name="STARTTMS" type="element">
+            <Node id="Ks8~21oxe1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="Ks8?21oxe1" name="ACCTBKID" type="element">
+          <Node id="Ks8&lt;21oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8&gt;21oxe1" name="ACCTGRPOID" type="element">
+          <Node id="Ks8031oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8131oxe1" name="ACCTID" type="element">
+          <Node id="Ks8231oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8331oxe1" name="ACCTORGID" type="element">
+          <Node id="Ks8431oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8531oxe1" name="AUSROID" type="element">
+          <Node id="Ks8631oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8731oxe1" name="CLSFOID" type="element">
+          <Node id="Ks8831oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8931oxe1" name="CLVALUE" type="element">
+          <Node id="Ks8A31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8B31oxe1" name="CNTLCROSSREFOID" type="element">
+          <Node id="Ks8C31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8D31oxe1" name="CONTCTOID" type="element">
+          <Node id="Ks8E31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8F31oxe1" name="CROSSREFPURPTYP" type="element">
+          <Node id="Ks8G31oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ADDRESS";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8H31oxe1" name="CSTGRPOID" type="element">
+          <Node id="Ks8I31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8J31oxe1" name="CSTID" type="element">
+          <Node id="Ks8K31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8L31oxe1" name="DLBROID" type="element">
+          <Node id="Ks8M31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8N31oxe1" name="DLEROID" type="element">
+          <Node id="Ks8O31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8P31oxe1" name="DREPOID" type="element">
+          <Node id="Ks8Q31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8R31oxe1" name="EMPGRPOID" type="element">
+          <Node id="Ks8S31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8T31oxe1" name="EMPLOID" type="element">
+          <Node id="Ks8U31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8V31oxe1" name="ENDTMS" type="element">
+          <Node id="Ks8W31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8X31oxe1" name="ENTRORGID" type="element">
+          <Node id="Ks8Y31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Z31oxe1" name="FINRFINSRLTYP" type="element">
+          <Node id="Ks8a31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8b31oxe1" name="FINRINSTMNEM" type="element">
+          <Node id="Ks8c31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8d31oxe1" name="FINSGRPOID" type="element">
+          <Node id="Ks8e31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8f31oxe1" name="FINSINSTMNEM" type="element">
+          <Node id="Ks8g31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8h31oxe1" name="FPROOID" type="element">
+          <Node id="Ks8i31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8j31oxe1" name="GUCNT" type="element">
+          <Node id="Ks8k31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8l31oxe1" name="GUID" type="element">
+          <Node id="Ks8m31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8n31oxe1" name="GUTYP" type="element">
+          <Node id="Ks8o31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8p31oxe1" name="INSTRID" type="element">
+          <Node id="Ks8q31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8r31oxe1" name="INSTRISSRID" type="element">
+          <Node id="Ks8s31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8t31oxe1" name="ISSGRPOID" type="element">
+          <Node id="Ks8u31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8v31oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Ks8w31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8x31oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Ks8y31oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8z31oxe1" name="MKTOID" type="element">
+          <Node id="Ks8$31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8%31oxe1" name="STARTTMS" type="element">
+          <Node id="Ks8@31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8&amp;31oxe1" name="SUBDORGID" type="element">
+          <Node id="Ks8*31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8-31oxe1" name="SUBDSUBDIVID" type="element">
+          <Node id="Ks8.31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="ISO Market" id="EGA&amp;01M%W1" name="ElectronicAddress" type="segment">
+        <condition id="Ks8/31oxe1"><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, WEBSITE, ISO_MRKT_CDE))
+	return "ElectronicAddress";
+else
+	return "";]]></condition>
+        <Node id="Ks8(31oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[	return "UNKNOWN";
+]]></expr>
+        </Node>
+        <Node id="Ks8)31oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, WEBSITE, ISO_MRKT_CDE))
+	return "ElectronicAddress";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Ks8~31oxe1" name="ACHPRENOTEDTE" type="element">
+          <Node id="Ks8?31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8&lt;31oxe1" name="ALTEMAILADDRTXT" type="element">
+          <Node id="Ks8&gt;31oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8041oxe1" name="AREAPHONECDE" type="element">
+          <Node id="Ks8141oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8241oxe1" name="BANKACCTID" type="element">
+          <Node id="Ks8341oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8441oxe1" name="BANKACCTPRIMENME" type="element">
+          <Node id="Ks8541oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8641oxe1" name="BANKACCTSECNDNME" type="element">
+          <Node id="Ks8741oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8841oxe1" name="BANKACCTTYP" type="element">
+          <Node id="Ks8941oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8A41oxe1" name="CNTRYPHONECDE" type="element">
+          <Node id="Ks8B41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8C41oxe1" name="DATASRCID" type="element">
+          <Node id="Ks8D41oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ISO10383";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8E41oxe1" name="DATASTATTYP" type="element">
+          <Node id="Ks8F41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8G41oxe1" name="DIALINSTRUCTXT" type="element">
+          <Node id="Ks8H41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8I41oxe1" name="EADRVALNUM" type="element">
+          <Node id="Ks8J41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8K41oxe1" name="ELECADDRID" type="element">
+          <Node id="Ks8L41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8M41oxe1" name="EMAILADDRTXT" type="element">
+          <Node id="Ks8N41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8O41oxe1" name="ENDTMS" type="element">
+          <Node id="Ks8P41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Q41oxe1" name="FAXIND" type="element">
+          <Node id="Ks8R41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8S41oxe1" name="FAXNUMID" type="element">
+          <Node id="Ks8T41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8U41oxe1" name="IDCTXTTYP" type="element">
+          <Node id="Ks8V41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8W41oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Ks8X41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Y41oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Ks8Z41oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8a41oxe1" name="LOCTYP" type="element">
+          <Node id="Ks8b41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8c41oxe1" name="LONGELECADDRTXT" type="element">
+          <Node id="Ks8d41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8e41oxe1" name="MAILADDRID" type="element">
+          <Node id="Ks8f41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8g41oxe1" name="MOBILENUMID" type="element">
+          <Node id="Ks8h41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8i41oxe1" name="PHONENUMEXTID" type="element">
+          <Node id="Ks8j41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8k41oxe1" name="PHONENUMID" type="element">
+          <Node id="Ks8l41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8m41oxe1" name="STARTTMS" type="element">
+          <Node id="Ks8n41oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+          <Node id="Ks8o41oxe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8p41oxe1" name="TRANSITROUTINGID" type="element">
+          <Node id="Ks8q41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8r41oxe1" name="VOICEIND" type="element">
+          <Node id="Ks8s41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8t41oxe1" name="WEBNME" type="element">
+          <Node id="Ks8u41oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return WEBSITE;]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="ISO Market" id="EGA-01M%W1" name="MailingAddress" type="segment">
+        <condition id="Ks8v41oxe1"><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, CITY, ISO_MRKT_CDE))
+	return "MailingAddress";
+else
+	return "";]]></condition>
+        <Node id="Ks8w41oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="Ks8x41oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, CITY, ISO_MRKT_CDE))
+	return "MailingAddress";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Ks8y41oxe1" name="ADDRLN1TXT" type="element">
+          <Node id="Ks8z41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8$41oxe1" name="ADDRLN2TXT" type="element">
+          <Node id="Ks8%41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8@41oxe1" name="ADDRLN3TXT" type="element">
+          <Node id="Ks8&amp;41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8*41oxe1" name="ADDRLN4TXT" type="element">
+          <Node id="Ks8-41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8.41oxe1" name="ADDRLOCALETYP" type="element">
+          <Node id="Ks8/41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8(41oxe1" name="ATTENTIONTXT" type="element">
+          <Node id="Ks8)41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8~41oxe1" name="CITYCDE" type="element">
+          <Node id="Ks8?41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8&lt;41oxe1" name="CITYCDETYP" type="element">
+          <Node id="Ks8&gt;41oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8051oxe1" name="CITYNME" type="element">
+          <Node id="Ks8151oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return CITY;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8251oxe1" name="CNTRYCDE" type="element">
+          <Node id="Ks8351oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return CNTRY_CDE;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8451oxe1" name="CNTRYNME" type="element">
+          <Node id="Ks8551oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return COUNTRY;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8651oxe1" name="CNTRYSUBDIVCDE" type="element">
+          <Node id="Ks8751oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8851oxe1" name="CNTYCDE" type="element">
+          <Node id="Ks8951oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8A51oxe1" name="CNTYCDETYP" type="element">
+          <Node id="Ks8B51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8C51oxe1" name="CNTYNME" type="element">
+          <Node id="Ks8D51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8E51oxe1" name="COAEFFDTE" type="element">
+          <Node id="Ks8F51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8G51oxe1" name="COASRCTYP" type="element">
+          <Node id="Ks8H51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8I51oxe1" name="CONTINENTCDE" type="element">
+          <Node id="Ks8J51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8K51oxe1" name="COURIERNME" type="element">
+          <Node id="Ks8L51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8M51oxe1" name="DATASRCID" type="element">
+          <Node id="Ks8N51oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ISO10383";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8O51oxe1" name="DATASTATTYP" type="element">
+          <Node id="Ks8P51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Q51oxe1" name="ENDTMS" type="element">
+          <Node id="Ks8R51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8S51oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Ks8T51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8U51oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Ks8V51oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8W51oxe1" name="MAILADDRID" type="element">
+          <Node id="Ks8X51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Y51oxe1" name="MAILDLVTYP" type="element">
+          <Node id="Ks8Z51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8a51oxe1" name="NEIGHBORHOODNME" type="element">
+          <Node id="Ks8b51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8c51oxe1" name="NLSCDE" type="element">
+          <Node id="Ks8d51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8e51oxe1" name="POSTALCDE" type="element">
+          <Node id="Ks8f51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8g51oxe1" name="REGISTEREDADDRIND" type="element">
+          <Node id="Ks8h51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8i51oxe1" name="RPOCDE" type="element">
+          <Node id="Ks8j51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8k51oxe1" name="RPODTE" type="element">
+          <Node id="Ks8l51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8m51oxe1" name="RURALIND" type="element">
+          <Node id="Ks8n51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8o51oxe1" name="STARTTMS" type="element">
+          <Node id="Ks8p51oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8q51oxe1" name="STEPRVCDE" type="element">
+          <Node id="Ks8r51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8s51oxe1" name="STEPRVNME" type="element">
+          <Node id="Ks8t51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8u51oxe1" name="TFARENME" type="element">
+          <Node id="Ks8v51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8w51oxe1" name="TOWNSHIPNME" type="element">
+          <Node id="Ks8x51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8y51oxe1" name="VANITYCITYNME" type="element">
+          <Node id="Ks8z51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="ISO Market" id="EGA.01M%W1" name="AddressType" type="segment">
+        <condition id="Ks8$51oxe1"><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, CITY, ISO_MRKT_CDE))
+	return "AddressType";
+else
+	return "";]]></condition>
+        <Node id="Ks8%51oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="Ks8@51oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_NME, CITY, ISO_MRKT_CDE))
+	return "AddressType";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="Ks8&amp;51oxe1" name="ACCTID" type="element">
+          <Node id="Ks8*51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8-51oxe1" name="ACCTORGID" type="element">
+          <Node id="Ks8.51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8/51oxe1" name="ADDRSTATTMS" type="element">
+          <Node id="Ks8(51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8)51oxe1" name="ADDRSTATTYP" type="element">
+          <Node id="Ks8~51oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8?51oxe1" name="ADDRTYP" type="element">
+          <Node id="Ks8&lt;51oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "BUSINESS";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8&gt;51oxe1" name="ADDRTYPID" type="element">
+          <Node id="Ks8061oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8161oxe1" name="AUTHENTICATECOMIND" type="element">
+          <Node id="Ks8261oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8361oxe1" name="BKID" type="element">
+          <Node id="Ks8461oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8561oxe1" name="BUSAREATYP" type="element">
+          <Node id="Ks8661oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8761oxe1" name="CNTLCROSSREFOID" type="element">
+          <Node id="Ks8861oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8961oxe1" name="CSTID" type="element">
+          <Node id="Ks8A61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8B61oxe1" name="DATASRCID" type="element">
+          <Node id="Ks8C61oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ISO10383";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8D61oxe1" name="DATASTATTYP" type="element">
+          <Node id="Ks8E61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8F61oxe1" name="DFLTADDRIND" type="element">
+          <Node id="Ks8G61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8H61oxe1" name="DIRECTIONUSAGETYP" type="element">
+          <Node id="Ks8I61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8J61oxe1" name="ELECADDRID" type="element">
+          <Node id="Ks8K61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8L61oxe1" name="EMPLOID" type="element">
+          <Node id="Ks8M61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8N61oxe1" name="ENCRYPTCOMIND" type="element">
+          <Node id="Ks8O61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8P61oxe1" name="ENDTMS" type="element">
+          <Node id="Ks8Q61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8R61oxe1" name="FINRINSTMNEM" type="element">
+          <Node id="Ks8S61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8T61oxe1" name="FINSRLTYP" type="element">
+          <Node id="Ks8U61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8V61oxe1" name="FPROOID" type="element">
+          <Node id="Ks8W61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8X61oxe1" name="INSTMNEM" type="element">
+          <Node id="Ks8Y61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8Z61oxe1" name="INTRNLADDRID" type="element">
+          <Node id="Ks8a61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8b61oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Ks8c61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8d61oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Ks8e61oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8f61oxe1" name="MAILADDRID" type="element">
+          <Node id="Ks8g61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8h61oxe1" name="ORGID" type="element">
+          <Node id="Ks8i61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8j61oxe1" name="STARTTMS" type="element">
+          <Node id="Ks8k61oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8l61oxe1" name="SUBDIVID" type="element">
+          <Node id="Ks8m61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8n61oxe1" name="SUBDORGID" type="element">
+          <Node id="Ks8o61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8p61oxe1" name="XREFTBLROWOID" type="element">
+          <Node id="Ks8q61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8r61oxe1" name="XREFTBLTYP" type="element">
+          <Node id="Ks8s61oxe1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Composite Exchange" id="EGA/01M%W1" name="MarketGroup" type="segment">
+        <condition id="Ks8t61oxe1"><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && OneHasValue(MRKT_GRP, MRKT_GRP_PRT))
+	return "MarketGroup";
+else
+	return "";]]></condition>
+        <Node id="Ks8u61oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="Ks8v61oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && OneHasValue(MRKT_GRP, MRKT_GRP_PRT))
+	return "MarketGroup";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="g(8&lt;D1?de1" name="MarketGroup" type="segment">
+          <Node id="g(8&gt;D1?de1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="g(80E1?de1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "MKT_GRP_OID";]]></expr>
+          </Node>
+          <Node id="g(81E1?de1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "MKT_GRP_OID";]]></expr>
+          </Node>
+          <Node id="g(82E1?de1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "MarketGroup";]]></expr>
+          </Node>
+          <Node id="g(87E1?de1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MTGR_MATCH_2";]]></expr>
+          </Node>
+          <Node id="g(8tD1?de1" name="FinancialMarketIdentifier" type="segment">
+            <Node id="g(8uD1?de1" name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node id="g(8vD1?de1" name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "MKT_OID";]]></expr>
+            </Node>
+            <Node id="g(8xD1?de1" name="MATCH" type="attribute">
+              <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+            </Node>
+            <Node id="g(8/D1?de1" name="TYPE" type="attribute">
+              <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+            </Node>
+            <Node id="g(8(D1?de1" name="NESTED_ERR_LVL" type="attribute">
+              <expr><![CDATA[return "ERROR";]]></expr>
+            </Node>
+            <Node id="g(8)D1?de1" name="NESTED_ERR_TXT" type="attribute">
+              <expr><![CDATA[return Strcat("3|CONCTNS|NESTED|MRKT_GRP|", Strcat(MRKT_GRP, "|DATASRCID|ISO10383"));]]></expr>
+            </Node>
+            <Node id="g(8~D1?de1" name="COPY_FROM" type="attribute">
+              <expr><![CDATA[return "MKT_OID";]]></expr>
+            </Node>
+            <Node id="g(8yD1?de1" name="MKTID" type="element">
+              <Node id="g(8zD1?de1" name="VALUE" type="attribute">
+                <expr><![CDATA[return MRKT_GRP;]]></expr>
+              </Node>
+            </Node>
+            <Node id="g(8$D1?de1" name="MKTIDCTXTTYP" type="element">
+              <Node id="g(8%D1?de1" name="VALUE" type="attribute">
+                <expr><![CDATA[return "BBCOMPEXCH";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="g(85E1?de1" name="GRPPURPTYP" type="element">
+            <Node id="g(86E1?de1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "CMPOSITE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="Gu8101Hje1" name="FinancialMarketIdentifier" type="segment">
+          <Node id="Gu8201Hje1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Gu8301Hje1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+          </Node>
+          <Node id="Gu8401Hje1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Gu8501Hje1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "MKT_OID";]]></expr>
+          </Node>
+          <Node id="Gu8601Hje1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="Gu8701Hje1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("3|CONCTNS|NESTED|MRKT_GRP|", Strcat(MRKT_GRP, "|DATASRCID|ISO10383"));]]></expr>
+          </Node>
+          <Node id="Gu8C01Hje1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+          </Node>
+          <Node id="Gu8801Hje1" name="MKTID" type="element">
+            <Node id="Gu8901Hje1" name="VALUE" type="attribute">
+              <expr><![CDATA[return MRKT_GRP;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Gu8A01Hje1" name="MKTIDCTXTTYP" type="element">
+            <Node id="Gu8B01Hje1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "BBCOMPEXCH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="Ks8j81oxe1" name="DATASRCID" type="element">
+          <Node id="Ks8k81oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return SOURCE;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8l81oxe1" name="DATASTATTYP" type="element">
+          <Node id="Ks8m81oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8n81oxe1" name="ENDTMS" type="element">
+          <Node id="Ks8o81oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8p81oxe1" name="GRPDESC" type="element">
+          <Node id="Ks8q81oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Strcat(GRP_NME, " Composite");]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8r81oxe1" name="GRPNME" type="element">
+          <Node id="Ks8s81oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return GRP_NME;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8t81oxe1" name="GRPPURPTYP" type="element">
+          <Node id="Ks8u81oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "CMPOSITE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8v81oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Ks8w81oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8x81oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Ks8y81oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8z81oxe1" name="MKTGRPOID" type="element">
+          <Node id="Ks8$81oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8%81oxe1" name="MKTOID" type="element">
+          <Node id="Ks8@81oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8&amp;81oxe1" name="ORGID" type="element">
+          <Node id="Ks8*81oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8-81oxe1" name="STARTTMS" type="element">
+          <Node id="Ks8.81oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+          <Node id="Ks8/81oxe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8(81oxe1" name="SUBDIVID" type="element">
+          <Node id="Ks8)81oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8~81oxe1" name="SUBDORGID" type="element">
+          <Node id="Ks8?81oxe1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Local Exchange" id="EGA(01M%W1" name="MTGRMarketGroupParticipant" type="segment">
+        <condition id="Ks8&lt;81oxe1"><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_GRP, MRKT_GRP_PRT))
+	return "MTGRMarketGroupParticipant";
+else
+	return "";]]></condition>
+        <Node id="Ks8&gt;81oxe1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="Ks8091oxe1" name="TYPE" type="attribute">
+          <expr><![CDATA[if ((Strcmp(ACTION, "ADD") || Strcmp(ACTION, "UPDATE")) && AllHaveValue(MRKT_GRP, MRKT_GRP_PRT))
+	return "MTGRMarketGroupParticipant";
+else
+	return "";]]></expr>
+        </Node>
+        <Node displayName="ISO Market" id="Ks8191oxe1" name="FinancialMarketIdentifier" type="segment">
+          <condition id="Ks8291oxe1"><![CDATA[return "FinancialMarketIdentifier";]]></condition>
+          <Node id="Ks8391oxe1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Ks8491oxe1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "FinancialMarketIdentifier";
+]]></expr>
+          </Node>
+          <Node id="Ks8591oxe1" name="COPY_FROM" type="attribute">
+            <comment><![CDATA[GT 142673]]></comment>
+            <expr><![CDATA[return "MKT_OID,MKID_OID";]]></expr>
+          </Node>
+          <Node id="Ks8691oxe1" name="COPY_TO" type="attribute">
+            <comment><![CDATA[GT 142673]]></comment>
+            <expr><![CDATA[return "MKT_OID,MKID_OID";]]></expr>
+          </Node>
+          <Node id="Ks8791oxe1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+          </Node>
+          <Node id="Ks8891oxe1" name="DUP_CHECK" type="attribute"/>
+          <Node id="Ks8991oxe1" name="ENDDATEIND" type="attribute"/>
+          <Node id="Ks8A91oxe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="Ks8B91oxe1" name="ERROR" type="attribute"/>
+          <Node id="Ks8C91oxe1" name="LOOKUP" type="attribute"/>
+          <Node id="Ks8D91oxe1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="Ks8E91oxe1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("3|CONCTNS|NESTED|MKTIDCTXTTYP|MIC|MKTID|", Strcat(ISO_MRKT_CDE, Strcat("|ACTION|", Strcat(ACTION, "|DATASRCID|ISO10383"))));]]></expr>
+          </Node>
+          <Node id="Ks8F91oxe1" name="ONLY" type="attribute"/>
+          <Node id="Ks8G91oxe1" name="PARENT_LINK" type="attribute"/>
+          <Node id="Ks8H91oxe1" name="PUBLISH" type="attribute"/>
+          <Node id="Ks8I91oxe1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="Ks8J91oxe1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="Ks8K91oxe1" name="TRANSLATE" type="attribute"/>
+          <Node id="Ks8L91oxe1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="Ks8M91oxe1" name="TSOPTION" type="attribute"/>
+          <Node id="Ks8N91oxe1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="Ks8O91oxe1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="Ks8P91oxe1" name="DATASRCID" type="element">
+            <Node id="Ks8Q91oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return SOURCE;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8R91oxe1" name="DATASTATTYP" type="element">
+            <Node id="Ks8S91oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8T91oxe1" name="ENDTMS" type="element">
+            <Node id="Ks8U91oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8V91oxe1" name="LASTCHGTMS" type="element">
+            <Node id="Ks8W91oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8X91oxe1" name="LASTCHGUSRID" type="element">
+            <Node id="Ks8Y91oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8Z91oxe1" name="MKIDOID" type="element">
+            <Node id="Ks8a91oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8b91oxe1" name="MKTID" type="element">
+            <Node id="Ks8c91oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return VENDOR_EXCH;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8d91oxe1" name="MKTIDCTXTTYP" type="element">
+            <Node id="Ks8e91oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return VENDOR_CONTEXT;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8f91oxe1" name="MKTOID" type="element">
+            <Node id="Ks8g91oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8h91oxe1" name="STARTTMS" type="element">
+            <Node id="Ks8i91oxe1" name="VALUE" type="attribute"/>
+            <Node id="Ks8j91oxe1" name="INSERT_ONLY" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName="Composite Exchange" id="Ks8k91oxe1" name="MarketGroup" type="segment">
+          <Node id="Ks8l91oxe1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="Ks8m91oxe1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "MarketGroup";]]></expr>
+          </Node>
+          <Node id="Ks8n91oxe1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "MKT_GRP_OID";]]></expr>
+          </Node>
+          <Node id="Ks8o91oxe1" name="COPY_TO" type="attribute">
+            <comment><![CDATA[GT142669]]></comment>
+            <expr><![CDATA[return "PRNT_MKT_GRP_OID";]]></expr>
+          </Node>
+          <Node id="Ks8p91oxe1" name="DUP_CHECK" type="attribute"/>
+          <Node id="Ks8q91oxe1" name="ENDDATEIND" type="attribute"/>
+          <Node id="Ks8r91oxe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="Ks8s91oxe1" name="ERROR" type="attribute"/>
+          <Node id="Ks8t91oxe1" name="LOOKUP" type="attribute"/>
+          <Node id="Ks8u91oxe1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "MTGR_MATCH_1";]]></expr>
+          </Node>
+          <Node id="Ks8v91oxe1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="Ks8w91oxe1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("3|CONCTNS|NESTED|GRP_NME|", Strcat(GRP_NME, "|DATASRCID|ISO10383"));]]></expr>
+          </Node>
+          <Node id="Ks8x91oxe1" name="ONLY" type="attribute"/>
+          <Node id="Ks8y91oxe1" name="PARENT_LINK" type="attribute"/>
+          <Node id="Ks8z91oxe1" name="PUBLISH" type="attribute"/>
+          <Node id="Ks8$91oxe1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="Ks8%91oxe1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="Ks8@91oxe1" name="TRANSLATE" type="attribute"/>
+          <Node id="Ks8&amp;91oxe1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="Ks8*91oxe1" name="TSOPTION" type="attribute"/>
+          <Node id="Ks8-91oxe1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="Ks8.91oxe1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="Ks8/91oxe1" name="DATASRCID" type="element">
+            <Node id="Ks8(91oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return SOURCE;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks8)91oxe1" name="DATASTATTYP" type="element">
+            <Node id="Ks8~91oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8?91oxe1" name="ENDTMS" type="element">
+            <Node id="Ks8&lt;91oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8&gt;91oxe1" name="GRPDESC" type="element">
+            <Node id="Ks80A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks81A1oxe1" name="GRPNME" type="element">
+            <Node id="Ks82A1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return GRP_NME;]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks83A1oxe1" name="GRPPURPTYP" type="element">
+            <Node id="Ks84A1oxe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "CMPOSITE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="Ks85A1oxe1" name="LASTCHGTMS" type="element">
+            <Node id="Ks86A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks87A1oxe1" name="LASTCHGUSRID" type="element">
+            <Node id="Ks88A1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks89A1oxe1" name="MKTGRPOID" type="element">
+            <Node id="Ks8AA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8BA1oxe1" name="MKTOID" type="element">
+            <Node id="Ks8CA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8DA1oxe1" name="ORGID" type="element">
+            <Node id="Ks8EA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8FA1oxe1" name="STARTTMS" type="element">
+            <Node id="Ks8GA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8HA1oxe1" name="SUBDIVID" type="element">
+            <Node id="Ks8IA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Ks8JA1oxe1" name="SUBDORGID" type="element">
+            <Node id="Ks8KA1oxe1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node displayName="Composite Exchange" id="P&amp;7101xSO1" name="FinancialMarket" type="segment">
+            <Node id="P&amp;7201xSO1" name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node id="P&amp;7301xSO1" name="TYPE" type="attribute">
+              <expr><![CDATA[return "FinancialMarket";]]></expr>
+            </Node>
+            <Node id="P&amp;7401xSO1" name="COPY_FROM" type="attribute">
+              <expr><![CDATA[return "MKT_OID";]]></expr>
+            </Node>
+            <Node id="P&amp;7501xSO1" name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "MKT_OID";]]></expr>
+            </Node>
+            <Node id="P&amp;7601xSO1" name="MATCH" type="attribute">
+              <expr><![CDATA[return "MRKT_MATCH_1";]]></expr>
+            </Node>
+            <Node id="P&amp;7701xSO1" name="NESTED_ERR_LVL" type="attribute">
+              <expr><![CDATA[return "ERROR";]]></expr>
+            </Node>
+            <Node id="P&amp;7801xSO1" name="NESTED_ERR_TXT" type="attribute">
+              <expr><![CDATA[return Strcat("3|CONCTNS|NESTED|GRP_NME|", Strcat(GRP_NME, "|DATASRCID|ISO10383"));]]></expr>
+            </Node>
+            <Node id="P&amp;7901xSO1" name="MKTNME" type="element">
+              <Node id="P&amp;7A01xSO1" name="VALUE" type="attribute">
+                <expr><![CDATA[return StrTrimRight(GRP_NME);]]></expr>
+              </Node>
+            </Node>
+            <Node id="P&amp;7B01xSO1" name="GUID" type="element">
+              <Node id="P&amp;7C01xSO1" name="VALUE" type="attribute">
+                <expr><![CDATA[if (Strcmp(CNTRY_CDE, "ZZ"))
+	return "UNKNOWN";
+else if (Strcmp(CNTRY_CDE, ""))
+	return "UNKNOWN";
+else if (Strcmp(MRKT_GRP, "EO"))
+	return "GB";
+else
+	return CNTRY_CDE;]]></expr>
+              </Node>
+            </Node>
+            <Node id="s2A101zqW1" name="DATASRCID" type="element">
+              <Node id="s2A201zqW1" name="VALUE" type="attribute">
+                <expr><![CDATA[return SOURCE;]]></expr>
+              </Node>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="Ks8LA1oxe1" name="DATASRCID" type="element">
+          <Node id="Ks8MA1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return SOURCE;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8NA1oxe1" name="DATASTATTYP" type="element">
+          <Node id="Ks8OA1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8PA1oxe1" name="ENDTMS" type="element">
+          <Node id="Ks8QA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8RA1oxe1" name="LASTCHGTMS" type="element">
+          <Node id="Ks8SA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8TA1oxe1" name="LASTCHGUSRID" type="element">
+          <Node id="Ks8UA1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GSFD_MKT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8VA1oxe1" name="MKTGRPOID" type="element">
+          <Node id="Ks8WA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8XA1oxe1" name="MKTOID" type="element">
+          <Node id="Ks8YA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8ZA1oxe1" name="MTGPOID" type="element">
+          <Node id="Ks8aA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8bA1oxe1" name="PARTCAMT" type="element">
+          <Node id="Ks8cA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8dA1oxe1" name="PARTCPCT" type="element">
+          <Node id="Ks8eA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8fA1oxe1" name="PARTCURRCDE" type="element">
+          <Node id="Ks8gA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8hA1oxe1" name="PRNTMKTGRPOID" type="element">
+          <Node id="Ks8iA1oxe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Ks8jA1oxe1" name="PRTDESC" type="element">
+          <Node id="Ks8kA1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return MRKT_GRP_PRT;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8lA1oxe1" name="PRTPURPTYP" type="element">
+          <Node id="Ks8mA1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "EXCHANGE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Ks8nA1oxe1" name="STARTTMS" type="element">
+          <Node id="Ks8oA1oxe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+          <Node id="Ks8pA1oxe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

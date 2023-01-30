@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations cleanUnusedFields="false" nameSpace="POINT72">
+  <ruleConfigurations>
+    <rule category="SPEL" desc="Default Merger Acquisition Deal Type to MAA" disConfig="N" disParentConfig="N" entityId="CABEBASE00000000" id="++8vLchmhG5640Cv" name="P72DefaultMergerAcquisitionDealType" nameSpace="POINT72" partId="0080IWiAmICHO003" severity="20" type="ALL"><![CDATA[var gs_entity= root;  
+ if( (#gs_entity.getSingleValue('EventSummary.MergerAcquisitionDealType') == null)) 
+ {var eventSummary = #gs_entity.getSingleValue('EventSummary'), #eventSummary.setValue('MergerAcquisitionDealType','MAA') 
+ } 
+  else 
+ {} 
+]]>
+      <ruleConfig><![CDATA[{"ruleName":"P72DefaultMergerAcquisitionDealType","nodes":[{"nodeType":"IF_LOOP","type":"IF_LOOP","ifCondition":{"children":[{"leftCondition":{"className":"RECORD","returnClassName":"STRING","constructorCall":false,"methodIdentifier":"getSingleValue:java.lang.String","methodName":"getSingleValue","arguments":[{"value":"EventSummary.MergerAcquisitionDealType","type":"VALUE","className":"STRING","businessField":"EventSummary.MergerAcquisitionDealType","LOOKUP":false}],"context":{"name":"gs_entity","elementType":"ENTITY_OBJECT","type":"VARIABLE"},"type":"FUNCTION_ELEMENT"},"rightCondition":{"value":null,"type":"VALUE","className":"STRING","businessField":null,"LOOKUP":false},"operator":"EQUALS","includeImplicitNull":true,"type":"SIMPLE_CONDITION"}],"operator":"AND","type":"COMPLEX_CONDITION"},"trueBody":[{"nodeType":"CONTEXT","type":"ASSIGN","variable":{"name":"eventSummary","businessField":"EventSummary","elementType":"RECORD","type":"VARIABLE"},"condition":{"className":"ENTITY_OBJECT","returnClassName":"OBJECT","constructorCall":false,"methodIdentifier":"getSingleValue:java.lang.String","methodName":"getSingleValue","arguments":[{"value":"EventSummary","type":"VALUE","className":"STRING","businessField":"EventSummary","LOOKUP":false}],"context":{"name":"gs_entity","elementType":"ENTITY_OBJECT","type":"VARIABLE"},"type":"FUNCTION_ELEMENT"},"operator":"EQUAL","isReAssign":false,"contextType":"SINGLE_DATAGROUP"},{"nodeType":"METHOD_CALL","type":"ASSIGN","condition":{"className":"RECORD","returnClassName":"OBJECT","constructorCall":false,"methodIdentifier":"setValue:java.lang.String:java.lang.Object","methodName":"setValue","arguments":[{"value":"MergerAcquisitionDealType","type":"VALUE","className":"STRING","businessField":"EventSummary.MergerAcquisitionDealType","LOOKUP":false},{"value":"MAA","type":"VALUE","className":"STRING","businessField":null,"LOOKUP":false}],"context":{"name":"eventSummary","businessField":"EventSummary","elementType":"RECORD","type":"VARIABLE"},"type":"FUNCTION_ELEMENT"},"operator":"EQUAL","isReAssign":false}],"falseBody":[]}]}]]></ruleConfig>
+      <rulemeta attrpathnme="EVENTSUMMARY" id="008vkdN0hG58405C" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrpathnme="MERGERACQUISITIONDEALTYPE" id="008vkdN0hG58405D" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="FinalMaturity.EventSummary" bdefid="FMATmmuQmICJe01B" id="008vkdN0hG58405E" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="FinalMaturity.EventSummary.MergerAcquisitionDealType" bdefid="FMATmmuQmICJe01B" id="008vkdN0hG58405F" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="SwiftBasedCorporateAction.EventSummary" bdefid="006chFHAmICJe000" id="008vkdN0hG58405V" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="SwiftBasedCorporateAction.EventSummary.MergerAcquisitionDealType" bdefid="006chFHAmICJe000" id="008vkdN0hG58405W" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="CorporateActionChange.EventSummary" bdefid="++65OVNwmICJe0Ov" id="008vkdN0hG58407K" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="CorporateActionChange.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe0Ov" id="008vkdN0hG58407L" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="FullCorporateAction.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe0NN" id="008vkdN0hG58407N" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="DecreaseInValue.EventSummary.MergerAcquisitionDealType" bdefid="++62o3gwmICJe03M" id="008vkdN0hG58407O" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="CashDistributionNonEligible.EventSummary" bdefid="++62o3gwmICJe02M" id="008vkdN0hG58407P" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="CashDistributionNonEligible.EventSummary.MergerAcquisitionDealType" bdefid="++62o3gwmICJe02M" id="008vkdN0hG58407Q" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="DividendOption.EventSummary.MergerAcquisitionDealType" bdefid="++62o3gwmICJe01c" id="008vkdN0hG58407U" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Conversion.EventSummary.MergerAcquisitionDealType" bdefid="++63bBdwmICJe07+" id="008vkdN0hG58407W" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="Merger.EventSummary" bdefid="005-U9SgmICJe038" id="008vkdN0hG58407Y" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Merger.EventSummary.MergerAcquisitionDealType" bdefid="005-U9SgmICJe038" id="008vkdN0hG58407Z" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="SecurityExchange.EventSummary.MergerAcquisitionDealType" bdefid="++62o3gwmICJe01l" id="008vkdN0hG58407o" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="WarrantExercise.EventSummary" bdefid="++65OVNwmICJe01R" id="008vkdN0hG58407p" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="WarrantExercise.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe01R" id="008vkdN0hG58407q" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="RepurchaseOffer.EventSummary" bdefid="++647dNQmICJe000" id="008vkdN0hG58407r" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="RepurchaseOffer.EventSummary.MergerAcquisitionDealType" bdefid="++647dNQmICJe000" id="008vkdN0hG58407s" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="Certification.EventSummary" bdefid="++65OVNwmICJe00u" id="008vkdN0hG58407-" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Certification.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe00u" id="008vkdN0hG58407+" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="CashDistribution.EventSummary" bdefid="++62o3gwmICJe01M" id="008vkdN0hG584081" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="CashDistribution.EventSummary.MergerAcquisitionDealType" bdefid="++62o3gwmICJe01M" id="008vkdN0hG584082" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="DividendReinvestment.EventSummary" bdefid="++62o3gwmICJe013" id="008vkdN0hG584089" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="DividendReinvestment.EventSummary.MergerAcquisitionDealType" bdefid="++62o3gwmICJe013" id="008vkdN0hG58408A" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Drawing.EventSummary.MergerAcquisitionDealType" bdefid="++62o3gwmICJe00p" id="008vkdN0hG58408G" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="DutchAuction.EventSummary" bdefid="++63bBdwmICJe014" id="008vkdN0hG58408N" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="DutchAuction.EventSummary.MergerAcquisitionDealType" bdefid="++63bBdwmICJe014" id="008vkdN0hG58408O" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="ExchangeOffer.EventSummary" bdefid="++60YPCwmICJe0B9" id="008vkdN0hG58408Q" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="ExchangeOffer.EventSummary.MergerAcquisitionDealType" bdefid="++60YPCwmICJe0B9" id="008vkdN0hG58408R" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="InstallmentCall.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe0Eq" id="008vkdN0hG58408V" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="RightsDistribution.EventSummary.MergerAcquisitionDealType" bdefid="CABESPLF00000000" id="008vkdN0hG58408W" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="InterestPayment.EventSummary" bdefid="++60YPCwmICJe07s" id="008vkdN0hG58408Z" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="InterestPayment.EventSummary.MergerAcquisitionDealType" bdefid="++60YPCwmICJe07s" id="008vkdN0hG58408a" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="SecurityDistribution.EventSummary" bdefid="005-U9SgmICJe000" id="008vkdN0hG58408q" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="SecurityDistribution.EventSummary.MergerAcquisitionDealType" bdefid="005-U9SgmICJe000" id="008vkdN0hG58408r" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="BasicCorporateAction.EventSummary.MergerAcquisitionDealType" bdefid="006AeweC2etjy005" id="008vkdN0hG58408u" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Consent.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe05q" id="008vkdN0hG584093" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Disclosure.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe07E" id="008vkdN0hG584094" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="BonusIssue.EventSummary.MergerAcquisitionDealType" bdefid="++638z4QmICJe023" id="008vkdN0hG584097" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="Meetings.EventSummary" bdefid="0061uAqC2etjy005" id="008vkdN0hG58409C" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Meetings.EventSummary.MergerAcquisitionDealType" bdefid="0061uAqC2etjy005" id="008vkdN0hG58409D" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Liquidation.EventSummary.MergerAcquisitionDealType" bdefid="++63bBdwmICJe06r" id="008vkdN0hG58409F" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="OtherVoluntaryEvents.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe0FM" id="008vkdN0hG58409P" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="Redemption.EventSummary" bdefid="++60mmuQmICJe01B" id="008vkdN0hG58409S" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Redemption.EventSummary.MergerAcquisitionDealType" bdefid="++60mmuQmICJe01B" id="008vkdN0hG58409T" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="PartialRedemption.EventSummary.MergerAcquisitionDealType" bdefid="++62o3gwmICJe04M" id="008vkdN0hG58409U" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="RightsIssue.EventSummary" bdefid="++61C9SQmICJe05I" id="008vkdN0hG58409m" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="RightsIssue.EventSummary.MergerAcquisitionDealType" bdefid="++61C9SQmICJe05I" id="008vkdN0hG58409n" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="TenderOffer.EventSummary" bdefid="++63bBdwmICJe02D" id="008vkdN0hG58409p" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="TenderOffer.EventSummary.MergerAcquisitionDealType" bdefid="++63bBdwmICJe02D" id="008vkdN0hG58409q" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="PayInKind.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe02k" id="008vkdN0hG5840Bk" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="Redenomination.EventSummary" bdefid="++65OVNwmICJe03C" id="008vkdN0hG5840Bl" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="Redenomination.EventSummary.MergerAcquisitionDealType" bdefid="++65OVNwmICJe03C" id="008vkdN0hG5840Bm" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="CABase.EventSummary" bdefid="CABEBASE00000000" id="008vkdN0hG5840Bp" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="CABase.EventSummary.MergerAcquisitionDealType" bdefid="CABEBASE00000000" id="008vkdN0hG5840Bq" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="READ" attrpathnme="CashDividend.EventSummary" bdefid="CABEDVCA00000000" id="008vkdN0hG5840Bt" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="CashDividend.EventSummary.MergerAcquisitionDealType" bdefid="CABEDVCA00000000" id="008vkdN0hG5840Bu" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+      <rulemeta attrinouttyp="ALL" attrpathnme="ExerciseRights.EventSummary.MergerAcquisitionDealType" bdefid="005-U9SgmICJe01F" id="008vkdN0hG5840CX" nameSpace="POINT72" ruleid="++8vLchmhG5640Cv"/>
+    </rule>
+  </ruleConfigurations>
+</configurations>

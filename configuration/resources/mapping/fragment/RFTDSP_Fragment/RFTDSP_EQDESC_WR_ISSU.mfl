@@ -1,0 +1,1052 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-03-03 at 12:22:20 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.27</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Warrants.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="8XE(01eQW1" name="Issue" type="segment">
+        <Node id="8XE)01eQW1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="8XE~01eQW1" name="COPY_FROM" type="attribute"/>
+        <Node id="8XE?01eQW1" name="COPY_TO" type="attribute"/>
+        <Node id="8XE&lt;01eQW1" name="DUP_CHECK" type="attribute"/>
+        <Node id="8XE&gt;01eQW1" name="ENDDATEIND" type="attribute"/>
+        <Node id="8XE011eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="8XE111eQW1" name="ERROR" type="attribute"/>
+        <Node id="8XE211eQW1" name="LOOKUP" type="attribute"/>
+        <Node id="8XE311eQW1" name="MATCH" type="attribute"/>
+        <Node id="8XE411eQW1" name="PARENT_LINK" type="attribute"/>
+        <Node id="8XE511eQW1" name="PUBLISH" type="attribute"/>
+        <Node id="8XE611eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="8XE711eQW1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="8XE811eQW1" name="TRANSLATE" type="attribute"/>
+        <Node id="8XE911eQW1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="8XEA11eQW1" name="TSOPTION" type="attribute"/>
+        <Node id="8XEB11eQW1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="8XEC11eQW1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "Issue";]]></expr>
+        </Node>
+        <Node id="8XED11eQW1" name="IssuerIdentifier" type="segment">
+          <Node id="8XEE11eQW1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="8XEF11eQW1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "INSTR_ISSR_ID";]]></expr>
+          </Node>
+          <Node id="8XEG11eQW1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "IRID1_IDCTXT_ISSR_ID";]]></expr>
+          </Node>
+          <Node id="8XEH11eQW1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+          </Node>
+          <Node id="8XEI11eQW1" name="ISSRID" type="element">
+            <Node id="8XEJ11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEK11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEL11eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return Issuer_OrgID;]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEM11eQW1" name="ISSRIDCTXTTYP" type="element">
+            <Node id="8XEN11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEO11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEP11eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "RTORGLID";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="ISIN" id="8XEQ11eQW1" name="IssueIdentifier" type="segment">
+          <condition id="8XER11eQW1"><![CDATA[if (OneHasValue(ISIN__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="8XES11eQW1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="8XET11eQW1" name="COPY_FROM" type="attribute"/>
+          <Node id="8XEU11eQW1" name="COPY_TO" type="attribute"/>
+          <Node id="8XEV11eQW1" name="DUP_CHECK" type="attribute"/>
+          <Node id="8XEW11eQW1" name="ENDDATEIND" type="attribute"/>
+          <Node id="8XEX11eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="8XEY11eQW1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="8XEZ11eQW1" name="LOOKUP" type="attribute"/>
+          <Node id="8XEa11eQW1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node id="8XEb11eQW1" name="PARENT_LINK" type="attribute"/>
+          <Node id="8XEc11eQW1" name="PUBLISH" type="attribute"/>
+          <Node id="8XEd11eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="8XEe11eQW1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="8XEf11eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEg11eQW1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="8XEh11eQW1" name="TSOPTION" type="attribute"/>
+          <Node id="8XEi11eQW1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="8XEj11eQW1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="8XEk11eQW1" name="DATASRCID" type="element">
+            <Node id="8XEl11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEm11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEn11eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEo11eQW1" name="DATASTATTYP" type="element">
+            <Node id="8XEp11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEq11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEr11eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEs11eQW1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="8XEt11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEu11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEv11eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEw11eQW1" name="IDCTXTTYP" type="element">
+            <Node id="8XEx11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEy11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEz11eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ISIN";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XE$11eQW1" name="INSTRID" type="element">
+            <Node id="8XE%11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE@11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE&amp;11eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE*11eQW1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="8XE-11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE.11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE/11eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE(11eQW1" name="ISIDOID" type="element">
+            <Node id="8XE)11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE~11eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE?11eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE&lt;11eQW1" name="ISSID" type="element">
+            <Node id="8XE&gt;11eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE021eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE121eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return ISIN__Previous;
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XE221eQW1" name="ISSUSAGETYP" type="element">
+            <Node id="8XE321eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE421eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE521eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE621eQW1" name="LASTCHGTMS" type="element">
+            <Node id="8XE721eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE821eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE921eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEA21eQW1" name="LASTCHGUSRID" type="element">
+            <Node id="8XEB21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEC21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XED21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEE21eQW1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="8XEF21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEG21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEH21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEI21eQW1" name="MKTID" type="element">
+            <Node id="8XEJ21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEK21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEL21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEM21eQW1" name="MKTIDCTXTTYP" type="element">
+            <Node id="8XEN21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEO21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEP21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEQ21eQW1" name="MKTNME" type="element">
+            <Node id="8XER21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XES21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XET21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEU21eQW1" name="MKTOID" type="element">
+            <Node id="8XEV21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEW21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEX21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEY21eQW1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="8XEZ21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEa21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEb21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEc21eQW1" name="STARTTMS" type="element">
+            <Node id="8XEd21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEe21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEf21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEg21eQW1" name="TRADERSYMBOLIND" type="element">
+            <Node id="8XEh21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEi21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEj21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEk21eQW1" name="TRDNGCURRCDE" type="element">
+            <Node id="8XEl21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEm21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEn21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName="CUSIP" id="8XEo21eQW1" name="IssueIdentifier" type="segment">
+          <condition id="8XEp21eQW1"><![CDATA[if ( OneHasValue(CUSIP__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="8XEq21eQW1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="8XEr21eQW1" name="COPY_FROM" type="attribute"/>
+          <Node id="8XEs21eQW1" name="COPY_TO" type="attribute"/>
+          <Node id="8XEt21eQW1" name="DUP_CHECK" type="attribute"/>
+          <Node id="8XEu21eQW1" name="ENDDATEIND" type="attribute"/>
+          <Node id="8XEv21eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="8XEw21eQW1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="8XEx21eQW1" name="LOOKUP" type="attribute"/>
+          <Node id="8XEy21eQW1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node id="8XEz21eQW1" name="PARENT_LINK" type="attribute"/>
+          <Node id="8XE$21eQW1" name="PUBLISH" type="attribute"/>
+          <Node id="8XE%21eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="8XE@21eQW1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="8XE&amp;21eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE*21eQW1" name="TSOPTION" type="attribute"/>
+          <Node id="8XE-21eQW1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="8XE.21eQW1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="8XE/21eQW1" name="DATASRCID" type="element">
+            <Node id="8XE(21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE)21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE~21eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE?21eQW1" name="DATASTATTYP" type="element">
+            <Node id="8XE&lt;21eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE&gt;21eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE031eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XE131eQW1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="8XE231eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE331eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE431eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE531eQW1" name="IDCTXTTYP" type="element">
+            <Node id="8XE631eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE731eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE831eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "CUSIP";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XE931eQW1" name="INSTRID" type="element">
+            <Node id="8XEA31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEB31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEC31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XED31eQW1" name="ISIDOID" type="element">
+            <Node id="8XEE31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEF31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEG31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEH31eQW1" name="ISSID" type="element">
+            <Node id="8XEI31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEJ31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEK31eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return CUSIP__Previous;]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEL31eQW1" name="ISSUSAGETYP" type="element">
+            <Node id="8XEM31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEN31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEO31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEP31eQW1" name="LASTCHGTMS" type="element">
+            <Node id="8XEQ31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XER31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XES31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XET31eQW1" name="LASTCHGUSRID" type="element">
+            <Node id="8XEU31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEV31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEW31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEX31eQW1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="8XEY31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEZ31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEa31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEb31eQW1" name="MKTID" type="element">
+            <Node id="8XEc31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEd31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEe31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEf31eQW1" name="MKTIDCTXTTYP" type="element">
+            <Node id="8XEg31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEh31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEi31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEj31eQW1" name="MKTNME" type="element">
+            <Node id="8XEk31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEl31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEm31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEn31eQW1" name="MKTOID" type="element">
+            <Node id="8XEo31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEp31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEq31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEr31eQW1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="8XEs31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEt31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEu31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEv31eQW1" name="TRADERSYMBOLIND" type="element">
+            <Node id="8XEw31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEx31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEy31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEz31eQW1" name="TRDNGCURRCDE" type="element">
+            <Node id="8XE$31eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE%31eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE@31eQW1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName="PILC" id="8XE&amp;31eQW1" name="IssueIdentifier" type="segment">
+          <condition id="8XE*31eQW1"><![CDATA[if (OneHasValue(PILC__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="8XE-31eQW1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";
+]]></expr>
+          </Node>
+          <Node id="8XE.31eQW1" name="COPY_FROM" type="attribute"/>
+          <Node id="8XE/31eQW1" name="COPY_TO" type="attribute"/>
+          <Node id="8XE(31eQW1" name="DUP_CHECK" type="attribute"/>
+          <Node id="8XE)31eQW1" name="ENDDATEIND" type="attribute"/>
+          <Node id="8XE~31eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="8XE?31eQW1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="8XE&lt;31eQW1" name="LOOKUP" type="attribute"/>
+          <Node id="8XE&gt;31eQW1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";	
+]]></expr>
+          </Node>
+          <Node id="8XE041eQW1" name="PARENT_LINK" type="attribute"/>
+          <Node id="8XE141eQW1" name="PUBLISH" type="attribute"/>
+          <Node id="8XE241eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="8XE341eQW1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="8XE441eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE541eQW1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="8XE641eQW1" name="TSOPTION" type="attribute"/>
+          <Node id="8XE741eQW1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="8XE841eQW1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="8XE941eQW1" name="DATASRCID" type="element">
+            <Node id="8XEA41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEB41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEC41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XED41eQW1" name="DATASTATTYP" type="element">
+            <Node id="8XEE41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEF41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEG41eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEH41eQW1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="8XEI41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEJ41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEK41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEL41eQW1" name="IDCTXTTYP" type="element">
+            <Node id="8XEM41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEN41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEO41eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "PILC";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEP41eQW1" name="INSTRID" type="element">
+            <Node id="8XEQ41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XER41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XES41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XET41eQW1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="8XEU41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEV41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEW41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEX41eQW1" name="ISIDOID" type="element">
+            <Node id="8XEY41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEZ41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEa41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEb41eQW1" name="ISSID" type="element">
+            <Node id="8XEc41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEd41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEe41eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return PILC__Previous;
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEf41eQW1" name="ISSUSAGETYP" type="element">
+            <Node id="8XEg41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEh41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEi41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEj41eQW1" name="LASTCHGTMS" type="element">
+            <Node id="8XEk41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEl41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEm41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEn41eQW1" name="LASTCHGUSRID" type="element">
+            <Node id="8XEo41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEp41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEq41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEr41eQW1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="8XEs41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEt41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEu41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEv41eQW1" name="MKTID" type="element">
+            <Node id="8XEw41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEx41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEy41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEz41eQW1" name="MKTIDCTXTTYP" type="element">
+            <Node id="8XE$41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE%41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE@41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE&amp;41eQW1" name="MKTNME" type="element">
+            <Node id="8XE*41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE-41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE.41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE/41eQW1" name="MKTOID" type="element">
+            <Node id="8XE(41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE)41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE~41eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE?41eQW1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="8XE&lt;41eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE&gt;41eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE051eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE151eQW1" name="TRADERSYMBOLIND" type="element">
+            <Node id="8XE251eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE351eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE451eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE551eQW1" name="TRDNGCURRCDE" type="element">
+            <Node id="8XE651eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE751eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE851eQW1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName=" IssuePermID" id="8XE951eQW1" name="IssueIdentifier" type="segment">
+          <condition id="8XEA51eQW1"><![CDATA[if (OneHasValue(Issue_Perm_ID__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="8XEB51eQW1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="8XEC51eQW1" name="COPY_FROM" type="attribute"/>
+          <Node id="8XED51eQW1" name="COPY_TO" type="attribute"/>
+          <Node id="8XEE51eQW1" name="DUP_CHECK" type="attribute"/>
+          <Node id="8XEF51eQW1" name="ENDDATEIND" type="attribute"/>
+          <Node id="8XEG51eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="8XEH51eQW1" name="LOOKUP" type="attribute"/>
+          <Node id="8XEI51eQW1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";
+]]></expr>
+          </Node>
+          <Node id="8XEJ51eQW1" name="PARENT_LINK" type="attribute"/>
+          <Node id="8XEK51eQW1" name="PUBLISH" type="attribute"/>
+          <Node id="8XEL51eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="8XEM51eQW1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="8XEN51eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEO51eQW1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="8XEP51eQW1" name="TSOPTION" type="attribute"/>
+          <Node id="8XEQ51eQW1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="8XER51eQW1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="KL7mC10Em1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="8XES51eQW1" name="DATASRCID" type="element">
+            <Node id="8XET51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEU51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEV51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEW51eQW1" name="DATASTATTYP" type="element">
+            <Node id="8XEX51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEY51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEZ51eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEa51eQW1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="8XEb51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEc51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEd51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEe51eQW1" name="IDCTXTTYP" type="element">
+            <Node id="8XEf51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEg51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEh51eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ISSUEPERMID";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEi51eQW1" name="INSTRID" type="element">
+            <Node id="8XEj51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEk51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEl51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEm51eQW1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="8XEn51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEo51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEp51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEq51eQW1" name="ISIDOID" type="element">
+            <Node id="8XEr51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEs51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEt51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEu51eQW1" name="ISSID" type="element">
+            <Node id="8XEv51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEw51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEx51eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return Issue_Perm_ID__Previous;
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEy51eQW1" name="ISSUSAGETYP" type="element">
+            <Node id="8XEz51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE$51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE%51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE@51eQW1" name="LASTCHGTMS" type="element">
+            <Node id="8XE&amp;51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE*51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE-51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE.51eQW1" name="LASTCHGUSRID" type="element">
+            <Node id="8XE/51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE(51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE)51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE~51eQW1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="8XE?51eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE&lt;51eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE&gt;51eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE061eQW1" name="MKTID" type="element">
+            <Node id="8XE161eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE261eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE361eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE461eQW1" name="MKTIDCTXTTYP" type="element">
+            <Node id="8XE561eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE661eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE761eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE861eQW1" name="MKTNME" type="element">
+            <Node id="8XE961eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEA61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEB61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEC61eQW1" name="MKTOID" type="element">
+            <Node id="8XED61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEE61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEF61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEG61eQW1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="8XEH61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEI61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEJ61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEK61eQW1" name="TRADERSYMBOLIND" type="element">
+            <Node id="8XEL61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEM61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEN61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEO61eQW1" name="TRDNGCURRCDE" type="element">
+            <Node id="8XEP61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEQ61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XER61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName="Asset ID" id="8XES61eQW1" name="IssueIdentifier" type="segment">
+          <condition id="8XET61eQW1"><![CDATA[if (OneHasValue(Asset_ID__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <sort disabled="1" id="8XEU61eQW1" order="ASC"/>
+          <Node id="8XEV61eQW1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="8XEW61eQW1" name="COPY_FROM" type="attribute"/>
+          <Node id="8XEX61eQW1" name="COPY_TO" type="attribute"/>
+          <Node id="8XEY61eQW1" name="DUP_CHECK" type="attribute"/>
+          <Node id="8XEZ61eQW1" name="ENDDATEIND" type="attribute"/>
+          <Node id="8XEa61eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="8XEb61eQW1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="8XEc61eQW1" name="LOOKUP" type="attribute"/>
+          <Node id="8XEd61eQW1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";	
+]]></expr>
+          </Node>
+          <Node id="8XEe61eQW1" name="PARENT_LINK" type="attribute"/>
+          <Node id="8XEf61eQW1" name="PUBLISH" type="attribute"/>
+          <Node id="8XEg61eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="8XEh61eQW1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="8XEi61eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEj61eQW1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="8XEk61eQW1" name="TSOPTION" type="attribute"/>
+          <Node id="8XEl61eQW1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="8XEm61eQW1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="8XEn61eQW1" name="DATASRCID" type="element">
+            <Node id="8XEo61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEp61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEq61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEr61eQW1" name="DATASTATTYP" type="element">
+            <Node id="8XEs61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEt61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEu61eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XEv61eQW1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="8XEw61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEx61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEy61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEz61eQW1" name="IDCTXTTYP" type="element">
+            <Node id="8XE$61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE%61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE@61eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "RTASSET";]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XE&amp;61eQW1" name="INSTRID" type="element">
+            <Node id="8XE*61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE-61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE.61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE/61eQW1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="8XE(61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE)61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE~61eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE?61eQW1" name="ISIDOID" type="element">
+            <Node id="8XE&lt;61eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE&gt;61eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE071eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE171eQW1" name="ISSID" type="element">
+            <Node id="8XE271eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE371eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE471eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return Asset_ID__Previous;
+
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="8XE571eQW1" name="ISSUSAGETYP" type="element">
+            <Node id="8XE671eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XE771eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XE871eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XE971eQW1" name="LASTCHGTMS" type="element">
+            <Node id="8XEA71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEB71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEC71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XED71eQW1" name="LASTCHGUSRID" type="element">
+            <Node id="8XEE71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEF71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEG71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEH71eQW1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="8XEI71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEJ71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEK71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEL71eQW1" name="MKTID" type="element">
+            <Node id="8XEM71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEN71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEO71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEP71eQW1" name="MKTIDCTXTTYP" type="element">
+            <Node id="8XEQ71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XER71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XES71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XET71eQW1" name="MKTNME" type="element">
+            <Node id="8XEU71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEV71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEW71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEX71eQW1" name="MKTOID" type="element">
+            <Node id="8XEY71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEZ71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEa71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEb71eQW1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="8XEc71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEd71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEe71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEf71eQW1" name="TRADERSYMBOLIND" type="element">
+            <Node id="8XEg71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEh71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEi71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="8XEj71eQW1" name="TRDNGCURRCDE" type="element">
+            <Node id="8XEk71eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="8XEl71eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="8XEm71eQW1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="8XEn71eQW1" name="ACCESSAUTHTYP" type="element">
+          <Node id="8XEo71eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEp71eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEq71eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "PUBLIC";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XEr71eQW1" name="CLTYP" type="element">
+          <Node id="8XEs71eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEt71eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEu71eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEv71eQW1" name="DATASRCID" type="element">
+          <Node id="8XEw71eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEx71eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEy71eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEz71eQW1" name="DATASTATTYP" type="element">
+          <Node id="8XE$71eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE%71eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE@71eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XE&amp;71eQW1" name="DECPRECNUM" type="element">
+          <Node id="8XE*71eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE-71eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE.71eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE/71eQW1" name="DENOMCURRCDE" type="element">
+          <Node id="8XE(71eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE)71eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE~71eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE?71eQW1" name="DFLTSTATTYP" type="element">
+          <Node id="8XE&lt;71eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE&gt;71eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE081eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE181eQW1" name="DFLTTMS" type="element">
+          <Node id="8XE281eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE381eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE481eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE581eQW1" name="DISTRIBUTIONCURRCDE" type="element">
+          <Node id="8XE681eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE781eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE881eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE981eQW1" name="DLVIND" type="element">
+          <Node id="8XEA81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEB81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEC81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XED81eQW1" name="DLVREASCDE" type="element">
+          <Node id="8XEE81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEF81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEG81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEH81eQW1" name="EISTOID" type="element">
+          <Node id="8XEI81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEJ81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEK81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEL81eQW1" name="ENDTMS" type="element">
+          <Node id="8XEM81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEN81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEO81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEP81eQW1" name="EUROCNVRTYP" type="element">
+          <Node id="8XEQ81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XER81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XES81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XET81eQW1" name="INCBASTYP" type="element">
+          <Node id="8XEU81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEV81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEW81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEX81eQW1" name="INDIVCERTIFIND" type="element">
+          <Node id="8XEY81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEZ81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEa81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEb81eQW1" name="INSTRID" type="element">
+          <Node id="8XEc81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEd81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEe81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEf81eQW1" name="INSTRISSRID" type="element">
+          <Node id="8XEg81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEh81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEi81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEj81eQW1" name="ISCDOID" type="element">
+          <Node id="8XEk81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEl81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEm81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEn81eQW1" name="ISSACTVYSTATREASTYP" type="element">
+          <Node id="8XEo81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEp81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEq81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEr81eQW1" name="ISSACTVYSTATTYP" type="element">
+          <Node id="8XEs81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEt81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEu81eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (Strcmp(Asset_Status, "1"))
+	return "ACTIVE";
+else
+	return "INACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XEv81eQW1" name="ISSALPHSRCHTXT" type="element">
+          <Node id="8XEw81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEx81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEy81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEz81eQW1" name="ISSOBJTYP" type="element">
+          <Node id="8XE$81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE%81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE@81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE&amp;81eQW1" name="ISSRATETXT" type="element">
+          <Node id="8XE*81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE-81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE.81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE/81eQW1" name="ISSRID" type="element">
+          <Node id="8XE(81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE)81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE~81eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE?81eQW1" name="ISSRIDCTXTTYP" type="element">
+          <Node id="8XE&lt;81eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE&gt;81eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE091eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE191eQW1" name="ISSTMS" type="element">
+          <Node id="8XE291eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE391eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE491eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if ((IsFieldDeleted(Warrant_Issue_Date) && Strcmp(Warrant_Issue_Date__Change_Flag, "Y")) && OneHasValue(Warrant_Issue_Date__Previous))
+	return Warrant_Issue_Date;
+else
+	return Transform2FTIDate(Warrant_Issue_Date, "YYYYMMDD");]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XE591eQW1" name="ISSTYP" type="element">
+          <Node id="8XE691eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE791eQW1" name="TRANSLATE" type="attribute">
+            <expr><![CDATA[return "YES";]]></expr>
+          </Node>
+          <Node id="8XE891eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Refinitiv_Classification_Scheme))
+	if (Strcmp(Refinitiv_Classification_Scheme, "CFD"))
+		return "MISC";
+	else
+		return Refinitiv_Classification_Scheme;
+else
+	return Asset_Category;]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XE991eQW1" name="ISSUTCQTY" type="element">
+          <Node id="8XEA91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEB91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEC91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XED91eQW1" name="ISSUTMEASTYP" type="element">
+          <Node id="8XEE91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEF91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEG91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEH91eQW1" name="LASTCHGTMS" type="element">
+          <Node id="8XEI91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEJ91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEK91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEL91eQW1" name="LASTCHGUSRID" type="element">
+          <Node id="8XEM91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEN91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEO91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEP91eQW1" name="LIQUIDRIGHTRANKTYP" type="element">
+          <Node id="8XEQ91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XER91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XES91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XET91eQW1" name="MATEXPTMS" type="element">
+          <Node id="8XEU91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEV91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEW91eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if ((IsFieldDeleted(Expiration_Date) && Strcmp(Expiration_Date__Change_Flag, "Y")) && OneHasValue(Expiration_Date__Previous))
+	return Expiration_Date;
+else
+	return Transform2FTIDate(Expiration_Date, "YYYYMMDD");]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XEX91eQW1" name="MKTINDXDEFID" type="element">
+          <Node id="8XEY91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEZ91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEa91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEb91eQW1" name="MONITORRESTRICTIONCDE" type="element">
+          <Node id="8XEc91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEd91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEe91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEf91eQW1" name="NOMVALUNITCAMT" type="element">
+          <Node id="8XEg91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEh91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEi91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEj91eQW1" name="PARTFULLPDTYP" type="element">
+          <Node id="8XEk91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEl91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEm91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEn91eQW1" name="PARVALUETYP" type="element">
+          <Node id="8XEo91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEp91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEq91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEr91eQW1" name="PRCMLTPLRCRTE" type="element">
+          <Node id="8XEs91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEt91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEu91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEv91eQW1" name="PRCQTMETHTYP" type="element">
+          <Node id="8XEw91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEx91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEy91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEz91eQW1" name="PREFIDCTXTTYP" type="element">
+          <Node id="8XE$91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE%91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE@91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE&amp;91eQW1" name="PREFISSDESC" type="element">
+          <Node id="8XE*91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE-91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE.91eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Security_Long_Description;]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XE/91eQW1" name="PREFISSID" type="element">
+          <Node id="8XE(91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE)91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE~91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE?91eQW1" name="PREFISSNME" type="element">
+          <Node id="8XE&lt;91eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE&gt;91eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE0A1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Security_Description;]]></expr>
+          </Node>
+        </Node>
+        <Node id="8XE1A1eQW1" name="PRINBASTYP" type="element">
+          <Node id="8XE2A1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE3A1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE4A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE5A1eQW1" name="PRINNOTLIND" type="element">
+          <Node id="8XE6A1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XE7A1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XE8A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XE9A1eQW1" name="SECFORMTYP" type="element">
+          <Node id="8XEAA1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEBA1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XECA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEDA1eQW1" name="SERIESTYP" type="element">
+          <Node id="8XEEA1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEFA1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEGA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEHA1eQW1" name="STARTTMS" type="element">
+          <Node id="8XEIA1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEJA1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEKA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XELA1eQW1" name="TRDGRSTTYP" type="element">
+          <Node id="8XEMA1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XENA1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEOA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEPA1eQW1" name="TYPEARNFORLIFECDE" type="element">
+          <Node id="8XEQA1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XERA1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XESA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XETA1eQW1" name="WHENISSUEDIND" type="element">
+          <Node id="8XEUA1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEVA1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEWA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEXA1eQW1" name="WTHHLDTAXIND" type="element">
+          <Node id="8XEYA1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEZA1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEaA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8XEbA1eQW1" name="WTHHLDTAXLEVIEDSRCIND" type="element">
+          <Node id="8XEcA1eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8XEdA1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="8XEeA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

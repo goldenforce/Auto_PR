@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">8.99.4.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-07-26 at 11:53:36 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.29</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="EU Short Sell Eligible" id="uK8G01j&gt;81" name="IssueRegulatoryCharacteristics" type="segment">
+        <condition id="uK8J01j&gt;81"><![CDATA[if (OneHasValue(EU_Short_Sell_Eligible,EU_Short_Sell_Eligible__Previous))
+	return "IssueRegulatoryCharacteristics";
+else
+	return "";]]></condition>
+        <Node id="uK8K01j&gt;81" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="uK8L01j&gt;81" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueRegulatoryCharacteristics";]]></expr>
+        </Node>
+        <Node id="uK8M01j&gt;81" name="GeographicUnit" type="segment">
+          <Node id="uK8N01j&gt;81" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="uK8O01j&gt;81" name="TYPE" type="attribute">
+            <expr><![CDATA[return "GeographicUnit";]]></expr>
+          </Node>
+          <Node id="uK8P01j&gt;81" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "PRNT_GU_CNT,PRNT_GU_ID,PRNT_GU_TYP";]]></expr>
+          </Node>
+          <Node id="uK8Q01j&gt;81" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "GU_CNT,GU_ID,GU_TYP";]]></expr>
+          </Node>
+          <Node id="uK8R01j&gt;81" name="DUP_CHECK" type="attribute"/>
+          <Node id="uK8S01j&gt;81" name="ENDDATEIND" type="attribute"/>
+          <Node id="uK8T01j&gt;81" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="uK8U01j&gt;81" name="ERROR" type="attribute"/>
+          <Node id="uK8V01j&gt;81" name="MATCH" type="attribute"/>
+          <Node id="uK8W01j&gt;81" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="uK8X01j&gt;81" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("11|CONCTNS|NESTED|PRNTGUTYP|REGION|PRNTGUID|EU", "|DATASRCID|RFTDSP");]]></expr>
+          </Node>
+          <Node id="uK8Y01j&gt;81" name="ONLY" type="attribute"/>
+          <Node id="uK8Z01j&gt;81" name="PARENT_LINK" type="attribute"/>
+          <Node id="uK8a01j&gt;81" name="PUBLISH" type="attribute"/>
+          <Node id="uK8b01j&gt;81" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="uK8c01j&gt;81" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="uK8d01j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8e01j&gt;81" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="uK8f01j&gt;81" name="TSOPTION" type="attribute"/>
+          <Node id="uK8g01j&gt;81" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="uK8h01j&gt;81" name="TSTOLERANCE" type="attribute"/>
+          <Node id="uK8i01j&gt;81" name="CALID" type="element">
+            <Node id="uK8j01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8k01j&gt;81" name="CITYCDE" type="element">
+            <Node id="uK8l01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8m01j&gt;81" name="CITYCDETYP" type="element">
+            <Node id="uK8n01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8o01j&gt;81" name="CITYNME" type="element">
+            <Node id="uK8p01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8q01j&gt;81" name="CNTRYCDE" type="element">
+            <Node id="uK8r01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8s01j&gt;81" name="CNTRYSUBDIVCDE" type="element">
+            <Node id="uK8t01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8u01j&gt;81" name="CNTYCDE" type="element">
+            <Node id="uK8v01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8w01j&gt;81" name="CNTYCDETYP" type="element">
+            <Node id="uK8x01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8y01j&gt;81" name="CNTYNME" type="element">
+            <Node id="uK8z01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8$01j&gt;81" name="CONTINENTCDE" type="element">
+            <Node id="uK8%01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8@01j&gt;81" name="CROSSREFID" type="element">
+            <Node id="uK8&amp;01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8*01j&gt;81" name="CSDPERMITIND" type="element">
+            <Node id="uK8-01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8.01j&gt;81" name="DATASRCID" type="element">
+            <Node id="uK8/01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8(01j&gt;81" name="DATASTATTYP" type="element">
+            <Node id="uK8)01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8~01j&gt;81" name="ENDTMS" type="element">
+            <Node id="uK8?01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8&lt;01j&gt;81" name="GUCNT" type="element">
+            <Node id="uK8&gt;01j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8011j&gt;81" name="GUDESC" type="element">
+            <Node id="uK8111j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8211j&gt;81" name="GUID" type="element">
+            <Node id="uK8311j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8411j&gt;81" name="GUNME" type="element">
+            <Node id="uK8511j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8611j&gt;81" name="GUTYP" type="element">
+            <Node id="uK8711j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8811j&gt;81" name="LASTCHGTMS" type="element">
+            <Node id="uK8911j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8A11j&gt;81" name="LASTCHGUSRID" type="element">
+            <Node id="uK8B11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8C11j&gt;81" name="LATITUDEDECDEGREENUM" type="element">
+            <Node id="uK8D11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8E11j&gt;81" name="LONGITUDEDECDEGREENUM" type="element">
+            <Node id="uK8F11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8G11j&gt;81" name="NATIONALADJECTIVALTXT" type="element">
+            <Node id="uK8H11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8I11j&gt;81" name="NLSCDE" type="element">
+            <Node id="uK8J11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8K11j&gt;81" name="POSTALCDE" type="element">
+            <Node id="uK8L11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8M11j&gt;81" name="PREFCURRCDE" type="element">
+            <Node id="uK8N11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8O11j&gt;81" name="PRNTGUCNT" type="element">
+            <Node id="uK8P11j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8Q11j&gt;81" name="PRNTGUID" type="element">
+            <Node id="uK8R11j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "EU";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8S11j&gt;81" name="PRNTGUTYP" type="element">
+            <Node id="uK8T11j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "REGION";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8U11j&gt;81" name="REGIONNME" type="element">
+            <Node id="uK8V11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8W11j&gt;81" name="STARTTMS" type="element">
+            <Node id="uK8X11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8Y11j&gt;81" name="STEPRVCDE" type="element">
+            <Node id="uK8Z11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8a11j&gt;81" name="STOPPAYIND" type="element">
+            <Node id="uK8b11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8c11j&gt;81" name="TMZTMZ" type="element">
+            <Node id="uK8d11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8e11j&gt;81" name="TOWNSHIPNME" type="element">
+            <Node id="uK8f11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="uK8g11j&gt;81" name="RGATRegulatoryAuthority" type="segment">
+          <Node id="uK8i11j&gt;81" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="uK8j11j&gt;81" name="TYPE" type="attribute">
+            <expr><![CDATA[return "RGATRegulatoryAuthority";]]></expr>
+          </Node>
+          <Node id="uK8k11j&gt;81" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "RGAT_OID";]]></expr>
+          </Node>
+          <Node id="uK8l11j&gt;81" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "RGAT_OID";]]></expr>
+          </Node>
+          <Node id="uK8m11j&gt;81" name="DUP_CHECK" type="attribute"/>
+          <Node id="uK8n11j&gt;81" name="ENDDATEIND" type="attribute"/>
+          <Node id="uK8o11j&gt;81" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="uK8p11j&gt;81" name="ERROR" type="attribute"/>
+          <Node id="uK8q11j&gt;81" name="MATCH" type="attribute">
+            <expr><![CDATA[return "RGAT_MATCH_1";]]></expr>
+          </Node>
+          <Node id="uK8r11j&gt;81" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="uK8s11j&gt;81" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("30|CONCTNS|NESTED|REGAUTHNME|", "European Securities and Markets Authority (ESMA)|DATASRCID|RFTDSP");]]></expr>
+          </Node>
+          <Node id="uK8t11j&gt;81" name="ONLY" type="attribute"/>
+          <Node id="uK8u11j&gt;81" name="PARENT_LINK" type="attribute"/>
+          <Node id="uK8v11j&gt;81" name="PUBLISH" type="attribute"/>
+          <Node id="uK8w11j&gt;81" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="uK8x11j&gt;81" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="uK8y11j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8z11j&gt;81" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="uK8$11j&gt;81" name="TSOPTION" type="attribute"/>
+          <Node id="uK8%11j&gt;81" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="uK8@11j&gt;81" name="TSTOLERANCE" type="attribute"/>
+          <Node id="uK8&amp;11j&gt;81" name="DATASRCID" type="element">
+            <Node id="uK8*11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8-11j&gt;81" name="DATASTATTYP" type="element">
+            <Node id="uK8.11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8/11j&gt;81" name="ENDTMS" type="element">
+            <Node id="uK8(11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8)11j&gt;81" name="FINSRLTYP" type="element">
+            <Node id="uK8~11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8?11j&gt;81" name="GUCNT" type="element">
+            <Node id="uK8&lt;11j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8&gt;11j&gt;81" name="GUID" type="element">
+            <Node id="uK8021j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8121j&gt;81" name="GUTYP" type="element">
+            <Node id="uK8221j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8321j&gt;81" name="INSTMNEM" type="element">
+            <Node id="uK8421j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8521j&gt;81" name="LASTCHGTMS" type="element">
+            <Node id="uK8621j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8721j&gt;81" name="LASTCHGUSRID" type="element">
+            <Node id="uK8821j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8921j&gt;81" name="LAWNME" type="element">
+            <Node id="uK8A21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8B21j&gt;81" name="REGAUTHDESC" type="element">
+            <Node id="uK8C21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8D21j&gt;81" name="REGAUTHENDDTE" type="element">
+            <Node id="uK8E21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8F21j&gt;81" name="REGAUTHNME" type="element">
+            <Node id="uK8G21j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "European Securities and Markets Authority (ESMA)";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8H21j&gt;81" name="REGAUTHSTARTDTE" type="element">
+            <Node id="uK8I21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8J21j&gt;81" name="RGATOID" type="element">
+            <Node id="uK8K21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8L21j&gt;81" name="STARTTMS" type="element">
+            <Node id="uK8M21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="uK8N21j&gt;81" name="RGRLRegulatoryRuleRequirement" type="segment">
+          <Node id="uK8P21j&gt;81" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="uK8Q21j&gt;81" name="TYPE" type="attribute">
+            <expr><![CDATA[return "RGRLRegulatoryRuleRequirement";]]></expr>
+          </Node>
+          <Node id="uK8R21j&gt;81" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "RGRL_OID";]]></expr>
+          </Node>
+          <Node id="uK8S21j&gt;81" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "RGRL_OID";]]></expr>
+          </Node>
+          <Node id="uK8T21j&gt;81" name="DUP_CHECK" type="attribute"/>
+          <Node id="uK8U21j&gt;81" name="ENDDATEIND" type="attribute"/>
+          <Node id="uK8V21j&gt;81" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="uK8W21j&gt;81" name="ERROR" type="attribute"/>
+          <Node id="uK8X21j&gt;81" name="MATCH" type="attribute">
+            <expr><![CDATA[return "RGRL_MATCH_1";]]></expr>
+          </Node>
+          <Node id="uK8Y21j&gt;81" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="uK8Z21j&gt;81" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("29|CONCTNS|NESTED|REGRULEID|", "EU SSR|DATASRCID|RFTDSP");]]></expr>
+          </Node>
+          <Node id="uK8a21j&gt;81" name="ONLY" type="attribute"/>
+          <Node id="uK8b21j&gt;81" name="PARENT_LINK" type="attribute"/>
+          <Node id="uK8c21j&gt;81" name="PUBLISH" type="attribute"/>
+          <Node id="uK8d21j&gt;81" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="uK8e21j&gt;81" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="uK8f21j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8g21j&gt;81" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="uK8h21j&gt;81" name="TSOPTION" type="attribute"/>
+          <Node id="uK8i21j&gt;81" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="uK8j21j&gt;81" name="TSTOLERANCE" type="attribute"/>
+          <Node id="uK8k21j&gt;81" name="DATASRCID" type="element">
+            <Node id="uK8l21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8m21j&gt;81" name="DATASTATTYP" type="element">
+            <Node id="uK8n21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8o21j&gt;81" name="ENDTMS" type="element">
+            <Node id="uK8p21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8q21j&gt;81" name="LASTCHGTMS" type="element">
+            <Node id="uK8r21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8s21j&gt;81" name="LASTCHGUSRID" type="element">
+            <Node id="uK8t21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8u21j&gt;81" name="REGRULEID" type="element">
+            <Node id="uK8v21j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "EU SSR";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8w21j&gt;81" name="REGTYP" type="element">
+            <Node id="uK8x21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8y21j&gt;81" name="RGATOID" type="element">
+            <Node id="uK8z21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8$21j&gt;81" name="RGRLOID" type="element">
+            <Node id="uK8%21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8@21j&gt;81" name="RULEDESC" type="element">
+            <Node id="uK8&amp;21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8*21j&gt;81" name="RULEEFFDTE" type="element">
+            <Node id="uK8-21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8.21j&gt;81" name="RULEEXPIRATIONDTE" type="element">
+            <Node id="uK8/21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8(21j&gt;81" name="RULENME" type="element">
+            <Node id="uK8)21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8~21j&gt;81" name="RULESECTTXT" type="element">
+            <Node id="uK8?21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8&lt;21j&gt;81" name="RULESHRTNME" type="element">
+            <Node id="uK8&gt;21j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8031j&gt;81" name="RULEVERID" type="element">
+            <Node id="uK8131j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8231j&gt;81" name="STARTTMS" type="element">
+            <Node id="uK8331j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="uK8431j&gt;81" name="ACRDINDECPRECNUM" type="element">
+          <Node id="uK8531j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8631j&gt;81" name="BASELIIIDESIGNATIONTYP" type="element">
+          <Node id="uK8731j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8831j&gt;81" name="BLUESKYIND" type="element">
+          <Node id="uK8931j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8A31j&gt;81" name="BONDSNRTYTYP" type="element">
+          <Node id="uK8B31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8C31j&gt;81" name="CNTLEXTRALLOWEDIND" type="element">
+          <Node id="uK8D31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8E31j&gt;81" name="COLLELIGIND" type="element">
+          <Node id="uK8F31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8G31j&gt;81" name="COMMODITYDRVIND" type="element">
+          <Node id="uK8H31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8I31j&gt;81" name="COMPLEXINSTRIND" type="element">
+          <Node id="uK8J31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8K31j&gt;81" name="COMPLEXINSTRREASONTXT" type="element">
+          <Node id="uK8L31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8M31j&gt;81" name="DATASRCID" type="element">
+          <Node id="uK8N31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8O31j&gt;81" name="DATASTATTYP" type="element">
+          <Node id="uK8P31j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8Q31j&gt;81" name="ECBGUARANTEECDE" type="element">
+          <Node id="uK8R31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8S31j&gt;81" name="ENDTMS" type="element">
+          <Node id="uK8T31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8U31j&gt;81" name="ERISAIND" type="element">
+          <Node id="uK8V31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8W31j&gt;81" name="EURETAINEDINTELIGIND" type="element">
+          <Node id="uK8X31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8Y31j&gt;81" name="EURETAINEDINTMETHTYP" type="element">
+          <Node id="uK8Z31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8a31j&gt;81" name="EUSDELIGIND" type="element">
+          <Node id="uK8b31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8c31j&gt;81" name="FDICINSURIND" type="element">
+          <Node id="uK8d31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8e31j&gt;81" name="FIRSTTRDNGTMS" type="element">
+          <Node id="uK8f31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8g31j&gt;81" name="FUNDEUROUCITSIND" type="element">
+          <Node id="uK8h31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8i31j&gt;81" name="GUCNT" type="element">
+          <Node id="uK8j31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8k31j&gt;81" name="GUID" type="element">
+          <Node id="uK8l31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8m31j&gt;81" name="GUTYP" type="element">
+          <Node id="uK8n31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8o31j&gt;81" name="HOFURICHGDTE" type="element">
+          <Node id="uK8p31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8q31j&gt;81" name="HOFURIELIGIND" type="element">
+          <Node id="uK8r31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8s31j&gt;81" name="ILLIQUIDITYIND" type="element">
+          <Node id="uK8t31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8u31j&gt;81" name="INSTRID" type="element">
+          <Node id="uK8v31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8w31j&gt;81" name="ISMAREGULATEDIND" type="element">
+          <Node id="uK8x31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8y31j&gt;81" name="ISSRAPPRVLTRDNGTMS" type="element">
+          <Node id="uK8z31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8$31j&gt;81" name="ISSRREQTRDNGIND" type="element">
+          <Node id="uK8%31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8@31j&gt;81" name="ISSRRQSTTRDNGTMS" type="element">
+          <Node id="uK8&amp;31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8*31j&gt;81" name="ISSUEDDOMISSRIND" type="element">
+          <Node id="uK8-31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8.31j&gt;81" name="ISSUEDFGNISSRIND" type="element">
+          <Node id="uK8/31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8(31j&gt;81" name="LASTCHGTMS" type="element">
+          <Node id="uK8)31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8~31j&gt;81" name="LASTCHGUSRID" type="element">
+          <Node id="uK8?31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8&lt;31j&gt;81" name="LIQUIDITYIND" type="element">
+          <Node id="uK8&gt;31j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8041j&gt;81" name="MATEXPTMS" type="element">
+          <Node id="uK8141j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8241j&gt;81" name="MIFIDREGULATEDIND" type="element">
+          <Node id="uK8341j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8441j&gt;81" name="NMSIND" type="element">
+          <Node id="uK8541j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8641j&gt;81" name="OATSIND" type="element">
+          <Node id="uK8741j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8841j&gt;81" name="REG3C7IND" type="element">
+          <Node id="uK8941j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8A41j&gt;81" name="REGAPPLICABILITYCDE" type="element">
+          <Node id="uK8B41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8C41j&gt;81" name="REGCALLPUTTYP" type="element">
+          <Node id="uK8D41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8E41j&gt;81" name="REGDEFERRALIND" type="element">
+          <Node id="uK8F41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8G41j&gt;81" name="REGDEFERRALTYP" type="element">
+          <Node id="uK8H41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8I41j&gt;81" name="REGDERIVCATTYP" type="element">
+          <Node id="uK8J41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8K41j&gt;81" name="REGDESC" type="element">
+          <Node id="uK8L41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8M41j&gt;81" name="REGDIND" type="element">
+          <Node id="uK8N41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8O41j&gt;81" name="REGELIGIND" type="element">
+          <Node id="uK8P41j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[if ((IsFieldDeleted(EU_Short_Sell_Eligible) && Strcmp(EU_Short_Sell_Eligible__Change_Flag, "Y")) && OneHasValue(EU_Short_Sell_Eligible__Previous))
+	return EU_Short_Sell_Eligible;
+else
+	return EU_Short_Sell_Eligible;]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8Q41j&gt;81" name="REGEXERTYP" type="element">
+          <Node id="uK8R41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8S41j&gt;81" name="REGISTEREDPRIMREGIND" type="element">
+          <Node id="uK8T41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8U41j&gt;81" name="REGLISTEDIND" type="element">
+          <Node id="uK8V41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8W41j&gt;81" name="REGOBJTYP" type="element">
+          <Node id="uK8X41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8Y41j&gt;81" name="REGPRDENDDTE" type="element">
+          <Node id="uK8Z41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8a41j&gt;81" name="REGPRDSTARTDTE" type="element">
+          <Node id="uK8b41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8c41j&gt;81" name="REGSIND" type="element">
+          <Node id="uK8d41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8e41j&gt;81" name="REGSRULE144AIND" type="element">
+          <Node id="uK8f41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8g41j&gt;81" name="REGSTATTYP" type="element">
+          <Node id="uK8h41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8i41j&gt;81" name="REGSUSPENDIND" type="element">
+          <Node id="uK8j41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8k41j&gt;81" name="REGTMRGNSECIND" type="element">
+          <Node id="uK8l41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8m41j&gt;81" name="REGTYP" type="element">
+          <Node id="uK8n41j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[return "SSR";]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8o41j&gt;81" name="REGWAIVERIND" type="element">
+          <Node id="uK8p41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8q41j&gt;81" name="RGATOID" type="element">
+          <Node id="uK8r41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8s41j&gt;81" name="RGCHOID" type="element">
+          <Node id="uK8t41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8u41j&gt;81" name="RGRLOID" type="element">
+          <Node id="uK8v41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8w41j&gt;81" name="RULE144A3C7IND" type="element">
+          <Node id="uK8x41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8y41j&gt;81" name="RULE144ADISCLAIMERIND" type="element">
+          <Node id="uK8z41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8$41j&gt;81" name="RULE144AIND" type="element">
+          <Node id="uK8%41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8@41j&gt;81" name="RULE144AREGISTIND" type="element">
+          <Node id="uK8&amp;41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8*41j&gt;81" name="RULE3A3CPIND" type="element">
+          <Node id="uK8-41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8.41j&gt;81" name="SCHDK1IND" type="element">
+          <Node id="uK8/41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8(41j&gt;81" name="SECRESTRICTTYP" type="element">
+          <Node id="uK8)41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8~41j&gt;81" name="SHARIAHIND" type="element">
+          <Node id="uK8?41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8&lt;41j&gt;81" name="SOLVENCYIIMTCHADJIND" type="element">
+          <Node id="uK8&gt;41j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8051j&gt;81" name="SRCEFILETYP" type="element">
+          <Node id="uK8151j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8251j&gt;81" name="STARTTMS" type="element">
+          <Node id="uK8351j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8451j&gt;81" name="SUKUKTYP" type="element">
+          <Node id="uK8551j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8651j&gt;81" name="TEFRACIND" type="element">
+          <Node id="uK8751j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8851j&gt;81" name="TEFRADIND" type="element">
+          <Node id="uK8951j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8A51j&gt;81" name="TRADEONMRKTIND" type="element">
+          <Node id="uK8B51j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8C51j&gt;81" name="TRADEONMRKTRPTGIND" type="element">
+          <Node id="uK8D51j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8E51j&gt;81" name="TRDNGOBLIGATIONIND" type="element">
+          <Node id="uK8F51j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8G51j&gt;81" name="UNDERLYTRADEONMRKTIND" type="element">
+          <Node id="uK8H51j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8I51j&gt;81" name="UNDLYBMRKREGCOMPLTYP" type="element">
+          <Node id="uK8J51j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8K51j&gt;81" name="UNDLYISSUEDDOMISSRIND" type="element">
+          <Node id="uK8L51j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8M51j&gt;81" name="UNDLYISSUEDFGNISSRIND" type="element">
+          <Node id="uK8N51j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8O51j&gt;81" name="USFORM1099TYP" type="element">
+          <Node id="uK8P51j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="UK Short Sell Eligible" id="uK8I01j&gt;81" name="IssueRegulatoryCharacteristics" type="segment">
+        <condition id="uK8Q51j&gt;81"><![CDATA[if (OneHasValue(UK_Short_Sell_Eligible,UK_Short_Sell_Eligible__Previous))
+	return "IssueRegulatoryCharacteristics";
+else
+	return "";]]></condition>
+        <Node id="uK8R51j&gt;81" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="uK8S51j&gt;81" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueRegulatoryCharacteristics";]]></expr>
+        </Node>
+        <Node id="uK8T51j&gt;81" name="GeographicUnit" type="segment">
+          <Node id="uK8U51j&gt;81" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="uK8V51j&gt;81" name="TYPE" type="attribute">
+            <expr><![CDATA[return "GeographicUnit";]]></expr>
+          </Node>
+          <Node id="uK8W51j&gt;81" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "PRNT_GU_CNT,PRNT_GU_ID,PRNT_GU_TYP";]]></expr>
+          </Node>
+          <Node id="uK8X51j&gt;81" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "GU_CNT,GU_ID,GU_TYP";]]></expr>
+          </Node>
+          <Node id="uK8Y51j&gt;81" name="DUP_CHECK" type="attribute"/>
+          <Node id="uK8Z51j&gt;81" name="ENDDATEIND" type="attribute"/>
+          <Node id="uK8a51j&gt;81" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="uK8b51j&gt;81" name="ERROR" type="attribute"/>
+          <Node id="uK8c51j&gt;81" name="MATCH" type="attribute"/>
+          <Node id="uK8d51j&gt;81" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="uK8e51j&gt;81" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("11|CONCTNS|NESTED|PRNTGUTYP|COUNTRY|PRNTGUID|GB", "|DATASRCID|RFTDSP");]]></expr>
+          </Node>
+          <Node id="uK8f51j&gt;81" name="ONLY" type="attribute"/>
+          <Node id="uK8g51j&gt;81" name="PARENT_LINK" type="attribute"/>
+          <Node id="uK8h51j&gt;81" name="PUBLISH" type="attribute"/>
+          <Node id="uK8i51j&gt;81" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="uK8j51j&gt;81" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="uK8k51j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8l51j&gt;81" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="uK8m51j&gt;81" name="TSOPTION" type="attribute"/>
+          <Node id="uK8n51j&gt;81" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="uK8o51j&gt;81" name="TSTOLERANCE" type="attribute"/>
+          <Node id="uK8p51j&gt;81" name="CALID" type="element">
+            <Node id="uK8q51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8r51j&gt;81" name="CITYCDE" type="element">
+            <Node id="uK8s51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8t51j&gt;81" name="CITYCDETYP" type="element">
+            <Node id="uK8u51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8v51j&gt;81" name="CITYNME" type="element">
+            <Node id="uK8w51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8x51j&gt;81" name="CNTRYCDE" type="element">
+            <Node id="uK8y51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8z51j&gt;81" name="CNTRYSUBDIVCDE" type="element">
+            <Node id="uK8$51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8%51j&gt;81" name="CNTYCDE" type="element">
+            <Node id="uK8@51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8&amp;51j&gt;81" name="CNTYCDETYP" type="element">
+            <Node id="uK8*51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8-51j&gt;81" name="CNTYNME" type="element">
+            <Node id="uK8.51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8/51j&gt;81" name="CONTINENTCDE" type="element">
+            <Node id="uK8(51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8)51j&gt;81" name="CROSSREFID" type="element">
+            <Node id="uK8~51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8?51j&gt;81" name="CSDPERMITIND" type="element">
+            <Node id="uK8&lt;51j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8&gt;51j&gt;81" name="DATASRCID" type="element">
+            <Node id="uK8061j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8161j&gt;81" name="DATASTATTYP" type="element">
+            <Node id="uK8261j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8361j&gt;81" name="ENDTMS" type="element">
+            <Node id="uK8461j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8561j&gt;81" name="GUCNT" type="element">
+            <Node id="uK8661j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8761j&gt;81" name="GUDESC" type="element">
+            <Node id="uK8861j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8961j&gt;81" name="GUID" type="element">
+            <Node id="uK8A61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8B61j&gt;81" name="GUNME" type="element">
+            <Node id="uK8C61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8D61j&gt;81" name="GUTYP" type="element">
+            <Node id="uK8E61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8F61j&gt;81" name="LASTCHGTMS" type="element">
+            <Node id="uK8G61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8H61j&gt;81" name="LASTCHGUSRID" type="element">
+            <Node id="uK8I61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8J61j&gt;81" name="LATITUDEDECDEGREENUM" type="element">
+            <Node id="uK8K61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8L61j&gt;81" name="LONGITUDEDECDEGREENUM" type="element">
+            <Node id="uK8M61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8N61j&gt;81" name="NATIONALADJECTIVALTXT" type="element">
+            <Node id="uK8O61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8P61j&gt;81" name="NLSCDE" type="element">
+            <Node id="uK8Q61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8R61j&gt;81" name="POSTALCDE" type="element">
+            <Node id="uK8S61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8T61j&gt;81" name="PREFCURRCDE" type="element">
+            <Node id="uK8U61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8V61j&gt;81" name="PRNTGUCNT" type="element">
+            <Node id="uK8W61j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8X61j&gt;81" name="PRNTGUID" type="element">
+            <Node id="uK8Y61j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "GB";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8Z61j&gt;81" name="PRNTGUTYP" type="element">
+            <Node id="uK8a61j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "COUNTRY";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8b61j&gt;81" name="REGIONNME" type="element">
+            <Node id="uK8c61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8d61j&gt;81" name="STARTTMS" type="element">
+            <Node id="uK8e61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8f61j&gt;81" name="STEPRVCDE" type="element">
+            <Node id="uK8g61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8h61j&gt;81" name="STOPPAYIND" type="element">
+            <Node id="uK8i61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8j61j&gt;81" name="TMZTMZ" type="element">
+            <Node id="uK8k61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8l61j&gt;81" name="TOWNSHIPNME" type="element">
+            <Node id="uK8m61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="uK8n61j&gt;81" name="RGATRegulatoryAuthority" type="segment">
+          <Node id="uK8p61j&gt;81" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="uK8q61j&gt;81" name="TYPE" type="attribute">
+            <expr><![CDATA[return "RGATRegulatoryAuthority";]]></expr>
+          </Node>
+          <Node id="uK8r61j&gt;81" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "RGAT_OID";]]></expr>
+          </Node>
+          <Node id="uK8s61j&gt;81" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "RGAT_OID";]]></expr>
+          </Node>
+          <Node id="uK8t61j&gt;81" name="DUP_CHECK" type="attribute"/>
+          <Node id="uK8u61j&gt;81" name="ENDDATEIND" type="attribute"/>
+          <Node id="uK8v61j&gt;81" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="uK8w61j&gt;81" name="ERROR" type="attribute"/>
+          <Node id="uK8x61j&gt;81" name="MATCH" type="attribute">
+            <expr><![CDATA[return "RGAT_MATCH_1";]]></expr>
+          </Node>
+          <Node id="uK8y61j&gt;81" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="uK8z61j&gt;81" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("30|CONCTNS|NESTED|REGAUTHNME|", "The Financial Conduct Authority (FCA)|DATASRCID|RFTDSP");]]></expr>
+          </Node>
+          <Node id="uK8$61j&gt;81" name="ONLY" type="attribute"/>
+          <Node id="uK8%61j&gt;81" name="PARENT_LINK" type="attribute"/>
+          <Node id="uK8@61j&gt;81" name="PUBLISH" type="attribute"/>
+          <Node id="uK8&amp;61j&gt;81" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="uK8*61j&gt;81" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="uK8-61j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8.61j&gt;81" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="uK8/61j&gt;81" name="TSOPTION" type="attribute"/>
+          <Node id="uK8(61j&gt;81" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="uK8)61j&gt;81" name="TSTOLERANCE" type="attribute"/>
+          <Node id="uK8~61j&gt;81" name="DATASRCID" type="element">
+            <Node id="uK8?61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8&lt;61j&gt;81" name="DATASTATTYP" type="element">
+            <Node id="uK8&gt;61j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8071j&gt;81" name="ENDTMS" type="element">
+            <Node id="uK8171j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8271j&gt;81" name="FINSRLTYP" type="element">
+            <Node id="uK8371j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8471j&gt;81" name="GUCNT" type="element">
+            <Node id="uK8571j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8671j&gt;81" name="GUID" type="element">
+            <Node id="uK8771j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8871j&gt;81" name="GUTYP" type="element">
+            <Node id="uK8971j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8A71j&gt;81" name="INSTMNEM" type="element">
+            <Node id="uK8B71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8C71j&gt;81" name="LASTCHGTMS" type="element">
+            <Node id="uK8D71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8E71j&gt;81" name="LASTCHGUSRID" type="element">
+            <Node id="uK8F71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8G71j&gt;81" name="LAWNME" type="element">
+            <Node id="uK8H71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8I71j&gt;81" name="REGAUTHDESC" type="element">
+            <Node id="uK8J71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8K71j&gt;81" name="REGAUTHENDDTE" type="element">
+            <Node id="uK8L71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8M71j&gt;81" name="REGAUTHNME" type="element">
+            <Node id="uK8N71j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "The Financial Conduct Authority (FCA)";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8O71j&gt;81" name="REGAUTHSTARTDTE" type="element">
+            <Node id="uK8P71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8Q71j&gt;81" name="RGATOID" type="element">
+            <Node id="uK8R71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8S71j&gt;81" name="STARTTMS" type="element">
+            <Node id="uK8T71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="uK8U71j&gt;81" name="RGRLRegulatoryRuleRequirement" type="segment">
+          <Node id="uK8W71j&gt;81" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="uK8X71j&gt;81" name="TYPE" type="attribute">
+            <expr><![CDATA[return "RGRLRegulatoryRuleRequirement";]]></expr>
+          </Node>
+          <Node id="uK8Y71j&gt;81" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "RGRL_OID";]]></expr>
+          </Node>
+          <Node id="uK8Z71j&gt;81" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "RGRL_OID";]]></expr>
+          </Node>
+          <Node id="uK8a71j&gt;81" name="DUP_CHECK" type="attribute"/>
+          <Node id="uK8b71j&gt;81" name="ENDDATEIND" type="attribute"/>
+          <Node id="uK8c71j&gt;81" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="uK8d71j&gt;81" name="ERROR" type="attribute"/>
+          <Node id="uK8e71j&gt;81" name="MATCH" type="attribute">
+            <expr><![CDATA[return "RGRL_MATCH_1";]]></expr>
+          </Node>
+          <Node id="uK8f71j&gt;81" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="uK8g71j&gt;81" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("29|CONCTNS|NESTED|REGRULEID|", "UK SSR|DATASRCID|RFTDSP");]]></expr>
+          </Node>
+          <Node id="uK8h71j&gt;81" name="ONLY" type="attribute"/>
+          <Node id="uK8i71j&gt;81" name="PARENT_LINK" type="attribute"/>
+          <Node id="uK8j71j&gt;81" name="PUBLISH" type="attribute"/>
+          <Node id="uK8k71j&gt;81" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="uK8l71j&gt;81" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="uK8m71j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8n71j&gt;81" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="uK8o71j&gt;81" name="TSOPTION" type="attribute"/>
+          <Node id="uK8p71j&gt;81" name="TSOVERLAPOVERRIDE" type="attribute"/>
+          <Node id="uK8q71j&gt;81" name="TSTOLERANCE" type="attribute"/>
+          <Node id="uK8r71j&gt;81" name="DATASRCID" type="element">
+            <Node id="uK8s71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8t71j&gt;81" name="DATASTATTYP" type="element">
+            <Node id="uK8u71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8v71j&gt;81" name="ENDTMS" type="element">
+            <Node id="uK8w71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8x71j&gt;81" name="LASTCHGTMS" type="element">
+            <Node id="uK8y71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8z71j&gt;81" name="LASTCHGUSRID" type="element">
+            <Node id="uK8$71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8%71j&gt;81" name="REGRULEID" type="element">
+            <Node id="uK8@71j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "UK SSR";]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8&amp;71j&gt;81" name="REGTYP" type="element">
+            <Node id="uK8*71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8-71j&gt;81" name="RGATOID" type="element">
+            <Node id="uK8.71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8/71j&gt;81" name="RGRLOID" type="element">
+            <Node id="uK8(71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8)71j&gt;81" name="RULEDESC" type="element">
+            <Node id="uK8~71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8?71j&gt;81" name="RULEEFFDTE" type="element">
+            <Node id="uK8&lt;71j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8&gt;71j&gt;81" name="RULEEXPIRATIONDTE" type="element">
+            <Node id="uK8081j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8181j&gt;81" name="RULENME" type="element">
+            <Node id="uK8281j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8381j&gt;81" name="RULESECTTXT" type="element">
+            <Node id="uK8481j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8581j&gt;81" name="RULESHRTNME" type="element">
+            <Node id="uK8681j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8781j&gt;81" name="RULEVERID" type="element">
+            <Node id="uK8881j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="uK8981j&gt;81" name="STARTTMS" type="element">
+            <Node id="uK8A81j&gt;81" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="uK8B81j&gt;81" name="ACRDINDECPRECNUM" type="element">
+          <Node id="uK8C81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8D81j&gt;81" name="BASELIIIDESIGNATIONTYP" type="element">
+          <Node id="uK8E81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8F81j&gt;81" name="BLUESKYIND" type="element">
+          <Node id="uK8G81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8H81j&gt;81" name="BONDSNRTYTYP" type="element">
+          <Node id="uK8I81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8J81j&gt;81" name="CNTLEXTRALLOWEDIND" type="element">
+          <Node id="uK8K81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8L81j&gt;81" name="COLLELIGIND" type="element">
+          <Node id="uK8M81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8N81j&gt;81" name="COMMODITYDRVIND" type="element">
+          <Node id="uK8O81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8P81j&gt;81" name="COMPLEXINSTRIND" type="element">
+          <Node id="uK8Q81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8R81j&gt;81" name="COMPLEXINSTRREASONTXT" type="element">
+          <Node id="uK8S81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8T81j&gt;81" name="DATASRCID" type="element">
+          <Node id="uK8U81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8V81j&gt;81" name="DATASTATTYP" type="element">
+          <Node id="uK8W81j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8X81j&gt;81" name="ECBGUARANTEECDE" type="element">
+          <Node id="uK8Y81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8Z81j&gt;81" name="ENDTMS" type="element">
+          <Node id="uK8a81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8b81j&gt;81" name="ERISAIND" type="element">
+          <Node id="uK8c81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8d81j&gt;81" name="EURETAINEDINTELIGIND" type="element">
+          <Node id="uK8e81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8f81j&gt;81" name="EURETAINEDINTMETHTYP" type="element">
+          <Node id="uK8g81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8h81j&gt;81" name="EUSDELIGIND" type="element">
+          <Node id="uK8i81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8j81j&gt;81" name="FDICINSURIND" type="element">
+          <Node id="uK8k81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8l81j&gt;81" name="FIRSTTRDNGTMS" type="element">
+          <Node id="uK8m81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8n81j&gt;81" name="FUNDEUROUCITSIND" type="element">
+          <Node id="uK8o81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8p81j&gt;81" name="GUCNT" type="element">
+          <Node id="uK8q81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8r81j&gt;81" name="GUID" type="element">
+          <Node id="uK8s81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8t81j&gt;81" name="GUTYP" type="element">
+          <Node id="uK8u81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8v81j&gt;81" name="HOFURICHGDTE" type="element">
+          <Node id="uK8w81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8x81j&gt;81" name="HOFURIELIGIND" type="element">
+          <Node id="uK8y81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8z81j&gt;81" name="ILLIQUIDITYIND" type="element">
+          <Node id="uK8$81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8%81j&gt;81" name="INSTRID" type="element">
+          <Node id="uK8@81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8&amp;81j&gt;81" name="ISMAREGULATEDIND" type="element">
+          <Node id="uK8*81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8-81j&gt;81" name="ISSRAPPRVLTRDNGTMS" type="element">
+          <Node id="uK8.81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8/81j&gt;81" name="ISSRREQTRDNGIND" type="element">
+          <Node id="uK8(81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8)81j&gt;81" name="ISSRRQSTTRDNGTMS" type="element">
+          <Node id="uK8~81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8?81j&gt;81" name="ISSUEDDOMISSRIND" type="element">
+          <Node id="uK8&lt;81j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8&gt;81j&gt;81" name="ISSUEDFGNISSRIND" type="element">
+          <Node id="uK8091j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8191j&gt;81" name="LASTCHGTMS" type="element">
+          <Node id="uK8291j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8391j&gt;81" name="LASTCHGUSRID" type="element">
+          <Node id="uK8491j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8591j&gt;81" name="LIQUIDITYIND" type="element">
+          <Node id="uK8691j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8791j&gt;81" name="MATEXPTMS" type="element">
+          <Node id="uK8891j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8991j&gt;81" name="MIFIDREGULATEDIND" type="element">
+          <Node id="uK8A91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8B91j&gt;81" name="NMSIND" type="element">
+          <Node id="uK8C91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8D91j&gt;81" name="OATSIND" type="element">
+          <Node id="uK8E91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8F91j&gt;81" name="REG3C7IND" type="element">
+          <Node id="uK8G91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8H91j&gt;81" name="REGAPPLICABILITYCDE" type="element">
+          <Node id="uK8I91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8J91j&gt;81" name="REGCALLPUTTYP" type="element">
+          <Node id="uK8K91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8L91j&gt;81" name="REGDEFERRALIND" type="element">
+          <Node id="uK8M91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8N91j&gt;81" name="REGDEFERRALTYP" type="element">
+          <Node id="uK8O91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8P91j&gt;81" name="REGDERIVCATTYP" type="element">
+          <Node id="uK8Q91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8R91j&gt;81" name="REGDESC" type="element">
+          <Node id="uK8S91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8T91j&gt;81" name="REGDIND" type="element">
+          <Node id="uK8U91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8V91j&gt;81" name="REGELIGIND" type="element">
+          <Node id="uK8W91j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[if ((IsFieldDeleted(UK_Short_Sell_Eligible) && Strcmp(UK_Short_Sell_Eligible__Change_Flag, "Y")) && OneHasValue(UK_Short_Sell_Eligible__Previous))
+	return UK_Short_Sell_Eligible;
+else
+	return UK_Short_Sell_Eligible;]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8X91j&gt;81" name="REGEXERTYP" type="element">
+          <Node id="uK8Y91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8Z91j&gt;81" name="REGISTEREDPRIMREGIND" type="element">
+          <Node id="uK8a91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8b91j&gt;81" name="REGLISTEDIND" type="element">
+          <Node id="uK8c91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8d91j&gt;81" name="REGOBJTYP" type="element">
+          <Node id="uK8e91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8f91j&gt;81" name="REGPRDENDDTE" type="element">
+          <Node id="uK8g91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8h91j&gt;81" name="REGPRDSTARTDTE" type="element">
+          <Node id="uK8i91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8j91j&gt;81" name="REGSIND" type="element">
+          <Node id="uK8k91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8l91j&gt;81" name="REGSRULE144AIND" type="element">
+          <Node id="uK8m91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8n91j&gt;81" name="REGSTATTYP" type="element">
+          <Node id="uK8o91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8p91j&gt;81" name="REGSUSPENDIND" type="element">
+          <Node id="uK8q91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8r91j&gt;81" name="REGTMRGNSECIND" type="element">
+          <Node id="uK8s91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8t91j&gt;81" name="REGTYP" type="element">
+          <Node id="uK8u91j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[return "SSR";]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8v91j&gt;81" name="REGWAIVERIND" type="element">
+          <Node id="uK8w91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8x91j&gt;81" name="RGATOID" type="element">
+          <Node id="uK8y91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8z91j&gt;81" name="RGCHOID" type="element">
+          <Node id="uK8$91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8%91j&gt;81" name="RGRLOID" type="element">
+          <Node id="uK8@91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8&amp;91j&gt;81" name="RULE144A3C7IND" type="element">
+          <Node id="uK8*91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8-91j&gt;81" name="RULE144ADISCLAIMERIND" type="element">
+          <Node id="uK8.91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8/91j&gt;81" name="RULE144AIND" type="element">
+          <Node id="uK8(91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8)91j&gt;81" name="RULE144AREGISTIND" type="element">
+          <Node id="uK8~91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8?91j&gt;81" name="RULE3A3CPIND" type="element">
+          <Node id="uK8&lt;91j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8&gt;91j&gt;81" name="SCHDK1IND" type="element">
+          <Node id="uK80A1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK81A1j&gt;81" name="SECRESTRICTTYP" type="element">
+          <Node id="uK82A1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK83A1j&gt;81" name="SHARIAHIND" type="element">
+          <Node id="uK84A1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK85A1j&gt;81" name="SOLVENCYIIMTCHADJIND" type="element">
+          <Node id="uK86A1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK87A1j&gt;81" name="SRCEFILETYP" type="element">
+          <Node id="uK88A1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK89A1j&gt;81" name="STARTTMS" type="element">
+          <Node id="uK8AA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8BA1j&gt;81" name="SUKUKTYP" type="element">
+          <Node id="uK8CA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8DA1j&gt;81" name="TEFRACIND" type="element">
+          <Node id="uK8EA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8FA1j&gt;81" name="TEFRADIND" type="element">
+          <Node id="uK8GA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8HA1j&gt;81" name="TRADEONMRKTIND" type="element">
+          <Node id="uK8IA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8JA1j&gt;81" name="TRADEONMRKTRPTGIND" type="element">
+          <Node id="uK8KA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8LA1j&gt;81" name="TRDNGOBLIGATIONIND" type="element">
+          <Node id="uK8MA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8NA1j&gt;81" name="UNDERLYTRADEONMRKTIND" type="element">
+          <Node id="uK8OA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8PA1j&gt;81" name="UNDLYBMRKREGCOMPLTYP" type="element">
+          <Node id="uK8QA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8RA1j&gt;81" name="UNDLYISSUEDDOMISSRIND" type="element">
+          <Node id="uK8SA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8TA1j&gt;81" name="UNDLYISSUEDFGNISSRIND" type="element">
+          <Node id="uK8UA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK8VA1j&gt;81" name="USFORM1099TYP" type="element">
+          <Node id="uK8WA1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

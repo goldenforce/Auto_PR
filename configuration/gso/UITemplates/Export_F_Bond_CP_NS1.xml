@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="vinod.narwani@point72.com" entityName="Bonds" entitySubType="[]" id="i*yzp&gt;grG1" isDefault="Y" isPublic="Y" screenType="SYSTEMFORM" title="F: Bond_CP_NS1">
+  <control caption="Details" columns="2" fullQualPath="" hideDetail="N" id="nh8&amp;lt;31M~O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Security Main" columns="2" fullQualPath="" hideDetail="N" id="nh8&amp;gt;31M~O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Security Information" columns="4" fullQualPath="" hideDetail="N" id="nh8041M~O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8&amp;gt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Instrument Name" columns="2" fullQualPath="Bonds.InstrumentDetails.PreferredInstrumentName" hideDetail="N" id="nh8141M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8041M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country Of Domicile" columns="2" fullQualPath="Bonds.InstrumentDetails.Issuer.Issuer.ISOGeographicDetails.CountryOfDomicile" hideDetail="N" id="nh8241M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8041M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Distribution Currency" columns="2" fullQualPath="Bonds.InstrumentDetails.DistributionCurrency" hideDetail="N" id="nh8341M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8041M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Par Value" columns="2" fullQualPath="Bonds.InstrumentDetails.ParValue" hideDetail="N" id="nh8441M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8041M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Offer Date" columns="2" fullQualPath="Bonds.PrimaryOfferDetails.InitialOfferDate" hideDetail="N" id="nh8541M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8041M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Instrument Type" columns="2" fullQualPath="Bonds.InstrumentDetails.InstrumentType" hideDetail="N" id="nh8641M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="nh8041M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Identifiers" columns="4" fullQualPath="" hideDetail="N" id="nh8741M~O1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8&amp;gt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="ISIN" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.ISIN" hideDetail="N" id="nh8841M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8741M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Common Number" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.CommonNumber" hideDetail="N" id="nh8941M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8741M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="CUSIP" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.CUSIP" hideDetail="N" id="nh8A41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8741M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="CINS Code" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.CINSCode" hideDetail="N" id="nh8B41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8741M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Asset Id" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.RefinitivAssetId" hideDetail="N" id="nh8C41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8741M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Instrument Type" columns="4" fullQualPath="" hideDetail="N" id="nh8D41M~O1" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8&amp;gt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="P72 Instrument Type 1" columns="2" fullQualPath="Bonds.InstrumentClassification.P72InsTypLevel1" hideDetail="N" id="nh8E41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8D41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 2" columns="2" fullQualPath="Bonds.InstrumentClassification.p72InsTypLevel2" hideDetail="N" id="nh8F41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8D41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 3" columns="2" fullQualPath="Bonds.InstrumentClassification.p72InsTypLevel3" hideDetail="N" id="nh8G41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8D41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 4" columns="2" fullQualPath="Bonds.InstrumentClassification.P72InsTypLevel4" hideDetail="N" id="nh8H41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8D41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Classification" columns="4" fullQualPath="" hideDetail="N" id="nh8I41M~O1" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8&amp;gt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="BB Market Sector" columns="2" fullQualPath="Bonds.InstrumentClassification.BBMarketSector" hideDetail="N" id="nh8J41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Security Type" columns="2" fullQualPath="Bonds.InstrumentClassification.BBSectorType" hideDetail="N" id="nh8K41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Sub-Security Type" columns="2" fullQualPath="Bonds.InstrumentClassification.BBSubSectorType" hideDetail="N" id="nh8L41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="ISO CFI" columns="2" fullQualPath="Bonds.InstrumentClassification.ISOCFI" hideDetail="N" id="nh8M41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Pano Security Type" columns="2" fullQualPath="Bonds.InstrumentClassification.P72PanoSecurityType" hideDetail="N" id="nh8N41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geneva Asset Type" columns="2" fullQualPath="Bonds.InstrumentClassification.P72GenevaAssetType" hideDetail="N" id="nh8O41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geneva Investment Type" columns="2" fullQualPath="Bonds.InstrumentClassification.P72GenevaInvestmentType" hideDetail="N" id="nh8P41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geneva Print Group" columns="2" fullQualPath="Bonds.InstrumentClassification.P72GenevaPrintGroup" hideDetail="N" id="nh8Q41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Underlying Risk Class" columns="2" fullQualPath="Bonds.InstrumentClassification.P72UnderlyingRiskClass" hideDetail="N" id="nh8R41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="nh8I41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Bond Rating" columns="4" fullQualPath="Bonds.BondRating" hideDetail="N" id="=002558850" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8&amp;gt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+        <control caption="Moody&amp;apos;s Rating" columns="2" fullQualPath="Bonds.BondRating.P72MoodysRating" hideDetail="N" id="=002558853" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="=002558850" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="S&amp;amp;P Rating" columns="2" fullQualPath="Bonds.BondRating.P72SNPRating" hideDetail="N" id="=002558851" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="=002558850" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Fitch Rating" columns="2" fullQualPath="Bonds.BondRating.P72FitchRating" hideDetail="N" id="=002558854" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="=002558850" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Bond Tier" columns="2" fullQualPath="Bonds.BondRating.P72BondTier" hideDetail="N" id="=002558852" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="=002558850" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Listings" columns="4" fullQualPath="" hideDetail="N" id="nh8W41M~O1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Country&amp;apos;s Primary Exchange" columns="4" fullQualPath="Bonds.CountrysPrimaryExchange" hideDetail="N" id="nh8X41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="10" parentId="nh8W41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Exchange Name" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.CountryPrimaryExchange.FinancialMarket.MarketDetails.MarketName" hideDetail="N" id="nh8Y41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="MIC Code" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.CountryPrimaryExchange.FinancialMarket.MarketDetails.MICCode" hideDetail="N" id="nh8Z41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="CP Country Of Issuance" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72CountryOfIssuance" hideDetail="N" id="nh8a41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geographic Unit ID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryGeographicUnitID" hideDetail="N" id="nh8b41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="SEDOL" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountrySEDOL" hideDetail="N" id="nh8c41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Security ID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72CountryPrimaryID" hideDetail="N" id="nh8d41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Listing Version Number" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryListingVersionNumber" hideDetail="N" id="nh8e41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Position Flag" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72PositionFlag" hideDetail="N" id="nh8f41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="PointID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryPointID" hideDetail="N" id="nh8g41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="GS PositionID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryGSPositionID" hideDetail="N" id="nh8h41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Pano Position ID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryPositionID" hideDetail="N" id="nh8i41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="RIC" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryRIC" hideDetail="N" id="nh8j41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Consolidated RIC" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryConsolidatedRIC" hideDetail="N" id="nh8k41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Ticker" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryRefinitivTicker" hideDetail="N" id="nh8l41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Ticker Exchange Code" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryBBTickerExchangeCode" hideDetail="N" id="nh8m41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Composite Ticker" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryBBCompositeTicker" hideDetail="N" id="nh8n41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Trading Symbol" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryBBTradingSymbol" hideDetail="N" id="nh8o41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Global" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryBBGlobal" hideDetail="N" id="nh8p41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Unique" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryBBUnique" hideDetail="N" id="nh8q41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="18" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Barra ID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryBarra" hideDetail="N" id="nh8r41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Compustat" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryCompustat" hideDetail="N" id="nh8s41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="IBES Ticker" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryIBESTKR" hideDetail="N" id="nh8t41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="21" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="StarMine" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryStarMine" hideDetail="N" id="nh8u41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="22" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="WorldScope WSID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryWorldScope" hideDetail="N" id="nh8v41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="23" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="GV Underlying Position ID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryGVUNDL" hideDetail="N" id="nh8w41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="24" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Bloomberg Ticker" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72BBGTICK" hideDetail="N" id="nh8x41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="25" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Singapore Code" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountrySingapore" hideDetail="N" id="nh8y41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="26" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Trading Currency" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryTradingCurrency" hideDetail="N" id="nh8z41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="27" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="PANO Risk Underlying" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryPANORISKPOSID" hideDetail="N" id="nh8$41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="28" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Round Lot Size" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryRoundLotSize" hideDetail="N" id="nh8%41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="29" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Days to Settlement" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryDaystoSettlement" hideDetail="N" id="nh8@41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="30" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Primary Trading Market" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryPrimaryTradingMarket" hideDetail="N" id="nh8&amp;amp;41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="31" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Trading Status" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryTradingStatus" hideDetail="N" id="nh8*41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="32" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="ICS Mapping" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryICSMAPPING" hideDetail="N" id="nh8-41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="33" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Ultimate Underlying Position ID" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryULTUNDLPOSID" hideDetail="N" id="nh8.41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="34" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 ADR Underlying Currency" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72ADRUnderlyingCurrency" hideDetail="N" id="nh8/41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="35" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="China Share Class" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72ChinaShareClass" hideDetail="N" id="nh8(41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="36" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Scaling Factor" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72ScalingFactor" hideDetail="N" id="nh8)41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="37" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Currency" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72Currency" hideDetail="N" id="nh8~41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="38" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Default Region" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72DefaultRegion" hideDetail="N" id="nh8?41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="39" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Exchange" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72Exchange" hideDetail="N" id="nh8&amp;lt;41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="40" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Pano Investment Category" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72PANOINCT" hideDetail="N" id="nh8&amp;gt;41M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="41" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Is Listed" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72IsListed" hideDetail="N" id="nh8051M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="42" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Inactive Date" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72InactiveDate" hideDetail="N" id="nh8151M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="43" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Official Place of Listing Indicator" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryOfficialPlaceofListingIndicator" hideDetail="N" id="nh8251M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="44" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Processed When Distributed Flag Ind" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryProcessedWhenDistributedFlagInd" hideDetail="N" id="nh8351M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="45" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Processed When Issued Indicator" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryProcessedWhenIssuedIndicator" hideDetail="N" id="nh8451M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="46" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Last Change Date/Time" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryLastChangeDateTime" hideDetail="N" id="nh8551M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="47" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Last Change User" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryLastChangeUser" hideDetail="N" id="nh8651M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="48" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="End Date" columns="2" fullQualPath="Bonds.CountrysPrimaryExchange.MktLstCountryP72InactiveDateEndDate" hideDetail="N" id="nh8751M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="49" pageSize="0" parentId="nh8X41M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Instrument Details" columns="2" fullQualPath="" hideDetail="N" id="nh8851M~O1" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Instrument Details" columns="2" fullQualPath="Bonds.InstrumentDetails" hideDetail="N" id="nh8951M~O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8851M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="All Market Listing" columns="2" fullQualPath="Bonds.AllMarketListing" hideDetail="N" id="nh8A51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Instrument Level Identifiers" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers" hideDetail="N" id="nh8B51M~O1" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <control caption="Refinitiv Asset Id" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.RefinitivAssetId" hideDetail="N" id="nh8C51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Identifier" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.BBIdentifier" hideDetail="N" id="nh8D51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Unique" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.BBUniqueIDInstrumentLevel" hideDetail="N" id="nh8E51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Global" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.BBGlobalInstrumentLevel" hideDetail="N" id="nh8F51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Common Number" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.CommonNumber" hideDetail="N" id="nh8G51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="CUSIP" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.CUSIP" hideDetail="N" id="nh8H51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="ISIN" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.ISIN" hideDetail="N" id="nh8I51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Wertpapier Number" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.WertpapierNumber" hideDetail="N" id="nh8J51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Valoren" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.Valoren" hideDetail="N" id="nh8K51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="XTRAKTER Number" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.XTRAKTERNumber" hideDetail="N" id="nh8L51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Inhouse Identifier" columns="2" fullQualPath="Bonds.Identifiers.InstrumentLevelIdentifiers.InhouseIdentifier" hideDetail="N" id="nh8M51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="nh8B51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Description" columns="2" fullQualPath="Bonds.InstrumentDescription" hideDetail="N" id="nh8N51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Country Level Identifiers" columns="2" fullQualPath="Bonds.Identifiers.CountryLevelIdentifiers" hideDetail="N" id="nh8O51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Country Name" columns="2" fullQualPath="Bonds.Identifiers.CountryLevelIdentifiers.CountryName" hideDetail="N" id="nh8P51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8O51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="SEDOL" columns="2" fullQualPath="Bonds.Identifiers.CountryLevelIdentifiers.SEDOL" hideDetail="N" id="nh8Q51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8O51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Bond Features" columns="3" fullQualPath="Bonds.BondFeatures" hideDetail="N" id="nh8R51M~O1" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Classification" columns="2" fullQualPath="Bonds.InstrumentClassification" hideDetail="N" id="nh8S51M~O1" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <control caption="BB Industry Classification (Level I)" columns="2" fullQualPath="Bonds.InstrumentClassification.BICSLevelI" hideDetail="N" id="nh8T51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Industry Classification (Level II)" columns="2" fullQualPath="Bonds.InstrumentClassification.BICSLevelII" hideDetail="N" id="nh8U51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Industry Classification (Level III)" columns="2" fullQualPath="Bonds.InstrumentClassification.BICSLevelIII" hideDetail="N" id="nh8V51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Market Sector" columns="2" fullQualPath="Bonds.InstrumentClassification.BBMarketSector" hideDetail="N" id="nh8W51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Security Type" columns="2" fullQualPath="Bonds.InstrumentClassification.BBSectorType" hideDetail="N" id="nh8X51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Sub-Security Type" columns="2" fullQualPath="Bonds.InstrumentClassification.BBSubSectorType" hideDetail="N" id="nh8Y51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="ISO CFI" columns="2" fullQualPath="Bonds.InstrumentClassification.ISOCFI" hideDetail="N" id="nh8Z51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Refinitiv Asset Classification" columns="2" fullQualPath="Bonds.InstrumentClassification.RefinitivAssetClassification" hideDetail="N" id="nh8a51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Refinitiv Usage Instrument Sub Type" columns="2" fullQualPath="Bonds.InstrumentClassification.RefinitivUsageInstrumentSubType" hideDetail="N" id="nh8b51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Refinitiv Debt Classification" columns="2" fullQualPath="Bonds.InstrumentClassification.RefinitivDebtClassification" hideDetail="N" id="nh8c51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="nh8S51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="All Classifications" columns="2" fullQualPath="Bonds.AllInstrumentClassifications" hideDetail="N" id="nh8d51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Geographical Information" columns="2" fullQualPath="Bonds.InstrumentGeographicalInformation" hideDetail="N" id="nh8e51M~O1" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Market Listing" columns="2" fullQualPath="Bonds.MarketListing" hideDetail="N" id="nh8f51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="MIC Code" columns="2" fullQualPath="Bonds.MarketListing.ListedOn.FinancialMarket.MarketDetails.MICCode" hideDetail="N" id="nh8g51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8f51M~O1" relatedPath="Bonds.MarketListing.ListedOn" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Exchange Name" columns="2" fullQualPath="Bonds.MarketListing.ListedOn.FinancialMarket.MarketDetails.MarketName" hideDetail="N" id="nh8h51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8f51M~O1" relatedPath="Bonds.MarketListing.ListedOn" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Market Level Identifiers" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers" hideDetail="N" id="nh8i51M~O1" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+        <control caption="BB Company Security" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers.BBCompanySecurity" hideDetail="N" id="nh8j51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="nh8i51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Trading Symbol" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers.BBTradingSymbol" hideDetail="N" id="nh8k51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="nh8i51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Composite Exchange Ticker" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers.BBCompositeExchangeTicker" hideDetail="N" id="nh8l51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="nh8i51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Composite Sedol" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers.BBCompositeSedol" hideDetail="N" id="nh8m51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8i51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="RIC" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers.RIC" hideDetail="N" id="nh8n51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8i51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="SEDOL" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers.SEDOLListing" hideDetail="N" id="nh8o51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="nh8i51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Ticker" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers.RefinitivTicker" hideDetail="N" id="nh8p51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="nh8i51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Exchange Ticker" columns="2" fullQualPath="Bonds.MarketListing.MarketLevelIdentifiers.ExchangeTicker" hideDetail="N" id="nh8q51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="nh8i51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Trading Currency" columns="2" fullQualPath="Bonds.MarketListing.TradingCurrency" hideDetail="N" id="nh8r51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Market Status" columns="2" fullQualPath="Bonds.MarketListing.MarketStatus" hideDetail="N" id="nh8s51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Primary Market Indicator" columns="2" fullQualPath="Bonds.MarketListing.NonPrimaryTradingInd" hideDetail="N" id="nh8t51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="First Exchange Trade Date" columns="2" fullQualPath="Bonds.MarketListing.FirstExchangeTradeDate" hideDetail="N" id="nh8u51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Price Currency Code" columns="2" fullQualPath="Bonds.MarketListing.PriceCurrencyCode" hideDetail="N" id="nh8v51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Pricing Unit Of Measure" columns="2" fullQualPath="Bonds.MarketListing.PricingUnitOfMeasure" hideDetail="N" id="nh8w51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Trading Unit Of Measure" columns="2" fullQualPath="Bonds.MarketListing.TradingUnitOfMeasure" hideDetail="N" id="nh8x51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Settlement Days" columns="2" fullQualPath="Bonds.MarketListing.SettlementDays" hideDetail="N" id="nh8y51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Days To Settlement Text" columns="2" fullQualPath="Bonds.MarketListing.DaysToSettlementText" hideDetail="N" id="nh8z51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Actively Traded Indicator" columns="2" fullQualPath="Bonds.MarketListing.ActivelyTradedIndicator" hideDetail="N" id="nh8$51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Round Lot" columns="2" fullQualPath="Bonds.MarketListing.RoundLot" hideDetail="N" id="nh8%51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="nh8f51M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Capitalization" columns="2" fullQualPath="Bonds.InstrumentCapitalization" hideDetail="N" id="nh8@51M~O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Bond Statistics" columns="3" fullQualPath="Bonds.BondStatistics" hideDetail="N" id="nh8&amp;amp;51M~O1" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Income Details" columns="2" fullQualPath="Bonds.IncomeDetails" hideDetail="N" id="nh8*51M~O1" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Redemption Details" columns="2" fullQualPath="Bonds.RedemptionDetails" hideDetail="N" id="nh8-51M~O1" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Underwriting Characteristics" columns="2" fullQualPath="Bonds.UnderwritingCharacteristics" hideDetail="N" id="nh8.51M~O1" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="nh8&amp;lt;31M~O1" relatedPath="" screenId="i*yzp&amp;gt;grG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Position ID Lock" entityTypeId="++3qwBhS2etxm101" id="008p-4o0hG53K004" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72IADCPOSITIONIDLOCK" nameSpace="POINT72">
+      <domainValue beFieldId="008p-4o0hG53K004" domainValueName="Yes" domainValueTxt="Y" id="008p-4o0hG53K00A" nameSpace="POINT72"/>
+    </beField>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Event Summary" displayCaption="Event Summary" entityTypeId="++3qwBhS2etxm101" frequencyInd="0" id="CADG020000000000" multiplicity="SINGLE" name="EventSummary" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="008p-4o0hG53K004" id="008p-4o0hG53K006" prntReqdInd="0" seq="90"/>
+    </dataGroup>
+  </dataGroups>
+  <relations>
+    <relation id="008p-4o0hG53K001" name="FT_T_ISID-To-FT_V_POL1" nameSpace="POINT72" srcTable="FT_T_ISID" tgtTable="FT_V_POL1">
+      <field fromColumn="ISID_OID" id="008p-4o0hG53K007" nameSpace="POINT72" toColumn="OVR_REF_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+  </relations>
+  <occurrences>
+    <occurrence desc="Occurrence for FT_V_POL1" id="008p-4o0hG53K000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="POL1_P72_POSITIONID_LOCK" nameSpace="POINT72" parentId="008gKRx0hG5yG00C" relationId="008p-4o0hG53K001" table="FT_V_POL1" timeSeries="LOGICAL_DELETE">
+      <field id="008p-4o0hG53K003" name="POSITION_LOCK" nameSpace="POINT72"/>
+      <option id="008p-4o0hG53K008" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="008p-4o0hG53K004" groupMapping="0" id="008p-4o0hG53K005" nameSpace="POINT72" occFieldId="008p-4o0hG53K003"/>
+  </mappings>
+</entities>
+ 

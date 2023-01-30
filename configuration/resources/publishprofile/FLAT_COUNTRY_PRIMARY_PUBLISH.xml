@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+  <Subscriptions>
+    <Subscription description="FLAT_COUNTRY_PRIMARY_PUBLISH" id="++8ez2RmhG5AW0GJ" name="FLAT_COUNTRY_PRIMARY_PUBLISH" ruleText="0 0 0 1 1 ? *" sourceId="" type="BATCH" workflow="PublishingWorkflow">
+      <destinations>
+        <destination id="++8ez2RmhG5AW0GE" outputType="JSON" participantRules="">
+          <downstream connectionFactory="jms/KafkaConnectionFactory1" deadline="" deadlineTime="" description="KafkaOut" downstreamDestinationType="JMS" downstreamValue="jms/topic/gs-out-publish" dwdfOid="008YpJ1WhG5AW0Bc" id="008YpJ1WhG5AW0Bd" name="KafkaOut" preferredLanguageCode="" preferredVendorId="" subscriberType="" typeFlag="" validityPriority="null"/>
+        </destination>
+        <destination id="++8ez2RmhG5AW0GD" outputType="JSON" participantRules="">
+          <downstream connectionFactory="" deadline="" deadlineTime="" description="P72CAProcessing" downstreamDestinationType="File" downstreamValue="/devgs/Outbound/CAProcessing" dwdfOid="++8X5xBS2eu5G00F" id="++8X5xBS2eu5G00G" name="P72CAProcessing" preferredLanguageCode="" preferredVendorId="" subscriberType="" typeFlag="" validityPriority="null"/>
+        </destination>
+      </destinations>
+      <messageTypes/>
+      <filters>
+        <filter dataSourceId="" deltaMode="NONE" entity="++5TZs2y2etse000" entityCaption="Full Instrument" entityName="FullInstrument" entityType="BUSINESS_ENTITY" filterEQLJsonText="" filterRuleText="&lt;sql&gt;instr_id in (select instr_id from gc_own.ft_t_isid where end_tms is null and iss_id in ('US0636796171'))&lt;/sql&gt;" id="++8ez2RmhG5AW0GF" publishingModelName="FullInstrument" ruleText="" tableType="ISSU">
+          <formats>
+            <format destination="++8ez2RmhG5AW0GD" filter="++8ez2RmhG5AW0GF" id="++8ez2RmhG5AW0GI" outputType="" resource="ryA101gSG1">
+              <resource binary="N" compressed="N" description="" id="ryA101gSG1" type="mdx" uri="db://resource/mapping/Custom/FullInstrPublP72_noCPSplit_publish.mdx"/>
+            </format>
+            <format destination="++8ez2RmhG5AW0GE" filter="++8ez2RmhG5AW0GF" id="++8ez2RmhG5AW0GH" outputType="" resource="ryA101gSG1">
+              <resource binary="N" compressed="N" description="" id="ryA101gSG1" type="mdx" uri="db://resource/mapping/Custom/FullInstrPublP72_noCPSplit_publish.mdx"/>
+            </format>
+          </formats>
+        </filter>
+      </filters>
+    </Subscription>
+  </Subscriptions>
+</root>

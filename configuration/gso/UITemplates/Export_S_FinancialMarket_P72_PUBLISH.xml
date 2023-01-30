@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="akhil.batra@point72.com" entityName="FinancialMarket" entitySubType="[]" id="SVysx&gt;s-81" isDefault="N" isPublic="Y" screenType="SYSTEMGRID" title="S: FinancialMarket_P72_PUBLISH">
+  <control caption="Market Details" fullQualPath="FinancialMarket.MarketDetails" id="SVyux&amp;gt;s-81" lazyInd="N" orderNum="0" parentId="" relatedPath="" screenId="SVysx&amp;gt;s-81" show="Y">
+    <control caption="" fullQualPath="FinancialMarket.MarketDetails.MarketName" id="SVyyx&amp;gt;s-81" lazyInd="N" orderNum="0" parentId="SVyux&amp;gt;s-81" relatedPath="" screenType="SVysx&amp;gt;s-81" show="Y"/>
+    <control caption="" fullQualPath="FinancialMarket.MarketDetails.MICCode" id="SVy$x&amp;gt;s-81" lazyInd="N" orderNum="1" parentId="SVyux&amp;gt;s-81" relatedPath="" screenType="SVysx&amp;gt;s-81" show="Y"/>
+  </control>
+</root>

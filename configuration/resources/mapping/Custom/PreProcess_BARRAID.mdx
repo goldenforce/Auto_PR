@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="MSF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-01-10 at 03:03:10 IST</Option>
+    <Option key="MappingDesignerVersion">8.8.1.03</Option>
+  </Options>
+  <Input vendorType="VARIABLE">
+    <Options>
+      <Option key="DecimalSeparator">.</Option>
+      <Option key="DDLName"/>
+      <Option key="IsSingleCharDataDelimiter">TRUE</Option>
+      <Option key="TrimFields">BOTH</Option>
+      <Option key="NullIdentifiers"/>
+      <Option key="InputDataDelimiter">|</Option>
+      <Option key="TimeStampFormat">%Y%M%D%H%I%S.%f</Option>
+      <Option key="QuotationMark"/>
+      <Option key="MessageType"/>
+      <Option key="DateTimeFormat">%Y%M%D%H%I%S</Option>
+      <Option key="EscapeChar"/>
+    </Options>
+    <Layout>
+      <Override/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="Barrid" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="Barrid" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="AssetIDType" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="AssetIDType" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="AssetID" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="AssetID" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="StartDate" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="StartDate" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="EndDate" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="EndDate" pattern="" pos="0" readonly="false" type="String"/>
+    </Layout>
+  </Input>
+  <Output>
+    <Options>
+      <Option key="TimeStampOutputFormat">%M-%D-%Y %H:%I:%S.%f %A</Option>
+      <Option key="DateTimeOutputFormat">%M-%D-%Y %H:%I:%S %A</Option>
+      <Option key="OutputEncoding">UTF-8</Option>
+      <Option key="DefaultEmptyNumericsToZero">FALSE</Option>
+      <Option key="AddTZIndicators">true</Option>
+      <Option key="AddVendorMnemonic">true</Option>
+    </Options>
+    <MappingFragments/>
+    <OutputDef>
+      <Node messageformat="GSREF" name="STREET_REF" type="message">
+        <Options>
+          <Option key="OutputEncoding"/>
+          <Option key="AddTZIndicators">true</Option>
+          <Option key="SystemId">fti://repository/dtd/STREET_REF</Option>
+          <Option key="DocType">STREET_REF</Option>
+        </Options>
+        <Node name="USERID" type="attribute">
+          <expr><![CDATA[return "GUEST";]]></expr>
+        </Node>
+        <Node name="HEADER" type="element">
+          <Node name="CHECKLASTDBUPDATE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "N";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CHGAPPRTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "N";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CURRENTTIMESTAMP" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+          </Node>
+          <Node name="DATASOURCE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Barrid;]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID_CTXT_TYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BARRA";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MSGCLASSIFICATION" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "PreProcessBARRAID";]]></expr>
+            </Node>
+          </Node>
+          <Node name="USERID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BARRA";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="BARRAPreProcessor" type="segment">
+          <condition><![CDATA[if (((StrGreaterEqual(EndDate, Date2String(Now(), "%Y%M%D")) && StrLessEqual(StartDate, Date2String(Now(), "%Y%M%D"))) && !Strcmp(AssetIDType, "LOCALID")) && OneHasValue(Barrid))
+	if (AssetIDType == "CINS")
+		if (IsAlpha(AssetID, 1, 1))
+			return "BARRAPreProcessor";
+		else
+			return "";
+	else if (AssetIDType == "CUSIP")
+		if (!IsAlpha(AssetID, 1, 1))
+			return "BARRAPreProcessor";
+		else
+			return "";
+	else
+		return "BARRAPreProcessor";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "BARRAPreProcessor";]]></expr>
+          </Node>
+          <Node name="BARRAID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Barrid;]]></expr>
+            </Node>
+          </Node>
+          <Node name="ASSETID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return AssetID;]]></expr>
+            </Node>
+          </Node>
+          <Node name="ASSETIDTYPE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return AssetIDType;]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTDATE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return StartDate;]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDDATE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return EndDate;]]></expr>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+    </OutputDef>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="true" ident="KeyStreaming">
+      <expr><![CDATA[return Barrid;]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="RecordIdentifier">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="GSDMFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="VDSFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

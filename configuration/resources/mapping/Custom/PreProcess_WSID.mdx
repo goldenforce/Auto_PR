@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="MSF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2021-11-30 at 05:24:53 EST</Option>
+    <Option key="MappingDesignerVersion">8.8.1.05</Option>
+  </Options>
+  <Input vendorType="VARIABLE">
+    <Options>
+      <Option key="DecimalSeparator">.</Option>
+      <Option key="DDLName"/>
+      <Option key="IsSingleCharDataDelimiter">TRUE</Option>
+      <Option key="TrimFields">BOTH</Option>
+      <Option key="NullIdentifiers"/>
+      <Option key="InputDataDelimiter">|</Option>
+      <Option key="IndexBasedLookUp">TRUE</Option>
+      <Option key="TimeStampFormat">%Y%M%D%H%I%S.%f</Option>
+      <Option key="QuotationMark"/>
+      <Option key="MessageType"/>
+      <Option key="DateTimeFormat">%Y%M%D%H%I%S</Option>
+      <Option key="EscapeChar"/>
+    </Options>
+    <Layout>
+      <Override/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="WSid" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="WSid" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="StartDate" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="StartDate" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="Code" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="Code" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="CodeValue" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="CodeValue" pattern="" pos="0" readonly="false" type="String"/>
+    </Layout>
+  </Input>
+  <Output>
+    <Options>
+      <Option key="TimeStampOutputFormat">%M-%D-%Y %H:%I:%S.%f %A</Option>
+      <Option key="DateTimeOutputFormat">%M-%D-%Y %H:%I:%S %A</Option>
+      <Option key="OutputEncoding">UTF-8</Option>
+      <Option key="DefaultEmptyNumericsToZero">FALSE</Option>
+      <Option key="AddTZIndicators">true</Option>
+      <Option key="AddVendorMnemonic">true</Option>
+    </Options>
+    <MappingFragments/>
+    <OutputDef>
+      <Node messageformat="GSREF" name="STREET_REF" type="message">
+        <Options>
+          <Option key="xsd">./../../../test2/STREET_REF.gsref.xsd</Option>
+          <Option key="OutputEncoding"/>
+          <Option key="AddTZIndicators">true</Option>
+          <Option key="SystemId">fti://repository/dtd/STREET_REF</Option>
+          <Option key="DocType">STREET_REF</Option>
+        </Options>
+        <condition><![CDATA[if (OneHasValue(WSid) && (StrGreaterEqual(Date2String(Now(), "%Y%M%D"), StartDate) && StrContainsOneOf(Code, "6004", "6006", "6008")))
+	return "STREET_REF";
+else
+	return "";]]></condition>
+        <Node name="USERID" type="attribute">
+          <expr><![CDATA[return "GUEST";]]></expr>
+        </Node>
+        <Node name="HEADER" type="element">
+          <Node name="CURRENTTIMESTAMP" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+          </Node>
+          <Node name="DATASOURCE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72";]]></expr>
+            </Node>
+          </Node>
+          <Node name="LOCALE" type="element">
+            <Node name="NLS" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "ENU";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TIMEZONE" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "GMT Standard Time";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return WSid;]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID_CTXT_TYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "WSID";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_TBL_TYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "WID1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MSGCLASSIFICATION" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "PreProcessWSID";]]></expr>
+            </Node>
+          </Node>
+          <Node name="USERID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "WORLDSCOPE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Block displayName="DEBUGGING">
+          <Execute>
+            <expr><![CDATA[return StoreString("SubStr_StrLen", SubString(WSid, StrLen(WSid), 1));]]></expr>
+          </Execute>
+          <Execute>
+            <expr><![CDATA[return StoreNumeric("StrLen", StrLen(WSid));]]></expr>
+          </Execute>
+          <Execute>
+            <expr><![CDATA[if (IsAlpha(WSid, StrLen(WSid), StrLen(WSid)))
+	return StoreString("IsAlpha", "TRUE");
+else
+	return StoreString("IsAlpha", "FALSE");]]></expr>
+          </Execute>
+        </Block>
+        <Node name="P72CustomIDPreProcessor" type="segment">
+          <condition><![CDATA[if (OneHasValue(WSid) && (StrGreaterEqual(Date2String(Now(), "%Y%M%D"), StartDate) && StrContainsOneOf(Code, "6004", "6006", "6008")))
+	return "P72CustomIDPreProcessor";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "P72CustomIDPreProcessor";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "WID1_CUSTOM_ID";]]></expr>
+          </Node>
+          <Node name="CINS" type="element">
+            <condition><![CDATA[if (AllHaveValue(Code, CodeValue) && Strcmp(Code, "6004"))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="VALUE" type="attribute">
+              <comment><![CDATA[Code values start with ']]></comment>
+              <expr><![CDATA[return SubString(CodeValue, 2, 12);]]></expr>
+            </Node>
+          </Node>
+          <Node name="CUSIP" type="element">
+            <condition><![CDATA[if (AllHaveValue(Code, CodeValue) && Strcmp(Code, "6004"))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="VALUE" type="attribute">
+              <comment><![CDATA[Code values start with ']]></comment>
+              <expr><![CDATA[return SubString(CodeValue, 2, 12);]]></expr>
+            </Node>
+          </Node>
+          <Node name="CUSTOMID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return WSid;]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISIN" type="element">
+            <condition><![CDATA[if (AllHaveValue(Code, CodeValue) && Strcmp(Code, "6008"))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return SubString(CodeValue, 2, 12);]]></expr>
+            </Node>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SEDOL" type="element">
+            <condition><![CDATA[if (AllHaveValue(Code, CodeValue) && Strcmp(Code, "6006"))
+	return "true";
+else
+	return "";]]></condition>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return SubString(CodeValue, 2, 12);]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTDATE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return StartDate;]]></expr>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+    </OutputDef>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="true" ident="KeyStreaming">
+      <expr><![CDATA[return WSid;]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="RecordIdentifier">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="true" ident="GSDMFiltering">
+      <expr><![CDATA[if (OneHasValue(WSid) && (StrGreaterEqual(Date2String(Now(), "%Y%M%D"), StartDate) && (StrContainsOneOf(Code, "6004", "6006", "6008") && !IsAlpha(WSid, StrLen(WSid), StrLen(WSid)))))
+	return "false";
+else
+	return "true";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="VDSFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

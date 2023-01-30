@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-03-03 at 12:22:10 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.27</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Mutual_Funds.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="VZ5o91y6W1" name="Issue" type="segment">
+        <Node id="VZ5p91y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5q91y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="VZ5r91y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="VZ5s91y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="VZ5t91y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="VZ5u91y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="VZ5v91y6W1" name="ERROR" type="attribute"/>
+        <Node id="VZ5w91y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="VZ5x91y6W1" name="MATCH" type="attribute"/>
+        <Node id="VZ5y91y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="VZ5z91y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="VZ5$91y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="VZ5%91y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="VZ5@91y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="VZ5&amp;91y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="VZ5*91y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="VZ5-91y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="VZ5.91y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "Issue";]]></expr>
+        </Node>
+        <Node id="VZ5/91y6W1" name="IssuerIdentifier" type="segment">
+          <Node id="VZ5(91y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ5)91y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "INSTR_ISSR_ID";]]></expr>
+          </Node>
+          <Node id="VZ5~91y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "IRID1_IDCTXT_ISSR_ID";]]></expr>
+          </Node>
+          <Node id="VZ5?91y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+          </Node>
+          <Node id="VZ5&lt;91y6W1" name="ISSRID" type="element">
+            <Node id="VZ5&gt;91y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ50A1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ51A1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return Issuer_OrgID;]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ52A1y6W1" name="ISSRIDCTXTTYP" type="element">
+            <Node id="VZ53A1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ54A1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ55A1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "RTORGLID";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="ISIN" id="VZ56A1y6W1" name="IssueIdentifier" type="segment">
+          <condition id="VZ57A1y6W1"><![CDATA[if (OneHasValue(ISIN__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="VZ58A1y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ59A1y6W1" name="COPY_FROM" type="attribute"/>
+          <Node id="VZ5AA1y6W1" name="COPY_TO" type="attribute"/>
+          <Node id="VZ5BA1y6W1" name="DUP_CHECK" type="attribute"/>
+          <Node id="VZ5CA1y6W1" name="ENDDATEIND" type="attribute"/>
+          <Node id="VZ5DA1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="VZ5EA1y6W1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="VZ5FA1y6W1" name="LOOKUP" type="attribute"/>
+          <Node id="VZ5GA1y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node id="VZ5HA1y6W1" name="PARENT_LINK" type="attribute"/>
+          <Node id="VZ5IA1y6W1" name="PUBLISH" type="attribute"/>
+          <Node id="VZ5JA1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="VZ5KA1y6W1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="VZ5LA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ5MA1y6W1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="VZ5NA1y6W1" name="TSOPTION" type="attribute"/>
+          <Node id="VZ5OA1y6W1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="VZ5PA1y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="VZ5QA1y6W1" name="DATASRCID" type="element">
+            <Node id="VZ5RA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5SA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5TA1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5UA1y6W1" name="DATASTATTYP" type="element">
+            <Node id="VZ5VA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5WA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5XA1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5YA1y6W1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="VZ5ZA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5aA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5bA1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5cA1y6W1" name="IDCTXTTYP" type="element">
+            <Node id="VZ5dA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5eA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5fA1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ISIN";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5gA1y6W1" name="INSTRID" type="element">
+            <Node id="VZ5hA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5iA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5jA1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5kA1y6W1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="VZ5lA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5mA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5nA1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5oA1y6W1" name="ISIDOID" type="element">
+            <Node id="VZ5pA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5qA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5rA1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5sA1y6W1" name="ISSID" type="element">
+            <Node id="VZ5tA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5uA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5vA1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return ISIN__Previous;
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5wA1y6W1" name="ISSUSAGETYP" type="element">
+            <Node id="VZ5xA1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5yA1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5zA1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5$A1y6W1" name="LASTCHGTMS" type="element">
+            <Node id="VZ5%A1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5@A1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5&amp;A1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5*A1y6W1" name="LASTCHGUSRID" type="element">
+            <Node id="VZ5-A1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5.A1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5/A1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5(A1y6W1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="VZ5)A1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5~A1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5?A1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5&lt;A1y6W1" name="MKTID" type="element">
+            <Node id="VZ5&gt;A1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ50B1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ51B1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ52B1y6W1" name="MKTIDCTXTTYP" type="element">
+            <Node id="VZ53B1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ54B1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ55B1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ56B1y6W1" name="MKTNME" type="element">
+            <Node id="VZ57B1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ58B1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ59B1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5AB1y6W1" name="MKTOID" type="element">
+            <Node id="VZ5BB1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5CB1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5DB1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5EB1y6W1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="VZ5FB1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5GB1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5HB1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5IB1y6W1" name="STARTTMS" type="element">
+            <Node id="VZ5JB1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5KB1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5LB1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5MB1y6W1" name="TRADERSYMBOLIND" type="element">
+            <Node id="VZ5NB1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5OB1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5PB1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5QB1y6W1" name="TRDNGCURRCDE" type="element">
+            <Node id="VZ5RB1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5SB1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5TB1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName="CUSIP" id="VZ5UB1y6W1" name="IssueIdentifier" type="segment">
+          <condition id="VZ5VB1y6W1"><![CDATA[if ( OneHasValue(CUSIP__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="VZ5WB1y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ5XB1y6W1" name="COPY_FROM" type="attribute"/>
+          <Node id="VZ5YB1y6W1" name="COPY_TO" type="attribute"/>
+          <Node id="VZ5ZB1y6W1" name="DUP_CHECK" type="attribute"/>
+          <Node id="VZ5aB1y6W1" name="ENDDATEIND" type="attribute"/>
+          <Node id="VZ5bB1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="VZ5cB1y6W1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="VZ5dB1y6W1" name="LOOKUP" type="attribute"/>
+          <Node id="VZ5eB1y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node id="VZ5fB1y6W1" name="PARENT_LINK" type="attribute"/>
+          <Node id="VZ5gB1y6W1" name="PUBLISH" type="attribute"/>
+          <Node id="VZ5hB1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="VZ5iB1y6W1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="VZ5jB1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ5kB1y6W1" name="TSOPTION" type="attribute"/>
+          <Node id="VZ5lB1y6W1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="VZ5mB1y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="VZ5nB1y6W1" name="DATASRCID" type="element">
+            <Node id="VZ5oB1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5pB1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5qB1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5rB1y6W1" name="DATASTATTYP" type="element">
+            <Node id="VZ5sB1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5tB1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5uB1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5vB1y6W1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="VZ5wB1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5xB1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5yB1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5zB1y6W1" name="IDCTXTTYP" type="element">
+            <Node id="VZ5$B1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5%B1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5@B1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "CUSIP";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5&amp;B1y6W1" name="INSTRID" type="element">
+            <Node id="VZ5*B1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5-B1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5.B1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5/B1y6W1" name="ISIDOID" type="element">
+            <Node id="VZ5(B1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5)B1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5~B1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5?B1y6W1" name="ISSID" type="element">
+            <Node id="VZ5&lt;B1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5&gt;B1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ50C1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return CUSIP__Previous;]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ51C1y6W1" name="ISSUSAGETYP" type="element">
+            <Node id="VZ52C1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ53C1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ54C1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ55C1y6W1" name="LASTCHGTMS" type="element">
+            <Node id="VZ56C1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ57C1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ58C1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ59C1y6W1" name="LASTCHGUSRID" type="element">
+            <Node id="VZ5AC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5BC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5CC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5DC1y6W1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="VZ5EC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5FC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5GC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5HC1y6W1" name="MKTID" type="element">
+            <Node id="VZ5IC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5JC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5KC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5LC1y6W1" name="MKTIDCTXTTYP" type="element">
+            <Node id="VZ5MC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5NC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5OC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5PC1y6W1" name="MKTNME" type="element">
+            <Node id="VZ5QC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5RC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5SC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5TC1y6W1" name="MKTOID" type="element">
+            <Node id="VZ5UC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5VC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5WC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5XC1y6W1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="VZ5YC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5ZC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5aC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5bC1y6W1" name="TRADERSYMBOLIND" type="element">
+            <Node id="VZ5cC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5dC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5eC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5fC1y6W1" name="TRDNGCURRCDE" type="element">
+            <Node id="VZ5gC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5hC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5iC1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName="PILC" id="VZ5jC1y6W1" name="IssueIdentifier" type="segment">
+          <condition id="VZ5kC1y6W1"><![CDATA[if (OneHasValue(PILC__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="VZ5lC1y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";
+]]></expr>
+          </Node>
+          <Node id="VZ5mC1y6W1" name="COPY_FROM" type="attribute"/>
+          <Node id="VZ5nC1y6W1" name="COPY_TO" type="attribute"/>
+          <Node id="VZ5oC1y6W1" name="DUP_CHECK" type="attribute"/>
+          <Node id="VZ5pC1y6W1" name="ENDDATEIND" type="attribute"/>
+          <Node id="VZ5qC1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="VZ5rC1y6W1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="VZ5sC1y6W1" name="LOOKUP" type="attribute"/>
+          <Node id="VZ5tC1y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";	
+]]></expr>
+          </Node>
+          <Node id="VZ5uC1y6W1" name="PARENT_LINK" type="attribute"/>
+          <Node id="VZ5vC1y6W1" name="PUBLISH" type="attribute"/>
+          <Node id="VZ5wC1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="VZ5xC1y6W1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="VZ5yC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ5zC1y6W1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="VZ5$C1y6W1" name="TSOPTION" type="attribute"/>
+          <Node id="VZ5%C1y6W1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="VZ5@C1y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="VZ5&amp;C1y6W1" name="DATASRCID" type="element">
+            <Node id="VZ5*C1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5-C1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5.C1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5/C1y6W1" name="DATASTATTYP" type="element">
+            <Node id="VZ5(C1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5)C1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5~C1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5?C1y6W1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="VZ5&lt;C1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5&gt;C1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ50D1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ51D1y6W1" name="IDCTXTTYP" type="element">
+            <Node id="VZ52D1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ53D1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ54D1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "PILC";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ55D1y6W1" name="INSTRID" type="element">
+            <Node id="VZ56D1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ57D1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ58D1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ59D1y6W1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="VZ5AD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5BD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5CD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5DD1y6W1" name="ISIDOID" type="element">
+            <Node id="VZ5ED1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5FD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5GD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5HD1y6W1" name="ISSID" type="element">
+            <Node id="VZ5ID1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5JD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5KD1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return PILC__Previous;
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5LD1y6W1" name="ISSUSAGETYP" type="element">
+            <Node id="VZ5MD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5ND1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5OD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5PD1y6W1" name="LASTCHGTMS" type="element">
+            <Node id="VZ5QD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5RD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5SD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5TD1y6W1" name="LASTCHGUSRID" type="element">
+            <Node id="VZ5UD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5VD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5WD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5XD1y6W1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="VZ5YD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5ZD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5aD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5bD1y6W1" name="MKTID" type="element">
+            <Node id="VZ5cD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5dD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5eD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5fD1y6W1" name="MKTIDCTXTTYP" type="element">
+            <Node id="VZ5gD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5hD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5iD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5jD1y6W1" name="MKTNME" type="element">
+            <Node id="VZ5kD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5lD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5mD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5nD1y6W1" name="MKTOID" type="element">
+            <Node id="VZ5oD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5pD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5qD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5rD1y6W1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="VZ5sD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5tD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5uD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5vD1y6W1" name="TRADERSYMBOLIND" type="element">
+            <Node id="VZ5wD1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5xD1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5yD1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5zD1y6W1" name="TRDNGCURRCDE" type="element">
+            <Node id="VZ5$D1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5%D1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5@D1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName="Asset ID" id="VZ5&amp;D1y6W1" name="IssueIdentifier" type="segment">
+          <condition id="VZ5*D1y6W1"><![CDATA[if (OneHasValue(Asset_ID__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <sort disabled="1" id="VZ5-D1y6W1" order="ASC"/>
+          <Node id="VZ5.D1y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ5/D1y6W1" name="COPY_FROM" type="attribute"/>
+          <Node id="VZ5(D1y6W1" name="COPY_TO" type="attribute"/>
+          <Node id="VZ5)D1y6W1" name="DUP_CHECK" type="attribute"/>
+          <Node id="VZ5~D1y6W1" name="ENDDATEIND" type="attribute"/>
+          <Node id="VZ5?D1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="VZ5&lt;D1y6W1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="VZ5&gt;D1y6W1" name="LOOKUP" type="attribute"/>
+          <Node id="VZ50E1y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";	
+]]></expr>
+          </Node>
+          <Node id="VZ51E1y6W1" name="PARENT_LINK" type="attribute"/>
+          <Node id="VZ52E1y6W1" name="PUBLISH" type="attribute"/>
+          <Node id="VZ53E1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="VZ54E1y6W1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="VZ55E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ56E1y6W1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="VZ57E1y6W1" name="TSOPTION" type="attribute"/>
+          <Node id="VZ58E1y6W1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="VZ59E1y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="VZ5AE1y6W1" name="DATASRCID" type="element">
+            <Node id="VZ5BE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5CE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5DE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5EE1y6W1" name="DATASTATTYP" type="element">
+            <Node id="VZ5FE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5GE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5HE1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5IE1y6W1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="VZ5JE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5KE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5LE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5ME1y6W1" name="IDCTXTTYP" type="element">
+            <Node id="VZ5NE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5OE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5PE1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "RTASSET";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5QE1y6W1" name="INSTRID" type="element">
+            <Node id="VZ5RE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5SE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5TE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5UE1y6W1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="VZ5VE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5WE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5XE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5YE1y6W1" name="ISIDOID" type="element">
+            <Node id="VZ5ZE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5aE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5bE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5cE1y6W1" name="ISSID" type="element">
+            <Node id="VZ5dE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5eE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5fE1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return Asset_ID__Previous;
+
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5gE1y6W1" name="ISSUSAGETYP" type="element">
+            <Node id="VZ5hE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5iE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5jE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5kE1y6W1" name="LASTCHGTMS" type="element">
+            <Node id="VZ5lE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5mE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5nE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5oE1y6W1" name="LASTCHGUSRID" type="element">
+            <Node id="VZ5pE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5qE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5rE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5sE1y6W1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="VZ5tE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5uE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5vE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5wE1y6W1" name="MKTID" type="element">
+            <Node id="VZ5xE1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5yE1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5zE1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5$E1y6W1" name="MKTIDCTXTTYP" type="element">
+            <Node id="VZ5%E1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5@E1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5&amp;E1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5*E1y6W1" name="MKTNME" type="element">
+            <Node id="VZ5-E1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5.E1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5/E1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5(E1y6W1" name="MKTOID" type="element">
+            <Node id="VZ5)E1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5~E1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5?E1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5&lt;E1y6W1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="VZ5&gt;E1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ50F1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ51F1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ52F1y6W1" name="TRADERSYMBOLIND" type="element">
+            <Node id="VZ53F1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ54F1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ55F1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ56F1y6W1" name="TRDNGCURRCDE" type="element">
+            <Node id="VZ57F1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ58F1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ59F1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node displayName=" IssuePermID" id="VZ5AF1y6W1" name="IssueIdentifier" type="segment">
+          <condition id="VZ5BF1y6W1"><![CDATA[if (OneHasValue(Issue_Perm_ID__Previous))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="VZ5CF1y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ5DF1y6W1" name="COPY_FROM" type="attribute"/>
+          <Node id="VZ5EF1y6W1" name="COPY_TO" type="attribute"/>
+          <Node id="VZ5FF1y6W1" name="DUP_CHECK" type="attribute"/>
+          <Node id="VZ5GF1y6W1" name="ENDDATEIND" type="attribute"/>
+          <Node id="VZ5HF1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="VZ5IF1y6W1" name="LOOKUP" type="attribute"/>
+          <Node id="VZ5JF1y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";
+]]></expr>
+          </Node>
+          <Node id="VZ5KF1y6W1" name="PARENT_LINK" type="attribute"/>
+          <Node id="VZ5LF1y6W1" name="PUBLISH" type="attribute"/>
+          <Node id="VZ5MF1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="VZ5NF1y6W1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="VZ5OF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ5PF1y6W1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="VZ5QF1y6W1" name="TSOPTION" type="attribute"/>
+          <Node id="VZ5RF1y6W1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="VZ5SF1y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="KL7nC10Em1" name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node id="VZ5TF1y6W1" name="DATASRCID" type="element">
+            <Node id="VZ5UF1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5VF1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5WF1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5XF1y6W1" name="DATASTATTYP" type="element">
+            <Node id="VZ5YF1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5ZF1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5aF1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5bF1y6W1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="VZ5cF1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5dF1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5eF1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5fF1y6W1" name="IDCTXTTYP" type="element">
+            <Node id="VZ5gF1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5hF1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5iF1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ISSUEPERMID";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5jF1y6W1" name="INSTRID" type="element">
+            <Node id="VZ5kF1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5lF1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5mF1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5nF1y6W1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="VZ5oF1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5pF1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5qF1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5rF1y6W1" name="ISIDOID" type="element">
+            <Node id="VZ5sF1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5tF1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5uF1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5vF1y6W1" name="ISSID" type="element">
+            <Node id="VZ5wF1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5xF1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5yF1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return Issue_Perm_ID__Previous;
+]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5zF1y6W1" name="ISSUSAGETYP" type="element">
+            <Node id="VZ5$F1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5%F1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5@F1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5&amp;F1y6W1" name="LASTCHGTMS" type="element">
+            <Node id="VZ5*F1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5-F1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5.F1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5/F1y6W1" name="LASTCHGUSRID" type="element">
+            <Node id="VZ5(F1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5)F1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="VZ5~F1y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="VZ5?F1y6W1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="VZ5&lt;F1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="VZ5&gt;F1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="Zr5101y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Zr5201y6W1" name="MKTID" type="element">
+            <Node id="Zr5301y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="Zr5401y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="Zr5501y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Zr5601y6W1" name="MKTIDCTXTTYP" type="element">
+            <Node id="Zr5701y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="Zr5801y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="Zr5901y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Zr5A01y6W1" name="MKTNME" type="element">
+            <Node id="Zr5B01y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="Zr5C01y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="Zr5D01y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Zr5E01y6W1" name="MKTOID" type="element">
+            <Node id="Zr5F01y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="Zr5G01y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="Zr5H01y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Zr5I01y6W1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="Zr5J01y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="Zr5K01y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="Zr5L01y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Zr5M01y6W1" name="TRADERSYMBOLIND" type="element">
+            <Node id="Zr5N01y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="Zr5O01y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="Zr5P01y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="Zr5Q01y6W1" name="TRDNGCURRCDE" type="element">
+            <Node id="Zr5R01y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="Zr5S01y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="Zr5T01y6W1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="Zr5U01y6W1" name="ACCESSAUTHTYP" type="element">
+          <Node id="Zr5V01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5W01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5X01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "PUBLIC";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Zr5Y01y6W1" name="CLTYP" type="element">
+          <Node id="Zr5Z01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5a01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5b01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5c01y6W1" name="DATASRCID" type="element">
+          <Node id="Zr5d01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5e01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5f01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5g01y6W1" name="DATASTATTYP" type="element">
+          <Node id="Zr5h01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5i01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5j01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Zr5k01y6W1" name="DECPRECNUM" type="element">
+          <Node id="Zr5l01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5m01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5n01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5o01y6W1" name="DENOMCURRCDE" type="element">
+          <Node id="Zr5p01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5q01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5r01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5s01y6W1" name="DFLTSTATTYP" type="element">
+          <Node id="Zr5t01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5u01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5v01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5w01y6W1" name="DFLTTMS" type="element">
+          <Node id="Zr5x01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5y01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5z01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5$01y6W1" name="DISTRIBUTIONCURRCDE" type="element">
+          <Node id="Zr5%01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5@01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5&amp;01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5*01y6W1" name="DLVIND" type="element">
+          <Node id="Zr5-01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5.01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5/01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5(01y6W1" name="DLVREASCDE" type="element">
+          <Node id="Zr5)01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5~01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5?01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5&lt;01y6W1" name="EISTOID" type="element">
+          <Node id="Zr5&gt;01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5011y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5111y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5211y6W1" name="ENDTMS" type="element">
+          <Node id="Zr5311y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5411y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5511y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5611y6W1" name="EUROCNVRTYP" type="element">
+          <Node id="Zr5711y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5811y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5911y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5A11y6W1" name="INCBASTYP" type="element">
+          <Node id="Zr5B11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5C11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5D11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5E11y6W1" name="INDIVCERTIFIND" type="element">
+          <Node id="Zr5F11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5G11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5H11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5I11y6W1" name="INSTRID" type="element">
+          <Node id="Zr5J11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5K11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5L11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5M11y6W1" name="INSTRISSRID" type="element">
+          <Node id="Zr5N11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5O11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5P11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5Q11y6W1" name="ISCDOID" type="element">
+          <Node id="Zr5R11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5S11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5T11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5U11y6W1" name="ISSACTVYSTATREASTYP" type="element">
+          <Node id="Zr5V11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5W11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5X11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5Y11y6W1" name="ISSACTVYSTATTYP" type="element">
+          <Node id="Zr5Z11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5a11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5b11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (Strcmp(Asset_Status, "1"))
+	return "ACTIVE";
+else
+	return "INACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="Zr5c11y6W1" name="ISSALPHSRCHTXT" type="element">
+          <Node id="Zr5d11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5e11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5f11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5g11y6W1" name="ISSOBJTYP" type="element">
+          <Node id="Zr5h11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5i11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5j11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5k11y6W1" name="ISSRATETXT" type="element">
+          <Node id="Zr5l11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5m11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5n11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5o11y6W1" name="ISSRID" type="element">
+          <Node id="Zr5p11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5q11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5r11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5s11y6W1" name="ISSRIDCTXTTYP" type="element">
+          <Node id="Zr5t11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5u11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5v11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5w11y6W1" name="ISSTMS" type="element">
+          <Node id="Zr5x11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5y11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5z11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5$11y6W1" name="ISSTYP" type="element">
+          <Node id="Zr5%11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5@11y6W1" name="TRANSLATE" type="attribute">
+            <expr><![CDATA[return "YES";]]></expr>
+          </Node>
+          <Node id="Zr5&amp;11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Refinitiv_Classification_Scheme))
+	if (Strcmp(Refinitiv_Classification_Scheme, "CFD"))
+		return "MISC";
+	else
+		return Refinitiv_Classification_Scheme;
+else
+	return Asset_Category;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Zr5*11y6W1" name="ISSUTCQTY" type="element">
+          <Node id="Zr5-11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5.11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5/11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5(11y6W1" name="ISSUTMEASTYP" type="element">
+          <Node id="Zr5)11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5~11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5?11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5&lt;11y6W1" name="LASTCHGTMS" type="element">
+          <Node id="Zr5&gt;11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5021y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5121y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5221y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="Zr5321y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5421y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5521y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5621y6W1" name="LIQUIDRIGHTRANKTYP" type="element">
+          <Node id="Zr5721y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5821y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5921y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5A21y6W1" name="MATEXPTMS" type="element">
+          <Node id="Zr5B21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5C21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5D21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5E21y6W1" name="MKTINDXDEFID" type="element">
+          <Node id="Zr5F21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5G21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5H21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5I21y6W1" name="MONITORRESTRICTIONCDE" type="element">
+          <Node id="Zr5J21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5K21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5L21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5M21y6W1" name="NOMVALUNITCAMT" type="element">
+          <Node id="Zr5N21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5O21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5P21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5Q21y6W1" name="PARTFULLPDTYP" type="element">
+          <Node id="Zr5R21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5S21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5T21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5U21y6W1" name="PARVALUETYP" type="element">
+          <Node id="Zr5V21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5W21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5X21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5Y21y6W1" name="PRCMLTPLRCRTE" type="element">
+          <Node id="Zr5Z21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5a21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5b21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5c21y6W1" name="PRCQTMETHTYP" type="element">
+          <Node id="Zr5d21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5e21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5f21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5g21y6W1" name="PREFIDCTXTTYP" type="element">
+          <Node id="Zr5h21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5i21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5j21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5k21y6W1" name="PREFISSDESC" type="element">
+          <Node id="Zr5l21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5m21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5n21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Security_Long_Description;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Zr5o21y6W1" name="PREFISSID" type="element">
+          <Node id="Zr5p21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5q21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5r21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5s21y6W1" name="PREFISSNME" type="element">
+          <Node id="Zr5t21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5u21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5v21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Security_Description;]]></expr>
+          </Node>
+        </Node>
+        <Node id="Zr5w21y6W1" name="PRINBASTYP" type="element">
+          <Node id="Zr5x21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5y21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5z21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5$21y6W1" name="PRINNOTLIND" type="element">
+          <Node id="Zr5%21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5@21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5&amp;21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5*21y6W1" name="SECFORMTYP" type="element">
+          <Node id="Zr5-21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5.21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5/21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5(21y6W1" name="SERIESTYP" type="element">
+          <Node id="Zr5)21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5~21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5?21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5&lt;21y6W1" name="STARTTMS" type="element">
+          <Node id="Zr5&gt;21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5031y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5131y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5231y6W1" name="TRDGRSTTYP" type="element">
+          <Node id="Zr5331y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5431y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5531y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5631y6W1" name="TYPEARNFORLIFECDE" type="element">
+          <Node id="Zr5731y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5831y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5931y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5A31y6W1" name="WHENISSUEDIND" type="element">
+          <Node id="Zr5B31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5C31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5D31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5E31y6W1" name="WTHHLDTAXIND" type="element">
+          <Node id="Zr5F31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5G31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5H31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="Zr5I31y6W1" name="WTHHLDTAXLEVIEDSRCIND" type="element">
+          <Node id="Zr5J31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="Zr5K31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="Zr5L31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

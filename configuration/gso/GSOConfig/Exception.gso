@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" displayCaption="Parameter Values" entityTypeId="++3qwBhS2etxm099" id="++8XThhGhG5AW001" mandatory="0" multiplicity="SINGLE_OR_NULL" name="ParameterValues" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="select RULE_NME CODE, RULE_DESC DISPLAY_NAME from FT_BE_BERC" displayCaption="Rule Name" entityTypeId="++3qwBhS2etxm099" id="++8Zv3AmhG5AW001" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72RuleName" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Exception Detail" displayCaption="Exception Detail" entityTypeId="++3qwBhS2etxm099" frequencyInd="0" id="++5mLxey2etqS00o" multiplicity="SINGLE_OR_NULL" name="ExceptionDetail" nameSpace="GSC">
+      <part beRelationId="++8gQNymhG5Qe000" defNameSpace="POINT72" id="++8gQNymhG5Qe001" label="NTELMKIS" prntReqdInd="0" seq="1"/>
+      <part defNameSpace="POINT72" fieldId="++8XThhGhG5AW001" id="++8XThhGhG5AW004" prntReqdInd="0" seq="33"/>
+      <part defNameSpace="POINT72" fieldId="++8Zv3AmhG5AW001" id="++8Zv3AmhG5AW002" prntReqdInd="0" seq="34"/>
+    </dataGroup>
+  </dataGroups>
+  <relations>
+    <relation id="++8gQNymhG5Qe003" name="FT_T_NTEL-To-FT_T_MKIS00" nameSpace="POINT72" srcTable="FT_T_NTEL" tgtTable="FT_T_MKIS">
+      <field fromColumn="XREF_TBL_2_OID" id="++8gQNymhG5Qe004" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+  </relations>
+  <occurrences>
+    <occurrence desc="Occurrence for Notification Entity Log Details" id="++5mLxey2etqS000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="NTEL_01" nameSpace="GSC" table="FT_T_NTEL" timeSeries="NONE">
+      <field id="++8gQNymhG5Qe002" nameSpace="POINT72" relationId="++8gQNymhG5Qe003"/>
+      <field id="++8XThhGhG5AW000" name="PARM_VAL_TXT" nameSpace="POINT72"/>
+      <field id="++8Zv3AmhG5AW000" name="RULE_NME" nameSpace="POINT72"/>
+      <field id="008gQF30hG5Qe001" name="XREF_TBL_2_OID" nameSpace="POINT72"/>
+      <field id="008gQF30hG5Qe000" name="XREF_TBL_2_TYP" nameSpace="POINT72"/>
+      <option id="++5mLxey2etqS00E" nameSpace="GSC" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="++8XThhGhG5AW001" groupMapping="0" id="++8XThhGhG5AW002" nameSpace="POINT72" occFieldId="++8XThhGhG5AW000"/>
+    <mapping beFieldId="++8Zv3AmhG5AW001" groupMapping="0" id="++8Zv3AmhG5AW003" nameSpace="POINT72" occFieldId="++8Zv3AmhG5AW000"/>
+    <mapping beRelationId="++8gQNymhG5Qe000" groupMapping="0" id="++8gQNymhG5Qe005" nameSpace="POINT72" occFieldId="++8gQNymhG5Qe002"/>
+  </mappings>
+  <entityRelations>
+    <entityRelation entityId="005YcD1C2etse02f" id="++8gQNymhG5Qe000" lookupField="++8W3a4mhG5q400P" multiplicity="SINGLE_OR_NULL" name="NTELMKIS" nameSpace="POINT72" rltdEntityId="008W3DOWhG5q4005">
+      <part forPublishing="0" forUI="1" id="008jd3x0hG6Ri00J" nameSpace="POINT72" partId="008jd3x0hG6Ri006"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00F" nameSpace="POINT72" partId="++8W3a4mhG5q400O"/>
+      <part forPublishing="0" forUI="1" id="++8gQNymhG5Qe006" nameSpace="POINT72" partId="++8W3a4mhG5q400P"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00G" nameSpace="POINT72" partId="++8W3a4mhG5q400Q"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00H" nameSpace="POINT72" partId="++8W3a4mhG5q400R"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe000" nameSpace="POINT72" partId="++8W3a4mhG5q400S"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00I" nameSpace="POINT72" partId="++8W3a4mhG5q400T"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00J" nameSpace="POINT72" partId="++8W3tUGhG5q4004"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe001" nameSpace="POINT72" partId="++8W7OKmhG5q400i"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe002" nameSpace="POINT72" partId="++8W7OKmhG5q400j"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe003" nameSpace="POINT72" partId="++8W7OKmhG5q400k"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe004" nameSpace="POINT72" partId="++8W7OKmhG5q400l"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00K" nameSpace="POINT72" partId="++8W7OKmhG5q400m"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00L" nameSpace="POINT72" partId="++8ZqSemhG5AW00X"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00M" nameSpace="POINT72" partId="++8ZqSemhG5AW00Y"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe005" nameSpace="POINT72" partId="++8ZsRZmhG5AW00A"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe006" nameSpace="POINT72" partId="++8ZsRZmhG5AW00B"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00Q" nameSpace="POINT72" partId="++8b8niGhG5AW00Y"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00D" nameSpace="POINT72" partId="++8b8niGhG5AW00a"/>
+      <part forPublishing="0" forUI="1" id="++8gs28mhG5Qe000" nameSpace="POINT72" partId="++8ge-CGhG5Qe3cm"/>
+      <part forPublishing="0" forUI="1" id="++8gs28mhG5Qe001" nameSpace="POINT72" partId="++8ge-CGhG5Qe3cn"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00E" nameSpace="POINT72" partId="008W3DOWhG5q400D"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe007" nameSpace="POINT72" partId="008Zv+50hG5AW00p"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00N" nameSpace="POINT72" partId="008Zv+50hG5AW00q"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00O" nameSpace="POINT72" partId="008Zv+50hG5AW00r"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00P" nameSpace="POINT72" partId="008Zv+50hG5AW00s"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe008" nameSpace="POINT72" partId="008bVui0hG5AW00W"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe009" nameSpace="POINT72" partId="008bVui0hG5AW00X"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00A" nameSpace="POINT72" partId="008bVui0hG5AW00Y"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00B" nameSpace="POINT72" partId="008bVui0hG5AW00Z"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00R" nameSpace="POINT72" partId="008bZVbWhG5AW00Q"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00S" nameSpace="POINT72" partId="008bZVbWhG5AW00R"/>
+      <part forPublishing="0" forUI="1" id="++8gQNymhG5Qe007" nameSpace="POINT72" partId="008bZVbWhG5AW00S"/>
+      <part forPublishing="0" forUI="1" id="++8gQNymhG5Qe008" nameSpace="POINT72" partId="008bZVbWhG5AW00T"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00T" nameSpace="POINT72" partId="008baDlWhG5AW00H"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00U" nameSpace="POINT72" partId="008baDlWhG5AW00I"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00V" nameSpace="POINT72" partId="008beQTWhG5AW00G"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00C" nameSpace="POINT72" partId="008bf-10hG5AW00E"/>
+      <part forPublishing="0" forUI="1" id="++8gQVDGhG5Qe00W" nameSpace="POINT72" partId="008bgYP0hG5AW005"/>
+    </entityRelation>
+    <entityRelation desc="CUSTOM:Relation Participant" entityId="005pV3ni2etne00D" id="=000000191" lookupField="005Q5i8i2etse002" multiplicity="SINGLE_OR_NULL" name="ExceptionOnInstrument" nameSpace="GSC" rltdEntityId="++5SQ0Ly2etse000">
+      <part forPublishing="1" forUI="1" id="++5tGVZS2etsm00u" nameSpace="GSC" partId="004aIFeC2etv4008"/>
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS001" nameSpace="GSC" partId="005Q5i8i2etse002"/>
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS002" nameSpace="GSC" partId="005Q5i8i2etse003"/>
+      <part forPublishing="0" forUI="1" id="++8XThhGhG5AW003" nameSpace="POINT72" partId="008QTTk0hG5sq003"/>
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS003" nameSpace="GSC" partId="++4u-kJy2etzO00d"/>
+      <part forPublishing="1" forUI="1" id="++5tGVZS2etsm00v" nameSpace="GSC" partId="++5PNZ5y2etz400o"/>
+    </entityRelation>
+  </entityRelations>
+</entities>

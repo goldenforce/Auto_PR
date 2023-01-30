@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackageDescription custom="true" minInstallCenterVersion="8.8.1.01" version="1.0" xsi:noNamespaceSchemaLocation="PackageDescription.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<Package type="full" name="Point72_Custom_Package_GC" version="8.8.1.02" reinstallable="true">
+		<Description>Point72_Custom_Package_GC</Description>
+		<Component>Point72_Custom_Package_GC</Component>
+		<Content>
+			<File type="Package" path="P72_Custom_Package.tar.gz"></File>
+		</Content>
+	</Package>
+	<Deployment>
+		<Prerequisites>
+			<Product id="Gsdm" type="GOLDENSOURCE" name="Datamodel GSDM">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<Product id="VDDB" type="GOLDENSOURCE" name="Datamodel VDDB">
+				<Version min="8.8.1.01"/>
+			</Product>
+
+			<Product id="Starterset" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<!--
+			<Product id="Ora19" name="Oracle Server Version" type="ORACLE_SERVER">
+				<Version min="19.0.0.0" max="19.0.x.x"/>
+			</Product>-->
+		</Prerequisites>
+
+		<Locations>
+			<Location id="CFDataModel" multiple="true" type="Database">
+				<Description>The destination where the Configuration Datamodel was installed.</Description>
+				<Prerequisites/>
+			</Location>
+			<Location id="WFDataModel" multiple="true" type="Database">
+				<Description>The destination where the Workflow Datamodel was installed.</Description>
+				<Prerequisites/>
+			</Location>
+			<Location id="GSDMDataModel" multiple="true" type="Database">
+				<Description>A database where the GSDM was installed  completely.</Description>
+				<Prerequisites>
+					<!--<Prerequisite id="Gsdm"/>-->
+					<Prerequisite id="Starterset"/>
+					<!--<Prerequisite id="Ora19" required="true"/>-->
+				</Prerequisites>
+			</Location>
+			<Location id="VDDBDataModel" type="Database" multiple="true">
+				<Description>The destination where the VDDB Datamodel was installed.</Description>
+				<Prerequisites>
+					<!--<Prerequisite id="VDDB"/>-->
+					<Prerequisite id="Starterset"/>
+					<!--<Prerequisite id="Ora19" required="true"/>-->
+				</Prerequisites>
+			</Location>
+
+			<Location id="EngineInstallation" type="EngineInstallation">
+				<Description>An Engine Installation where an Engine should be installed.</Description>
+				<Prerequisites>
+				</Prerequisites>
+			</Location>
+		</Locations>
+
+		<Tasks>
+			<!--<unzip description="Unzip package archive temporarily" name="Unzip Package" src="package.zip" srcLoc="PackageZip"/>-->
+			<tgz description="Unzip package archive" dest="/" name="Unzip Package" src="P72_Custom_Package.tar.gz" srcLoc="PackageZip"/>
+
+			<!-- Replace environment variable in the sql file for roles-->
+			<replace id="replace_pkg" name="Replace Environment Variables" description="Replaces the Environment Variables with your specified value" src="sql/DDL/" evalLoc="GSDMDataModel" dest="sql/DDL/" includes="GC_Synonyms.sql">
+				<token name="#GC_DBOWNER#" path="$OWNER"/>
+				<token name="#GC_APPUSER#" path="$APPUSER"/>
+			</replace>
+
+
+			<replace id="replace_pkg" name="Replace Environment Variables" description="Replaces the Environment Variables with your specified value" src="sql/DDL/" evalLoc="GSDMDataModel" dest="sql/DDL/" includes="GC_GrantRoles_Using_IR.sql">
+				<token name="#GC_DBOWNER#" path="$OWNER"/>
+				<token name="#GC_APPUSER#" path="$APPUSER"/>
+			</replace>
+
+			<!-- END - Replace environment variable in the sql file for roles-->
+			
+			<!-- Customized SQL DDL Installation GC-->			
+			<sqloperational id="P72_SEQ_P72_CNTRPRIMID.sql" name="Apply DDL for P72_SEQ_P72_CNTRPRIMID.sql" description="Apply DDL for P72_SEQ_P72_CNTRPRIMID.sql" src="sql/ddl/P72_SEQ_P72_CNTRPRIMID.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_SEQ_P72_FINS01.sql" name="Apply DDL for P72_SEQ_P72_FINS01.sql" description="Apply DDL for P72_SEQ_P72_FINS01.sql" src="sql/ddl/P72_SEQ_P72_FINS01.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_SEQ_P72_ISSR01.sql" name="Apply DDL for P72_SEQ_P72_ISSR01.sql" description="Apply DDL for P72_SEQ_P72_ISSR01.sql" src="sql/ddl/P72_SEQ_P72_ISSR01.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_SEQ_P72_MKIS01.sql" name="Apply DDL for P72_SEQ_P72_MKIS01.sql" description="Apply DDL for P72_SEQ_P72_MKIS01.sql" src="sql/ddl/P72_SEQ_P72_MKIS01.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_SEQ_P72_SPECIALISTID.sql" name="Apply DDL for P72_SEQ_P72_SPECIALISTID.sql" description="Apply DDL for P72_SEQ_P72_SPECIALISTID.sql" src="sql/ddl/P72_SEQ_P72_SPECIALISTID.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_ft_t_bar1.sql" name="Apply DDL for P72_ft_t_bar1.sql" description="Apply DDL for P72_ft_t_bar1.sql" src="sql/ddl/P72_ft_t_bar1.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_ft_t_wid1.sql" name="Apply DDL for P72_ft_t_wid1.sql" description="Apply DDL for P72_ft_t_wid1.sql" src="sql/ddl/P72_ft_t_wid1.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_ft_v_cap1.sql" name="Apply DDL for P72_ft_v_cap1.sql" description="Apply DDL for P72_ft_v_cap1.sql" src="sql/ddl/P72_ft_v_cap1.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_ft_v_cap2.sql" name="Apply DDL for P72_ft_v_cap2.sql" description="Apply DDL for P72_ft_v_cap2.sql" src="sql/ddl/P72_ft_v_cap2.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_ft_v_cap3.sql" name="Apply DDL for P72_ft_v_cap3.sql" description="Apply DDL for P72_ft_v_cap3.sql" src="sql/ddl/P72_ft_v_cap3.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_FT_V_P72_BARRA.sql" name="Apply DDL for P72_FT_V_P72_BARRA.sql" description="Apply DDL for P72_FT_V_P72_BARRA.sql" src="sql/ddl/P72_FT_V_P72_BARRA.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_FT_V_P72_WORLDSCOPE.sql" name="Apply DDL for P72_FT_V_P72_WORLDSCOPE.sql" description="Apply DDL for P72_FT_V_P72_WORLDSCOPE.sql" src="sql/ddl/P72_FT_V_P72_WORLDSCOPE.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GETP72INSTRTYPE.sql" name="Apply DDL for P72_GETP72INSTRTYPE.sql" description="Apply DDL for P72_GETP72INSTRTYPE.sql" src="sql/ddl/P72_GETP72INSTRTYPE.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GETCMPOSITEMKTOID.sql" name="Apply DDL for P72_GETCMPOSITEMKTOID.sql" description="Apply DDL for P72_GETCMPOSITEMKTOID.sql" src="sql/ddl/P72_GETCMPOSITEMKTOID.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_getp72icsmapping.sql" name="Apply DDL for P72_getp72icsmapping.sql" description="Apply DDL for P72_getp72icsmapping.sql" src="sql/ddl/P72_getp72icsmapping.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GETP72PANOINVSTCAT.sql" name="Apply DDL for P72_GETP72PANOINVSTCAT.sql" description="Apply DDL for P72_GETP72PANOINVSTCAT.sql" src="sql/ddl/P72_GETP72PANOINVSTCAT.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GETP72PANOSECTYPASGN.sql" name="Apply DDL for P72_GETP72PANOSECTYPASGN.sql" description="Apply DDL for P72_GETP72PANOSECTYPASGN.sql" src="sql/ddl/P72_GETP72PANOSECTYPASGN.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_getp72rissmktissoid.sql" name="Apply DDL for P72_getp72rissmktissoid.sql" description="Apply DDL for P72_getp72rissmktissoid.sql" src="sql/ddl/P72_getp72rissmktissoid.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_getpositionid.sql" name="Apply DDL for P72_getpositionid.sql" description="Apply DDL for P72_getpositionid.sql" src="sql/ddl/P72_getpositionid.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_p72getcntrprimid_mkis.sql" name="Apply DDL for P72_p72getcntrprimid_mkis.sql" description="Apply DDL for P72_p72getcntrprimid_mkis.sql" src="sql/ddl/P72_p72getcntrprimid_mkis.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_p72getinhouseid_fins.sql" name="Apply DDL for P72_p72getinhouseid_fins.sql" description="Apply DDL for P72_p72getinhouseid_fins.sql" src="sql/ddl/P72_p72getinhouseid_fins.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_p72getinhouseid_issr.sql" name="Apply DDL for P72_p72getinhouseid_issr.sql" description="Apply DDL for P72_p72getinhouseid_issr.sql" src="sql/ddl/P72_p72getinhouseid_issr.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_p72getinhouseid_mkis.sql" name="Apply DDL for P72_p72getinhouseid_mkis.sql" description="Apply DDL for P72_p72getinhouseid_mkis.sql" src="sql/ddl/P72_p72getinhouseid_mkis.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GC_XCFG_CHAL.sql" name="Apply DDL for P72_GC_XCFG_CHAL.sql" description="Apply DDL for P72_GC_XCFG_CHAL.sql" src="sql/ddl/P72_GC_XCFG_CHAL.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GETIBESTKRCMPOSITEMKTOID.sql" name="Apply DDL for P72_GETIBESTKRCMPOSITEMKTOID.sql" description="Apply DDL for P72_GETIBESTKRCMPOSITEMKTOID.sql" src="sql/ddl/P72_GETIBESTKRCMPOSITEMKTOID.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GC_XCFG_CHAL_FULLINSTR.sql" name="Apply DDL for P72_GC_XCFG_CHAL_FULLINSTR.sql" description="Apply DDL for P72_GC_XCFG_CHAL_FULLINSTR.sql" src="sql/ddl/P72_GC_XCFG_CHAL_FULLINSTR.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_chal_auto_approval.sql" name="Apply DDL for P72_chal_auto_approval.sql" description="Apply DDL for P72_chal_auto_approval.sql" src="sql/ddl/P72_chal_auto_approval.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_IPOSTATUSView.sql" name="Apply DDL for P72_IPOSTATUSView.sql" description="Apply DDL for P72_IPOSTATUSView.sql" src="sql/ddl/P72_IPOSTATUSView.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_FT_V_POS1.sql" name="Apply DDL for P72_FT_V_POS1.sql" description="Apply DDL for P72_FT_V_POS1.sql" src="sql/ddl/P72_FT_V_POS1.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GENERATE_CNTRPRIMID.sql" name="Apply DDL for P72_GENERATE_CNTRPRIMID.sql" description="Apply DDL for P72_GENERATE_CNTRPRIMID.sql" src="sql/ddl/P72_GENERATE_CNTRPRIMID.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_GETISGPCMPOSITEMKTOID.sql" name="Apply DDL for P72_GETISGPCMPOSITEMKTOID.sql" description="Apply DDL for P72_GETISGPCMPOSITEMKTOID.sql" src="sql/ddl/P72_GETISGPCMPOSITEMKTOID.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+			<sqloperational id="P72_chal_approval.sql" name="Apply DDL for P72_chal_approval.sql" description="Apply DDL for P72_chal_approval.sql" src="sql/ddl/P72_chal_approval.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02" dbType="postgres"/>
+
+			
+			<!-- Customized SQL DML Installation GC-->
+			<sql id="P72_ft_t_bar1_Metadata.sql" name="GC - Data Setup - P72_ft_t_bar1_Metadata.sql" description="GC - Data Setup - P72_ft_t_bar1_Metadata.sql" src="sql/DML/P72_ft_t_bar1_Metadata.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_ft_t_wid1_Metadata.sql" name="GC - Data Setup - P72_ft_t_wid1_Metadata.sql" description="GC - Data Setup - P72_ft_t_wid1_Metadata.sql" src="sql/DML/P72_ft_t_wid1_Metadata.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_ft_v_cap1_Metadata.sql" name="GC - Data Setup - P72_ft_v_cap1_Metadata.sql" description="GC - Data Setup - P72_ft_v_cap1_Metadata.sql" src="sql/DML/P72_ft_v_cap1_Metadata.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_ft_v_cap2_Metadata.sql" name="GC - Data Setup - P72_ft_v_cap2_Metadata.sql" description="GC - Data Setup - P72_ft_v_cap2_Metadata.sql" src="sql/DML/P72_ft_v_cap2_Metadata.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_ft_v_cap3_Metadata.sql" name="GC - Data Setup - P72_ft_v_cap3_Metadata.sql" description="GC - Data Setup - P72_ft_v_cap3_Metadata.sql" src="sql/DML/P72_ft_v_cap3_Metadata.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_DSID.sql" name="GC - Data Setup - P72_DSID.sql" description="GC - Data Setup - P72_DSID.sql" src="sql/DML/P72_DSID.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_MKEY.sql" name="GC - Data Setup - P72_MKEY.sql" description="GC - Data Setup - P72_MKEY.sql" src="sql/DML/P72_MKEY.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDCS.sql" name="GC - Data Setup - P72_IDCS.sql" description="GC - Data Setup - P72_IDCS.sql" src="sql/DML/P72_IDCS.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV.sql" name="GC - Data Setup - P72_IDMV.sql" description="GC - Data Setup - P72_IDMV.sql" src="sql/DML/P72_IDMV.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_BARRA.sql" name="GC - Data Setup - P72_IDMV_BARRA.sql" description="GC - Data Setup - P72_IDMV_BARRA.sql" src="sql/DML/P72_IDMV_BARRA.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_GvKey.sql" name="GC - Data Setup - P72_IDMV_GvKey.sql" description="GC - Data Setup - P72_IDMV_GvKey.sql" src="sql/DML/P72_IDMV_GvKey.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_IBES.sql" name="GC - Data Setup - P72_IDMV_IBES.sql" description="GC - Data Setup - P72_IDMV_IBES.sql" src="sql/DML/P72_IDMV_IBES.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_PointId.sql" name="GC - Data Setup - P72_IDMV_PointId.sql" description="GC - Data Setup - P72_IDMV_PointId.sql" src="sql/DML/P72_IDMV_PointId.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_PositionId.sql" name="GC - Data Setup - P72_IDMV_PositionId.sql" description="GC - Data Setup - P72_IDMV_PositionId.sql" src="sql/DML/P72_IDMV_PositionId.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_Starmine.sql" name="GC - Data Setup - P72_IDMV_Starmine.sql" description="GC - Data Setup - P72_IDMV_Starmine.sql" src="sql/DML/P72_IDMV_Starmine.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_WorldScope.sql" name="GC - Data Setup - P72_IDMV_WorldScope.sql" description="GC - Data Setup - P72_IDMV_WorldScope.sql" src="sql/DML/P72_IDMV_WorldScope.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_INCS.sql" name="GC - Data Setup - P72_INCS.sql" description="GC - Data Setup - P72_INCS.sql" src="sql/DML/P72_INCS.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_INCL.sql" name="GC - Data Setup - P72_INCL.sql" description="GC - Data Setup - P72_INCL.sql" src="sql/DML/P72_INCL.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_EINC.sql" name="GC - Data Setup - P72_EINC.sql" description="GC - Data Setup - P72_EINC.sql" src="sql/DML/P72_EINC.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_STDF.sql" name="GC - Data Setup - P72_STDF.sql" description="GC - Data Setup - P72_STDF.sql" src="sql/DML/P72_STDF.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_GUID_BARRA.sql" name="GC - Data Setup - P72_GUID_BARRA.sql" description="GC - Data Setup - P72_GUID_BARRA.sql" src="sql/DML/P72_GUID_BARRA.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_GUID_IBES_IDK.sql" name="GC - Data Setup - P72_GUID_IBES_IDK.sql" description="GC - Data Setup - P72_GUID_IBES_IDK.sql" src="sql/DML/P72_GUID_IBES_IDK.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_GUID_Starmine.sql" name="GC - Data Setup - P72_GUID_Starmine.sql" description="GC - Data Setup - P72_GUID_Starmine.sql" src="sql/DML/P72_GUID_Starmine.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_GUID_WorldScope.sql" name="GC - Data Setup - P72_GUID_WorldScope.sql" description="GC - Data Setup - P72_GUID_WorldScope.sql" src="sql/DML/P72_GUID_WorldScope.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_BNSY.sql" name="GC - Data Setup - P72_BNSY.sql" description="GC - Data Setup - P72_BNSY.sql" src="sql/DML/P72_BNSY.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_CustomNotification.sql" name="GC - Data Setup - P72_CustomNotification.sql" description="GC - Data Setup - P72_CustomNotification.sql" src="sql/DML/P72_CustomNotification.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_NTDF_60001.sql" name="GC - Data Setup - P72_NTDF_60001.sql" description="GC - Data Setup - P72_NTDF_60001.sql" src="sql/DML/P72_NTDF_60001.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_XSEG_XSTO_ISGP.sql" name="GC - Data Setup - P72_XSEG_XSTO_ISGP.sql" description="GC - Data Setup - P72_XSEG_XSTO_ISGP.sql" src="sql/DML/P72_XSEG_XSTO_ISGP.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_Equity_Form_ISTY.sql" name="GC - Data Setup - P72_Equity_Form_ISTY.sql" description="GC - Data Setup - P72_Equity_Form_ISTY.sql" src="sql/DML/P72_Equity_Form_ISTY.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_FT_T_DSRC.sql" name="GC - Data Setup - P72_FT_T_DSRC.sql" description="GC - Data Setup - P72_FT_T_DSRC.sql" src="sql/DML/P72_FT_T_DSRC.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_FT_T_MMRL.sql" name="GC - Data Setup - P72_FT_T_MMRL.sql" description="GC - Data Setup - P72_FT_T_MMRL.sql" src="sql/DML/P72_FT_T_MMRL.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_NTDF.sql" name="GC - Data Setup - P72_NTDF.sql" description="GC - Data Setup - P72_NTDF.sql" src="sql/DML/P72_NTDF.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_ISTY.sql" name="GC - Data Setup - P72_ISTY.sql" description="GC - Data Setup - P72_ISTY.sql" src="sql/DML/P72_ISTY.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_VRCD.sql" name="GC - Data Setup - P72_IDMV_VRCD.sql" description="GC - Data Setup - P72_IDMV_VRCD.sql" src="sql/DML/P72_IDMV_VRCD.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IPOMetadata.sql" name="GC - Data Setup - P72_IPOMetadata.sql" description="GC - Data Setup - P72_IPOMetadata.sql" src="sql/DML/P72_IPOMetadata.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_FT_T_UIBL.sql" name="GC - Data Setup - P72_FT_T_UIBL.sql" description="GC - Data Setup - P72_FT_T_UIBL.sql" src="sql/DML/P72_FT_T_UIBL.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_FT_T_UIMC.sql" name="GC - Data Setup - P72_FT_T_UIMC.sql" description="GC - Data Setup - P72_FT_T_UIMC.sql" src="sql/DML/P72_FT_T_UIMC.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDCS_Local.sql" name="GC - Data Setup - P72_IDCS_Local.sql" description="GC - Data Setup - P72_IDCS_Local.sql" src="sql/DML/P72_IDCS_Local.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_CleanupScripts.sql" name="GC - Data Setup - P72_CleanupScripts.sql" description="GC - Data Setup - P72_CleanupScripts.sql" src="sql/DML/P72_CleanupScripts.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_BEGC_ClientNamespace.sql" name="GC - Data Setup - P72_BEGC_ClientNamespace.sql" description="GC - Data Setup - P72_BEGC_ClientNamespace.sql" src="sql/DML/P72_BEGC_ClientNamespace.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_DPIC.sql" name="GC - Data Setup - P72_DPIC.sql" description="GC - Data Setup - P72_DPIC.sql" src="sql/DML/P72_DPIC.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_ft_t_cpc1_Metadata.sql" name="GC - Data Setup - P72_ft_t_cpc1_Metadata.sql" description="GC - Data Setup - P72_ft_t_cpc1_Metadata.sql" src="sql/DML/P72_ft_t_cpc1_Metadata.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_FT_V_POS1_Metadata.sql" name="GC - Data Setup - P72_FT_V_POS1_Metadata.sql" description="GC - Data Setup - P72_FT_V_POS1_Metadata.sql" src="sql/DML/P72_FT_V_POS1_Metadata.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_jbdf.sql" name="GC - Data Setup - P72_jbdf.sql" description="GC - Data Setup - P72_jbdf.sql" src="sql/DML/P72_jbdf.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_jbsp.sql" name="GC - Data Setup - P72_jbsp.sql" description="GC - Data Setup - P72_jbsp.sql" src="sql/DML/P72_jbsp.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="FT_T_BERC_Update.sql" name="GC - Data Setup - FT_T_BERC_Update.sql" description="GC - Data Setup - FT_T_BERC_Update.sql" src="sql/DML/FT_T_BERC_Update.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="FT_T_UIPR_Update.sql" name="GC - Data Setup - FT_T_UIPR_Update.sql" description="GC - Data Setup - FT_T_UIPR_Update.sql" src="sql/DML/FT_T_UIPR_Update.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_IDMV_P72BBGLOBAL.sql" name="GC - Data Setup - P72_IDMV_P72BBGLOBAL.sql" description="GC - Data Setup - P72_IDMV_P72BBGLOBAL.sql" src="sql/DML/P72_IDMV_P72BBGLOBAL.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_INCL_P72UNDRC.sql" name="GC - Data Setup - P72_INCL_P72UNDRC.sql" description="GC - Data Setup - P72_INCL_P72UNDRC.sql" src="sql/DML/P72_INCL_P72UNDRC.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_EINC_P72UNDRC.sql" name="GC - Data Setup - P72_EINC_P72UNDRC.sql" description="GC - Data Setup - P72_EINC_P72UNDRC.sql" src="sql/DML/P72_EINC_P72UNDRC.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_STDF_FixedIncome.sql" name="GC - Data Setup - P72_STDF_FixedIncome.sql" description="GC - Data Setup - P72_STDF_FixedIncome.sql" src="sql/DML/P72_STDF_FixedIncome.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72CntryIssuance_GU_ID_IDMV.sql" name="GC - Data Setup - P72CntryIssuance_GU_ID_IDMV.sql" description="GC - Data Setup - P72CntryIssuance_GU_ID_IDMV.sql" src="sql/DML/P72CntryIssuance_GU_ID_IDMV.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72Currency_Inserts.sql" name="GC - Data Setup - P72Currency_Inserts.sql" description="GC - Data Setup - P72Currency_Inserts.sql" src="sql/DML/P72Currency_Inserts.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72GVINVTYP_INCL_Scripts.sql" name="GC - Data Setup - P72GVINVTYP_INCL_Scripts.sql" description="GC - Data Setup - P72GVINVTYP_INCL_Scripts.sql" src="sql/DML/P72GVINVTYP_INCL_Scripts.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72GVINVTYP_EINC_Scripts.sql" name="GC - Data Setup - P72GVINVTYP_EINC_Scripts.sql" description="GC - Data Setup - P72GVINVTYP_EINC_Scripts.sql" src="sql/DML/P72GVINVTYP_EINC_Scripts.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72GVPRNGGR_INCL_Scripts.sql" name="GC - Data Setup - P72GVPRNGGR_INCL_Scripts.sql" description="GC - Data Setup - P72GVPRNGGR_INCL_Scripts.sql" src="sql/DML/P72GVPRNGGR_INCL_Scripts.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72GVPRNGGR_EINC_Scripts.sql" name="GC - Data Setup - P72GVPRNGGR_EINC_Scripts.sql" description="GC - Data Setup - P72GVPRNGGR_EINC_Scripts.sql" src="sql/DML/P72GVPRNGGR_EINC_Scripts.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72ISGP_PrtPurpTyp_Domain.sql" name="GC - Data Setup - P72ISGP_PrtPurpTyp_Domain.sql" description="GC - Data Setup - P72ISGP_PrtPurpTyp_Domain.sql" src="sql/DML/P72ISGP_PrtPurpTyp_Domain.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72UDF_MUST_MKEY.sql" name="GC - Data Setup - P72UDF_MUST_MKEY.sql" description="GC - Data Setup - P72UDF_MUST_MKEY.sql" src="sql/DML/P72UDF_MUST_MKEY.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			<sql id="P72_EINC_FixedIncome.sql" name="GC - Data Setup - P72_EINC_FixedIncome.sql" description="GC - Data Setup - P72_EINC_FixedIncome.sql" src="sql/DML/P72_EINC_FixedIncome.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.02"/>
+			
+			<!-- OD CR Tickets -->
+			
+			<!--<sql id="MCR_1891_STDF_INSERT.sql" name="GC - Data Setup - MCR_1891_STDF_INSERT.sql"  description="GC - Data Setup - MCR_1891_STDF_INSERT.sql" src="sql/DML/MCR_1891_STDF_INSERT.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.03" dbType="postgres"/>
+			<sql id="MCR-1877_PCA1_Script.sql" name="GC - Data Setup - MCR-1877_PCA1_Script.sql"  description="GC - Data Setup - MCR-1877_PCA1_Script.sql" src="sql/DML/MCR-1877_PCA1_Script.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.03" dbType="postgres"/>
+			<sql id="MCR-1904_IDMV.sql" name="GC - Data Setup - MCR-1904_IDMV.sql"  description="GC - Data Setup - MCR-1904_IDMV.sql" src="sql/DML/MCR-1904_IDMV.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.03" dbType="postgres"/>-->
+			
+			
+			<!-- Customized GSO -->
+			<deployGSE description="Deploy PreReqCountryPrimay.gso in Repository table" destLoc="GSDMDataModel" name="PreReqCountryPrimay.gso" src="gso/GSOConfig/PreReqCountryPrimay.gso" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy CountryPrimaryPublish.gso in Repository table" destLoc="GSDMDataModel" name="CountryPrimaryPublish.gso" src="gso/GSOConfig/CountryPrimaryPublish.gso" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy Issuer.gso in Repository table" destLoc="GSDMDataModel" name="Issuer.gso" src="gso/GSOConfig/Issuer.gso" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy Base.gso in Repository table" destLoc="GSDMDataModel" name="Base.gso" src="gso/GSOConfig/Base.gso" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy Benchmark.gso in Repository table" destLoc="GSDMDataModel" name="Benchmark.gso" src="gso/GSOConfig/Benchmark.gso" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy CABase.gso in Repository table" destLoc="GSDMDataModel" name="CABase.gso" src="gso/GSOConfig/CABase.gso" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy Exception.gso in Repository table" destLoc="GSDMDataModel" name="Exception.gso" src="gso/GSOConfig/Exception.gso" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy InstrumentException.gso in Repository table" destLoc="GSDMDataModel" name="InstrumentException.gso" src="gso/GSOConfig/InstrumentException.gso" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy FullInstrument_Participants_fixed_income_changes.gso in Repository table" destLoc="GSDMDataModel" name="FullInstrument_Participants_fixed_income_changes.gso" src="gso/GSOConfig/FullInstrument_Participants_fixed_income_changes.gso" encoding="windows-1252" patchLevel="8.8.1.02/>
+
+		
+			<!-- Customized GOC -->
+			<deployGSE description="Deploy Base.goc in Repository table" destLoc="GSDMDataModel" name="Base.goc" src="gso/GSOConfig/Base.goc" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy CABase.goc in Repository table" destLoc="GSDMDataModel" name="CABase.goc" src="gso/GSOConfig/CABase.goc" encoding="windows-1252" patchLevel="8.8.1.02"/>
+			<deployGSE description="Deploy FixedIncome.goc in Repository table" destLoc="GSDMDataModel" name="FixedIncome.goc" src="gso/GSOConfig/FixedIncome.goc" encoding="windows-1252" patchLevel="8.8.1.02/>
+
+			<!--Customized Label Changes-->
+			<!--<sql id="MCR-280_UIBL_Scripts.sql" name="GC - Data Setup - MCR-280_UIBL_Scripts.sql"  description="GC - Data Setup - MCR-280_UIBL_Scripts.sql" src="sql/DML/MCR-280_UIBL_Scripts.sql" destLoc="GSDMDataModel" patchLevel="8.7.2.03"/>
+			<sql id="MCR-529_UIBL_Update.sql" name="GC - Data Setup - MCR-529_UIBL_Update.sql"  description="GC - Data Setup - MCR-529_UIBL_Update.sql" src="sql/DML/MCR-529_UIBL_Update.sql" destLoc="GSDMDataModel" patchLevel="8.7.2.06"/>
+			<sql id="MCR-670-MarketedIndicator_UIBLScript.sql" name="GC - Data Setup - MCR-670-MarketedIndicator_UIBLScript.sql"  description="GC - Data Setup - MCR-670-MarketedIndicator_UIBLScript.sql" src="sql/DML/MCR-670-MarketedIndicator_UIBLScript.sql" destLoc="GSDMDataModel" patchLevel="8.7.2.06"/>
+			<sql id="MCR-958_UIBL.sql" name="GC - Data Setup - MCR-958_UIBL.sql"  description="GC - Data Setup - MCR-958_UIBL.sql" src="sql/DML/MCR-958_UIBL.sql" destLoc="GSDMDataModel" patchLevel="8.7.2.07"/>-->
+			
+			<!-- OD CR Tickets -->
+			
+			<!--<sql id="MCR-1904_UIBL.sql" name="GC - Data Setup - MCR-1904_UIBL.sql"  description="GC - Data Setup - MCR-1904_UIBL.sql" src="sql/DML/MCR-1904_UIBL.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.03" dbType="postgres"/>
+			<sql id="MCR-1903-GenericVehicleLabelUpdate.sql" name="GC - Data Setup - MCR-1903-GenericVehicleLabelUpdate.sql"  description="GC - Data Setup - MCR-1903-GenericVehicleLabelUpdate.sql" src="sql/DML/MCR-1903-GenericVehicleLabelUpdate.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.03" dbType="postgres"/>-->
+			
+			<!-- Customized MDX/OMDX -->
+			<deployResource name="Deploy BBCINS.omdx in Resource Table" src="resources/mapping/Bloomberg/BBCINS.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBCorpGovtConvPrfd.omdx in Resource Table" src="resources/mapping/Bloomberg/BBCorpGovtConvPrfd.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBCreditRisk_V2.mdx in Resource Table" src="resources/mapping/Bloomberg/BBCreditRisk_V2.mdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBGlobalEquity.mdx in Resource Table" src="resources/mapping/Bloomberg/BBGlobalEquity.mdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBGlobalEquity.omdx in Resource Table" src="resources/mapping/Bloomberg/BBGlobalEquity.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBGlobalEquityPricing.mdx in Resource Table" src="resources/mapping/Bloomberg/BBGlobalEquityPricing.mdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBGlobalEquityPricing.omdx in Resource Table" src="resources/mapping/Bloomberg/BBGlobalEquityPricing.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBGlobalMoneyMkt.omdx in Resource Table" src="resources/mapping/Bloomberg/BBGlobalMoneyMkt.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBGlobalWarrants.omdx in Resource Table" src="resources/mapping/Bloomberg/BBGlobalWarrants.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBMortgageNonPool.omdx in Resource Table" src="resources/mapping/Bloomberg/BBMortgageNonPool.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBPreferredPricing.mdx in Resource Table" src="resources/mapping/Bloomberg/BBPreferredPricing.mdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBPreferreds.mdx in Resource Table" src="resources/mapping/Bloomberg/BBPreferreds.mdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBPreferreds.omdx in Resource Table" src="resources/mapping/Bloomberg/BBPreferreds.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBPreMarketEquity.mdx in Resource Table" src="resources/mapping/Bloomberg/BBPreMarketEquity.mdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBPreMarketEquity.omdx in Resource Table" src="resources/mapping/Bloomberg/BBPreMarketEquity.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BBSymbology.mdx in Resource Table" src="resources/mapping/Bloomberg/BBSymbology.mdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy BloombergCAX_V2.omdx in Resource Table" src="resources/mapping/Bloomberg/BloombergCAX_V2.omdx" destLoc="CFDataModel" dest="mapping/Bloomberg/" encoding="windows-1252"/>
+			<deployResource name="Deploy CAPCO.mdx in Resource Table" src="resources/mapping/CAPCO/CAPCO.mdx" destLoc="CFDataModel" dest="mapping/CAPCO/" encoding="windows-1252"/>
+			<deployResource name="Deploy BARRID.mdx in Resource Table" src="resources/mapping/Custom/BARRID.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy Compustat_Gvkey_Daily.mdx in Resource Table" src="resources/mapping/Custom/Compustat_Gvkey_Daily.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy Compustat_Gvkey_Full.mdx in Resource Table" src="resources/mapping/Custom/Compustat_Gvkey_Full.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy Compustat_Security.mdx in Resource Table" src="resources/mapping/Custom/Compustat_Security.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy Compustat_Security_Full.mdx in Resource Table" src="resources/mapping/Custom/Compustat_Security_Full.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy FullInstrPublP72_noCPSplit.mdx in Resource Table" src="resources/mapping/Custom/FullInstrPublP72_noCPSplit.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy FullInstrPublP72_noCPSplit_publish.mdx in Resource Table" src="resources/mapping/Custom/FullInstrPublP72_noCPSplit_publish.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy IBES_ID_INT.mdx in Resource Table" src="resources/mapping/Custom/IBES_ID_INT.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy IBES_ID_US.mdx in Resource Table" src="resources/mapping/Custom/IBES_ID_US.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy IBES_IDK.mdx in Resource Table" src="resources/mapping/Custom/IBES_IDK.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy P72_SOI.mdx in Resource Table" src="resources/mapping/Custom/P72_SOI.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy P72_WorldScope.mdx in Resource Table" src="resources/mapping/Custom/P72_WorldScope.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy POINTID.mdx in Resource Table" src="resources/mapping/Custom/POINTID.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy POSITIONID.mdx in Resource Table" src="resources/mapping/Custom/POSITIONID.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy PreProcess_BARRAID.mdx in Resource Table" src="resources/mapping/Custom/PreProcess_BARRAID.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy PreProcess_CustomID.mdx in Resource Table" src="resources/mapping/Custom/PreProcess_CustomID.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy PreProcess_WSID.mdx in Resource Table" src="resources/mapping/Custom/PreProcess_WSID.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy Starmine.mdx in Resource Table" src="resources/mapping/Custom/Starmine.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy WSID.mdx in Resource Table" src="resources/mapping/Custom/WSID.mdx" destLoc="CFDataModel" dest="mapping/Custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy CAProcessing.mdx in Resource Table" src="resources/mapping/GoldenSource/CAProcessing.mdx" destLoc="CFDataModel" dest="mapping/GoldenSource/" encoding="windows-1252"/>
+			<deployResource name="Deploy RFTDSP_Equities.mdx in Resource Table" src="resources/mapping/reuters/RFTDSP_Equities.mdx" destLoc="CFDataModel" dest="mapping/reuters/" encoding="windows-1252"/>
+			<deployResource name="Deploy RFTDSP_Equities.omdx in Resource Table" src="resources/mapping/reuters/RFTDSP_Equities.omdx" destLoc="CFDataModel" dest="mapping/reuters/" encoding="windows-1252"/>
+			<deployResource name="Deploy RFTDSP_Mutual_Funds.omdx in Resource Table" src="resources/mapping/reuters/RFTDSP_Mutual_Funds.omdx" destLoc="CFDataModel" dest="mapping/reuters/" encoding="windows-1252"/>
+			<deployResource name="Deploy RFTDSP_Warrants.omdx in Resource Table" src="resources/mapping/reuters/RFTDSP_Warrants.omdx" destLoc="CFDataModel" dest="mapping/reuters/" encoding="windows-1252"/>
+			<deployResource name="Deploy GeoUnit_Translate_JSONToJSON.mdx in Resource Table" src="resources/mapping/Custom/GeoUnit_Translate_JSONToJSON.mdx" destLoc="CFDataModel" dest="mapping/" encoding="windows-1252"/>
+			
+
+
+			<!--Deploy Config_Options.ttl-->
+			<deployResource name="Deploy Config_Options.ttl in Resource Table"  src="resources/mapping/Config_Options.ttl" destLoc="CFDataModel" dest="mapping/" encoding="windows-1252"/>
+			<deployResource name="Deploy P72_Custom.ttl in Resource Table"  src="resources/mapping/P72_Custom.ttl" destLoc="CFDataModel" dest="mapping/" encoding="windows-1252"/>
+
+
+			<!-- Customized Splitter -->
+			<deployResource name="Deploy CAPCO-splitter.xml in Resource Table" src="resources/xml/feeds/CAPCO/CAPCO-splitter.xml" destLoc="CFDataModel" dest="xml/feeds/CAPCO/" encoding="windows-1252"/>
+			<deployResource name="Deploy LinebyLineWithHeader.xml in Resource Table" src="resources/xml/feeds/P72_custom/LinebyLineWithHeader.xml" destLoc="CFDataModel" dest="xml/feeds/P72_custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy LinebyLineWithHeader_PreProcess.xml in Resource Table" src="resources/xml/feeds/P72_custom/LinebyLineWithHeader_PreProcess.xml" destLoc="CFDataModel" dest="xml/feeds/P72_custom/" encoding="windows-1252"/>
+			<deployResource name="Deploy select.xml in Resource Table" src="resources/xml/feeds/reuters/select.xml" destLoc="CFDataModel" dest="xml/feeds/reuters/" encoding="windows-1252"/>
+			<deployResource name="Deploy LineByLine.xml in Resource Table" src="resources/xml/feeds/LineByLine.xml" destLoc="CFDataModel" dest="xml/feeds/" encoding="windows-1252"/>
+			<deployResource name="Deploy dspconfiguration.xml in Resource Table" src="resources/xml/feeds/reuters/dspconfiguration.xml" destLoc="CFDataModel" dest="xml/feeds/reuters/" encoding="windows-1252"/>
+
+
+			
+			
+
+			<!-- Customized Vendor Definitions Installation -->
+			<deployGSP id="Deploy CAPCO Business Feed" destLoc="WFDataModel" name="Deploy CAPCO Business Feed" src="vendordefinitions/CAPCO.gsp"/>
+			<deployGSP id="Deploy P72_Custom Business Feed" destLoc="WFDataModel" name="Deploy P72_Custom Business Feed" src="vendordefinitions/P72_Custom.gsp"/>
+			<deployGSP id="Deploy P72_SOI Business Feed" destLoc="WFDataModel" name="Deploy P72_SOI Business Feed" src="vendordefinitions/P72_SOI.gsp"/>
+			<deployGSP id="Deploy Reuters Business Feed" destLoc="WFDataModel" name="Deploy Reuters Business Feed" src="vendordefinitions/Reuters.gsp"/>
+			<deployGSP id="Deploy Bloomberg Business Feed" destLoc="WFDataModel" name="Deploy Bloomberg Business Feed" src="vendordefinitions/Bloomberg.gsp"/>
+
+			
+
+			<!-- Customized Workflows Installation -->
+			<deployGSP id="Deploy P72_WF_BARRAFileProcessWrapper Workflow" destLoc="WFDataModel" name="Deploy P72_WF_BARRAFileProcessWrapper Workflow (Workflow)" src="workflows/P72_WF_BARRAFileProcessWrapper.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_WorldScopeFileProcessWrapper Workflow" destLoc="WFDataModel" name="Deploy P72_WF_WorldScopeFileProcessWrapper Workflow (Workflow)" src="workflows/P72_WF_WorldScopeFileProcessWrapper.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_AutoApproveCHAL Workflow" destLoc="WFDataModel" name="Deploy P72_WF_AutoApproveCHAL Workflow (Workflow)" src="workflows/P72_WF_AutoApproveCHAL.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_BARRAPreProcessor Workflow" destLoc="WFDataModel" name="Deploy P72_WF_BARRAPreProcessor Workflow (Workflow)" src="workflows/P72_WF_BARRAPreProcessor.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_BulkResubmit Workflow" destLoc="WFDataModel" name="Deploy P72_WF_BulkResubmit Workflow (Workflow)" src="workflows/P72_WF_BulkResubmit.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_CAPCOFileProcessWrapper Workflow" destLoc="WFDataModel" name="Deploy P72_WF_CAPCOFileProcessWrapper Workflow (Workflow)" src="workflows/P72_WF_CAPCOFileProcessWrapper.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_CompuStatFileProcessWrapper Workflow" destLoc="WFDataModel" name="Deploy P72_WF_CompuStatFileProcessWrapper Workflow (Workflow)" src="workflows/P72_WF_CompuStatFileProcessWrapper.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_DownloadBarraFiles Workflow" destLoc="WFDataModel" name="Deploy P72_WF_DownloadBarraFiles Workflow (Workflow)" src="workflows/P72_WF_DownloadBarraFiles.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_DownloadCapcoFiles Workflow" destLoc="WFDataModel" name="Deploy P72_WF_DownloadCapcoFiles Workflow (Workflow)" src="workflows/P72_WF_DownloadCapcoFiles.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_DownloadCompuStatFiles Workflow" destLoc="WFDataModel" name="Deploy P72_WF_DownloadCompuStatFiles Workflow (Workflow)" src="workflows/P72_WF_DownloadCompuStatFiles.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_DownloadIBESFiles Workflow" destLoc="WFDataModel" name="Deploy P72_WF_DownloadIBESFiles Workflow (Workflow)" src="workflows/P72_WF_DownloadIBESFiles.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_DownloadSMFinancialFiles Workflow" destLoc="WFDataModel" name="Deploy P72_WF_DownloadSMFinancialFiles Workflow (Workflow)" src="workflows/P72_WF_DownloadSMFinancialFiles.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_DownloadStarmineFiles Workflow" destLoc="WFDataModel" name="Deploy P72_WF_DownloadStarmineFiles Workflow (Workflow)" src="workflows/P72_WF_DownloadStarmineFiles.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_DownloadWorldScopeFiles Workflow" destLoc="WFDataModel" name="Deploy P72_WF_DownloadWorldScopeFiles Workflow (Workflow)" src="workflows/P72_WF_DownloadWorldScopeFiles.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_EndDateISGP Workflow" destLoc="WFDataModel" name="Deploy P72_WF_EndDateISGP Workflow (Workflow)" src="workflows/P72_WF_EndDateISGP.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_IBESFileProcessWrapper Workflow" destLoc="WFDataModel" name="Deploy P72_WF_IBESFileProcessWrapper Workflow (Workflow)" src="workflows/P72_WF_IBESFileProcessWrapper.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_KafkaInboundPointID Workflow" destLoc="WFDataModel" name="Deploy P72_WF_KafkaInboundPointID Workflow (Workflow)" src="workflows/P72_WF_KafkaInboundPointID.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_KafkaInboundPositionID Workflow" destLoc="WFDataModel" name="Deploy P72_WF_KafkaInboundPositionID Workflow (Workflow)" src="workflows/P72_WF_KafkaInboundPositionID.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_KafkaInboundSOI Workflow" destLoc="WFDataModel" name="Deploy P72_WF_KafkaInboundSOI Workflow (Workflow)" src="workflows/P72_WF_KafkaInboundSOI.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_SMFinancialsFileProcessWrapper Workflow" destLoc="WFDataModel" name="Deploy P72_WF_SMFinancialsFileProcessWrapper Workflow (Workflow)" src="workflows/P72_WF_SMFinancialsFileProcessWrapper.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_StandardSubscriptionPublishing Workflow" destLoc="WFDataModel" name="Deploy P72_WF_StandardSubscriptionPublishing Workflow (Workflow)" src="workflows/P72_WF_StandardSubscriptionPublishing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_StarmineFileProcessWrapper Workflow" destLoc="WFDataModel" name="Deploy P72_WF_StarmineFileProcessWrapper Workflow (Workflow)" src="workflows/P72_WF_StarmineFileProcessWrapper.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_WorldScopePreProcessor Workflow" destLoc="WFDataModel" name="Deploy P72_WF_WorldScopePreProcessor Workflow (Workflow)" src="workflows/P72_WF_WorldScopePreProcessor.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_CHALCleanup Workflow" destLoc="WFDataModel" name="Deploy P72_WF_CHALCleanup Workflow (Workflow)" src="workflows/P72_WF_CHALCleanup.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_NTELCleanup Workflow" destLoc="WFDataModel" name="Deploy P72_WF_NTELCleanup Workflow (Workflow)" src="workflows/P72_WF_NTELCleanup.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_ApproveCACHAL Workflow" destLoc="WFDataModel" name="Deploy P72_WF_ApproveCACHAL Workflow (Workflow)" src="workflows/P72_WF_ApproveCACHAL.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_WF_CAProcessing Workflow" destLoc="WFDataModel" name="Deploy P72_WF_CAProcessing Workflow (Workflow)" src="workflows/P72_WF_CAProcessing.gsp" type="workflow"/>
+
+
+						
+			<!-- Customized Event Installation -->
+			<deployGSP id="Deploy KafkaInboundPointIDEvent Event" destLoc="WFDataModel" name="Deploy KafkaInboundPointIDEvent Event (Event)" src="events/KafkaInboundPointIDEvent.gsp" type="workflow"/>
+			<deployGSP id="Deploy KafkaInboundPositionIDEvent Event" destLoc="WFDataModel" name="Deploy KafkaInboundPositionIDEvent Event (Event)" src="events/KafkaInboundPositionIDEvent.gsp" type="workflow"/>
+			<deployGSP id="Deploy KafkaInboundSOIEvent Event" destLoc="WFDataModel" name="Deploy KafkaInboundSOIEvent Event (Event)" src="events/KafkaInboundSOIEvent.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_BarraFileProcessing Event" destLoc="WFDataModel" name="Deploy P72_EVT_BarraFileProcessing Event (Event)" src="events/P72_EVT_BarraFileProcessing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_BulkResubmit Event" destLoc="WFDataModel" name="Deploy P72_EVT_BulkResubmit Event (Event)" src="events/P72_EVT_BulkResubmit.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_BulkSubscriptionPublishing Event" destLoc="WFDataModel" name="Deploy P72_EVT_BulkSubscriptionPublishing Event (Event)" src="events/P72_EVT_BulkSubscriptionPublishing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_CAPCOFeedProcessing Event" destLoc="WFDataModel" name="Deploy P72_EVT_CAPCOFeedProcessing Event (Event)" src="events/P72_EVT_CAPCOFeedProcessing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_CompustatFeedProcessingDaily Event" destLoc="WFDataModel" name="Deploy P72_EVT_CompustatFeedProcessingDaily Event (Event)" src="events/P72_EVT_CompustatFeedProcessingDaily.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_IBESFeedProcessing Event" destLoc="WFDataModel" name="Deploy P72_EVT_IBESFeedProcessing Event (Event)" src="events/P72_EVT_IBESFeedProcessing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_SMFinancialsFeedProcessing Event" destLoc="WFDataModel" name="Deploy P72_EVT_SMFinancialsFeedProcessing Event (Event)" src="events/P72_EVT_SMFinancialsFeedProcessing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_StarmineFeedProcessing Event" destLoc="WFDataModel" name="Deploy P72_EVT_StarmineFeedProcessing Event (Event)" src="events/P72_EVT_StarmineFeedProcessing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_WorldScopeFeedProcessing Event" destLoc="WFDataModel" name="Deploy P72_EVT_WorldScopeFeedProcessing Event (Event)" src="events/P72_EVT_WorldScopeFeedProcessing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_CHALCleanup Event" destLoc="WFDataModel" name="Deploy P72_EVT_CHALCleanup Event (Event)" src="events/P72_EVT_CHALCleanup.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_NTELCleanup Event" destLoc="WFDataModel" name="Deploy P72_EVT_NTELCleanup Event (Event)" src="events/P72_EVT_NTELCleanup.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_DSPConfig Event" destLoc="WFDataModel" name="Deploy P72_EVT_DSPConfig Event (Event)" src="events/P72_EVT_DSPConfig.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_BloombergBackofficeDaily Event" destLoc="WFDataModel" name="Deploy P72_EVT_BloombergBackofficeDaily Event (Event)" src="events/P72_EVT_BloombergBackofficeDaily.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_ProcessFilesInDirectory Event" destLoc="WFDataModel" name="Deploy P72_EVT_ProcessFilesInDirectory Event (Event)" src="events/P72_EVT_ProcessFilesInDirectory.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_ApproveCACHAL Event" destLoc="WFDataModel" name="Deploy P72_EVT_ApproveCACHAL Event (Event)" src="events/P72_EVT_ApproveCACHAL.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_CAProcessing Event" destLoc="WFDataModel" name="Deploy P72_EVT_CAProcessing Event (Event)" src="events/P72_EVT_CAProcessing.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_AutoApproveCHAL  Event" destLoc="WFDataModel" name="Deploy P72_EVT_AutoApproveCHAL  Event (Event)" src="events/P72_EVT_AutoApproveCHAL.gsp " type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_BulkResubmitException Event" destLoc="WFDataModel" name="Deploy P72_EVT_BulkResubmitException Event (Event)" src="events/P72_EVT_BulkResubmitException.gsp" type="workflow"/>
+			<deployGSP id="Deploy P72_EVT_EndDateISGP Event" destLoc="WFDataModel" name="Deploy P72_EVT_EndDateISGP Event (Event)" src="events/P72_EVT_EndDateISGP.gsp" type="workflow"/>
+
+			
+			<!--Customized Task Installation -->
+			<deployGSP id="Deploy P72_TASK_BarraFileProcessing Task" destLoc="WFDataModel" name="Deploy P72_TASK_BarraFileProcessing Task" src="tasks/P72_TASK_BarraFileProcessing.gsp"/>
+			<deployGSP id="Deploy P72_TASK_BloombergBackofficeDelta Task" destLoc="WFDataModel" name="Deploy P72_TASK_BloombergBackofficeDelta Task" src="tasks/P72_TASK_BloombergBackofficeDelta.gsp"/>
+			<deployGSP id="Deploy P72_TASK_BulkResubmit Task" destLoc="WFDataModel" name="Deploy P72_TASK_BulkResubmit Task" src="tasks/P72_TASK_BulkResubmit.gsp"/>
+			<deployGSP id="Deploy P72_TASK_CAProcessing Task" destLoc="WFDataModel" name="Deploy P72_TASK_CAProcessing Task" src="tasks/P72_TASK_CAProcessing.gsp"/>
+			<deployGSP id="Deploy P72_TASK_CompustatGVKEYFeedProcessingDaily Task" destLoc="WFDataModel" name="Deploy P72_TASK_CompustatGVKEYFeedProcessingDaily Task" src="tasks/P72_TASK_CompustatGVKEYFeedProcessingDaily.gsp"/>
+			<deployGSP id="Deploy P72_TASK_CompustatGVKEYFeedProcessingDaily1 Task" destLoc="WFDataModel" name="Deploy P72_TASK_CompustatGVKEYFeedProcessingDaily1 Task" src="tasks/P72_TASK_CompustatGVKEYFeedProcessingDaily1.gsp"/>
+			<deployGSP id="Deploy P72_TASK_CompustatGVKEYFeedProcessingDaily2 Task" destLoc="WFDataModel" name="Deploy P72_TASK_CompustatGVKEYFeedProcessingDaily2 Task" src="tasks/P72_TASK_CompustatGVKEYFeedProcessingDaily2.gsp"/>
+			<deployGSP id="Deploy P72_TASK_CompustatPKGCORE02V2FeedProcessingDaily1 Task" destLoc="WFDataModel" name="Deploy P72_TASK_CompustatPKGCORE02V2FeedProcessingDaily1 Task" src="tasks/P72_TASK_CompustatPKGCORE02V2FeedProcessingDaily1.gsp"/>
+			<deployGSP id="Deploy P72_TASK_CompustatPKGCORE02V2FeedProcessingDaily2 Task" destLoc="WFDataModel" name="Deploy P72_TASK_CompustatPKGCORE02V2FeedProcessingDaily2 Task" src="tasks/P72_TASK_CompustatPKGCORE02V2FeedProcessingDaily2.gsp"/>
+			<deployGSP id="Deploy P72_TASK_IBESFeedProcessing Task" destLoc="WFDataModel" name="Deploy P72_TASK_IBESFeedProcessing Task" src="tasks/P72_TASK_IBESFeedProcessing.gsp"/>
+			<deployGSP id="Deploy P72_TASK_RefinitivEquityDelta Task" destLoc="WFDataModel" name="Deploy P72_TASK_RefinitivEquityDelta Task" src="tasks/P72_TASK_RefinitivEquityDelta.gsp"/>
+			<deployGSP id="Deploy P72_TASK_RefinitivEquityInit Task" destLoc="WFDataModel" name="Deploy P72_TASK_RefinitivEquityInit Task" src="tasks/P72_TASK_RefinitivEquityInit.gsp"/>
+			<deployGSP id="Deploy P72_TASK_SMFinancialsFeedProcessing Task" destLoc="WFDataModel" name="Deploy P72_TASK_SMFinancialsFeedProcessing Task" src="tasks/P72_TASK_SMFinancialsFeedProcessing.gsp"/>
+			<deployGSP id="Deploy P72_TASK_StarmineFeedProcessing Task" destLoc="WFDataModel" name="Deploy P72_TASK_StarmineFeedProcessing Task" src="tasks/P72_TASK_StarmineFeedProcessing.gsp"/>
+			<deployGSP id="Deploy P72_TASK_WorldScopeFeedProcessing Task" destLoc="WFDataModel" name="Deploy P72_TASK_WorldScopeFeedProcessing Task" src="tasks/P72_TASK_WorldScopeFeedProcessing.gsp"/>
+
+			
+			
+			<!--<deployGSP id="Deploy Point72MarkStatusInactiveForTerminatedEntity_task Task" destLoc="WFDataModel" name="Point72MarkStatusInactiveForTerminatedEntity_task Task" src="tasks/Point72MarkStatusInactiveForTerminatedEntity_task.gsp" patchLevel="8.7.2.01"/>
+			<deployGSP id="Deploy Point72PerformanceFileLoadScheduler_task Task" destLoc="WFDataModel" name="Point72PerformanceFileLoadScheduler_task Task" src="tasks/Point72PerformanceFileLoadScheduler_task.gsp" patchLevel="8.7.2.01"/>-->
+			
+			
+			<!-- Customized VSH.XML, CHAL,  IDUniquenessCheckMatchKeySet etc. Configuration -->
+			<!--<savelob columnName="XML_CONFIG_CLOB" columnkeyname="XML_CONFIG_MNEM" columnkeyvalue="ID_UNIQ" description="Deploy IDUniquenessCheckMatchKeySet Configuration in GC" destLoc="GSDMDataModel" dtdFile="reference/streetreffiles/IDUniquenessCheckMatchKeySet.dtd" lastChgUsrId="Point72:CSTM" name="Deploy IDUniquenessCheckMatchKeySet Configuration in GC" src="reference/streetreffiles/IDUniquenessCheckMatchKeySet.xml" tableName="FT_T_XCFG"/>-->
+			<savelob columnName="XML_CONFIG_CLOB" columnkeyname="XML_CONFIG_MNEM" columnkeyvalue="VSH" description="Deploy VSH Configuration in GC" destLoc="GSDMDataModel" dtdFile="reference/streetreffiles/VSH.dtd" lastChgUsrId="Point72:CSTM" name="Deploy VSH Configuration in GC" src="reference/streetreffiles/VSH.xml" tableName="FT_T_XCFG"/> 			
+			<savelob columnName="XML_CONFIG_CLOB" columnkeyname="XML_CONFIG_MNEM" columnkeyvalue="LISTING" description="Deploy LISTING Configuration in GC" destLoc="GSDMDataModel" dtdFile="reference/streetreffiles/Listing_Configuration.dtd" lastChgUsrId="Point72:CSTM"  name="Deploy LISTING Configuration" src="reference/streetreffiles/Listing_Configuration.xml" tableName="FT_T_XCFG"/>
+			<savelob columnName="XML_CONFIG_CLOB" columnkeyname="XML_CONFIG_MNEM" columnkeyvalue="ID_UNIQ" description="Deploy IDUniquenessCheckMatchKeySet Configuration in GC" destLoc="GSDMDataModel" dtdFile="reference/streetreffiles/IDUniquenessCheckMatchKeySet.dtd" lastChgUsrId="Point72:CSTM" name="Deploy IDUniquenessCheckMatchKeySet Configuration" src="reference/streetreffiles/IDUniquenessCheckMatchKeySet.xml" tableName="FT_T_XCFG"/>				
+
+			<!-- End - Customized VSH.XML, CHAL,  IDUniquenessCheckMatchKeySet etc. Configuration -->
+
+			<!-- Customized Rule -->
+			<savedtd columnName="MSG_SET_BLOB" columnkeyname="XML_MSG_SET_ID" columnkeyvalue="1" description="Deploy Rule Configuration in GC Schema" destLoc="GSDMDataModel" dtdFile="reference/rulexml/msgtype.dtd" name="Deploy Rule Configuration in GC Schema" lastChgUsrId="Point72:CSTM" src="reference/rulexml/StreetRefMsgSet.xml" tableName="FT_T_XMGS"/>
+			<!-- <savedtd columnName="MSG_SET_BLOB" columnkeyname="XML_MSG_SET_ID" columnkeyvalue="1" description="Deploy Rule Configuration in VDDB Schema" destLoc="VDDBDataModel" dtdFile="reference/rulexml/msgtype.dtd" name="Deploy Rule Configuration in VDDB Schema" lastChgUsrId="Point72:CSTM" src="reference/rulexml/StreetRefMsgSet_VDDB.xml" tableName="FT_T_XMGS"/> -->
+			<!-- Customized Rule -->
+			
+			<!-- Customized Publishing Profiles Installation -->
+			
+			<!--<deployGSP id="Deploy RegMessage_Fenergo Profile" destLoc="WFDataModel" name="Deploy RegMessage_Fenergo Profile" src="publishingProfiles/RegMessage_Fenergo.gsp"/> 
+			<deployGSP id="Deploy RegMessagePublishing Profile" destLoc="WFDataModel" name="Deploy RegMessagePublishing Profile" src="publishingProfiles/RegMessagePublishing.gsp"/> -->
+
+			<!-- Customized TPS Engine Configuration -->
+			<!--<deployGSP id="Deploy TPS-1 Engine" destLoc="WFDataModel" name="Deploy TPS-1 Engine" src="engines/TPS-1.gsp"/>-->
+			<!-- Customized TPS Engine Configuration -->
+
+			<!-- Deploy GSO Configuration like update Model Definition,etc-->
+			<!--<deployConfig  destLoc="GSDMDataModel" encoding="windows-1252" name="Product.gso" src="gso/GSOConfig/Product.gso" patchLevel="8.7.2.01"/>-->
+
+
+			
+		</Tasks>
+	</Deployment>
+</PackageDescription>

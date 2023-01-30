@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="prasanth.mandadi@point72.com" entityName="Currency" entitySubType="[]" id="fu7V312IG1" isDefault="N" isPublic="N" screenType="SYSTEMGRID" title="S: Currency_Publish">
+  <control caption="Currency Details" fullQualPath="Currency.CurrencyDetails" id="fu7X312IG1" lazyInd="N" orderNum="0" parentId="" relatedPath="" screenId="fu7V312IG1" show="Y">
+    <control caption="" fullQualPath="Currency.CurrencyDetails.ISOCurrencyCode" id="fu7V512IG1" lazyInd="N" orderNum="0" parentId="fu7X312IG1" relatedPath="" screenType="fu7V312IG1" show="Y"/>
+    <control caption="" fullQualPath="Currency.CurrencyDetails.CurrencyName" id="fu7U512IG1" lazyInd="N" orderNum="1" parentId="fu7X312IG1" relatedPath="" screenType="fu7V312IG1" show="Y"/>
+    <control caption="" fullQualPath="Currency.CurrencyDetails.CurrencyComment" id="?b5t01gSG1" lazyInd="N" orderNum="2" parentId="fu7X312IG1" relatedPath="" screenType="fu7V312IG1" show="Y"/>
+  </control>
+</root>

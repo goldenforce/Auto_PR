@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root chartName="DQ_Rule" chartTemplateId="756r01AB81" createdUser="nitin.bangar@point72.com" id="WIu-m&gt;AZG1" screenType="SYSTEMCHART">
+  <property>{"CHART_TYPE":"GRID","ENTITY_NAME":"InstrumentException","Y_FIELD":"InstrumentException.ExceptionDetail.P72RuleName","SHOW_3D":false,"DRILL_TOP":false,"SHOW_DONUT":false,"Y_GROUP_FIELD":[],"Y_GROUP_FIELD_TYPE":[],"ADDON_CONFIG":{"InstrumentException.ExceptionDetail.P72RuleName":{"CHART_TYPE":"GRID","SKIP_GROUP_BY_CLAUSE":"N"}},"OPEN_IN_EXCEL":false,"SHOW_SPLINE":false,"SHOW_GRADIENT":false,"SKIP_GROUP_BY_CLAUSE":false,"SIMPLE_DATA_STORE":false,"TOGGLE_DATA_SERIES":false,"AGGREGATION":true}</property>
+</root>

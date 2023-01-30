@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root baseLookup="BusinessRule" createdUser="user1" freezeColumns="" id="Pa7rC12gO1" isDefault="N" isPublic="Y" lookupId="BusinessRule" pageSize="50" screenType="SYSTEMSRCH" title="P72BusinesRules">
+  <config>{}</config>
+  <buttons/>
+  <columns>
+    <column caption="" columnName="GSO Name" fieldName="BusinessRule.BusinessRule1.GSOName" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Pa7sC12gO1" isRange="N" mobileTemplate="" operator="" orderNum="0" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Rule Name" fieldName="BusinessRule.BusinessRule1.Rule" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="P72" filterable="Y" fromRange="" id="Pa7tC12gO1" isRange="N" mobileTemplate="" operator="" orderNum="1" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Rule Description" fieldName="BusinessRule.BusinessRule1.RuleDescription" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Pa7uC12gO1" isRange="N" mobileTemplate="" operator="" orderNum="2" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Severity Code" fieldName="BusinessRule.BusinessRule1.SeverityCode" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Pa7vC12gO1" isRange="N" mobileTemplate="" operator="" orderNum="3" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Rule Type" fieldName="BusinessRule.BusinessRule1.RuleType" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="ALL,UI" filterable="Y" fromRange="" id="Pa7xC12gO1" isRange="N" mobileTemplate="" operator="" orderNum="5" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Rule Category" fieldName="BusinessRule.BusinessRule1.RuleCategory" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="SPEL" filterable="Y" fromRange="" id="Pa7yC12gO1" isRange="N" mobileTemplate="" operator="" orderNum="6" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Config Disable Indicator" fieldName="BusinessRule.BusinessRule1.ConfigDisableIndicator" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Pa7zC12gO1" isRange="N" mobileTemplate="" operator="" orderNum="7" showRelLink="" sort="" toRange="" width=""/>
+  </columns>
+</root>

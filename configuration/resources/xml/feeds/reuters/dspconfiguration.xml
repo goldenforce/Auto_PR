@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<vendor-definition>
+  <name>RefinitivDSP</name>
+  <filesToDownloadPerThread>100</filesToDownloadPerThread>
+  <downloadBulkSize>500</downloadBulkSize>
+  <enableHashComparison>true</enableHashComparison>
+  <haltOnError>true</haltOnError>
+  <listRecursive>true</listRecursive>
+  <useTempTable>false</useTempTable>
+  <group>
+    <groupName>EQDescInit</groupName>
+    <dateIndex>3</dateIndex>
+    <sequenceIndex>-5</sequenceIndex>
+    <groupDirectoryName>EQDescInit</groupDirectoryName>
+    <init>
+      <pattern>equities_amer_init.INT.*[0-9].txt.zip</pattern>
+      <pattern>equities_asia_init.INT.*[0-9].txt.zip</pattern>
+      <pattern>equities_euro_init.INT.*[0-9].txt.zip</pattern>
+	  <pattern>funds_amer_init.INT.*[0-9].txt.zip</pattern>
+      <pattern>funds_asia_init.INT.*[0-9].txt.zip</pattern>
+      <pattern>funds_euro_init.INT.*[0-9].txt.zip</pattern>
+	  <pattern>warrants_amer_init.INT.*[0-9].txt.zip</pattern>
+      <pattern>warrants_asia_init.INT.*[0-9].txt.zip</pattern>
+      <pattern>warrants_euro_init.INT.*[0-9].txt.zip</pattern>
+    </init>
+  </group>
+  <group>
+    <groupName>EQDescDelta</groupName>
+    <dateIndex>3</dateIndex>
+    <sequenceIndex>-5</sequenceIndex>
+    <groupDirectoryName>EQDescDelta</groupDirectoryName>
+    <delta>
+     <pattern>equities_global_delta.REF.*[0-9].txt.zip</pattern>
+	 <pattern>funds_global_delta.REF.*[0-9].txt.zip</pattern>   
+     <pattern>warrants_global_delta.REF.*[0-9].txt.zip</pattern>
+   </delta>
+  </group>
+</vendor-definition>

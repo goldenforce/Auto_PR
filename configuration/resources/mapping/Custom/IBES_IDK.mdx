@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="MSF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-03-17 at 05:25:31 IST</Option>
+    <Option key="MappingDesignerVersion">8.8.1.05</Option>
+  </Options>
+  <Input vendorType="FIXED">
+    <Options>
+      <Option key="DecimalSeparator">.</Option>
+      <Option key="DDLName"/>
+      <Option key="IsSingleCharDataDelimiter">TRUE</Option>
+      <Option key="TrimFields">BOTH</Option>
+      <Option key="NullIdentifiers"/>
+      <Option key="TimeStampFormat">%Y%M%D%H%I%S.%f</Option>
+      <Option key="MessageType"/>
+      <Option key="DateTimeFormat">%Y%M%D%H%I%S</Option>
+    </Options>
+    <Layout>
+      <Override/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="IbesTicker" length="7" mandatory="false" mapable="true" match="false" multiple="false" name="IbesTicker" pattern="" pos="1" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="OfficialTicker" length="7" mandatory="false" mapable="true" match="false" multiple="false" name="OfficialTicker" pattern="" pos="8" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="HomeMarketcode" length="7" mandatory="false" mapable="true" match="false" multiple="false" name="HomeMarketcode" pattern="" pos="15" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="Cusipsedol" length="11" mandatory="false" mapable="true" match="false" multiple="false" name="Cusipsedol" pattern="" pos="22" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="LongCompanyName" length="41" mandatory="false" mapable="true" match="false" multiple="false" name="LongCompanyName" pattern="" pos="33" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="InstrumentType" length="2" mandatory="false" mapable="true" match="false" multiple="false" name="InstrumentType" pattern="" pos="74" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="ExchangeCode" length="2" mandatory="false" mapable="true" match="false" multiple="false" name="ExchangeCode" pattern="" pos="76" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="CountryId" length="3" mandatory="false" mapable="true" match="false" multiple="false" name="CountryId" pattern="" pos="78" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="ExchangeCountryId" length="3" mandatory="false" mapable="true" match="false" multiple="false" name="ExchangeCountryId" pattern="" pos="81" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="SectorIndustrygroupCode" length="7" mandatory="false" mapable="true" match="false" multiple="false" name="SectorIndustrygroupCode" pattern="" pos="84" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="ISIN" length="13" mandatory="false" mapable="true" match="false" multiple="false" name="ISIN" pattern="" pos="91" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="IbesTickerEndDate" length="9" mandatory="false" mapable="true" match="false" multiple="false" name="IbesTickerEndDate" pattern="" pos="104" readonly="false" type="String"/>
+    </Layout>
+  </Input>
+  <Output>
+    <Options>
+      <Option key="TimeStampOutputFormat">%M-%D-%Y %H:%I:%S.%f %A</Option>
+      <Option key="DateTimeOutputFormat">%M-%D-%Y %H:%I:%S %A</Option>
+      <Option key="OutputEncoding">UTF-8</Option>
+      <Option key="DefaultEmptyNumericsToZero">FALSE</Option>
+      <Option key="AddTZIndicators">true</Option>
+      <Option key="AddVendorMnemonic">true</Option>
+    </Options>
+    <MappingFragments/>
+    <OutputDef>
+      <Node messageformat="GSREF" name="STREET_REF" type="message">
+        <Options>
+          <Option key="OutputEncoding"/>
+          <Option key="AddTZIndicators">true</Option>
+          <Option key="SystemId">fti://repository/dtd/STREET_REF</Option>
+          <Option key="DocType">STREET_REF</Option>
+        </Options>
+        <condition><![CDATA[if (OneHasValue(IbesTicker))
+	return "STREET_REF";
+else
+	return "";]]></condition>
+        <Node name="USERID" type="attribute">
+          <expr><![CDATA[return "GUEST";]]></expr>
+        </Node>
+        <Node name="HEADER" type="element">
+          <Node name="CHECKLASTDBUPDATE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "N";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CHGAPPRTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "N";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CURRENTTIMESTAMP" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+          </Node>
+          <Node name="DATASOURCE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSUERDERIVATIONMODE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "N";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return IbesTicker;]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID_CTXT_TYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "IBESTKR";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MSGCLASSIFICATION" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "IBESIDK";]]></expr>
+            </Node>
+          </Node>
+          <Node name="USERID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "IBESTKR";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="Issue" type="segment">
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "Issue";]]></expr>
+          </Node>
+        </Node>
+        <Execute displayName="CUSIPSEDOL">
+          <expr><![CDATA[return StoreString("CUSIPSEDOL", If(OneHasValue(Cusipsedol), StrTrimLeft(Cusipsedol), ""));]]></expr>
+        </Execute>
+        <Execute displayName="Country">
+          <expr><![CDATA[return StoreString("Country", If(IsAlpha(GetStringByKey("CUSIPSEDOL"), 1, 2), SubString(Cusipsedol, 1, 2), CountryId));]]></expr>
+        </Execute>
+        <Execute displayName="SEDOL">
+          <expr><![CDATA[return StoreString("SEDOL", If(IsAlpha(GetStringByKey("CUSIPSEDOL"), 1, 2), CheckIdentifier("SEDOL", SubString(GetStringByKey("CUSIPSEDOL"), 3, 8)), ""));]]></expr>
+        </Execute>
+        <Execute displayName="OfficialTicker">
+          <expr><![CDATA[return StoreString("OfficialTicker", If(OneHasValue(OfficialTicker) && Strcmp(CountryId, "ET"), StrParam(OfficialTicker, ".", 1), ""));]]></expr>
+        </Execute>
+        <Execute displayName="HomeMarketCode">
+          <expr><![CDATA[return StoreString("HomeMarketCode", If(OneHasValue(HomeMarketcode) && Strcmp(CountryId, "ET"), StrParam(HomeMarketcode, ".", 1), ""));]]></expr>
+        </Execute>
+        <Execute displayName="ISIN">
+          <expr><![CDATA[if (OneHasValue(ISIN))
+	return StoreString("ISIN", ISIN);
+else if (OneHasValue(GetStringByKey("SEDOL")))
+	return StoreString("ISIN", Select("", "", "select distinct iss_id from ft_t_isid where  end_tms  is null and id_ctxt_typ  = 'ISIN' and instr_id  in (select instr_id from ft_t_isid where  id_ctxt_typ='SEDOL' and iss_id =:1 and end_tms is null)", GetStringByKey("SEDOL"), "", "", "", ""));
+else   if (OneHasValue(OfficialTicker) && !OneHasValue(GetStringByKey("OfficialTicker")))
+	return StoreString("ISIN", Select("", "", "select distinct ISIN.ISS_ID from ft_t_isid ISIN , FT_T_ISID RTTICKER , FT_T_MKIS MKIS, FT_T_MIXR MIXR , FT_T_ISSU issu where RTTICKER.id_ctxt_typ  in ('RTTICKER','BBTRDGSYMB') and RTTICKER.end_tms is null and RTTICKER.ISID_OID = MIXR.isid_oid and MIXR.mkt_iss_oid = MKIS.MKT_ISS_OID and MKIS.gu_id in  (select gu_id from ft_t_guid where geo_unit_id = :2 and  gu_id_ctxt_typ = 'IBES') and MKIS.instr_id = ISIN.instr_id and MKIS.instr_id = ISSU.instr_id and ISSU.ISS_TYP in ('EQSHR','ETF','ETN','RECEIPTS','REALESTA','UNIT','FUND') and isin.id_ctxt_typ ='ISIN' and ISIN.END_TMS is null and MIXR.END_TMS is null and MKIS.END_TMS is null and rtticker.ISS_ID = :1", OfficialTicker, GetStringByKey("Country"), "", "", ""));
+else  if (OneHasValue(HomeMarketcode)  && !OneHasValue(GetStringByKey("HomeMarketCode")))
+	return StoreString("ISIN", Select("", "", "select distinct ISIN.ISS_ID from ft_t_isid ISIN , FT_T_ISID RTTICKER , FT_T_MKIS MKIS, FT_T_MIXR MIXR , FT_T_ISSU issu where RTTICKER.id_ctxt_typ  in ('RTTICKER','BBTRDGSYMB') and RTTICKER.end_tms is null and RTTICKER.ISID_OID = MIXR.isid_oid and MIXR.mkt_iss_oid = MKIS.MKT_ISS_OID and MKIS.gu_id in  (select gu_id from ft_t_guid where geo_unit_id = :2 and  gu_id_ctxt_typ = 'IBES') and MKIS.instr_id = ISIN.instr_id and MKIS.instr_id = ISSU.instr_id and ISSU.ISS_TYP in ('EQSHR','ETF','ETN','RECEIPTS','REALESTA','UNIT','FUND') and isin.id_ctxt_typ ='ISIN' and ISIN.END_TMS is null and MIXR.END_TMS is null and MKIS.END_TMS is null and rtticker.ISS_ID = :1", HomeMarketcode, GetStringByKey("Country"), "", "", ""));
+else   if (OneHasValue(OfficialTicker) && OneHasValue(GetStringByKey("OfficialTicker")))
+	return StoreString("ISIN", Select("", "", "select distinct ISIN.ISS_ID from ft_t_isid ISIN , FT_T_ISID RTTICKER , FT_T_MKIS MKIS, FT_T_MIXR MIXR , FT_T_ISSU issu where RTTICKER.id_ctxt_typ  in ('RTTICKER','BBTRDGSYMB') and RTTICKER.end_tms is null and RTTICKER.ISID_OID = MIXR.isid_oid and MIXR.mkt_iss_oid = MKIS.MKT_ISS_OID and MKIS.gu_id in  (select gu_id from ft_t_guid where geo_unit_id = :2 and  gu_id_ctxt_typ = 'IBES') and MKIS.instr_id = ISIN.instr_id and MKIS.instr_id = ISSU.instr_id and ISSU.ISS_TYP in ('EQSHR','ETF','ETN','RECEIPTS','REALESTA','UNIT','FUND') and isin.id_ctxt_typ ='ISIN' and ISIN.END_TMS is null and MIXR.END_TMS is null and MKIS.END_TMS is null and rtticker.ISS_ID = :1", GetStringByKey("OfficialTicker"), GetStringByKey("Country"), "", "", ""));
+else  if (OneHasValue(HomeMarketcode)  && OneHasValue(GetStringByKey("HomeMarketCode")))
+	return StoreString("ISIN", Select("", "", "select distinct ISIN.ISS_ID from ft_t_isid ISIN , FT_T_ISID RTTICKER , FT_T_MKIS MKIS, FT_T_MIXR MIXR , FT_T_ISSU issu where RTTICKER.id_ctxt_typ  in ('RTTICKER','BBTRDGSYMB') and RTTICKER.end_tms is null and RTTICKER.ISID_OID = MIXR.isid_oid and MIXR.mkt_iss_oid = MKIS.MKT_ISS_OID and MKIS.gu_id in  (select gu_id from ft_t_guid where geo_unit_id = :2 and  gu_id_ctxt_typ = 'IBES') and MKIS.instr_id = ISIN.instr_id and MKIS.instr_id = ISSU.instr_id and ISSU.ISS_TYP in ('EQSHR','ETF','ETN','RECEIPTS','REALESTA','UNIT','FUND') and isin.id_ctxt_typ ='ISIN' and ISIN.END_TMS is null and MIXR.END_TMS is null and MKIS.END_TMS is null and rtticker.ISS_ID = :1", GetStringByKey("HomeMarketCode"), GetStringByKey("Country"), "", "", ""));
+else
+	return "";]]></expr>
+        </Execute>
+        <Node displayName="ISIN" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(GetStringByKey("ISIN")))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ISIN";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return GetStringByKey("ISIN");]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="SEDOL" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (IsAlpha(GetStringByKey("CUSIPSEDOL"), 1, 2))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+          </Node>
+          <Node name="ENDDATEIND" type="attribute">
+            <expr><![CDATA[return "L";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "SEDOL";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (StrLen(GetStringByKey("CUSIPSEDOL")) == 6)
+	return CheckIdentifier("SEDOL", GetStringByKey("CUSIPSEDOL"));
+else
+	return CheckIdentifier("SEDOL",SubString(GetStringByKey("CUSIPSEDOL"), 3, 8));]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="CUSIP" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (IsAlpha(GetStringByKey("CUSIPSEDOL"), 1, 2))
+	return "";
+else
+	return "IssueIdentifier";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(Cusipsedol) && !IsAlpha(Cusipsedol, 1, 1))
+	return "CUSIP";
+else
+	return "CINS";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (StrLen(GetStringByKey("CUSIPSEDOL")) == 8)
+	return CheckIdentifier(If(!IsAlpha(GetStringByKey("CUSIPSEDOL"), 1, 1), "CUSIP", "CINS"), GetStringByKey("CUSIPSEDOL"));
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node disabled="1" displayName="TICKER" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(OfficialTicker))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+          </Node>
+          <Node name="ENDDATEIND" type="attribute">
+            <expr><![CDATA[return "L";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "TICKER";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return OfficialTicker;]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="RTTICKER" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(OfficialTicker, HomeMarketcode))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+          </Node>
+          <Node name="ENDDATEIND" type="attribute">
+            <expr><![CDATA[return "L";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "RTTICKER";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(OfficialTicker) && !OneHasValue(GetStringByKey("OfficialTicker")))
+	return OfficialTicker;
+else if (OneHasValue(OfficialTicker) && OneHasValue(GetStringByKey("OfficialTicker")))
+	return GetStringByKey("OfficialTicker");
+else if (OneHasValue(HomeMarketcode) && !OneHasValue(GetStringByKey("HomeMarketCode")))
+	return HomeMarketcode;
+else if (OneHasValue(HomeMarketcode) && OneHasValue(GetStringByKey("HomeMarketCode")))
+	return GetStringByKey("HomeMarketCode");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="BBTRDGSYMB" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(OfficialTicker, HomeMarketcode))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+          </Node>
+          <Node name="ENDDATEIND" type="attribute">
+            <expr><![CDATA[return "L";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BBTRDGSYMB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(OfficialTicker) && !OneHasValue(GetStringByKey("OfficialTicker")))
+	return OfficialTicker;
+else if (OneHasValue(OfficialTicker) && OneHasValue(GetStringByKey("OfficialTicker")))
+	return GetStringByKey("OfficialTicker");
+else if (OneHasValue(HomeMarketcode) && !OneHasValue(GetStringByKey("HomeMarketCode")))
+	return HomeMarketcode;
+else if (OneHasValue(HomeMarketcode) && OneHasValue(GetStringByKey("HomeMarketCode")))
+	return GetStringByKey("HomeMarketCode");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueGeoUnit" type="segment">
+          <condition><![CDATA[if (OneHasValue(GetStringByKey("Country")))
+	return "IssueGeoUnit";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueGeoUnit";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISGU_MATCH_PURP_ID";]]></expr>
+          </Node>
+          <Node displayName="IBESTKR" name="GeographicUnitIdentifier" type="segment">
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "GeographicUnitIdentifier";]]></expr>
+            </Node>
+            <Node name="COPY_FROM" type="attribute">
+              <expr><![CDATA[return "GU_ID,GU_CNT,GU_TYP";]]></expr>
+            </Node>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "GU_ID,GU_CNT,GU_TYP";]]></expr>
+            </Node>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "GUID_MATCH_1";]]></expr>
+            </Node>
+            <Node name="NESTED_ERR_TXT" type="attribute">
+              <expr><![CDATA[return Strcat("27|CONCTNS|NESTED|GUIDCTXTTYP|COUNTRY|GEOUNITID|",
+		Strcat(CountryId, "|DATASRCID|P72"));]]></expr>
+            </Node>
+            <Node name="NESTED_ERR_LVL" type="attribute">
+              <expr><![CDATA[return "ERROR";]]></expr>
+            </Node>
+            <Node name="GEOUNITID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return GetStringByKey("Country");]]></expr>
+              </Node>
+            </Node>
+            <Node name="GUIDCTXTTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "IBES";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="ISSGUPURPTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "TRADING";]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="GUTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "COUNTRY";]]></expr>
+            </Node>
+          </Node>
+          <Node name="GUCNT" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="IBES" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(IbesTicker))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID7_INSTR_CTX_MKT_USG";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "IBESTKR";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return IbesTicker;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="ISIDMarketIssueCrossReference" type="segment">
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "ISIDMarketIssueCrossReference";]]></expr>
+          </Node>
+          <Node name="ISIDOID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="MIXROID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="MKTISSOID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+      </Node>
+    </OutputDef>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="true" ident="KeyStreaming">
+      <expr><![CDATA[return IbesTicker;]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="RecordIdentifier">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="GSDMFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="VDSFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

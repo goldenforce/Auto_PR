@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackageDescription custom="true" minInstallCenterVersion="8.8.1.01" version="1.0" xsi:noNamespaceSchemaLocation="PackageDescription.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<Package type="full" name="Point72_Custom_Package_GC" version="8.8.1.34" reinstallable="true">
+		<Description>Point72_Custom_Package_GC</Description>
+		<Component>Point72_Custom_Package_GC</Component>
+		<Content>
+			<File type="Package" path="P72_Custom_Package.tar.gz"></File>
+		</Content>
+	</Package>
+	<Deployment>
+		<Prerequisites>
+			<Product id="Gsdm" type="GOLDENSOURCE" name="Datamodel GSDM">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<Product id="VDDB" type="GOLDENSOURCE" name="Datamodel VDDB">
+				<Version min="8.8.1.01"/>
+			</Product>
+
+			<Product id="Starterset" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<!--
+			<Product id="Ora19" name="Oracle Server Version" type="ORACLE_SERVER">
+				<Version min="19.0.0.0" max="19.0.x.x"/>
+			</Product>-->
+		</Prerequisites>
+
+		<Locations>
+			<Location id="CFDataModel" multiple="true" type="Database">
+				<Description>The destination where the Configuration Datamodel was installed.</Description>
+				<Prerequisites/>
+			</Location>
+			<Location id="WFDataModel" multiple="true" type="Database">
+				<Description>The destination where the Workflow Datamodel was installed.</Description>
+				<Prerequisites/>
+			</Location>
+			<Location id="GSDMDataModel" multiple="true" type="Database">
+				<Description>A database where the GSDM was installed  completely.</Description>
+				<Prerequisites>
+					<!--<Prerequisite id="Gsdm"/>-->
+					<Prerequisite id="Starterset"/>
+					<!--<Prerequisite id="Ora19" required="true"/>-->
+				</Prerequisites>
+			</Location>
+			<Location id="GSDMDataModel" type="Database" multiple="true">
+				<Description>The destination where the VDDB Datamodel was installed.</Description>
+				<Prerequisites>
+					<!--<Prerequisite id="VDDB"/>-->
+					<Prerequisite id="Starterset"/>
+					<!--<Prerequisite id="Ora19" required="true"/>-->
+				</Prerequisites>
+			</Location>
+
+			<Location id="EngineInstallation" type="EngineInstallation">
+				<Description>An Engine Installation where an Engine should be installed.</Description>
+				<Prerequisites>
+				</Prerequisites>
+			</Location>
+		</Locations>
+
+		<Tasks>
+			<!--<unzip description="Unzip package archive temporarily" name="Unzip Package" src="package.zip" srcLoc="PackageZip"/>-->
+			<tgz description="Unzip package archive" dest="/" name="Unzip Package" src="P72_Custom_Package.tar.gz" srcLoc="PackageZip"/>
+
+			<!-- Replace environment variable in the sql file for roles-->
+			<replace id="replace_pkg" name="Replace Environment Variables" description="Replaces the Environment Variables with your specified value" src="sql/DDL/" evalLoc="GSDMDataModel" dest="sql/DDL/" includes="GC_Synonyms.sql">
+				<token name="#GC_DBOWNER#" path="$OWNER"/>
+				<token name="#GC_APPUSER#" path="$APPUSER"/>
+			</replace>
+
+
+			<replace id="replace_pkg" name="Replace Environment Variables" description="Replaces the Environment Variables with your specified value" src="sql/DDL/" evalLoc="GSDMDataModel" dest="sql/DDL/" includes="GC_GrantRoles_Using_IR.sql">
+				<token name="#GC_DBOWNER#" path="$OWNER"/>
+				<token name="#GC_APPUSER#" path="$APPUSER"/>
+			</replace>
+
+			<!-- END - Replace environment variable in the sql file for roles-->
+			 
+			<!-- Customized SQL DDL Installation GC-->
+			
+			<!-- Customized SQL DML Installation GC-->
+			<!-- OD CR Tickets -->
+			
+			<!--<sql id="MCR_1891_STDF_INSERT.sql" name="GC - Data Setup - MCR_1891_STDF_INSERT.sql"  description="GC - Data Setup - MCR_1891_STDF_INSERT.sql" src="sql/DML/MCR_1891_STDF_INSERT.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.17" dbType="postgres"/>
+			<sql id="MCR-1877_PCA1_Script.sql" name="GC - Data Setup - MCR-1877_PCA1_Script.sql"  description="GC - Data Setup - MCR-1877_PCA1_Script.sql" src="sql/DML/MCR-1877_PCA1_Script.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.17" dbType="postgres"/>
+			<sql id="MCR-1904_IDMV.sql" name="GC - Data Setup - MCR-1904_IDMV.sql"  description="GC - Data Setup - MCR-1904_IDMV.sql" src="sql/DML/MCR-1904_IDMV.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.17" dbType="postgres"/>-->
+			
+			
+			<!-- Customized GSO -->
+			
+		
+			<!-- Customized GOC -->
+			<deployGSE description="Deploy DR780_InstrumentException_Participants in Repository table" destLoc="GSDMDataModel" name="DR780_InstrumentException_Participants" src="gso/GSOConfig/DR780_InstrumentException_Participants.gso" encoding="windows-1252" patchLevel="8.8.1.34"/>
+			<!--<deployGSE description="Deploy ADR.goc in Repository table" destLoc="GSDMDataModel" name="ADR.goc" src="gso/GSOConfig/ADR.goc" encoding="windows-1252" patchLevel="8.8.1.16"/>-->
+			
+			
+			<!--Customized Label Changes-->
+			<!--<sql id="MCR-280_UIBL_Scripts.sql" name="GC - Data Setup - MCR-280_UIBL_Scripts.sql"  description="GC - Data Setup - MCR-280_UIBL_Scripts.sql" src="sql/DML/MCR-280_UIBL_Scripts.sql" destLoc="GSDMDataModel" patchLevel="8.7.2.03"/>
+			<sql id="MCR-529_UIBL_Update.sql" name="GC - Data Setup - MCR-529_UIBL_Update.sql"  description="GC - Data Setup - MCR-529_UIBL_Update.sql" src="sql/DML/MCR-529_UIBL_Update.sql" destLoc="GSDMDataModel" patchLevel="8.7.2.06"/>
+			<sql id="MCR-670-MarketedIndicator_UIBLScript.sql" name="GC - Data Setup - MCR-670-MarketedIndicator_UIBLScript.sql"  description="GC - Data Setup - MCR-670-MarketedIndicator_UIBLScript.sql" src="sql/DML/MCR-670-MarketedIndicator_UIBLScript.sql" destLoc="GSDMDataModel" patchLevel="8.7.2.06"/>
+			<sql id="MCR-958_UIBL.sql" name="GC - Data Setup - MCR-958_UIBL.sql"  description="GC - Data Setup - MCR-958_UIBL.sql" src="sql/DML/MCR-958_UIBL.sql" destLoc="GSDMDataModel" patchLevel="8.7.2.07"/>-->
+			<sql id="DR780_UIBL.sql" name="GC - Data Setup - DR780_UIBL.sql"  description="GC - Data Setup - DR780_UIBL.sql" src="sql/DML/DR780_UIBL.sql" destLoc="GSDMDataModel"/>
+			
+			<!-- OD CR Tickets -->
+			
+			<!--<sql id="MCR-1904_UIBL.sql" name="GC - Data Setup - MCR-1904_UIBL.sql"  description="GC - Data Setup - MCR-1904_UIBL.sql" src="sql/DML/MCR-1904_UIBL.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.17" dbType="postgres"/>
+			<sql id="MCR-1903-GenericVehicleLabelUpdate.sql" name="GC - Data Setup - MCR-1903-GenericVehicleLabelUpdate.sql"  description="GC - Data Setup - MCR-1903-GenericVehicleLabelUpdate.sql" src="sql/DML/MCR-1903-GenericVehicleLabelUpdate.sql" destLoc="GSDMDataModel" patchLevel="8.8.1.17" dbType="postgres"/>-->
+			
+			<!-- Customized MDX/OMDX -->
+			
+			<!--Deploy Config_Options.ttl-->
+			
+
+			<!-- Customized Splitter -->
+		
+			
+
+			<!-- Customized Vendor Definitions Installation -->
+		
+			
+
+			<!-- Customized Workflows Installation -->
+			
+			
+			<!--<deployGSP id="Deploy Point72MarkStatusInactiveForTerminatedEntity_task Task" destLoc="WFDataModel" name="Point72MarkStatusInactiveForTerminatedEntity_task Task" src="tasks/Point72MarkStatusInactiveForTerminatedEntity_task.gsp" patchLevel="8.7.2.01"/>
+			<deployGSP id="Deploy Point72PerformanceFileLoadScheduler_task Task" destLoc="WFDataModel" name="Point72PerformanceFileLoadScheduler_task Task" src="tasks/Point72PerformanceFileLoadScheduler_task.gsp" patchLevel="8.7.2.01"/>-->
+			
+			
+			<!-- Customized VSH.XML, CHAL,  IDUniquenessCheckMatchKeySet etc. Configuration -->
+			
+			<!-- End - Customized VSH.XML, CHAL,  IDUniquenessCheckMatchKeySet etc. Configuration -->
+
+			<!-- Customized Rule  -->
+			
+			 
+			<!-- Customized Publishing Profiles Installation -->
+			
+			<!--<deployGSP id="Deploy RegMessage_Fenergo Profile" destLoc="WFDataModel" name="Deploy RegMessage_Fenergo Profile" src="publishingProfiles/RegMessage_Fenergo.gsp"/> 
+			<deployGSP id="Deploy RegMessagePublishing Profile" destLoc="WFDataModel" name="Deploy RegMessagePublishing Profile" src="publishingProfiles/RegMessagePublishing.gsp"/> -->
+
+			<!-- Customized TPS Engine Configuration -->
+			<!--<deployGSP id="Deploy TPS-1 Engine" destLoc="WFDataModel" name="Deploy TPS-1 Engine" src="engines/TPS-1.gsp"/>-->
+			<!-- Customized TPS Engine Configuration -->
+
+			<!-- Deploy GSO Configuration like update Model Definition,etc-->
+			<!--<deployConfig  destLoc="GSDMDataModel" encoding="windows-1252" name="Product.gso" src="gso/GSOConfig/Product.gso" patchLevel="8.7.2.01"/>-->
+
+		
+		</Tasks>
+	</Deployment>
+</PackageDescription>

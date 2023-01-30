@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="MSF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-07-17 at 02:31:16 IST</Option>
+    <Option key="MappingDesignerVersion">8.8.1.05</Option>
+  </Options>
+  <Input vendorType="VARIABLE">
+    <Options>
+      <Option key="DecimalSeparator">.</Option>
+      <Option key="DDLName"/>
+      <Option key="IsSingleCharDataDelimiter">TRUE</Option>
+      <Option key="TrimFields">BOTH</Option>
+      <Option key="NullIdentifiers">NULL</Option>
+      <Option key="InputDataDelimiter">|</Option>
+      <Option key="IndexBasedLookUp">TRUE</Option>
+      <Option key="TimeStampFormat">%Y%M%D%H%I%S.%f</Option>
+      <Option key="QuotationMark"/>
+      <Option key="MessageType"/>
+      <Option key="DateTimeFormat">%Y%M%D%H%I%S</Option>
+      <Option key="EscapeChar"/>
+    </Options>
+    <Layout>
+      <Override/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="ExternalId" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ExternalId" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="External Id Type" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ExternalIdType" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="ISIN" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ISIN" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="CUSIP" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="CUSIP" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="SEDOL" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="SEDOL" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="TICKER" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="TICKER" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="PrimaryRIC" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="PrimaryRIC" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="Normalized Composite BB Ticker" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="NormalizedCompositeBBTicker" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="Name" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="Name" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="Security Type" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="SecurityType" pattern="" pos="0" readonly="false" type="String"/>
+      <field decimals="0" desc="" excludedNullIdentifiers="" ident="Traded Country" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="TradedCountry" pattern="" pos="0" readonly="false" type="String"/>
+    </Layout>
+  </Input>
+  <Output>
+    <Options>
+      <Option key="TimeStampOutputFormat">%M-%D-%Y %H:%I:%S.%f %A</Option>
+      <Option key="DateTimeOutputFormat">%M-%D-%Y %H:%I:%S %A</Option>
+      <Option key="OutputEncoding">UTF-8</Option>
+      <Option key="DefaultEmptyNumericsToZero">FALSE</Option>
+      <Option key="AddTZIndicators">true</Option>
+      <Option key="AddVendorMnemonic">true</Option>
+    </Options>
+    <MappingFragments/>
+    <OutputDef>
+      <Node messageformat="GSREF" name="STREET_REF" type="message">
+        <Options>
+          <Option key="OutputEncoding"/>
+          <Option key="AddTZIndicators">true</Option>
+          <Option key="SystemId">fti://repository/dtd/STREET_REF</Option>
+          <Option key="DocType">STREET_REF</Option>
+        </Options>
+        <condition><![CDATA[if (OneHasValue(ExternalId) && OneHasValue(ExternalIdType))
+	return "STREET_REF";
+else
+	return "";]]></condition>
+        <Node name="USERID" type="attribute">
+          <expr><![CDATA[return "GUEST";]]></expr>
+        </Node>
+        <Node name="HEADER" type="element">
+          <Node name="CHECKLASTDBUPDATE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "N";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CHGAPPRTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "N";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CURRENTTIMESTAMP" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+          </Node>
+          <Node name="DATASOURCE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSUERDERIVATIONMODE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "N";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return ExternalId;]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID_CTXT_TYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "POINTID";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MSGCLASSIFICATION" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "POINTID";]]></expr>
+            </Node>
+          </Node>
+          <Node name="USERID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "POINTID";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="Issue" type="segment">
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "Issue";]]></expr>
+          </Node>
+          <Node name="INSTRID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ACCESSAUTHTYP" type="element">
+            <Node name="DEFAULT" type="attribute"/>
+            <Node name="ERR_LVL" type="attribute"/>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="STRIP_FAILED_DOMAIN" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "PUBLIC";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="DEFAULT" type="attribute"/>
+            <Node name="ERR_LVL" type="attribute"/>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="STRIP_FAILED_DOMAIN" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSACTVYSTATTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "EQSHR";]]></expr>
+            </Node>
+          </Node>
+          <Node name="PREFISSNME" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Name;]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Execute displayName="ISIN">
+          <expr><![CDATA[if (OneHasValue(ISIN))
+	return StoreString("ISIN", ISIN);
+else if (OneHasValue(SEDOL))
+	return StoreString("ISIN", Select("", "", "select iss_id from ft_t_isid where  end_tms  is null and id_ctxt_typ  = 'ISIN' and instr_id  in (select instr_id from ft_t_isid where  id_ctxt_typ='SEDOL' and iss_id =:1 and end_tms is null)", SEDOL, "", "", "", ""));
+else
+	return "";]]></expr>
+        </Execute>
+        <Node displayName="ISIN" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(GetStringByKey("ISIN")))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ISIN";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return GetStringByKey("ISIN");]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node disabled="1" displayName="CUSIP" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(CUSIP))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "CUSIP";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return CUSIP;]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="SEDOL" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(SEDOL))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node name="ENDDATEIND" type="attribute">
+            <expr><![CDATA[return "A";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "SEDOL";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSUSAGETYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return SEDOL;]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return SEDOL;]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node disabled="1" displayName="TICKER" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(TICKER))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+          </Node>
+          <Node name="ENDDATEIND" type="attribute">
+            <expr><![CDATA[return "L";]]></expr>
+          </Node>
+          <Node name="ERROR" type="attribute">
+            <expr><![CDATA[return "N";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "TICKER";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return TICKER;]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node disabled="1" displayName="PrimaryRIC" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(PrimaryRIC))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "RIC";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return PrimaryRIC;]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueGeoUnit" type="segment">
+          <condition><![CDATA[if (OneHasValue(TradedCountry))
+	return "IssueGeoUnit";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueGeoUnit";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISGU_MATCH_PURP_ID";]]></expr>
+          </Node>
+          <Node name="GeographicUnit" type="segment">
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "GeographicUnit";]]></expr>
+            </Node>
+            <Node name="COPY_FROM" type="attribute">
+              <expr><![CDATA[return "PRNT_GU_ID,PRNT_GU_CNT,PRNT_GU_TYP";]]></expr>
+            </Node>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "GU_ID,GU_CNT,GU_TYP";]]></expr>
+            </Node>
+            <Node name="GeographicUnitIdentifier" type="segment">
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "REFERENCE";]]></expr>
+              </Node>
+              <Node name="TYPE" type="attribute">
+                <expr><![CDATA[return "GeographicUnitIdentifier";]]></expr>
+              </Node>
+              <Node name="COPY_FROM" type="attribute">
+                <expr><![CDATA[return "GUNT_OID";]]></expr>
+              </Node>
+              <Node name="COPY_TO" type="attribute">
+                <expr><![CDATA[return "GUNT_OID";]]></expr>
+              </Node>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "GUID_MATCH_1";]]></expr>
+              </Node>
+              <Node name="NESTED_ERR_LVL" type="attribute">
+                <expr><![CDATA[return "ERROR";]]></expr>
+              </Node>
+              <Node name="NESTED_ERR_TXT" type="attribute">
+                <expr><![CDATA[return Strcat("27|CONCTNS|NESTED|GUIDCTXTTYP|COUNTRY|GEOUNITID|",
+		Strcat(TradedCountry, "|DATASRCID|P72"));]]></expr>
+              </Node>
+              <Node name="GEOUNITID" type="element">
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[return TradedCountry;]]></expr>
+                </Node>
+              </Node>
+              <Node name="GUIDCTXTTYP" type="element">
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[return "ISO3";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="PRNTGUCNT" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "1";]]></expr>
+              </Node>
+            </Node>
+            <Node disabled="1" name="PRNTGUID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return TradedCountry;]]></expr>
+              </Node>
+            </Node>
+            <Node name="PRNTGUTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "COUNTRY";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="ISSGUPURPTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "TRADING";]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node displayName="POINTID" name="IssueIdentifier" type="segment">
+          <condition><![CDATA[if (OneHasValue(ExternalId))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID6_CTX_ID_MKT_USG";]]></expr>
+          </Node>
+          <Node name="IDCTXTTYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return UpperCase(ExternalIdType);]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return ExternalId;]]></expr>
+            </Node>
+          </Node>
+          <Node name="STARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="ISIDMarketIssueCrossReference" type="segment">
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "ISIDMarketIssueCrossReference";]]></expr>
+          </Node>
+          <Node name="ISIDOID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="MIXROID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="MKTISSOID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+      </Node>
+    </OutputDef>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="true" ident="KeyStreaming">
+      <expr><![CDATA[return ExternalId;]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="RecordIdentifier">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="GSDMFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="VDSFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

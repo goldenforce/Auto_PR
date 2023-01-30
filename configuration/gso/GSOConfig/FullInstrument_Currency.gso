@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Is Deliverable" entityTypeId="++3qwBhS2etxm003" id="++8rNGumhG5D4006" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72IsDeliverable" nameSpace="POINT72">
+      <domainValue beFieldId="++8rNGumhG5D4006" domainValueName="Yes" domainValueTxt="Y" id="++8rNGumhG5D400C" nameSpace="POINT72"/>
+      <domainValue beFieldId="++8rNGumhG5D4006" domainValueName="No" domainValueTxt="N" id="++8rNGumhG5D400D" nameSpace="POINT72"/>
+    </beField>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Major Currency" entityTypeId="++3qwBhS2etxm003" id="++8rNGumhG5D400E" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72MajorCurrency" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Currency ID" entityTypeId="++3qwBhS2etxm003" id="++8rNWDmhG5Ae00b" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72ISOCURR" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Is Minor" entityTypeId="++3qwBhS2etxm003" id="++8rNGumhG5D4002" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72IsMinor" nameSpace="POINT72">
+      <domainValue beFieldId="++8rNGumhG5D4002" domainValueName="Yes" domainValueTxt="Y" id="++8rNGumhG5D4004" nameSpace="POINT72"/>
+      <domainValue beFieldId="++8rNGumhG5D4002" domainValueName="No" domainValueTxt="N" id="++8rNGumhG5D4005" nameSpace="POINT72"/>
+    </beField>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Related Instrument Details" displayCaption="Related Instrument Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="++4ci0By2etrS006" multiplicity="MULTIPLE_OR_NULL" name="RelatedInstrumentDetails" nameSpace="GSC">
+      <part beRelationId="++8rdPIGhG59m000" defNameSpace="POINT72" id="++8rdPIGhG59m001" label="UnderlyingCountryPrimaryForCurrency" prntReqdInd="0" seq="8"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Currency Details" displayCaption="Currency Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="++6ndfpS2etqG000" multiplicity="SINGLE_OR_NULL" name="CurrencyDetails" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8rNGumhG5D4002" id="++8rNWDmhG5Ae00f" prntReqdInd="0" seq="20"/>
+      <part defNameSpace="POINT72" fieldId="++8rNGumhG5D4006" id="++8rNWDmhG5Ae00g" prntReqdInd="0" seq="21"/>
+      <part defNameSpace="POINT72" fieldId="++8rNGumhG5D400E" id="++8rNWDmhG5Ae00h" prntReqdInd="0" seq="22"/>
+      <part defNameSpace="POINT72" fieldId="++8rNWDmhG5Ae00b" id="++8rNWDmhG5Ae00i" prntReqdInd="0" seq="23"/>
+    </dataGroup>
+  </dataGroups>
+  <relations>
+    <relation id="++8rdPIGhG59m003" name="FT_T_RISS-To-FT_T_MKIS03" nameSpace="POINT72" srcTable="FT_T_RISS" tgtTable="FT_T_MKIS">
+      <field fromColumn="MKT_ISS_OID" id="++8rdPIGhG59m004" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+  </relations>
+  <occurrences>
+    <occurrence desc="Occurrence for Related Issue" id="004RuC1C2ettK00T" ignoreDeleteChildren="false" multiplicity="MULTIPLE_OR_NULL" name="RISS_01" nameSpace="GSC" parentId="004QPmYC2etr002Z" table="FT_T_RISS" timeSeries="LOGICAL_DELETE">
+      <field id="007vpZXi2etbC004" nameSpace="GSC" relationId="007vpZXi2etbC005"/>
+      <field id="008rInNWhG50W002" nameSpace="POINT72" relationId="008rInNWhG50W003"/>
+      <field id="++5dnClS2etxK005" nameSpace="GSC" relationId="++5dnClS2etxK006"/>
+      <field id="++5do+kS2etxK002" nameSpace="GSC" relationId="++5do+kS2etxK003"/>
+      <field id="++5do+kS2etxK003" nameSpace="GSC" relationId="++5do+kS2etxK004"/>
+      <field id="++5do+kS2etxK004" nameSpace="GSC" relationId="++5do+kS2etxK005"/>
+      <field id="++8qotjmhG52K002" nameSpace="POINT72" relationId="++8qotjmhG52K003"/>
+      <field id="++8rdPIGhG59m002" nameSpace="POINT72" relationId="++8rdPIGhG59m003"/>
+      <field id="++8ZqSemhG5AW002" nameSpace="POINT72" relationId="++8ZqSemhG5AW003"/>
+      <field id="007DJkwi2evdK00W" name="ASSIMILATION_ASSUMED_IND" nameSpace="GSC"/>
+      <field id="007DJkwi2evdK00Z" name="ASSIMILATION_TMS" nameSpace="GSC"/>
+      <field id="005u+zIi2etqq013" name="BASKET_WGT_CAMT" nameSpace="GSC"/>
+      <field id="005u+zIi2etqq010" name="BASKET_WGT_TYP" nameSpace="GSC"/>
+      <field id="008DqIEi2euPC00B" name="CNVR_FACTOR_CRTE" nameSpace="GSC"/>
+      <field id="007DJkwi2evdK00u" name="COMPONENT_INSTR_CQTY" nameSpace="GSC"/>
+      <field id="007DJkwi2evdK00c" name="COMPONENT_SEPARATION_IND" nameSpace="GSC"/>
+      <field id="007DJkwi2evdK00f" name="COMPULSORY_SEPARATION_TMS" nameSpace="GSC"/>
+      <field id="008gk-rC2es2C00A" name="DATA_SRC_ID" nameSpace="GSC"/>
+      <field id="++6m8Mfy2etqG000" name="EV_AMT_BAS_TYP" nameSpace="GSC"/>
+      <field id="++4SD1by2etsC00b" name="EV_AMT_TYP" nameSpace="GSC"/>
+      <field id="++4SD1by2etsC00c" name="EV_BAS_PRT_CAMT" nameSpace="GSC"/>
+      <field id="++4SD1by2etsC00d" name="EV_PART_CAMT" nameSpace="GSC"/>
+      <field id="005ogMWC2etn800B" name="EXER_CRTE" nameSpace="GSC"/>
+      <field id="007DJkwi2evdK00i" name="EXER_RTE_TYP" nameSpace="GSC"/>
+      <field id="++8737YS2euPu007" name="FRAC_SETTLE_TYP" nameSpace="GSC"/>
+      <field id="006KmxHi2etpe03Z" name="INIT_HEDGE_CAMT" nameSpace="GSC"/>
+      <field id="006KmxHi2etpe03Y" name="INIT_HEDGE_EFF_TMS" nameSpace="GSC"/>
+      <field id="++4SD1by2etsC00g" name="ISS_PART_RL_TYP" nameSpace="GSC"/>
+      <field id="007DJkwi2evdK00r" name="ISS_PART_SUB_RL_TYP" nameSpace="GSC"/>
+      <field id="006KmxHi2etpe03a" name="ISSUANCE_DELTA_CRTE" nameSpace="GSC"/>
+      <field id="006KmxHi2etpe03b" name="ISSUANCE_DELTA_EFF_TMS" nameSpace="GSC"/>
+      <field id="++4SD1by2etsC00i" name="PART_NUM" nameSpace="GSC"/>
+      <field id="++5jTbey2etqS0Oa" name="PART_RATIO_CRTE" nameSpace="GSC"/>
+      <field id="++4SD1by2etsC00k" name="PART_UNITS_TYP" nameSpace="GSC"/>
+      <field id="007DJkwi2evdK00l" name="PRIN_INC_IND" nameSpace="GSC"/>
+      <field id="++4SD1by2etsC00m" name="SEPARATION_START_TMS" nameSpace="GSC"/>
+      <field id="004YZ5Ai2etpW00e" name="SEPARATION_STRT_DTE_IND" nameSpace="GSC"/>
+      <field id="005ogMWC2etn800A" name="START_TMS" nameSpace="GSC"/>
+      <field id="++5rYSvS2etpe02D" name="UDRLY_ASSET_ID_CTXT_TYP" nameSpace="GSC"/>
+      <field id="++5rYSvS2etpe02B" name="UDRLY_ASSET_ISS_ID" nameSpace="GSC"/>
+      <field id="006WE0lC2etrC01O" name="UDRLY_ASSET_NME" nameSpace="GSC"/>
+      <field id="++6iLR9S2etqG004" name="UDRLY_ASSET_TENOR_DESC" nameSpace="GSC"/>
+      <field id="007DJkwi2evdK00o" name="UDRLY_CURR_CDE" nameSpace="GSC"/>
+      <field id="++6FZuGS2etvy000" name="UDRLY_MKT_NME" nameSpace="GSC"/>
+      <field id="++6r3zjS2euPC003" name="UDRLY_TICK_1PT_VAL_TXT" nameSpace="GSC"/>
+      <field id="++6r3zjS2euPC000" name="UDRLY_TICK_SZ_CAMT" nameSpace="GSC"/>
+      <field id="++8737YS2euPu006" name="UNDERLY_SETTLE_STAT_DESC" nameSpace="GSC"/>
+      <field id="006oIBCC2etqG004" name="UNDERLY_SETTLE_STAT_TYP" nameSpace="GSC"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="++8rNGumhG5D4007" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72DELVRBLE" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="++8rNGumhG5D4009" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="++8rNGumhG5D4008" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="DELVRBLE" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue" id="008rcvKWhG50W000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISSU_P72_MAJORCURR" nameSpace="POINT72" parentId="++8rNGumhG5D400I" table="FT_T_ISSU" timeSeries="LOGICAL_DELETE">
+      <field id="008rdKt0hG5BG000" name="PREF_ISS_ID" nameSpace="POINT72"/>
+      <option id="008rcvKWhG50W001" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8rNWDmhG5Ae00Y" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_P72_ISOCURR" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="++8rNWDmhG5Ae00a" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8rNWDmhG5Ae00Z" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="ISO CURR" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Currency Characteristics" id="++8rNGumhG5D4000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="CYCH_ISSU_P72" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_CYCH" timeSeries="LOGICAL_DELETE">
+      <field id="++8rNGumhG5D4001" name="MINOR_CURR_UNIT_IND" nameSpace="POINT72"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beRelationId="++8rdPIGhG59m000" groupMapping="0" id="++8rdPIGhG59m005" nameSpace="POINT72" occFieldId="++8rdPIGhG59m002"/>
+    <mapping beFieldId="++8rNGumhG5D4006" groupMapping="0" id="++8rNGumhG5D400B" nameSpace="POINT72" occFieldId="++8rNGumhG5D4009"/>
+    <mapping beFieldId="++8rNGumhG5D400E" groupMapping="0" id="008rdKt0hG5BG001" nameSpace="POINT72" occFieldId="008rdKt0hG5BG000"/>
+    <mapping beFieldId="++8rNWDmhG5Ae00b" groupMapping="0" id="++8rNWDmhG5Ae00c" nameSpace="POINT72" occFieldId="++8rNWDmhG5Ae00a"/>
+    <mapping beFieldId="++8rNGumhG5D4002" groupMapping="0" id="++8rNGumhG5D4003" nameSpace="POINT72" occFieldId="++8rNGumhG5D4001"/>
+  </mappings>
+  <entityRelations>
+    <entityRelation entityId="++5TZs2y2etse000" id="++8rdPIGhG59m000" lookupField="++8W3a4mhG5q400R" multiplicity="MULTIPLE_OR_NULL" name="UnderlyingCountryPrimaryForCurrency" nameSpace="POINT72" rltdEntityId="008W3DOWhG5q4005">
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m00A" nameSpace="POINT72" partId="008bZVbWhG5AW00T"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m00B" nameSpace="POINT72" partId="008r2E+WhG51a000"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m00C" nameSpace="POINT72" partId="008r2E+WhG51a001"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m006" nameSpace="POINT72" partId="++8W3a4mhG5q400Q"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m008" nameSpace="POINT72" partId="++8W3a4mhG5q400R"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m007" nameSpace="POINT72" partId="++8W3a4mhG5q400T"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m009" nameSpace="POINT72" partId="++8ZsRZmhG5AW00B"/>
+    </entityRelation>
+  </entityRelations>
+</entities>

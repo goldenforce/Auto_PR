@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-03-04 at 12:23:48 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.27</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="-z7X31H381" name="ISSUIssueRegulatoryValues" type="segment">
+        <condition id="-z7Y31H381"><![CDATA[if (OneHasValue(Primary_Market_Quote_ID))
+	return "ISSUIssueRegulatoryValues";
+else
+	return "";]]></condition>
+        <Node id="-z7Z31H381" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="-z7a31H381" name="TYPE" type="attribute">
+          <expr><![CDATA[return "ISSUIssueRegulatoryValues";]]></expr>
+        </Node>
+        <Node id="-z7b31H381" name="COPY_FROM" type="attribute"/>
+        <Node id="-z7c31H381" name="COPY_TO" type="attribute"/>
+        <Node id="-z7d31H381" name="DUP_CHECK" type="attribute"/>
+        <Node id="-z7e31H381" name="ENDDATEIND" type="attribute"/>
+        <Node id="-z7f31H381" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="-z7g31H381" name="ERROR" type="attribute"/>
+        <Node id="-z7h31H381" name="MATCH" type="attribute">
+          <expr><![CDATA[return "ISRV_MATCH_1";]]></expr>
+        </Node>
+        <Node id="-z7i31H381" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="-z7j31H381" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="-z7k31H381" name="ONLY" type="attribute"/>
+        <Node id="-z7l31H381" name="PARENT_LINK" type="attribute"/>
+        <Node id="-z7m31H381" name="PUBLISH" type="attribute"/>
+        <Node id="-z7n31H381" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="-z7o31H381" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="-z7p31H381" name="TRANSLATE" type="attribute"/>
+        <Node id="-z7q31H381" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="-z7r31H381" name="TSOPTION" type="attribute"/>
+        <Node id="-z7s31H381" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="-z7t31H381" name="TSTOLERANCE" type="attribute"/>
+        <Node id="-z7u31H381" name="DATASRCID" type="element">
+          <Node id="-z7v31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7w31H381" name="DATASTATTYP" type="element">
+          <Node id="-z7x31H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7y31H381" name="DBLVOLCAPTYP" type="element">
+          <Node id="-z7z31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7$31H381" name="ENDTMS" type="element">
+          <Node id="-z7%31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7@31H381" name="GUCNT" type="element">
+          <Node id="-z7&amp;31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7*31H381" name="GUID" type="element">
+          <Node id="-z7-31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7.31H381" name="GUTYP" type="element">
+          <Node id="-z7/31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7(31H381" name="INSTRID" type="element">
+          <Node id="-z7)31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7~31H381" name="ISRVOID" type="element">
+          <Node id="-z7?31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7&lt;31H381" name="LASTCHGTMS" type="element">
+          <Node id="-z7&gt;31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7041H381" name="LASTCHGUSRID" type="element">
+          <Node id="-z7141H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7241H381" name="LASTLIQUIDITYTMS" type="element">
+          <Node id="-z7341H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7441H381" name="LIQUIDITYIND" type="element">
+          <Node id="-z7541H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7641H381" name="MKTOID" type="element">
+          <Node id="-z7741H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7841H381" name="NXTLIQUIDITYTMS" type="element">
+          <Node id="-z7941H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7A41H381" name="REGAUTHNME" type="element">
+          <Node id="-z7B41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7C41H381" name="REGEXEMPTCATTYP" type="element">
+          <Node id="-z7D41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7E41H381" name="REGEXEMPTDESC" type="element">
+          <Node id="-z7F41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7G41H381" name="PRIMTRDGSYMBOLID" type="element">
+          <Node id="-z7H41H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return Primary_Market_Quote_ID;]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7I41H381" name="REGEXEMPTSRCTYP" type="element">
+          <Node id="-z7J41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7K41H381" name="REGEXEMPTTYP" type="element">
+          <Node id="-z7L41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7M41H381" name="REGPRDEFFTMS" type="element">
+          <Node id="-z7N41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7O41H381" name="REGPRDENDDTE" type="element">
+          <Node id="-z7P41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7Q41H381" name="REGPRDSTARTDTE" type="element">
+          <Node id="-z7R41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7S41H381" name="REGPUBLISHTMS" type="element">
+          <Node id="-z7T41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7U41H381" name="REGSTATTYP" type="element">
+          <Node id="-z7V41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7W41H381" name="REGSUSPENDIND" type="element">
+          <Node id="-z7X41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7Y41H381" name="REGTYP" type="element">
+          <Node id="-z7Z41H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return "MIFIDII";]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7a41H381" name="REGUPDATETMS" type="element">
+          <Node id="-z7b41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7c41H381" name="REGWAIVERIND" type="element">
+          <Node id="-z7d41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7e41H381" name="RGATOID" type="element">
+          <Node id="-z7f41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7g41H381" name="STARTTMS" type="element">
+          <Node id="-z7h41H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7i41H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7j41H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7k41H381" name="SYSEFFENDTMS" type="element">
+          <Node id="-z7l41H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7m41H381" name="TRDNGWAIVER12MCPCT" type="element">
+          <Node id="-z7n41H381" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-09-09 at 12:25:17 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Stamp_Duty_Flag" id="SeEXB1y6W1" name="TaxTreatmentCharacteristics" type="segment">
+        <condition id="SeEaB1y6W1"><![CDATA[if (OneHasValue(Stamp_Duty_Flag))
+	if ((Strcmp(Stamp_Duty_Flag, "Y") && StrContainsOneOf(Stamp_Duty_Country_1, "ZA", "HK")) || StrContainsOneOf(Exchange_Code, "SHZ", "SHH"))
+		return "TaxTreatmentCharacteristics";
+	else if (Strcmp(Stamp_Duty_Flag, "N") && StrContainsOneOf(Exchange_Code, "JNB", "HKG", "SHZ", "SHH"))
+		return "TaxTreatmentCharacteristics";
+	else
+		return "";
+else
+	return "";]]></condition>
+        <Node id="SeEbB1y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="SeEcB1y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="SeEdB1y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="SeEeB1y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="SeEfB1y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="SeEgB1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="SeEhB1y6W1" name="ERROR" type="attribute"/>
+        <Node id="SeEiB1y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="SeEjB1y6W1" name="MATCH" type="attribute"/>
+        <Node id="SeEkB1y6W1" name="ONLY" type="attribute"/>
+        <Node id="SeElB1y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="SeEmB1y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="SeEnB1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="SeEoB1y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="SeEpB1y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="SeEqB1y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="SeErB1y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="SeEsB1y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="SeEtB1y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "TaxTreatmentCharacteristics";]]></expr>
+        </Node>
+        <Node id="SeEuB1y6W1" name="GeographicUnit" type="segment">
+          <Node id="SeEvB1y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="SeEwB1y6W1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "PRNT_GU_CNT,PRNT_GU_ID,PRNT_GU_TYP";]]></expr>
+          </Node>
+          <Node id="SeExB1y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "GU_CNT,GU_ID,GU_TYP";]]></expr>
+          </Node>
+          <Node id="SeEyB1y6W1" name="DUP_CHECK" type="attribute"/>
+          <Node id="SeEzB1y6W1" name="ENDDATEIND" type="attribute"/>
+          <Node id="SeE$B1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="SeE%B1y6W1" name="ERROR" type="attribute"/>
+          <Node id="SeE@B1y6W1" name="LOOKUP" type="attribute"/>
+          <Node id="SeE&amp;B1y6W1" name="MATCH" type="attribute"/>
+          <Node id="SeE*B1y6W1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="SeE-B1y6W1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("11|CONCTNS|NESTED|PRNTGUTYP|COUNTRY|PRNTGUID|", Strcat(Stamp_Duty_Country_1, "|DATASRCID|RFTDSP"));]]></expr>
+          </Node>
+          <Node id="SeE.B1y6W1" name="ONLY" type="attribute"/>
+          <Node id="SeE/B1y6W1" name="PARENT_LINK" type="attribute"/>
+          <Node id="SeE(B1y6W1" name="PUBLISH" type="attribute"/>
+          <Node id="SeE)B1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="SeE~B1y6W1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="SeE?B1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE&lt;B1y6W1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="SeE&gt;B1y6W1" name="TSOPTION" type="attribute"/>
+          <Node id="SeE0C1y6W1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="SeE1C1y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "GeographicUnit";]]></expr>
+          </Node>
+          <Node id="SeE2C1y6W1" name="PRNTGUCNT" type="element">
+            <Node id="SeE3C1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="SeE4C1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+            <Node id="SeE5C1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="SeE6C1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node id="SeE7C1y6W1" name="PRNTGUID" type="element">
+            <Node id="SeE8C1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="SeE9C1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+            <Node id="SeEAC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="SeEBC1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Stamp_Duty_Flag, "N") && OneHasValue(Exchange_Code))
+	if (Strcmp(Exchange_Code, "JNB"))
+		return "ZA";
+	else if (Strcmp(Exchange_Code, "HKG"))
+		return "HK";
+	else if (Strcmp(Exchange_Code, "SHZ"))
+		return "CN";
+	else if (Strcmp(Exchange_Code, "SHH"))
+		return "CN";
+	else
+		return "";
+else if (Strcmp(Stamp_Duty_Flag, "Y") && OneHasValue(Stamp_Duty_Country_1))
+	return Stamp_Duty_Country_1;
+else if (Strcmp(Stamp_Duty_Flag, "Y") && (Strcmp(Exchange_Code, "SHZ") || Strcmp(Exchange_Code, "SHH")))
+	return "CN";
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node id="SeECC1y6W1" name="PRNTGUTYP" type="element">
+            <Node id="SeEDC1y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="SeEEC1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+            <Node id="SeEFC1y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="SeEGC1y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "COUNTRY";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="SeEHC1y6W1" name="ACRTMETHTYP" type="element">
+          <Node id="SeEIC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEJC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEKC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeELC1y6W1" name="ADVALOREMTAXIND" type="element">
+          <Node id="SeEMC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeENC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEOC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEPC1y6W1" name="ADVALOREMTAXTYP" type="element">
+          <Node id="SeEQC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeERC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeESC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeETC1y6W1" name="ALTRMNTAXIND" type="element">
+          <Node id="SeEUC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEVC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEWC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEXC1y6W1" name="AMACREGTYP" type="element">
+          <Node id="SeEYC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEZC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEaC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEbC1y6W1" name="AMORTMETHTYP" type="element">
+          <Node id="SeEcC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEdC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEeC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEfC1y6W1" name="BNKQUALIND" type="element">
+          <Node id="SeEgC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEhC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEiC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEjC1y6W1" name="CAPGAINEXEMPIND" type="element">
+          <Node id="SeEkC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeElC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEmC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEnC1y6W1" name="DATASRCID" type="element">
+          <Node id="SeEoC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEpC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEqC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeErC1y6W1" name="DATASTATTYP" type="element">
+          <Node id="SeEsC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEtC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEuC1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeEvC1y6W1" name="ENDTMS" type="element">
+          <Node id="SeEwC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeExC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEyC1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEzC1y6W1" name="FOTRAIND" type="element">
+          <Node id="SeE$C1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE%C1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE@C1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE&amp;C1y6W1" name="GNLSEXEMPIND" type="element">
+          <Node id="SeE*C1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE-C1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE.C1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE/C1y6W1" name="GUCNT" type="element">
+          <Node id="SeE(C1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE)C1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE~C1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE?C1y6W1" name="GUID" type="element">
+          <Node id="SeE&lt;C1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE&gt;C1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE0D1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE1D1y6W1" name="GUTYP" type="element">
+          <Node id="SeE2D1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE3D1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE4D1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE5D1y6W1" name="INCEXEMPIND" type="element">
+          <Node id="SeE6D1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE7D1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE8D1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE9D1y6W1" name="INSTRID" type="element">
+          <Node id="SeEAD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEBD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeECD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEDD1y6W1" name="LASTCHGTMS" type="element">
+          <Node id="SeEED1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEFD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEGD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEHD1y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="SeEID1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEJD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEKD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeELD1y6W1" name="OIDCLTYP" type="element">
+          <Node id="SeEMD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEND1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEOD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEPD1y6W1" name="OIDDEMINIMSIND" type="element">
+          <Node id="SeEQD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeERD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeESD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeETD1y6W1" name="OIDDISSTATTYP" type="element">
+          <Node id="SeEUD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEVD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEWD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEXD1y6W1" name="OIDIND" type="element">
+          <Node id="SeEYD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEZD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEaD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEbD1y6W1" name="OIDPRCCPRC" type="element">
+          <Node id="SeEcD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEdD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEeD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEfD1y6W1" name="OIDPRCCURRCDE" type="element">
+          <Node id="SeEgD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEhD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEiD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEjD1y6W1" name="OIDRETAILIND" type="element">
+          <Node id="SeEkD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeElD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEmD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEnD1y6W1" name="OIDTAXID" type="element">
+          <Node id="SeEoD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEpD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEqD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeErD1y6W1" name="OIDYIELDCPCT" type="element">
+          <Node id="SeEsD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEtD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEuD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEvD1y6W1" name="PORTINEXEMPIND" type="element">
+          <Node id="SeEwD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeExD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEyD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEzD1y6W1" name="STAMPDUTYIND" type="element">
+          <Node id="SeE$D1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Stamp_Duty_Flag;]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeE%D1y6W1" name="STAMPDUTYTYP" type="element">
+          <Node id="SeE@D1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE&amp;D1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (Strcmp(Exchange_Code, "JNB"))
+	return "JSESTAMPDUTY";
+else if (Strcmp(Exchange_Code, "HKG"))
+	return "HKSTAMPDUTY";
+else if (Strcmp(Exchange_Code, "SHZ"))
+	return "SZSTAMPDUTY";
+else if (Strcmp(Exchange_Code, "SHH"))
+	return "SHSTAMPDUTY";
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeE*D1y6W1" name="STARTTMS" type="element">
+          <Node id="SeE-D1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE.D1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE/D1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE(D1y6W1" name="TAX1984IND" type="element">
+          <Node id="SeE)D1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE~D1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE?D1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE&lt;D1y6W1" name="TAX1985IND" type="element">
+          <Node id="SeE&gt;D1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE0E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE1E1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE2E1y6W1" name="TAXASMTFQDYTYP" type="element">
+          <Node id="SeE3E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE4E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE5E1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE6E1y6W1" name="TAXASMTFQQTY" type="element">
+          <Node id="SeE7E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE8E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE9E1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEAE1y6W1" name="TAXASMTFQSPTYP" type="element">
+          <Node id="SeEBE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeECE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEDE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEEE1y6W1" name="TAXCHGCALLIND" type="element">
+          <Node id="SeEFE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEGE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEHE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEIE1y6W1" name="TAXPROVSTYP" type="element">
+          <Node id="SeEJE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEKE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeELE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEME1y6W1" name="TRNTAXIND" type="element">
+          <comment><![CDATA[GT 130929:Removal of TRANSLATE = 'YES']]></comment>
+          <Node id="SeENE1y6W1" name="PCDATA" type="attribute"/>
+          <Node id="SeEOE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEPE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEQE1y6W1" name="TRNTXBLTYCDE" type="element">
+          <Node id="SeERE1y6W1" name="PCDATA" type="attribute"/>
+          <Node id="SeESE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeETE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEUE1y6W1" name="TTCHOID" type="element">
+          <Node id="SeEVE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEWE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEXE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEYE1y6W1" name="TXBLTYCDE" type="element">
+          <Node id="SeEZE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEaE1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="SeEbE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEcE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEdE1y6W1" name="USIRSINCOMECDE" type="element">
+          <Node id="SeEeE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEfE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEgE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Stamp_Duty_Flag" id="SeEZB1y6W1" name="TaxTreatmentAdditionalDetails" type="segment">
+        <condition id="SeEhE1y6W1"><![CDATA[if (OneHasValue(Stamp_Duty_Flag) && (Strcmp(Stamp_Duty_Country_1, "ZA") || Strcmp(Stamp_Duty_Country_1, "HK")))
+	return "TaxTreatmentAdditionalDetails";
+else if (OneHasValue(Stamp_Duty_Flag) && (Strcmp(Exchange_Code, "SHZ") || Strcmp(Exchange_Code, "SHH")))
+	return "TaxTreatmentAdditionalDetails";
+else
+	return "";]]></condition>
+        <Node id="SeEiE1y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="SeEjE1y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="SeEkE1y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="SeElE1y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="SeEmE1y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="SeEnE1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="SeEoE1y6W1" name="ERROR" type="attribute"/>
+        <Node id="SeEpE1y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="SeEqE1y6W1" name="MATCH" type="attribute"/>
+        <Node id="SeErE1y6W1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="SeEsE1y6W1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="SeEtE1y6W1" name="ONLY" type="attribute"/>
+        <Node id="SeEuE1y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="SeEvE1y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="SeEwE1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="SeExE1y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="SeEyE1y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="SeEzE1y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="SeE$E1y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="SeE%E1y6W1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="SeE@E1y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="SeE&amp;E1y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "TaxTreatmentAdditionalDetails";]]></expr>
+        </Node>
+        <Node id="SeE*E1y6W1" name="DATASTATTYP" type="element">
+          <Node id="SeE-E1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="SeE.E1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="SeE/E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE(E1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="SeE)E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE~E1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeE?E1y6W1" name="DATASRCID" type="element">
+          <Node id="SeE&lt;E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE&gt;E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE0F1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE1F1y6W1" name="TAXTYP" type="element">
+          <Node id="SeE2F1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (Strcmp(Stamp_Duty_Country_1, "ZA"))
+	return "JSSTMPDT";
+else if (Strcmp(Stamp_Duty_Country_1, "HK"))
+	return "HKSTMPDT";
+else if (Strcmp(Exchange_Code, "SHZ"))
+	return "SZSTMPDT";
+else if (Strcmp(Exchange_Code, "SHH"))
+	return "SHSTMPDT";
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeE3F1y6W1" name="TAXSTATTYP" type="element">
+          <Node id="SeE4F1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "CURRENT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeE5F1y6W1" name="ROWSEQ" type="element">
+          <Node id="SeE6F1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE7F1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE8F1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "1";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="UK_Stamp_Duty_Flag/Ireland_Stamp_Duty_Flag" id="SeEv61y6W1" name="TaxTreatmentCharacteristics" type="segment">
+        <condition id="SeEy61y6W1"><![CDATA[if (OneHasValue(UK_Stamp_Duty_Flag, Ireland_Stamp_Duty_Flag))
+	return "TaxTreatmentCharacteristics";
+else
+	return "";]]></condition>
+        <Node id="SeEz61y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="SeE$61y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="SeE%61y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="SeE@61y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="SeE&amp;61y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="SeE*61y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="SeE-61y6W1" name="ERROR" type="attribute"/>
+        <Node id="SeE.61y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="SeE/61y6W1" name="MATCH" type="attribute"/>
+        <Node id="SeE(61y6W1" name="ONLY" type="attribute"/>
+        <Node id="SeE)61y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="SeE~61y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="SeE?61y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="SeE&lt;61y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="SeE&gt;61y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="SeE071y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="SeE171y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="SeE271y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="SeE371y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "TaxTreatmentCharacteristics";]]></expr>
+        </Node>
+        <Node id="SeE471y6W1" name="ACRTMETHTYP" type="element">
+          <Node id="SeE571y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE671y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE771y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE871y6W1" name="ADVALOREMTAXIND" type="element">
+          <Node id="SeE971y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEA71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEB71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEC71y6W1" name="ADVALOREMTAXTYP" type="element">
+          <Node id="SeED71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEE71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEF71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEG71y6W1" name="ALTRMNTAXIND" type="element">
+          <Node id="SeEH71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEI71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEJ71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEK71y6W1" name="AMACREGTYP" type="element">
+          <Node id="SeEL71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEM71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEN71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEO71y6W1" name="AMORTMETHTYP" type="element">
+          <Node id="SeEP71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEQ71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeER71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeES71y6W1" name="BNKQUALIND" type="element">
+          <Node id="SeET71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEU71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEV71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEW71y6W1" name="CAPGAINEXEMPIND" type="element">
+          <Node id="SeEX71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEY71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEZ71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEa71y6W1" name="DATASTATTYP" type="element">
+          <Node id="SeEb71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEc71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEd71y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeEe71y6W1" name="ENDTMS" type="element">
+          <Node id="SeEf71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEg71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEh71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEi71y6W1" name="FOTRAIND" type="element">
+          <Node id="SeEj71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEk71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEl71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEm71y6W1" name="GNLSEXEMPIND" type="element">
+          <Node id="SeEn71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEo71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEp71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEq71y6W1" name="GUCNT" type="element">
+          <Node id="SeEr71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEs71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEt71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEu71y6W1" name="GUID" type="element">
+          <Node id="SeEv71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEw71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEx71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEy71y6W1" name="GUTYP" type="element">
+          <Node id="SeEz71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE$71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE%71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE@71y6W1" name="INCEXEMPIND" type="element">
+          <Node id="SeE&amp;71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE*71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE-71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE.71y6W1" name="INSTRID" type="element">
+          <Node id="SeE/71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE(71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE)71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE~71y6W1" name="LASTCHGTMS" type="element">
+          <Node id="SeE?71y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE&lt;71y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE&gt;71y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE081y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="SeE181y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE281y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE381y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE481y6W1" name="OIDCLTYP" type="element">
+          <Node id="SeE581y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE681y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE781y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE881y6W1" name="OIDDEMINIMSIND" type="element">
+          <Node id="SeE981y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEA81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEB81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEC81y6W1" name="OIDDISSTATTYP" type="element">
+          <Node id="SeED81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEE81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEF81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEG81y6W1" name="OIDIND" type="element">
+          <Node id="SeEH81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEI81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEJ81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEK81y6W1" name="OIDPRCCPRC" type="element">
+          <Node id="SeEL81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEM81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEN81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEO81y6W1" name="OIDPRCCURRCDE" type="element">
+          <Node id="SeEP81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEQ81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeER81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeES81y6W1" name="OIDRETAILIND" type="element">
+          <Node id="SeET81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEU81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEV81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEW81y6W1" name="OIDTAXID" type="element">
+          <Node id="SeEX81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEY81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEZ81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEa81y6W1" name="OIDYIELDCPCT" type="element">
+          <Node id="SeEb81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEc81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEd81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEe81y6W1" name="PORTINEXEMPIND" type="element">
+          <Node id="SeEf81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEg81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEh81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEi81y6W1" name="PTMLEVYIND" type="element">
+          <Node id="SeEj81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEk81y6W1" name="STAMPDUTYIND" type="element">
+          <Node id="SeEl81y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(UK_Stamp_Duty_Flag))
+	return UK_Stamp_Duty_Flag;
+else if (OneHasValue(Ireland_Stamp_Duty_Flag))
+	return Ireland_Stamp_Duty_Flag;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeEm81y6W1" name="STAMPDUTYTYP" type="element">
+          <Node id="SeEn81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEo81y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(UK_Stamp_Duty_Flag))
+	return "UKPOSNOBSC";
+else if (OneHasValue(Ireland_Stamp_Duty_Flag))
+	return "IEPOSNOBSC";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="SeEp81y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeEq81y6W1" name="STARTTMS" type="element">
+          <Node id="SeEr81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEs81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEt81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEu81y6W1" name="TAX1984IND" type="element">
+          <Node id="SeEv81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEw81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEx81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEy81y6W1" name="TAX1985IND" type="element">
+          <Node id="SeEz81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE$81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE%81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE@81y6W1" name="TAXASMTFQDYTYP" type="element">
+          <Node id="SeE&amp;81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE*81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE-81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE.81y6W1" name="TAXASMTFQQTY" type="element">
+          <Node id="SeE/81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE(81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE)81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE~81y6W1" name="TAXASMTFQSPTYP" type="element">
+          <Node id="SeE?81y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE&lt;81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE&gt;81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE091y6W1" name="TAXCHGCALLIND" type="element">
+          <Node id="SeE191y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE291y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE391y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE491y6W1" name="TAXPROVSTYP" type="element">
+          <Node id="SeE591y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE691y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE791y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE891y6W1" name="TRNTAXIND" type="element">
+          <Node id="SeE991y6W1" name="PCDATA" type="attribute"/>
+          <Node id="SeEA91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEB91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEC91y6W1" name="TRNTXBLTYCDE" type="element">
+          <comment><![CDATA[GT 93129]]></comment>
+          <Node id="SeED91y6W1" name="PCDATA" type="attribute"/>
+          <Node id="SeEE91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEF91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEG91y6W1" name="TTCHOID" type="element">
+          <Node id="SeEH91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEI91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEJ91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEK91y6W1" name="TXBLTYCDE" type="element">
+          <Node id="SeEL91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEM91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="SeEN91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEO91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeEP91y6W1" name="USIRSINCOMECDE" type="element">
+          <Node id="SeEQ91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeER91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeES91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node id="SeEx61y6W1" name="TaxTreatmentAdditionalDetails" type="segment">
+        <condition id="SeET91y6W1"><![CDATA[if (OneHasValue(UK_Stamp_Duty_Flag, Ireland_Stamp_Duty_Flag))
+	return "TaxTreatmentAdditionalDetails";
+else
+	return "";]]></condition>
+        <Node id="SeEU91y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="SeEV91y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="SeEW91y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="SeEX91y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="SeEY91y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="SeEZ91y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="SeEa91y6W1" name="ERROR" type="attribute"/>
+        <Node id="SeEb91y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="SeEc91y6W1" name="MATCH" type="attribute"/>
+        <Node id="SeEd91y6W1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="SeEe91y6W1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="SeEf91y6W1" name="ONLY" type="attribute"/>
+        <Node id="SeEg91y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="SeEh91y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="SeEi91y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="SeEj91y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="SeEk91y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="SeEl91y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="SeEm91y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="SeEn91y6W1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="SeEo91y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="SeEp91y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "TaxTreatmentAdditionalDetails";]]></expr>
+        </Node>
+        <Node id="SeEq91y6W1" name="DATASTATTYP" type="element">
+          <Node id="SeEr91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="SeEs91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="SeEt91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEu91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="SeEv91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeEw91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeEx91y6W1" name="DATASRCID" type="element">
+          <Node id="SeEy91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeEz91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE$91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="SeE%91y6W1" name="TAXTYP" type="element">
+          <Node id="SeE@91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(UK_Stamp_Duty_Flag))
+	return "UKSTMPDT";
+else if (OneHasValue(Ireland_Stamp_Duty_Flag))
+	return "IRSTMPDT";
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeE&amp;91y6W1" name="TAXSTATTYP" type="element">
+          <Node id="SeE*91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "CURRENT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="SeE-91y6W1" name="ROWSEQ" type="element">
+          <Node id="SeE.91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="SeE/91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="SeE(91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "1";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

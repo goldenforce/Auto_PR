@@ -1,0 +1,1 @@
+update FT_T_NTDF set dflt_severity_cde = '40' where notfcn_id in ('183','170','258');

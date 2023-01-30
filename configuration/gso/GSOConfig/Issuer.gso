@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" displayCaption="Issuer Generated ID" entityTypeId="++3qwBhS2etxm004" id="++8a-9rGhG5AW003" mandatory="0" multiplicity="SINGLE_OR_NULL" name="IssuerGeneratedInhouseID" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Issuer - Institution Name" entityTypeId="++3qwBhS2etxm004" id="++8SawWGhG5q4001" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72ISSRInstitutionName" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Issuer - Parent Relationship Description" entityTypeId="++3qwBhS2etxm004" id="++8SawWGhG5q4003" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72ISSRParentRelationshipDescription" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Issuer - Parent Company Name" entityTypeId="++3qwBhS2etxm004" id="++8SS0EmhG5q400G" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72IssuerParentCompanyName" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="select PRNT_GU_ID CODE, GU_NME DISPLAY_NAME FROM ft_t_gunt where PRNT_GU_TYP = 'STATE' and PRNT_GU_CNT = '1' AND END_TMS IS NULL order by GU_NME asc" displayCaption="Issuer - State Of Domicile" entityTypeId="++3qwBhS2etxm004" id="008T0iiWhG5q400J" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72ISSRStateOfDomicile" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="select PRNT_GU_ID CODE, GU_NME DISPLAY_NAME FROM ft_t_gunt where PRNT_GU_TYP = 'STATE' and PRNT_GU_CNT = '1' AND END_TMS IS NULL order by GU_NME asc" displayCaption="Issuer - State Of Incorporation" entityTypeId="++3qwBhS2etxm004" id="008T0iiWhG5q400a" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72ISSRStateOfIncorporation" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Issuer - Institution Type" entityTypeId="++3qwBhS2etxm004" id="008T0iiWhG5q4004" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72ISSRInstitutionType" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Issuer - Institution Description" entityTypeId="++3qwBhS2etxm004" id="008T0iiWhG5q4002" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72ISSRInstitutionDescription" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Issuer - Ultimate Parent Relationship Description" entityTypeId="++3qwBhS2etxm004" id="++8U5LSmhG5q4000" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72ISSRUltimateParentRelationshipDescription" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Identifiers" displayCaption="Identifiers" entityTypeId="++3qwBhS2etxm004" frequencyInd="0" id="004WlTSC2etq800J" multiplicity="SINGLE_OR_NULL" name="IssuerIdentifiers" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8a-9rGhG5AW003" id="++8a-9rGhG5AW005" prntReqdInd="0" seq="22"/>
+    </dataGroup>
+    <dataGroup customInd="0" displayCaption="Issuer Institution" entityTypeId="++3qwBhS2etxm004" frequencyInd="0" id="008SS7N0hG5q4001" multiplicity="SINGLE_OR_NULL" name="IssuerInstitution" nameSpace="POINT72">
+      <part defNameSpace="POINT72" fieldId="++8SawWGhG5q4001" id="++8S+QVmhG5q4001" prntReqdInd="0" seq="0"/>
+      <part defNameSpace="POINT72" fieldId="++8SawWGhG5q4003" id="008S+hMWhG5q4000" prntReqdInd="0" seq="1"/>
+      <part defNameSpace="POINT72" fieldId="++8SS0EmhG5q400G" id="008T0HK0hG5q4000" prntReqdInd="0" seq="2"/>
+      <part defNameSpace="POINT72" fieldId="008T0iiWhG5q400J" id="008T0iiWhG5q400d" prntReqdInd="0" seq="3"/>
+      <part defNameSpace="POINT72" fieldId="008T0iiWhG5q400a" id="008T0iiWhG5q400e" prntReqdInd="0" seq="4"/>
+      <part defNameSpace="POINT72" fieldId="008T0iiWhG5q4004" id="008T0iiWhG5q400f" prntReqdInd="0" seq="5"/>
+      <part defNameSpace="POINT72" fieldId="008T0iiWhG5q4002" id="008T0iiWhG5q400g" prntReqdInd="0" seq="6"/>
+      <part defNameSpace="POINT72" fieldId="++8U5LSmhG5q4000" id="++8U5c5mhG5q4000" prntReqdInd="0" seq="7"/>
+    </dataGroup>
+    <dataGroup customInd="0" entityTypeId="++3qwBhS2etxm004" frequencyInd="0" id="++4Hqs3S2etry00M" multiplicity="SINGLE_OR_NULL" name="Issuer- Root DataGroup" nameSpace="GSC">
+      <part dataGroupId="008SS7N0hG5q4001" defNameSpace="POINT72" id="008SS7N0hG5q4000" prntReqdInd="0" seq="24"/>
+    </dataGroup>
+  </dataGroups>
+  <occurrences>
+    <occurrence desc="Occurrence for Issuer Identifier" id="++8a-9rGhG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="IRID_INHOUSE_P72" nameSpace="POINT72" parentId="++4GrmAy2etwa0BL" table="FT_T_IRID" timeSeries="LOGICAL_DELETE">
+      <field id="++8a-9rGhG5AW002" name="ISSR_ID" nameSpace="POINT72"/>
+      <value id="++8a-9rGhG5AW001" name="ISSR_ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="INHOUSE" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Financial Institution" id="++8SS0EmhG5q4000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISSR_01_FINS_P72" nameSpace="POINT72" parentId="++4GrmAy2etwa0BL" table="FT_T_FINS" timeSeries="LOGICAL_DELETE">
+      <field id="008T0iiWhG5q4000" name="INST_DESC" nameSpace="POINT72"/>
+      <field id="++8SS0EmhG5q4002" name="INST_NME" nameSpace="POINT72"/>
+      <field id="008T0iiWhG5q4001" name="INST_TYP" nameSpace="POINT72"/>
+      <option id="008Svu70hG5q4000" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Fins/Fins Relationship" id="++8SS0EmhG5q4004" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FFRL_FINS_PARNT_P72" nameSpace="POINT72" parentId="++8SS0EmhG5q4000" relationId="005kiLnC2etqS02A" table="FT_T_FFRL" timeSeries="LOGICAL_DELETE">
+      <field id="++8SawWGhG5q4000" name="REL_DESC" nameSpace="POINT72"/>
+      <value id="++8SS0EmhG5q4008" name="REL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="PARNTCOF" valueType="CONSTANT"/>
+      <option id="++8SS0EmhG5q4007" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+      <option id="++8SwIumhG5q4000" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="FFRL_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Financial Institution" id="++8SS0EmhG5q4009" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FINS_PARNTCOF_P72" nameSpace="POINT72" parentId="++8SS0EmhG5q4004" relationId="++6SWIZS2etrC02R" table="FT_T_FINS" timeSeries="LOGICAL_DELETE">
+      <field id="++8SS0EmhG5q400H" name="INST_NME" nameSpace="POINT72"/>
+      <option id="008Svu70hG5q4001" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Fins/Fins Relationship" id="++8U55hmhG5q4000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FFRL_FINS_ULTPRNT_P72" nameSpace="POINT72" parentId="++8SS0EmhG5q4000" relationId="005kiLnC2etqS02A" table="FT_T_FFRL" timeSeries="LOGICAL_DELETE">
+      <field id="++8U55hmhG5q4007" name="REL_DESC" nameSpace="POINT72"/>
+      <value id="++8U55hmhG5q4006" name="REL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="CURRORGN" valueType="CONSTANT"/>
+      <option id="++8U55hmhG5q4003" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="FFRL_MATCH_1"/>
+      <option id="++8U55hmhG5q4004" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Financial Institution/Geo Unit Prt" id="008T0iiWhG5q4006" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FIGU_STDOMCL_P72" nameSpace="POINT72" parentId="++8SS0EmhG5q4000" table="FT_T_FIGU" timeSeries="LOGICAL_DELETE">
+      <field id="008T0iiWhG5q400B" name="GU_ID" nameSpace="POINT72"/>
+      <value id="008T0iiWhG5q4008" name="FINS_GU_PURP_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="DOMICILE" valueType="CONSTANT"/>
+      <value id="008T0iiWhG5q4009" name="GU_CNT" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008T0iiWhG5q400A" name="GU_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="STATE" valueType="CONSTANT"/>
+      <option id="008T0iiWhG5q4007" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="FIGU_GUTP_PURP"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Geographic Unit" id="008T0iiWhG5q400C" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FIGU_STDOMCL_P72_GUNT" nameSpace="POINT72" parentId="008T0iiWhG5q4006" table="FT_T_GUNT" timeSeries="LOGICAL_DELETE">
+      <field id="008T0iiWhG5q400I" name="PRNT_GU_ID" nameSpace="POINT72"/>
+      <value id="008T0iiWhG5q400G" name="PRNT_GU_CNT" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008T0iiWhG5q400H" name="PRNT_GU_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="STATE" valueType="CONSTANT"/>
+      <option id="008T0iiWhG5q400D" nameSpace="POINT72" type="DEFAULT_ACTION" value="REFERENCE"/>
+      <option id="008T0iiWhG5q400E" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="GUNT_MATCH_1"/>
+      <option id="008T0iiWhG5q400F" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Financial Institution/Geo Unit Prt" id="008T0iiWhG5q400M" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FIGU_STINCORP_P72" nameSpace="POINT72" parentId="++8SS0EmhG5q4000" table="FT_T_FIGU" timeSeries="LOGICAL_DELETE">
+      <field id="008T0iiWhG5q400S" name="GU_ID" nameSpace="POINT72"/>
+      <value id="008T0iiWhG5q400O" name="FINS_GU_PURP_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="INCRPRTE" valueType="CONSTANT"/>
+      <value id="008T0iiWhG5q400P" name="GU_CNT" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008T0iiWhG5q400R" name="GU_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="STATE" valueType="CONSTANT"/>
+      <option id="008T0iiWhG5q400N" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="FIGU_GUTP_PURP"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Geographic Unit" id="008T0iiWhG5q400T" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FIGU_STINCORP_P72_GUNT" nameSpace="POINT72" parentId="008T0iiWhG5q400M" table="FT_T_GUNT" timeSeries="LOGICAL_DELETE">
+      <field id="008T0iiWhG5q400Z" name="PRNT_GU_ID" nameSpace="POINT72"/>
+      <value id="008T0iiWhG5q400X" name="PRNT_GU_CNT" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008T0iiWhG5q400Y" name="PRNT_GU_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="STATE" valueType="CONSTANT"/>
+      <option id="008T0iiWhG5q400U" nameSpace="POINT72" type="DEFAULT_ACTION" value="REFERENCE"/>
+      <option id="008T0iiWhG5q400V" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="GUNT_MATCH_1"/>
+      <option id="008T0iiWhG5q400W" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="++8a-9rGhG5AW003" groupMapping="0" id="++8a-9rGhG5AW004" nameSpace="POINT72" occFieldId="++8a-9rGhG5AW002"/>
+    <mapping beFieldId="++8SS0EmhG5q400G" groupMapping="0" id="++8SS0EmhG5q400I" nameSpace="POINT72" occFieldId="++8SS0EmhG5q400H"/>
+    <mapping beFieldId="++8SawWGhG5q4001" groupMapping="0" id="++8SawWGhG5q4002" nameSpace="POINT72" occFieldId="++8SS0EmhG5q4002"/>
+    <mapping beFieldId="++8SawWGhG5q4003" groupMapping="0" id="++8SawWGhG5q4004" nameSpace="POINT72" occFieldId="++8SawWGhG5q4000"/>
+    <mapping beFieldId="++8U5LSmhG5q4000" groupMapping="0" id="++8U5LSmhG5q4001" nameSpace="POINT72" occFieldId="++8U55hmhG5q4007"/>
+    <mapping beFieldId="008T0iiWhG5q4002" groupMapping="0" id="008T0iiWhG5q4003" nameSpace="POINT72" occFieldId="008T0iiWhG5q4000"/>
+    <mapping beFieldId="008T0iiWhG5q4004" groupMapping="0" id="008T0iiWhG5q4005" nameSpace="POINT72" occFieldId="008T0iiWhG5q4001"/>
+    <mapping beFieldId="008T0iiWhG5q400J" groupMapping="0" id="008T0iiWhG5q400K" nameSpace="POINT72" occFieldId="008T0iiWhG5q400I"/>
+    <mapping beFieldId="008T0iiWhG5q400J" groupMapping="0" id="008T0iiWhG5q400L" nameSpace="POINT72" occFieldId="008T0iiWhG5q400B"/>
+    <mapping beFieldId="008T0iiWhG5q400a" groupMapping="0" id="008T0iiWhG5q400b" nameSpace="POINT72" occFieldId="008T0iiWhG5q400Z"/>
+    <mapping beFieldId="008T0iiWhG5q400a" groupMapping="0" id="008T0iiWhG5q400c" nameSpace="POINT72" occFieldId="008T0iiWhG5q400S"/>
+  </mappings>
+  <entityRelations>
+    <entityRelation entityId="++4Hqs3S2etry00L" id="++5qymmy2etpe000" lookupField="++4eFFHy2etv4017" multiplicity="SINGLE_OR_NULL" name="FinancialInstitution" nameSpace="POINT72" rltdEntityId="++4HwLjy2etpy007">
+      <part forPublishing="1" forUI="1" id="++5qymmy2etpe007" nameSpace="GSC" partId="++4eFFHy2etv4017"/>
+      <part forPublishing="1" forUI="1" id="++5qymmy2etpe009" nameSpace="GSC" partId="++5ZqLUy2etse0Dj"/>
+      <part forPublishing="1" forUI="1" id="++5qymmy2etpe00A" nameSpace="GSC" partId="++5ZqLUy2etse0Dk"/>
+      <part forPublishing="1" forUI="1" id="008aKKJWhG5AW0CY" nameSpace="POINT72" partId="++5ZqLUy2etse0Dl"/>
+      <part forPublishing="1" forUI="1" id="008aKKJWhG5AW0CW" nameSpace="POINT72" partId="++5ckBRS2etse03M"/>
+      <part forPublishing="1" forUI="1" id="008aKKJWhG5AW0CX" nameSpace="POINT72" partId="++5ckBRS2etse03N"/>
+      <part forPublishing="1" forUI="1" id="++5qymmy2etpe008" nameSpace="GSC" partId="004gu4GC2etry00H"/>
+    </entityRelation>
+  </entityRelations>
+</entities>

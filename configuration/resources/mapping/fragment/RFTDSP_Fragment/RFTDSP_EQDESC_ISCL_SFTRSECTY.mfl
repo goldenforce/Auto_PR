@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-04-26 at 09:25:23 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.28</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="SFTR_Security_Type" id="uK8ZA1j&gt;81" name="IssueClassification" type="segment">
+        <condition id="uK8aA1j&gt;81"><![CDATA[if ((OneHasValue(SFTR_Security_Type))||((IsFieldDeleted(SFTR_Security_Type) && Strcmp(SFTR_Security_Type__Change_Flag, "Y")) && OneHasValue(SFTR_Security_Type__Previous)))
+	return "IssueClassification";
+else
+	return "";]]></condition>
+        <sort id="uK8bA1j&gt;81" order="ASC"/>
+        <Node id="uK8cA1j&gt;81" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(SFTR_Security_Type))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="uK8dA1j&gt;81" name="COPY_FROM" type="attribute"/>
+        <Node id="uK8eA1j&gt;81" name="COPY_TO" type="attribute"/>
+        <Node id="uK8fA1j&gt;81" name="DUP_CHECK" type="attribute"/>
+        <Node id="uK8gA1j&gt;81" name="ENDDATEIND" type="attribute"/>
+        <Node id="uK8hA1j&gt;81" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="uK8iA1j&gt;81" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(SFTR_Security_Type))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="uK8jA1j&gt;81" name="LOOKUP" type="attribute"/>
+        <Node id="uK8kA1j&gt;81" name="MATCH" type="attribute">
+          <expr><![CDATA[return "ISCL_MATCH_SET_PURP";]]></expr>
+        </Node>
+        <Node id="uK8lA1j&gt;81" name="ONLY" type="attribute"/>
+        <Node id="uK8mA1j&gt;81" name="PARENT_LINK" type="attribute"/>
+        <Node id="uK8nA1j&gt;81" name="PUBLISH" type="attribute"/>
+        <Node id="uK8oA1j&gt;81" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="uK8pA1j&gt;81" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="uK8qA1j&gt;81" name="TRANSLATE" type="attribute"/>
+        <Node id="uK8rA1j&gt;81" name="TSTOLERANCE" type="attribute"/>
+        <Node id="uK8sA1j&gt;81" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueClassification";]]></expr>
+        </Node>
+        <Node id="uK8tA1j&gt;81" name="IndustryClassification" type="segment">
+          <Node id="uK8uA1j&gt;81" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="uK8vA1j&gt;81" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "CLSF_OID";]]></expr>
+          </Node>
+          <Node id="uK8wA1j&gt;81" name="MATCH" type="attribute">
+            <expr><![CDATA[return "INCL_VALUE";]]></expr>
+          </Node>
+          <Node id="uK8xA1j&gt;81" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="uK8yA1j&gt;81" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(SFTR_Security_Type))
+	return Strcat("4|CONCTNS|NESTED|CLSFSETMNEM|SFTRSECTY|CLVALUE|", Strcat(SFTR_Security_Type, "|DATASRCID|RFTDSP"));
+else
+	return "";
+]]></expr>
+          </Node>
+          <Node id="uK8zA1j&gt;81" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IndustryClassification";]]></expr>
+          </Node>
+          <Node id="uK8$A1j&gt;81" name="CLVALUE" type="element">
+            <Node id="uK8%A1j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[if (IsFieldDeleted(SFTR_Security_Type))
+	return SFTR_Security_Type__Previous;
+else
+	return SFTR_Security_Type;]]></expr>
+            </Node>
+          </Node>
+          <Node id="uK8@A1j&gt;81" name="INDUSCLSETID" type="element">
+            <Node id="uK8&amp;A1j&gt;81" name="VALUE" type="attribute">
+              <expr><![CDATA[return "SFTRSECTY";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="uK8*A1j&gt;81" name="CLSFPURPTYP" type="element">
+          <Node id="uK8-A1j&gt;81" name="INSERT_ONLY" type="attribute"/>
+          <Node id="uK8.A1j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8/A1j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[return "SFTRCLSF";]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8(A1j&gt;81" name="ENDTMS" type="element">
+          <Node id="uK8)A1j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(SFTR_Security_Type))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8~A1j&gt;81" name="CLSFSETMNEM" type="element">
+          <Node id="uK8?A1j&gt;81" name="INSERT_ONLY" type="attribute"/>
+          <Node id="uK8&lt;A1j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8&gt;A1j&gt;81" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="uK80B1j&gt;81" name="CLVALUE" type="element">
+          <Node id="uK81B1j&gt;81" name="INSERT_ONLY" type="attribute"/>
+          <Node id="uK82B1j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK83B1j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(SFTR_Security_Type))
+	return SFTR_Security_Type__Previous;
+else
+	return SFTR_Security_Type;]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK84B1j&gt;81" name="DATASTATTYP" type="element">
+          <Node id="uK85B1j&gt;81" name="INSERT_ONLY" type="attribute"/>
+          <Node id="uK86B1j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK87B1j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK88B1j&gt;81" name="INDUSCLSETID" type="element">
+          <Node id="uK89B1j&gt;81" name="INSERT_ONLY" type="attribute"/>
+          <Node id="uK8AB1j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8BB1j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[return "SFTRSECTY";]]></expr>
+          </Node>
+        </Node>
+        <Node id="uK8CB1j&gt;81" name="STARTTMS" type="element">
+          <Node id="uK8DB1j&gt;81" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="uK8EB1j&gt;81" name="TRANSLATE" type="attribute"/>
+          <Node id="uK8FB1j&gt;81" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

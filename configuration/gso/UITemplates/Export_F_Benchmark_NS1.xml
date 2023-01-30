@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="nick.sekouris@point72.com" entityName="Benchmark" entitySubType="[]" id="g%rEz&gt;&lt;m01" isDefault="Y" isPublic="Y" screenType="SYSTEMFORM" title="F: Benchmark_NS1">
+  <control caption="Benchmark Details" columns="3" fullQualPath="Benchmark.BenchmarkDetails" hideDetail="N" id="SEvYu&amp;gt;cvG1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Benchmark Name" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkName" hideDetail="N" id="SEvZu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Short Name" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkShortName" hideDetail="N" id="SEvau&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Enterprise Short Name" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkToEnterprise.Enterprise.EnterpriseInformation.EnterpriseShortName" hideDetail="N" id="SEvbu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="Benchmark.BenchmarkDetails.BenchmarkToEnterprise" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"TEMPLATE_FLD_PRPT_CONFIG":[{"IS_REL_EDITABLE":"false"}],"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Type" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkType" hideDetail="N" id="SEvcu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Description" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkDescription" hideDetail="N" id="SEvdu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="First Payable Date" columns="3" fullQualPath="Benchmark.BenchmarkDetails.FirstPayableDate" hideDetail="N" id="SEveu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Preferred Id" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkPreferredId" hideDetail="N" id="SEvfu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Category Type" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BNCHBenchmarkCategoryType" hideDetail="N" id="SEvgu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Preferred Id Type" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkPreferredIdType" hideDetail="N" id="SEvhu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Level" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BNCHBenchmarkLevel" hideDetail="N" id="SEviu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Maturity Date" columns="3" fullQualPath="Benchmark.BenchmarkDetails.MaturityDate" hideDetail="N" id="SEvju&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Effective Date" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkEffectiveDate" hideDetail="N" id="SEvku&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Provider Name" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkProviderName" hideDetail="N" id="SEvlu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Fund Investment Category" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BNCLBNCHFundInvestmentCategory" hideDetail="N" id="SEvmu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Security Type" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkSecurityType" hideDetail="N" id="SEvnu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Mark-It Version Number" columns="3" fullQualPath="Benchmark.BenchmarkDetails.MarkItVersionNumber" hideDetail="N" id="SEvou&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Re-Balance Frequency Span" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BNCHReBalanceFrequencySpan" hideDetail="N" id="SEvpu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Series" columns="3" fullQualPath="Benchmark.BenchmarkDetails.Series" hideDetail="N" id="SEvqu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Weighting Method" columns="3" fullQualPath="Benchmark.BenchmarkDetails.WeightingMethod" hideDetail="N" id="SEvru&amp;gt;cvG1" isColumnInTable="N" labelName="Miscellaneous" lazyInd="N" orderNum="18" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Created On" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkCreatedOn" hideDetail="N" id="SEvsu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Data Source" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkDataSourceID" hideDetail="N" id="SEvtu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Last Change Date/Time" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkLastChangeDateTime" hideDetail="N" id="SEvuu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="21" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Active Until" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkActiveUntil" hideDetail="N" id="SEvvu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="22" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Data Status" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkDataStatus" hideDetail="N" id="SEvwu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="23" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Last Change User Id" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkLastChangeUserId" hideDetail="N" id="SEvxu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="24" pageSize="0" parentId="SEvYu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+  <control caption="Benchmark Currency" columns="3" fullQualPath="Benchmark.BenchmarkCurrency" hideDetail="N" id="SEvyu&amp;gt;cvG1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Base Currency" columns="3" fullQualPath="Benchmark.BenchmarkCurrency.BaseCurrency" hideDetail="N" id="SEvzu&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEvyu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Local Currency" columns="3" fullQualPath="Benchmark.BenchmarkCurrency.LocalCurrency" hideDetail="N" id="SEv$u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEvyu&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+  <control caption="Identifiers" columns="4" fullQualPath="" hideDetail="N" id="SEv%u&amp;gt;cvG1" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="ISIN" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.ISIN" hideDetail="N" id="SEv@u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEv%u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="CUSIP" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.CUSIP" hideDetail="N" id="SEv&amp;amp;u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEv%u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark ID" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.BNIDBenchmarkID" hideDetail="N" id="SEv*u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="SEv%u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Stock Symbol" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.BNIDBenchmarkStockSymbol" hideDetail="N" id="SEv-u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="SEv%u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Bloomberg Index" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.P72BNIDBloombergIndex" hideDetail="N" id="SEv.u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="SEv%u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Ticker" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.Ticker" hideDetail="N" id="SEv/u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="SEv%u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="RIC" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.P72BNIDRIC" hideDetail="N" id="SEv(u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="SEv%u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="SEDOL" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.P72BNIDSEDOL" hideDetail="N" id="SEv)u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="SEv%u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+  <control caption="Details" columns="2" fullQualPath="" hideDetail="N" id="SEv~u&amp;gt;cvG1" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Benchmark Participants" columns="3" fullQualPath="Benchmark.BenchmarkParticipants" hideDetail="Y" id="SEv?u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="20" parentId="SEv~u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Benchmark Name" columns="3" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkAsParticipant.Benchmark.BenchmarkDetails.BenchmarkName" hideDetail="N" id="SEv&amp;lt;u&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="Benchmark.BenchmarkParticipants.BenchmarkAsParticipant" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"TEMPLATE_FLD_PRPT_CONFIG":[{"IS_REL_EDITABLE":"false"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Instrument Name" columns="3" fullQualPath="Benchmark.BenchmarkParticipants.InstrumentAsAParticipant.Base.InstrumentDetails.PreferredInstrumentName" hideDetail="N" id="SEv&amp;gt;u&amp;gt;cvG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="Benchmark.BenchmarkParticipants.InstrumentAsAParticipant" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"TEMPLATE_FLD_PRPT_CONFIG":[{"IS_REL_EDITABLE":"false"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Instrument Type" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.InstrumentAsAParticipant.Base.InstrumentDetails.InstrumentType" hideDetail="N" id="SEv0v&amp;gt;cvG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Country Primary RIC" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.CountryPrimaryParticipant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryRIC" hideDetail="N" id="SEv1v&amp;gt;cvG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Country Primary Ticker" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.CountryPrimaryParticipant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryTicker" hideDetail="N" id="SEv2v&amp;gt;cvG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Denominated Currency" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.InstrumentAsAParticipant.Base.InstrumentDetails.PrincipalCurrency" hideDetail="N" id="SEv3v&amp;gt;cvG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Participant Open Weight" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.P72BenchmarkParticipantOpenWeight" hideDetail="N" id="SEv4v&amp;gt;cvG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Participant Weight Date" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.P72BenchmarkParticipantWeightDate" hideDetail="N" id="SEv5v&amp;gt;cvG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Effective Date" columns="3" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkParticipantEffectiveDate" hideDetail="N" id="SEv6v&amp;gt;cvG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Mandated Weights" columns="3" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkMandatedWeights" hideDetail="N" id="SEv7v&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Benchmark Mandated Weight" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkMandatedWeights.BenchmarkMandatedWeight" hideDetail="N" id="SEv8v&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEv7v&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Benchmark Mandated Weight"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Weighting Effective From" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkMandatedWeights.WeightingEffectiveFrom" hideDetail="N" id="SEv9v&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEv7v&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Weighting Effective From"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Closing Weights" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkClosingWeights" hideDetail="N" id="SEvAv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="SEv?u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Benchmark Opening Weight" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkClosingWeights.P72BenchmarkOpeningWeight" hideDetail="N" id="SEvBv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEvAv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Benchmark Closing Weight" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkClosingWeights.BenchmarkClosingWeight" hideDetail="N" id="SEvCv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEvAv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Effective Date" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkClosingWeights.BenchmarkClosingWeightEffDate" hideDetail="N" id="SEvDv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="SEvAv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Comment" columns="3" fullQualPath="Benchmark.BenchmarkComment" hideDetail="N" id="SEvEv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEv~u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Comment Reason" columns="2" fullQualPath="Benchmark.BenchmarkComment.CommentReason" hideDetail="N" id="SEvFv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEvEv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Comment Text" columns="2" fullQualPath="Benchmark.BenchmarkComment.CommentText" hideDetail="N" id="SEvGv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEvEv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Language Code" columns="2" fullQualPath="Benchmark.BenchmarkComment.LanguageCode" hideDetail="N" id="SEvHv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="SEvEv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Line Number" columns="2" fullQualPath="Benchmark.BenchmarkComment.LineNumber" hideDetail="N" id="SEvIv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="SEvEv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Comment Date" columns="2" fullQualPath="Benchmark.BenchmarkComment.CommentDate" hideDetail="N" id="SEvJv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="SEvEv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Comment Status" columns="2" fullQualPath="Benchmark.BenchmarkComment.CommentStatus" hideDetail="N" id="SEvKv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="SEvEv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Documents" columns="3" fullQualPath="Benchmark.BenchmarkDocuments" hideDetail="N" id="SEvLv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="SEv~u&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Document Name" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef.DocumentDefinition.DocumentDefinitionDetail.DCDFDocumentName" hideDetail="N" id="SEvMv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"TEMPLATE_FLD_PRPT_CONFIG":[{"IS_REL_EDITABLE":"false"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Type" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef.DocumentDefinition.DocumentDefinitionDetail.DCDFDocumentType" hideDetail="N" id="SEvNv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Text" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef.DocumentDefinition.DocumentDefinitionDetail.DCXTDCDFDocumentText" hideDetail="N" id="SEvOv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="General Document Purpose" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHGeneralDocumentPurpose" hideDetail="N" id="SEvPv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="General Document Description" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHGeneralDocumentDescription" hideDetail="N" id="SEvQv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Number of Documents Required" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHNumberofDocumentsRequired" hideDetail="N" id="SEvRv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Required" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDocumentRequired" hideDetail="N" id="SEvSv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Required by Bank" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDocumentRequiredbyBank" hideDetail="N" id="SEvTv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Required by Law" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDocumentRequiredbyLaw" hideDetail="N" id="SEvUv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Instance" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist" hideDetail="N" id="SEvVv&amp;gt;cvG1" isColumnInTable="N" labelName="Miscellaneous" lazyInd="N" orderNum="9" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Language" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHNLSCode" hideDetail="N" id="SEvWv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Language"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Comment" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentComment" hideDetail="N" id="SEvXv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Comment"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Status" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentStatus" hideDetail="N" id="SEvYv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Status"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Upload" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentUpload" hideDetail="N" id="SEvZv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Upload"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Internal ID" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentInternalID" hideDetail="N" id="SEvav&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Internal ID"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Status DateTime" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentStatusDateTime" hideDetail="N" id="SEvbv&amp;gt;cvG1" isColumnInTable="N" labelName="Miscellaneous" lazyInd="N" orderNum="5" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Status DateTime"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Start DateTime" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHStartDateTime" hideDetail="N" id="SEvcv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Start DateTime"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Data Source ID" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDataSourceID" hideDetail="N" id="SEvdv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Data Source ID"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Last Change DateTime" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHLastChangeDateTime" hideDetail="N" id="SEvev&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Last Change DateTime"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="End DateTime" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHEndDateTime" hideDetail="N" id="SEvfv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"End DateTime"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Data Status" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDataStatus" hideDetail="N" id="SEvgv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Data Status"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Last Change User ID" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHLastChangeUserID" hideDetail="N" id="SEvhv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="SEvVv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Last Change User ID"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Start DateTime" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHStartDateTime" hideDetail="N" id="SEviv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Data Source ID" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDataSourceID" hideDetail="N" id="SEvjv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Last Change DateTime" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHLastChangeDateTime" hideDetail="N" id="SEvkv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="End DateTime" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHEndDateTime" hideDetail="N" id="SEvlv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Data Status" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDataStatus" hideDetail="N" id="SEvmv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Last Change User ID" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHLastChangeUserID" hideDetail="N" id="SEvnv&amp;gt;cvG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="SEvLv&amp;gt;cvG1" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+</root>

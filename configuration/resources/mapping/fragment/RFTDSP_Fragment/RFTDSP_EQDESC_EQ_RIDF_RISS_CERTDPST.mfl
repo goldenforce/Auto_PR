@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-12-16 at 11:39:54 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Depository_Asset_Underlying" id="jtBW01y6W1" name="RelatedIssueDefinition" type="segment">
+        <condition id="jtBZ01y6W1"><![CDATA[if ((OneHasValue(Depository_Asset_Underlying))||((IsFieldDeleted(Depository_Asset_Underlying) && Strcmp(Depository_Asset_Underlying__Change_Flag, "Y")) && OneHasValue(Depository_Asset_Underlying__Previous)))
+	return "RelatedIssueDefinition";
+else
+	return "";]]></condition>
+        <Node id="jtBa01y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[
+if (IsFieldDeleted(Depository_Asset_Underlying))
+	return "REFERENCE";
+else
+	return "UNKNOWN";
+]]></expr>
+        </Node>
+        <Node id="jtBb01y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="jtBc01y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="jtBd01y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="jtBe01y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="jtBf01y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="jtBg01y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Depository_Asset_Underlying))
+	return "N";
+else
+	return "";
+]]></expr>
+        </Node>
+        <Node id="jtBh01y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="jtBi01y6W1" name="MATCH" type="attribute"/>
+        <Node id="jtBj01y6W1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="jtBk01y6W1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="jtBl01y6W1" name="ONLY" type="attribute"/>
+        <Node id="jtBm01y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="jtBn01y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="jtBo01y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="jtBp01y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="jtBq01y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="jtBr01y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="jtBs01y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="jtBt01y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="jtBu01y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "RelatedIssueDefinition";]]></expr>
+        </Node>
+        <Node id="jtBv01y6W1" name="ADVANCENOTICEQTY" type="element">
+          <Node id="jtBw01y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBx01y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBy01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBz01y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB$01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB%01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB@01y6W1" name="CALLPUTTYP" type="element">
+          <comment><![CDATA[GT 107472 - Provide the same mapping in the new field CALLPUTYP in RIDF as it is been currently mapped in ENCH.CALLPUTYP having ENTLMNTTYP as 'Warrant'.]]></comment>
+          <Node id="jtB&amp;01y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB*01y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB-01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB.01y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB/01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB(01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB)01y6W1" name="CNVREXERCPRC" type="element">
+          <Node id="jtB~01y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB?01y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB&lt;01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB&gt;01y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB011y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB111y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB211y6W1" name="DATASRCID" type="element">
+          <Node id="jtB311y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB411y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB511y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB611y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB711y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB811y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB911y6W1" name="DATASTATTYP" type="element">
+          <Node id="jtBA11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBB11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBC11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBD11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBE11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBF11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="jtBG11y6W1" name="ENDTMS" type="element">
+          <Node id="jtBH11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBI11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBJ11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBK11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBL11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBM11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBN11y6W1" name="EXERFEECAMT" type="element">
+          <Node id="jtBO11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBP11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBQ11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBR11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBS11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBT11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBU11y6W1" name="EXERPAYMETHTYP" type="element">
+          <Node id="jtBV11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBW11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBX11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBY11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBZ11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBa11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBb11y6W1" name="INSTRID" type="element">
+          <Node id="jtBc11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBd11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBe11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBf11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBg11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBh11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBi11y6W1" name="ISSRELFQDYTYP" type="element">
+          <Node id="jtBj11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBk11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBl11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBm11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBn11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBo11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBp11y6W1" name="ISSRELFQQTY" type="element">
+          <Node id="jtBq11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBr11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBs11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBt11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBu11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBv11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBw11y6W1" name="ISSRELFQSPTYP" type="element">
+          <Node id="jtBx11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBy11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBz11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB$11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB%11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB@11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB&amp;11y6W1" name="LASTCHGTMS" type="element">
+          <Node id="jtB*11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB-11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB.11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB/11y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB(11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB)11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB~11y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="jtB?11y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB&lt;11y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB&gt;11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB021y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB121y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB221y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB321y6W1" name="MNEXERCAMT" type="element">
+          <Node id="jtB421y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB521y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB621y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB721y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB821y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB921y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBA21y6W1" name="MNEXERCPRC" type="element">
+          <Node id="jtBB21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBC21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBD21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBE21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBF21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBG21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBH21y6W1" name="MNEXERCQTY" type="element">
+          <Node id="jtBI21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBJ21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBK21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBL21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBM21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBN21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBO21y6W1" name="RELDESC" type="element">
+          <Node id="jtBP21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBQ21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBR21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBS21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBT21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBU21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "Identifying the Underlying Security for the Depository Receipt";]]></expr>
+          </Node>
+        </Node>
+        <Node id="jtBV21y6W1" name="RELTYP" type="element">
+          <Node id="jtBW21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBX21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBY21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBZ21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBa21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBb21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "CERTDPST";]]></expr>
+          </Node>
+        </Node>
+        <Node id="jtBc21y6W1" name="RLDISSFEATID" type="element">
+          <Node id="jtBd21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBe21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBf21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBg21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBh21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBi21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBj21y6W1" name="RLDRIDFPURPTYP" type="element">
+          <Node id="jtBk21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBl21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBm21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBn21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBo21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBp21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBq21y6W1" name="RLDRIDFSQNUM" type="element">
+          <Node id="jtBr21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBs21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBt21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBu21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBv21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBw21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBx21y6W1" name="RLDRLDISSFEATID" type="element">
+          <Node id="jtBy21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBz21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB$21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB%21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB@21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB&amp;21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB*21y6W1" name="STARTTMS" type="element">
+          <Node id="jtB-21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB.21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB/21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB(21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB)21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB~21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB?21y6W1" name="TICK1PTVALTXT" type="element">
+          <Node id="jtB&lt;21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB&gt;21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB031y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB131y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB231y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB331y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB431y6W1" name="TICKSZCAMT" type="element">
+          <Node id="jtB531y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB631y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB731y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB831y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB931y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBA31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBB31y6W1" name="TICKVALCAMT" type="element">
+          <Node id="jtBC31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBD31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBE31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBF31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBG31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBH31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBI31y6W1" name="XPDENDAJBASTYP" type="element">
+          <Node id="jtBJ31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBK31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBL31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBM31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBN31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBO31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBP31y6W1" name="XPDENDDYAJQTY" type="element">
+          <Node id="jtBQ31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBR31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBS31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBT31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBU31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBV31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBW31y6W1" name="XPDENDMTHAJQTY" type="element">
+          <Node id="jtBX31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBY31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBZ31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBa31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBb31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBc31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBd31y6W1" name="XPDENDTMS" type="element">
+          <Node id="jtBe31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBf31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBg31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBh31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBi31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBj31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBk31y6W1" name="XPDFQDYTYP" type="element">
+          <Node id="jtBl31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBm31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBn31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBo31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBp31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBq31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBr31y6W1" name="XPDFQQTY" type="element">
+          <Node id="jtBs31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtBt31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtBu31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBv31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtBw31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBx31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBy31y6W1" name="XPDFQSPTYP" type="element">
+          <Node id="jtBz31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB$31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB%31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB@31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB&amp;31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB*31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB-31y6W1" name="XPDSTARTTMS" type="element">
+          <Node id="jtB.31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="jtB/31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="jtB(31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB)31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="jtB~31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB?31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Depository_Asset_Underlying" id="jtBY01y6W1" name="RelatedIssue" type="segment">
+        <condition id="jtB&lt;31y6W1"><![CDATA[if ((OneHasValue(Depository_Asset_Underlying))||((IsFieldDeleted(Depository_Asset_Underlying) && Strcmp(Depository_Asset_Underlying__Change_Flag, "Y")) && OneHasValue(Depository_Asset_Underlying__Previous)))
+	return "RelatedIssue";
+else
+	return "";]]></condition>
+        <Node id="jtB&gt;31y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Depository_Asset_Underlying))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="jtB041y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="jtB141y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="jtB241y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="jtB341y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="jtB441y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="jtB541y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Depository_Asset_Underlying))
+	return "N";
+else
+	return "";
+]]></expr>
+        </Node>
+        <Node id="jtB641y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="jtB741y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Depository_Asset_Underlying))
+	return "";
+else
+	return "RISS_MATCH_1";]]></expr>
+        </Node>
+        <Node id="jtB841y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="jtB941y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="jtBA41y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="jtBB41y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="jtBC41y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="jtBD41y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="jtBE41y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="jtBF41y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="jtBG41y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "RelatedIssue";]]></expr>
+        </Node>
+        <Node id="jtBH41y6W1" name="IssueIdentifier" type="segment">
+          <condition id="jtBI41y6W1"><![CDATA[if ((OneHasValue(Depository_Asset_Underlying))||((IsFieldDeleted(Depository_Asset_Underlying) && Strcmp(Depository_Asset_Underlying__Change_Flag, "Y")) && OneHasValue(Depository_Asset_Underlying__Previous)))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="jtBJ41y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="jtBK41y6W1" name="COPY_FROM" type="attribute"/>
+          <Node id="jtBL41y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "INSTR_ID";]]></expr>
+          </Node>
+          <Node id="jtBM41y6W1" name="DUP_CHECK" type="attribute"/>
+          <Node id="jtBN41y6W1" name="ENDDATEIND" type="attribute"/>
+          <Node id="jtBO41y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="jtBP41y6W1" name="ERROR" type="attribute"/>
+          <Node id="jtBQ41y6W1" name="LOOKUP" type="attribute"/>
+          <Node id="jtBR41y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node id="jtBS41y6W1" name="PARENT_LINK" type="attribute"/>
+          <Node id="jtBT41y6W1" name="PUBLISH" type="attribute"/>
+          <Node id="jtBU41y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="jtBV41y6W1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="jtBW41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBX41y6W1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="jtBY41y6W1" name="TSOPTION" type="attribute"/>
+          <Node id="jtBZ41y6W1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="jtBa41y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="y*BT01a3m1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "WARNING";]]></expr>
+          </Node>
+          <Node id="y*BU01a3m1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("5|CONCTNS|NESTED|ISSPRTRLTYP|UNDLYING|IDCTXTTYP|RIC|ISSID|",
+		Strcat(Depository_Asset_Underlying, "|DATASRCID|RFTDSP"));]]></expr>
+          </Node>
+          <Node id="jtBb41y6W1" name="DATASRCID" type="element">
+            <Node id="jtBc41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBd41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBe41y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBf41y6W1" name="DATASTATTYP" type="element">
+            <Node id="jtBg41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBh41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBi41y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="jtBj41y6W1" name="ENDTMS" type="element">
+            <Node id="jtBk41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBl41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBm41y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBn41y6W1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="jtBo41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBp41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBq41y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBr41y6W1" name="IDCTXTTYP" type="element">
+            <Node id="jtBs41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBt41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBu41y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "RIC";]]></expr>
+            </Node>
+          </Node>
+          <Node id="jtBv41y6W1" name="INSTRID" type="element">
+            <Node id="jtBw41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBx41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBy41y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBz41y6W1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="jtB$41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtB%41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtB@41y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtB&amp;41y6W1" name="ISIDOID" type="element">
+            <Node id="jtB*41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtB-41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtB.41y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtB/41y6W1" name="ISSID" type="element">
+            <Node id="jtB(41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtB)41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtB~41y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[if ((IsFieldDeleted(Depository_Asset_Underlying) && Strcmp(Depository_Asset_Underlying__Change_Flag, "Y")) && OneHasValue(Depository_Asset_Underlying__Previous))
+	return Depository_Asset_Underlying__Previous;
+else
+	return Depository_Asset_Underlying;]]></expr>
+            </Node>
+          </Node>
+          <Node id="jtB?41y6W1" name="ISSUSAGETYP" type="element">
+            <Node id="jtB&lt;41y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtB&gt;41y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtB051y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtB151y6W1" name="LASTCHGTMS" type="element">
+            <Node id="jtB251y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtB351y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtB451y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtB551y6W1" name="LASTCHGUSRID" type="element">
+            <Node id="jtB651y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtB751y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtB851y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtB951y6W1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="jtBA51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBB51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBC51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBD51y6W1" name="MKTID" type="element">
+            <Node id="jtBE51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBF51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBG51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBH51y6W1" name="MKTIDCTXTTYP" type="element">
+            <Node id="jtBI51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBJ51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBK51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBL51y6W1" name="MKTNME" type="element">
+            <Node id="jtBM51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBN51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBO51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBP51y6W1" name="MKTOID" type="element">
+            <Node id="jtBQ51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBR51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBS51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBT51y6W1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="jtBU51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBV51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBW51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBX51y6W1" name="STARTTMS" type="element">
+            <Node id="jtBY51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBZ51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBa51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBb51y6W1" name="TRADERSYMBOLIND" type="element">
+            <Node id="jtBc51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBd51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBe51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="jtBf51y6W1" name="TRDNGCURRCDE" type="element">
+            <Node id="jtBg51y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="jtBh51y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="jtBi51y6W1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="jtBj51y6W1" name="DATASTATTYP" type="element">
+          <Node id="jtBk51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBl51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBm51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="jtBn51y6W1" name="ENDTMS" type="element">
+          <Node id="jtBo51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBp51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBq51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Depository_Asset_Underlying))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="jtBr51y6W1" name="EVAMTBASTYP" type="element">
+          <Node id="jtBs51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBt51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBu51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBv51y6W1" name="EVAMTTYP" type="element">
+          <Node id="jtBw51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBx51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBy51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBz51y6W1" name="EVBASPRTCAMT" type="element">
+          <Node id="jtB$51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB%51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB@51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB&amp;51y6W1" name="EVPARTCAMT" type="element">
+          <Node id="jtB*51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB-51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB.51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB/51y6W1" name="EXERCRTE" type="element">
+          <Node id="jtB(51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB)51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB~51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB?51y6W1" name="EXERRTETYP" type="element">
+          <Node id="jtB&lt;51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB&gt;51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB061y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB161y6W1" name="IDCTXTTYP" type="element">
+          <Node id="jtB261y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB361y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB461y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB561y6W1" name="INSTRID" type="element">
+          <Node id="jtB661y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtB761y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtB861y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtB961y6W1" name="ISSID" type="element">
+          <Node id="jtBA61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBB61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBC61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBD61y6W1" name="ISSPARTRLTYP" type="element">
+          <Node id="jtBE61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBF61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBG61y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "UNDLYING";]]></expr>
+          </Node>
+        </Node>
+        <Node id="jtBL61y6W1" name="ISSPARTRLTYP" type="element">
+          <Node id="jtBM61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBN61y6W1" name="LASTCHGTMS" type="element">
+          <Node id="jtBO61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBP61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBQ61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBR61y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="jtBS61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBT61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBU61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBV61y6W1" name="PARTUNITSTYP" type="element">
+          <Node id="jtBW61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBX61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBY61y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ALL";]]></expr>
+          </Node>
+        </Node>
+        <Node id="jtBZ61y6W1" name="PRININCIND" type="element">
+          <Node id="jtBa61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBb61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBc61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBd61y6W1" name="RISSOID" type="element">
+          <Node id="jtBe61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBf61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBg61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBh61y6W1" name="RLDISSFEATID" type="element">
+          <Node id="jtBi61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBj61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBk61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBl61y6W1" name="SEPARATIONSTARTTMS" type="element">
+          <Node id="jtBm61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBn61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBo61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="jtBp61y6W1" name="STARTTMS" type="element">
+          <Node id="jtBq61y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="jtBr61y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="jtBs61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+  <Subscriptions>
+    <Subscription description="" id="++8ce4kGhG5AW00D" name="GS_FLAT_FINANCIAL_MKT" ruleText="0 0 0 1 1 ? *" sourceId="" type="BATCH" workflow="PublishingWorkflow">
+      <destinations>
+        <destination id="++8ez2RmhG5AW0Fn" outputType="JSON" participantRules="">
+          <downstream connectionFactory="jms/KafkaConnectionFactory1" deadline="" deadlineTime="" description="KafkaMICOut" downstreamDestinationType="JMS" downstreamValue="jms/topic/gs-out-publish-micexchange" dwdfOid="++8ez2RmhG5AW0Ct" id="++8ez2RmhG5AW0Cu" name="KafkaMICOut" preferredLanguageCode="" preferredVendorId="" subscriberType="" typeFlag="" validityPriority="null"/>
+        </destination>
+      </destinations>
+      <messageTypes/>
+      <filters>
+        <filter dataSourceId="" deltaMode="NONE" entity="004KIvai2etzy01+" entityCaption="Financial Market" entityName="FinancialMarket" entityType="BUSINESS_ENTITY" filterEQLJsonText="" filterRuleText="&lt;sql&gt;mkt_oid in (select mkt_oid from ft_t_mkid where mkt_id_ctxt_typ='MIC' and end_tms is null)&lt;/sql&gt;" id="++8ce4kGhG5AW00B" publishingModelName="FinancialMarket" ruleText="" screen="SVysx&gt;s-81" tableType="MRKT"/>
+      </filters>
+    </Subscription>
+  </Subscriptions>
+</root>

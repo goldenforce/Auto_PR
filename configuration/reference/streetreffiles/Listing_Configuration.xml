@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE occurrence SYSTEM "Listing_Configuration.dtd">
+<occurrence table="ft_t_mkis">
+	<group_1 description="Preferredvendor" processrank="1">
+		<option id="preferredvendor">
+			<vendorSource>
+				<source vendor="BB"/>
+			</vendorSource>
+		</option>
+	</group_1>
+	<group_2 description="issuetype" processrank="2"/>	
+	<group_3 description="market" processrank="3"/>
+	<group_4 description="issutypemarket" processrank="4"/>
+</occurrence>

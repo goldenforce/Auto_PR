@@ -1,0 +1,1730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-03-05 at 06:21:55 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.27</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Market_Segment_MIC" id="8P6LE1y6W1" name="MarketIssueStatistic" type="segment">
+        <condition id="8P6YE1y6W1"><![CDATA[if ((!StrStr(RIC, "^")) && (OneHasValue( Market_Segment_MIC)||((IsFieldDeleted(Market_Segment_MIC) && Strcmp(Market_Segment_MIC__Change_Flag, "Y")) && OneHasValue(Market_Segment_MIC__Previous))))
+	if (Strcmp(Translate(Config_Options, true, "CreateListingForUnlistedMarket", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "YES"))
+		return "MarketIssueStatistic";
+	else if (!Strcmp(Market_Segment_MIC, "XXXX")&&(Strcmp(Translate(Config_Options, true, "CreateListingForUnlistedMarket", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO")))
+		return "MarketIssueStatistic";
+	else if (!StrContainsOneOf(Translate(Config_Options, true, "CreateListingForUnlistedMarket", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO", "YES"))
+			return ThrowMapError(Strcat(Translate(Config_Options, true, "CreateListingForUnlistedMarket", "Refinitiv_DataScope_Plus_EQ_Descriptive"), Strcat("--", "Wrong value in Config_Option.xml against Refinitiv_DataScope_Plus_EQ_Descriptive for CreateListingForUnlistedMarket . It is other than permitted value YES and NO value used in Config_option.xml")), "");
+		else
+			return "";
+	else
+		return "";
+]]></condition>
+        <Node id="8P6ZE1y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Market_Segment_MIC))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="8P6aE1y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="8P6bE1y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="8P6cE1y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="8P6dE1y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="8P6eE1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="8P6fE1y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Market_Segment_MIC))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="8P6gE1y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="8P6hE1y6W1" name="MATCH" type="attribute"/>
+        <Node id="8P6iE1y6W1" name="ONLY" type="attribute"/>
+        <Node id="8P6jE1y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="8P6kE1y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="8P6lE1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="8P6mE1y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="8P6nE1y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="8P6oE1y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="8P6pE1y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="8P6qE1y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="8P6rE1y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="8P6sE1y6W1" name="DATASRCID" type="element">
+          <Node id="8P6tE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6uE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6vE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6wE1y6W1" name="DATASTATTYP" type="element">
+          <Node id="8P6xE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6yE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6zE1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8P6$E1y6W1" name="ENDTMS" type="element">
+          <Node id="8P6%E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6@E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6&amp;E1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Market_Segment_MIC))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8P6*E1y6W1" name="LASTCHGTMS" type="element">
+          <Node id="8P6-E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6.E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6/E1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6(E1y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="8P6)E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6~E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6?E1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6&lt;E1y6W1" name="MKTISSOID" type="element">
+          <Node id="8P6&gt;E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P60F1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P61F1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P62F1y6W1" name="MUSTOID" type="element">
+          <Node id="8P63F1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P64F1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P65F1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P66F1y6W1" name="STARTTMS" type="element">
+          <Node id="8P67F1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P68F1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P69F1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6AF1y6W1" name="STATCHARVALTXT" type="element">
+          <Node id="8P6BF1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6CF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6DF1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Market_Segment_MIC))
+	return Market_Segment_MIC;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8P6EF1y6W1" name="STATDEFID" type="element">
+          <Node id="8P6FF1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6GF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6HF1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "MICISO";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8P6IF1y6W1" name="STATINTVALNUM" type="element">
+          <Node id="8P6JF1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6KF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6LF1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6MF1y6W1" name="STATSCURRCDE" type="element">
+          <Node id="8P6NF1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6OF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6PF1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6QF1y6W1" name="STATVALCAMT" type="element">
+          <Node id="8P6RF1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6SF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6TF1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6UF1y6W1" name="STATVALDTE" type="element">
+          <Node id="8P6VF1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6WF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6XF1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6YF1y6W1" name="STATVALTMS" type="element">
+          <Node id="8P6ZF1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6aF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6bF1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="MIC" id="8P6NE1y6W1" name="MarketIssueStatistic" type="segment">
+        <condition id="8P6cF1y6W1"><![CDATA[if ((!StrStr(RIC, "^"))&& ((OneHasValue( MIC)||((IsFieldDeleted(MIC) && Strcmp(MIC__Change_Flag, "Y")) && OneHasValue(MIC__Previous)))))
+	if (Strcmp(Translate(Config_Options, true, "CreateListingForUnlistedMarket", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "YES"))
+		return "MarketIssueStatistic";
+	else if (!Strcmp(MIC, "XXXX")&&(Strcmp(Translate(Config_Options, true, "CreateListingForUnlistedMarket", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO")))
+		return "MarketIssueStatistic";
+		else if (!StrContainsOneOf(Translate(Config_Options, true, "CreateListingForUnlistedMarket", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO", "YES"))
+			return ThrowMapError(Strcat(Translate(Config_Options, true, "CreateListingForUnlistedMarket", "Refinitiv_DataScope_Plus_EQ_Descriptive"), Strcat("--", "Wrong value in Config_Option.xml against Refinitiv_DataScope_Plus_EQ_Descriptive for CreateListingForUnlistedMarket . It is other than permitted value YES and NO value used in Config_option.xml")), "");
+		else
+			return "";
+	else
+		return "";
+]]></condition>
+        <Node id="8P6dF1y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(MIC))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="8P6eF1y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="8P6fF1y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="8P6gF1y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="8P6hF1y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="8P6iF1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="8P6jF1y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(MIC))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="8P6kF1y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="8P6lF1y6W1" name="MATCH" type="attribute"/>
+        <Node id="8P6mF1y6W1" name="ONLY" type="attribute"/>
+        <Node id="8P6nF1y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="8P6oF1y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="8P6pF1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="8P6qF1y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="8P6rF1y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="8P6sF1y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="8P6tF1y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="8P6uF1y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="8P6vF1y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="8P6wF1y6W1" name="DATASRCID" type="element">
+          <Node id="8P6xF1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6yF1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6zF1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6$F1y6W1" name="DATASTATTYP" type="element">
+          <Node id="8P6%F1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6@F1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6&amp;F1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="8P6*F1y6W1" name="ENDTMS" type="element">
+          <Node id="8P6-F1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6.F1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6/F1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6(F1y6W1" name="LASTCHGTMS" type="element">
+          <Node id="8P6)F1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="8P6~F1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="8P6?F1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="8P6&lt;F1y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="8P6&gt;F1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6101y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6201y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6301y6W1" name="MKTISSOID" type="element">
+          <Node id="3T6401y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6501y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6601y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6701y6W1" name="MUSTOID" type="element">
+          <Node id="3T6801y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6901y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6A01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6B01y6W1" name="STARTTMS" type="element">
+          <Node id="3T6C01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6D01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6E01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6F01y6W1" name="STATCHARVALTXT" type="element">
+          <Node id="3T6G01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6H01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6I01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(MIC))
+	return MIC;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6J01y6W1" name="STATDEFID" type="element">
+          <Node id="3T6K01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6L01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6M01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "MICLOCEX";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6N01y6W1" name="ENDTMS" type="element">
+          <Node id="3T6O01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6P01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Q01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(MIC))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6R01y6W1" name="STATINTVALNUM" type="element">
+          <Node id="3T6S01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6T01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6U01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6V01y6W1" name="STATSCURRCDE" type="element">
+          <Node id="3T6W01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6X01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Y01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6Z01y6W1" name="STATVALCAMT" type="element">
+          <Node id="3T6a01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6b01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6c01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6d01y6W1" name="STATVALDTE" type="element">
+          <Node id="3T6e01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6f01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6g01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6h01y6W1" name="STATVALTMS" type="element">
+          <Node id="3T6i01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6j01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6k01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Exchange_Code" id="8P6PE1y6W1" name="MarketIssueStatistic" type="segment">
+        <condition id="3T6l01y6W1"><![CDATA[if (!StrStr(RIC, "^") && OneHasValue(Exchange_Code))
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="3T6m01y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="3T6n01y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="3T6o01y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="3T6p01y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="3T6q01y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="3T6r01y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="3T6s01y6W1" name="ERROR" type="attribute"/>
+        <Node id="3T6t01y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="3T6u01y6W1" name="MATCH" type="attribute"/>
+        <Node id="3T6v01y6W1" name="ONLY" type="attribute"/>
+        <Node id="3T6w01y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="3T6x01y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="3T6y01y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="3T6z01y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="3T6$01y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="3T6%01y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="3T6@01y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="3T6&amp;01y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="3T6*01y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="3T6-01y6W1" name="DATASRCID" type="element">
+          <Node id="3T6.01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6/01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6(01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6)01y6W1" name="DATASTATTYP" type="element">
+          <Node id="3T6~01y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6?01y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6&lt;01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6&gt;01y6W1" name="ENDTMS" type="element">
+          <Node id="3T6011y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6111y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6211y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6311y6W1" name="LASTCHGTMS" type="element">
+          <Node id="3T6411y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6511y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6611y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6711y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="3T6811y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6911y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6A11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6B11y6W1" name="MKTISSOID" type="element">
+          <Node id="3T6C11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6D11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6E11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6F11y6W1" name="MUSTOID" type="element">
+          <Node id="3T6G11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6H11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6I11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6J11y6W1" name="STARTTMS" type="element">
+          <Node id="3T6K11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6L11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6M11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6N11y6W1" name="STATCHARVALTXT" type="element">
+          <Node id="3T6O11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6P11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Q11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[
+if (OneHasValue(Exchange_Code))
+	return Exchange_Code;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6R11y6W1" name="STATDEFID" type="element">
+          <Node id="3T6S11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6T11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6U11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "RTEXINDT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6V11y6W1" name="ENDTMS" type="element">
+          <Node id="3T6W11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6X11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Y11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6Z11y6W1" name="STATINTVALNUM" type="element">
+          <Node id="3T6a11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6b11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6c11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6d11y6W1" name="STATSCURRCDE" type="element">
+          <Node id="3T6e11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6f11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6g11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6h11y6W1" name="STATVALCAMT" type="element">
+          <Node id="3T6i11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6j11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6k11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6l11y6W1" name="STATVALDTE" type="element">
+          <Node id="3T6m11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6n11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6o11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6p11y6W1" name="STATVALTMS" type="element">
+          <Node id="3T6q11y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6r11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6s11y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="OPOL" id="8P6RE1y6W1" name="MarketIssueStatistic" type="segment">
+        <condition id="3T6t11y6W1"><![CDATA[if ((!StrStr(RIC, "^") && OneHasValue(Exchange_Code))&&  (((OneHasValue(OPOL)) ||((IsFieldDeleted(OPOL) && Strcmp(OPOL__Change_Flag, "Y")) && OneHasValue(OPOL__Previous)))))
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="3T6u11y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(OPOL))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="3T6v11y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="3T6w11y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="3T6x11y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="3T6y11y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="3T6z11y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="3T6$11y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(OPOL))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="3T6%11y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="3T6@11y6W1" name="MATCH" type="attribute"/>
+        <Node id="3T6&amp;11y6W1" name="ONLY" type="attribute"/>
+        <Node id="3T6*11y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="3T6-11y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="3T6.11y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="3T6/11y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="3T6(11y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="3T6)11y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="3T6~11y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="3T6?11y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="3T6&lt;11y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="3T6&gt;11y6W1" name="DATASRCID" type="element">
+          <Node id="3T6021y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6121y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6221y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6321y6W1" name="DATASTATTYP" type="element">
+          <Node id="3T6421y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6521y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6621y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6721y6W1" name="ENDTMS" type="element">
+          <Node id="3T6821y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6921y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6A21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6B21y6W1" name="LASTCHGTMS" type="element">
+          <Node id="3T6C21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6D21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6E21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6F21y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="3T6G21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6H21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6I21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6J21y6W1" name="MKTISSOID" type="element">
+          <Node id="3T6K21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6L21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6M21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6N21y6W1" name="MUSTOID" type="element">
+          <Node id="3T6O21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6P21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Q21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6R21y6W1" name="STARTTMS" type="element">
+          <Node id="3T6S21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6T21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6U21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6V21y6W1" name="STATCHARVALTXT" type="element">
+          <Node id="3T6W21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6X21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Y21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(OPOL))
+	return OPOL;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6Z21y6W1" name="STATDEFID" type="element">
+          <Node id="3T6a21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6b21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6c21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "MICOPOL";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6d21y6W1" name="ENDTMS" type="element">
+          <Node id="3T6e21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6f21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6g21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(OPOL))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6h21y6W1" name="STATINTVALNUM" type="element">
+          <Node id="3T6i21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6j21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6k21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6l21y6W1" name="STATSCURRCDE" type="element">
+          <Node id="3T6m21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6n21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6o21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6p21y6W1" name="STATVALCAMT" type="element">
+          <Node id="3T6q21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6r21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6s21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6t21y6W1" name="STATVALDTE" type="element">
+          <Node id="3T6u21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6v21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6w21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6x21y6W1" name="STATVALTMS" type="element">
+          <Node id="3T6y21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6z21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6$21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Currency_Code" id="8P6TE1y6W1" name="MarketIssueStatistic" type="segment">
+        <condition id="3T6%21y6W1"><![CDATA[if ((!StrStr(RIC, "^")&& OneHasValue(Exchange_Code)) && ((OneOf(Currency_Code, "ZWc", "AEf", "AUc", "BHf", "BWt", "CAc", "EUc", "GBp",
+		"HKc", "IEp", "ILa", "KWf", "MYc", "NAc", "NZc", "OMb", "QAd", "ROb", "SAh", "SGc", "TRk", "USc", "ZAc")) ))
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="3T6@21y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="3T6&amp;21y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="3T6*21y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="3T6-21y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="3T6.21y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="3T6/21y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="3T6(21y6W1" name="ERROR" type="attribute"/>
+        <Node id="3T6)21y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="3T6~21y6W1" name="MATCH" type="attribute"/>
+        <Node id="3T6?21y6W1" name="ONLY" type="attribute"/>
+        <Node id="3T6&lt;21y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="3T6&gt;21y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="3T6031y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="3T6131y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="3T6231y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="3T6331y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="3T6431y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="3T6531y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="3T6631y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="3T6731y6W1" name="DATASRCID" type="element">
+          <Node id="3T6831y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6931y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6A31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6B31y6W1" name="DATASTATTYP" type="element">
+          <Node id="3T6C31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6D31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6E31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6F31y6W1" name="ENDTMS" type="element">
+          <Node id="3T6G31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6H31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6I31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6J31y6W1" name="LASTCHGTMS" type="element">
+          <Node id="3T6K31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6L31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6M31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6N31y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="3T6O31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6P31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Q31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6R31y6W1" name="MKTISSOID" type="element">
+          <Node id="3T6S31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6T31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6U31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6V31y6W1" name="MUSTOID" type="element">
+          <Node id="3T6W31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6X31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Y31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6Z31y6W1" name="STARTTMS" type="element">
+          <Node id="3T6a31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6b31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6c31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6d31y6W1" name="STATCHARVALTXT" type="element">
+          <Node id="3T6e31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6f31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6g31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Currency_Code))
+	return Translate(ReutersETT, false, "CURRENCY", Currency_Code);
+else
+	return "";
+
+]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6h31y6W1" name="STATDEFID" type="element">
+          <Node id="3T6i31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6j31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6k31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "MINORCUR";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6l31y6W1" name="ENDTMS" type="element">
+          <Node id="3T6m31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6n31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6o31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6p31y6W1" name="STATINTVALNUM" type="element">
+          <Node id="3T6q31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6r31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6s31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6t31y6W1" name="STATSCURRCDE" type="element">
+          <Node id="3T6u31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6v31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6w31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6x31y6W1" name="STATVALCAMT" type="element">
+          <Node id="3T6y31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6z31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6$31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6%31y6W1" name="STATVALDTE" type="element">
+          <Node id="3T6@31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6&amp;31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6*31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6-31y6W1" name="STATVALTMS" type="element">
+          <Node id="3T6.31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6/31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6(31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="SEDOL" id="8P6VE1y6W1" name="MarketIssueStatistic" type="segment">
+        <condition id="3T6)31y6W1"><![CDATA[if ((!StrStr(RIC, "^") && (OneHasValue(Exchange_Code) && (Strcmp(MIC, OPOL))))
+&&  ((OneHasValue(SEDOL)) || ((IsFieldDeleted(SEDOL) && Strcmp(SEDOL__Change_Flag, "Y")) && OneHasValue(SEDOL__Previous))))
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="3T6~31y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(SEDOL))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="3T6?31y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="3T6&lt;31y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="3T6&gt;31y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="3T6041y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="3T6141y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="3T6241y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(SEDOL))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="3T6341y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="3T6441y6W1" name="MATCH" type="attribute"/>
+        <Node id="3T6541y6W1" name="ONLY" type="attribute"/>
+        <Node id="3T6641y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="3T6741y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="3T6841y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="3T6941y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="3T6A41y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="3T6B41y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="3T6C41y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="3T6D41y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="3T6E41y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="3T6F41y6W1" name="DATASRCID" type="element">
+          <Node id="3T6G41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6H41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6I41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6J41y6W1" name="DATASTATTYP" type="element">
+          <Node id="3T6K41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6L41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6M41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6N41y6W1" name="ENDTMS" type="element">
+          <Node id="3T6O41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6P41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Q41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6R41y6W1" name="LASTCHGTMS" type="element">
+          <Node id="3T6S41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6T41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6U41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6V41y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="3T6W41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6X41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Y41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6Z41y6W1" name="MKTISSOID" type="element">
+          <Node id="3T6a41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6b41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6c41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6d41y6W1" name="MUSTOID" type="element">
+          <Node id="3T6e41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6f41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6g41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6h41y6W1" name="STARTTMS" type="element">
+          <Node id="3T6i41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6j41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6k41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6l41y6W1" name="STATCHARVALTXT" type="element">
+          <Node id="3T6m41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6n41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6o41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[
+if (OneHasValue(SEDOL))
+	return SEDOL;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6p41y6W1" name="STATDEFID" type="element">
+          <Node id="3T6q41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6r41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6s41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "PRISEDOL";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6t41y6W1" name="ENDTMS" type="element">
+          <Node id="3T6u41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6v41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6w41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(SEDOL))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6x41y6W1" name="STATINTVALNUM" type="element">
+          <Node id="3T6y41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6z41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6$41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6%41y6W1" name="STATSCURRCDE" type="element">
+          <Node id="3T6@41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6&amp;41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6*41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6-41y6W1" name="STATVALCAMT" type="element">
+          <Node id="3T6.41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6/41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6(41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6)41y6W1" name="STATVALDTE" type="element">
+          <Node id="3T6~41y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6?41y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6&lt;41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6&gt;41y6W1" name="STATVALTMS" type="element">
+          <Node id="3T6051y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6151y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6251y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Ticker" id="8P6XE1y6W1" name="MarketIssueStatistic" type="segment">
+        <condition id="3T6351y6W1"><![CDATA[if ((!StrStr(RIC, "^") && (OneHasValue(Exchange_Code) && (Strcmp(Primary_Listed_RIC, "Y"))))
+&&  ((OneHasValue(Ticker)) || ((IsFieldDeleted(Ticker) && Strcmp(Ticker__Change_Flag, "Y")) && OneHasValue(Ticker__Previous))))
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="3T6451y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Ticker))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="3T6551y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="3T6651y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="3T6751y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="3T6851y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="3T6951y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="3T6A51y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Ticker))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="3T6B51y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="3T6C51y6W1" name="MATCH" type="attribute"/>
+        <Node id="3T6D51y6W1" name="ONLY" type="attribute"/>
+        <Node id="3T6E51y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="3T6F51y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="3T6G51y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="3T6H51y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="3T6I51y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="3T6J51y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="3T6K51y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="3T6L51y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="3T6M51y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="3T6N51y6W1" name="DATASRCID" type="element">
+          <Node id="3T6O51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6P51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Q51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6R51y6W1" name="DATASTATTYP" type="element">
+          <Node id="3T6S51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6T51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6U51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6V51y6W1" name="ENDTMS" type="element">
+          <Node id="3T6W51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6X51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6Y51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6Z51y6W1" name="LASTCHGTMS" type="element">
+          <Node id="3T6a51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6b51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6c51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6d51y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="3T6e51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6f51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6g51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6h51y6W1" name="MKTISSOID" type="element">
+          <Node id="3T6i51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6j51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6k51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6l51y6W1" name="MUSTOID" type="element">
+          <Node id="3T6m51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6n51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6o51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6p51y6W1" name="STARTTMS" type="element">
+          <Node id="3T6q51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6r51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6s51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6t51y6W1" name="STATCHARVALTXT" type="element">
+          <Node id="3T6u51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6v51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6w51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Ticker))
+	return Ticker;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6x51y6W1" name="STATDEFID" type="element">
+          <Node id="3T6y51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6z51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6$51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "PRMRTTIC";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6%51y6W1" name="ENDTMS" type="element">
+          <Node id="3T6@51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6&amp;51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6*51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Ticker))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6-51y6W1" name="STATINTVALNUM" type="element">
+          <Node id="3T6.51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6/51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6(51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6)51y6W1" name="STATSCURRCDE" type="element">
+          <Node id="3T6~51y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6?51y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6&lt;51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6&gt;51y6W1" name="STATVALCAMT" type="element">
+          <Node id="3T6061y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6161y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6261y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6361y6W1" name="STATVALDTE" type="element">
+          <Node id="3T6461y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6561y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6661y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6761y6W1" name="STATVALTMS" type="element">
+          <Node id="3T6861y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6961y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6A61y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Place_of_Listing_Flag" id="KL7(910Em1" name="MarketIssueStatistic" type="segment">
+        <condition id="KL73B10Em1"><![CDATA[if ((!StrStr(RIC, "^") && OneHasValue(Exchange_Code))
+&&  ((OneHasValue(Place_of_Listing_Flag)) || ((IsFieldDeleted(Place_of_Listing_Flag) && Strcmp(Place_of_Listing_Flag__Change_Flag, "Y")) && OneHasValue(Place_of_Listing_Flag__Previous))))
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="KL74B10Em1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Place_of_Listing_Flag))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="KL75B10Em1" name="COPY_FROM" type="attribute"/>
+        <Node id="KL76B10Em1" name="COPY_TO" type="attribute"/>
+        <Node id="KL77B10Em1" name="DUP_CHECK" type="attribute"/>
+        <Node id="KL78B10Em1" name="ENDDATEIND" type="attribute"/>
+        <Node id="KL79B10Em1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="KL7AB10Em1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Place_of_Listing_Flag))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="KL7BB10Em1" name="LOOKUP" type="attribute"/>
+        <Node id="KL7CB10Em1" name="MATCH" type="attribute"/>
+        <Node id="KL7DB10Em1" name="ONLY" type="attribute"/>
+        <Node id="KL7EB10Em1" name="PARENT_LINK" type="attribute"/>
+        <Node id="KL7FB10Em1" name="PUBLISH" type="attribute"/>
+        <Node id="KL7GB10Em1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="KL7HB10Em1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="KL7IB10Em1" name="TRANSLATE" type="attribute"/>
+        <Node id="KL7JB10Em1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="KL7KB10Em1" name="TSOPTION" type="attribute"/>
+        <Node id="KL7LB10Em1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="KL7MB10Em1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="KL7NB10Em1" name="DATASRCID" type="element">
+          <Node id="KL7OB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7PB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7QB10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7RB10Em1" name="DATASTATTYP" type="element">
+          <Node id="KL7SB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7TB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7UB10Em1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="KL7VB10Em1" name="ENDTMS" type="element">
+          <Node id="KL7WB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7XB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7YB10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7ZB10Em1" name="LASTCHGTMS" type="element">
+          <Node id="KL7aB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7bB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7cB10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7dB10Em1" name="LASTCHGUSRID" type="element">
+          <Node id="KL7eB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7fB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7gB10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7hB10Em1" name="MKTISSOID" type="element">
+          <Node id="KL7iB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7jB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7kB10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7lB10Em1" name="MUSTOID" type="element">
+          <Node id="KL7mB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7nB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7oB10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7pB10Em1" name="STARTTMS" type="element">
+          <Node id="KL7qB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7rB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7sB10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7tB10Em1" name="STATCHARVALTXT" type="element">
+          <Node id="KL7uB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7vB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7wB10Em1" name="VALUE" type="attribute">
+            <expr><![CDATA[
+if (OneHasValue(Place_of_Listing_Flag))
+	return Place_of_Listing_Flag;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="KL7xB10Em1" name="STATDEFID" type="element">
+          <Node id="KL7yB10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7zB10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7$B10Em1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "POLIST";]]></expr>
+          </Node>
+        </Node>
+        <Node id="KL7%B10Em1" name="ENDTMS" type="element">
+          <Node id="KL7@B10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7&amp;B10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7*B10Em1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Place_of_Listing_Flag))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="KL7-B10Em1" name="STATINTVALNUM" type="element">
+          <Node id="KL7.B10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7/B10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7(B10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7)B10Em1" name="STATSCURRCDE" type="element">
+          <Node id="KL7~B10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7?B10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7&lt;B10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7&gt;B10Em1" name="STATVALCAMT" type="element">
+          <Node id="KL70C10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL71C10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL72C10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL73C10Em1" name="STATVALDTE" type="element">
+          <Node id="KL74C10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL75C10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL76C10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL77C10Em1" name="STATVALTMS" type="element">
+          <Node id="KL78C10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL79C10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7AC10Em1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Country_Primary_Quote" id="KL7.910Em1" name="MarketIssueStatistic" type="segment">
+        <condition id="KL7)910Em1"><![CDATA[if ((!StrStr(RIC, "^") && (OneHasValue(Exchange_Code)))
+&&  ((Strcmp(Country_Primary_Quote, "Y")) || ((IsFieldDeleted(Country_Primary_Quote) && Strcmp(Country_Primary_Quote__Change_Flag, "Y")) && OneHasValue(Country_Primary_Quote__Previous))))
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="KL7~910Em1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Country_Primary_Quote))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="KL7?910Em1" name="COPY_FROM" type="attribute"/>
+        <Node id="KL7&lt;910Em1" name="COPY_TO" type="attribute"/>
+        <Node id="KL7&gt;910Em1" name="DUP_CHECK" type="attribute"/>
+        <Node id="KL70A10Em1" name="ENDDATEIND" type="attribute"/>
+        <Node id="KL71A10Em1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="KL72A10Em1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Country_Primary_Quote))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="KL73A10Em1" name="LOOKUP" type="attribute"/>
+        <Node id="KL74A10Em1" name="MATCH" type="attribute"/>
+        <Node id="KL75A10Em1" name="ONLY" type="attribute"/>
+        <Node id="KL76A10Em1" name="PARENT_LINK" type="attribute"/>
+        <Node id="KL77A10Em1" name="PUBLISH" type="attribute"/>
+        <Node id="KL78A10Em1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="KL79A10Em1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="KL7AA10Em1" name="TRANSLATE" type="attribute"/>
+        <Node id="KL7BA10Em1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="KL7CA10Em1" name="TSOPTION" type="attribute"/>
+        <Node id="KL7DA10Em1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="KL7EA10Em1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="KL7FA10Em1" name="DATASRCID" type="element">
+          <Node id="KL7GA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7HA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7IA10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7JA10Em1" name="DATASTATTYP" type="element">
+          <Node id="KL7KA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7LA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7MA10Em1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="KL7NA10Em1" name="ENDTMS" type="element">
+          <Node id="KL7OA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7PA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7QA10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7RA10Em1" name="LASTCHGTMS" type="element">
+          <Node id="KL7SA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7TA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7UA10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7VA10Em1" name="LASTCHGUSRID" type="element">
+          <Node id="KL7WA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7XA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7YA10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7ZA10Em1" name="MKTISSOID" type="element">
+          <Node id="KL7aA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7bA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7cA10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7dA10Em1" name="MUSTOID" type="element">
+          <Node id="KL7eA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7fA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7gA10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7hA10Em1" name="STARTTMS" type="element">
+          <Node id="KL7iA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7jA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7kA10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7lA10Em1" name="STATCHARVALTXT" type="element">
+          <Node id="KL7mA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7nA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7oA10Em1" name="VALUE" type="attribute">
+            <expr><![CDATA[return RIC;]]></expr>
+          </Node>
+        </Node>
+        <Node id="KL7pA10Em1" name="STATDEFID" type="element">
+          <Node id="KL7qA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7rA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7sA10Em1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "PRIMLIST";]]></expr>
+          </Node>
+        </Node>
+        <Node id="KL7tA10Em1" name="ENDTMS" type="element">
+          <Node id="KL7uA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7vA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7wA10Em1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Country_Primary_Quote))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="KL7xA10Em1" name="STATINTVALNUM" type="element">
+          <Node id="KL7yA10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7zA10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7$A10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7%A10Em1" name="STATSCURRCDE" type="element">
+          <Node id="KL7@A10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7&amp;A10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7*A10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7-A10Em1" name="STATVALCAMT" type="element">
+          <Node id="KL7.A10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7/A10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7(A10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7)A10Em1" name="STATVALDTE" type="element">
+          <Node id="KL7~A10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL7?A10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL7&lt;A10Em1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="KL7&gt;A10Em1" name="STATVALTMS" type="element">
+          <Node id="KL70B10Em1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="KL71B10Em1" name="TRANSLATE" type="attribute"/>
+          <Node id="KL72B10Em1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="MKTSEGNM" id="g98B01@Qe1" name="MarketIssueStatistic" type="segment">
+        <condition id="g98E01@Qe1"><![CDATA[if (!StrStr(RIC, "^") && (!Strcmp(Exchange_Code, "LSE") && (OneHasValue( Market_Segment_Name)||((IsFieldDeleted(Market_Segment_Name) && Strcmp(Market_Segment_Name__Change_Flag, "Y")) && OneHasValue(Market_Segment_Name__Previous)))))	
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="g98F01@Qe1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Market_Segment_Name))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="g98G01@Qe1" name="COPY_FROM" type="attribute"/>
+        <Node id="g98H01@Qe1" name="COPY_TO" type="attribute"/>
+        <Node id="g98I01@Qe1" name="DUP_CHECK" type="attribute"/>
+        <Node id="g98J01@Qe1" name="ENDDATEIND" type="attribute"/>
+        <Node id="g98K01@Qe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="g98L01@Qe1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Market_Segment_Name))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="g98M01@Qe1" name="LOOKUP" type="attribute"/>
+        <Node id="g98N01@Qe1" name="MATCH" type="attribute"/>
+        <Node id="g98O01@Qe1" name="ONLY" type="attribute"/>
+        <Node id="g98P01@Qe1" name="PARENT_LINK" type="attribute"/>
+        <Node id="g98Q01@Qe1" name="PUBLISH" type="attribute"/>
+        <Node id="g98R01@Qe1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="g98S01@Qe1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="g98T01@Qe1" name="TRANSLATE" type="attribute"/>
+        <Node id="g98U01@Qe1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="g98V01@Qe1" name="TSOPTION" type="attribute"/>
+        <Node id="g98W01@Qe1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="g98X01@Qe1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="g98Y01@Qe1" name="DATASRCID" type="element">
+          <Node id="g98Z01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98a01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98b01@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98c01@Qe1" name="DATASTATTYP" type="element">
+          <Node id="g98d01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98e01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98f01@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98g01@Qe1" name="ENDTMS" type="element">
+          <Node id="g98h01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98i01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98j01@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98k01@Qe1" name="LASTCHGTMS" type="element">
+          <Node id="g98l01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98m01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98n01@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98o01@Qe1" name="LASTCHGUSRID" type="element">
+          <Node id="g98p01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98q01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98r01@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98s01@Qe1" name="MKTISSOID" type="element">
+          <Node id="g98t01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98u01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98v01@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98w01@Qe1" name="MUSTOID" type="element">
+          <Node id="g98x01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98y01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98z01@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98$01@Qe1" name="STARTTMS" type="element">
+          <Node id="g98%01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98@01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98&amp;01@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98*01@Qe1" name="STATCHARVALTXT" type="element">
+          <Node id="g98-01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98.01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98/01@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Market_Segment_Name))
+	return Market_Segment_Name;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98(01@Qe1" name="STATDEFID" type="element">
+          <Node id="g98)01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98~01@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98?01@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "MKTSEGNM";]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98&lt;01@Qe1" name="ENDTMS" type="element">
+          <Node id="g98&gt;01@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98011@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98111@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Market_Segment_Name))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98211@Qe1" name="STATINTVALNUM" type="element">
+          <Node id="g98311@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98411@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98511@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98611@Qe1" name="STATSCURRCDE" type="element">
+          <Node id="g98711@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98811@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98911@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98A11@Qe1" name="STATVALCAMT" type="element">
+          <Node id="g98B11@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98C11@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98D11@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98E11@Qe1" name="STATVALDTE" type="element">
+          <Node id="g98F11@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98G11@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98H11@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98I11@Qe1" name="STATVALTMS" type="element">
+          <Node id="g98J11@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98K11@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98L11@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName="Operating_MIC" id="-z7N01H381" name="MarketIssueStatistic" type="segment">
+        <condition id="-z7O01H381"><![CDATA[if (!StrStr(RIC, "^") && ((OneHasValue(Exchange_Code) && (OneHasValue(Operating_Mic) || ((IsFieldDeleted(Operating_Mic) && Strcmp(Operating_Mic__Change_Flag, "Y")) && OneHasValue(Operating_Mic__Previous))))))
+	return "MarketIssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="-z7P01H381" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Operating_Mic))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="-z7Q01H381" name="COPY_FROM" type="attribute"/>
+        <Node id="-z7R01H381" name="COPY_TO" type="attribute"/>
+        <Node id="-z7S01H381" name="DUP_CHECK" type="attribute"/>
+        <Node id="-z7T01H381" name="ENDDATEIND" type="attribute"/>
+        <Node id="-z7U01H381" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="-z7V01H381" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Operating_Mic))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="-z7W01H381" name="LOOKUP" type="attribute"/>
+        <Node id="-z7X01H381" name="MATCH" type="attribute"/>
+        <Node id="-z7Y01H381" name="ONLY" type="attribute"/>
+        <Node id="-z7Z01H381" name="PARENT_LINK" type="attribute"/>
+        <Node id="-z7a01H381" name="PUBLISH" type="attribute"/>
+        <Node id="-z7b01H381" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="-z7c01H381" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="-z7d01H381" name="TRANSLATE" type="attribute"/>
+        <Node id="-z7e01H381" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="-z7f01H381" name="TSOPTION" type="attribute"/>
+        <Node id="-z7g01H381" name="TSTOLERANCE" type="attribute"/>
+        <Node id="-z7h01H381" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MarketIssueStatistic";]]></expr>
+        </Node>
+        <Node id="-z7i01H381" name="DATASRCID" type="element">
+          <Node id="-z7j01H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7k01H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7l01H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7m01H381" name="DATASTATTYP" type="element">
+          <Node id="-z7n01H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7o01H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7p01H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7q01H381" name="ENDTMS" type="element">
+          <Node id="-z7r01H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7s01H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7t01H381" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Operating_Mic))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7u01H381" name="LASTCHGTMS" type="element">
+          <Node id="-z7v01H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7w01H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7x01H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7y01H381" name="LASTCHGUSRID" type="element">
+          <Node id="-z7z01H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7$01H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7%01H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7@01H381" name="MKTISSOID" type="element">
+          <Node id="-z7&amp;01H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7*01H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7-01H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7.01H381" name="MUSTOID" type="element">
+          <Node id="-z7/01H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7(01H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7)01H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7~01H381" name="STARTTMS" type="element">
+          <Node id="-z7?01H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7&lt;01H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7&gt;01H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7011H381" name="STATCHARVALTXT" type="element">
+          <Node id="-z7111H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7211H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7311H381" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Operating_Mic))
+	return Operating_Mic;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7411H381" name="STATDEFID" type="element">
+          <Node id="-z7511H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7611H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7711H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return "OPERAMIC";]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7811H381" name="STATINTVALNUM" type="element">
+          <Node id="-z7911H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7A11H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7B11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7C11H381" name="STATSCURRCDE" type="element">
+          <Node id="-z7D11H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7E11H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7F11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7G11H381" name="STATVALCAMT" type="element">
+          <Node id="-z7H11H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7I11H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7J11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7K11H381" name="STATVALDTE" type="element">
+          <Node id="-z7L11H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7M11H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7N11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7O11H381" name="STATVALTMS" type="element">
+          <Node id="-z7P11H381" name="INSERT_ONLY" type="attribute"/>
+          <Node id="-z7Q11H381" name="TRANSLATE" type="attribute"/>
+          <Node id="-z7R11H381" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node id="g98D01@Qe1" name="MKISMarketIssueClassification" type="segment">
+        <comment><![CDATA[MarketSegmentName - LSESEGMENT]]></comment>
+        <condition id="g98M11@Qe1"><![CDATA[if (!StrStr(RIC, "^") && (Strcmp(Exchange_Code, "LSE") && (OneHasValue( Market_Segment_Name)||((IsFieldDeleted(Market_Segment_Name) && Strcmp(Market_Segment_Name__Change_Flag, "Y")) && OneHasValue(Market_Segment_Name__Previous)))))	
+	return "MKISMarketIssueClassification";
+else
+	return "";]]></condition>
+        <Node id="g98N11@Qe1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Market_Segment_Name))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="g98O11@Qe1" name="COPY_FROM" type="attribute"/>
+        <Node id="g98P11@Qe1" name="COPY_TO" type="attribute"/>
+        <Node id="g98Q11@Qe1" name="DUP_CHECK" type="attribute"/>
+        <Node id="g98R11@Qe1" name="ENDDATEIND" type="attribute"/>
+        <Node id="g98S11@Qe1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="g98T11@Qe1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Market_Segment_Name))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="g98U11@Qe1" name="LOOKUP" type="attribute"/>
+        <Node id="g98V11@Qe1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "MICL_MATCH_2";]]></expr>
+        </Node>
+        <Node id="g98W11@Qe1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="g98X11@Qe1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="g98Y11@Qe1" name="ONLY" type="attribute"/>
+        <Node id="g98Z11@Qe1" name="PARENT_LINK" type="attribute"/>
+        <Node id="g98a11@Qe1" name="PUBLISH" type="attribute"/>
+        <Node id="g98b11@Qe1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="g98c11@Qe1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="g98d11@Qe1" name="TRANSLATE" type="attribute"/>
+        <Node id="g98e11@Qe1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="g98f11@Qe1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="g98g11@Qe1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "MKISMarketIssueClassification";]]></expr>
+        </Node>
+        <Node id="g98h11@Qe1" name="IndustryClassification" type="segment">
+          <Node id="g98i11@Qe1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="g98j11@Qe1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "CLSF_OID";]]></expr>
+          </Node>
+          <Node id="g98k11@Qe1" name="MATCH" type="attribute"/>
+          <Node id="g98l11@Qe1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="g98m11@Qe1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("4|CONCTNS|NESTED|CLSFSETMNEM|LSESEGMENT|CLVALUE|",
+		Strcat(Market_Segment_Name, "|DATASRCID|RFTDSP"));]]></expr>
+          </Node>
+          <Node id="g98n11@Qe1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IndustryClassification";]]></expr>
+          </Node>
+          <Node id="g98o11@Qe1" name="CLVALUE" type="element">
+            <Node id="g98p11@Qe1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (IsFieldDeleted(Market_Segment_Name))
+	return Market_Segment_Name__Previous;
+else
+	return Market_Segment_Name;]]></expr>
+            </Node>
+          </Node>
+          <Node id="g98q11@Qe1" name="INDUSCLSETID" type="element">
+            <Node id="g98r11@Qe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "LSESEGMENT";]]></expr>
+            </Node>
+          </Node>
+          <Node id="g98s11@Qe1" name="LEVELNUM" type="element">
+            <Node id="g98t11@Qe1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="g98u11@Qe1" name="TRANSLATE" type="attribute"/>
+            <Node id="g98v11@Qe1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="g98w11@Qe1" name="CLSETPURPTYP" type="element">
+          <Node id="g98x11@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98y11@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98z11@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98$11@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98%11@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98@11@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98&amp;11@Qe1" name="CLSFOID" type="element">
+          <Node id="g98*11@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98-11@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98.11@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98/11@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98(11@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98)11@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98~11@Qe1" name="CLSFPURPTYP" type="element">
+          <Node id="g98?11@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98&lt;11@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98&gt;11@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98021@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98121@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98221@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "INDCLASS";]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98321@Qe1" name="CLSFSETTBLTYP" type="element">
+          <Node id="g98421@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98521@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98621@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98721@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98821@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98921@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98A21@Qe1" name="CLVALUE" type="element">
+          <Node id="g98B21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98C21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98D21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98E21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98F21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98G21@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Market_Segment_Name))
+	return Market_Segment_Name__Previous;
+else
+	return Market_Segment_Name;]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98H21@Qe1" name="DATAREDISTRIBUTORID" type="element">
+          <Node id="g98I21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98J21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98K21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98L21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98M21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98N21@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98O21@Qe1" name="DATASRCID" type="element">
+          <Node id="g98P21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98Q21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98R21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98S21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98T21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98U21@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98V21@Qe1" name="DATASTATTYP" type="element">
+          <Node id="g98W21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98X21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98Y21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98Z21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98a21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98b21@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98c21@Qe1" name="EINCOID" type="element">
+          <Node id="g98d21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98e21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98f21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98g21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98h21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98i21@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98j21@Qe1" name="ENDTMS" type="element">
+          <Node id="g98k21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98l21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98m21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98n21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98o21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98p21@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Market_Segment_Name))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98q21@Qe1" name="INDUSCLSETID" type="element">
+          <Node id="g98r21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98s21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98t21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98u21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98v21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98w21@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "LSESEGMENT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98x21@Qe1" name="LASTCHGTMS" type="element">
+          <Node id="g98y21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98z21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98$21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98%21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98@21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98&amp;21@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98*21@Qe1" name="LASTCHGUSRID" type="element">
+          <Node id="g98-21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98.21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98/21@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98(21@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98)21@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98~21@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98?21@Qe1" name="MICLOID" type="element">
+          <Node id="g98&lt;21@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98&gt;21@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98031@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98131@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98231@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98331@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98431@Qe1" name="MKTISSCLSFDESC" type="element">
+          <Node id="g98531@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98631@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98731@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98831@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98931@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98A31@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98B31@Qe1" name="MKTISSOID" type="element">
+          <Node id="g98C31@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98D31@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98E31@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98F31@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98G31@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98H31@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98I31@Qe1" name="NLSCDE" type="element">
+          <Node id="g98J31@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98K31@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98L31@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98M31@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98N31@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98O31@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98P31@Qe1" name="ORIGDATAPROVID" type="element">
+          <Node id="g98Q31@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98R31@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98S31@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98T31@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98U31@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98V31@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98W31@Qe1" name="STARTTMS" type="element">
+          <Node id="g98X31@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98Y31@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98Z31@Qe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="g98a31@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98b31@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98c31@Qe1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="g98d31@Qe1" name="STATICGRPNME" type="element">
+          <Node id="g98e31@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98f31@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98g31@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98h31@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98i31@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98j31@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98k31@Qe1" name="SUBMKTGRPCLSFOID" type="element">
+          <Node id="g98l31@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98m31@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98n31@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98o31@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98p31@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98q31@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98r31@Qe1" name="SUBMKTGRPCLVALUE" type="element">
+          <Node id="g98s31@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98t31@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98u31@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98v31@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98w31@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98x31@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="g98y31@Qe1" name="SUBMKTGRPINCSID" type="element">
+          <Node id="g98z31@Qe1" name="DEFAULT" type="attribute"/>
+          <Node id="g98$31@Qe1" name="ERR_LVL" type="attribute"/>
+          <Node id="g98%31@Qe1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="g98@31@Qe1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="g98&amp;31@Qe1" name="TRANSLATE" type="attribute"/>
+          <Node id="g98*31@Qe1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

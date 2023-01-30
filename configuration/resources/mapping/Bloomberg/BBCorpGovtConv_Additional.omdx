@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OMDX" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-09-08 at 06:08:04 BRT</Option>
+    <Option key="MappingDesignerVersion">8.8.1.08</Option>
+    <Option key="OMDX.Base">BBCorpGovtConv_Additional.mdx</Option>
+  </Options>
+  <Input vendorType="BB_BULK">
+    <Options/>
+    <Layout>
+      <Override>
+        <record ignore="1" ignoreFieldValue="" path="FLT_CPN_HIST"/>
+        <record ignore="1" ignoreFieldValue="" path="CALL_SCHEDULE"/>
+        <record ignore="1" ignoreFieldValue="" path="MULTI_CPN_SCHEDULE"/>
+        <record ignore="1" ignoreFieldValue="" path="PUT_SCHEDULE"/>
+        <record ignore="1" ignoreFieldValue="" path="SINK_SCHEDULE"/>
+      </Override>
+    </Layout>
+  </Input>
+  <Output>
+    <MappingFragments/>
+    <OutputDef/>
+  </Output>
+  <Translation/>
+  <Expressions/>
+</MappingDef>

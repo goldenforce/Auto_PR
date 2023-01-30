@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="geetanjali.rajadhyaksha@point72.com" entityName="Warrants" entitySubType="[RIGHTS-Rights]" id="/?4341IRG1" isDefault="Y" isPublic="Y" screenType="SYSTEMFORM" title="F: Rights-NS3">
+  <control caption="Rights" columns="2" fullQualPath="" hideDetail="N" id="LD5/C1IRG1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+    <config>{"CAPTION_OVERRIDE":[{"LABEL":"Tab Sheet 11"}],"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Listings" columns="2" fullQualPath="" hideDetail="N" id="LD5(C1IRG1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5/C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Country&amp;apos;s Primary Exchange" columns="4" fullQualPath="Warrants.CountrysPrimaryExchange" hideDetail="N" id="LD5)C1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="10" parentId="LD5(C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="MIC Code" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountryPrimaryExchange.FinancialMarket.MarketDetails.MICCode" hideDetail="N" id="LD5~C1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Exchange Name" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountryPrimaryExchange.FinancialMarket.MarketDetails.MarketName" hideDetail="N" id="LD5?C1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geo ID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryGeographicUnitID" hideDetail="N" id="LD5&amp;lt;C1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="SEDOL" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountrySEDOL" hideDetail="N" id="LD5&amp;gt;C1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Security ID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72CountryPrimaryID" hideDetail="N" id="LD50D1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Listing Version Number" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryListingVersionNumber" hideDetail="N" id="LD51D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Position Flag" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72PositionFlag" hideDetail="N" id="LD52D1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="PointID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryPointID" hideDetail="N" id="LD53D1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="GS PositionID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryGSPositionID" hideDetail="N" id="LD54D1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Position ID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryPositionID" hideDetail="N" id="LD55D1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="RIC" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryRICP72" hideDetail="N" id="LD56D1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Consolidated RIC" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryConsolidatedRIC" hideDetail="N" id="LD57D1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Ticker" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryRefinitivTicker" hideDetail="N" id="LD58D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Ticker" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryTicker" hideDetail="N" id="LD59D1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Ticker Exchange Code" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryBBTickerExchangeCode" hideDetail="N" id="LD5AD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Trading Symbol" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryBBTradingSymbol" hideDetail="N" id="LD5BD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Global" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryBBGlobal" hideDetail="N" id="LD5CD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Unique" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryBBUnique" hideDetail="N" id="LD5DD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Barra ID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryBarra" hideDetail="N" id="LD5ED1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="18" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Compustat" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryCompustat" hideDetail="N" id="LD5FD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="IBES Ticker" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryIBESTKR" hideDetail="N" id="LD5GD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="StarMine" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryStarMine" hideDetail="N" id="LD5HD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="21" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="WorldScope WSID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryWorldScope" hideDetail="N" id="LD5ID1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="22" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="GV Underlying Position ID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryGVUNDL" hideDetail="N" id="LD5JD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="23" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Bloomberg Ticker" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72BBGTICK" hideDetail="N" id="LD5KD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="24" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Singapore Code" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountrySingapore" hideDetail="N" id="LD5LD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="25" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="PANO Risk Underlying" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryPANORISKPOSID" hideDetail="N" id="LD5MD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="26" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Trading Currency" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryTradingCurrency" hideDetail="N" id="LD5ND1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="27" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Round Lot Size" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryRoundLotSize" hideDetail="N" id="LD5OD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="28" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Days to Settlement" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryDaystoSettlement" hideDetail="N" id="LD5PD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="29" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Primary Trading Market" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryPrimaryTradingMarket" hideDetail="N" id="LD5QD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="30" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Trading Status" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryTradingStatus" hideDetail="N" id="LD5RD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="31" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Trading Floor Location" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryTradingFloorLocation" hideDetail="N" id="LD5SD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="32" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country&amp;apos;s Local Exchange" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange" hideDetail="N" id="LD5TD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="33" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <control caption="MIC Code" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.CountryLocalExchange.FinancialMarket.MarketDetails.MICCode" hideDetail="N" id="LD5UD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Exchange Name" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.CountryLocalExchange.FinancialMarket.MarketDetails.MarketName" hideDetail="N" id="LD5VD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Geographic Unit ID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalGeographicUnitID" hideDetail="N" id="LD5WD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Geographic Unit Type" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalGeographicUnitType" hideDetail="N" id="LD5XD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Local Listing ID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalP72InHouse" hideDetail="N" id="LD5YD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Listing Version Number" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalListingVersionNumber" hideDetail="N" id="LD5ZD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="SEDOL" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalSEDOL" hideDetail="N" id="LD5aD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="RIC" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalRIC" hideDetail="N" id="LD5bD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Consolidated RIC" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalConsolidatedRIC" hideDetail="N" id="LD5cD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Refinitiv Ticker" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalRefinitivTicker" hideDetail="N" id="LD5dD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Ticker" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalTicker" hideDetail="N" id="LD5eD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="BB Ticker Exchange Code" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalBBTickerExchangeCode" hideDetail="N" id="LD5fD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="BB Trading Symbol" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalBBTradingSymbol" hideDetail="N" id="LD5gD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="BB Global" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalBBGlobal" hideDetail="N" id="LD5hD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="BB Unique" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalBBUnique" hideDetail="N" id="LD5iD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Trading Currency" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalTradingCurrency" hideDetail="N" id="LD5jD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Round Lot Size" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalRoundLotSize" hideDetail="N" id="LD5kD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Primary Trading Market" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalPrimaryTradingMarket" hideDetail="N" id="LD5lD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Trading Status" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalTradingStatus" hideDetail="N" id="LD5mD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="18" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Days to Settlement" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalDaystoSettlement" hideDetail="N" id="LD5nD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Trading Floor Location" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalTradingFloorLocation" hideDetail="N" id="LD5oD1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="LD5TD1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="ICS Mapping" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryICSMAPPING" hideDetail="N" id="LD5pD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="34" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Ultimate Underlying Position ID" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryULTUNDLPOSID" hideDetail="N" id="LD5qD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="35" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 ADR Underlying Currency" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72ADRUnderlyingCurrency" hideDetail="N" id="LD5rD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="36" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="China Share Class" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72ChinaShareClass" hideDetail="N" id="LD5sD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="37" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Scaling Factor" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72ScalingFactor" hideDetail="N" id="LD5tD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="38" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Currency" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72Currency" hideDetail="N" id="LD5uD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="39" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Default Region" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72DefaultRegion" hideDetail="N" id="LD5vD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="40" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Exchange" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72Exchange" hideDetail="N" id="LD5wD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="41" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Pano Investment Category" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72PANOINCT" hideDetail="N" id="LD5xD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="42" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Is Listed" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72IsListed" hideDetail="N" id="LD5yD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="43" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Inactive Date" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryP72InactiveDate" hideDetail="N" id="LD5zD1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="44" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Processed When Distributed Flag Ind" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryProcessedWhenDistributedFlagInd" hideDetail="N" id="LD5$D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="45" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Processed When Issued Indicator" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryProcessedWhenIssuedIndicator" hideDetail="N" id="LD5%D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="46" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Official Place of Listing Indicator" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryOfficialPlaceofListingIndicator" hideDetail="N" id="LD5@D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="47" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Right Ratio" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryRightRatio" hideDetail="N" id="LD5&amp;amp;D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="48" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Right Adj Factor" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryRightAdjFactor" hideDetail="N" id="LD5*D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="49" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Exercise Date" columns="2" fullQualPath="Warrants.CountrysPrimaryExchange.MktLstCountryExerciseDate" hideDetail="N" id="LD5-D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="50" pageSize="0" parentId="LD5)C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"CAPTION_OVERRIDE":[{"LABEL":"Listed On"}],"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Security Main" columns="2" fullQualPath="" hideDetail="N" id="LD5.D1IRG1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5/C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Security Information" columns="4" fullQualPath="" hideDetail="N" id="LD5/D1IRG1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5.D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Instrument Name" columns="2" fullQualPath="Warrants.InstrumentDetails.PreferredInstrumentName" hideDetail="N" id="LD5(D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5/D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country Of Domicile" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.ISOGeographicDetails.CountryOfDomicile" hideDetail="N" id="LD5)D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5/D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Distribution Currency" columns="2" fullQualPath="Warrants.InstrumentDetails.DistributionCurrency" hideDetail="N" id="LD5~D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5/D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Par Value" columns="2" fullQualPath="Warrants.InstrumentDetails.ParValue" hideDetail="N" id="LD5?D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5/D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Instrument Type" columns="2" fullQualPath="Warrants.InstrumentDetails.InstrumentType" hideDetail="N" id="LD5&amp;lt;D1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5/D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"CAPTION_OVERRIDE":[{"LABEL":"Issuance Information"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Identifiers" columns="4" fullQualPath="" hideDetail="N" id="LD5&amp;gt;D1IRG1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5.D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="ISIN" columns="2" fullQualPath="Warrants.Identifiers.InstrumentLevelIdentifiers.ISIN" hideDetail="N" id="LD50E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5&amp;gt;D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Common Number" columns="2" fullQualPath="Warrants.Identifiers.InstrumentLevelIdentifiers.CommonNumber" hideDetail="N" id="LD51E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5&amp;gt;D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="CUSIP" columns="2" fullQualPath="Warrants.Identifiers.InstrumentLevelIdentifiers.CUSIP" hideDetail="N" id="LD52E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5&amp;gt;D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="CINS Code" columns="2" fullQualPath="Warrants.Identifiers.InstrumentLevelIdentifiers.CINSCode" hideDetail="N" id="LD53E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5&amp;gt;D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Asset Id" columns="2" fullQualPath="Warrants.Identifiers.InstrumentLevelIdentifiers.RefinitivAssetId" hideDetail="N" id="LD54E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5&amp;gt;D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"CAPTION_OVERRIDE":[{"LABEL":"Identifiers"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Instrument Type" columns="4" fullQualPath="" hideDetail="N" id="LD55E1IRG1" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5.D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="P72 Instrument Type 4" columns="2" fullQualPath="Warrants.InstrumentClassification.P72InsTypLevel4" hideDetail="N" id="LD56E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD55E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 3" columns="2" fullQualPath="Warrants.InstrumentClassification.p72InsTypLevel3" hideDetail="N" id="LD57E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD55E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 2" columns="2" fullQualPath="Warrants.InstrumentClassification.p72InsTypLevel2" hideDetail="N" id="LD58E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD55E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 1" columns="2" fullQualPath="Warrants.InstrumentClassification.P72InsTypLevel1" hideDetail="N" id="LD59E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD55E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Classification" columns="4" fullQualPath="" hideDetail="N" id="LD5AE1IRG1" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5.D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="BB Market Sector" columns="2" fullQualPath="Warrants.InstrumentClassification.BBMarketSector" hideDetail="N" id="LD5BE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Security Type" columns="2" fullQualPath="Warrants.InstrumentClassification.BBSectorType" hideDetail="N" id="LD5CE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Sub-Security Type" columns="2" fullQualPath="Warrants.InstrumentClassification.BBSubSectorType" hideDetail="N" id="LD5DE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="ISO CFI" columns="2" fullQualPath="Warrants.InstrumentClassification.ISOCFI" hideDetail="N" id="LD5EE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Pano Security Type" columns="2" fullQualPath="Warrants.InstrumentClassification.P72PanoSecurityType" hideDetail="N" id="LD5FE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geneva Asset Type" columns="2" fullQualPath="Warrants.InstrumentClassification.P72GenevaAssetType" hideDetail="N" id="LD5GE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geneva Investment Type" columns="2" fullQualPath="Warrants.InstrumentClassification.P72GenevaInvestmentType" hideDetail="N" id="LD5HE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geneva Print Group" columns="2" fullQualPath="Warrants.InstrumentClassification.P72GenevaPrintGroup" hideDetail="N" id="LD5IE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Underlying Risk Class" columns="2" fullQualPath="Warrants.InstrumentClassification.P72UnderlyingRiskClass" hideDetail="N" id="LD5JE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="LD5AE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"CAPTION_OVERRIDE":[{"LABEL":"Classification"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Issue Outstanding" columns="4" fullQualPath="" hideDetail="N" id="LD5KE1IRG1" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5.D1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Current Outstanding Shares" columns="2" fullQualPath="Warrants.PrimaryMarket.PrimaryMktOutstandingShares" hideDetail="N" id="LD5LE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5KE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Outstanding Shares Date" columns="2" fullQualPath="Warrants.PrimaryMarket.PrimaryMktOutstandingSharesDate" hideDetail="N" id="LD5ME1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5KE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Shares to ADR Ratio" columns="2" fullQualPath="Warrants.P72ADR.P72SharestoADRRatio" hideDetail="N" id="LD5NE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5KE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Underlying Ticker" columns="2" fullQualPath="Warrants.P72ADR.P72ADRUnderlyingTicker" hideDetail="N" id="LD5OE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5KE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="ADR Underlying Currency Code" columns="2" fullQualPath="Warrants.P72ADR.P72ADRUnderlyingCurrencyCode" hideDetail="N" id="LD5PE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5KE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"CAPTION_OVERRIDE":[{"LABEL":"Issuance"}],"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Issuer" columns="4" fullQualPath="" hideDetail="N" id="LD5QE1IRG1" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5/C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Entity Information" columns="4" fullQualPath="" hideDetail="N" id="LD5RE1IRG1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5QE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Issuer Long Name" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerInformation.IssuerName" hideDetail="N" id="LD5SE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5RE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Issuer - Institution Name" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRInstitutionName" hideDetail="N" id="LD5TE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5RE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Issuer - Institution Description" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRInstitutionDescription" hideDetail="N" id="LD5UE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5RE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Issuer - Institution Type" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRInstitutionType" hideDetail="N" id="LD5VE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5RE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Issuer Parent Company Name" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72IssuerParentCompanyName" hideDetail="N" id="LD5WE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5RE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Credit Risk Information" columns="4" fullQualPath="" hideDetail="N" id="LD5XE1IRG1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5QE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Country Of Incorporation" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.ISOGeographicDetails.CountryOfIncorporation" hideDetail="N" id="LD5YE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5XE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Issuer - Country Of Risk" columns="2" fullQualPath="Warrants.IssuerDetails.P72FINSCountryOfRisk" hideDetail="N" id="LD5ZE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5XE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Issuer - State Of Domicile" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRStateOfDomicile" hideDetail="N" id="LD5aE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5XE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Issuer - State Of Incorporation" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRStateOfIncorporation" hideDetail="N" id="LD5bE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5XE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Issuer Identifiers" columns="3" fullQualPath="" hideDetail="N" id="LD5cE1IRG1" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5QE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Legal Entity Identifier" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerIdentifiers.LegalEntityIdentifier" hideDetail="N" id="LD5dE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5cE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Company Identifier" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerIdentifiers.BBCompanyIdentifier" hideDetail="N" id="LD5eE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5cE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Global Company" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerIdentifiers.BBGlobalCompany" hideDetail="N" id="LD5fE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5cE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Industry Classifications" columns="4" fullQualPath="" hideDetail="N" id="LD5gE1IRG1" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5QE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="GICS Sector" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.GICSSector" hideDetail="N" id="LD5hE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="GICS Industry Group" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.GICSIndustryGroup" hideDetail="N" id="LD5iE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="GICS Industry" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.GICSIndustry" hideDetail="N" id="LD5jE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="GICS Sub Industry" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.GICSSubIndustry" hideDetail="N" id="LD5kE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BICS Level 1" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.BICSLevel1" hideDetail="N" id="LD5lE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BICS Level 2" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.BICSLevel2" hideDetail="N" id="LD5mE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BICS Level 3" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.BICSLevel3" hideDetail="N" id="LD5nE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="FTSE Issuer Classification" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.FTSEIssuerClassification" hideDetail="N" id="LD5oE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="SIC Code - Level 1" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.SICCodeLevel1" hideDetail="N" id="LD5pE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="SIC Code - Level 2" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.SICCodeLevel2" hideDetail="N" id="LD5qE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="SIC Code - Level 3" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.SICCodeLevel3" hideDetail="N" id="LD5rE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Primary Insurance NAICS" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.PrimaryInsuranceNAICS" hideDetail="N" id="LD5sE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="NAICS Code - Level 1" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel1" hideDetail="N" id="LD5tE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="NAICS Code - Level 2" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel2" hideDetail="N" id="LD5uE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="NAICS Code - Level 3" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel3" hideDetail="N" id="LD5vE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="NAICS Code - Level 4" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel4" hideDetail="N" id="LD5wE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="NAICS Code - Level 5" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel5" hideDetail="N" id="LD5xE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Internal Classification" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivInternalClassification" hideDetail="N" id="LD5yE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Industry Code" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivIndustryCode" hideDetail="N" id="LD5zE1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="18" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Industry Sector Code" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivIndustrySectorCode" hideDetail="N" id="LD5$E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Industry Sub-Sector" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivIndustrySubSector" hideDetail="N" id="LD5%E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Business Classification Code" columns="2" fullQualPath="Warrants.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivBusinessClassificationCode" hideDetail="N" id="LD5@E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="21" pageSize="0" parentId="LD5gE1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Related Instrument" columns="3" fullQualPath="Warrants.RelatedInstrument" hideDetail="N" id="LD5&amp;amp;E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="5" parentId="LD5/C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Relationship Type" columns="2" fullQualPath="Warrants.RelatedInstrument.RelationshipType" hideDetail="N" id="LD5*E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5&amp;amp;E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Underlying Currency Code" columns="2" fullQualPath="Warrants.RelatedInstrument.UnderlyingCurrencyCode" hideDetail="N" id="LD5-E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5&amp;amp;E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Related Instrument Details" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails" hideDetail="N" id="LD5.E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5&amp;amp;E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Instrument Name" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingFI.Base.InstrumentDetails.PreferredInstrumentName" hideDetail="N" id="LD5/E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Company Security" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingFI.Base.Identifiers.InstrumentLevelIdentifiers.BBCompanySecurityInstrumentLevel" hideDetail="N" id="LD5(E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Relationship Type" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.RelationshipRoleType" hideDetail="N" id="LD5)E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Ticker" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingFI.Base.Identifiers.InstrumentLevelIdentifiers.BBTickerInstrumentLevel" hideDetail="N" id="LD5~E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Unit Type" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.RelatedInstrumentUnitType" hideDetail="N" id="LD5?E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Unique" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingFI.Base.Identifiers.InstrumentLevelIdentifiers.BBUniqueIDInstrumentLevel" hideDetail="N" id="LD5&amp;lt;E1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Actual Shares Outstanding" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingFI.Base.InstrumentCapitalization.ActualSharesOutstanding" hideDetail="N" id="LD5&amp;gt;E1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Parent Instrument Name" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingCountryPrimaryForWarrant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryPrefInstrumentName" hideDetail="N" id="LD50F1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country Primary Market MIC" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingCountryPrimaryForWarrant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryMarketMIC" hideDetail="N" id="LD51F1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country Primary Trading Currency" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingCountryPrimaryForWarrant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryTradingCurrency" hideDetail="N" id="LD52F1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country Primary RIC" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingCountryPrimaryForWarrant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryRIC" hideDetail="N" id="LD53F1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country Primary SEDOL" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingCountryPrimaryForWarrant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimarySEDOL" hideDetail="N" id="LD54F1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country Primary Ticker" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingCountryPrimaryForWarrant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryTicker" hideDetail="N" id="LD55F1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Outstanding Shares" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingCountryPrimaryForWarrant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryOutstandingShares" hideDetail="N" id="LD56F1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Outstanding Shares Date" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentDetails.UnderlyingCountryPrimaryForWarrant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryOutstandingSharesDate" hideDetail="N" id="LD57F1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="LD5.E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Related Instruments Statistics" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentsStatistics" hideDetail="N" id="LD58F1IRG1" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5&amp;amp;E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+        <control caption="Shares Per Depository Receipt" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentsStatistics.SharesPerDepositoryReceipt" hideDetail="N" id="LD59F1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD58F1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Depository Receipt Per Share" columns="2" fullQualPath="Warrants.RelatedInstrument.RelatedInstrumentsStatistics.DepositoryReceiptPerShare" hideDetail="N" id="LD5AF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD58F1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Underlying Instrument Type" columns="2" fullQualPath="Warrants.RelatedInstrument.UnderlyingInstrumentType" hideDetail="N" id="LD5BF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5&amp;amp;E1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Entitlement Information" columns="3" fullQualPath="Warrants.EntitlementInformation" hideDetail="N" id="LD5CF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="10" parentId="LD5/C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Entitlement Type" columns="2" fullQualPath="Warrants.EntitlementInformation.EntitlementType" hideDetail="N" id="LD5DF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Exercise Type" columns="2" fullQualPath="Warrants.EntitlementInformation.ExerciseType" hideDetail="N" id="LD5EF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Exercise Date" columns="2" fullQualPath="Warrants.EntitlementInformation.ExerciseDate" hideDetail="N" id="LD5FF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Expiration Date" columns="2" fullQualPath="Warrants.EntitlementInformation.ExpirationDate" hideDetail="N" id="LD5GF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Exercise Currency" columns="2" fullQualPath="Warrants.EntitlementInformation.ExerciseCurrency" hideDetail="N" id="LD5HF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Strike Price" columns="2" fullQualPath="Warrants.EntitlementInformation.StrikePrice" hideDetail="N" id="LD5IF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Put Or Call Indicator" columns="2" fullQualPath="Warrants.EntitlementInformation.PutOrCallIndicator" hideDetail="N" id="LD5JF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Entitlement Start Time" columns="2" fullQualPath="Warrants.EntitlementInformation.EntitlementStartTime" hideDetail="N" id="LD5KF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Rights Issue Date" columns="2" fullQualPath="Warrants.EntitlementInformation.RightsIssueDateTime" hideDetail="N" id="LD5LF1IRG1" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="LD5CF1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="SOI" columns="2" fullQualPath="Warrants.InstrumentAsAParticipant" hideDetail="N" id="LD5MF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="10" parentId="LD5/C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="Y" showDetailOnTop="Y" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Exceptions" columns="3" fullQualPath="Warrants.Exceptions" hideDetail="N" id="LD5NF1IRG1" isColumnInTable="N" labelName="" lazyInd="D" orderNum="6" pageSize="10" parentId="LD5/C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="Y" showDetailOnTop="Y" showOneBelowAnother="N" type="LIST">
+      <buttons>
+        <button caption="Resubmit" id="LD5OF1IRG1">
+          <property name="Shared User" value=""/>
+          <property name="Current User" value="Logged in User"/>
+          <property name="Event Name" value="My Event"/>
+          <property name="Shared Group" value=""/>
+          <property name="Event Type" value="GenericEvent"/>
+          <property name="Shared Role" value=""/>
+          <property name="Type" value="event"/>
+        </button>
+        <button caption="Close" id="LD5WF1IRG1">
+          <property name="Shared Role" value=""/>
+          <property name="Type" value="event"/>
+          <property name="Shared User" value=""/>
+          <property name="Shared Group" value=""/>
+          <property name="Event Type" value="GenericEvent"/>
+          <property name="Event Name" value="My Event"/>
+          <property name="Current User" value="Logged in User"/>
+        </button>
+      </buttons>
+      <control caption="Details" columns="3" fullQualPath="Warrants.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.Details" hideDetail="N" id="LD5eF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="LD5NF1IRG1" relatedPath="Warrants.Exceptions.ExceptionOnInstr" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Latest Notification DateTime" columns="3" fullQualPath="Warrants.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.LatestNotificationDate" hideDetail="N" id="LD5fF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="LD5NF1IRG1" relatedPath="Warrants.Exceptions.ExceptionOnInstr" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Message Type" columns="3" fullQualPath="Warrants.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.MessageType" hideDetail="N" id="LD5gF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="LD5NF1IRG1" relatedPath="Warrants.Exceptions.ExceptionOnInstr" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Notification Creation DateTime" columns="3" fullQualPath="Warrants.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.NotificationCreationDate" hideDetail="N" id="LD5hF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="LD5NF1IRG1" relatedPath="Warrants.Exceptions.ExceptionOnInstr" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Notification Occurrence Count" columns="3" fullQualPath="Warrants.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.NotificationOccurrenceCount" hideDetail="N" id="LD5iF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="LD5NF1IRG1" relatedPath="Warrants.Exceptions.ExceptionOnInstr" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Source Id" columns="3" fullQualPath="Warrants.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.SourceId" hideDetail="N" id="LD5jF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="LD5NF1IRG1" relatedPath="Warrants.Exceptions.ExceptionOnInstr" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Notification Status" columns="3" fullQualPath="Warrants.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.NotificationStatus" hideDetail="N" id="LD5kF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="LD5NF1IRG1" relatedPath="Warrants.Exceptions.ExceptionOnInstr" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Exception Sub-Type" columns="3" fullQualPath="Warrants.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.ExceptionSubType" hideDetail="N" id="LD5lF1IRG1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="LD5NF1IRG1" relatedPath="Warrants.Exceptions.ExceptionOnInstr" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Corporate Actions" columns="3" fullQualPath="Warrants.UnderlyingCorporateActions" hideDetail="N" id="LD5mF1IRG1" isColumnInTable="N" labelName="" lazyInd="D" orderNum="7" pageSize="0" parentId="LD5/C1IRG1" relatedPath="" screenId="/?4341IRG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+</root>

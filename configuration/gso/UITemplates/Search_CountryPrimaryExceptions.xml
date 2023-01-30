@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root baseLookup="Exception" createdUser="nitin.bangar@point72.com" freezeColumns="" id="H(6d012J81" isDefault="N" isPublic="N" lookupId="InstrumentException" pageSize="50" screenType="SYSTEMSRCH" title="Country Primary Exceptions">
+  <buttons>
+    <button buttonName="Repair">
+      <params>
+        <param paramName="Current User" paramValue="Logged in User"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+        <param paramName="Event Name" paramValue="RepairExceptions"/>
+      </params>
+    </button>
+    <button buttonName="Resubmit">
+      <params>
+        <param paramName="Event Name" paramValue="ResubmitExceptions"/>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+        <param paramName="Current User" paramValue="LoggedinUser"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+      </params>
+    </button>
+    <button buttonName="Close">
+      <params>
+        <param paramName="Current User" paramValue="Logged in User"/>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+        <param paramName="Event Name" paramValue="CloseExceptions"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+      </params>
+    </button>
+    <button buttonName="Re-Assign">
+      <params>
+        <param paramName="Event Name" paramValue="ReassignExceptions"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+        <param paramName="Assign" paramValue="true"/>
+        <param paramName="Current User" paramValue="Logged in User"/>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+      </params>
+    </button>
+    <button buttonName="Ignore">
+      <params>
+        <param paramName="Current User" paramValue="Logged in User"/>
+        <param paramName="Type" paramValue="event"/>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+        <param paramName="Event Name" paramValue="CloseExceptions"/>
+        <param paramName="Status" paramValue="IGNORE"/>
+      </params>
+    </button>
+  </buttons>
+  <columns>
+    <column caption="" columnName="Exception Sub-Type" fieldName="InstrumentException.ExceptionDetail.ExceptionSubType" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Hc4C31ko81" isRange="N" mobileTemplate="" operator="" orderNum="0" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Instrument Name" fieldName="InstrumentException.InstrumentDetails.ExceptionOnInstrument.Base.InstrumentDetails.PreferredInstrumentName" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Hc4D31ko81" isRange="N" mobileTemplate="" operator="" orderNum="1" showRelLink="TRUE" sort="" toRange="" width="235"/>
+    <column caption="" columnName="ISIN" fieldName="InstrumentException.InstrumentDetails.ExceptionOnInstrument.Base.Identifiers.InstrumentLevelIdentifiers.ISIN" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Hc4F31ko81" isRange="N" mobileTemplate="" operator="" orderNum="2" showRelLink="" sort="" toRange="" width="99"/>
+    <column caption="" columnName="P72 Instrument Type 4" fieldName="InstrumentException.InstrumentDetails.ExceptionOnInstrument.Base.InstrumentClassification.P72InsTypLevel4" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Hc4G31ko81" isRange="N" mobileTemplate="" operator="" orderNum="3" showRelLink="" sort="" toRange="" width="174"/>
+    <column caption="" columnName="Details" fieldName="InstrumentException.ExceptionDetail.Details" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Hc4H31ko81" isRange="N" mobileTemplate="" operator="" orderNum="4" showRelLink="" sort="" toRange="" width="718"/>
+    <column caption="" columnName="Latest Notification DateTime" fieldName="InstrumentException.ExceptionDetail.LatestNotificationDate" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="-0d" id="Hc4I31ko81" isRange="N" mobileTemplate="" operator="" orderNum="5" showRelLink="" sort="" toRange="+0d" width="100"/>
+  </columns>
+</root>

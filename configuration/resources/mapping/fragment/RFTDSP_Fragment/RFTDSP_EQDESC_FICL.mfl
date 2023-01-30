@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">8.99.6.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2021-08-17 at 02:06:22 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.2.02</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="GICS_Industry_Code_Previous" id="VZ5811y6W1" name="FinancialInstitutionClassification" type="segment">
+        <condition id="VZ5D11y6W1"><![CDATA[if ((OneHasValue(GICS_Industry_Code)) ||((IsFieldDeleted(GICS_Industry_Code) && Strcmp(GICS_Industry_Code__Change_Flag, "Y")) && OneHasValue(GICS_Industry_Code__Previous)))
+	return "FinancialInstitutionClassification";
+else
+	return "";]]></condition>
+        <Node id="VZ5E11y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(GICS_Industry_Code))
+		return "UPDATE";
+else
+		return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5F11y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "FinancialInstitutionClassification";]]></expr>
+        </Node>
+        <Node id="VZ5G11y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "FICL_MATCH_SET";]]></expr>
+        </Node>
+        <Node id="VZ5H11y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(GICS_Industry_Code))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5I11y6W1" name="IndustryClassification" type="segment">
+          <Node id="VZ5J11y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ5K11y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IndustryClassification";]]></expr>
+          </Node>
+          <Node id="VZ5L11y6W1" name="COPY_FROM" type="attribute"/>
+          <Node id="VZ5M11y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "CLSF_OID";]]></expr>
+          </Node>
+          <Node id="VZ5N11y6W1" name="MATCH" type="attribute"/>
+          <Node id="VZ5O11y6W1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="VZ5P11y6W1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(GICS_Industry_Code))
+	return Strcat("4|CONCTNS|NESTED|CLSFSETMNEM|GICS|CLVALUE|", Strcat(GICS_Industry_Code, "|DATASRCID|RFTDSP"));
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="VZ5Q11y6W1" name="CLVALUE" type="element">
+            <Node id="VZ5R11y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(GICS_Industry_Code))
+	return GICS_Industry_Code;
+else
+	return GICS_Industry_Code__Previous;]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5S11y6W1" name="INDUSCLSETID" type="element">
+            <Node id="VZ5T11y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "GICS";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5U11y6W1" name="LEVELNUM" type="element">
+            <Node id="VZ5V11y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "4";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="VZ5W11y6W1" name="CLSFPURPTYP" type="element">
+          <Node id="VZ5X11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "SUBIND";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5Y11y6W1" name="CLVALUE" type="element">
+          <Node id="VZ5Z11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(GICS_Industry_Code))
+	return GICS_Industry_Code;
+else
+	return GICS_Industry_Code__Previous;]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5a11y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5b11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5c11y6W1" name="INDUSCLSETID" type="element">
+          <Node id="VZ5d11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "GICS";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5e11y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5f11y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="VZ5g11y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ5h11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5i11y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5j11y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(GICS_Industry_Code))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="SICC_Sector_Code_Previous" id="VZ5C11y6W1" name="FinancialInstitutionClassification" type="segment">
+        <condition id="VZ5321y6W1"><![CDATA[if ((OneHasValue(SICC_Sector_Code)) ||((IsFieldDeleted(SICC_Sector_Code) && Strcmp(SICC_Sector_Code__Change_Flag, "Y")) && OneHasValue(SICC_Sector_Code__Previous)))
+	return "FinancialInstitutionClassification";
+else
+	return "";]]></condition>
+        <Node id="VZ5421y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(SICC_Sector_Code))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5521y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "FinancialInstitutionClassification";]]></expr>
+        </Node>
+        <Node id="VZ5621y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "FICL_MATCH_SET";]]></expr>
+        </Node>
+        <Node id="VZ5721y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[	
+if (IsFieldDeleted(SICC_Sector_Code))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5821y6W1" name="IndustryClassification" type="segment">
+          <Node id="VZ5921y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ5A21y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IndustryClassification";]]></expr>
+          </Node>
+          <Node id="VZ5B21y6W1" name="COPY_FROM" type="attribute"/>
+          <Node id="VZ5C21y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "CLSF_OID";]]></expr>
+          </Node>
+          <Node id="VZ5D21y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "INCL_VALUE";]]></expr>
+          </Node>
+          <Node id="VZ5E21y6W1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="VZ5F21y6W1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(SICC_Sector_Code))
+	return Strcat("4|CONCTNS|NESTED|CLSFSETMNEM|SICC|CLVALUE|", Strcat(SICC_Sector_Code, "|DATASRCID|RFTDSP"));
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="VZ5G21y6W1" name="CLVALUE" type="element">
+            <Node id="VZ5H21y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[ if (OneHasValue(SICC_Sector_Code))
+	return SICC_Sector_Code;
+else
+	return SICC_Sector_Code__Previous;]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5I21y6W1" name="INDUSCLSETID" type="element">
+            <Node id="VZ5J21y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "SICC";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5K21y6W1" name="LEVELNUM" type="element">
+            <Node id="VZ5L21y6W1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="VZ5M21y6W1" name="CLSFPURPTYP" type="element">
+          <Node id="VZ5N21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "INDCLASS";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5O21y6W1" name="CLVALUE" type="element">
+          <Node id="VZ5P21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[ if (OneHasValue(SICC_Sector_Code))
+	return SICC_Sector_Code;
+else
+	return SICC_Sector_Code__Previous;]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5Q21y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5R21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5S21y6W1" name="INDUSCLSETID" type="element">
+          <Node id="VZ5T21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "SICC";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5U21y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5V21y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="VZ5W21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ5X21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5Y21y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5Z21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(SICC_Sector_Code))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

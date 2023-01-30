@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" displayCaption="User Comments" entityTypeId="++3qwBhS2etxm101" id="008v4a00hG53K1B9" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72UserComments" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Event Summary" displayCaption="Event Summary" entityTypeId="++3qwBhS2etxm101" frequencyInd="0" id="CADG020000000000" multiplicity="SINGLE" name="EventSummary" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="008v4a00hG53K1B9" id="008v4a00hG53K1BB" prntReqdInd="0" seq="91"/>
+    </dataGroup>
+  </dataGroups>
+  <occurrences>
+    <occurrence desc="Occurrence for Issue Action Comment" id="008v4a00hG53K1B3" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="P72_IACM_P72USRCMNTS" nameSpace="POINT72" parentId="CAOCDF0000IADC01" table="FT_T_IACM" timeSeries="LOGICAL_DELETE">
+      <field desc="Comment Short Text" id="008v4a00hG53K1B5" name="CMNT_SHORT_TXT" nameSpace="POINT72"/>
+      <value id="008v4a00hG53K1B8" name="CMNT_REAS_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="P72USRCMNTS" valueType="CONSTANT"/>
+      <value id="008v4a00hG53K1B7" name="CMNT_TMS" nameSpace="POINT72" type="DEFAULT_FIELD" value="CURRENT_DATE" valueType="CONTEXT_VALUE"/>
+      <value id="008vLMn0hG6SS000" name="LN_NUM" nameSpace="POINT72" type="DEFAULT_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008v4a00hG53K1B6" name="NLS_CDE" nameSpace="POINT72" type="DEFAULT_FIELD" value="ENGLISH" valueType="CONSTANT"/>
+      <option id="008v4a00hG53K1B4" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="008v4a00hG53K1B9" groupMapping="0" id="008v4a00hG53K1BA" nameSpace="POINT72" occFieldId="008v4a00hG53K1B5"/>
+  </mappings>
+</entities>

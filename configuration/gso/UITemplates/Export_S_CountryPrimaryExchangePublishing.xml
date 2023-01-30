@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="shrikant.rangsubhe@point72.com" entityName="Equity" entitySubType="[]" id="Tl5cE1A$01" isDefault="N" isPublic="Y" screenType="SYSTEMGRID" title="S: CountryPrimaryExchangePublishing">
+  <control caption="Summary" fullQualPath="" id="Tl5eE1A$01" lazyInd="N" orderNum="0" parentId="" relatedPath="" screenId="Tl5cE1A$01" show="Y">
+    <control caption="" fullQualPath="Equity.InstrumentDetails.Issuer" id="Tl5xE1A$01" lazyInd="N" orderNum="0" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentDetails.PreferredInstrumentName" id="Tl5zE1A$01" lazyInd="N" orderNum="1" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentDetails.PreferredInstrumentDescription" id="Tl5%E1A$01" lazyInd="N" orderNum="2" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentDetails.PreferredIdentifierType" id="Tl5&amp;amp;E1A$01" lazyInd="N" orderNum="3" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentDetails.PreferredIdentifierValue" id="Tl5-E1A$01" lazyInd="N" orderNum="4" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentDetails.InstrumentType" id="Tl5/E1A$01" lazyInd="N" orderNum="5" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentDetails.ParValue" id="Tl5)E1A$01" lazyInd="N" orderNum="6" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentDetails.UnitOfMeasure" id="Tl5?E1A$01" lazyInd="N" orderNum="7" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentDetails.InstrumentSystemStatus" id="Tl5&amp;gt;E1A$01" lazyInd="N" orderNum="8" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.ISIN" id="Tl53F1A$01" lazyInd="N" orderNum="9" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.CUSIP" id="Tl55F1A$01" lazyInd="N" orderNum="10" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.WertpapierNumber" id="Tl57F1A$01" lazyInd="N" orderNum="11" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.Valoren" id="Tl59F1A$01" lazyInd="N" orderNum="12" parentId="Tl5eE1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+  </control>
+  <control caption="Instrument Level Identifiers" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers" id="Tl5HF1A$01" lazyInd="N" orderNum="1" parentId="" relatedPath="" screenId="Tl5cE1A$01" show="Y">
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.RefinitivAssetId" id="/18841U-01" lazyInd="N" orderNum="0" parentId="Tl5HF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.BBCompanySecurityInstrumentLevel" id="/18F41U-01" lazyInd="N" orderNum="1" parentId="Tl5HF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.CommonNumber" id="/18J41U-01" lazyInd="N" orderNum="2" parentId="Tl5HF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.CUSIP" id="/18N41U-01" lazyInd="N" orderNum="3" parentId="Tl5HF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.ISIN" id="/18O41U-01" lazyInd="N" orderNum="4" parentId="Tl5HF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.CINSCode" id="/18o41U-01" lazyInd="N" orderNum="5" parentId="Tl5HF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+  </control>
+  <control caption="Description" fullQualPath="Equity.InstrumentDescription" id="Tl5JF1A$01" lazyInd="N" orderNum="2" parentId="" relatedPath="" screenId="Tl5cE1A$01" show="Y"/>
+  <control caption="Classification" fullQualPath="Equity.InstrumentClassification" id="Tl5LF1A$01" lazyInd="N" orderNum="3" parentId="" relatedPath="" screenId="Tl5cE1A$01" show="Y">
+    <control caption="" fullQualPath="Equity.InstrumentClassification.BICSLevelI" id="Tl5UF1A$01" lazyInd="N" orderNum="0" parentId="Tl5LF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentClassification.BICSLevelII" id="Tl5WF1A$01" lazyInd="N" orderNum="1" parentId="Tl5LF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentClassification.BICSLevelIII" id="Tl5YF1A$01" lazyInd="N" orderNum="2" parentId="Tl5LF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentClassification.BBMarketSector" id="Tl5aF1A$01" lazyInd="N" orderNum="3" parentId="Tl5LF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentClassification.BBSubSectorType" id="Tl5cF1A$01" lazyInd="N" orderNum="4" parentId="Tl5LF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentClassification.BBISOCountryofIssue" id="Tl5eF1A$01" lazyInd="N" orderNum="5" parentId="Tl5LF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentClassification.ISOCFI" id="Tl5gF1A$01" lazyInd="N" orderNum="6" parentId="Tl5LF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+  </control>
+  <control caption="Capitalization" fullQualPath="Equity.InstrumentCapitalization" id="Tl5iF1A$01" lazyInd="N" orderNum="4" parentId="" relatedPath="" screenId="Tl5cE1A$01" show="Y">
+    <control caption="" fullQualPath="Equity.InstrumentCapitalization.CapitalType" id="Tl5oF1A$01" lazyInd="N" orderNum="0" parentId="Tl5iF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentCapitalization.CapitalEffectiveDate" id="Tl5qF1A$01" lazyInd="N" orderNum="1" parentId="Tl5iF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentCapitalization.ActualSharesOutstanding" id="Tl5sF1A$01" lazyInd="N" orderNum="2" parentId="Tl5iF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+    <control caption="" fullQualPath="Equity.InstrumentCapitalization.MarketCapitalization" id="Tl5uF1A$01" lazyInd="N" orderNum="3" parentId="Tl5iF1A$01" relatedPath="" screenType="Tl5cE1A$01" show="Y"/>
+  </control>
+  <control caption="Initial Offer Details" fullQualPath="Equity.InitialOfferDetails" id="JR6c01A$01" lazyInd="N" orderNum="6" parentId="" relatedPath="" screenId="Tl5cE1A$01" show="Y"/>
+  <control caption="Last Offer Details" fullQualPath="Equity.LastOfferDetails" id="JR6e01A$01" lazyInd="N" orderNum="7" parentId="" relatedPath="" screenId="Tl5cE1A$01" show="Y"/>
+  <control caption="" fullQualPath="Equity.CountrysPrimaryExchange" id="JR6g01A$01" lazyInd="N" orderNum="8" parentId="" relatedPath="" screenId="Tl5cE1A$01" show="Y"/>
+</root>

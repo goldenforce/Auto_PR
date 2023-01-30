@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-12-02 at 10:19:36 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="VZ5F01y6W1" name="FinancialInstitutionDescription" type="segment">
+        <condition id="VZ5K01y6W1"><![CDATA[if (OneHasValue(Issuer_Name,Company_Short_Name,Issuer_OrgID))
+	return "FinancialInstitutionDescription";
+else
+	return "";]]></condition>
+        <Node id="VZ5L01y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5M01y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "FinancialInstitutionDescription";]]></expr>
+        </Node>
+        <Node id="VZ5N01y6W1" name="DATASRCID" type="element">
+          <Node id="VZ5O01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5P01y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5Q01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5R01y6W1" name="DESCUSAGETYP" type="element">
+          <Node id="VZ5S01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5T01y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5U01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5V01y6W1" name="FIDEOID" type="element">
+          <Node id="VZ5W01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5X01y6W1" name="FIIDOID" type="element">
+          <Node id="VZ5Y01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5Z01y6W1" name="INSTDESC" type="element">
+          <Node id="VZ5a01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+          <Node id="v67I11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name,Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5b01y6W1" name="INSTLEGALNME" type="element">
+          <Node id="VZ5c01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5d01y6W1" name="INSTMNEM" type="element">
+          <Node id="VZ5e01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5f01y6W1" name="INSTNME" type="element">
+          <Node id="VZ5g01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+          <Node id="v67H11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name,Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5h01y6W1" name="LASTCHGTMS" type="element">
+          <Node id="VZ5i01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5j01y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="VZ5k01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5l01y6W1" name="NLSCDE" type="element">
+          <Node id="VZ5m01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5n01y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5o01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+          <Node id="k19s31mIW1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="Issuer_OrgID" id="VZ5H01y6W1" name="FinancialInstitutionIdentifier" type="segment">
+        <condition id="VZ5p01y6W1"><![CDATA[if (OneHasValue(Issuer_OrgID))
+	return "FinancialInstitutionIdentifier";
+else
+	return "";]]></condition>
+        <Node id="VZ5q01y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5r01y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "FinancialInstitutionIdentifier";]]></expr>
+        </Node>
+        <Node id="VZ5s01y6W1" name="ERROR" type="attribute"/>
+        <Node id="VZ5t01y6W1" name="MATCH" type="attribute"/>
+        <Node id="VZ5u01y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5v01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5w01y6W1" name="FINSID" type="element">
+          <Node id="VZ5x01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Issuer_OrgID;]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5y01y6W1" name="FINSIDCTXTTYP" type="element">
+          <Node id="VZ5z01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "RTORGLID";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5$01y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5%01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");
+]]></expr>
+          </Node>
+          <Node id="VZ5@01y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5&amp;01y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5*01y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node displayName=" Reuters_Editorial_RIC" id="VZ5J01y6W1" name="FinancialInstitutionIdentifier" type="segment">
+        <condition id="VZ5-01y6W1"><![CDATA[if ((OneHasValue(Reuters_Editorial_RIC))||((IsFieldDeleted(Reuters_Editorial_RIC) && Strcmp(Reuters_Editorial_RIC__Change_Flag, "Y")) && OneHasValue(Reuters_Editorial_RIC__Previous)))
+	return "FinancialInstitutionIdentifier";
+else
+	return "";]]></condition>
+        <Node id="VZ5.01y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Reuters_Editorial_RIC))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5/01y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "FinancialInstitutionIdentifier";]]></expr>
+        </Node>
+        <Node id="VZ5(01y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Reuters_Editorial_RIC))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5)01y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[ return "FIID_MATCH_2";]]></expr>
+        </Node>
+        <Node id="VZ5~01y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5?01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5&lt;01y6W1" name="FINSID" type="element">
+          <Node id="VZ5&gt;01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Reuters_Editorial_RIC))
+	return Reuters_Editorial_RIC;
+else 
+	return Reuters_Editorial_RIC__Previous;
+]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5011y6W1" name="FINSIDCTXTTYP" type="element">
+          <Node id="VZ5111y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "EDITRIC";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5211y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5311y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[	return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");
+]]></expr>
+          </Node>
+          <Node id="VZ5411y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5511y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5611y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Reuters_Editorial_RIC))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

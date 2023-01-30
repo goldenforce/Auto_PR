@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-04-12 at 02:32:50 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.28</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Asset_Category" id="3T6z81y6W1" name="IssueClassification" type="segment">
+        <condition id="3T6$81y6W1"><![CDATA[if ((OneHasValue(Asset_Category))||((IsFieldDeleted(Asset_Category) && Strcmp(Asset_Category__Change_Flag, "Y")) && OneHasValue(Asset_Category__Previous)))
+	return "IssueClassification";
+else
+	return "";]]></condition>
+        <Node id="3T6%81y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Asset_Category))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="3T6@81y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="3T6&amp;81y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="3T6*81y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="3T6-81y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="3T6.81y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="3T6/81y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Asset_Category))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="3T6(81y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="3T6)81y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "ISCL_MATCH_SET_PURP";]]></expr>
+        </Node>
+        <Node id="3T6~81y6W1" name="ONLY" type="attribute"/>
+        <Node id="3T6?81y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="3T6&lt;81y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="3T6&gt;81y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="3T6091y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="3T6191y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="3T6291y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="3T6391y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueClassification";]]></expr>
+        </Node>
+        <Node id="3T6491y6W1" name="IndustryClassification" type="segment">
+          <Node id="3T6591y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="3T6691y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "CLSF_OID";]]></expr>
+          </Node>
+          <Node id="3T6791y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "INCL_VALUE";]]></expr>
+          </Node>
+          <Node id="3T6891y6W1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="3T6991y6W1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Asset_Category))
+	return Strcat("4|CONCTNS|NESTED|CLSFSETMNEM|ASSETCAT|CLVALUE|", Strcat(Asset_Category, "|DATASRCID|RFTDSP"));
+else
+	return "";
+]]></expr>
+          </Node>
+          <Node id="3T6A91y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IndustryClassification";]]></expr>
+          </Node>
+          <Node id="3T6B91y6W1" name="CLVALUE" type="element">
+            <Node id="3T6C91y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (IsFieldDeleted(Asset_Category))
+	return Asset_Category__Previous;
+else
+	return Asset_Category;]]></expr>
+            </Node>
+          </Node>
+          <Node id="3T6D91y6W1" name="INDUSCLSETID" type="element">
+            <Node id="3T6E91y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ASSETCAT";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="3T6F91y6W1" name="CLSFPURPTYP" type="element">
+          <Node id="3T6G91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6H91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6I91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "INDCLASS";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6J91y6W1" name="ENDTMS" type="element">
+          <Node id="3T6K91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Asset_Category))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6L91y6W1" name="CLSFSETMNEM" type="element">
+          <Node id="3T6M91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6N91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6O91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T6P91y6W1" name="CLVALUE" type="element">
+          <Node id="3T6Q91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6R91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6S91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Asset_Category))
+	return Asset_Category__Previous;
+else
+	return Asset_Category;]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6T91y6W1" name="DATASTATTYP" type="element">
+          <Node id="3T6U91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6V91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6W91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6X91y6W1" name="INDUSCLSETID" type="element">
+          <Node id="3T6Y91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6Z91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6a91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ASSETCAT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6b91y6W1" name="STARTTMS" type="element">
+          <Node id="3T6c91y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="3T6d91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6e91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="Refinitiv_Classification_Scheme" id="3T6g91y6W1" name="IssueClassification" type="segment">
+        <condition id="3T6h91y6W1"><![CDATA[if ((OneHasValue(Refinitiv_Classification_Scheme))||((IsFieldDeleted(Refinitiv_Classification_Scheme) && Strcmp(Refinitiv_Classification_Scheme__Change_Flag, "Y")) && OneHasValue(Refinitiv_Classification_Scheme__Previous)))
+	return "IssueClassification";
+else
+	return "";]]></condition>
+        <Node id="3T6i91y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Refinitiv_Classification_Scheme))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="3T6j91y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="3T6k91y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="3T6l91y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="3T6m91y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="3T6n91y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="3T6o91y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Refinitiv_Classification_Scheme))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="3T6p91y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="3T6q91y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "ISCL_MATCH_SET_PURP";]]></expr>
+        </Node>
+        <Node id="3T6r91y6W1" name="ONLY" type="attribute"/>
+        <Node id="3T6s91y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="3T6t91y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="3T6u91y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="3T6v91y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="3T6w91y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="3T6x91y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="3T6y91y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueClassification";]]></expr>
+        </Node>
+        <Node id="3T6z91y6W1" name="IndustryClassification" type="segment">
+          <Node id="3T6$91y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="3T6%91y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "CLSF_OID";]]></expr>
+          </Node>
+          <Node id="3T6@91y6W1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "INCL_VALUE";]]></expr>
+          </Node>
+          <Node id="3T6&amp;91y6W1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="3T6*91y6W1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Refinitiv_Classification_Scheme))
+	return Strcat("4|CONCTNS|NESTED|CLSFSETMNEM|ASSETCLS|CLVALUE|", Strcat(Refinitiv_Classification_Scheme, "|DATASRCID|RFTDSP"));
+else
+	return "";
+		
+]]></expr>
+          </Node>
+          <Node id="3T6-91y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IndustryClassification";]]></expr>
+          </Node>
+          <Node id="3T6.91y6W1" name="INDUSCLSETID" type="element">
+            <Node id="3T6/91y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ASSETCLS";]]></expr>
+            </Node>
+          </Node>
+          <Node id="3T6(91y6W1" name="CLVALUE" type="element">
+            <Node id="3T6)91y6W1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="3T6~91y6W1" name="TRANSLATE" type="attribute"/>
+            <Node id="3T6?91y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (IsFieldDeleted(Refinitiv_Classification_Scheme))
+	return Refinitiv_Classification_Scheme__Previous;
+else
+	return Refinitiv_Classification_Scheme;]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="3T6&lt;91y6W1" name="CLSFPURPTYP" type="element">
+          <Node id="3T6&gt;91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T60A1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T61A1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "INDCLASS";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T62A1y6W1" name="CLSFSETMNEM" type="element">
+          <Node id="3T63A1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T64A1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T65A1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="3T66A1y6W1" name="CLVALUE" type="element">
+          <Node id="3T67A1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T68A1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T69A1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Refinitiv_Classification_Scheme))
+	return Refinitiv_Classification_Scheme__Previous;
+else
+	return Refinitiv_Classification_Scheme;]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6AA1y6W1" name="DATASTATTYP" type="element">
+          <Node id="3T6BA1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6CA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6DA1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6EA1y6W1" name="INDUSCLSETID" type="element">
+          <Node id="3T6FA1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="3T6GA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6HA1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ASSETCLS";]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6IA1y6W1" name="STARTTMS" type="element">
+          <Node id="3T6JA1y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="3T6KA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="3T6LA1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="3T6MA1y6W1" name="ENDTMS" type="element">
+          <Node id="3T6NA1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Refinitiv_Classification_Scheme))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

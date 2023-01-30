@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="vinod.narwani@point72.com" entityName="BasicCorporateAction" entitySubType="[]" id="-N9I21$wG1" isDefault="Y" isPublic="Y" screenType="SYSTEMFORM" title="F: BasicCorporateActionForm_NS1">
+  <control caption="Underlying Security Information" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation" hideDetail="N" id="@ks5s&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Instrument Type" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAInstrument.FullInstrument.InstrumentDetails.InstrumentType" hideDetail="N" id="@ksFs&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@ks5s&amp;gt;c6O1" relatedPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAInstrument" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Instrument Name" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAInstrument.FullInstrument.InstrumentDetails.PreferredInstrumentName" hideDetail="N" id="@ksHs&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="@ks5s&amp;gt;c6O1" relatedPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAInstrument" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Preferred Instrument Identifier Type" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAInstrument.FullInstrument.InstrumentDetails.PreferredIdentifierType" hideDetail="N" id="@ksJs&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="@ks5s&amp;gt;c6O1" relatedPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAInstrument" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Preferred Instrument Identifier" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAInstrument.FullInstrument.InstrumentDetails.PreferredIdentifierValue" hideDetail="N" id="@ksLs&amp;gt;c6O1" isColumnInTable="N" labelName="Issuer Details" lazyInd="N" orderNum="3" pageSize="0" parentId="@ks5s&amp;gt;c6O1" relatedPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAInstrument" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Type" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAIssuer.Issuer.IssuerInformation.IssuerType" hideDetail="N" id="@ksNs&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="@ks5s&amp;gt;c6O1" relatedPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAIssuer" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Issuer Long Name" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAIssuer.Issuer.IssuerInformation.IssuerName" hideDetail="N" id="@ksPs&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="@ks5s&amp;gt;c6O1" relatedPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAIssuer" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Preferred Issuer Identifier" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAIssuer.Issuer.IssuerInformation.PreferredIssuerIdentifier" hideDetail="N" id="@ksRs&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="@ks5s&amp;gt;c6O1" relatedPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAIssuer" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Preferred Issuer Identifier Type" columns="2" fullQualPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAIssuer.Issuer.IssuerInformation.PreferredIssuerIdentifierType" hideDetail="N" id="@ksTs&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="@ks5s&amp;gt;c6O1" relatedPath="BasicCorporateAction.UnderlyingSecurityInformation.UnderlyingCAIssuer" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+  <control caption="Summary" columns="2" fullQualPath="" hideDetail="N" id="@ksVs&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Event Summary" columns="3" fullQualPath="BasicCorporateAction.EventSummary" hideDetail="N" id="@ksvs&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@ksVs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <control caption="Mandatory Voluntary Event Indicator" columns="3" fullQualPath="BasicCorporateAction.EventSummary.MandatoryVoluntaryEventIndicator" hideDetail="N" id="@ks5t&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Corporate Action Type" columns="3" fullQualPath="BasicCorporateAction.EventSummary.CorporateActionType" hideDetail="N" id="@ks7t&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Announcement Date" columns="3" fullQualPath="BasicCorporateAction.EventSummary.AnnouncementDate" hideDetail="N" id="@ks9t&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Processing Status Type" columns="3" fullQualPath="BasicCorporateAction.EventSummary.ProcessingStatusType" hideDetail="N" id="@ksBt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Consolidated Status" columns="3" fullQualPath="BasicCorporateAction.EventSummary.ConsolidatedStatus" hideDetail="N" id="@ksDt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Ex Date" columns="3" fullQualPath="BasicCorporateAction.EventSummary.ExDate" hideDetail="N" id="@ksFt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Sources" columns="3" fullQualPath="BasicCorporateAction.EventSummary.Sources" hideDetail="N" id="@ksHt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Source Status" columns="3" fullQualPath="BasicCorporateAction.EventSummary.SourceStatus" hideDetail="N" id="@ksJt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Record Date" columns="3" fullQualPath="BasicCorporateAction.EventSummary.RecordDate" hideDetail="N" id="@ksLt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Internal Corporate Action Identifier" columns="3" fullQualPath="BasicCorporateAction.EventSummary.GSInternalCorporateActionIdentifier" hideDetail="N" id="@ksNt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Internal Processing Status" columns="3" fullQualPath="BasicCorporateAction.EventSummary.InternalProcessingStatus" hideDetail="N" id="@ksPt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Effective Date" columns="3" fullQualPath="BasicCorporateAction.EventSummary.EffectiveDate" hideDetail="N" id="@ksRt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="End Date" columns="3" fullQualPath="BasicCorporateAction.EventSummary.EndDate" hideDetail="N" id="@ksTt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Merger Acquisition Deal Type" columns="2" fullQualPath="BasicCorporateAction.EventSummary.MergerAcquisitionDealType" hideDetail="N" id="@ksVt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="BB Security Type" columns="2" fullQualPath="BasicCorporateAction.EventSummary.BBSecurityType" hideDetail="N" id="@ksXt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="IPO Status" columns="2" fullQualPath="BasicCorporateAction.EventSummary.P72CAIPOStatus" hideDetail="N" id="@ksZt&amp;gt;c6O1" isColumnInTable="N" labelName="Underlying Info" lazyInd="N" orderNum="15" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Bloomberg Global ID" columns="2" fullQualPath="BasicCorporateAction.EventSummary.P72BloombergGlobalID" hideDetail="N" id="@ksbt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Bloomberg Unique ID" columns="2" fullQualPath="BasicCorporateAction.EventSummary.P72BloombergUniqueID" hideDetail="N" id="@ksdt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Company Name" columns="2" fullQualPath="BasicCorporateAction.EventSummary.P72CompanyName" hideDetail="N" id="@ksft&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="18" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Currency" columns="2" fullQualPath="BasicCorporateAction.EventSummary.P72Currency" hideDetail="N" id="@ksht&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Security Identifier" columns="2" fullQualPath="BasicCorporateAction.EventSummary.P72SecurityIdentifier" hideDetail="N" id="@ksjt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Security Identifier Type" columns="2" fullQualPath="BasicCorporateAction.EventSummary.P72SecurityIdentifierType" hideDetail="N" id="@kslt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="21" pageSize="0" parentId="@ksvs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Last Changed Details" columns="2" fullQualPath="BasicCorporateAction.CALastChangedDetails" hideDetail="N" id="@ksnt&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="@ksVs&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+  <control caption="Market" columns="2" fullQualPath="" hideDetail="N" id="@kspt&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Market Name" columns="2" fullQualPath="BasicCorporateAction.EventSummary.CABaseMarketDetails.FinancialMarket.MarketDetails.MarketName" hideDetail="N" id="@kstt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@kspt&amp;gt;c6O1" relatedPath="BasicCorporateAction.EventSummary.CABaseMarketDetails" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="MIC Code" columns="2" fullQualPath="BasicCorporateAction.EventSummary.CABaseMarketDetails.FinancialMarket.MarketDetails.MICCode" hideDetail="N" id="@ksvt&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="@kspt&amp;gt;c6O1" relatedPath="BasicCorporateAction.EventSummary.CABaseMarketDetails" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+  <control caption="Details" columns="2" fullQualPath="" hideDetail="N" id="@ksxt&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Identifiers" columns="2" fullQualPath="" hideDetail="N" id="@ksgu&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@ksxt&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Identifiers" columns="2" fullQualPath="" hideDetail="N" id="@ksmu&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@ksgu&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+        <control caption="Corporate Action Identifiers By DataSource" columns="2" fullQualPath="BasicCorporateAction.CorporateActionIdentifiers.CorporateActionIdentifiersByDS" hideDetail="N" id="@ksru&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@ksmu&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Official Corporate Action Identifiers By DataSource" columns="2" fullQualPath="BasicCorporateAction.CorporateActionIdentifiers.OfficialCorporateActionIdentifiersByDS" hideDetail="N" id="@kstu&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="@ksmu&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Generic Identifiers" columns="2" fullQualPath="BasicCorporateAction.CorporateActionIdentifiers.GenericCorporateActionIdentifiers" hideDetail="N" id="@ksvu&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="@ksmu&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Comments" columns="2" fullQualPath="" hideDetail="N" id="@ksxu&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="@ksxt&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Comments" columns="2" fullQualPath="" hideDetail="N" id="@ks2v&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@ksxu&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+        <control caption="Additional Text" columns="3" fullQualPath="BasicCorporateAction.AdditionalText" hideDetail="N" id="@ksKv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Additional Text (564)" columns="3" fullQualPath="BasicCorporateAction.AdditionalText564" hideDetail="N" id="@ksMv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Additional Text (568)" columns="3" fullQualPath="BasicCorporateAction.AdditionalText568" hideDetail="N" id="@ksOv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Basket or Index Information" columns="3" fullQualPath="BasicCorporateAction.BasketorIndexInformation" hideDetail="N" id="@ksQv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Declaration Details" columns="3" fullQualPath="BasicCorporateAction.DeclarationDetails" hideDetail="N" id="@ksSv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Disclaimer" columns="3" fullQualPath="BasicCorporateAction.Disclaimer" hideDetail="N" id="@ksUv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Information Conditions (564)" columns="3" fullQualPath="BasicCorporateAction.InformationConditions564" hideDetail="N" id="@ksWv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Information Conditions (568)" columns="3" fullQualPath="BasicCorporateAction.InformationConditions568" hideDetail="N" id="@ksYv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Information to be Complied With (564)" columns="3" fullQualPath="BasicCorporateAction.InformationtobeCompliedWith564" hideDetail="N" id="@ksav&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Information to be Complied With (568)" columns="3" fullQualPath="BasicCorporateAction.InformationtobeCompliedWith568" hideDetail="N" id="@kscv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Narrative Version" columns="3" fullQualPath="BasicCorporateAction.NarrativeVersion" hideDetail="N" id="@ksev&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Party Contact Narrative" columns="3" fullQualPath="BasicCorporateAction.PartyContactNarrative" hideDetail="N" id="@ksgv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Registration Details" columns="3" fullQualPath="BasicCorporateAction.RegistrationDetails" hideDetail="N" id="@ksiv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Taxation Conditions" columns="3" fullQualPath="BasicCorporateAction.TaxationConditions" hideDetail="N" id="@kskv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Terms" columns="3" fullQualPath="BasicCorporateAction.Terms" hideDetail="N" id="@ksmv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Website URL" columns="3" fullQualPath="BasicCorporateAction.WebbSiteAddress" hideDetail="N" id="@ksov&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="@ks2v&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Vendor Messages" columns="2" fullQualPath="BasicCorporateAction.VendorMessages" hideDetail="N" id="@ksqv&amp;gt;c6O1" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="5" parentId="@ksxt&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Contextual/Additional User Actions" columns="1" fullQualPath="" hideDetail="N" id="@kssv&amp;gt;c6O1" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="@ksxt&amp;gt;c6O1" relatedPath="" screenId="-N9I21$wG1" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+      <buttons>
+        <button caption="Generate Cancel Message" id="@kstv&gt;c6O1">
+          <property name="Cancellation Type" value="CC"/>
+          <property name="Event Type" value="GenericEvent"/>
+          <property name="Event Name" value="Cancel/Withdrawl at CA Level"/>
+          <property name="Current User" value="Logged in User"/>
+          <property name="Issue Action Identifier" value="ENT_OID"/>
+        </button>
+        <button caption="Generate Withdrawal Message" id="@kszv&gt;c6O1">
+          <property name="Event Type" value="GenericEvent"/>
+          <property name="Cancellation Type" value="W"/>
+          <property name="Current User" value="Logged in User"/>
+          <property name="Issue Action Identifier" value="ENT_OID"/>
+          <property name="Event Name" value="Cancel/Withdrawl at CA Level"/>
+        </button>
+        <button caption="Deactivate Discrete Schedules" id="@ks6w&gt;c6O1">
+          <property name="Issue Action ID" value="ENT_OID"/>
+          <property name="Event Type" value="GenericEvent"/>
+          <property name="Current User" value="Logged in User"/>
+          <property name="Event Name" value="Discrete Schedules DeActivation"/>
+        </button>
+        <button caption="Create Discrete Schedule" id="@ks-v&gt;c6O1">
+          <property name="Current User" value="Logged in User"/>
+          <property name="Issue Action ID" value="ENT_OID"/>
+          <property name="Event Name" value="Wrapper for Discrete Schedule Creation"/>
+          <property name="Event Type" value="GenericEvent"/>
+        </button>
+        <button caption="Release Message On Hold" id="@ks1w&gt;c6O1">
+          <property name="Current User" value="Logged in User"/>
+          <property name="Event Name" value="Release Hold Message"/>
+          <property name="Event Type" value="GenericEvent"/>
+          <property name="Corporate Action ID" value="ENT_OID"/>
+        </button>
+        <button caption="Delete Message On Hold" id="@ks~v&gt;c6O1">
+          <property name="Current User" value="Logged in User"/>
+          <property name="Corporate Action ID" value="ENT_OID"/>
+          <property name="Event Name" value="Delete Hold Message"/>
+          <property name="Event Type" value="GenericEvent"/>
+        </button>
+      </buttons>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+</root>

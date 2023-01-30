@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-09-18 at 11:03:58 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Warrants.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="$xEhE1eQW1" name="IssueStatistic" type="segment">
+        <condition id="$xEiE1eQW1"><![CDATA[if ((!StrStr(RIC, "^") && (OneHasValue(Exchange_Code))) && ((OneHasValue(Warrant_Underlying_RIC))||((IsFieldDeleted(Warrant_Underlying_RIC) && Strcmp(Warrant_Underlying_RIC__Change_Flag, "Y")) && OneHasValue(Warrant_Underlying_RIC__Previous))) )
+	return "IssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="$xEjE1eQW1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="$xEkE1eQW1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueStatistic";]]></expr>
+        </Node>
+        <Node id="$xElE1eQW1" name="COPY_FROM" type="attribute"/>
+        <Node id="$xEmE1eQW1" name="COPY_TO" type="attribute"/>
+        <Node id="$xEnE1eQW1" name="DUP_CHECK" type="attribute"/>
+        <Node id="$xEoE1eQW1" name="ENDDATEIND" type="attribute"/>
+        <Node id="$xEpE1eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="$xEqE1eQW1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="$xErE1eQW1" name="LOOKUP" type="attribute"/>
+        <Node id="$xEsE1eQW1" name="MATCH" type="attribute"/>
+        <Node id="$xEtE1eQW1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="$xEuE1eQW1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="$xEvE1eQW1" name="ONLY" type="attribute"/>
+        <Node id="$xEwE1eQW1" name="PARENT_LINK" type="attribute"/>
+        <Node id="$xExE1eQW1" name="PUBLISH" type="attribute"/>
+        <Node id="$xEyE1eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="$xEzE1eQW1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="$xE$E1eQW1" name="TRANSLATE" type="attribute"/>
+        <Node id="$xE%E1eQW1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="$xE@E1eQW1" name="TSOPTION" type="attribute"/>
+        <Node id="$xE&amp;E1eQW1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="$xE*E1eQW1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="$xE-E1eQW1" name="DATAREDISTRIBUTORID" type="element">
+          <Node id="$xE.E1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE/E1eQW1" name="DATASRCID" type="element">
+          <Node id="$xE(E1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE)E1eQW1" name="DATASTATTYP" type="element">
+          <Node id="$xE~E1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xE?E1eQW1" name="DENOMCURRCDE" type="element">
+          <Node id="$xE&lt;E1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE&gt;E1eQW1" name="ENDTMS" type="element">
+          <Node id="$xE0F1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xE1F1eQW1" name="INSTRID" type="element">
+          <Node id="$xE2F1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE3F1eQW1" name="LASTCHGTMS" type="element">
+          <Node id="$xE4F1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE5F1eQW1" name="LASTCHGUSRID" type="element">
+          <Node id="$xE6F1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE7F1eQW1" name="ORIGDATAPROVID" type="element">
+          <Node id="$xE8F1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE9F1eQW1" name="STARTTMS" type="element">
+          <Node id="$xEAF1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+          <Node id="$xEBF1eQW1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xECF1eQW1" name="STATCHARVALTXT" type="element">
+          <Node id="$xEDF1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Warrant_Underlying_RIC))
+	return Warrant_Underlying_RIC;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEEF1eQW1" name="STATDEFID" type="element">
+          <Node id="$xEFF1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "UNDLYRIC";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEGF1eQW1" name="STATID" type="element">
+          <Node id="$xEHF1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEIF1eQW1" name="STATINTVALNUM" type="element">
+          <Node id="$xEJF1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEKF1eQW1" name="STATVALCAMT" type="element">
+          <Node id="$xELF1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEMF1eQW1" name="STATVALDTE" type="element">
+          <Node id="$xENF1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEOF1eQW1" name="STATVALTMS" type="element">
+          <Node id="$xEPF1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

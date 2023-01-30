@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-12-02 at 11:15:52 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Mutual_Funds.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="VZ5201y6W1" name="FinancialInstitution" type="segment">
+        <Node id="VZ5301y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[
+if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "YES"))
+	return "UNKNOWN";
+else if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO"))
+	return "REFERENCE";
+else if (!OneHasValue(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive")))
+	return "REFERENCE";
+else if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"),
+		"NO_SILENT"))
+	return "REFERENCE";
+else if (!OneOf(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "YES", "NO",
+		"NO_SILENT"))
+	return ThrowMapError(
+			Strcat(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"),
+					Strcat("--",
+							"Wrong value in Config_Option file against CreateNewIssuer. It is other than permitted value YES, NO, No value and NO_SILENT used in Config_option file.")),
+			"");
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5401y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "FinancialInstitution";]]></expr>
+        </Node>
+        <Node id="VZ5501y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO_SILENT"))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5601y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5701y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5801y6W1" name="GOVTAGENCYFILINGIND" type="element">
+          <Node id="VZ5901y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5A01y6W1" name="INSTDESC" type="element">
+          <Node id="v67J11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name, Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="VZ5B01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5C01y6W1" name="INSTNME" type="element">
+          <Node id="v67K11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name, Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="VZ5D01y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

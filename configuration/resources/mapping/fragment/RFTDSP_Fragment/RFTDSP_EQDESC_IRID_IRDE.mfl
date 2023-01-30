@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-01-13 at 02:20:49 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.27</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="VZ5P41y6W1" name="ISSRIssuerDescription" type="segment">
+        <condition id="VZ5a41y6W1"><![CDATA[if (OneHasValue(Issuer_Name,Company_Short_Name,Issuer_OrgID))
+	return "ISSRIssuerDescription";
+else
+	return "";]]></condition>
+        <Node id="VZ5b41y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5c41y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "ISSRIssuerDescription";]]></expr>
+        </Node>
+        <Node id="VZ5d41y6W1" name="DATASRCID" type="element">
+          <Node id="VZ5e41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5f41y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5g41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5h41y6W1" name="DESCUSAGETYP" type="element">
+          <Node id="VZ5i41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5j41y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5k41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5l41y6W1" name="INSTRISSRID" type="element">
+          <Node id="VZ5m41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5n41y6W1" name="IRDEOID" type="element">
+          <Node id="VZ5o41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5p41y6W1" name="IRIDOID" type="element">
+          <Node id="VZ5q41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5r41y6W1" name="ISSRDESC" type="element">
+          <Node id="VZ5s41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+          <Node id="v67J11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name, Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5t41y6W1" name="ISSRNME" type="element">
+          <Node id="VZ5u41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+          <Node id="v67K11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name, Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5v41y6W1" name="LASTCHGTMS" type="element">
+          <Node id="VZ5w41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5x41y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="VZ5y41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5z41y6W1" name="NLSCDE" type="element">
+          <Node id="VZ5$41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5%41y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5@41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+          <Node id="k19/41mIW1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="Issuer_OrgID" id="VZ5R41y6W1" name="IssuerIdentifier" type="segment">
+        <condition id="VZ5&amp;41y6W1"><![CDATA[ if (OneHasValue(Issuer_OrgID))
+ 	return "IssuerIdentifier";
+else
+	return "";]]></condition>
+        <Node id="VZ5*41y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5-41y6W1" name="ERROR" type="attribute"/>
+        <Node id="VZ5.41y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+        </Node>
+        <Node id="JDD$01W9W1" name="MATCH" type="attribute"/>
+        <Node id="VZ5/41y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5(41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5)41y6W1" name="INSTSYMBOLSTATTYP" type="element">
+          <Node id="VZ5~41y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5?41y6W1" name="ISSRID" type="element">
+          <Node id="VZ5&lt;41y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Issuer_OrgID;]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5&gt;41y6W1" name="ISSRIDCTXTTYP" type="element">
+          <Node id="VZ5051y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "RTORGLID";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5151y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5251y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5351y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5451y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[	return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");
+]]></expr>
+          </Node>
+          <Node id="VZ5551y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="CUSIP" id="VZ5T41y6W1" name="IssuerIdentifier" type="segment">
+        <condition id="VZ5651y6W1"><![CDATA[if ((OneHasValue(CUSIP))||((IsFieldDeleted(CUSIP) && Strcmp(CUSIP__Change_Flag, "Y")) && OneHasValue(CUSIP__Previous)))
+	if (Strcmp(Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive"), "ON"))
+		return "IssuerIdentifier";
+	else if (Strcmp(Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive"), "OFF"))
+		return "";
+	else if (!OneHasValue(Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive")))
+		return "";
+	else if (!OneOf("OFF", Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive"),
+			"ON"))
+		return ThrowMapError(
+				Strcat(Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive"),
+						Strcat("--",
+								"Wrong value in Config_Option file against CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive. It is other than permitted value ON, OFF and No value used in Config_option file.")),
+				"");
+	else
+		return "";
+else
+	return "";]]></condition>
+        <Node id="VZ5751y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[ if (IsFieldDeleted(CUSIP))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5851y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[
+if (IsFieldDeleted(CUSIP))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5951y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+        </Node>
+        <Node id="JDD%01W9W1" name="MATCH" type="attribute">
+          <expr><![CDATA[ if (IsFieldDeleted(CUSIP))
+	return "IRID1_IDCTXT_ISSR_ID";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5A51y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5B51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5C51y6W1" name="INSTSYMBOLSTATTYP" type="element">
+          <Node id="VZ5D51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5E51y6W1" name="ISSRID" type="element">
+          <Node id="VZ5F51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[ if (IsFieldDeleted(CUSIP))
+	return StrRightCut(CUSIP__Previous, 6);
+else
+	return StrRightCut(CUSIP, 6);
+]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5G51y6W1" name="ISSRIDCTXTTYP" type="element">
+          <Node id="VZ5H51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CUSIP_ISSR_ID_CTXT_TYP", "Derived_CUSIP-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive"), "CUSIP"))
+	return "CUSIP";
+else if (OneHasValue(Translate(Config_Options, true, "CUSIP_ISSR_ID_CTXT_TYP", "Derived_CUSIP-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive")))
+	return Translate(Config_Options, true, "CUSIP_ISSR_ID_CTXT_TYP", "Derived_CUSIP-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive");
+else if (!OneHasValue(Translate(Config_Options, true, "CUSIP_ISSR_ID_CTXT_TYP", "Derived_CUSIP-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive")))
+	return ThrowMapError(Strcat(Translate(Config_Options, true, "CUSIP_ISSR_ID_CTXT_TYP", "Derived_CUSIP-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive"), Strcat("--", "There is no value specified in Config_Option file against parameter Derived_CUSIP-6_CTXT_Reuters_DataScope_Plus. Please specify a valid supported value to set up 6 digit Issuer CUSIP")), "");
+else
+	return "";
+]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5I51y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5J51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(CUSIP))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5K51y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5L51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[	return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");
+]]></expr>
+          </Node>
+          <Node id="VZ5M51y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="CINS" id="VZ5V41y6W1" name="IssuerIdentifier" type="segment">
+        <condition id="VZ5N51y6W1"><![CDATA[if ((OneHasValue(CIN_Code))||((IsFieldDeleted(CIN_Code) && Strcmp(CIN_Code__Change_Flag, "Y")) && OneHasValue(CIN_Code__Previous)))
+	if (Strcmp(Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive"), "ON"))
+		return "IssuerIdentifier";
+	else if (Strcmp(Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive"), "OFF"))
+		return "";
+	else if (!OneHasValue(Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive")))
+		return "";
+	else if (!OneOf("OFF", Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive"),
+			"ON"))
+		return ThrowMapError(
+				Strcat(Translate(Config_Options, true, "CUSIP_Derivation", "CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive"),
+						Strcat("--",
+								"Wrong value in Config_Option file against CUSIP-6_Refinitiv_DataScope_Plus_EQ_Descriptive. It is other than permitted value ON, OFF and No value used in Config_option file.")),
+				"");
+	else
+		return "";
+else
+	return "";]]></condition>
+        <Node id="VZ5O51y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[ if (IsFieldDeleted(CIN_Code))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5P51y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(CIN_Code))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5Q51y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[ if (IsFieldDeleted(CIN_Code))
+	return "IRID1_IDCTXT_ISSR_ID";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5R51y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+        </Node>
+        <Node id="VZ5S51y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5T51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5U51y6W1" name="INSTSYMBOLSTATTYP" type="element">
+          <Node id="VZ5V51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5W51y6W1" name="ISSRID" type="element">
+          <Node id="VZ5X51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(CIN_Code))
+	return StrRightCut(CIN_Code__Previous, 6);
+else
+	return StrRightCut(CIN_Code, 6);]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5Y51y6W1" name="ISSRIDCTXTTYP" type="element">
+          <Node id="VZ5Z51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CINS_ISSR_ID_CTXT_TYP", "Derived_CINS-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive"), "CINS"))
+	return "CINS";
+else if (OneHasValue(Translate(Config_Options, true, "CINS_ISSR_ID_CTXT_TYP", "Derived_CINS-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive")))
+	return Translate(Config_Options, true, "CINS_ISSR_ID_CTXT_TYP", "Derived_CINS-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive");
+else if (!OneHasValue(Translate(Config_Options, true, "CINS_ISSR_ID_CTXT_TYP", "Derived_CINS-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive")))
+	return ThrowMapError(Strcat(Translate(Config_Options, true, "CINS_ISSR_ID_CTXT_TYP", "Derived_CINS-6_CTXT_Refinitiv_DataScope_Plus_EQ_Descriptive"), Strcat("--", "There is no value specified in Config_Option file against parameter Derived_CINS-6_CTXT_Reuters_DataScope_Plus. Please specify a valid supported value to set up 6 digit Issuer CINS")), "");
+else
+	return "";
+]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5a51y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5b51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[ if (IsFieldDeleted(CIN_Code))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5c51y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5d51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");
+]]></expr>
+          </Node>
+          <Node id="VZ5e51y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="FinsburyCompanyCode" id="VZ5X41y6W1" name="IssuerIdentifier" type="segment">
+        <condition id="VZ5f51y6W1"><![CDATA[if ((OneHasValue(Finsbury_Company_Code))||((IsFieldDeleted(Finsbury_Company_Code) && Strcmp(Finsbury_Company_Code__Change_Flag, "Y")) && OneHasValue(Finsbury_Company_Code__Previous)))
+	return "IssuerIdentifier";
+else
+	return "";]]></condition>
+        <Node id="VZ5g51y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Finsbury_Company_Code))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5h51y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+        </Node>
+        <Node id="VZ5i51y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Finsbury_Company_Code))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5j51y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Finsbury_Company_Code))
+	return "IRID1_IDCTXT_ISSR_ID";
+else
+	return "IRID_MATCH_1";]]></expr>
+        </Node>
+        <Node id="VZ5k51y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5l51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5m51y6W1" name="INSTSYMBOLSTATTYP" type="element">
+          <Node id="VZ5n51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5o51y6W1" name="ISSRID" type="element">
+          <Node id="VZ5p51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Finsbury_Company_Code))
+	return Finsbury_Company_Code__Previous;
+else
+	return Finsbury_Company_Code;]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5q51y6W1" name="ISSRIDCTXTTYP" type="element">
+          <Node id="VZ5r51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[ return "RTFINBCDE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5s51y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5t51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Finsbury_Company_Code))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5u51y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5v51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[	return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");
+]]></expr>
+          </Node>
+          <Node id="VZ5w51y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+      <Node displayName="Reuters_Editorial_RIC" id="VZ5Z41y6W1" name="IssuerIdentifier" type="segment">
+        <condition id="VZ5x51y6W1"><![CDATA[if ((OneHasValue(Reuters_Editorial_RIC))||((IsFieldDeleted(Reuters_Editorial_RIC) && Strcmp(Reuters_Editorial_RIC__Change_Flag, "Y")) && OneHasValue(Reuters_Editorial_RIC__Previous)))
+	return "IssuerIdentifier";
+else
+	return "";]]></condition>
+        <Node id="VZ5y51y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Reuters_Editorial_RIC))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5z51y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Reuters_Editorial_RIC))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5$51y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "IRID_MATCH_1";]]></expr>
+        </Node>
+        <Node id="VZ5%51y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+        </Node>
+        <Node id="VZ5@51y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5&amp;51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5*51y6W1" name="INSTSYMBOLSTATTYP" type="element">
+          <Node id="VZ5-51y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5.51y6W1" name="ISSRID" type="element">
+          <Node id="VZ5/51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Reuters_Editorial_RIC))
+	return Reuters_Editorial_RIC__Previous;
+else
+	return Reuters_Editorial_RIC;]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5(51y6W1" name="ISSRIDCTXTTYP" type="element">
+          <Node id="VZ5)51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "EDITRIC";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5~51y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5?51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Reuters_Editorial_RIC))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5&lt;51y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5&gt;51y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[	return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");
+]]></expr>
+          </Node>
+          <Node id="VZ5061y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

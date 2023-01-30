@@ -1,0 +1,3 @@
+INSERT INTO ft_t_uimc (uimc_oid, tabs_nme, tabs_titl_txt, page_nme, page_titl_txt, bus_entity_nme, link_nme, tabs_desc, tabs_properties_clob, last_chg_tms, last_chg_usr_id, prnt_uimc_oid, config_typ, order_attr_num)
+select NEW_OID (), NULL, NULL, NULL, NULL, NULL, 'Country Primary', NULL, '{"HAS_EDIT_LINK":false,"HAS_NEW_LINK":false,"DESCRIPTION":"Point72 Country Primary Instruments","LOAD_RESULTS_ON_START":true,"BUSINESS_ENTITY":"CountryPrimaryPublish","PROMPT":"","SPLIT_SCREEN":"","SHOW_QUALITY":false}', '2022-04-10 05:28:32.000', 'CLIENT', (select UIMC_OID from FT_T_UIMC where link_nme = 'Issue' and last_chg_usr_id = 'CLIENT' and config_typ ='PAGE'), 'MENU', 4
+from dual  where not exists ( select 'X' from FT_T_UIMC where link_nme ='Country Primary');

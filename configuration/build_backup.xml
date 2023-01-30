@@ -1,0 +1,47 @@
+
+<project name="P72 Package" default="build" basedir=".">
+	<!-- Specify all paths here, also only specify relative paths -->
+	<property name="root" value="."/>	
+	<property name="dist" location="${root}/dist"/>
+	<property name="base.dir" value="."/>
+<target name="init" depends="">
+	</target>	
+	<target name="prepare">
+		<tstamp>
+			<format property="today" pattern="yyyyMMdd" locale="en,UK"/>
+		</tstamp>
+	</target>	
+    <target name="clean">
+		<delete>
+			<fileset dir="${root}">
+				<include name="*package.zip"/>
+			</fileset>
+		</delete>
+	</target>
+	<target name="build" depends="init,clean">
+		<zip destfile="${root}/package.zip">
+			<fileset dir="${root}">
+				<exclude name="*PackageDescription.xml"/>
+				<exclude name="*build.xml"/>
+				<exclude name="P72_CustomPackage.zip"/>
+				<exclude name="**/*.project"/>
+				<exclude name="*lib"/>
+				<exclude name="*docs"/>
+				<exclude name="*.bat"/>
+				<exclude name="*build_uitemplate.xml"/>
+				
+			</fileset>
+		</zip>
+		<zip destfile="${root}/P72_CustomPackage.zip">
+			<fileset dir="${root}">
+				<include name="*package.zip"/>
+				<include name="PackageDescription.xml"/>				
+			</fileset>
+		</zip>
+		<delete>
+			<fileset dir="${root}">
+				<include name="*package.zip"/>
+			</fileset>
+		</delete>
+	</target>	
+</project>

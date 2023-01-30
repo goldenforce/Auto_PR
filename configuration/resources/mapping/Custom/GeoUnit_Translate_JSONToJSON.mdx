@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="MSF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-05-18 at 03:00:40 BST</Option>
+    <Option key="MappingDesignerVersion">8.7.2.1</Option>
+  </Options>
+  <Input vendorType="JSON">
+    <Options>
+      <Option key="DDLName"/>
+      <Option key="TrimFields">BOTH</Option>
+      <Option key="RaiseLayoutWarnings">TRUE</Option>
+      <Option key="TimeStampFormat">%Y%M%D%H%I%S.%f</Option>
+      <Option key="splitter">json.xml</Option>
+      <Option key="MessageType"/>
+      <Option key="DateTimeFormat">%Y%M%D%H%I%S</Option>
+    </Options>
+    <Layout>
+      <Override/>
+      <record desc="" ident="GeographicalUnit" mandatory="false" mapable="true" multiple="true" name="GeographicalUnit">
+        <record desc="" ident="GeographicUnitInformation" mandatory="false" mapable="true" multiple="true" name="GeographicUnitInformation">
+          <field decimals="0" desc="" excludedNullIdentifiers="" ident="GeographicUnitName" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="GeographicUnitName" pattern="" pos="0" readonly="false" type="String"/>
+          <field decimals="0" desc="" excludedNullIdentifiers="" ident="StopPaymentIndicator" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="StopPaymentIndicator" pattern="" pos="0" readonly="false" type="String"/>
+          <field decimals="0" desc="" excludedNullIdentifiers="" ident="ParentGeographicUnitCount" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ParentGeographicUnitCount" pattern="" pos="0" readonly="false" type="String"/>
+          <field decimals="0" desc="" excludedNullIdentifiers="" ident="ParentGeographicUnitType" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ParentGeographicUnitType" pattern="" pos="0" readonly="false" type="String"/>
+          <field decimals="0" desc="" excludedNullIdentifiers="" ident="ParentGeographicUnitID" length="255" mandatory="false" mapable="true" match="false" multiple="false" name="ParentGeographicUnitID" pattern="" pos="0" readonly="false" type="String"/>
+        </record>
+      </record>
+    </Layout>
+  </Input>
+  <Output>
+    <Options>
+      <Option key="TimeStampOutputFormat">%M-%D-%Y %H:%I:%S.%f %A</Option>
+      <Option key="DateTimeOutputFormat">%M-%D-%Y %H:%I:%S %A</Option>
+      <Option key="OutputEncoding">UTF-8</Option>
+      <Option key="DefaultEmptyNumericsToZero">FALSE</Option>
+      <Option key="messageformat">JSON</Option>
+      <Option key="AddTZIndicators">true</Option>
+      <Option key="AddVendorMnemonic">false</Option>
+    </Options>
+    <MappingFragments/>
+    <OutputDef>
+      <Node messageformat="JSON" name="JsonMessage" type="message">
+        <Node name="Code" type="attribute">
+          <expr><![CDATA[return GeographicalUnit.GeographicUnitInformation.ParentGeographicUnitID;]]></expr>
+        </Node>
+        <Node name="Description" type="attribute">
+          <expr><![CDATA[return GeographicalUnit.GeographicUnitInformation.GeographicUnitName;]]></expr>
+        </Node>
+        <Node name="GeoUnitType" type="attribute">
+          <expr><![CDATA[return GeographicalUnit.GeographicUnitInformation.ParentGeographicUnitType;]]></expr>
+        </Node>
+      </Node>
+    </OutputDef>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="false" ident="KeyStreaming">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="RecordIdentifier">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="GSDMFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="VDSFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+    <Expression enabled="false" ident="VDDBFiltering">
+      <expr><![CDATA[return "";]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

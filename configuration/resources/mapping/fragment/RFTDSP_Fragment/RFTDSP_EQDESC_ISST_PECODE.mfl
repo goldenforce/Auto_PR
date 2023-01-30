@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-09-16 at 11:07:42 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="PE_Code" id="y&amp;EI31eQW1" name="IssueStatistic" type="segment">
+        <condition id="y&amp;EJ31eQW1"><![CDATA[if ((OneHasValue(PE_Code)) || ((IsFieldDeleted(PE_Code) && Strcmp(PE_Code__Change_Flag, "Y")) && OneHasValue(PE_Code__Previous)))
+	return "IssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="y&amp;EK31eQW1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(PE_Code))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="y&amp;EL31eQW1" name="COPY_FROM" type="attribute"/>
+        <Node id="y&amp;EM31eQW1" name="COPY_TO" type="attribute"/>
+        <Node id="y&amp;EN31eQW1" name="DUP_CHECK" type="attribute"/>
+        <Node id="y&amp;EO31eQW1" name="ENDDATEIND" type="attribute"/>
+        <Node id="y&amp;EP31eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="y&amp;EQ31eQW1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(PE_Code))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="y&amp;ER31eQW1" name="LOOKUP" type="attribute"/>
+        <Node id="y&amp;ES31eQW1" name="MATCH" type="attribute"/>
+        <Node id="y&amp;ET31eQW1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="y&amp;EU31eQW1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="y&amp;EV31eQW1" name="ONLY" type="attribute"/>
+        <Node id="y&amp;EW31eQW1" name="PARENT_LINK" type="attribute"/>
+        <Node id="y&amp;EX31eQW1" name="PUBLISH" type="attribute"/>
+        <Node id="y&amp;EY31eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="y&amp;EZ31eQW1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="y&amp;Ea31eQW1" name="TRANSLATE" type="attribute"/>
+        <Node id="y&amp;Eb31eQW1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="y&amp;Ec31eQW1" name="TSOPTION" type="attribute"/>
+        <Node id="y&amp;Ed31eQW1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="y&amp;Ee31eQW1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueStatistic";]]></expr>
+        </Node>
+        <Node id="y&amp;Ef31eQW1" name="DATASRCID" type="element">
+          <Node id="y&amp;Eg31eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;Eh31eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;Ei31eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;Ej31eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;Ek31eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;El31eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;Em31eQW1" name="DATASTATTYP" type="element">
+          <Node id="y&amp;En31eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;Eo31eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;Ep31eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;Eq31eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;Er31eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;Es31eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="y&amp;Et31eQW1" name="DENOMCURRCDE" type="element">
+          <Node id="y&amp;Eu31eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;Ev31eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;Ew31eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;Ex31eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;Ey31eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;Ez31eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;E$31eQW1" name="ENDTMS" type="element">
+          <Node id="y&amp;E%31eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;E@31eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;E&amp;31eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;E*31eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;E-31eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;E.31eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(PE_Code))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="y&amp;E/31eQW1" name="INSTRID" type="element">
+          <Node id="y&amp;E(31eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;E)31eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;E~31eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;E?31eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;E&lt;31eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;E&gt;31eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;E041eQW1" name="LASTCHGTMS" type="element">
+          <Node id="y&amp;E141eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;E241eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;E341eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;E441eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;E541eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;E641eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;E741eQW1" name="LASTCHGUSRID" type="element">
+          <Node id="y&amp;E841eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;E941eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;EA41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;EB41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;EC41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;ED41eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;EE41eQW1" name="ORIGDATAPROVID" type="element">
+          <Node id="y&amp;EF41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;EG41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;EH41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;EI41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;EJ41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;EK41eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;EL41eQW1" name="STARTTMS" type="element">
+          <Node id="y&amp;EM41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;EN41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;EO41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;EP41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;EQ41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;ER41eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;ES41eQW1" name="STATCHARVALTXT" type="element">
+          <Node id="y&amp;ET41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;EU41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;EV41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;EW41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;EX41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;EY41eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(PE_Code))
+	return PE_Code;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="y&amp;EZ41eQW1" name="STATDEFID" type="element">
+          <Node id="y&amp;Ea41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;Eb41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;Ec41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;Ed41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;Ee41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;Ef41eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "PECODE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="y&amp;Eg41eQW1" name="STATID" type="element">
+          <Node id="y&amp;Eh41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;Ei41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;Ej41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;Ek41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;El41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;Em41eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;En41eQW1" name="STATINTVALNUM" type="element">
+          <Node id="y&amp;Eo41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;Ep41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;Eq41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;Er41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;Es41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;Et41eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;Eu41eQW1" name="STATVALCAMT" type="element">
+          <Node id="y&amp;Ev41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;Ew41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;Ex41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;Ey41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;Ez41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;E$41eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;E%41eQW1" name="STATVALDTE" type="element">
+          <Node id="y&amp;E@41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;E&amp;41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;E*41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;E-41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;E.41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;E/41eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="y&amp;E(41eQW1" name="STATVALTMS" type="element">
+          <Node id="y&amp;E)41eQW1" name="DEFAULT" type="attribute"/>
+          <Node id="y&amp;E~41eQW1" name="ERR_LVL" type="attribute"/>
+          <Node id="y&amp;E?41eQW1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="y&amp;E&lt;41eQW1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="y&amp;E&gt;41eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="y&amp;E051eQW1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

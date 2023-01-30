@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-12-15 at 05:50:46 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Country_of_Taxation_Code" id="gB6b81y6W1" name="IssueGeoUnit" type="segment">
+        <condition id="gB6c81y6W1"><![CDATA[if ((OneHasValue(Country_of_Taxation_Code))||((IsFieldDeleted(Country_of_Taxation_Code) && Strcmp(Country_of_Taxation_Code__Change_Flag, "Y")) && OneHasValue(Country_of_Taxation_Code__Previous)))
+	return "IssueGeoUnit";
+else
+	return "";]]></condition>
+        <Node id="gB6d81y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Country_of_Taxation_Code))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="gB6e81y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="gB6f81y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="gB6g81y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="gB6h81y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="gB6i81y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="gB6j81y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Country_of_Taxation_Code))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="gB6k81y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="gB6l81y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "ISGU_GUTP_PURP";]]></expr>
+        </Node>
+        <Node id="gB6m81y6W1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="gB6n81y6W1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="gB6o81y6W1" name="ONLY" type="attribute"/>
+        <Node id="gB6p81y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="gB6q81y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="gB6r81y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="gB6s81y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="gB6t81y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="gB6u81y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="gB6v81y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="gB6w81y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="gB6x81y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueGeoUnit";]]></expr>
+        </Node>
+        <Node id="gB6y81y6W1" name="GeographicUnit" type="segment">
+          <Node id="gB6z81y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="gB6$81y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "GeographicUnit";]]></expr>
+          </Node>
+          <Node id="gB6%81y6W1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "PRNT_GU_CNT,PRNT_GU_ID,PRNT_GU_TYP";]]></expr>
+          </Node>
+          <Node id="gB6@81y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "GU_CNT,GU_ID,GU_TYP";]]></expr>
+          </Node>
+          <Node id="gB6&amp;81y6W1" name="MATCH" type="attribute"/>
+          <Node id="gB6*81y6W1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="gB6-81y6W1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Country_of_Taxation_Code))
+	return Strcat("11|CONCTNS|NESTED|PRNTGUTYP|COUNTRY|PRNTGUID|",
+		Strcat(If(OneHasValue(Translate(ReutersETT, false, "COUNTRY", Country_of_Taxation_Code)), Translate(ReutersETT, false, "COUNTRY", Country_of_Taxation_Code), Country_of_Taxation_Code), "|DATASRCID|RFTDSP"));
+else
+	return"";
+	
+	
+
+]]></expr>
+          </Node>
+          <Node id="gB6.81y6W1" name="PRNTGUCNT" type="element">
+            <Node id="gB6/81y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node id="gB6(81y6W1" name="PRNTGUID" type="element">
+            <Node id="gB6)81y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (IsFieldDeleted(Country_of_Taxation_Code))
+  	if (OneHasValue(Translate(ReutersETT, false, "COUNTRY", Country_of_Taxation_Code__Previous)))
+	return Translate(ReutersETT, false, "COUNTRY", Country_of_Taxation_Code__Previous);
+else
+	return Country_of_Taxation_Code__Previous;
+else  if (OneHasValue(Country_of_Taxation_Code))
+	if (OneHasValue(Translate(ReutersETT, false, "COUNTRY", Country_of_Taxation_Code)))
+	return Translate(ReutersETT, false, "COUNTRY", Country_of_Taxation_Code);
+else
+	return Country_of_Taxation_Code;
+else 
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node id="gB6~81y6W1" name="PRNTGUTYP" type="element">
+            <Node id="gB6?81y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "COUNTRY";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="gB6&lt;81y6W1" name="CURRTYP" type="element">
+          <Node id="gB6&gt;81y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6091y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6191y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6291y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6391y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6491y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6591y6W1" name="DATASRCID" type="element">
+          <Node id="gB6691y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6791y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6891y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6991y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6A91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6B91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6C91y6W1" name="DATASTATTYP" type="element">
+          <Node id="gB6D91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6E91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6F91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6G91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6H91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6I91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="gB6J91y6W1" name="ENDTMS" type="element">
+          <Node id="gB6K91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6L91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6M91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6N91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6O91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6P91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6Q91y6W1" name="GUCNT" type="element">
+          <Node id="gB6R91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6S91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6T91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6U91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6V91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6W91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6X91y6W1" name="GUID" type="element">
+          <Node id="gB6Y91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6Z91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6a91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6b91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6c91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6d91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6e91y6W1" name="GUTYP" type="element">
+          <Node id="gB6f91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6g91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6h91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6i91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6j91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6k91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6l91y6W1" name="INSTRID" type="element">
+          <Node id="gB6m91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6n91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6o91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6p91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6q91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6r91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6s91y6W1" name="ISGUOID" type="element">
+          <Node id="gB6t91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6u91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6v91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6w91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6x91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6y91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6z91y6W1" name="ISSGUDESC" type="element">
+          <Node id="gB6$91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6%91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6@91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6&amp;91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6*91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6-91y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6.91y6W1" name="ISSGUPURPTYP" type="element">
+          <Node id="gB6/91y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6(91y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6)91y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6~91y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6?91y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6&lt;91y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "JURSDCTN";]]></expr>
+          </Node>
+        </Node>
+        <Node id="gB6&gt;91y6W1" name="ENDTMS" type="element">
+          <Node id="gB60A1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Country_of_Taxation_Code))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="gB61A1y6W1" name="LASTCHGTMS" type="element">
+          <Node id="gB62A1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB63A1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB64A1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB65A1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB66A1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB67A1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB68A1y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="gB69A1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6AA1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6BA1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6CA1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6DA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6EA1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6FA1y6W1" name="LNDAREACAMT" type="element">
+          <Node id="gB6GA1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6HA1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6IA1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6JA1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6KA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6LA1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6MA1y6W1" name="LNDAREAUTTYP" type="element">
+          <Node id="gB6NA1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6OA1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6PA1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6QA1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6RA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6SA1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6TA1y6W1" name="ORIGDATAPROVID" type="element">
+          <Node id="gB6UA1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6VA1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6WA1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6XA1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6YA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6ZA1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6aA1y6W1" name="STARTTMS" type="element">
+          <Node id="gB6bA1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6cA1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6dA1y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="gB6eA1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6fA1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6gA1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

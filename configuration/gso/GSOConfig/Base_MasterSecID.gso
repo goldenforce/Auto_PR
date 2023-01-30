@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" customDesc="" customDomainSQL="" customSQL="" desc="" displayCaption="Master Security ID" entityTypeId="++3qwBhS2etxm003" id="++8sy9OGhG55a1Ap" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="MktLstCountryMasterSecID" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" displayCaption="Country's Primary Exchange" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="008Nypzi2euLO000" multiplicity="MULTIPLE_OR_NULL" name="CountrysPrimaryExchange" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8sy9OGhG55a1Ap" id="++8sy9OGhG55a1Ar" prntReqdInd="0" seq="172"/>
+    </dataGroup>
+  </dataGroups>
+  <occurrences>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8sy9OGhG55a1Al" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_COUNTRY_MASTERSECID" nameSpace="POINT72" parentId="008Nypzi2euLO01k" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field desc="Issue ID" id="++8sy9OGhG55a1An" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8sy9OGhG55a1Ao" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="MASTERSECID" valueType="CONSTANT"/>
+      <option id="++8sy9OGhG55a1Am" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="++8sy9OGhG55a1Ap" groupMapping="0" id="++8sy9OGhG55a1Aq" nameSpace="POINT72" occFieldId="++8sy9OGhG55a1An"/>
+  </mappings>
+</entities>

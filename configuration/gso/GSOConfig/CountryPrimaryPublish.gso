@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <entiyTypes>
+    <entiyType desc="Custom default type for MKIS" id="=000170200" mainTable="FT_T_MKIS" name="CountryPrimary" nameSpace="POINT72"/>
+  </entiyTypes>
+  <beFields>
+    <beField class="BETEXT" displayCaption="Country Primary Market OID" entityTypeId="=000170200" id="008W3DOWhG5q4004" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryMarketOID" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP Geo Unit ID" entityTypeId="=000170200" id="++8W3a4mhG5q4009" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryGeoUnitID" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP Instrument ID" entityTypeId="=000170200" id="++8W3a4mhG5q4000" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryInstrumentID" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Parent Instr Name" entityTypeId="=000170200" id="++8W3a4mhG5q400M" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryPrefInstrumentName" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP Market MIC" entityTypeId="=000170200" id="++8W3a4mhG5q4007" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryMarketMIC" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Parent ID" entityTypeId="=000170200" id="++8W3a4mhG5q400K" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryPrefInstrumentID" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP Trading Currency" entityTypeId="=000170200" id="++8W3a4mhG5q400C" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryTradingCurrency" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Parent ID Context" entityTypeId="=000170200" id="++8W3tUGhG5q4002" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryPrefInstrumentIDContext" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP BB Global" entityTypeId="=000170200" id="++8W7OKmhG5q400H" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryBBGlobal" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP RIC" entityTypeId="=000170200" id="++8W7OKmhG5q400S" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryRIC" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP SEDOL" entityTypeId="=000170200" id="++8W7OKmhG5q400U" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimarySEDOL" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP BBG Ticker" entityTypeId="=000170200" id="++8W7OKmhG5q400V" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryTicker" nameSpace="POINT72"/>
+    <beField class="BEINT" displayCaption="CP Version No" entityTypeId="=000170200" id="++8W7OKmhG5q400g" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryListingVersion" nameSpace="POINT72"/>
+    <beField class="BEDEC" displayCaption="Outstanding Shares" entityTypeId="=000170200" id="++8ZqSemhG5AW00T" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryOutstandingShares" nameSpace="POINT72"/>
+    <beField class="BEDATE" displayCaption="Outstanding Shares Date" entityTypeId="=000170200" id="++8ZqSemhG5AW00V" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryOutstandingSharesDate" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="BB Composite Ticker" entityTypeId="=000170200" id="++8ZsRZmhG5AW006" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryBBCompositeTicker" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="P72 Security ID" entityTypeId="=000170200" id="++8ZsRZmhG5AW007" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryCountryPrimaryID" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP BB Ticker Exchange" entityTypeId="=000170200" id="008Zv+50hG5AW00M" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryBBTickerExchangeCode" nameSpace="POINT72"/>
+    <beField class="BETSTAMP" displayCaption="CP Creation Time" entityTypeId="=000170200" id="008Zv+50hG5AW00U" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryCreationTime" nameSpace="POINT72"/>
+    <beField class="BETSTAMP" displayCaption="Last Change Time" entityTypeId="=000170200" id="008Zv+50hG5AW00Z" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryLastChangeTime" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Last Change User" entityTypeId="=000170200" id="008Zv+50hG5AW00a" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryLastChangeUser" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CP BB Unique" entityTypeId="=000170200" id="++8b8niGhG5AW00W" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryBBUnique" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="select CL_VALUE CODE ,CL_NME DISPLAY_NAME from FT_T_INCL where INDUS_CL_SET_ID='INSTYPGR' and LEVEL_NUM=1 and END_TMS is null" displayCaption="Instr Type 1" entityTypeId="=000170200" id="008bVui0hG5AW00U" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryInstrumentType1" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="select CL_VALUE CODE ,CL_NME DISPLAY_NAME from FT_T_INCL where INDUS_CL_SET_ID='INSTYPGR' and LEVEL_NUM=2 and END_TMS is null" displayCaption="Instr Type 2" entityTypeId="=000170200" id="008bVui0hG5AW00S" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryInstrumentType2" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="select CL_VALUE CODE ,CL_NME DISPLAY_NAME from FT_T_INCL where INDUS_CL_SET_ID='INSTYPGR' and LEVEL_NUM=3 and END_TMS is null" displayCaption="Instr Type 3" entityTypeId="=000170200" id="008bVui0hG5AW00Q" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryInstrumentType3" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="select CL_VALUE CODE ,CL_NME DISPLAY_NAME from FT_T_INCL where INDUS_CL_SET_ID='INSTYPGR' and LEVEL_NUM=4 and END_TMS is null" displayCaption="Instr Type 4" entityTypeId="=000170200" id="008bVui0hG5AW00O" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryInstrumentType4" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="CUSIP" entityTypeId="=000170200" id="008bZVbWhG5AW00N" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryCUSIP" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="ISIN" entityTypeId="=000170200" id="008bZVbWhG5AW00M" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryISIN" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="PointID" entityTypeId="=000170200" id="008bZVbWhG5AW00O" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryPointID" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="GS Position ID" entityTypeId="=000170200" id="008bZVbWhG5AW00P" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryPositionID" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Issuer Company" entityTypeId="=000170200" id="008baDlWhG5AW00F" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryIssuerCompanyName" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Issuer Name" entityTypeId="=000170200" id="008baDlWhG5AW00D" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryIssuerName" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="select PRNT_GU_ID CODE, GU_NME DISPLAY_NAME FROM ft_t_gunt where PRNT_GU_TYP = 'COUNTRY' and PRNT_GU_CNT = '1' AND END_TMS IS NULL order by GU_NME asc" displayCaption="CP Country Incorporation" entityTypeId="=000170200" id="008beQTWhG5AW00F" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryISSRCountryIncorporation" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDomainSQL="SELECT PRNT_GU_ID CODE, GU_NME DISPLAY_NAME FROM FT_T_GUNT WHERE PRNT_GU_TYP = 'COUNTRY' AND PRNT_GU_CNT = '1' AND END_TMS IS NULL" displayCaption="CP Country Issuance" entityTypeId="=000170200" id="008bf-10hG5AW00C" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryCountryOfIssuance" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="BB Company ID" entityTypeId="=000170200" id="008bgYP0hG5AW003" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryISSRBBCompanyID" nameSpace="POINT72"/>
+    <beField class="BETEXT" customMultiplicity="SINGLE_AND_READONLY" displayCaption="P72CountryPrimaryDefaultRegion" entityTypeId="=000170200" id="++8ge-CGhG5Qe3ck" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryDefaultRegion" nameSpace="POINT72"/>
+    <beField class="BETEXT" customMultiplicity="SINGLE_AND_READONLY" displayCaption="Market Name" entityTypeId="=000170200" id="++8ge-CGhG5Qe3ce" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryMarketName" nameSpace="POINT72"/>
+    <beField class="BEDATE" displayCaption="Outstanding Shares Date" entityTypeId="=000170200" id="++8iaIRGhG6Lq00A" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryOutstandingSharesDateISMC" nameSpace="POINT72"/>
+    <beField class="BEDEC" displayCaption="Outstanding Shares" entityTypeId="=000170200" id="++8iaIRGhG6Lq008" mandatory="0" multiplicity="SINGLE_AND_READONLY" name="P72CountryPrimaryOutstandingSharesISMC" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="Position Flag" entityTypeId="=000170200" id="008jd3x0hG6Ri004" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72CountryPrimaryPositionFlag" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Pano Position ID" entityTypeId="=000170200" id="008r2Ca0hG5Eq000" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72CountryPrimaryPanoPositionId" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Ultimate Position ID" entityTypeId="=000170200" id="008r2Ca0hG5Eq004" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72CountryPrimaryUltimatePositionId" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup category="POINT72" customInd="0" displayCaption="CountryPrimaryPublishDetails" entityTypeId="=000170200" frequencyInd="0" id="008W3DOWhG5q400C" multiplicity="SINGLE" name="CountryPrimaryPublishDetails" nameSpace="POINT72">
+      <part beRelationId="++8b8niGhG5AW00Z" defNameSpace="POINT72" id="++8b8niGhG5AW00a" label="ParentInstrument" prntReqdInd="0" seq="0"/>
+      <part defNameSpace="POINT72" fieldId="008W3DOWhG5q4004" id="008W3DOWhG5q400D" prntReqdInd="0" seq="1"/>
+      <part defNameSpace="POINT72" fieldId="++8W3a4mhG5q4009" id="++8W3a4mhG5q400O" prntReqdInd="0" seq="2"/>
+      <part defNameSpace="POINT72" fieldId="++8W3a4mhG5q4000" id="++8W3a4mhG5q400P" prntReqdInd="0" seq="3"/>
+      <part defNameSpace="POINT72" fieldId="++8W3a4mhG5q400M" id="++8W3a4mhG5q400Q" prntReqdInd="0" seq="4"/>
+      <part defNameSpace="POINT72" fieldId="++8W3a4mhG5q4007" id="++8W3a4mhG5q400R" prntReqdInd="0" seq="5"/>
+      <part defNameSpace="POINT72" fieldId="++8W3a4mhG5q400K" id="++8W3a4mhG5q400S" prntReqdInd="0" seq="6"/>
+      <part defNameSpace="POINT72" fieldId="++8W3a4mhG5q400C" id="++8W3a4mhG5q400T" prntReqdInd="0" seq="7"/>
+      <part defNameSpace="POINT72" fieldId="++8W3tUGhG5q4002" id="++8W3tUGhG5q4004" prntReqdInd="0" seq="8"/>
+      <part defNameSpace="POINT72" fieldId="++8W7OKmhG5q400H" id="++8W7OKmhG5q400i" prntReqdInd="0" seq="9"/>
+      <part defNameSpace="POINT72" fieldId="++8W7OKmhG5q400S" id="++8W7OKmhG5q400j" prntReqdInd="0" seq="10"/>
+      <part defNameSpace="POINT72" fieldId="++8W7OKmhG5q400U" id="++8W7OKmhG5q400k" prntReqdInd="0" seq="11"/>
+      <part defNameSpace="POINT72" fieldId="++8W7OKmhG5q400V" id="++8W7OKmhG5q400l" prntReqdInd="0" seq="12"/>
+      <part defNameSpace="POINT72" fieldId="++8W7OKmhG5q400g" id="++8W7OKmhG5q400m" prntReqdInd="0" seq="13"/>
+      <part defNameSpace="POINT72" fieldId="++8ZqSemhG5AW00T" id="++8ZqSemhG5AW00X" prntReqdInd="0" seq="14"/>
+      <part defNameSpace="POINT72" fieldId="++8ZqSemhG5AW00V" id="++8ZqSemhG5AW00Y" prntReqdInd="0" seq="15"/>
+      <part defNameSpace="POINT72" fieldId="++8ZsRZmhG5AW006" id="++8ZsRZmhG5AW00A" prntReqdInd="0" seq="16"/>
+      <part defNameSpace="POINT72" fieldId="++8ZsRZmhG5AW007" id="++8ZsRZmhG5AW00B" prntReqdInd="0" seq="17"/>
+      <part defNameSpace="POINT72" fieldId="008Zv+50hG5AW00M" id="008Zv+50hG5AW00p" prntReqdInd="0" seq="18"/>
+      <part defNameSpace="POINT72" fieldId="008Zv+50hG5AW00U" id="008Zv+50hG5AW00q" prntReqdInd="0" seq="19"/>
+      <part defNameSpace="POINT72" fieldId="008Zv+50hG5AW00Z" id="008Zv+50hG5AW00r" prntReqdInd="0" seq="20"/>
+      <part defNameSpace="POINT72" fieldId="008Zv+50hG5AW00a" id="008Zv+50hG5AW00s" prntReqdInd="0" seq="21"/>
+      <part defNameSpace="POINT72" fieldId="++8b8niGhG5AW00W" id="++8b8niGhG5AW00Y" prntReqdInd="0" seq="22"/>
+      <part defNameSpace="POINT72" fieldId="008bVui0hG5AW00U" id="008bVui0hG5AW00W" prntReqdInd="0" seq="23"/>
+      <part defNameSpace="POINT72" fieldId="008bVui0hG5AW00S" id="008bVui0hG5AW00X" prntReqdInd="0" seq="24"/>
+      <part defNameSpace="POINT72" fieldId="008bVui0hG5AW00Q" id="008bVui0hG5AW00Y" prntReqdInd="0" seq="25"/>
+      <part defNameSpace="POINT72" fieldId="008bVui0hG5AW00O" id="008bVui0hG5AW00Z" prntReqdInd="0" seq="26"/>
+      <part defNameSpace="POINT72" fieldId="008bZVbWhG5AW00N" id="008bZVbWhG5AW00Q" prntReqdInd="0" seq="27"/>
+      <part defNameSpace="POINT72" fieldId="008bZVbWhG5AW00M" id="008bZVbWhG5AW00R" prntReqdInd="0" seq="28"/>
+      <part defNameSpace="POINT72" fieldId="008bZVbWhG5AW00O" id="008bZVbWhG5AW00S" prntReqdInd="0" seq="29"/>
+      <part defNameSpace="POINT72" fieldId="008bZVbWhG5AW00P" id="008bZVbWhG5AW00T" prntReqdInd="0" seq="30"/>
+      <part defNameSpace="POINT72" fieldId="008baDlWhG5AW00F" id="008baDlWhG5AW00H" prntReqdInd="0" seq="31"/>
+      <part defNameSpace="POINT72" fieldId="008baDlWhG5AW00D" id="008baDlWhG5AW00I" prntReqdInd="0" seq="32"/>
+      <part defNameSpace="POINT72" fieldId="008beQTWhG5AW00F" id="008beQTWhG5AW00G" prntReqdInd="0" seq="33"/>
+      <part defNameSpace="POINT72" fieldId="008bf-10hG5AW00C" id="008bf-10hG5AW00E" prntReqdInd="0" seq="34"/>
+      <part defNameSpace="POINT72" fieldId="008bgYP0hG5AW003" id="008bgYP0hG5AW005" prntReqdInd="0" seq="35"/>
+      <part defNameSpace="POINT72" fieldId="++8ge-CGhG5Qe3ck" id="++8ge-CGhG5Qe3cm" prntReqdInd="0" seq="36"/>
+      <part defNameSpace="POINT72" fieldId="++8ge-CGhG5Qe3ce" id="++8ge-CGhG5Qe3cn" prntReqdInd="0" seq="37"/>
+      <part defNameSpace="POINT72" fieldId="++8iaIRGhG6Lq00A" id="++8iaIRGhG6Lq00C" prntReqdInd="0" seq="38"/>
+      <part defNameSpace="POINT72" fieldId="++8iaIRGhG6Lq008" id="++8iaIRGhG6Lq00D" prntReqdInd="0" seq="39"/>
+      <part defNameSpace="POINT72" fieldId="008jd3x0hG6Ri004" id="008jd3x0hG6Ri006" prntReqdInd="0" seq="40"/>
+      <part defNameSpace="POINT72" fieldId="008r2Ca0hG5Eq000" id="008r2E+WhG51a000" prntReqdInd="0" seq="41"/>
+      <part defNameSpace="POINT72" fieldId="008r2Ca0hG5Eq004" id="008r2E+WhG51a001" prntReqdInd="0" seq="42"/>
+    </dataGroup>
+    <dataGroup customInd="0" entityTypeId="=000170200" frequencyInd="0" id="008W3DOWhG5q4006" multiplicity="SINGLE" name="CountryPrimaryPublish- Root DataGroup" nameSpace="POINT72">
+      <part dataGroupId="008W3DOWhG5q400C" defNameSpace="POINT72" id="008W3DOWhG5q400B" prntReqdInd="1" seq="0"/>
+    </dataGroup>
+  </dataGroups>
+  <relations>
+    <relation id="++8b8niGhG5AW00c" name="FT_T_MKIS-To-FT_T_ISSU01" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_ISSU">
+      <field fromColumn="INSTR_ID" id="++8b8niGhG5AW00d" nameSpace="POINT72" toColumn="INSTR_ID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8W3tUGhG5q4000" name="FT_T_MKIS-To-FT_T_ISSU00" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_ISSU">
+      <field fromColumn="INSTR_ID" id="++8W3tUGhG5q4001" nameSpace="POINT72" toColumn="INSTR_ID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'CNTRPRIMID')" id="++8b5cpmhG5AW003" name="MKIS-CPROOTP72-MIXR-CNTRPRIMID" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="++8b5cpmhG5AW004" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'TICKER')" id="++8b8niGhG5AW001" name="MKIS-CPROOTP72-MIXR-TICKER" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="++8b8niGhG5AW002" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'BBTICKEXH')" id="++8b8niGhG5AW00A" name="MKIS-CPROOTP72-MIXR-BBTICKEXH" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="++8b8niGhG5AW00B" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'BBGLOBAL')" id="++8b8niGhG5AW00I" name="MKIS-CPROOTP72-MIXR-BBGLOBAL" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="++8b8niGhG5AW00J" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'BBUNIQUE')" id="++8b8niGhG5AW00Q" name="MKIS-CPROOTP72-MIXR-BBUNIQUE" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="++8b8niGhG5AW00R" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8ge-CGhG5Qe3cb" name="FT_T_MKIS-To-FT_T_MRKT07" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MRKT">
+      <field fromColumn="MKT_OID" id="++8ge-CGhG5Qe3cc" nameSpace="POINT72" toColumn="MKT_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8iaIRGhG6Lq001" name="FT_T_MKIS-To-FT_T_ISMC" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_ISMC">
+      <field fromColumn="INSTR_ID" id="++8iaIRGhG6Lq002" nameSpace="POINT72" toColumn="INSTR_ID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8qotjmhG52K00P" name="MKIS-CPROOTP72-MIXR-POSITION_ID" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="++8qotjmhG52K00Q" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8qotjmhG52K00X" name="MKIS-CPROOTP72-MIXR-ULTUNDLPOSID" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="++8qotjmhG52K00Y" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'SEDOL')" id="++8b5cpmhG5AW000" name="MKIS-CPROOTP72-MIXR-SEDOL" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="++8b5cpmhG5AW001" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'RIC')" id="008b8heWhG5AW001" name="MKIS-CPROOTP72-MIXR-RIC" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="008b8heWhG5AW002" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="008bVui0hG5AW001" name="FT_T_MKIS-To-FT_T_ISCL" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_ISCL">
+      <field fromColumn="INSTR_ID" id="008bVui0hG5AW002" nameSpace="POINT72" toColumn="INSTR_ID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="008YHr50hG5AW01Y" name="MKIS-ISID-INSTR_ID" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_ISID">
+      <field fromColumn="INSTR_ID" id="008YHr50hG5AW01Z" nameSpace="POINT72" toColumn="INSTR_ID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'POINTID')" id="008bZVbWhG5AW009" name="MKIS-CPROOTP72-MIXR-POINTID" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="008bZVbWhG5AW00A" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="#TO_TABLE#.ISID_OID IN (SELECT ISID_OID FROM FT_T_ISID WHERE INSTR_ID = MKIS_COUNTRY_ROOT_P72.INSTR_ID AND ID_CTXT_TYP = 'GSPOSITIONID')" id="008bZVbWhG5AW00G" name="MKIS-CPROOTP72-MIXR-POSITIONID" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_T_MIXR">
+      <field fromColumn="MKT_ISS_OID" id="008bZVbWhG5AW00H" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="008jd3x0hG6Ri001" name="FT_T_MKIS-To-FT_V_POS1" nameSpace="POINT72" srcTable="FT_T_MKIS" tgtTable="FT_V_POS1">
+      <field fromColumn="MKT_ISS_OID" id="008jd3x0hG6Ri002" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+  </relations>
+  <occurrences>
+    <occurrence desc="Occurrence for Market/Issue Characteristics" id="008W3DOWhG5q4000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MKIS_COUNTRY_ROOT_P72" nameSpace="POINT72" table="FT_T_MKIS" timeSeries="LOGICAL_DELETE">
+      <field id="++8b8niGhG5AW00b" nameSpace="POINT72" relationId="++8b8niGhG5AW00c"/>
+      <field id="++8W3a4mhG5q4002" name="GU_ID" nameSpace="POINT72"/>
+      <field id="008W3DOWhG5q4003" name="INSTR_ID" nameSpace="POINT72"/>
+      <field id="008Zv+50hG5AW00W" name="LAST_CHG_TMS" nameSpace="POINT72"/>
+      <field id="008Zv+50hG5AW00X" name="LAST_CHG_USR_ID" nameSpace="POINT72"/>
+      <field id="008W3DOWhG5q4002" name="MKT_OID" nameSpace="POINT72"/>
+      <field id="008Zv+50hG5AW00V" name="START_TMS" nameSpace="POINT72"/>
+      <field id="++8W3a4mhG5q400B" name="TRDNG_CURR_CDE" nameSpace="POINT72"/>
+      <value id="008W3DOWhG5q4001" name="OFCL_PLACE_LISTING_IND" nameSpace="POINT72" type="FILTER_FIELD" value="Y" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Statistic" id="++8W3a4mhG5q4004" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_ROOTP72_MICISO" nameSpace="POINT72" parentId="008W3DOWhG5q4000" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field id="++8W3a4mhG5q4006" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="++8W3a4mhG5q4005" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="MICISO" valueType="CONSTANT"/>
+      <option id="++8W7OKmhG5q400d" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue" id="++8W3a4mhG5q400E" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISSU_COUNTRY_MKIS_P72" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8W3tUGhG5q4000" table="FT_T_ISSU" timeSeries="LOGICAL_DELETE">
+      <field id="++8W3a4mhG5q400H" name="PREF_ID_CTXT_TYP" nameSpace="POINT72"/>
+      <field id="++8W3a4mhG5q400I" name="PREF_ISS_ID" nameSpace="POINT72"/>
+      <field id="++8W3a4mhG5q400J" name="PREF_ISS_NME" nameSpace="POINT72"/>
+      <option id="++8W3a4mhG5q400F" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Statistic" id="++8W7OKmhG5q400c" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_ROOTP72_LISTVERN" nameSpace="POINT72" parentId="008W3DOWhG5q4000" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field id="++8W7OKmhG5q400f" name="STAT_INT_VAL_NUM" nameSpace="POINT72"/>
+      <value id="++8W7OKmhG5q400e" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="LISTVERN" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Statistic" id="++8ZqSemhG5AW00G" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_ROOTP72_OUTSTSHR" nameSpace="POINT72" parentId="008W3DOWhG5q4000" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field id="++8ZqSemhG5AW00Q" name="STAT_VAL_CAMT" nameSpace="POINT72"/>
+      <field id="++8ZqSemhG5AW00R" name="STAT_VAL_DTE" nameSpace="POINT72"/>
+      <value id="++8ZqSemhG5AW00H" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="OUTSTSHR" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="++8W7OKmhG5q400D" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_CNTRPRIMID" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8b5cpmhG5AW003" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="++8b5cpmhG5AW005" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+      <option id="008b50ZWhG5AW003" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8ZsRZmhG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOTP_72_CNTRPRIMID" nameSpace="POINT72" parentId="++8W7OKmhG5q400D" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="++8ZsRZmhG5AW002" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8ZsRZmhG5AW001" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="CNTRPRIMID" valueType="CONSTANT"/>
+      <option id="008b50ZWhG5AW007" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="++8b8niGhG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_TICKER" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8b8niGhG5AW001" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="++8b8niGhG5AW003" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8b8niGhG5AW004" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_TICKER" nameSpace="POINT72" parentId="++8b8niGhG5AW000" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="++8b8niGhG5AW007" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8b8niGhG5AW006" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="TICKER" valueType="CONSTANT"/>
+      <option id="++8b8niGhG5AW005" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="++8b8niGhG5AW009" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_BBTICKEXH" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8b8niGhG5AW00A" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="++8b8niGhG5AW00C" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8b8niGhG5AW00D" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_BBTICKEXH" nameSpace="POINT72" parentId="++8b8niGhG5AW009" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="++8b8niGhG5AW00F" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8b8niGhG5AW00E" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="BBTICKEXH" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="++8b8niGhG5AW00H" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_BBGLOBAL" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8b8niGhG5AW00I" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="++8b8niGhG5AW00K" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8b8niGhG5AW00L" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_BBGLOBAL" nameSpace="POINT72" parentId="++8b8niGhG5AW00H" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="++8b8niGhG5AW00N" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8b8niGhG5AW00M" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="BBGLOBAL" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="++8b8niGhG5AW00P" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_BBUNIQUE" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8b8niGhG5AW00Q" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="++8b8niGhG5AW00S" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8b8niGhG5AW00T" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_BBUNIQUE" nameSpace="POINT72" parentId="++8b8niGhG5AW00P" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="++8b8niGhG5AW00V" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8b8niGhG5AW00U" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="BBUNIQUE" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurence for Financial Market" id="++8ge-CGhG5Qe3cZ" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MRKT_COUNTRY_ROOT_P72" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8ge-CGhG5Qe3cb" table="FT_T_MRKT" timeSeries="LOGICAL_DELETE">
+      <field desc="Market Name" id="++8ge-CGhG5Qe3cd" name="MKT_NME" nameSpace="POINT72"/>
+      <option id="++8ge-CGhG5Qe3ca" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurence for Market Issue Statistic" id="++8ge-CGhG5Qe3cg" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_ROOTP72_SACDEFRG" nameSpace="POINT72" parentId="008W3DOWhG5q4000" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field desc="Statistic Character Value" id="++8ge-CGhG5Qe3cj" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="++8ge-CGhG5Qe3ci" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="SACDEFRG" valueType="CONSTANT"/>
+      <option id="++8ge-CGhG5Qe3ch" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Market Capitalization" id="++8iaIRGhG6Lq000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISMC_COUNTRY_ROOTP72_OUTSTSHR" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8iaIRGhG6Lq001" table="FT_T_ISMC" timeSeries="LOGICAL_DELETE">
+      <field id="++8iaIRGhG6Lq007" name="CAP_CHG_EFF_TMS" nameSpace="POINT72"/>
+      <field id="++8iaIRGhG6Lq006" name="CAP_SEC_CQTY" nameSpace="POINT72"/>
+      <value id="++8iaIRGhG6Lq005" name="CAPITAL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="OUTSTAND" valueType="CONSTANT"/>
+      <option id="++8iaIRGhG6Lq003" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="ISMC_MATCH_KEY"/>
+      <option id="++8iaIRGhG6Lq004" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="++8qotjmhG52K00O" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_POSITION_ID" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8qotjmhG52K00P" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="++8qotjmhG52K00R" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+      <option id="++8qotjmhG52K00S" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8qotjmhG52K00T" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_POSITION_ID" nameSpace="POINT72" parentId="++8qotjmhG52K00O" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="008r2Ca0hG5Eq001" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8qotjmhG52K00U" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="POSITIONID" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="++8qotjmhG52K00W" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_ULTUNDLPOSID" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8qotjmhG52K00X" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="++8qotjmhG52K00Z" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8qotjmhG52K00a" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_ULTUNDLPOSID" nameSpace="POINT72" parentId="++8qotjmhG52K00W" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="008r2Ca0hG5Eq002" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8qotjmhG52K00b" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="ULTUNDLPOSID" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="008b50ZWhG5AW004" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_SEDOL" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="++8b5cpmhG5AW000" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="++8b5cpmhG5AW002" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+      <option id="008b50ZWhG5AW006" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="008b50ZWhG5AW005" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_SEDOL" nameSpace="POINT72" parentId="008b50ZWhG5AW004" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="008b50ZWhG5AW009" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="008b50ZWhG5AW008" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="SEDOL" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="008b8heWhG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_RIC" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="008b8heWhG5AW001" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="008b8heWhG5AW003" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="008b8heWhG5AW004" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_RIC" nameSpace="POINT72" parentId="008b8heWhG5AW000" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="008b8heWhG5AW006" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="008b8heWhG5AW005" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="RIC" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Classification" id="008bVui0hG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISCL_MKIS_ROOTP72" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="008bVui0hG5AW001" table="FT_T_ISCL" timeSeries="LOGICAL_DELETE">
+      <value id="008bVui0hG5AW003" name="CLSF_PURP_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="BICLSFOUR" valueType="CONSTANT"/>
+      <value id="008bVui0hG5AW004" name="INDUS_CL_SET_ID" nameSpace="POINT72" type="FILTER_FIELD" value="INSTYPGR" valueType="CONSTANT"/>
+      <option id="008bVui0hG5AW005" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="ISCL_MATCH_SET_PURP"/>
+      <option id="008bVui0hG5AW006" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Industry Classification" id="008bVui0hG5AW007" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="INCL_ISCL_L4_ROOTP72" nameSpace="POINT72" parentId="008bVui0hG5AW000" relationId="++6dDuYS2etZa002" table="FT_T_INCL" timeSeries="LOGICAL_DELETE">
+      <field id="008bVui0hG5AW009" name="CL_NME" nameSpace="POINT72"/>
+      <option id="008bVui0hG5AW008" nameSpace="POINT72" type="DEFAULT_ACTION" value="REFERENCE"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Industry Classification" id="008bVui0hG5AW00A" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="INCL_ISCL_L3_ROOTP72_Lkup" nameSpace="POINT72" parentId="008bVui0hG5AW007" relationId="++7hKQ6wmICIq003" table="FT_T_INCL" timeSeries="LOGICAL_DELETE">
+      <field id="008bVui0hG5AW00D" name="CL_NME" nameSpace="POINT72"/>
+      <option id="008bVui0hG5AW00B" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+      <option id="008bVui0hG5AW00C" nameSpace="POINT72" type="DEFAULT_ACTION" value="REFERENCE"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Industry Classification" id="008bVui0hG5AW00E" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="INCL_ISCL_L2_ROOTP72_Lkup" nameSpace="POINT72" parentId="008bVui0hG5AW00A" relationId="++7hKQ6wmICIq003" table="FT_T_INCL" timeSeries="LOGICAL_DELETE">
+      <field id="008bVui0hG5AW00I" name="CL_NME" nameSpace="POINT72"/>
+      <option id="008bVui0hG5AW00F" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+      <option id="008bVui0hG5AW00G" nameSpace="POINT72" type="UI_PUB_ONLY" value="true"/>
+      <option id="008bVui0hG5AW00H" nameSpace="POINT72" type="DEFAULT_ACTION" value="REFERENCE"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Industry Classification" id="008bVui0hG5AW00J" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="INCL_ISCL_L1_ROOTP72_Lkup" nameSpace="POINT72" parentId="008bVui0hG5AW00E" relationId="++7hKQ6wmICIq003" table="FT_T_INCL" timeSeries="LOGICAL_DELETE">
+      <field id="008bVui0hG5AW00N" name="CL_NME" nameSpace="POINT72"/>
+      <option id="008bVui0hG5AW00K" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+      <option id="008bVui0hG5AW00L" nameSpace="POINT72" type="UI_PUB_ONLY" value="true"/>
+      <option id="008bVui0hG5AW00M" nameSpace="POINT72" type="DEFAULT_ACTION" value="REFERENCE"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="008bZVbWhG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_ISIN" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="008YHr50hG5AW01Y" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="008bZVbWhG5AW003" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="008bZVbWhG5AW002" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="ISIN" valueType="CONSTANT"/>
+      <option id="008baDlWhG5AW000" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+      <option id="008baDlWhG5AW009" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="ISID3_ID_CTXT_ISS_ID"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="008bZVbWhG5AW004" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_CUSIP" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="008YHr50hG5AW01Y" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="008bZVbWhG5AW007" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="008bZVbWhG5AW006" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="CUSIP" valueType="CONSTANT"/>
+      <option id="008baDlWhG5AW001" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+      <option id="008baDlWhG5AW00A" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="ISID7_INSTR_CTX_MKT_USG"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="008bZVbWhG5AW008" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_POINTID" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="008bZVbWhG5AW009" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="008bZVbWhG5AW00B" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="008bZVbWhG5AW00C" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_POINTID" nameSpace="POINT72" parentId="008bZVbWhG5AW008" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="008bZVbWhG5AW00E" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="008bZVbWhG5AW00D" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="POINTID" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Cross Reference" id="008bZVbWhG5AW00F" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MIXR_CPROOT_P72_POSITIONID" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="008bZVbWhG5AW00G" table="FT_T_MIXR" timeSeries="LOGICAL_DELETE">
+      <option id="008bZVbWhG5AW00I" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MIXR_MATCH_1"/>
+      <option id="008i03JWhG6N8000" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="008bZVbWhG5AW00J" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_CPROOT_P72_POSITIONID" nameSpace="POINT72" parentId="008bZVbWhG5AW00F" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="008bZVbWhG5AW00L" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="008bZVbWhG5AW00K" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="GSPOSITIONID" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issuer" id="008baDlWhG5AW002" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISSR_CPROOT_P72" nameSpace="POINT72" parentId="++8W3a4mhG5q400E" table="FT_T_ISSR" timeSeries="LOGICAL_DELETE">
+      <field id="008baDlWhG5AW003" name="ISSR_NME" nameSpace="POINT72"/>
+      <option id="++8blNqmhG5AW001" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Financial Institution" id="008baDlWhG5AW004" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FINS_CPROOT_P72" nameSpace="POINT72" parentId="008baDlWhG5AW002" table="FT_T_FINS" timeSeries="LOGICAL_DELETE">
+      <field id="008baDlWhG5AW006" name="INST_NME" nameSpace="POINT72"/>
+      <option id="++8blNqmhG5AW003" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issuer Geographic Unit" id="008beQTWhG5AW002" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="IRGU_CPROOT_P72_INCRPRTE" nameSpace="POINT72" parentId="008baDlWhG5AW002" table="FT_T_IRGU" timeSeries="LOGICAL_DELETE">
+      <value id="008beQTWhG5AW005" name="GU_CNT" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008beQTWhG5AW004" name="GU_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="COUNTRY" valueType="CONSTANT"/>
+      <value id="008beQTWhG5AW006" name="ISSR_GU_PURP_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="INCRPRTE" valueType="CONSTANT"/>
+      <option id="++8blNqmhG5AW007" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+      <option id="008beQTWhG5AW003" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="IRGU_GUTP_PURP"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Geographic Unit" id="008beQTWhG5AW008" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="IRGU_CPROOT_P72_INCRPRTE_GUNT" nameSpace="POINT72" parentId="008beQTWhG5AW002" table="FT_T_GUNT" timeSeries="LOGICAL_DELETE">
+      <field id="008beQTWhG5AW00E" name="PRNT_GU_ID" nameSpace="POINT72"/>
+      <value id="008beQTWhG5AW00C" name="PRNT_GU_CNT" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008beQTWhG5AW00D" name="PRNT_GU_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="COUNTRY" valueType="CONSTANT"/>
+      <option id="008beQTWhG5AW009" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+      <option id="008beQTWhG5AW00A" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="GUNT_MATCH_1"/>
+      <option id="008beQTWhG5AW00B" nameSpace="POINT72" type="DEFAULT_ACTION" value="REFERENCE"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Geographic Unit" id="008bf-10hG5AW001" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISGU_CPROOT_P72_ISSUANCE" nameSpace="POINT72" parentId="++8W3a4mhG5q400E" table="FT_T_ISGU" timeSeries="LOGICAL_DELETE">
+      <value id="008bf-10hG5AW002" name="GU_CNT" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008bf-10hG5AW003" name="GU_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="COUNTRY" valueType="CONSTANT"/>
+      <value id="008bf-10hG5AW004" name="ISS_GU_PURP_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="ISSUANCE" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Geographic Unit" id="008bf-10hG5AW006" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISGU_CPROOT_P72_ISSUANCE_GUNT" nameSpace="POINT72" parentId="008bf-10hG5AW001" table="FT_T_GUNT" timeSeries="LOGICAL_DELETE">
+      <field id="008bf-10hG5AW00B" name="PRNT_GU_ID" nameSpace="POINT72"/>
+      <value id="008bf-10hG5AW009" name="PRNT_GU_CNT" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="008bf-10hG5AW00A" name="PRNT_GU_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="COUNTRY" valueType="CONSTANT"/>
+      <option id="008bf-10hG5AW007" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+      <option id="008bf-10hG5AW008" nameSpace="POINT72" type="DEFAULT_ACTION" value="REFERENCE"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issuer Identifier" id="008bgYP0hG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="IRID_CPROOT_P72_BBCMPYID" nameSpace="POINT72" parentId="008baDlWhG5AW002" table="FT_T_IRID" timeSeries="LOGICAL_DELETE">
+      <field id="008bgYP0hG5AW002" name="ISSR_ID" nameSpace="POINT72"/>
+      <value id="008bgYP0hG5AW001" name="ISSR_ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="BBCMPYID" valueType="CONSTANT"/>
+      <option id="++8blNqmhG5AW005" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Point72 Position Flag View" id="008jd3x0hG6Ri000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="POS1_MKIS" nameSpace="POINT72" parentId="008W3DOWhG5q4000" relationId="008jd3x0hG6Ri001" table="FT_V_POS1" timeSeries="LOGICAL_DELETE">
+      <field id="008jd3x0hG6Ri003" name="POS1_POSN_FLAG" nameSpace="POINT72"/>
+      <option id="++8jdWzGhG6Pq000" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="++8W3a4mhG5q4000" groupMapping="0" id="++8W3a4mhG5q4001" nameSpace="POINT72" occFieldId="008W3DOWhG5q4003"/>
+    <mapping beFieldId="++8W3a4mhG5q4007" groupMapping="0" id="++8W3a4mhG5q4008" nameSpace="POINT72" occFieldId="++8W3a4mhG5q4006"/>
+    <mapping beFieldId="++8W3a4mhG5q4009" groupMapping="0" id="++8W3a4mhG5q400A" nameSpace="POINT72" occFieldId="++8W3a4mhG5q4002"/>
+    <mapping beFieldId="++8W3a4mhG5q400C" groupMapping="0" id="++8W3a4mhG5q400D" nameSpace="POINT72" occFieldId="++8W3a4mhG5q400B"/>
+    <mapping beFieldId="++8W3a4mhG5q400K" groupMapping="0" id="++8W3a4mhG5q400L" nameSpace="POINT72" occFieldId="++8W3a4mhG5q400I"/>
+    <mapping beFieldId="++8W3a4mhG5q400M" groupMapping="0" id="++8W3a4mhG5q400N" nameSpace="POINT72" occFieldId="++8W3a4mhG5q400J"/>
+    <mapping beFieldId="++8W3tUGhG5q4002" groupMapping="0" id="++8W3tUGhG5q4003" nameSpace="POINT72" occFieldId="++8W3a4mhG5q400H"/>
+    <mapping beFieldId="++8W7OKmhG5q400g" groupMapping="0" id="++8W7OKmhG5q400h" nameSpace="POINT72" occFieldId="++8W7OKmhG5q400f"/>
+    <mapping beFieldId="++8ZqSemhG5AW00T" groupMapping="0" id="++8ZqSemhG5AW00U" nameSpace="POINT72" occFieldId="++8ZqSemhG5AW00Q"/>
+    <mapping beFieldId="++8ZqSemhG5AW00V" groupMapping="0" id="++8ZqSemhG5AW00W" nameSpace="POINT72" occFieldId="++8ZqSemhG5AW00R"/>
+    <mapping beFieldId="++8ZsRZmhG5AW007" groupMapping="0" id="++8ZsRZmhG5AW009" nameSpace="POINT72" occFieldId="++8ZsRZmhG5AW002"/>
+    <mapping beFieldId="++8W7OKmhG5q400V" groupMapping="0" id="++8b8niGhG5AW008" nameSpace="POINT72" occFieldId="++8b8niGhG5AW007"/>
+    <mapping beFieldId="008Zv+50hG5AW00M" groupMapping="0" id="++8b8niGhG5AW00G" nameSpace="POINT72" occFieldId="++8b8niGhG5AW00F"/>
+    <mapping beFieldId="++8W7OKmhG5q400H" groupMapping="0" id="++8b8niGhG5AW00O" nameSpace="POINT72" occFieldId="++8b8niGhG5AW00N"/>
+    <mapping beFieldId="++8b8niGhG5AW00W" groupMapping="0" id="++8b8niGhG5AW00X" nameSpace="POINT72" occFieldId="++8b8niGhG5AW00V"/>
+    <mapping beRelationId="++8b8niGhG5AW00Z" groupMapping="0" id="++8b8niGhG5AW00e" nameSpace="POINT72" occFieldId="++8b8niGhG5AW00b"/>
+    <mapping beFieldId="++8ge-CGhG5Qe3ce" groupMapping="0" id="++8ge-CGhG5Qe3cf" nameSpace="POINT72" occFieldId="++8ge-CGhG5Qe3cd"/>
+    <mapping beFieldId="++8ge-CGhG5Qe3ck" groupMapping="0" id="++8ge-CGhG5Qe3cl" nameSpace="POINT72" occFieldId="++8ge-CGhG5Qe3cj"/>
+    <mapping beFieldId="++8iaIRGhG6Lq008" groupMapping="0" id="++8iaIRGhG6Lq009" nameSpace="POINT72" occFieldId="++8iaIRGhG6Lq006"/>
+    <mapping beFieldId="++8iaIRGhG6Lq00A" groupMapping="0" id="++8iaIRGhG6Lq00B" nameSpace="POINT72" occFieldId="++8iaIRGhG6Lq007"/>
+    <mapping beFieldId="008W3DOWhG5q4004" groupMapping="0" id="008W3DOWhG5q400A" nameSpace="POINT72" occFieldId="008W3DOWhG5q4002"/>
+    <mapping beFieldId="008Zv+50hG5AW00U" groupMapping="0" id="008Zv+50hG5AW00Y" nameSpace="POINT72" occFieldId="008Zv+50hG5AW00V"/>
+    <mapping beFieldId="008Zv+50hG5AW00Z" groupMapping="0" id="008Zv+50hG5AW00b" nameSpace="POINT72" occFieldId="008Zv+50hG5AW00W"/>
+    <mapping beFieldId="008Zv+50hG5AW00a" groupMapping="0" id="008Zv+50hG5AW00c" nameSpace="POINT72" occFieldId="008Zv+50hG5AW00X"/>
+    <mapping beFieldId="++8W7OKmhG5q400U" groupMapping="0" id="008b50ZWhG5AW00A" nameSpace="POINT72" occFieldId="008b50ZWhG5AW009"/>
+    <mapping beFieldId="++8W7OKmhG5q400S" groupMapping="0" id="008b8heWhG5AW007" nameSpace="POINT72" occFieldId="008b8heWhG5AW006"/>
+    <mapping beFieldId="008bVui0hG5AW00O" groupMapping="0" id="008bVui0hG5AW00P" nameSpace="POINT72" occFieldId="008bVui0hG5AW009"/>
+    <mapping beFieldId="008bVui0hG5AW00Q" groupMapping="0" id="008bVui0hG5AW00R" nameSpace="POINT72" occFieldId="008bVui0hG5AW00D"/>
+    <mapping beFieldId="008bVui0hG5AW00S" groupMapping="0" id="008bVui0hG5AW00T" nameSpace="POINT72" occFieldId="008bVui0hG5AW00I"/>
+    <mapping beFieldId="008bVui0hG5AW00U" groupMapping="0" id="008bVui0hG5AW00V" nameSpace="POINT72" occFieldId="008bVui0hG5AW00N"/>
+    <mapping beFieldId="008bZVbWhG5AW00M" groupMapping="0" id="008baDlWhG5AW007" nameSpace="POINT72" occFieldId="008bZVbWhG5AW003"/>
+    <mapping beFieldId="008bZVbWhG5AW00N" groupMapping="0" id="008baDlWhG5AW008" nameSpace="POINT72" occFieldId="008bZVbWhG5AW007"/>
+    <mapping beFieldId="008bZVbWhG5AW00O" groupMapping="0" id="008baDlWhG5AW00B" nameSpace="POINT72" occFieldId="008bZVbWhG5AW00E"/>
+    <mapping beFieldId="008bZVbWhG5AW00P" groupMapping="0" id="008baDlWhG5AW00C" nameSpace="POINT72" occFieldId="008bZVbWhG5AW00L"/>
+    <mapping beFieldId="008baDlWhG5AW00D" groupMapping="0" id="008baDlWhG5AW00E" nameSpace="POINT72" occFieldId="008baDlWhG5AW003"/>
+    <mapping beFieldId="008baDlWhG5AW00F" groupMapping="0" id="008baDlWhG5AW00G" nameSpace="POINT72" occFieldId="008baDlWhG5AW006"/>
+    <mapping beFieldId="008beQTWhG5AW00F" groupMapping="0" id="008bf-10hG5AW000" nameSpace="POINT72" occFieldId="008beQTWhG5AW00E"/>
+    <mapping beFieldId="008bf-10hG5AW00C" groupMapping="0" id="008bf-10hG5AW00D" nameSpace="POINT72" occFieldId="008bf-10hG5AW00B"/>
+    <mapping beFieldId="008bgYP0hG5AW003" groupMapping="0" id="008bgYP0hG5AW004" nameSpace="POINT72" occFieldId="008bgYP0hG5AW002"/>
+    <mapping beFieldId="008jd3x0hG6Ri004" groupMapping="0" id="008jd3x0hG6Ri005" nameSpace="POINT72" occFieldId="008jd3x0hG6Ri003"/>
+    <mapping beFieldId="008r2Ca0hG5Eq000" groupMapping="0" id="008r2Ca0hG5Eq003" nameSpace="POINT72" occFieldId="008r2Ca0hG5Eq001"/>
+    <mapping beFieldId="008r2Ca0hG5Eq004" groupMapping="0" id="008r2Ca0hG5Eq005" nameSpace="POINT72" occFieldId="008r2Ca0hG5Eq002"/>
+  </mappings>
+  <businessEntities>
+    <businessEntity cachedisableInd="N" category="POINT72" dataGroupId="008W3DOWhG5q4006" defaultInd="1" desc="Object to publish a single Country Primary instrument" displayCaption="Country Primary Publish" entityTypeId="=000170200" id="008W3DOWhG5q4005" mavenVersion="0.0" name="CountryPrimaryPublish" nameSpace="POINT72" ruleVersion="0.0" version="39.0">
+      <configurations>
+        <configuration data="INCOMPLETE" id="008W3DOWhG5q4009" ignoreDeleteChildren="false" nameSpace="POINT72" option="BEDEINITIONFSTATUS"/>
+      </configurations>
+    </businessEntity>
+  </businessEntities>
+  <entityRelations>
+    <entityRelation entityId="008W3DOWhG5q4005" id="++8b8niGhG5AW00Z" lookupField="005Q5i8i2etse002" multiplicity="SINGLE_OR_NULL" name="ParentInstrument" nameSpace="POINT72" rltdEntityId="++5SQ0Ly2etse000">
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00d" nameSpace="POINT72" partId="004aIFeC2etv4008"/>
+      <part forPublishing="1" forUI="1" id="++8b8niGhG5AW00f" nameSpace="POINT72" partId="005Q5i8i2etse002"/>
+      <part forPublishing="1" forUI="1" id="++8b8niGhG5AW00g" nameSpace="POINT72" partId="005Q5i8i2etse004"/>
+      <part forPublishing="1" forUI="1" id="++8b8niGhG5AW00h" nameSpace="POINT72" partId="005Q5i8i2etse005"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00b" nameSpace="POINT72" partId="005ZesYC2etse01j"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00X" nameSpace="POINT72" partId="008QTTk0hG5sq000"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00Y" nameSpace="POINT72" partId="008QTTk0hG5sq001"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00Z" nameSpace="POINT72" partId="008QTTk0hG5sq002"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00a" nameSpace="POINT72" partId="008QTTk0hG5sq003"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00V" nameSpace="POINT72" partId="++4u-kJy2etzO00a"/>
+      <part forPublishing="1" forUI="1" id="++8b8niGhG5AW00i" nameSpace="POINT72" partId="++4u-kJy2etzO00d"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00c" nameSpace="POINT72" partId="++5PNZ5y2etz400o"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00W" nameSpace="POINT72" partId="++5WWmNS2etqW000"/>
+      <part forPublishing="1" forUI="1" id="008bZVbWhG5AW00U" nameSpace="POINT72" partId="++5XYChy2etse006"/>
+      <part forPublishing="1" forUI="1" id="008beQTWhG5AW000" nameSpace="POINT72" partId="++8aQMhmhG5AW00J"/>
+      <part forPublishing="1" forUI="1" id="008beQTWhG5AW001" nameSpace="POINT72" partId="++8SFiHmhG5q400H"/>
+    </entityRelation>
+  </entityRelations>
+</entities>

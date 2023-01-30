@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" customDesc="" desc="Type of interest to be paid to investors. Indicates if coupon type is fixed or floating." displayCaption="Coupon Type" entityTypeId="++3qwBhS2etxm003" id="004HBMJi2etwa00G" mandatory="0" multiplicity="SINGLE_OR_NULL" name="CouponType" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="Returns whether the bond's pricing includes accrued interest or not. Returns 'Clean' (does not include accrued interest) or 'Dirty' (includes accrued interest). " displayCaption="Clean/Dirty Price" entityTypeId="++3qwBhS2etxm003" id="++4ZDLoS2etpi014" mandatory="0" multiplicity="SINGLE_OR_NULL" name="CleanOrDirtyPrice" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="Code representing the seniority of the asset, as disclosed in source documentation. " displayCaption="Seniority" entityTypeId="++3qwBhS2etxm003" id="005WGrhC2etse00P" mandatory="0" multiplicity="SINGLE_OR_NULL" name="Seniority" nameSpace="GSC"/>
+    <beField class="BEDEC" customDesc="" desc="Capital Type Contingent Cnvr Trigger Rte" displayCaption="Capital Type Contingent Cnvr Trigger Rte" entityTypeId="++3qwBhS2etxm003" id="MIJIRQIAEHZNLSYK" mandatory="0" multiplicity="SINGLE_OR_NULL" name="CapitalTypeContingentCnvrTriggerRte" nameSpace="GSC"/>
+    <beField class="BEDATE" customDesc="" desc="" displayCaption="Contingent Conversion End Date" entityTypeId="++3qwBhS2etxm003" id="008r44EWhG53K00y" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72ContingentConversionEndDate" nameSpace="POINT72"/>
+    <beField class="BEDEC" customDesc="" desc="Amount the holder receives at maturity expressed as a percentage of the face amount of the bond, or as a cash amount. " displayCaption="Redemption Value" entityTypeId="++3qwBhS2etxm003" id="004IvDwi2ettS001" mandatory="0" multiplicity="SINGLE_OR_NULL" name="RedemptionValue" nameSpace="GSC"/>
+    <beField class="BEDEC" customDesc="" desc="This field stores the monetary value of the latest redemption.  This field only applies to Muni's." displayCaption="Recent Redemption Amount" entityTypeId="++3qwBhS2etxm003" id="++4KObSS2ettS01A" mandatory="0" multiplicity="SINGLE_OR_NULL" name="RecentRedemptionAmount" nameSpace="GSC"/>
+    <beField class="BEDEC" customDesc="" desc="The factor reported previous to the most recently reported factor. " displayCaption="Previous Factor" entityTypeId="++3qwBhS2etxm003" id="004gu6ji2etv401X" mandatory="0" multiplicity="SINGLE_OR_NULL" name="PreviousFactor" nameSpace="GSC"/>
+    <beField class="BEDATE" customDesc="" desc="This field records the date when the conditional coupon reset is to occur." displayCaption="Next Conditional Coupon Reset Date" entityTypeId="++3qwBhS2etxm003" id="005uhHai2etqq06W" mandatory="0" multiplicity="SINGLE_OR_NULL" name="NextConditionalCouponResetDate" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Ultimate Parent Company Name" entityTypeId="++3qwBhS2etxm003" id="008o9k70hG5Ba00X" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72UltimateParentCompanyName" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Ultimate Parent Country or Territory of Risk" entityTypeId="++3qwBhS2etxm003" id="008o9k70hG5Ba00g" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72UltimateParentCountryorTerritoryofRisk" nameSpace="POINT72"/>
+    <beField class="BEDATE" customDesc="" desc="" displayCaption="Settle Date" entityTypeId="++3qwBhS2etxm003" id="008o9k70hG5Ba00p" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72SETTLEDTE" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Redemption Currency" entityTypeId="++3qwBhS2etxm003" id="008o9k70hG5Ba016" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72RedemptionCurrency" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Calendar Code" entityTypeId="++3qwBhS2etxm003" id="008o9k70hG5Ba010" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72CalendarCode" nameSpace="POINT72"/>
+    <beField class="BEDEC" displayCaption="Shares Outstanding" entityTypeId="++3qwBhS2etxm003" id="++8ia41GhG6Ra007" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72OutstandActualSharesOutstanding" nameSpace="POINT72"/>
+    <beField class="BEDATE" displayCaption="Outstanding Effective Date" entityTypeId="++3qwBhS2etxm003" id="++8ia41GhG6Ra009" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72OutstandEffectiveDate" nameSpace="POINT72"/>
+    <beField class="BEDEC" customDesc="" desc="The highest rate that a coupon can reach. " displayCaption="Coupon Rate Cap" entityTypeId="++3qwBhS2etxm003" id="++4Stagy2etra00X" mandatory="0" multiplicity="SINGLE_OR_NULL" name="CouponRateCap" nameSpace="GSC"/>
+    <beField class="BEINT" customDesc="" desc="Number of days for a security's coupon frequency for securities that pay coupons as day payer securities, such as 91 days, or 182 days. " displayCaption="Coupon Frequency Unit Quantity" entityTypeId="++3qwBhS2etxm003" id="004Ns6Yi2etu800Q" mandatory="0" multiplicity="SINGLE_OR_NULL" name="CouponFreqUnitQuantity" nameSpace="GSC"/>
+    <beField class="BEDATE" customDesc="" desc="" displayCaption="Second Coupon Date" entityTypeId="++3qwBhS2etxm003" id="++8oLJRGhG5Ba00J" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72SecondCouponDate" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Dirty/Clean Price" entityTypeId="++3qwBhS2etxm003" id="008oUDeWhG584000" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72DirtyOrCleanPrice" nameSpace="POINT72"/>
+    <beField class="BEDATE" customDesc="" desc="Date from which interest begins to accrue. For securities issued in exchange of 144a/regs tranches interest accrual date is the last coupon date prior to the 144a/regs exchange offer expiration. " displayCaption="Coupon Start Date" entityTypeId="++3qwBhS2etxm003" id="++5ZqLUy2etse08G" mandatory="0" multiplicity="MULTIPLE" name="InterestStartDate" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="This field specifies whether the payment is computed based on a percentage, a rate or is given as a fixed amount.  If the Event Rate Type field contains &quot;percent&quot; or &quot;rate&quot; then the value in the Event Rate field is a percentage or a rate and is used to compute the payment.   If the Event Rate Type field contains &quot;amount&quot; then the Event Rate field contains a fixed amount that is directly used as the payment." displayCaption="Coupon Type (Amount/Percent)" entityTypeId="++3qwBhS2etxm003" id="++5ZqLUy2etse08Q" mandatory="0" multiplicity="MULTIPLE" name="CouponAmountPercent" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="This field specifies the basis for calculating the amount of an income payment. Possible values of the Event Rate Basis field are &quot;par value&quot;, &quot;face value&quot; and &quot;amortized face&quot;. This field is used in conjunction with the Event Rate Type and the Event Rate fields to calculate the income payment. For example, if a bond is paying a fixed 5% interest of face, the Event Rate Basis field would contain a value indicating &quot;face value&quot;, the Event Rate Type field would contain a value indicating &quot;rate&quot; and the Event rate field would contain a value of &quot;0.05&quot;." displayCaption="Coupon Schedule Basis" entityTypeId="++3qwBhS2etxm003" id="005o-Qpi2etne06-" mandatory="0" multiplicity="MULTIPLE" name="CouponScheduleBasis" nameSpace="GSC"/>
+    <beField class="BETSTAMP" customDesc="" desc="Contains the latest date and time that the values were changed." displayCaption="Last Change Date/Time" entityTypeId="++3qwBhS2etxm003" id="++6NZUOy2etrC00J" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="CouponSchdLastChangeDateTime" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="Contains the identifier of the last person or application that changed the values." displayCaption="Last Change User Id" entityTypeId="++3qwBhS2etxm003" id="++6NZUOy2etrC00L" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="CouponSchdLastChangeUserId" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="This field specifies the status of the data within this row of the table.  Normally the value of this field will be &quot;null&quot; indicating that the data is active.  Depending upon how a specific data vendor supplies data, other possible values include &quot;DELETED&quot;, &quot;REPLACED&quot;.  It is also possible to use this field to indicate the verification status of the data in this table row.  In that case possible values include &quot;UNVERIFIED&quot; and &quot;VERIFIED&quot;." displayCaption="Data Status" entityTypeId="++3qwBhS2etxm003" id="007bSktC2euPC00g" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="CouponSchdDataStatus" nameSpace="GSC"/>
+    <beField class="BEDATE" customDesc="" desc="Dividend Start Date" displayCaption="Dividend Start Date" entityTypeId="++3qwBhS2etxm003" id="005gaqbi2etqS00f" mandatory="0" multiplicity="MULTIPLE" name="DividendStartDate" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="Dividend Type" displayCaption="Dividend Type" entityTypeId="++3qwBhS2etxm003" id="005gaqbi2etqS00l" mandatory="0" multiplicity="MULTIPLE" name="DividendRateType" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="Dividend Basis" displayCaption="Dividend Basis" entityTypeId="++3qwBhS2etxm003" id="005gaqbi2etqS00j" mandatory="0" multiplicity="MULTIPLE" name="DividendBasis" nameSpace="GSC"/>
+    <beField class="BEDEC" customDesc="" desc="Dividend Rate" displayCaption="Dividend Rate" entityTypeId="++3qwBhS2etxm003" id="005gaqbi2etqS00U" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="DividendRate" nameSpace="GSC"/>
+    <beField class="BETSTAMP" customDesc="" desc="Dividend End Date" displayCaption="Dividend End Date" entityTypeId="++3qwBhS2etxm003" id="005gaqbi2etqS00h" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="DividendEndDate" nameSpace="GSC"/>
+    <beField class="BETSTAMP" customDesc="" desc="Contains the latest date and time that the values were changed." displayCaption="Last Change Date/Time" entityTypeId="++3qwBhS2etxm003" id="++6NZUOy2etrC00h" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="DividendSchdLastChangeDateTime" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="Contains the identifier of the last person or application that changed the values." displayCaption="Last Change User Id" entityTypeId="++3qwBhS2etxm003" id="++6NZUOy2etrC00i" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="DividendSchdLastChangeUserId" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="This field specifies the status of the data within this row of the table.  Normally the value of this field will be &quot;null&quot; indicating that the data is active.  Depending upon how a specific data vendor supplies data, other possible values include &quot;DELETED&quot;, &quot;REPLACED&quot;.  It is also possible to use this field to indicate the verification status of the data in this table row.  In that case possible values include &quot;UNVERIFIED&quot; and &quot;VERIFIED&quot;." displayCaption="Data Status" entityTypeId="++3qwBhS2etxm003" id="007bSktC2euPC014" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="DividendSchdDataStatus" nameSpace="GSC"/>
+    <beField class="BEDATE" customDesc="" desc="First possible date of the Pay-In-Kind payment (not the Pay-In-Kind accrual date). " displayCaption="Pay-In-Kind Start Date" entityTypeId="++3qwBhS2etxm003" id="004PbCnC2ettS004" mandatory="0" multiplicity="SINGLE_OR_NULL" name="PayInKindStartDate" nameSpace="GSC"/>
+    <beField class="BEDATE" customDesc="" desc="Last possible date of the pay-in-kind payment. " displayCaption="Pay-In-Kind End Date" entityTypeId="++3qwBhS2etxm003" id="004PbCnC2ettS003" mandatory="0" multiplicity="SINGLE_OR_NULL" name="PayInKindEndDate" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="P72Pay-In-Kind End Date" entityTypeId="++3qwBhS2etxm003" id="++8oLJRGhG5Ba00X" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72PayInKindEndDate" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="P72Pay-In-Kind Start Date" entityTypeId="++3qwBhS2etxm003" id="++8oLJRGhG5Ba00Z" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72PayInKindStartDate" nameSpace="POINT72"/>
+    <beField class="BEDEC" customDesc="" desc="" displayCaption="Cash Flow Amount" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00m" mandatory="0" multiplicity="MULTIPLE" name="P72CashFlowAmount" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Cash Flow Data Source Id" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00c" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="P72CashFlowDataSourceId" nameSpace="POINT72"/>
+    <beField class="BETSTAMP" customDesc="" desc="" displayCaption="Cash Flow End Date" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00q" mandatory="0" multiplicity="MULTIPLE" name="P72CashFlowEndDate" nameSpace="POINT72"/>
+    <beField class="BEDEC" customDesc="" desc="" displayCaption="Cash Flow Rate" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00k" mandatory="0" multiplicity="MULTIPLE" name="P72CashFlowRate" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Cash Flow Schd Data Status" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00s" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="P72CashFlowSchdDataStatus" nameSpace="POINT72"/>
+    <beField class="BETSTAMP" customDesc="" desc="" displayCaption="Last Change Date/Time" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00u" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="P72CashFlowSchdLastChangeDateTime" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Last Change User Id" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00w" mandatory="0" multiplicity="MULTIPLE_AND_READONLY" name="P72CashFlowSchdLastChangeUserId" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Cash Flow Schedule Basis" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00i" mandatory="0" multiplicity="MULTIPLE" name="P72CashFlowScheduleBasis" nameSpace="POINT72"/>
+    <beField class="BEDATE" customDesc="" desc="" displayCaption="Cash Flow Start Date" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00e" mandatory="0" multiplicity="MULTIPLE" name="P72CashFlowStartDate" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Cash Flow Type (Amount/Percent)" entityTypeId="++3qwBhS2etxm003" id="008olEuWhG52K00g" mandatory="0" multiplicity="MULTIPLE" name="P72CashFlowType" nameSpace="POINT72"/>
+    <beField class="BEINT" customDesc="" desc="" displayCaption="Call Days Notice" entityTypeId="++3qwBhS2etxm003" id="008oULn0hG57m007" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72CallScheduleDaysNotice" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="This field indicates whether the security is subject to U.S. Regulation S. (Regulation S - Not available in the United States or to Unites States persons, unless exempted by the SEC.)" displayCaption="Regulation S Indicator (US)" entityTypeId="++3qwBhS2etxm003" id="004HGjaC2etzy00q" mandatory="0" multiplicity="SINGLE_OR_NULL" name="RegulationSIndicator" nameSpace="GSC"/>
+    <beField class="BEDEC" customDesc="" desc="Face value of the security after redenominated into Euro currency. " displayCaption="Post-Euro Redenomination Par Amount" entityTypeId="++3qwBhS2etxm003" id="004OlV0i2etzy000" mandatory="0" multiplicity="SINGLE_OR_NULL" name="PostEuroRedenominationParAmount" nameSpace="GSC"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Is Minor" entityTypeId="++3qwBhS2etxm003" id="++8rNGumhG5D4002" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72IsMinor" nameSpace="POINT72">
+      <domainValue beFieldId="++8rNGumhG5D4002" domainValueName="Yes" domainValueTxt="Y" id="++8rNGumhG5D4004" nameSpace="POINT72"/>
+      <domainValue beFieldId="++8rNGumhG5D4002" domainValueName="No" domainValueTxt="N" id="++8rNGumhG5D4005" nameSpace="POINT72"/>
+    </beField>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Is Deliverable" entityTypeId="++3qwBhS2etxm003" id="++8rNGumhG5D4006" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72IsDeliverable" nameSpace="POINT72">
+      <domainValue beFieldId="++8rNGumhG5D4006" domainValueName="Yes" domainValueTxt="Y" id="++8rNGumhG5D400C" nameSpace="POINT72"/>
+      <domainValue beFieldId="++8rNGumhG5D4006" domainValueName="No" domainValueTxt="N" id="++8rNGumhG5D400D" nameSpace="POINT72"/>
+    </beField>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Major Currency" entityTypeId="++3qwBhS2etxm003" id="++8rNGumhG5D400E" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72MajorCurrency" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Currency ID" entityTypeId="++3qwBhS2etxm003" id="++8rNWDmhG5Ae00b" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72ISOCURR" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Bond Features" displayCaption="Bond Features" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="004JftOi2etwa023" multiplicity="SINGLE_OR_NULL" name="BondFeatures" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="008r44EWhG53K00y" id="++8r85WmhG59m00C" prntReqdInd="0" seq="276"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Bond Statistics" displayCaption="Bond Statistics" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="004Vwh+C2ettS00a" multiplicity="SINGLE_OR_NULL" name="BondStatistics" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="008o9k70hG5Ba00X" id="008o9k70hG5Ba00a" prntReqdInd="0" seq="169"/>
+      <part defNameSpace="POINT72" fieldId="008o9k70hG5Ba00g" id="008o9k70hG5Ba00j" prntReqdInd="0" seq="170"/>
+      <part defNameSpace="POINT72" fieldId="008o9k70hG5Ba00p" id="008o9k70hG5Ba00s" prntReqdInd="0" seq="171"/>
+      <part defNameSpace="POINT72" fieldId="008o9k70hG5Ba016" id="008o9k70hG5Ba019" prntReqdInd="0" seq="172"/>
+      <part defNameSpace="POINT72" fieldId="008o9k70hG5Ba010" id="008oEWk0hG51a009" prntReqdInd="0" seq="173"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Warrant Details" displayCaption="Warrant Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="004IUyYi2etqi000" multiplicity="SINGLE_OR_NULL" name="WarrantDetails" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8ia41GhG6Ra007" id="++8ia41GhG6Ra00C" prntReqdInd="0" seq="2"/>
+      <part defNameSpace="POINT72" fieldId="++8ia41GhG6Ra009" id="++8ia41GhG6Ra00D" prntReqdInd="0" seq="3"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Related Instrument Details" displayCaption="Related Instrument Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="++4ci0By2etrS006" multiplicity="MULTIPLE_OR_NULL" name="RelatedInstrumentDetails" nameSpace="GSC">
+      <part beRelationId="++8rdPIGhG59m000" defNameSpace="POINT72" id="++8rdPIGhG59m001" label="UnderlyingCountryPrimaryForCurrency" prntReqdInd="0" seq="8"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Coupon Details" displayCaption="Coupon Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="005U9SIi2etse000" multiplicity="SINGLE_OR_NULL" name="CouponDetails" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8oLJRGhG5Ba00J" id="008oQkEWhG5Ba000" prntReqdInd="0" seq="85"/>
+      <part defNameSpace="POINT72" fieldId="008oUDeWhG584000" id="008oUDeWhG584002" prntReqdInd="0" seq="86"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Payment-In-Kind Details" displayCaption="Payment-In-Kind Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="004WLtRC2etuC000" multiplicity="SINGLE_OR_NULL" name="PaymentInKind" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8oLJRGhG5Ba00X" id="++8oLJRGhG5Ba00h" prntReqdInd="0" seq="15"/>
+      <part defNameSpace="POINT72" fieldId="++8oLJRGhG5Ba00Z" id="++8oLJRGhG5Ba00i" prntReqdInd="0" seq="16"/>
+    </dataGroup>
+    <dataGroup category="" customInd="0" desc="Cash Flow Schedule" displayCaption="Cash Flow Schedule" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="008olEuWhG52K00Y" multiplicity="MULTIPLE_OR_NULL" name="P72CashFlowSchedule" nameSpace="POINT72">
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00m" id="008olEuWhG52K016" prntReqdInd="1" seq="0"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00c" id="008olEuWhG52K017" prntReqdInd="0" seq="1"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00q" id="008olEuWhG52K018" prntReqdInd="1" seq="2"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00k" id="008olEuWhG52K019" prntReqdInd="1" seq="3"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00s" id="008olEuWhG52K01A" prntReqdInd="0" seq="4"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00u" id="008olEuWhG52K01B" prntReqdInd="0" seq="5"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00w" id="008olEuWhG52K01C" prntReqdInd="0" seq="6"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00i" id="008olEuWhG52K01D" prntReqdInd="1" seq="7"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00e" id="008olEuWhG52K01E" prntReqdInd="1" seq="8"/>
+      <part defNameSpace="POINT72" fieldId="008olEuWhG52K00g" id="008olEuWhG52K01F" prntReqdInd="1" seq="9"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Income Details" displayCaption="Income Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="005U9SIi2etse00f" multiplicity="SINGLE_OR_NULL" name="IncomeDetails" nameSpace="GSC">
+      <part dataGroupId="008olEuWhG52K00Y" defNameSpace="POINT72" id="008olEuWhG52K00Z" prntReqdInd="0" seq="4"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Call Details" displayCaption="Call Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="++5fWccS2etqS00D" multiplicity="SINGLE_OR_NULL" name="CallDetails" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="008oULn0hG57m007" id="++8p2osGhG51a015" prntReqdInd="0" seq="26"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Currency Details" displayCaption="Currency Details" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="++6ndfpS2etqG000" multiplicity="SINGLE_OR_NULL" name="CurrencyDetails" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8rNGumhG5D4002" id="++8rNWDmhG5Ae00f" prntReqdInd="0" seq="20"/>
+      <part defNameSpace="POINT72" fieldId="++8rNGumhG5D4006" id="++8rNWDmhG5Ae00g" prntReqdInd="0" seq="21"/>
+      <part defNameSpace="POINT72" fieldId="++8rNGumhG5D400E" id="++8rNWDmhG5Ae00h" prntReqdInd="0" seq="22"/>
+      <part defNameSpace="POINT72" fieldId="++8rNWDmhG5Ae00b" id="++8rNWDmhG5Ae00i" prntReqdInd="0" seq="23"/>
+    </dataGroup>
+  </dataGroups>
+  <relations>
+    <relation customSQL="exists (select 1 from ft_t_pbdp pbdp where #TO_TABLE#.pub_audit_id = pbdp.pub_audit_id and #TO_TABLE#.pub_sq_num = pbdp.pub_sq_num) " id="008jd3x0hG6Ri008" name="FT_T_ISSU-To-FT_T_PBAT" nameSpace="POINT72" srcTable="FT_T_ISSU" tgtTable="FT_T_PBAT">
+      <field fromColumn="INSTR_ID" id="008jd3x0hG6Ri009" nameSpace="POINT72" toColumn="PUB_CROSS_REF_ID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8q9SEmhG5BG00A" name="FT_T_RISS-To-FT_T_ISSU06" nameSpace="POINT72" srcTable="FT_T_RISS" tgtTable="FT_T_ISSU">
+      <field fromColumn="INSTR_ID" id="++8q9SEmhG5BG00B" nameSpace="POINT72" toColumn="INSTR_ID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8ZqSemhG5AW003" name="FT_T_RISS-To-FT_T_MKIS00" nameSpace="POINT72" srcTable="FT_T_RISS" tgtTable="FT_T_MKIS">
+      <field fromColumn="MKT_ISS_OID" id="++8ZqSemhG5AW004" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8qotjmhG52K003" name="FT_T_RISS-To-FT_T_MKIS01" nameSpace="POINT72" srcTable="FT_T_RISS" tgtTable="FT_T_MKIS">
+      <field fromColumn="MKT_ISS_OID" id="++8qotjmhG52K004" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="008rInNWhG50W003" name="FT_T_RISS-To-FT_T_MKIS02" nameSpace="POINT72" srcTable="FT_T_RISS" tgtTable="FT_T_MKIS">
+      <field fromColumn="MKT_ISS_OID" id="008rInNWhG50W004" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation id="++8rdPIGhG59m003" name="FT_T_RISS-To-FT_T_MKIS03" nameSpace="POINT72" srcTable="FT_T_RISS" tgtTable="FT_T_MKIS">
+      <field fromColumn="MKT_ISS_OID" id="++8rdPIGhG59m004" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+  </relations>
+  <occurrences>
+    <occurrence desc="Occurrence for Debt Instrument Characteristics" id="004GsTdi2etzy011" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="BDCH_01" nameSpace="GSC" parentId="++4Gmmty2ettS01A" table="FT_T_BDCH" timeSeries="LOGICAL_DELETE">
+      <field id="008r44EWhG53K00x" name="COCO_PRD_END_DTE" nameSpace="POINT72"/>
+      <option id="004JftOi2etwa02k" nameSpace="GSC" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issuer" id="++8SFiHmhG5q4000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISSU_01_ISSR_Lookup" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISSR" timeSeries="LOGICAL_DELETE">
+      <option id="++8SFiHmhG5q4001" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Publishing Audit" id="008jd3x0hG6Ri007" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="P72_PBAT_ISSU" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" relationId="008jd3x0hG6Ri008" table="FT_T_PBAT" timeSeries="LOGICAL_DELETE">
+      <field id="008jetTWhG6L4001" name="LAST_CHG_TMS" nameSpace="POINT72"/>
+      <value id="008jd3x0hG6Ri00A" name="PUBLISHED_TBL_ID" nameSpace="POINT72" type="FILTER_FIELD" value="ISSU" valueType="CONSTANT"/>
+      <option id="008jeHBWhG6H0000" nameSpace="POINT72" type="OCC_USE_TYPE" value="ALWAYS"/>
+      <option id="008jeHBWhG6H0001" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Related Issue Definition" id="008o9k70hG5Ba00O" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="RIDF_P72BENCHMRK" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_RIDF" timeSeries="LOGICAL_DELETE">
+      <value id="++8q9SEmhG5BG002" name="REL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="BNCHMRK" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Related Issue" id="008o9k70hG5Ba00P" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="RISS_P72BENCHMARK" nameSpace="POINT72" parentId="008o9k70hG5Ba00O" table="FT_T_RISS" timeSeries="LOGICAL_DELETE">
+      <field id="++8q9SEmhG5BG009" nameSpace="POINT72" relationId="++8q9SEmhG5BG00A"/>
+      <value id="++8q9SEmhG5BG001" name="ISS_PART_RL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="BNCHMRK" valueType="CONSTANT"/>
+      <value id="++8q9SEmhG5BG003" name="PART_UNITS_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="ALL" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="008o9k70hG5Ba00m" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72SETTLEDT" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="008o9k70hG5Ba00o" name="STAT_VAL_DTE" nameSpace="POINT72"/>
+      <value id="008o9k70hG5Ba00n" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="SETTLEDT" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="008o9k70hG5Ba013" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72_REDEMP_CRNCY" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="008o9k70hG5Ba015" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008o9k70hG5Ba014" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="REDMPCUR" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Financial Institution" id="++8SFiHmhG5q4002" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FINS_ISSR_ISSU_lookup" nameSpace="POINT72" parentId="++8SFiHmhG5q4000" table="FT_T_FINS" timeSeries="LOGICAL_DELETE">
+      <field id="++8SFiHmhG5q4006" name="INST_DESC" nameSpace="POINT72"/>
+      <field id="++8SFiHmhG5q4005" name="INST_NME" nameSpace="POINT72"/>
+      <field id="++8SFiHmhG5q4007" name="INST_TYP" nameSpace="POINT72"/>
+      <option id="++8SFiHmhG5q4003" nameSpace="POINT72" type="UI_PUB_ONLY" value="true"/>
+      <option id="++8SFiHmhG5q4004" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Financial Institution Statistic" id="008o9k70hG5Ba01C" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FIST_P72_RISK_PARENT_NAME" nameSpace="POINT72" parentId="++8SFiHmhG5q4002" table="FT_T_FIST" timeSeries="LOGICAL_DELETE">
+      <field id="008o9k70hG5Ba01G" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008o9k70hG5Ba01F" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="ULPRCONR" valueType="CONSTANT"/>
+      <option id="008o9k70hG5Ba01D" nameSpace="POINT72" type="UI_PUB_ONLY" value="true"/>
+      <option id="008o9k70hG5Ba01E" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Financial Institution Statistic" id="008o9k70hG5Ba01H" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="FIST_ID_BB_ULTIMTE_PRT_CO_NME" nameSpace="POINT72" parentId="++8SFiHmhG5q4002" table="FT_T_FIST" timeSeries="LOGICAL_DELETE">
+      <field id="008o9k70hG5Ba01L" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008o9k70hG5Ba01K" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="PRTCONME" valueType="CONSTANT"/>
+      <option id="008o9k70hG5Ba01I" nameSpace="POINT72" type="UI_PUB_ONLY" value="true"/>
+      <option id="008o9k70hG5Ba01J" nameSpace="POINT72" type="LOOKUP_ONLY" value="true"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market/Issue Characteristics" id="008oEWk0hG51a000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MKIS_P72_CALENDAR_CDE" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_MKIS" timeSeries="LOGICAL_DELETE">
+      <field id="++8oLJRGhG5Ba01e" name="DIRTY_CLEAN_IND" nameSpace="POINT72"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Fins Market/Calendar Participant" id="008oEWk0hG51a002" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MKCA_P72_CALENDAR_CODE" nameSpace="POINT72" parentId="008oEWk0hG51a000" table="FT_T_MKCA" timeSeries="LOGICAL_DELETE">
+      <field id="008oEWk0hG51a007" name="CAL_ID" nameSpace="POINT72"/>
+      <value id="008oEWk0hG51a006" name="CAL_PURP_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="SETradng" valueType="CONSTANT"/>
+      <option id="++8p2osGhG51a013" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Market Capitalization" id="++8ia41GhG6Ra002" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="P72_ISMC_OUTSTAND" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISMC" timeSeries="LOGICAL_DELETE">
+      <field id="++8ia41GhG6Ra006" name="CAP_CHG_EFF_TMS" nameSpace="POINT72"/>
+      <field id="++8ia41GhG6Ra005" name="CAP_SEC_CQTY" nameSpace="POINT72"/>
+      <value id="++8ia41GhG6Ra004" name="CAPITAL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="OUTSTAND" valueType="CONSTANT"/>
+      <option id="++8ia41GhG6Ra003" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="ISMC_MATCH_KEY"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Related Issue" id="004RuC1C2ettK00T" ignoreDeleteChildren="false" multiplicity="MULTIPLE_OR_NULL" name="RISS_01" nameSpace="GSC" parentId="004QPmYC2etr002Z" table="FT_T_RISS" timeSeries="LOGICAL_DELETE">
+      <field id="008rInNWhG50W002" nameSpace="POINT72" relationId="008rInNWhG50W003"/>
+      <field id="++8qotjmhG52K002" nameSpace="POINT72" relationId="++8qotjmhG52K003"/>
+      <field id="++8rdPIGhG59m002" nameSpace="POINT72" relationId="++8rdPIGhG59m003"/>
+      <field id="++8ZqSemhG5AW002" nameSpace="POINT72" relationId="++8ZqSemhG5AW003"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Distribution History" id="++8oLJRGhG5Ba00F" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISDH_P72_CPN_PAYMENT" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISDH" timeSeries="LOGICAL_DELETE">
+      <field id="++8oLJRGhG5Ba00I" name="PY_TMS" nameSpace="POINT72"/>
+      <value id="++8oLJRGhG5Ba00G" name="DISTRIBUTION_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="CPN PAYMENT" valueType="CONSTANT"/>
+      <value id="++8oLJRGhG5Ba00H" name="PAY_NUM" nameSpace="POINT72" type="FILTER_FIELD" value="2" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for General Table Comment" id="++8oLJRGhG5Ba00N" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="GNCM_P72_PIKENDDT" nameSpace="POINT72" parentId="004JftOi2etwa014" relationId="++5ZqLUy2etse07-" table="FT_T_GNCM" timeSeries="LOGICAL_DELETE">
+      <field id="++8oLJRGhG5Ba00S" name="CMNT_TXT" nameSpace="POINT72"/>
+      <value id="++8oLJRGhG5Ba00P" name="COMM_REAS_MNEM" nameSpace="POINT72" type="FILTER_FIELD" value="PIKENDDT" valueType="CONSTANT"/>
+      <value id="++8oLJRGhG5Ba00Q" name="LN_NUM" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="++8oLJRGhG5Ba00R" name="NLS_CDE" nameSpace="POINT72" type="FILTER_FIELD" value="ENGLISH" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for General Table Comment" id="++8oLJRGhG5Ba00O" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="GNCM_P72_PIKSTDT" nameSpace="POINT72" parentId="004JftOi2etwa014" relationId="++5ZqLUy2etse07-" table="FT_T_GNCM" timeSeries="LOGICAL_DELETE">
+      <field id="++8oLJRGhG5Ba00W" name="CMNT_TXT" nameSpace="POINT72"/>
+      <value id="++8oLJRGhG5Ba00T" name="COMM_REAS_MNEM" nameSpace="POINT72" type="FILTER_FIELD" value="PIKSTDT" valueType="CONSTANT"/>
+      <value id="++8oLJRGhG5Ba00U" name="LN_NUM" nameSpace="POINT72" type="FILTER_FIELD" value="1" valueType="CONSTANT"/>
+      <value id="++8oLJRGhG5Ba00V" name="NLS_CDE" nameSpace="POINT72" type="FILTER_FIELD" value="ENGLISH" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Income Event Participant" id="008olEuWhG52K000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="IEVP_P72_AMOUNT" nameSpace="POINT72" parentId="++4KotQS2ettS012" table="FT_T_IEVP" timeSeries="LOGICAL_DELETE">
+      <value id="008olEuWhG52K002" name="PRT_DESC" nameSpace="POINT72" type="DEFAULT_FIELD" value="Amount" valueType="CONSTANT"/>
+      <value id="008olEuWhG52K001" name="PRT_PURP_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="AMOUNT" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Income Payment Definition" id="008olEuWhG52K003" ignoreDeleteChildren="false" multiplicity="MULTIPLE_OR_NULL" name="IPDF_P72_AMOUNT" nameSpace="POINT72" parentId="008olEuWhG52K000" table="FT_T_IPDF" timeSeries="CURRENT_AND_FUTURE_ACTIVE">
+      <field id="008olEuWhG52K00U" name="DATA_SRC_ID" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K00X" name="DATA_STAT_TYP" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K00W" name="END_TMS" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K00Q" name="EV_CAMT" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K00P" name="EV_CRTE" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K00O" name="EV_RATE_BAS_TYP" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K00N" name="EV_RATE_TYP" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K00o" name="LAST_CHG_TMS" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K00p" name="LAST_CHG_USR_ID" nameSpace="POINT72"/>
+      <field id="008olEuWhG52K006" name="START_TMS" nameSpace="POINT72"/>
+      <value id="008olEuWhG52K004" name="ISS_PART_RL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="RECEIVE" valueType="CONSTANT"/>
+      <option id="++8qotjmhG52K00M" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Principal Event Definition" id="004d5g-C2etpi00Y" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="PEDF_CALL" nameSpace="GSC" parentId="++4Gmmty2ettS01A" relationId="++4Gmmty2ettS02G" table="FT_T_PEDF" timeSeries="CURRENT_AND_FUTURE_ACTIVE">
+      <field id="++8p2osGhG51a006" name="ADVANCE_NOTICE_QTY" nameSpace="POINT72"/>
+      <value id="++4dBRUS2etru003" name="EV_TYP" nameSpace="GSC" type="FILTER_FIELD" value="CALLABLE" valueType="CONSTANT"/>
+      <option id="++5ckBRS2etse00K" nameSpace="GSC" type="DEFAULT_ACTION" value="UNKNOWN"/>
+      <option id="++5dD92S2etse00L" nameSpace="GSC" type="OCC_USE_TYPE" value="ATLEAST_ONE_INPUT_FIELD_MAPPED"/>
+      <option id="++5gaPzy2etqS00p" nameSpace="GSC" type="DEFAULT_MATCH_KEY" value="PEDF_MATCH_1"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Currency Characteristics" id="++8rNGumhG5D4000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="CYCH_ISSU_P72" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_CYCH" timeSeries="LOGICAL_DELETE">
+      <field id="++8rNGumhG5D4001" name="MINOR_CURR_UNIT_IND" nameSpace="POINT72"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="++8rNGumhG5D4007" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72DELVRBLE" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="++8rNGumhG5D4009" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="++8rNGumhG5D4008" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="DELVRBLE" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Identifier" id="++8rNWDmhG5Ae00Y" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISID_P72_ISOCURR" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISID" timeSeries="LOGICAL_DELETE">
+      <field id="++8rNWDmhG5Ae00a" name="ISS_ID" nameSpace="POINT72"/>
+      <value id="++8rNWDmhG5Ae00Z" name="ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="ISO CURR" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Related Issue Definition" id="++8rNGumhG5D400F" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="RIDF_P72_MAJORCURR" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_RIDF" timeSeries="LOGICAL_DELETE">
+      <value id="++8rNWDmhG5Ae004" name="REL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="CURRENCY" valueType="CONSTANT"/>
+      <option id="++8rNGumhG5D400H" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Related Issue" id="++8rNGumhG5D400I" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="RISS_P72_MAJORCURR" nameSpace="POINT72" parentId="++8rNGumhG5D400F" table="FT_T_RISS" timeSeries="LOGICAL_DELETE">
+      <field id="++8rNWDmhG5Ae008" name="PART_UNITS_TYP" nameSpace="POINT72"/>
+      <value id="++8rNGumhG5D400J" name="ISS_PART_RL_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="UNDLYING" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue" id="008rcvKWhG50W000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISSU_P72_MAJORCURR" nameSpace="POINT72" parentId="++8rNGumhG5D400I" table="FT_T_ISSU" timeSeries="LOGICAL_DELETE">
+      <field id="008rdKt0hG5BG000" name="PREF_ISS_ID" nameSpace="POINT72"/>
+      <option id="008rcvKWhG50W001" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="++4ZDLoS2etpi014" groupMapping="0" id="++4ZDLoS2etpi017" nameSpace="GSC" occFieldId="++4ZDLoS2etpi016"/>
+    <mapping beFieldId="004HBMJi2etwa00G" groupMapping="0" id="004J3gzC2etzy007" nameSpace="GSC" occFieldId="004J3gzC2etzy006"/>
+    <mapping beFieldId="005WGrhC2etse00P" groupMapping="0" id="005WGrhC2etse00R" nameSpace="GSC" occFieldId="005WGrhC2etse00Q"/>
+    <mapping beFieldId="008r44EWhG53K00y" groupMapping="0" id="008r44EWhG53K00z" nameSpace="POINT72" occFieldId="008r44EWhG53K00x"/>
+    <mapping beFieldId="MIJIRQIAEHZNLSYK" groupMapping="0" id="GMYELEYFRLKNNBZG" nameSpace="GSC" occFieldId="LYXGCXLPNSMUKQBD"/>
+    <mapping beFieldId="004IvDwi2ettS001" groupMapping="0" id="++4lQfUS2etsC01W" nameSpace="GSC" occFieldId="004Vwh+C2ettS01P"/>
+    <mapping beFieldId="++4KObSS2ettS01A" groupMapping="0" id="++4lQfUS2etsC01Y" nameSpace="GSC" occFieldId="004PbCnC2ettS01k"/>
+    <mapping beFieldId="004gu6ji2etv401X" groupMapping="0" id="++5Ral9S2etse05c" nameSpace="GSC" occFieldId="++5Ral9S2etse05b"/>
+    <mapping beFieldId="005uhHai2etqq06W" groupMapping="0" id="005uhHai2etqq06X" nameSpace="GSC" occFieldId="005uhHai2etqq06V"/>
+    <mapping beFieldId="008o9k70hG5Ba00p" groupMapping="0" id="008o9k70hG5Ba00q" nameSpace="POINT72" occFieldId="008o9k70hG5Ba00o"/>
+    <mapping beFieldId="008o9k70hG5Ba016" groupMapping="0" id="008o9k70hG5Ba017" nameSpace="POINT72" occFieldId="008o9k70hG5Ba015"/>
+    <mapping beFieldId="008o9k70hG5Ba00X" groupMapping="0" id="008o9k70hG5Ba01O" nameSpace="POINT72" occFieldId="008o9k70hG5Ba01L"/>
+    <mapping beFieldId="008o9k70hG5Ba00g" groupMapping="0" id="008o9k70hG5Ba01P" nameSpace="POINT72" occFieldId="008o9k70hG5Ba01G"/>
+    <mapping beFieldId="008o9k70hG5Ba010" groupMapping="0" id="008oEWk0hG51a008" nameSpace="POINT72" occFieldId="008oEWk0hG51a007"/>
+    <mapping beFieldId="++8ia41GhG6Ra007" groupMapping="0" id="++8ia41GhG6Ra008" nameSpace="POINT72" occFieldId="++8ia41GhG6Ra005"/>
+    <mapping beFieldId="++8ia41GhG6Ra009" groupMapping="0" id="++8ia41GhG6Ra00A" nameSpace="POINT72" occFieldId="++8ia41GhG6Ra006"/>
+    <mapping beRelationId="++8rdPIGhG59m000" groupMapping="0" id="++8rdPIGhG59m005" nameSpace="POINT72" occFieldId="++8rdPIGhG59m002"/>
+    <mapping beFieldId="++4Stagy2etra00X" groupMapping="0" id="++4Xw4iy2etqa006" nameSpace="GSC" occFieldId="++4KotQS2ettS01A"/>
+    <mapping beFieldId="++8oLJRGhG5Ba00J" groupMapping="0" id="++8oLJRGhG5Ba00K" nameSpace="POINT72" occFieldId="++8oLJRGhG5Ba00I"/>
+    <mapping beFieldId="004Ns6Yi2etu800Q" groupMapping="0" id="005trixC2etqq007" nameSpace="GSC" occFieldId="004Ns6Yi2etu800R"/>
+    <mapping beFieldId="008oUDeWhG584000" groupMapping="0" id="008oUDeWhG584001" nameSpace="POINT72" occFieldId="++8oLJRGhG5Ba01e"/>
+    <mapping beFieldId="++5ZqLUy2etse08G" groupMapping="0" id="++5ZqLUy2etse08H" nameSpace="GSC" occFieldId="++4Kq9WS2ettS01Q"/>
+    <mapping beFieldId="++5ZqLUy2etse08Q" groupMapping="0" id="++5ZqLUy2etse08R" nameSpace="GSC" occFieldId="++5ZqLUy2etse08P"/>
+    <mapping beFieldId="++6NZUOy2etrC00J" groupMapping="0" id="++6NZUOy2etrC00K" nameSpace="GSC" occFieldId="++6NZUOy2etrC00H"/>
+    <mapping beFieldId="++6NZUOy2etrC00L" groupMapping="0" id="++6NZUOy2etrC00M" nameSpace="GSC" occFieldId="++6NZUOy2etrC00G"/>
+    <mapping beFieldId="005o-Qpi2etne06-" groupMapping="0" id="005o-Qpi2etne070" nameSpace="GSC" occFieldId="005o-Qpi2etne06+"/>
+    <mapping beFieldId="007bSktC2euPC00g" groupMapping="0" id="007bSktC2euPC00h" nameSpace="GSC" occFieldId="007bSktC2euPC00f"/>
+    <mapping beFieldId="++6NZUOy2etrC00i" groupMapping="0" id="++6NZUOy2etrC00j" nameSpace="GSC" occFieldId="++6NZUOy2etrC00e"/>
+    <mapping beFieldId="++6NZUOy2etrC00h" groupMapping="0" id="++6NZUOy2etrC00m" nameSpace="GSC" occFieldId="++6NZUOy2etrC00f"/>
+    <mapping beFieldId="005gaqbi2etqS00U" groupMapping="0" id="005gaqbi2etqS00e" nameSpace="GSC" occFieldId="005gaqbi2etqS00S"/>
+    <mapping beFieldId="005gaqbi2etqS00f" groupMapping="0" id="005gaqbi2etqS00g" nameSpace="GSC" occFieldId="005gaqbi2etqS00P"/>
+    <mapping beFieldId="005gaqbi2etqS00h" groupMapping="0" id="005gaqbi2etqS00i" nameSpace="GSC" occFieldId="005gaqbi2etqS00T"/>
+    <mapping beFieldId="005gaqbi2etqS00j" groupMapping="0" id="005gaqbi2etqS00k" nameSpace="GSC" occFieldId="005gaqbi2etqS00I"/>
+    <mapping beFieldId="005gaqbi2etqS00l" groupMapping="0" id="005gaqbi2etqS00m" nameSpace="GSC" occFieldId="005gaqbi2etqS00J"/>
+    <mapping beFieldId="007bSktC2euPC014" groupMapping="0" id="007bSktC2euPC015" nameSpace="GSC" occFieldId="007bSktC2euPC013"/>
+    <mapping beFieldId="++8oLJRGhG5Ba00X" groupMapping="0" id="++8oLJRGhG5Ba00Y" nameSpace="POINT72" occFieldId="++8oLJRGhG5Ba00S"/>
+    <mapping beFieldId="++8oLJRGhG5Ba00Z" groupMapping="0" id="++8oLJRGhG5Ba00a" nameSpace="POINT72" occFieldId="++8oLJRGhG5Ba00W"/>
+    <mapping beFieldId="004PbCnC2ettS004" groupMapping="0" id="004WLtRC2etuC00K" nameSpace="GSC" occFieldId="004WLtRC2etuC00I"/>
+    <mapping beFieldId="004PbCnC2ettS003" groupMapping="0" id="004WLtRC2etuC00L" nameSpace="GSC" occFieldId="004WLtRC2etuC00J"/>
+    <mapping beFieldId="008olEuWhG52K00c" groupMapping="0" id="008olEuWhG52K00d" nameSpace="POINT72" occFieldId="008olEuWhG52K00U"/>
+    <mapping beFieldId="008olEuWhG52K00e" groupMapping="0" id="008olEuWhG52K00f" nameSpace="POINT72" occFieldId="008olEuWhG52K006"/>
+    <mapping beFieldId="008olEuWhG52K00g" groupMapping="0" id="008olEuWhG52K00h" nameSpace="POINT72" occFieldId="008olEuWhG52K00N"/>
+    <mapping beFieldId="008olEuWhG52K00i" groupMapping="0" id="008olEuWhG52K00j" nameSpace="POINT72" occFieldId="008olEuWhG52K00O"/>
+    <mapping beFieldId="008olEuWhG52K00k" groupMapping="0" id="008olEuWhG52K00l" nameSpace="POINT72" occFieldId="008olEuWhG52K00P"/>
+    <mapping beFieldId="008olEuWhG52K00m" groupMapping="0" id="008olEuWhG52K00n" nameSpace="POINT72" occFieldId="008olEuWhG52K00Q"/>
+    <mapping beFieldId="008olEuWhG52K00q" groupMapping="0" id="008olEuWhG52K00r" nameSpace="POINT72" occFieldId="008olEuWhG52K00W"/>
+    <mapping beFieldId="008olEuWhG52K00s" groupMapping="0" id="008olEuWhG52K00t" nameSpace="POINT72" occFieldId="008olEuWhG52K00X"/>
+    <mapping beFieldId="008olEuWhG52K00u" groupMapping="0" id="008olEuWhG52K00v" nameSpace="POINT72" occFieldId="008olEuWhG52K00o"/>
+    <mapping beFieldId="008olEuWhG52K00w" groupMapping="0" id="008olEuWhG52K00x" nameSpace="POINT72" occFieldId="008olEuWhG52K00p"/>
+    <mapping beFieldId="008oULn0hG57m007" groupMapping="0" id="++8ozshGhG51a0-8" nameSpace="POINT72" occFieldId="++8p2osGhG51a006"/>
+    <mapping beFieldId="004HGjaC2etzy00q" groupMapping="0" id="004HGjaC2etzy00v" nameSpace="GSC" occFieldId="004HGjaC2etzy00s"/>
+    <mapping beFieldId="004OlV0i2etzy000" groupMapping="0" id="004TYdyi2etui00G" nameSpace="GSC" occFieldId="004TYdyi2etui00F"/>
+    <mapping beFieldId="++8rNGumhG5D4002" groupMapping="0" id="++8rNGumhG5D4003" nameSpace="POINT72" occFieldId="++8rNGumhG5D4001"/>
+    <mapping beFieldId="++8rNGumhG5D4006" groupMapping="0" id="++8rNGumhG5D400B" nameSpace="POINT72" occFieldId="++8rNGumhG5D4009"/>
+    <mapping beFieldId="++8rNWDmhG5Ae00b" groupMapping="0" id="++8rNWDmhG5Ae00c" nameSpace="POINT72" occFieldId="++8rNWDmhG5Ae00a"/>
+    <mapping beFieldId="++8rNGumhG5D400E" groupMapping="0" id="008rdKt0hG5BG001" nameSpace="POINT72" occFieldId="008rdKt0hG5BG000"/>
+    <mapping beFieldId="++4ZDLoS2etpi014" groupMapping="0" id="++4ZDLoS2etpi017" nameSpace="GSC" occFieldId="++4ZDLoS2etpi016"/>
+  </mappings>
+  <entityRelations>
+    <entityRelation entityId="++5TZs2y2etse000" id="++8rdPIGhG59m000" lookupField="++8W3a4mhG5q400R" multiplicity="MULTIPLE_OR_NULL" name="UnderlyingCountryPrimaryForCurrency" nameSpace="POINT72" rltdEntityId="008W3DOWhG5q4005">
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m00A" nameSpace="POINT72" partId="008bZVbWhG5AW00T"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m00B" nameSpace="POINT72" partId="008r2E+WhG51a000"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m00C" nameSpace="POINT72" partId="008r2E+WhG51a001"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m006" nameSpace="POINT72" partId="++8W3a4mhG5q400Q"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m008" nameSpace="POINT72" partId="++8W3a4mhG5q400R"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m007" nameSpace="POINT72" partId="++8W3a4mhG5q400T"/>
+      <part forPublishing="1" forUI="1" id="++8rdPIGhG59m009" nameSpace="POINT72" partId="++8ZsRZmhG5AW00B"/>
+    </entityRelation>
+  </entityRelations>
+  <naturalKeys>
+    <naturalKey dataGroupId="008olEuWhG52K00Y" id="008olEuWhG52K01G" name="P72CashFlowScheduleNaturalKey" nameSpace="POINT72">
+      <part beFieldId="008olEuWhG52K01E" id="008olEuWhG52K01H" nameSpace="POINT72"/>
+    </naturalKey>
+  </naturalKeys>
+</entities>

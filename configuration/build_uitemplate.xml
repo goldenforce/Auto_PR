@@ -1,0 +1,75 @@
+<project name="j4fe" default="build-all">
+	<!-- Specify all paths here, also only specify relative paths -->
+	<property name="build.dir" value="."/>
+	<property location="." file="${build.dir}/build.properties"/>
+
+    <property name="src.dir" value="src"/>
+    <property name="classes.dir" value="bin"/>
+    <property name="output.dir" value="BRE/java"/>
+    <property name="jarname" value="${custom.rule.jar}"/>
+	
+	<target name="makedir" depends="prepare">
+		<echo message="Base Directory : ${base.dir}"/>
+		<echo message="Packages Directory : ${uitemplatepackages.dir}"/>
+		<mkdir dir="${temp.dir}"/>
+		<mkdir dir="${temp.dir}/templates/custom"/>
+		<mkdir dir="${uitemplatepackages.dir}"/>
+		<mkdir dir="${uitemplatepackages.dir}/${today}"/>
+	</target>
+
+	<target name="clean">
+		<delete includeemptydirs="true">
+			<fileset dir="${temp.dir}" includes="**/*"/>
+		</delete>
+	</target>
+
+	<target name="prepare">
+		<tstamp>
+			<format property="today" pattern="yyyyMMdd" locale="en,UK"/>
+		</tstamp>
+	</target>
+
+	<target name="removetempdir">
+		<delete dir="${temp.dir}"/>
+	</target>
+    
+	<target name="init">
+        <mkdir dir="${classes.dir}" />
+        <mkdir dir="${base.dir}/${output.dir}" />
+    </target>
+
+	<target name="build.uitemplate">
+		<copy todir="${temp.dir}/templates/custom">
+           <fileset dir="./configuration/gso/UITemplates/">
+              <include name="*" />
+          </fileset>
+       </copy>
+
+		<!--<tar destfile="${temp.dir}/${build.UiTemplatePackage.name}.tar.gzip" compression="gzip">
+			<tarfileset dir="${temp.dir}"></tarfileset>
+		</tar>
+		-->
+		
+		<zip destfile="${temp.dir}/${build.UiTemplatePackage.name}.zip">
+		<fileset dir="${temp.dir}/">
+					</fileset>
+		</zip>		
+		
+		<copy file="./UITemplatePackageDescription.xml" tofile="${temp.dir}/PackageDescription.xml"/>
+		
+		<!-- zip the files together with the release notes and the package description -->
+		<zip destfile="${temp.dir}/${build.UiTemplatePackage.name}_${build.version}.zip">
+			<fileset dir="${temp.dir}/">
+				<include name="*${build.UiTemplatePackage.name}.zip"/>
+				<include name="*PackageDescription.xml"/>
+			</fileset>
+		</zip>		
+		
+		<move file="${temp.dir}/${build.UiTemplatePackage.name}_${build.version}.zip" todir="${uitemplatepackages.dir}/${today}"/>
+	</target>	
+
+
+	<target name="build-all" depends="makedir,clean,init,build.uitemplate">
+
+	</target>
+</project>

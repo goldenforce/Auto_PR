@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT changeApprovalEntity (occurrence+)>
+
+<!ELEMENT field EMPTY>
+<!ATTLIST field
+	name CDATA #REQUIRED
+	value CDATA #IMPLIED
+	multiValue CDATA #IMPLIED
+	lookup CDATA #IMPLIED
+	dataType (STRING | DATE | DATETIME | NUMBER | DECIMAL | TIME) "STRING"
+	label CDATA #IMPLIED
+	approval CDATA #IMPLIED
+	fieldGroupLabel CDATA #IMPLIED
+	businessUnitGroup CDATA #IMPLIED
+>
+
+<!ELEMENT changeApprovalFields (field*)>
+
+<!ELEMENT occurrence (changeApprovalFields?,where?)*>
+<!ATTLIST occurrence
+	table CDATA #REQUIRED
+	id ID #IMPLIED
+	parentId CDATA #IMPLIED
+	minLevelToEnableChangeApproval CDATA #IMPLIED
+>
+
+<!ELEMENT where (field*)>

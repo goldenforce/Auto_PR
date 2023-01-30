@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OMDX" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-06-05 at 01:41:03 IST</Option>
+    <Option key="MappingDesignerVersion">8.8.1.06</Option>
+    <Option key="OMDX.Base">BBCINS.mdx</Option>
+  </Options>
+  <Input vendorType="BB_BULK">
+    <Options/>
+    <Layout>
+      <Override/>
+    </Layout>
+  </Input>
+  <Output>
+    <MappingFragments/>
+    <OutputDef/>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="true" ident="GSDMFiltering">
+      <expr><![CDATA[if (OneHasValue(Select("", "", "select '1' from FT_T_ISID where ISS_ID =:1 and id_ctxt_typ = 'BBUNIQUE' and end_tms is null", "", "", "", "", "")))
+	return "false";
+else
+	return "true";]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

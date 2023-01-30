@@ -1,0 +1,77 @@
+Update FT_T_BERC  set RULE_DESC ='GICS Industry'  where RULE_NME = 'BaseP72GICSIndustryRequired' ;
+Update FT_T_BERC  set RULE_DESC ='BB Security Type'  where RULE_NME = 'Base.P72BBSecurityTypeMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='CUSIP must have 9 digit'  where RULE_NME = 'Base.P72CUSIP9DigitMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Issuer'  where RULE_NME = 'Base.P72IssuerMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Geneva Print Group'  where RULE_NME = 'Base.P72GenevaPrintGroupMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='China Share Class must be B'  where RULE_NME = 'Base.P72ChinaShareCLass-B' ;
+Update FT_T_BERC  set RULE_DESC ='GICS Sub Industry'  where RULE_NME = 'Base.P72GICSSubIndustryRequired' ;
+Update FT_T_BERC  set RULE_DESC ='Consolidated RIC for NYSE securities'  where RULE_NME = 'Base.P72ConsolidatedRicIsMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='BB Market Sector for Fixed Income'  where RULE_NME = 'Base.P72BBMarketSectorMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='SEDOL must have 7 digit'  where RULE_NME = 'Base.P72SEDOL7DigitMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Primary Country Of Risk for equity'  where RULE_NME = 'Base.P72PrimaryCountryOfRisk' ;
+Update FT_T_BERC  set RULE_DESC ='Shares to ADR Ratio for ADR securities'  where RULE_NME = 'Base.P72SharestoADRRatioMandatoryForADRSecurities' ;
+Update FT_T_BERC  set RULE_DESC ='Country of Incorporation must be Non-US for ADR securities'  where RULE_NME = 'Base.P72CountryOfIncorporation' ;
+Update FT_T_BERC  set RULE_DESC ='Geneva Investment Type'  where RULE_NME = 'Base.P72GenevaInvestmentTypeMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Instrument Name'  where RULE_NME = 'Base.P72InstrumentNameMandatory' ;
+
+Update FT_T_BERC  set RULE_DESC ='BICS Level1'  where RULE_NME = 'Base.P72BICSLevel1Mandatory' ;
+Update FT_T_BERC  set RULE_DESC ='ISIN must have 12 digit'  where RULE_NME = 'Base.P72ISIN12DigitMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Days To Settlement for Fixed Income'  where RULE_NME = 'Base.P72DaysToSettlementMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Consolidated RIC should not end with .N when length is less than or equal to 3'  where RULE_NME = 'Base.P72ConsolidatedRic.NPresent' ;
+Update FT_T_BERC  set RULE_DESC ='ISIN'  where RULE_NME = 'Base.P72ISINMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Maturity Date'  where RULE_NME = 'Base.P72MaturityDateMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Current Outstanding Shares must be present for Equities'  where RULE_NME = 'Base.P72PrimaryMktOutstandingShares' ;
+Update FT_T_BERC  set RULE_DESC ='Underlying Ticker'  where RULE_NME = 'Base.P72UnderlyingTickerMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Par Value for Fixed Income'  where RULE_NME = 'Base.P72ParValueMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='GICS Sector'  where RULE_NME = 'Base.P72GICSEquityRequired' ;
+Update FT_T_BERC  set RULE_DESC ='BICS Level 2'  where RULE_NME = 'Base.P72BICS2' ;
+Update FT_T_BERC  set RULE_DESC ='BICS Level 1'  where RULE_NME = 'Base.P72BICS1' ;
+Update FT_T_BERC  set RULE_DESC ='BICS Level 3'  where RULE_NME = 'Base.P72BICS3' ;
+Update FT_T_BERC  set RULE_DESC ='GICS Industry Group'  where RULE_NME = 'Base.P72GICSIndustryGroup' ;
+Update FT_T_BERC  set RULE_DESC ='BB Ticker Exchange Code'  where RULE_NME = 'Base.P72MktLstCntryBBTickerExchMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='RIC'  where RULE_NME = 'Base.P72RICIsMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Singapore Code is required for country primary listing in Singapore'  where RULE_NME = 'Base.P72SingaporeCodeRequiredForCountryPrimaryListingSingapore' ;
+Update FT_T_BERC  set RULE_DESC ='Point72 BBG Ticker'  where RULE_NME = 'Base.P72BloombergTickerMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='China Share Class must be H'  where RULE_NME = 'Base.P72ChinaShareClass' ;
+Update FT_T_BERC  set RULE_DESC ='P72 Security ID'  where RULE_NME = 'Base.MktLstP72SecurityIDMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Underlying must be Present'  where RULE_NME = 'Equity.P72ADRUnderlyingMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='ADR Ratio multiplied by Current Outstanding Shares should be equal to shares outstanding on the underlying security'  where RULE_NME = 'Equity.P72ADRRAtioXOutstandQty' ;
+Update FT_T_BERC  set RULE_DESC ='Shares Outstanding must be present for Equities'  where RULE_NME = 'Equity.P72SharesforEqMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='CINS Code for Non-US equities'  where RULE_NME = 'Base.P72CINSMandatoryForNon-UsEquities' ;
+Update FT_T_BERC  set RULE_DESC ='ADR Underlying Currency Code for ADR'  where RULE_NME = 'Base.P72ADRUNDCURR_MandatoryforADR' ;
+Update FT_T_BERC  set RULE_DESC ='Shares Outstandin must be present for Outstanding'  where RULE_NME = 'Equity.P72SharesforUnderlyingMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Underlying must be present'  where RULE_NME = 'Equity.P72UnderlyingMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='SEDOL'  where RULE_NME = 'Base.P72SEDOLMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Actual Shares Outstanding is not equal to Current Outstanding shares multiplied by shares to ADR ratio'  where RULE_NME = 'Equity.P72ADRRatioOutstandActualShares' ;
+Update FT_T_BERC  set RULE_DESC ='Strike Price for warrants'  where RULE_NME = 'Warrants.P72StrikePrice' ;
+Update FT_T_BERC  set RULE_DESC ='Shares to ADR Ratio multiplied by Current Outstanding Shares should be equal to Outstanding Shares on the underlying security'  where RULE_NME = 'Warrants.P72OutstandingSharesMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='BB Unique'  where RULE_NME = 'Base.P72_ID_BB_UniqueMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Outstanding Amount for Fixed Income'  where RULE_NME = 'FixedIncome.P72OutstandingAmountMandatory' ;
+
+Update FT_T_BERC  set RULE_DESC ='Conversion Ratio Shares for Fixed Income'  where RULE_NME = 'FixedIncome.P72ConversionRatioSharesMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Coupon Type'  where RULE_NME = 'FixedIncome.P72CoupontypeMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Calculation Type for Fixed Income'  where RULE_NME = 'FixedIncome.P72CalculationTypeMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Dated Date for Fixed Income'  where RULE_NME = 'FixedIncome.P72DatedDateMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='China Share Class must be A'  where RULE_NME = 'Base.P72ChinaShareClass-A' ;
+Update FT_T_BERC  set RULE_DESC ='Stripped Type must be present for Fixed Income'  where RULE_NME = 'FixedIncome.P72StrippedTypeMandatory' ;
+
+Update FT_T_BERC  set RULE_DESC ='Consolidated RIC should end with .K when length is greater than or equal to 4'  where RULE_NME = 'Base.P72ConsolidatedRic.Kpresent' ;
+Update FT_T_BERC  set RULE_DESC ='Penultimate Coupon Date for Fixed Income'  where RULE_NME = 'FixedIncome.P72PenultimateCouponDateMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Redemption Value for Fixed Income'  where RULE_NME = 'FixedIncome.P72RedemptionValueMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='BB Sub-Security Type'  where RULE_NME = 'Base.P72BBSubSecurityTypeMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='First Coupon Date'  where RULE_NME = 'FixedIncome.P72FirstCoupontDateMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Instrument Amount (Current) for Fixed Income'  where RULE_NME = 'FixedIncome.P72CurrentInstrumentAmountMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Coupon Currency when Dual Currency Indicator is Y'  where RULE_NME = 'FixedIncome.P72CouponCurrencyMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Round Lot Size for Equities'  where RULE_NME = 'Base.P72RoundLotSizeMandatoryForEquities' ;
+Update FT_T_BERC  set RULE_DESC ='Coupon frequency'  where RULE_NME = 'FixedIncome.P72CouponFreqTimeUnit' ;
+Update FT_T_BERC  set RULE_DESC ='Coupon Frequency'  where RULE_NME = 'FixedIncome.P72CouponFreqTimeUnitMandatory' ;
+
+
+Update FT_T_BERC  set RULE_DESC ='GS PositionID'  where RULE_NME = 'Base_P72GSPostionedIDMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Issuer - Country Of Risk for equity'  where RULE_NME = 'Base.P72CountryOfRiskMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Issue Date for Fixed Income'  where RULE_NME = 'Base.P72IssueDate7Mandatory' ;
+Update FT_T_BERC  set RULE_DESC ='CUSIP or CINS'  where RULE_NME = 'Base.P72CUSIPMandatory' ;
+
+Update FT_T_BERC  set RULE_DESC ='BBG Ticker'  where RULE_NME = 'Base.P72TickerIsMandatory' ;
+Update FT_T_BERC  set RULE_DESC ='Shares outstanding for the underlying securities'  where RULE_NME = 'Warrants.P72UnderlyingOutstandingShares' ;
+Update FT_T_BERC  set RULE_DESC ='Coupon Rate for Fixed Income'  where RULE_NME = 'FixedIncome.P72CouponRateMandatory' ;

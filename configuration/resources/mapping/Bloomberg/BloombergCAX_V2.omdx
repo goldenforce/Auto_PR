@@ -1,0 +1,3400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OMDX" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-08-01 at 12:53:50 IST</Option>
+    <Option key="MappingDesignerVersion">8.8.1.05</Option>
+    <Option key="OMDX.Base">BloombergCAX_V2.mdx</Option>
+  </Options>
+  <Input vendorType="BB_BULK">
+    <Options/>
+    <Layout>
+      <Override>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_NEW_SINGAPORE_ID"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_NEW_IRISH_SEDOL"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_NEW_BELGIAN"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_NEW_COMMON"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_NEW_FONDS"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_NEW_SICOVAM"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_NEW_VALOR"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_NEW_WPK"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_DELETE_REASON"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_OLD_BELGIAN"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_OLD_COMMON"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_OLD_FONDS"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_OLD_SICOVAM"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_OLD_VALOR"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_OLD_WPK"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_OLD_SINGAPORE_ID"/>
+        <field ignore="1" ignoreFieldValue="" path="CHG_ID.CP_OLD_IRISH_SEDOL"/>
+        <field ignoreFieldValue="" path="CHG_ID.CP_CHG_ID_REASON"/>
+      </Override>
+    </Layout>
+  </Input>
+  <Output>
+    <MappingFragments/>
+    <OutputDef>
+      <Node messageformat="GSREF" name="STREET_REF" type="message">
+        <Options>
+          <Option key="OutputEncoding"/>
+          <Option key="AddTZIndicators">true</Option>
+          <Option key="SystemId">fti://repository/dtd/STREET_REF</Option>
+          <Option key="DocType">STREET_REF</Option>
+        </Options>
+        <condition><![CDATA[if (!Strcmp(Rcode, "300") && (Strcmp(Flag, "N") || Strcmp(Flag, "U")))
+	if (Strcmp(Mnemonic, "STOCK_SPLT") && !OneHasValue(STOCK_SPLT.CP_RATIO))
+		return "";
+	else
+		return "STREET_REF";
+else
+	return "";]]></condition>
+        <Node name="USERID" type="attribute">
+          <expr><![CDATA[return "GUEST";]]></expr>
+        </Node>
+        <Node name="MESSAGECONDITION" type="attribute">
+          <comment><![CDATA[GT 162848]]></comment>
+          <expr><![CDATA[if (!Strcmp(Rcode, "300") && (Strcmp(Flag, "N") || Strcmp(Flag, "U")))
+	if (Strcmp(Mnemonic, "STOCK_SPLT") && !OneHasValue(STOCK_SPLT.CP_RATIO))
+		return "";
+	else
+		return "STREET_REF";
+else
+	return "";]]></expr>
+        </Node>
+        <Node name="TRACE" type="attribute">
+          <expr><![CDATA[return "false";]]></expr>
+        </Node>
+        <Execute>
+          <expr><![CDATA[return StoreString("ACTIONID", Float2String(ActionID, 0, 0));]]></expr>
+        </Execute>
+        <Execute>
+          <expr><![CDATA[if (StrContainsOneOf(FEED_SOURCE, "UH", "BK", "C2", "C1", "BQ", "GZ", "TH", "QT", "S4", "QE", "TQ", "L3", "B3", "EB", "S1", "PZ", "S2", "QX", "LI", "E2", "IX", "H2", "H1", "L1", "PO", "TE", "HM", "KF", "T1", "I2", "RU"))
+	return ThrowMapError(Strcat(GetStringByKey("ACTIONID"), "  :  CorporateAction is coming on MTF market and hence not being loaded in GS -JIRA"), "");
+else
+	return "";]]></expr>
+        </Execute>
+        <Node name="HEADER" type="element">
+          <Node name="CURRENTTIMESTAMP" type="element">
+            <expr><![CDATA[return TimeStamp();]]></expr>
+          </Node>
+          <Node name="DATASOURCE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSUEACTIONREPLACE" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+          </Node>
+          <Node name="LOCALE" type="element">
+            <Node name="NLS" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "ENU";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TIMEZONE" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "GMT Standard Time";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Mnemonic, "CHG_NAME"))
+	return Strcat("VENDORNAMECHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_DOM"))
+	return Strcat("VENDORDOMCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_STATE"))
+	return Strcat("VENDORSTATECHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_RLOT"))
+	return Strcat("VENDORRLOTCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_TKR"))
+	return Strcat("VENDORTKRCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_ID"))
+	return Strcat("VENDORIDCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DELIST"))
+	return Strcat("VENDOREQYDELIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return Strcat("VENDORCHGLIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "LIST"))
+	return Strcat("VENDOREQYLIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "VAR_INT_RST"))
+	return Strcat("VENDORVARINTRST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_VOTE"))
+	return Strcat("VENDORCHGVOTE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CRNCY_QT_CHNG"))
+	return Strcat("VENDORCRNCYQTCHNG", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RECONVENTION"))
+	return Strcat("VENDORRECONVENTION", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "REDENOMINATION"))
+	return Strcat("VENDORREDENOMINATION", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+	return Strcat("VENDORSHHOLDERMEET", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "MERG"))
+	return Strcat("VENDORMERG",
+			Strcat(Float2String(ActionID, 0, 0),
+					If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)),
+							If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "BANCR"))
+	return Strcat("VENDORBANCR", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SPIN"))
+	return Strcat("VENDORSPIN",
+			Strcat(Float2String(ActionID, 0, 0),
+					If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)),
+							If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "STOCK_BUY"))
+	return Strcat("VENDORSTOCKBUY", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EQY_OFFER"))
+	return Strcat("VENDOREQYOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_CALL"))
+	return Strcat("VENDORDBTRDMPCALL", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_OFFER_INC"))
+	return Strcat("VENDORDBTOFFERINC", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_OFFER_NEW"))
+	return Strcat("VENDORDBTOFFERNEW", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_PAR"))
+	return Strcat("VENDORCHGPAR", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_SINK"))
+	return Strcat("VENDORDBTRDMPSINK", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "PARTIAL_PAY"))
+	return Strcat("VENDORINSTALLMENTCALL", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RECLASS"))
+	return Strcat("VENDORRECLASS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_PUT"))
+	return Strcat("VENDORDBTRDMPPUT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXCH_OFFER"))
+	return Strcat("VENDOREXCHOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "VAR_PR_RDMP"))
+	return Strcat("VENDORVARPRRDMP", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "PAY_IN_KIND"))
+	return Strcat("VENDORPAYINKIND", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RIGHTS_OFFER"))
+	return Strcat("VENDORRIGHTSOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EX_PX_RFIX"))
+	return Strcat("VENDOREXPXRFIX", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "FUNG_ISS"))
+	return Strcat("VENDORFUNGISS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXTEN_ISS"))
+	return Strcat("VENDOREXTENISS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DVD_CASH") && !Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+	return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "C"));
+else if (Strcmp(Mnemonic, "DVD_CASH") && Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+	return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "R"));
+else if (Strcmp(Mnemonic, "DVD_STOCK"))
+	return Strcat("VENDORDVDSTOCK", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "STOCK_SPLT"))
+	return Strcat("VENDORSTOCKSPLT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "ACQUIS"))
+	return Strcat("VENDORACQUIS",
+			Strcat(Float2String(ActionID, 0, 0),
+					If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)),
+							If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "DIVEST"))
+	return Strcat("VENDORDIVEST",
+			Strcat(Float2String(ActionID, 0, 0),
+					If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)),
+							If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "DBT_REP"))
+	return Strcat("VENDORDEBTREP", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CONV_PX_RFIX"))
+	return Strcat("VENDORCONVPXRFIX", Float2String(ActionID, 0, 0));
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_ID_CTXT_TYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "CRPACTID";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_TYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (StrContainsOneOf(Mnemonic, "STOCK_SPLT", "DBT_RDMP_CALL", "DBT_RDMP_PUT", "SH_HOLDER_MEET"))
+	if (StrContainsOneOf(Mnemonic, "DBT_RDMP_CALL", "DBT_RDMP_PUT"))
+		if (Strcmp(Float2String(DBT_RDMP_CALL.CP_DBT_RDMP_CALL_TYP, 0, 0), "1")
+				|| Strcmp(Float2String(DBT_RDMP_PUT.CP_DBT_RDMP_PUT_TYP, 0, 0), "1"))
+			return "MCAL";
+		else
+			return "PCAL";
+	else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+		if (Strcmp(Float2String(SH_HOLDER_MEET.CP_MEET_TYP, 0, 0), "1"))
+			return "MEET";
+		else if (Strcmp(Float2String(SH_HOLDER_MEET.CP_MEET_TYP, 0, 0), "2"))
+			return "XMET";
+		else
+			return "OTHR";
+	else if (Strcmp(Mnemonic, "STOCK_SPLT") && (STOCK_SPLT.CP_RATIO > 1))
+		return "SPLF";
+	else if (StrContainsOneOf(Mnemonic, "STOCK_SPLT") && (STOCK_SPLT.CP_RATIO < 1))
+		return "SPLR";
+	else
+		return "";
+else
+	return Mnemonic;]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_NME" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return CompanyName;]]></expr>
+            </Node>
+          </Node>
+          <Node name="MAIN_ENTITY_TBL_TYP" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "IADC";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MSGCLASSIFICATION" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BBEQ620";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MSGTYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="REFERRINGPAGE" type="element"/>
+          <Node name="USERID" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BBCAX_V2_OMDX";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionDeclaration" type="segment">
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IADC_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionDeclaration";]]></expr>
+          </Node>
+          <Node name="FinancialMarketIdentifier" type="segment">
+            <condition>
+              <comment><![CDATA[GT-167108, GT-168076]]></comment><![CDATA[if (StrContainsOneOf(Mnemonic, "DELIST", "CHG_LIST", "LIST", "EXCH_SECTION_CHG", "CHG_TRADING_STATUS"))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]>
+            </condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_FROM" type="attribute"/>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "MKT_OID";]]></expr>
+            </Node>
+            <Node name="DUP_CHECK" type="attribute"/>
+            <Node name="ENDDATEIND" type="attribute"/>
+            <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+            <Node name="ERROR" type="attribute"/>
+            <Node name="LOOKUP" type="attribute"/>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+            </Node>
+            <Node name="PARENT_LINK" type="attribute"/>
+            <Node name="PUBLISH" type="attribute"/>
+            <Node name="SEGPROCESSEDIND" type="attribute"/>
+            <Node name="START_TMS_MATCH" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="TSATTRIBUTE" type="attribute"/>
+            <Node name="TSOPTION" type="attribute"/>
+            <Node name="TSTOLERANCE" type="attribute"/>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+            </Node>
+            <Node name="MKTID" type="element">
+              <comment><![CDATA[170167]]></comment>
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (Strcmp(Mnemonic, "DELIST"))
+	return DELIST.CP_EXCH;
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return CHG_LIST.CP_NEW_EXCH;
+else if (Strcmp(Mnemonic, "LIST"))
+	return LIST.CP_EXCH;
+else if (Strcmp(Mnemonic, "EXCH_SECTION_CHG"))
+	return EXCH_SECTION_CHG.CP_EXCH;
+else if (Strcmp(Mnemonic, "CHG_TRADING_STATUS"))
+	if (OneHasValue(Translate(BloombergETT, true, "TRADE_STATUS_EXCH", CHG_TRADING_STATUS.CP_TRADE_STATUS_CO_EXCH)))
+		return Translate(BloombergETT, true, "TRADE_STATUS_EXCH", CHG_TRADING_STATUS.CP_TRADE_STATUS_CO_EXCH);
+	else
+		return CHG_TRADING_STATUS.CP_TRADE_STATUS_CO_EXCH;
+else
+	return "";]]></expr>
+              </Node>
+            </Node>
+            <Node name="MKTIDCTXTTYP" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "BBEXCH";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueActionIdentifier" type="segment">
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_FROM" type="attribute">
+              <expr><![CDATA[return "ISSACT_ID";]]></expr>
+            </Node>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "ISSACT_ID";]]></expr>
+            </Node>
+            <Node name="DUP_CHECK" type="attribute"/>
+            <Node name="ENDDATEIND" type="attribute"/>
+            <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+            <Node name="ERROR" type="attribute"/>
+            <Node name="LOOKUP" type="attribute"/>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "IAID_IDCTXT_ID_DSRC";]]></expr>
+            </Node>
+            <Node name="ONLY" type="attribute"/>
+            <Node name="PARENT_LINK" type="attribute"/>
+            <Node name="PUBLISH" type="attribute"/>
+            <Node name="SEGPROCESSEDIND" type="attribute"/>
+            <Node name="START_TMS_MATCH" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="TSATTRIBUTE" type="attribute"/>
+            <Node name="TSOPTION" type="attribute"/>
+            <Node name="TSTOLERANCE" type="attribute"/>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueActionIdentifier";]]></expr>
+            </Node>
+            <Node name="DATASRCID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "BB";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSACTIDCTXTTYP" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "CRPACTID";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSUEACTIONID" type="element">
+              <comment><![CDATA[170433]]></comment>
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (Strcmp(Mnemonic, "BANCR"))
+       return 
+Strcat("VENDORBANCR", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+       return 
+Strcat("VENDORSHHOLDERMEET", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "DIVEST"))
+       return 
+Strcat("VENDORDIVEST", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "CHG_NAME"))
+	return Strcat("VENDORNAMECHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_DOM"))
+	return Strcat("VENDORDOMCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_STATE"))
+	return Strcat("VENDORSTATECHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_RLOT"))
+	return Strcat("VENDORRLOTCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_TKR"))
+	return Strcat("VENDORTKRCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_ID"))
+	return Strcat("VENDORIDCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DELIST"))
+	return Strcat("VENDOREQYDELIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return Strcat("VENDORCHGLIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "LIST"))
+	return Strcat("VENDOREQYLIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "VAR_INT_RST"))
+	return Strcat("VENDORVARINTRST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_VOTE"))
+	return Strcat("VENDORCHGVOTE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CRNCY_QT_CHNG"))
+	return Strcat("VENDORCRNCYQTCHNG", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RECONVENTION"))
+	return Strcat("VENDORRECONVENTION", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "REDENOMINATION"))
+	return Strcat("VENDORREDENOMINATION", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+	return Strcat("VENDORSHHOLDERMEET", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "MERG"))
+	return Strcat("VENDORMERG", Strcat(Float2String(ActionID, 0, 0), If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "BANCR"))
+	return Strcat("VENDORBANCR", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SPIN"))
+	return Strcat("VENDORSPIN", Strcat(Float2String(ActionID, 0, 0), If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "STOCK_BUY"))
+	return Strcat("VENDORSTOCKBUY", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EQY_OFFER"))
+	return Strcat("VENDOREQYOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_CALL"))
+	return Strcat("VENDORDBTRDMPCALL", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_OFFER_INC"))
+	return Strcat("VENDORDBTOFFERINC", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_OFFER_NEW"))
+	return Strcat("VENDORDBTOFFERNEW", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_PAR"))
+	return Strcat("VENDORCHGPAR", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_SINK"))
+	return Strcat("VENDORDBTRDMPSINK", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "PARTIAL_PAY"))
+	return Strcat("VENDORINSTALLMENTCALL", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RECLASS"))
+	return Strcat("VENDORRECLASS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_PUT"))
+	return Strcat("VENDORDBTRDMPPUT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXCH_OFFER"))
+	return Strcat("VENDOREXCHOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "VAR_PR_RDMP"))
+	return Strcat("VENDORVARPRRDMP", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "PAY_IN_KIND"))
+	return Strcat("VENDORPAYINKIND", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RIGHTS_OFFER"))
+	return Strcat("VENDORRIGHTSOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EX_PX_RFIX"))
+	return Strcat("VENDOREXPXRFIX", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "FUNG_ISS"))
+	return Strcat("VENDORFUNGISS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXTEN_ISS"))
+	return Strcat("VENDOREXTENISS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DVD_CASH") && !Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+	return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "C"));
+else if (Strcmp(Mnemonic, "DVD_CASH") && Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+	return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "R"));
+else if (Strcmp(Mnemonic, "DVD_STOCK"))
+	return Strcat("VENDORDVDSTOCK", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "STOCK_SPLT"))
+	return Strcat("VENDORSTOCKSPLT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "ACQUIS"))
+	return Strcat("VENDORACQUIS", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "DIVEST"))
+	return Strcat("VENDORDIVEST", Strcat(Float2String(ActionID, 0, 0), If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "DBT_REP"))
+	return Strcat("VENDORDEBTREP", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CONV_PX_RFIX"))
+	return Strcat("VENDORCONVPXRFIX", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_FISCAL_YEAR_END"))
+	return Strcat("VENDOR_CHG_FISCAL_YEAR_END", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_TRADING_STATUS"))
+	return Strcat("VENDOR_CHG_TRADING_STATUS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFAULT"))
+ 	return Strcat("VENDOR_DEFAULT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFAULT_PAY"))
+ 	return Strcat("VENDOR_DEFAULT_PAY", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFEASED"))
+ 	return Strcat("VENDOR_DEFEASED", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXCH_SECTION_CHG"))
+ 	return Strcat("VENDOR_EXCH_SECTION_CHG", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "OPEN_MKT"))
+ 	return Strcat("VENDOR_OPEN_MKT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SOLICIT"))
+ 	return Strcat("VENDOR_SOLICIT", Float2String(ActionID, 0, 0));
+else
+	return "";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueIdentifierCAListingLookup" type="segment">
+            <comment><![CDATA[GT-168076]]></comment>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "IGNORE";]]></expr>
+            </Node>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueIdentifierCAListingLookup";]]></expr>
+            </Node>
+            <Node name="FinancialMarketIdentifier" type="segment">
+              <condition><![CDATA[if (StrContainsOneOf(Mnemonic, "DELIST", "CHG_LIST", "LIST"))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></condition>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "IGNORE";]]></expr>
+              </Node>
+              <Node name="COPY_FROM" type="attribute"/>
+              <Node name="DUP_CHECK" type="attribute"/>
+              <Node name="ENDDATEIND" type="attribute"/>
+              <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+              <Node name="ERROR" type="attribute"/>
+              <Node name="LOOKUP" type="attribute"/>
+              <Node name="PARENT_LINK" type="attribute"/>
+              <Node name="PUBLISH" type="attribute"/>
+              <Node name="SEGPROCESSEDIND" type="attribute"/>
+              <Node name="START_TMS_MATCH" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="TSATTRIBUTE" type="attribute"/>
+              <Node name="TSOPTION" type="attribute"/>
+              <Node name="TSTOLERANCE" type="attribute"/>
+              <Node name="TYPE" type="attribute">
+                <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+              </Node>
+              <Node name="MKTID" type="element">
+                <Node name="INSERT_ONLY" type="attribute"/>
+                <Node name="TRANSLATE" type="attribute"/>
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[if (Strcmp(Mnemonic, "DELIST"))
+	return DELIST.CP_EXCH;
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return CHG_LIST.CP_NEW_EXCH;
+else if (Strcmp(Mnemonic, "LIST"))
+	return LIST.CP_EXCH;
+else
+	return "";]]></expr>
+                </Node>
+              </Node>
+              <Node name="MKTIDCTXTTYP" type="element">
+                <Node name="INSERT_ONLY" type="attribute"/>
+                <Node name="TRANSLATE" type="attribute"/>
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[return "BBEXCH";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="ISSID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return BloombergUniqueID;]]></expr>
+              </Node>
+            </Node>
+            <Node name="IDCTXTTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (OneHasValue(Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBUNIQUE")))
+	return Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBUNIQUE");
+else
+	return "BBUNIQUE";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TRDNGCURRCDE" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return Currency;]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueIdentifierCAListingLookup" type="segment">
+            <comment><![CDATA[GT-168076]]></comment>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "IGNORE";]]></expr>
+            </Node>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueIdentifierCAListingLookup";]]></expr>
+            </Node>
+            <Node name="FinancialMarketIdentifier" type="segment">
+              <condition><![CDATA[if (StrContainsOneOf(Mnemonic, "DELIST", "CHG_LIST", "LIST"))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></condition>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "IGNORE";]]></expr>
+              </Node>
+              <Node name="COPY_FROM" type="attribute"/>
+              <Node name="DUP_CHECK" type="attribute"/>
+              <Node name="ENDDATEIND" type="attribute"/>
+              <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+              <Node name="ERROR" type="attribute"/>
+              <Node name="LOOKUP" type="attribute"/>
+              <Node name="PARENT_LINK" type="attribute"/>
+              <Node name="PUBLISH" type="attribute"/>
+              <Node name="SEGPROCESSEDIND" type="attribute"/>
+              <Node name="START_TMS_MATCH" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="TSATTRIBUTE" type="attribute"/>
+              <Node name="TSOPTION" type="attribute"/>
+              <Node name="TSTOLERANCE" type="attribute"/>
+              <Node name="TYPE" type="attribute">
+                <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+              </Node>
+              <Node name="MKTID" type="element">
+                <Node name="INSERT_ONLY" type="attribute"/>
+                <Node name="TRANSLATE" type="attribute"/>
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[if (Strcmp(Mnemonic, "DELIST"))
+	return DELIST.CP_EXCH;
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return CHG_LIST.CP_NEW_EXCH;
+else if (Strcmp(Mnemonic, "LIST"))
+	return LIST.CP_EXCH;
+else
+	return "";]]></expr>
+                </Node>
+              </Node>
+              <Node name="MKTIDCTXTTYP" type="element">
+                <Node name="INSERT_ONLY" type="attribute"/>
+                <Node name="TRANSLATE" type="attribute"/>
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[return "BBEXCH";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="ISSID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return BloombergGlobalID;]]></expr>
+              </Node>
+            </Node>
+            <Node name="IDCTXTTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (OneHasValue(Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBGLOBAL")))
+	return Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBGLOBAL");
+else
+	return "BBGLOBAL";]]></expr>
+              </Node>
+            </Node>
+            <Node name="TRDNGCURRCDE" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return Currency;]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueIdentifier" type="segment">
+            <condition><![CDATA[if (AllHaveValue(BloombergCompanyID, BloombergSecurityID))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_FROM" type="attribute"/>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ID";]]></expr>
+            </Node>
+            <Node name="DUP_CHECK" type="attribute"/>
+            <Node name="ENDDATEIND" type="attribute">
+              <expr><![CDATA[return "L";]]></expr>
+            </Node>
+            <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+            <Node name="ERROR" type="attribute"/>
+            <Node name="LOOKUP" type="attribute"/>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+            </Node>
+            <Node name="PARENT_LINK" type="attribute"/>
+            <Node name="PUBLISH" type="attribute"/>
+            <Node name="SEGPROCESSEDIND" type="attribute"/>
+            <Node name="START_TMS_MATCH" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="TSATTRIBUTE" type="attribute"/>
+            <Node name="TSOPTION" type="attribute"/>
+            <Node name="TSTOLERANCE" type="attribute"/>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueIdentifier";]]></expr>
+            </Node>
+            <Node name="IDCTXTTYP" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "BBCMPSEC";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSID" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return Strcat(Float2String(BloombergCompanyID, 0, 0), Strcat(" - ", Float2String(BloombergSecurityID, 0, 0)));]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueIdentifier" type="segment">
+            <condition>
+              <comment><![CDATA[GT-167108, GT-168076]]></comment><![CDATA[if (OneHasValue(BloombergUniqueID))
+	return "IssueIdentifier";
+else
+	return "";]]>
+            </condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ID";]]></expr>
+            </Node>
+            <Node name="ENDDATEIND" type="attribute">
+              <expr><![CDATA[return "L";]]></expr>
+            </Node>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+            </Node>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueIdentifier";]]></expr>
+            </Node>
+            <Node name="IDCTXTTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "BBUNIQUE";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return BloombergUniqueID;]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueIdentifier" type="segment">
+            <comment><![CDATA[GT-167108]]></comment>
+            <condition>
+              <comment><![CDATA[GT-168076]]></comment><![CDATA[if ((OneHasValue(BloombergGlobalID) && Strcmp(Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "CA_Notifications"), "YES")) && (Translate(Connection_Version, true, "GS_VERSION", "VERSION") < "8721"))
+	return "IssueIdentifier";
+else
+	return "";]]>
+            </condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ID,MKT_OID";]]></expr>
+            </Node>
+            <Node name="ENDDATEIND" type="attribute"/>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[if (StrContainsOneOf(Mnemonic, "DELIST", "CHG_LIST", "LIST"))
+	return "ISID6_CTX_ID_MKT_USG";
+else
+	return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+            </Node>
+            <Node name="NESTED_ERR_LVL" type="attribute"/>
+            <Node name="NESTED_ERR_TXT" type="attribute"/>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueIdentifier";]]></expr>
+            </Node>
+            <Node name="FinancialMarketIdentifier" type="segment">
+              <condition><![CDATA[if (StrContainsOneOf(Mnemonic, "DELIST", "CHG_LIST", "LIST"))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></condition>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "REFERENCE";]]></expr>
+              </Node>
+              <Node name="COPY_FROM" type="attribute"/>
+              <Node name="COPY_TO" type="attribute">
+                <expr><![CDATA[return "MKT_OID";]]></expr>
+              </Node>
+              <Node name="DUP_CHECK" type="attribute"/>
+              <Node name="ENDDATEIND" type="attribute"/>
+              <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+              <Node name="ERROR" type="attribute"/>
+              <Node name="LOOKUP" type="attribute"/>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+              </Node>
+              <Node name="PARENT_LINK" type="attribute"/>
+              <Node name="PUBLISH" type="attribute"/>
+              <Node name="SEGPROCESSEDIND" type="attribute"/>
+              <Node name="START_TMS_MATCH" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="TSATTRIBUTE" type="attribute"/>
+              <Node name="TSOPTION" type="attribute"/>
+              <Node name="TSTOLERANCE" type="attribute"/>
+              <Node name="TYPE" type="attribute">
+                <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+              </Node>
+              <Node name="MKTID" type="element">
+                <Node name="INSERT_ONLY" type="attribute"/>
+                <Node name="TRANSLATE" type="attribute"/>
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[if (Strcmp(Mnemonic, "DELIST"))
+	return DELIST.CP_EXCH;
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return CHG_LIST.CP_NEW_EXCH;
+else if (Strcmp(Mnemonic, "LIST"))
+	return LIST.CP_EXCH;
+else
+	return "";]]></expr>
+                </Node>
+              </Node>
+              <Node name="MKTIDCTXTTYP" type="element">
+                <Node name="INSERT_ONLY" type="attribute"/>
+                <Node name="TRANSLATE" type="attribute"/>
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[return "BBEXCH";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="IDCTXTTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (OneHasValue(Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBGLOBAL")))
+	return Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBGLOBAL");
+else
+	return "BBGLOBAL";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return BloombergGlobalID;]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueIdentifier" type="segment">
+            <comment><![CDATA[GT-167108]]></comment>
+            <condition>
+              <comment><![CDATA[GT-168076]]></comment><![CDATA[	if ((OneHasValue(BloombergUniqueID) && Strcmp(Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "CA_Notifications"), "YES")) && (Translate(Connection_Version, true, "GS_VERSION", "VERSION") < "8721"))
+		return "IssueIdentifier";
+	else
+		return "";
+]]>
+            </condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ID,MKT_OID";]]></expr>
+            </Node>
+            <Node name="ENDDATEIND" type="attribute"/>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[if (StrContainsOneOf(Mnemonic, "DELIST", "CHG_LIST", "LIST"))
+	return "ISID6_CTX_ID_MKT_USG";
+else
+	return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+            </Node>
+            <Node name="NESTED_ERR_LVL" type="attribute">
+              <expr><![CDATA[return "ERROR";]]></expr>
+            </Node>
+            <Node name="NESTED_ERR_TXT" type="attribute">
+              <expr><![CDATA[return Strcat(
+		Strcat("16|CONCTNS|NESTED|IDCTXTTYP|",
+				Strcat(If(OneHasValue(Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBUNIQUE")), Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBUNIQUE"), "BBUNIQUE"),
+						Strcat("|ISSID|", Strcat(BloombergUniqueID, Strcat(Strcat("|CAN NOT DETERMINE UNIQUE|LISTING|", "|DATASRCID|BLOOMBERG"), ""))))),
+		"");]]></expr>
+            </Node>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueIdentifier";]]></expr>
+            </Node>
+            <Node name="FinancialMarketIdentifier" type="segment">
+              <condition><![CDATA[if (StrContainsOneOf(Mnemonic, "DELIST", "CHG_LIST", "LIST"))
+	return "FinancialMarketIdentifier";
+else
+	return "";]]></condition>
+              <Node name="ACTION" type="attribute">
+                <expr><![CDATA[return "REFERENCE";]]></expr>
+              </Node>
+              <Node name="COPY_FROM" type="attribute"/>
+              <Node name="COPY_TO" type="attribute">
+                <expr><![CDATA[return "MKT_OID";]]></expr>
+              </Node>
+              <Node name="DUP_CHECK" type="attribute"/>
+              <Node name="ENDDATEIND" type="attribute"/>
+              <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+              <Node name="ERROR" type="attribute"/>
+              <Node name="LOOKUP" type="attribute"/>
+              <Node name="MATCH" type="attribute">
+                <expr><![CDATA[return "MKID1_MKT_CTXT_MKTID";]]></expr>
+              </Node>
+              <Node name="PARENT_LINK" type="attribute"/>
+              <Node name="PUBLISH" type="attribute"/>
+              <Node name="SEGPROCESSEDIND" type="attribute"/>
+              <Node name="START_TMS_MATCH" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="TSATTRIBUTE" type="attribute"/>
+              <Node name="TSOPTION" type="attribute"/>
+              <Node name="TSTOLERANCE" type="attribute"/>
+              <Node name="TYPE" type="attribute">
+                <expr><![CDATA[return "FinancialMarketIdentifier";]]></expr>
+              </Node>
+              <Node name="MKTID" type="element">
+                <Node name="INSERT_ONLY" type="attribute"/>
+                <Node name="TRANSLATE" type="attribute"/>
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[if (Strcmp(Mnemonic, "DELIST"))
+	return DELIST.CP_EXCH;
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return CHG_LIST.CP_NEW_EXCH;
+else if (Strcmp(Mnemonic, "LIST"))
+	return LIST.CP_EXCH;
+else
+	return "";]]></expr>
+                </Node>
+              </Node>
+              <Node name="MKTIDCTXTTYP" type="element">
+                <Node name="INSERT_ONLY" type="attribute"/>
+                <Node name="TRANSLATE" type="attribute"/>
+                <Node name="VALUE" type="attribute">
+                  <expr><![CDATA[return "BBEXCH";]]></expr>
+                </Node>
+              </Node>
+            </Node>
+            <Node name="IDCTXTTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (OneHasValue(Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBUNIQUE")))
+	return Translate(Config_Options, true, "Setup_CA_at_Marketlevel", "Use_Different_Context_for_BBUNIQUE");
+else
+	return "BBUNIQUE";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return BloombergUniqueID;]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueIdentifier" type="segment">
+            <condition><![CDATA[if (AllHaveValue(SecIDtype, SecID) && Strcmp(SecIDtype, "ISIN"))
+	return "IssueIdentifier";
+else if (AllHaveValue(SecIDtype, SecID) && Strcmp(SecIDtype, "CUSIP"))
+	return "IssueIdentifier";
+else if (AllHaveValue(SecIDtype, SecID) && Strcmp(SecIDtype, "VALOREN"))
+	return "IssueIdentifier";
+else if (AllHaveValue(SecIDtype, SecID) && Strcmp(SecIDtype, "WPK"))
+	return "IssueIdentifier";
+else if (AllHaveValue(SecIDtype, SecID) && Strcmp(SecIDtype, "SEDOL"))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ID";]]></expr>
+            </Node>
+            <Node name="ENDDATEIND" type="attribute">
+              <expr><![CDATA[return "L";]]></expr>
+            </Node>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+            </Node>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueIdentifier";]]></expr>
+            </Node>
+            <Node name="IDCTXTTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return SecIDtype;]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return SecID;]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssueIdentifier" type="segment">
+            <comment><![CDATA[GT#169240]]></comment>
+            <condition><![CDATA[if (Strcmp(Translate(Config_Options, false, "Instrument_Match_Using_SECDESCID", "Bloomberg_DL_Corporate_Actions_V2"), "YES"))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ID";]]></expr>
+            </Node>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+            </Node>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssueIdentifier";]]></expr>
+            </Node>
+            <Node name="IDCTXTTYP" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "BBGSECDESCID";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSID" type="element">
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (StrContainsOneOf(Identifier, "Comdty", "Corp", "Curncy", "Equity", "Govt", "Index", "M-Mkt", "Mtge", "Muni", "Pfd"))
+	return StrTrimRight(StrReplace(Identifier, StrParam(Identifier, " ", -1), ""));
+else
+	return Identifier;]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssuerIdentifier" type="segment">
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_FROM" type="attribute"/>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ISSR_ID";]]></expr>
+            </Node>
+            <Node name="DUP_CHECK" type="attribute"/>
+            <Node name="ENDDATEIND" type="attribute"/>
+            <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+            <Node name="ERROR" type="attribute"/>
+            <Node name="LOOKUP" type="attribute"/>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "IRID1_IDCTXT_ISSR_ID";]]></expr>
+            </Node>
+            <Node name="PARENT_LINK" type="attribute"/>
+            <Node name="PUBLISH" type="attribute"/>
+            <Node name="SEGPROCESSEDIND" type="attribute"/>
+            <Node name="START_TMS_MATCH" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="TSATTRIBUTE" type="attribute"/>
+            <Node name="TSOPTION" type="attribute"/>
+            <Node name="TSTOLERANCE" type="attribute"/>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+            </Node>
+            <Node name="ISSRID" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (OneHasValue(BloombergCompanyID))
+	return BloombergCompanyID;
+else if (OneHasValue(BLOOMBERGGLOBALCOMPANYID))
+	return BLOOMBERGGLOBALCOMPANYID;
+else
+	return "";]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSRIDCTXTTYP" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[if (OneHasValue(BloombergCompanyID))
+	return "BBCMPYID";
+else if (OneHasValue(BLOOMBERGGLOBALCOMPANYID))
+	return "BBGCID";
+else
+	return "";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssuerIdentifier" type="segment">
+            <comment><![CDATA[169415]]></comment>
+            <condition><![CDATA[if (Strcmp(Mnemonic, "OPEN_MKT") && FieldPresent(OPEN_MKT.CP_ISSUER_ID))
+	return "IssuerIdentifier";
+else
+	return "";]]></condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_FROM" type="attribute"/>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ISSR_ID";]]></expr>
+            </Node>
+            <Node name="DUP_CHECK" type="attribute"/>
+            <Node name="ENDDATEIND" type="attribute"/>
+            <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+            <Node name="ERROR" type="attribute"/>
+            <Node name="LOOKUP" type="attribute"/>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "IRID1_IDCTXT_ISSR_ID";]]></expr>
+            </Node>
+            <Node name="PARENT_LINK" type="attribute"/>
+            <Node name="PUBLISH" type="attribute"/>
+            <Node name="SEGPROCESSEDIND" type="attribute"/>
+            <Node name="START_TMS_MATCH" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="TSATTRIBUTE" type="attribute"/>
+            <Node name="TSOPTION" type="attribute"/>
+            <Node name="TSTOLERANCE" type="attribute"/>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+            </Node>
+            <Node name="ISSRID" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return OPEN_MKT.CP_ISSUER_ID;]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSRIDCTXTTYP" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "BBCMPYID";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="IssuerIdentifier" type="segment">
+            <comment><![CDATA[169415]]></comment>
+            <condition><![CDATA[if (Strcmp(Mnemonic, "DEFEASED") && FieldPresent(DEFEASED.CP_ISSUER_ID))
+	return "IssuerIdentifier";
+else
+	return "";]]></condition>
+            <Node name="ACTION" type="attribute">
+              <expr><![CDATA[return "REFERENCE";]]></expr>
+            </Node>
+            <Node name="COPY_FROM" type="attribute"/>
+            <Node name="COPY_TO" type="attribute">
+              <expr><![CDATA[return "INSTR_ISSR_ID";]]></expr>
+            </Node>
+            <Node name="DUP_CHECK" type="attribute"/>
+            <Node name="ENDDATEIND" type="attribute"/>
+            <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+            <Node name="ERROR" type="attribute"/>
+            <Node name="LOOKUP" type="attribute"/>
+            <Node name="MATCH" type="attribute">
+              <expr><![CDATA[return "IRID1_IDCTXT_ISSR_ID";]]></expr>
+            </Node>
+            <Node name="PARENT_LINK" type="attribute"/>
+            <Node name="PUBLISH" type="attribute"/>
+            <Node name="SEGPROCESSEDIND" type="attribute"/>
+            <Node name="START_TMS_MATCH" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="TSATTRIBUTE" type="attribute"/>
+            <Node name="TSOPTION" type="attribute"/>
+            <Node name="TSTOLERANCE" type="attribute"/>
+            <Node name="TYPE" type="attribute">
+              <expr><![CDATA[return "IssuerIdentifier";]]></expr>
+            </Node>
+            <Node name="ISSRID" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return DEFEASED.CP_ISSUER_ID;]]></expr>
+              </Node>
+            </Node>
+            <Node name="ISSRIDCTXTTYP" type="element">
+              <Node name="INSERT_ONLY" type="attribute"/>
+              <Node name="TRANSLATE" type="attribute"/>
+              <Node name="VALUE" type="attribute">
+                <expr><![CDATA[return "BBCMPYID";]]></expr>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="ACTVYSTATTYP" type="element">
+            <comment><![CDATA[GT 151095- Replaced ACTVNEW with NEWM,
+
+GT-166588]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="STRIP_FAILED_DOMAIN" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Flag, "U") && StrContainsOneOf(GetStringByKey("CP_ACTION_STATUS"), "A", "C", "E", "P", "R", "Z"))
+	return "YES";
+else
+	return "";]]></expr>
+            </Node>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Flag, "N"))
+	return "NEWM";
+else if (Strcmp(Flag, "U") && StrContainsOneOf(GetStringByKey("CP_ACTION_STATUS"), "A", "C", "E", "P", "R", "Z"))
+	return GetStringByKey("CP_ACTION_STATUS");
+else if (Strcmp(Flag, "U"))
+	return "ACTVUPD";
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="AJFACTORCRTE" type="element">
+            <comment><![CDATA[GT#170242]]></comment>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(RIGHTS_OFFER.CP_ADJ))
+	return RIGHTS_OFFER.CP_ADJ;
+else if (OneHasValue(SPIN.CP_ADJ))
+	return SPIN.CP_ADJ;
+else if (OneHasValue(DVD_CASH.CP_ADJ))
+	return DVD_CASH.CP_ADJ;
+else if (OneHasValue(DVD_STOCK.CP_ADJ))
+	return DVD_STOCK.CP_ADJ;
+else if (OneHasValue(STOCK_SPLT.CP_ADJ))
+	return STOCK_SPLT.CP_ADJ;
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="AJDTE" type="element">
+            <comment><![CDATA[GT#170242]]></comment>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(RIGHTS_OFFER.CP_ADJ_DT))
+	return Date2String(RIGHTS_OFFER.CP_ADJ_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (OneHasValue(SPIN.CP_ADJ_DT))
+	return Date2String(SPIN.CP_ADJ_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (OneHasValue(DVD_CASH.CP_ADJ_DT))
+	return Date2String(DVD_CASH.CP_ADJ_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (OneHasValue(DVD_STOCK.CP_ADJ_DT))
+	return Date2String(DVD_STOCK.CP_ADJ_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (OneHasValue(STOCK_SPLT.CP_ADJ_DT))
+	return Date2String(STOCK_SPLT.CP_ADJ_DT, "%M-%D-%Y %H:%I:%S %A");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ALLOTMENTLETTERTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ANNCMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="AVAILABLETMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="BLOCKEDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="BOOKCLOSUREFROMTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="BOOKCLOSURETOTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CALLEDCQTY" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CERTIFDLNETMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMPNSCAMT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMPNSCASHABLEUNTILTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMPNSCURRCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMPNSFREECHRGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMPNSPAYDUETMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CNVRTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(DBT_RDMP_CALL.CP_CONV_DT, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CONSENTEXPTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="COSTPYRCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="COUPONNUMID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="COURTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CPNCLIPPINGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Flag, "N"))
+	return "ACTIVE";
+else if (Strcmp(Flag, "U"))
+	return "ACTIVE";
+else if (Strcmp(Flag, "D"))
+	return "VENDOR DELETE";
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DCLIMAGEID" type="element">
+            <comment><![CDATA[170433]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Mnemonic, "BANCR"))
+       return 
+Strcat("VENDORBANCR", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+       return 
+Strcat("VENDORSHHOLDERMEET", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "DIVEST"))
+       return 
+Strcat("VENDORDIVEST", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (OneHasValue(Translate(Config_Options, true, "Not_To_Record_CA_Id_In_DCLIMAGEID", "Bloomberg_DL_Corporate_Actions")))
+	if (Strcmp(Translate(Config_Options, true, "Not_To_Record_CA_Id_In_DCLIMAGEID", "Bloomberg_DL_Corporate_Actions"), "NO"))
+		if (Strcmp(Mnemonic, "CHG_NAME"))
+			return Strcat("VENDORNAMECHANGE", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_DOM"))
+			return Strcat("VENDORDOMCHANGE", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_STATE"))
+			return Strcat("VENDORSTATECHANGE", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_RLOT"))
+			return Strcat("VENDORRLOTCHANGE", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_TKR"))
+			return Strcat("VENDORTKRCHANGE", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_ID"))
+			return Strcat("VENDORIDCHANGE", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DELIST"))
+			return Strcat("VENDOREQYDELIST", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_LIST"))
+			return Strcat("VENDORCHGLIST", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "LIST"))
+			return Strcat("VENDOREQYLIST", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "VAR_INT_RST"))
+			return Strcat("VENDORVARINTRST", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_VOTE"))
+			return Strcat("VENDORCHGVOTE", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CRNCY_QT_CHNG"))
+			return Strcat("VENDORCRNCYQTCHNG", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "RECONVENTION"))
+			return Strcat("VENDORRECONVENTION", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "REDENOMINATION"))
+			return Strcat("VENDORREDENOMINATION", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+			return Strcat("VENDORSHHOLDERMEET", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "MERG"))
+			return Strcat("VENDORMERG", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "BANCR"))
+			return Strcat("VENDORBANCR", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "SPIN"))
+			return Strcat("VENDORSPIN", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "STOCK_BUY"))
+			return Strcat("VENDORSTOCKBUY", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "EQY_OFFER"))
+			return Strcat("VENDOREQYOFFER", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DBT_RDMP_CALL"))
+			return Strcat("VENDORDBTRDMPCALL", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DBT_OFFER_INC"))
+			return Strcat("VENDORDBTOFFERINC", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DBT_OFFER_NEW"))
+			return Strcat("VENDORDBTOFFERNEW", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_PAR"))
+			return Strcat("VENDORCHGPAR", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DBT_RDMP_SINK"))
+			return Strcat("VENDORDBTRDMPSINK", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "PARTIAL_PAY"))
+			return Strcat("VENDORINSTALLMENTCALL", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "RECLASS"))
+			return Strcat("VENDORRECLASS", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DBT_RDMP_PUT"))
+			return Strcat("VENDORDBTRDMPPUT", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "EXCH_OFFER"))
+			return Strcat("VENDOREXCHOFFER", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "VAR_PR_RDMP"))
+			return Strcat("VENDORVARPRRDMP", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "PAY_IN_KIND"))
+			return Strcat("VENDORPAYINKIND", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "RIGHTS_OFFER"))
+			return Strcat("VENDORRIGHTSOFFER", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "EX_PX_RFIX"))
+			return Strcat("VENDOREXPXRFIX", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "FUNG_ISS"))
+			return Strcat("VENDORFUNGISS", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "EXTEN_ISS"))
+			return Strcat("VENDOREXTENISS", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DVD_CASH") && !Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+			return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "C"));
+		else if (Strcmp(Mnemonic, "DVD_CASH") && Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+			return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "R"));
+		else if (Strcmp(Mnemonic, "DVD_STOCK"))
+			return Strcat("VENDORDVDSTOCK", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "STOCK_SPLT"))
+			return Strcat("VENDORSTOCKSPLT", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "ACQUIS"))
+			return Strcat("VENDORACQUIS", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+		else if (Strcmp(Mnemonic, "DIVEST"))
+			return Strcat("VENDORDIVEST", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DBT_REP"))
+			return Strcat("VENDORDEBTREP", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CONV_PX_RFIX"))
+			return Strcat("VENDORCONVPXRFIX", Float2String(ActionID, 0, 0));	
+		else if (Strcmp(Mnemonic, "CHG_FISCAL_YEAR_END"))
+ 			return Strcat("VENDOR_CHG_FISCAL_YEAR_END", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "CHG_TRADING_STATUS"))
+ 			return Strcat("VENDOR_CHG_TRADING_STATUS", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DEFAULT"))
+ 			return Strcat("VENDOR_DEFAULT", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DEFAULT_PAY"))
+ 			return Strcat("VENDOR_DEFAULT_PAY", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "DEFEASED"))
+ 			return Strcat("VENDOR_DEFEASED", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "EXCH_SECTION_CHG"))
+ 			return Strcat("VENDOR_EXCH_SECTION_CHG", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "OPEN_MKT"))
+ 			return Strcat("VENDOR_OPEN_MKT", Float2String(ActionID, 0, 0));
+		else if (Strcmp(Mnemonic, "SOLICIT"))
+ 			return Strcat("VENDOR_SOLICIT", Float2String(ActionID, 0, 0));
+		else
+			return "";
+	else if (Strcmp(Translate(Config_Options, true, "Not_To_Record_CA_Id_In_DCLIMAGEID", "Bloomberg_DL_Corporate_Actions"), "YES"))
+		return "";
+	else if (!OneOf("YES", Translate(Config_Options, true, "Not_To_Record_CA_Id_In_DCLIMAGEID", "Bloomberg_DL_Corporate_Actions"), "NO"))
+		return ThrowMapError(Strcat(Translate(Config_Options, true, "Not_To_Record_CA_Id_In_DCLIMAGEID", "Bloomberg_DL_Corporate_Actions"), Strcat("--", "Wrong value in Config_Option against Bloomberg_DL_Corporate_Actions for Not_To_Record_CA_Id_In_DCLIMAGEID . It is other than permitted value NO and YES used in Config_Option")), "");
+	else
+		return "";
+else if (Strcmp(Mnemonic, "CHG_NAME"))
+	return Strcat("VENDORNAMECHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_DOM"))
+	return Strcat("VENDORDOMCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_STATE"))
+	return Strcat("VENDORSTATECHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_RLOT"))
+	return Strcat("VENDORRLOTCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_TKR"))
+	return Strcat("VENDORTKRCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_ID"))
+	return Strcat("VENDORIDCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DELIST"))
+	return Strcat("VENDOREQYDELIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return Strcat("VENDORCHGLIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "LIST"))
+	return Strcat("VENDOREQYLIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "VAR_INT_RST"))
+	return Strcat("VENDORVARINTRST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_VOTE"))
+	return Strcat("VENDORCHGVOTE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CRNCY_QT_CHNG"))
+	return Strcat("VENDORCRNCYQTCHNG", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RECONVENTION"))
+	return Strcat("VENDORRECONVENTION", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "REDENOMINATION"))
+	return Strcat("VENDORREDENOMINATION", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+	return Strcat("VENDORSHHOLDERMEET", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "MERG"))
+	return Strcat("VENDORMERG", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "BANCR"))
+	return Strcat("VENDORBANCR", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SPIN"))
+	return Strcat("VENDORSPIN", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "STOCK_BUY"))
+	return Strcat("VENDORSTOCKBUY", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EQY_OFFER"))
+	return Strcat("VENDOREQYOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_CALL"))
+	return Strcat("VENDORDBTRDMPCALL", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_OFFER_INC"))
+	return Strcat("VENDORDBTOFFERINC", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_OFFER_NEW"))
+	return Strcat("VENDORDBTOFFERNEW", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_PAR"))
+	return Strcat("VENDORCHGPAR", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_SINK"))
+	return Strcat("VENDORDBTRDMPSINK", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "PARTIAL_PAY"))
+	return Strcat("VENDORINSTALLMENTCALL", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RECLASS"))
+	return Strcat("VENDORRECLASS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_PUT"))
+	return Strcat("VENDORDBTRDMPPUT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXCH_OFFER"))
+	return Strcat("VENDOREXCHOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "VAR_PR_RDMP"))
+	return Strcat("VENDORVARPRRDMP", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "PAY_IN_KIND"))
+	return Strcat("VENDORPAYINKIND", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RIGHTS_OFFER"))
+	return Strcat("VENDORRIGHTSOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EX_PX_RFIX"))
+	return Strcat("VENDOREXPXRFIX", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "FUNG_ISS"))
+	return Strcat("VENDORFUNGISS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXTEN_ISS"))
+	return Strcat("VENDOREXTENISS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DVD_CASH") && !Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+	return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "C"));
+else if (Strcmp(Mnemonic, "DVD_CASH") && Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+	return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "R"));
+else if (Strcmp(Mnemonic, "DVD_STOCK"))
+	return Strcat("VENDORDVDSTOCK", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "STOCK_SPLT"))
+	return Strcat("VENDORSTOCKSPLT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "ACQUIS"))
+	return Strcat("VENDORACQUIS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DIVEST"))
+	return Strcat("VENDORDIVEST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_REP"))
+	return Strcat("VENDORDEBTREP", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CONV_PX_RFIX"))
+	return Strcat("VENDORCONVPXRFIX", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_FISCAL_YEAR_END"))
+	return Strcat("VENDOR_CHG_FISCAL_YEAR_END", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_TRADING_STATUS"))
+	return Strcat("VENDOR_CHG_TRADING_STATUS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFAULT"))
+ 	return Strcat("VENDOR_DEFAULT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFAULT_PAY"))
+ 	return Strcat("VENDOR_DEFAULT_PAY", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFEASED"))
+ 	return Strcat("VENDOR_DEFEASED", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXCH_SECTION_CHG"))
+ 	return Strcat("VENDOR_EXCH_SECTION_CHG", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "OPEN_MKT"))
+ 	return Strcat("VENDOR_OPEN_MKT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SOLICIT"))
+ 	return Strcat("VENDOR_SOLICIT", Float2String(ActionID, 0, 0));
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DCLSRCETYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "VENDOR";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DISSENTERRGTIND" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DIVRANKIND" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return RIGHTS_OFFER.CP_PARI_PASU;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DIVRANKTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DIVRIDISCPCT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DIVRIMETHTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DIVRITXBLTYIND" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DIVTYP" type="element">
+            <comment><![CDATA[GT-166375]]></comment>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return DVD_CASH.CP_DVD_TYP;]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute">
+              <expr><![CDATA[return "YES";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DLNETMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DRWTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DUEBILLRDMTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return SPIN.CP_DUE_BILL_RED_DT;]]></expr>
+            </Node>
+          </Node>
+          <Node name="EFFTMS" type="element">
+            <comment><![CDATA[170433]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (!OneOf(Mnemonic, "SPIN", "RIGHTS_OFFER", "DVD_CASH", "DVD_STOCK", "STOCK_SPLT", "CHG_FISCAL_YEAR_END", "CHG_TRADING_STATUS", "DEFAULT", "DEFAULT_PAY", "DEFEASED", "EXCH_SECTION_CHG", "OPEN_MKT", "SOLICIT"))
+	return Date2String(Effdate, "%M-%D-%Y %H:%I:%S %A");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSACTTYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EVENTSUBTYP" type="element">
+            <comment><![CDATA[GT-162939]]></comment>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (StrContainsOneOf(Mnemonic, "CHG_FISCAL_YEAR_END", "CHG_TRADING_STATUS", "EXCH_SECTION_CHG"))
+	return Mnemonic;
+else
+	return SPIN.CP_SPINOFF_TYP;]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute">
+              <expr><![CDATA[return "YES";]]></expr>
+            </Node>
+          </Node>
+          <Node name="DCLSRCETYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ACTVYSTATTYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EFFTMSTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EIATOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EXCLUSIONTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EXPCTDRWPCTCPCT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EXPCTDRWTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EXPEXTNTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EXPTMS" type="element">
+            <comment><![CDATA[GT 127604 - New Mapping in order to map Eff-date input field
+GT 127604 - Mapping reverted for EXP_TMS and added a check for ACQUIS\CP_DT_FLAG instead of Mnemonic input field(29th July 2016)]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <comment><![CDATA[169415]]></comment>
+              <expr><![CDATA[if (Strcmp(Float2String(ACQUIS.CP_DT_FLAG, 0, 0), "1"))
+	return Date2String(Effdate, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(SOLICIT.CP_EXPIRE_DT))
+	return Date2String(SOLICIT.CP_EXPIRE_DT, "%M-%D-%Y %H:%I:%S %A");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="EXPTPAYTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="EXTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (StrContainsOneOf(Mnemonic, "SPIN", "RIGHTS_OFFER", "DVD_CASH", "DVD_STOCK", "STOCK_SPLT"))
+	return Date2String(Effdate, "%M-%D-%Y %H:%I:%S %A");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="FAVORABLERTEIND" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="FDTLANNCTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="FINALPAYIND" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="FIRSTTRDNGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="FXRTEFIXINGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACDOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IALASTVERIFTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IAROUTEPURPTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IAVERIFIND" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="INCURREDCHRGIND" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="INPRDENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="INPRDSTARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="INSTRALLOTMENTTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="INSTRCNCLTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="INSTRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="INSTRISSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTDISTRSTATTYP" type="element">
+            <comment><![CDATA[GT-167068]]></comment>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (FieldPresent(DVD_CASH.CP_DIST_AMT_STATUS))
+	return DVD_CASH.CP_DIST_AMT_STATUS;
+else if (FieldPresent(DVD_STOCK.CP_DIST_AMT_STATUS))
+	return DVD_STOCK.CP_DIST_AMT_STATUS;
+else
+	return "";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute">
+              <expr><![CDATA[return "YES";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSACTDESC" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Mnemonic, "EQY_OFFER"))
+	return Translate(EQY_OFFER_TYP, false, Float2String(EQY_OFFER.CP_EQY_OFFER_TYP, 0, 0));
+else if (Strcmp(Mnemonic, "DVD_CASH"))
+	if (Strcmp(Translate(CP_DVD_TYP_TO_ISO, false, Float2String(DVD_CASH.CP_DVD_TYP, 0, 0)),
+			Float2String(DVD_CASH.CP_DVD_TYP, 0, 0)))
+		return "";
+	else
+		return Translate(CP_DVD_TYP_TO_ISO, false, Float2String(DVD_CASH.CP_DVD_TYP, 0, 0));
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTTYP" type="element">
+            <comment><![CDATA[GT-162344]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute">
+              <expr><![CDATA[if (StrContainsOneOf(Mnemonic,"CHG_PAR","STOCK_SPLT","DBT_RDMP_CALL","DBT_RDMP_PUT","SH_HOLDER_MEET"))
+     return ""; 
+	else if (StrContainsOneOf(Mnemonic,"STOCK_BUY"))
+		if (STOCK_BUY.CP_BUYBACK_TYP == "1")
+		return ""; 
+		else if (STOCK_BUY.CP_BUYBACK_TYP == "2")
+		return "";
+		else if (STOCK_BUY.CP_BUYBACK_TYP == "3")
+		return "";
+	else
+	return "YES";
+else
+	return "YES";]]></expr>
+            </Node>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (StrContainsOneOf(Mnemonic, "CHG_PAR", "STOCK_SPLT", "DBT_RDMP_CALL", "DBT_RDMP_PUT", "SH_HOLDER_MEET"))
+	if (StrContainsOneOf(Mnemonic, "DBT_RDMP_CALL", "DBT_RDMP_PUT"))
+		if (Strcmp(Float2String(DBT_RDMP_CALL.CP_DBT_RDMP_CALL_TYP, 0, 0), "1")
+				|| Strcmp(Float2String(DBT_RDMP_PUT.CP_DBT_RDMP_PUT_TYP, 0, 0), "1"))
+			return "MCAL";
+		else
+			return "PCAL";
+	else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+		if (Strcmp(Float2String(SH_HOLDER_MEET.CP_MEET_TYP, 0, 0), "1"))
+			return "MEET";
+		else if (Strcmp(Float2String(SH_HOLDER_MEET.CP_MEET_TYP, 0, 0), "2"))
+			return "XMET";
+		else
+			return "OTHR";
+	else if (Strcmp(Mnemonic, "STOCK_SPLT") && (STOCK_SPLT.CP_RATIO > 1))
+		return "SPLF";
+	else if (StrContainsOneOf(Mnemonic, "STOCK_SPLT") && (STOCK_SPLT.CP_RATIO < 1))
+		return "SPLR";
+	else if (Strcmp(Mnemonic, "CHG_PAR") && (CHG_PAR.CP_OLD_PAR_VAL < CHG_PAR.CP_NEW_PAR_VAL))
+		return "INCR";
+	else
+		return "DECR";
+else if (StrContainsOneOf(Mnemonic, "STOCK_BUY"))
+	if (STOCK_BUY.CP_BUYBACK_TYP == "1")
+		return "BIDS";
+	else if (STOCK_BUY.CP_BUYBACK_TYP == "2")
+		return "DTCH";
+	else if (STOCK_BUY.CP_BUYBACK_TYP == "3")
+		return "ODLT";
+	else
+		return Mnemonic;
+else
+	return Mnemonic;]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSPRCFIXINGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTSTKSUBMTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LSTDPSTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LSTWDRWLTMS" type="element">
+            <comment><![CDATA[169415]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (FieldPresent(SOLICIT.CP_WITHDRWL_DT))
+ return Date2String(SOLICIT.CP_WITHDRWL_DT, "%M-%D-%Y %H:%I:%S %A");
+else
+ return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MANDVOLUNIND" type="element">
+            <comment><![CDATA[GT-168048]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="STRIP_FAILED_DOMAIN" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(GetStringByKey("CP_MAND_OPT_STATUS")))
+	return "YES";
+else
+	return "";]]></expr>
+            </Node>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(GetStringByKey("CP_MAND_OPT_STATUS")))
+	return GetStringByKey("CP_MAND_OPT_STATUS");
+else if (Strcmp(Mnemonic, "RECLASS"))
+	return Translate(MAND_VOLU_IND, false, RECLASS.CP_OPTIONAL);
+else if ((Strcmp(Mnemonic, "DVD_CASH") && Strcmp(DVD_CASH.CP_STOCK_OPT, "D")) || StrContainsOneOf(Mnemonic, "DBT_OFFER_INC", "DBT_OFFER_NEW", "DBT_REP", "DBT_RDMP_PUT", "EQY_OFFER", "RIGHTS_OFFER", "STOCK_BUY", "EXCH_OFFER", "RECLASS"))
+	return "V";
+else
+	return "M";]]></expr>
+            </Node>
+          </Node>
+          <Node name="MKTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="MKTIDCTXTTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="MKTNME" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="MKTOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="NEWINSTRDISTRMETHTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="NEWISSDESC" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (AllHaveValue(MERG.CP_MERG_NAME, MERG.CP_MERG_ID_BB_COMP))
+	return Strcat("COMPANY :", Strcat(MERG.CP_MERG_NAME,
+			Strcat(";", Strcat("BLOOMBERG COMPANY ID :", Float2String(MERG.CP_MERG_ID_BB_COMP, 0, 0)))));
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NEWPARCURRCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="NEWPARVALCAMT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(REDENOMINATION.CP_POST_EURO_PAR_AMT))
+	return REDENOMINATION.CP_POST_EURO_PAR_AMT;
+else if (OneHasValue(CHG_PAR.CP_NEW_PAR_VAL))
+	return CHG_PAR.CP_NEW_PAR_VAL;
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NOTAGTRGTSPLTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="NOTFCNTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <comment><![CDATA[169415]]></comment>
+              <expr><![CDATA[if (Strcmp(Mnemonic, "DEFEASED") && FieldPresent(DEFEASED.CP_NOTICE_DT))
+	return Date2String(DEFEASED.CP_NOTICE_DT, "%M-%D-%Y %H:%I:%S %A");
+else
+	return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="ORIGEXPTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="PARIPASSUTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="PAYDUEDTE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (FieldPresent(SPIN.CP_PAY_DT))
+	return Date2String(SPIN.CP_PAY_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(RIGHTS_OFFER.CP_PAY_DT))
+	return Date2String(RIGHTS_OFFER.CP_PAY_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(DVD_CASH.CP_PAY_DT))
+	return Date2String(DVD_CASH.CP_PAY_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(DVD_STOCK.CP_PAY_DT))
+	return Date2String(DVD_STOCK.CP_PAY_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(STOCK_SPLT.CP_PAY_DT))
+	return Date2String(STOCK_SPLT.CP_PAY_DT, "%M-%D-%Y %H:%I:%S %A");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="PROCSTATTYP" type="element">
+            <comment><![CDATA[GT-162934]]></comment>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return GetStringByKey("CP_ACTION_STATUS");]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute">
+              <expr><![CDATA[return "YES";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSACTTYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DCLSRCETYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ACTVYSTATTYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="PAYINKINDVLDENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="PAYINKINDVLDSTARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RCDTMS" type="element">
+            <comment><![CDATA[169415]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (FieldPresent(SH_HOLDER_MEET.CP_RECORD_DT))
+	return Date2String(SH_HOLDER_MEET.CP_RECORD_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(SPIN.CP_RECORD_DT))
+	return Date2String(SPIN.CP_RECORD_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(RIGHTS_OFFER.CP_RECORD_DT))
+	return Date2String(RIGHTS_OFFER.CP_RECORD_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(DVD_CASH.CP_RECORD_DT))
+	return Date2String(DVD_CASH.CP_RECORD_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(DVD_STOCK.CP_RECORD_DT))
+	return Date2String(DVD_STOCK.CP_RECORD_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(STOCK_SPLT.CP_RECORD_DT))
+	return Date2String(STOCK_SPLT.CP_RECORD_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(SOLICIT.CP_RECORD_DT))
+	return Date2String(SOLICIT.CP_RECORD_DT, "%M-%D-%Y %H:%I:%S %A");
+else if (FieldPresent(DEFEASED.CP_RECORD_DT))
+	return Date2String(DEFEASED.CP_RECORD_DT, "%M-%D-%Y %H:%I:%S %A");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="RDMPRDENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RDMPRDSTARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="REDEMPTIONTMS" type="element">
+            <comment><![CDATA[GT 60409]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (StrContainsOneOf(Mnemonic, "DBT_RDMP_PUT", "DBT_RDMP_CALL"))
+	return Effdate;
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="REDNMMETHTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="STRIP_FAILED_DOMAIN" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Float2String(REDENOMINATION.CP_REDENOM_METHOD, 0, 0), "0"))
+	return "";
+else
+	return Translate(REDENOM_METHOD, false, Float2String(REDENOMINATION.CP_REDENOM_METHOD, 0, 0));]]></expr>
+            </Node>
+          </Node>
+          <Node name="REDNMRNDMETHTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="STRIP_FAILED_DOMAIN" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Float2String(REDENOMINATION.CP_REDENOM_ROUND_METHOD, 0, 0), "0"))
+	return "";
+else
+	return Translate(REDENOM_ROUND_METHOD, false, Float2String(REDENOMINATION.CP_REDENOM_ROUND_METHOD, 0, 0));]]></expr>
+            </Node>
+          </Node>
+          <Node name="REGISTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RGTDETACHTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RGTTRDENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(RIGHTS_OFFER.CP_TRADE_END_DT, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="RGTTRDNGIND" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return RIGHTS_OFFER.CP_RENOUNCEABLE;]]></expr>
+            </Node>
+          </Node>
+          <Node name="RGTTRDSTARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(RIGHTS_OFFER.CP_TRADE_START_DT, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="RIENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RIPRCTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RISTARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RLDACTPURPTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RLDACTSQNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <comment><![CDATA[170167]]></comment>
+              <expr><![CDATA[if (Strcmp(Mnemonic, "EXCH_SECTION_CHG"))
+	return EXCH_SECTION_CHG.CP_SEQ_NUMBER;
+else if (Strcmp(Mnemonic, "CHG_TRADING_STATUS"))
+	return CHG_TRADING_STATUS.CP_SEQ_NUMBER;
+else if (Strcmp(Mnemonic, "CHG_FISCAL_YEAR_END"))
+	return CHG_FISCAL_YEAR_END.CP_SEQ_NUMBER;
+else
+	return"";
+]]></expr>
+            </Node>
+          </Node>
+          <Node name="RLDISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RNDFRACCRTE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="RNDMETHTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="STRIP_FAILED_DOMAIN" type="attribute">
+              <expr><![CDATA[return "Y";]]></expr>
+            </Node>
+            <Node name="TRANSLATE" type="attribute">
+              <expr><![CDATA[return "YES";]]></expr>
+            </Node>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(MERG.CP_SH_FRACTIONAL))
+	return MERG.CP_SH_FRACTIONAL;
+else if (OneHasValue(SPIN.CP_SH_FRACTIONAL))
+	return SPIN.CP_SH_FRACTIONAL;
+else if (OneHasValue(ACQUIS.CP_SH_FRACTIONAL))
+	return ACQUIS.CP_SH_FRACTIONAL;
+else if (OneHasValue(STOCK_SPLT.CP_SH_FRACTIONAL))
+	return STOCK_SPLT.CP_SH_FRACTIONAL;
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="SELPRDENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SELPRDSTARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SETTLEMETHTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SHRHLDRMEETTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+	return Date2String(Effdate, "%M-%D-%Y %H:%I:%S %A");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="SUBSCRPTCPRC" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return RIGHTS_OFFER.CP_PX;]]></expr>
+            </Node>
+          </Node>
+          <Node name="SUBSCRPTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SUBSEQSETTLECAMT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SUBSEQSETTLECURRCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(RIGHTS_OFFER.CP_CRNCY))
+	if (OneHasValue(Translate(BloombergETT, true, "BLOOMBERG_CURRENCY_CODE", RIGHTS_OFFER.CP_CRNCY)))
+		return Translate(BloombergETT, true, "BLOOMBERG_CURRENCY_CODE", RIGHTS_OFFER.CP_CRNCY);
+	else
+		return RIGHTS_OFFER.CP_CRNCY;
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="SUBSEQSETTLEDLNETMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SUBSEQSETTLEMETHTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SUBSEQSETTLEPAYTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="SUBSPRDENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(RIGHTS_OFFER.CP_SUB_END_DT, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="SUBSPRDSTARTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(RIGHTS_OFFER.CP_SUB_START_DT, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="SWINGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="TMZTMZ" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="TRDNGRESUMETMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="TRDNGSUSPENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="UNBLOCKEDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="UNDERLYACTVENTLMNTTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="WDRWINSTRUCTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ACTVYSTATTYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DCLSRCETYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="DFLTTMS" type="element">
+            <Node name="VALUE" type="attribute">
+              <comment><![CDATA[169415]]></comment>
+              <expr><![CDATA[if (FieldPresent(DEFAULT.CP_PAY_DT))
+	return Date2String(DEFAULT.CP_PAY_DT, "%M-%D-%Y %H:%I:%S %A");
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTTYP" type="element">
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="PAYOUTOPTIONIND" type="element">
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(DEFAULT_PAY.CP_OPT_SETTLE, "true"))
+	return "Y";
+else if (Strcmp(DEFAULT_PAY.CP_OPT_SETTLE, "false"))
+	return "N";
+else
+	return DEFAULT_PAY.CP_OPT_SETTLE;]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionIdentifier" type="segment">
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IAID_IDCTXT_ID_DSRC";]]></expr>
+          </Node>
+          <Node name="ONLY" type="attribute"/>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionIdentifier";]]></expr>
+          </Node>
+          <Node name="DATASTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSACTIDCTXTTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "CRPACTID";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ISSUEACTIONID" type="element">
+            <comment><![CDATA[170433]]></comment>
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[if (Strcmp(Mnemonic, "BANCR"))
+	return Strcat("VENDORBANCR", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+	return Strcat("VENDORSHHOLDERMEET", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "DIVEST"))
+	return Strcat("VENDORDIVEST", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "CHG_NAME"))
+	return Strcat("VENDORNAMECHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_DOM"))
+	return Strcat("VENDORDOMCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_STATE"))
+	return Strcat("VENDORSTATECHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_RLOT"))
+	return Strcat("VENDORRLOTCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_TKR"))
+	return Strcat("VENDORTKRCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_ID"))
+	return Strcat("VENDORIDCHANGE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DELIST"))
+	return Strcat("VENDOREQYDELIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_LIST"))
+	return Strcat("VENDORCHGLIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "LIST"))
+	return Strcat("VENDOREQYLIST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "VAR_INT_RST"))
+	return Strcat("VENDORVARINTRST", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_VOTE"))
+	return Strcat("VENDORCHGVOTE", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CRNCY_QT_CHNG"))
+	return Strcat("VENDORCRNCYQTCHNG", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RECONVENTION"))
+	return Strcat("VENDORRECONVENTION", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "REDENOMINATION"))
+	return Strcat("VENDORREDENOMINATION", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SH_HOLDER_MEET"))
+	return Strcat("VENDORSHHOLDERMEET", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "MERG"))
+	return Strcat("VENDORMERG", Strcat(Float2String(ActionID, 0, 0), If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "BANCR"))
+	return Strcat("VENDORBANCR", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SPIN"))
+	return Strcat("VENDORSPIN", Strcat(Float2String(ActionID, 0, 0), If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "STOCK_BUY"))
+	return Strcat("VENDORSTOCKBUY", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EQY_OFFER"))
+	return Strcat("VENDOREQYOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_CALL"))
+	return Strcat("VENDORDBTRDMPCALL", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_OFFER_INC"))
+	return Strcat("VENDORDBTOFFERINC", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_OFFER_NEW"))
+	return Strcat("VENDORDBTOFFERNEW", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_PAR"))
+	return Strcat("VENDORCHGPAR", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_SINK"))
+	return Strcat("VENDORDBTRDMPSINK", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "PARTIAL_PAY"))
+	return Strcat("VENDORINSTALLMENTCALL", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RECLASS"))
+	return Strcat("VENDORRECLASS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DBT_RDMP_PUT"))
+	return Strcat("VENDORDBTRDMPPUT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXCH_OFFER"))
+	return Strcat("VENDOREXCHOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "VAR_PR_RDMP"))
+	return Strcat("VENDORVARPRRDMP", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "PAY_IN_KIND"))
+	return Strcat("VENDORPAYINKIND", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "RIGHTS_OFFER"))
+	return Strcat("VENDORRIGHTSOFFER", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EX_PX_RFIX"))
+	return Strcat("VENDOREXPXRFIX", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "FUNG_ISS"))
+	return Strcat("VENDORFUNGISS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXTEN_ISS"))
+	return Strcat("VENDOREXTENISS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DVD_CASH") && !Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+	return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "C"));
+else if (Strcmp(Mnemonic, "DVD_CASH") && Strcmp(DVD_CASH.CP_STOCK_OPT, "D"))
+	return Strcat("VENDORDVDCASH", Strcat(Float2String(ActionID, 0, 0), "R"));
+else if (Strcmp(Mnemonic, "DVD_STOCK"))
+	return Strcat("VENDORDVDSTOCK", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "STOCK_SPLT"))
+	return Strcat("VENDORSTOCKSPLT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "ACQUIS"))
+	return Strcat("VENDORACQUIS", Strcat(Float2String(ActionID, 0, 0), Strcat(If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), "")), Strcat(":BBUNIQUE:", BloombergUniqueID))));
+else if (Strcmp(Mnemonic, "DIVEST"))
+	return Strcat("VENDORDIVEST", Strcat(Float2String(ActionID, 0, 0), If(OneHasValue(BloombergCompanyID), Strcat("-", Float2String(BloombergCompanyID, 0, 0)), If(OneHasValue(BLOOMBERGGLOBALCOMPANYID), Strcat("-", BLOOMBERGGLOBALCOMPANYID), ""))));
+else if (Strcmp(Mnemonic, "DBT_REP"))
+	return Strcat("VENDORDEBTREP", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CONV_PX_RFIX"))
+	return Strcat("VENDORCONVPXRFIX", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_FISCAL_YEAR_END"))
+	return Strcat("VENDOR_CHG_FISCAL_YEAR_END", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "CHG_TRADING_STATUS"))
+	return Strcat("VENDOR_CHG_TRADING_STATUS", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFAULT"))
+ 	return Strcat("VENDOR_DEFAULT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFAULT_PAY"))
+ 	return Strcat("VENDOR_DEFAULT_PAY", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "DEFEASED"))
+ 	return Strcat("VENDOR_DEFEASED", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "EXCH_SECTION_CHG"))
+ 	return Strcat("VENDOR_EXCH_SECTION_CHG", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "OPEN_MKT"))
+ 	return Strcat("VENDOR_OPEN_MKT", Float2String(ActionID, 0, 0));
+else if (Strcmp(Mnemonic, "SOLICIT"))
+ 	return Strcat("VENDOR_SOLICIT", Float2String(ActionID, 0, 0));
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionComment" type="segment">
+          <condition><![CDATA[if (FieldPresent(SecID))
+	return "IssueActionComment";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IACM_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionComment";]]></expr>
+          </Node>
+          <Node name="CMNTREASTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72SECID";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTSTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTTXT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return SecID;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACMOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LNNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NLSCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionComment" type="segment">
+          <condition><![CDATA[if (FieldPresent(SecIDtype))
+	return "IssueActionComment";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IACM_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionComment";]]></expr>
+          </Node>
+          <Node name="CMNTREASTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72SECIDTYPE";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTSTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTTXT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return SecIDtype;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACMOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LNNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NLSCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionComment" type="segment">
+          <condition><![CDATA[if (FieldPresent(Currency))
+	return "IssueActionComment";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IACM_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionComment";]]></expr>
+          </Node>
+          <Node name="CMNTREASTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72CURRENCY";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTSTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTTXT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Currency;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACMOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LNNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NLSCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionComment" type="segment">
+          <condition><![CDATA[if (FieldPresent(CompanyName))
+	return "IssueActionComment";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IACM_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionComment";]]></expr>
+          </Node>
+          <Node name="CMNTREASTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72COMPANYNAME";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTSTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTTXT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return CompanyName;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACMOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LNNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NLSCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionComment" type="segment">
+          <condition><![CDATA[if (FieldPresent(BloombergGlobalID))
+	return "IssueActionComment";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IACM_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionComment";]]></expr>
+          </Node>
+          <Node name="CMNTREASTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72BBGLOBAL";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTSTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTTXT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return BloombergGlobalID;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACMOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LNNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NLSCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionComment" type="segment">
+          <condition><![CDATA[if (FieldPresent(BloombergUniqueID))
+	return "IssueActionComment";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IACM_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionComment";]]></expr>
+          </Node>
+          <Node name="CMNTREASTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72BBUNIQUE";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTSTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTTXT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return BloombergUniqueID;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACMOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LNNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NLSCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionComment" type="segment">
+          <condition><![CDATA[if (FieldPresent(LIST.CP_SEC_TYP))
+	return "IssueActionComment";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IACM_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionComment";]]></expr>
+          </Node>
+          <Node name="CMNTREASTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72SECTYP";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTSTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTTXT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return LIST.CP_SEC_TYP;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACMOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LNNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NLSCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="IssueActionComment" type="segment">
+          <condition><![CDATA[if (FieldPresent(FEED_SOURCE))
+	return "IssueActionComment";
+else
+	return "";]]></condition>
+          <Node name="ACTION" type="attribute">
+            <expr><![CDATA[return "UNKNOWN";]]></expr>
+          </Node>
+          <Node name="COPY_FROM" type="attribute"/>
+          <Node name="COPY_TO" type="attribute"/>
+          <Node name="DUP_CHECK" type="attribute"/>
+          <Node name="ENDDATEIND" type="attribute"/>
+          <Node name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node name="ERROR" type="attribute"/>
+          <Node name="LOOKUP" type="attribute"/>
+          <Node name="MATCH" type="attribute">
+            <expr><![CDATA[return "IACM_MATCH_1";]]></expr>
+          </Node>
+          <Node name="PARENT_LINK" type="attribute"/>
+          <Node name="PUBLISH" type="attribute"/>
+          <Node name="SEGPROCESSEDIND" type="attribute"/>
+          <Node name="START_TMS_MATCH" type="attribute"/>
+          <Node name="TRANSLATE" type="attribute"/>
+          <Node name="TSATTRIBUTE" type="attribute"/>
+          <Node name="TSOPTION" type="attribute"/>
+          <Node name="TSTOLERANCE" type="attribute"/>
+          <Node name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueActionComment";]]></expr>
+          </Node>
+          <Node name="CMNTREASTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "P72FEEDSOURCE";]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTSTATTYP" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="CMNTTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return Date2String(Anndate, "%M-%D-%Y %H:%I:%S %A");]]></expr>
+            </Node>
+          </Node>
+          <Node name="CMNTTXT" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return FEED_SOURCE;]]></expr>
+            </Node>
+          </Node>
+          <Node name="DATASRCID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "BB";]]></expr>
+            </Node>
+          </Node>
+          <Node name="ENDTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="IACMOID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="ISSACTID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGTMS" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LASTCHGUSRID" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute"/>
+          </Node>
+          <Node name="LNNUM" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node name="NLSCDE" type="element">
+            <Node name="INSERT_ONLY" type="attribute"/>
+            <Node name="TRANSLATE" type="attribute"/>
+            <Node name="VALUE" type="attribute">
+              <expr><![CDATA[return "ENGLISH";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+      </Node>
+    </OutputDef>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="true" ident="KeyStreaming">
+      <expr><![CDATA[if (OneHasValue(BloombergUniqueID))
+	return BloombergUniqueID;
+else if (OneHasValue(BloombergGlobalID))
+	return BloombergGlobalID;
+else
+	return BloombergCompanyID;]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

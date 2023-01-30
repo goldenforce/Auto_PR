@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-08-24 at 11:30:13 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Asset_Ratio_Against/Asset_Ratio_For" id="klET21y6W1" name="RelatedIssueStatistics" type="segment">
+        <condition id="klEU21y6W1"><![CDATA[if (AllHaveValue(Asset_Ratio_Against, Asset_Ratio_For))
+	return "RelatedIssueStatistics";
+else
+	return "";]]></condition>
+        <Node id="klEV21y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="klEW21y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="klEX21y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="klEY21y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="klEZ21y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="klEa21y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="klEb21y6W1" name="ERROR" type="attribute"/>
+        <Node id="klEc21y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="klEd21y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "RIST_MATCH_1";]]></expr>
+        </Node>
+        <Node id="klEe21y6W1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="klEf21y6W1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="klEg21y6W1" name="ONLY" type="attribute"/>
+        <Node id="klEh21y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="klEi21y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="klEj21y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="klEk21y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="klEl21y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="klEm21y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="klEn21y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="klEo21y6W1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="klEp21y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="klEq21y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "RelatedIssueStatistics";]]></expr>
+        </Node>
+        <Node id="klEr21y6W1" name="ADRSHRCRTE" type="element">
+          <Node id="klEs21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="klEt21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="klEu21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="klEv21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="klEw21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="klEx21y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return String2Float(Asset_Ratio_For, 0) / String2Float(Asset_Ratio_Against, 0);]]></expr>
+          </Node>
+        </Node>
+        <Node id="klEy21y6W1" name="INSTRID" type="element">
+          <Node id="klEz21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="klE$21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="klE%21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="klE@21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="klE&amp;21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="klE*21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="klE-21y6W1" name="LASTCHGTMS" type="element">
+          <Node id="klE.21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="klE/21y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="klE(21y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="klE)21y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="klE~21y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="klE?21y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="klE&lt;21y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="klE&gt;21y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="klE031y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="klE131y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="klE231y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="klE331y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="klE431y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="klE531y6W1" name="RISTOID" type="element">
+          <Node id="klE631y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="klE731y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="klE831y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="klE931y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="klEA31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="klEB31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="klEC31y6W1" name="SHRADRCRTE" type="element">
+          <Node id="klED31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="klEE31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="klEF31y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="klEG31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="klEH31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="klEI31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return String2Float(Asset_Ratio_Against, 0) / String2Float(Asset_Ratio_For, 0);]]></expr>
+          </Node>
+        </Node>
+        <Node id="klEJ31y6W1" name="STATSEFFTMS" type="element">
+          <Node id="klEK31y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="klEL31y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="klEM31y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="klEN31y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="klEO31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="klEP31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate("19000101", "YYYYMMDD");]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

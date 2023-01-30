@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations cleanUnusedFields="false" nameSpace="POINT72">
+  <chalConfigurations>
+    <chalConfiguration disParentConfig="0" entityId="++5TZs2y2etse000" id="++8ab6BmhG5AW29e" name="FullInstrument" nameSpace="POINT72">
+      <part approvalType="SINGLE" chalId="++8ab6BmhG5AW29e" dataGroupPartId="004aIFeC2etv4008" disParentConfig="0" id="++8ab6BmhG5AW29f" nameSpace="POINT72"/>
+      <part approvalType="SINGLE" chalId="++8ab6BmhG5AW29e" dataGroupPartId="005Q5i8i2etse002" disParentConfig="0" id="008auNW0hG5AW002" nameSpace="POINT72"/>
+      <part approvalType="SINGLE" chalId="++8ab6BmhG5AW29e" dataGroupPartId="++5PNZ5y2etz400o" disParentConfig="0" id="008auNW0hG5AW003" nameSpace="POINT72"/>
+      <part approvalType="SINGLE" chalId="++8ab6BmhG5AW29e" dataGroupPartId="++5s7uhS2etpe06e" disParentConfig="0" id="008auNW0hG5AW004" nameSpace="POINT72"/>
+      <part approvalType="SINGLE" chalId="++8ab6BmhG5AW29e" dataGroupPartId="++5tGVZS2etsm02W" disParentConfig="0" id="008auNW0hG5AW005" nameSpace="POINT72"/>
+      <part approvalType="SINGLE" chalId="++8ab6BmhG5AW29e" dataGroupPartId="008Nypzi2euLO02x" disParentConfig="0" id="008auNW0hG5AW006" nameSpace="POINT72"/>
+      <part approvalType="SINGLE" chalId="++8ab6BmhG5AW29e" dataGroupPartId="008X07uC2euPC031" disParentConfig="0" id="008auNW0hG5AW007" nameSpace="POINT72"/>
+      <part approvalType="SINGLE" chalId="++8ab6BmhG5AW29e" dataGroupPartId="++8QB3Uy2eu5G00H" disParentConfig="0" id="++8cpzKGhG5AW0Dx" nameSpace="POINT72"/>
+    </chalConfiguration>
+  </chalConfigurations>
+  <ruleConfigurations>
+    <rule category="SPEL" disConfig="N" disParentConfig="N" entityId="++5TZs2y2etse000" id="++8rcwvmhG50W004" name="FullInstrument.P72MajorCurrencyDisable1" nameSpace="POINT72" partId="++8rNWDmhG5Ae00h" severity="20" type="POLICY"><![CDATA[var gs_entity= root;  
+ if( (#gs_entity.getSingleValue('CurrencyDetails.P72MajorCurrency') == null) or (#gs_entity.getSingleValue('CurrencyDetails.P72MajorCurrency') != null)) 
+ { 
+ #gs_entity.setStatusMessage('Major Currency cannot be null','FullInstrument.P72MajorCurrencyDisable1') 
+ } 
+  else 
+ {} 
+]]>
+      <ruleConfig><![CDATA[{"ruleName":"FullInstrument.P72MajorCurrencyDisable1","nodes":[{"nodeType":"IF_LOOP","type":"IF_LOOP","ifCondition":{"children":[{"leftCondition":{"className":"RECORD","returnClassName":"STRING","constructorCall":false,"methodIdentifier":"getSingleValue:java.lang.String","methodName":"getSingleValue","arguments":[{"value":"CurrencyDetails.P72MajorCurrency","type":"VALUE","className":"STRING","businessField":"CurrencyDetails.P72MajorCurrency","LOOKUP":false}],"context":{"name":"gs_entity","elementType":"ENTITY_OBJECT","type":"VARIABLE"},"type":"FUNCTION_ELEMENT"},"rightCondition":{"value":null,"type":"VALUE","className":"STRING","businessField":null,"LOOKUP":false},"operator":"EQUALS","includeImplicitNull":true,"type":"SIMPLE_CONDITION"},{"leftCondition":{"className":"RECORD","returnClassName":"STRING","constructorCall":false,"methodIdentifier":"getSingleValue:java.lang.String","methodName":"getSingleValue","arguments":[{"value":"CurrencyDetails.P72MajorCurrency","type":"VALUE","className":"STRING","businessField":"CurrencyDetails.P72MajorCurrency","LOOKUP":false}],"context":{"name":"gs_entity","elementType":"ENTITY_OBJECT","type":"VARIABLE"},"type":"FUNCTION_ELEMENT"},"rightCondition":{"value":null,"type":"VALUE","className":"STRING","businessField":null,"LOOKUP":false},"operator":"NOT_EQUALS","includeImplicitNull":true,"type":"SIMPLE_CONDITION"}],"operator":"OR","type":"COMPLEX_CONDITION"},"trueBody":[{"nodeType":"METHOD_CALL","type":"ASSIGN","condition":{"className":"RECORD","returnClassName":"OBJECT","constructorCall":false,"methodIdentifier":"setStatusMessage:java.lang.String:java.lang.String","methodName":"setStatusMessage","arguments":[{"value":"Major Currency cannot be null","type":"VALUE","className":"STRING","businessField":null,"LOOKUP":false},{"value":"FullInstrument.P72MajorCurrencyDisable1","type":"VALUE","className":"STRING","businessField":null,"LOOKUP":false}],"context":{"name":"gs_entity","elementType":"ENTITY_OBJECT","type":"VARIABLE"},"type":"FUNCTION_ELEMENT"},"operator":"EQUAL","isReAssign":false,"methodType":"METHOD_CALL"}],"falseBody":[]}]}]]></ruleConfig>
+    </rule>
+  </ruleConfigurations>
+  <policies>
+    <policy config="N" dgdpid="++8rNWDmhG5Ae00h" entityId="++5TZs2y2etse000" id="++8rcwvmhG50W003" name="P72MajorCurrencyDisabled" nameSpace="POINT72" type="ALL">
+      <part id="++8rcwvmhG50W005" index="0" nameSpace="POINT72" ruleid="++8rcwvmhG50W004" type="POLICY_RULE">
+        <part dgdpid="++8rNWDmhG5Ae00h" id="++8rcwvmhG50W006" index="0" nameSpace="POINT72" prntID="++8rcwvmhG50W005" type="DISABLE" value="true"/>
+      </part>
+    </policy>
+  </policies>
+</configurations>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <dataGroups>
+    <dataGroup customInd="0" desc="Instrument Details" displayCaption="Instrument Details" entityTypeId="++3qwBhS2etxm099" frequencyInd="0" id="005pV3ni2etne00S" multiplicity="SINGLE_OR_NULL" name="InstrumentDetails" nameSpace="GSC">
+      <part beRelationId="=000000191" defNameSpace="GSC" id="=000000194" label="ExceptionOnInstrument" prntReqdInd="0" seq="0"/>
+    </dataGroup>
+  </dataGroups>
+  <relations>
+    <relation customSQL="#FROM_TABLE#.XREF_TBL_TYP = 'ISSU'" id="=000000198" name="NTEL-InstrumentException-ISSU" nameSpace="GSC" srcTable="FT_T_NTEL" tgtTable="FT_T_ISSU">
+      <field fromColumn="XREF_TBL_OID" id="=00000019E" nameSpace="GSC" toColumn="INSTR_ID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+  </relations>
+  <occurrences>
+    <occurrence desc="Occurrence for Notification Entity Log Details" id="++5mLxey2etqS000" ignoreDeleteChildren="true" multiplicity="SINGLE_OR_NULL" name="NTEL_01" nameSpace="GSC" table="FT_T_NTEL" timeSeries="NONE">
+      <field id="=00000019A" nameSpace="GSC" relationId="=000000198"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beRelationId="=000000191" groupMapping="0" id="++5tGVZS2etsm00t" nameSpace="GSC" occFieldId="=00000019A"/>
+  </mappings>
+  <entityRelations>
+    <entityRelation desc="CUSTOM:Relation Participant" entityId="005pV3ni2etne00D" id="=000000191" lookupField="005Q5i8i2etse002" multiplicity="SINGLE_OR_NULL" name="ExceptionOnInstrument" nameSpace="GSC" rltdEntityId="++5SQ0Ly2etse000">
+      <part forPublishing="1" forUI="1" id="++5tGVZS2etsm00u" nameSpace="GSC" partId="004aIFeC2etv4008"/>
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS001" nameSpace="GSC" partId="005Q5i8i2etse002"/>
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS002" nameSpace="GSC" partId="005Q5i8i2etse003"/>
+      <part forPublishing="0" forUI="1" id="++8udgCmhG5D4004" nameSpace="POINT72" partId="008Nypzi2euLO017"/>
+      <part forPublishing="0" forUI="1" id="++8udgCmhG5D4002" nameSpace="POINT72" partId="008Nypzi2euLO01e"/>
+      <part forPublishing="0" forUI="1" id="++8udgCmhG5D4000" nameSpace="POINT72" partId="008Nypzi2euLO05T"/>
+      <part forPublishing="0" forUI="1" id="++8XThhGhG5AW003" nameSpace="POINT72" partId="008QTTk0hG5sq003"/>
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS003" nameSpace="GSC" partId="++4u-kJy2etzO00d"/>
+      <part forPublishing="0" forUI="1" id="++8udgCmhG5D4003" nameSpace="POINT72" partId="++5PNZ5y2etz400a"/>
+      <part forPublishing="1" forUI="1" id="++5tGVZS2etsm00v" nameSpace="GSC" partId="++5PNZ5y2etz400o"/>
+      <part forPublishing="0" forUI="1" id="++8udgCmhG5D4001" nameSpace="POINT72" partId="++8PW21S2es2C01-"/>
+    </entityRelation>
+  </entityRelations>
+</entities>

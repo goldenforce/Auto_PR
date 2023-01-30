@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root baseLookup="Exception" createdUser="geetanjali.rajadhyaksha@point72.com" freezeColumns="" id="756r01AB81" isDefault="N" isPublic="Y" lookupId="InstrumentException" pageSize="50" screenType="SYSTEMSRCH" title="DQ_RULE">
+  <config>{}</config>
+  <buttons>
+    <button buttonName="Repair">
+      <params>
+        <param paramName="Event Name" paramValue="RepairExceptions"/>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+        <param paramName="Current User" paramValue="Logged in User"/>
+      </params>
+    </button>
+    <button buttonName="Resubmit">
+      <params>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+        <param paramName="Current User" paramValue="LoggedinUser"/>
+        <param paramName="Event Name" paramValue="ResubmitExceptions"/>
+      </params>
+    </button>
+    <button buttonName="Close">
+      <params>
+        <param paramName="Current User" paramValue="Logged in User"/>
+        <param paramName="Event Name" paramValue="CloseExceptions"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+      </params>
+    </button>
+    <button buttonName="Re-Assign">
+      <params>
+        <param paramName="Current User" paramValue="Logged in User"/>
+        <param paramName="Event Name" paramValue="ReassignExceptions"/>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+        <param paramName="Assign" paramValue="true"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+      </params>
+    </button>
+    <button buttonName="Ignore">
+      <params>
+        <param paramName="Event Type" paramValue="GenericEvent"/>
+        <param paramName="Current User" paramValue="Logged in User"/>
+        <param paramName="Event Name" paramValue="CloseExceptions"/>
+        <param paramName="Status" paramValue="IGNORE"/>
+        <param paramName="Type" paramValue="event"/>
+        <param paramName="entityList" paramValue="ENT_OID"/>
+      </params>
+    </button>
+  </buttons>
+  <columns>
+    <column caption="" columnName="Instrument Name" fieldName="InstrumentException.InstrumentDetails.ExceptionOnInstrument.Base.InstrumentDetails.PreferredInstrumentName" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwDq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="0" showRelLink="TRUE" sort="" toRange="" width="226"/>
+    <column caption="" columnName="Position Flag" fieldName="InstrumentException.ExceptionDetail.NTELMKIS.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryPositionFlag" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="Jj7f91IQO1" isRange="N" mobileTemplate="" operator="EQUALS" orderNum="1" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="ISIN" fieldName="InstrumentException.InstrumentDetails.ExceptionOnInstrument.Base.Identifiers.InstrumentLevelIdentifiers.ISIN" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwFq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="2" showRelLink="" sort="" toRange="" width="100"/>
+    <column caption="" columnName="CP SEDOL" fieldName="InstrumentException.ExceptionDetail.NTELMKIS.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimarySEDOL" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwGq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="3" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Market Name" fieldName="InstrumentException.ExceptionDetail.NTELMKIS.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryMarketName" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwHq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="4" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Details" fieldName="InstrumentException.ExceptionDetail.Details" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwIq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="5" showRelLink="" sort="" toRange="" width="257"/>
+    <column caption="" columnName="Latest Notification DateTime" fieldName="InstrumentException.ExceptionDetail.LatestNotificationDate" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwJq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="6" showRelLink="" sort="" toRange="" width="100"/>
+    <column caption="" columnName="CP RIC" fieldName="InstrumentException.ExceptionDetail.NTELMKIS.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryRIC" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwKq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="7" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="PositionID" fieldName="InstrumentException.ExceptionDetail.NTELMKIS.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryPositionID" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwLq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="8" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="CP BB Global" fieldName="InstrumentException.ExceptionDetail.NTELMKIS.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryBBGlobal" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwMq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="9" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="CP BB Unique" fieldName="InstrumentException.ExceptionDetail.NTELMKIS.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryBBUnique" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwNq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="10" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="User Name" fieldName="InstrumentException.ExceptionDetail.UserName" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwOq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="11" showRelLink="" sort="" toRange="" width="134"/>
+    <column caption="" columnName="Notification Status" fieldName="InstrumentException.ExceptionDetail.NotificationStatus" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="REASSIGN,REPAIRED,ASSIGN,IGNORE,OPEN" filterable="N" fromRange="" id="CHwPq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="12" showRelLink="" sort="" toRange="" width="100"/>
+    <column caption="" columnName="Transaction Comment Text" fieldName="InstrumentException.ExceptionDetail.TransactionCommentText" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwQq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="13" showRelLink="" sort="" toRange="" width="100"/>
+    <column caption="" columnName="P72 Instrument Type 4" fieldName="InstrumentException.InstrumentDetails.ExceptionOnInstrument.Base.InstrumentClassification.P72InsTypLevel4" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwRq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="14" showRelLink="" sort="" toRange="" width="100"/>
+    <column caption="" columnName="P72CountryPrimaryDefaultRegion" fieldName="InstrumentException.ExceptionDetail.NTELMKIS.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryDefaultRegion" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="Y" fromRange="" id="CHwSq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="" orderNum="15" showRelLink="" sort="" toRange="" width=""/>
+    <column caption="" columnName="Exception Sub-Type" fieldName="InstrumentException.ExceptionDetail.ExceptionSubType" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="DQ RULE" filterable="N" fromRange="" id="CHwTq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="EQUALS" orderNum="16" showRelLink="" sort="" toRange="" width="100"/>
+    <column caption="" columnName="Rule Name" fieldName="InstrumentException.ExceptionDetail.P72RuleName" filterFromNum="" filterFromTms="" filterToNum="" filterToTms="" filterValue="" filterable="N" fromRange="" id="CHwVq&amp;gt;A9O1" isRange="N" mobileTemplate="" operator="EQUALS" orderNum="17" showRelLink="" sort="" toRange="" width="100"/>
+  </columns>
+</root>

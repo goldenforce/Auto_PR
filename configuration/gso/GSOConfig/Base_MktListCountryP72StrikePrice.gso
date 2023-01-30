@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BEDEC" customDesc="" desc="" displayCaption="Strike Price" entityTypeId="++3qwBhS2etxm003" id="++8vpfxGhG5Ba00o" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="MktListCountryP72StrikePrice" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" displayCaption="Country's Primary Exchange" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="008Nypzi2euLO000" multiplicity="MULTIPLE_OR_NULL" name="CountrysPrimaryExchange" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8vpfxGhG5Ba00o" id="++8vpfxGhG5Ba00q" prntReqdInd="0" seq="174"/>
+    </dataGroup>
+  </dataGroups>
+  <occurrences>
+    <occurrence desc="Occurrence for Market Issue Statistic" id="++8vpfxGhG5Ba00l" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_P72_STRIKE_PRICE" nameSpace="POINT72" parentId="PZLTKJBRPOWQDLGR" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field id="++8vpfxGhG5Ba00n" name="STAT_VAL_CAMT" nameSpace="POINT72"/>
+      <value id="++8vpfxGhG5Ba00m" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="STRIKEPX" valueType="CONSTANT"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="++8vpfxGhG5Ba00o" groupMapping="0" id="++8vpfxGhG5Ba00p" nameSpace="POINT72" occFieldId="++8vpfxGhG5Ba00n"/>
+  </mappings>
+</entities>

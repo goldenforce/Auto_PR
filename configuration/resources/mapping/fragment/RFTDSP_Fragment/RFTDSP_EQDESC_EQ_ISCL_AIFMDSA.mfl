@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-02-19 at 12:33:52 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.27</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="p@7p01ft01" name="IssueClassification" type="segment">
+        <condition id="p@7q01ft01"><![CDATA[if ((OneHasValue(AIFMD_Sub_Asset_Type_Code))||((IsFieldDeleted(AIFMD_Sub_Asset_Type_Code) && Strcmp(AIFMD_Sub_Asset_Type_Code__Change_Flag, "Y")) && OneHasValue(AIFMD_Sub_Asset_Type_Code__Previous)))
+	return "IssueClassification";
+else
+	return "";]]></condition>
+        <Node id="p@7r01ft01" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(AIFMD_Sub_Asset_Type_Code))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="p@7s01ft01" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueClassification";]]></expr>
+        </Node>
+        <Node id="p@7t01ft01" name="MATCH" type="attribute">
+          <expr><![CDATA[return "ISCL_MATCH_SET_PURP";]]></expr>
+        </Node>
+        <Node id="p@7)11ft01" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(AIFMD_Sub_Asset_Type_Code))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="p@7u01ft01" name="CLSFOID" type="element">
+          <Node id="p@7v01ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7w01ft01" name="IndustryClassification" type="segment">
+          <Node id="p@7x01ft01" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="p@7y01ft01" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IndustryClassification";]]></expr>
+          </Node>
+          <Node id="p@7z01ft01" name="COPY_FROM" type="attribute"/>
+          <Node id="p@7$01ft01" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "CLSF_OID";]]></expr>
+          </Node>
+          <Node id="p@7%01ft01" name="MATCH" type="attribute">
+            <expr><![CDATA[return "INCL_VALUE";]]></expr>
+          </Node>
+          <Node id="p@7@01ft01" name="ERROR" type="attribute"/>
+          <Node id="p@7&amp;01ft01" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="p@7*01ft01" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(AIFMD_Sub_Asset_Type_Code))
+	return Strcat("4|CONCTNS|NESTED|CLSFSETMNEM|AIFMDSA|CLVALUE|", Strcat(AIFMD_Sub_Asset_Type_Code, "|DATASRCID|RFTDSP"));
+else
+	return "";
+]]></expr>
+          </Node>
+          <Node id="p@7.01ft01" name="CLDESC" type="element">
+            <Node id="p@7/01ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7(01ft01" name="CLNME" type="element">
+            <Node id="p@7)01ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7~01ft01" name="CLSFOID" type="element">
+            <Node id="p@7?01ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7&lt;01ft01" name="CLVALUE" type="element">
+            <Node id="p@7&gt;01ft01" name="VALUE" type="attribute">
+              <expr><![CDATA[if (IsFieldDeleted(AIFMD_Sub_Asset_Type_Code))
+	return AIFMD_Sub_Asset_Type_Code__Previous;
+else
+	return AIFMD_Sub_Asset_Type_Code;]]></expr>
+            </Node>
+          </Node>
+          <Node id="p@7011ft01" name="DATASRCID" type="element">
+            <Node id="p@7111ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7211ft01" name="DATASTATTYP" type="element">
+            <Node id="p@7311ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7411ft01" name="ENDTMS" type="element">
+            <Node id="p@7511ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7611ft01" name="INDUSCLSETID" type="element">
+            <Node id="p@7711ft01" name="VALUE" type="attribute">
+              <expr><![CDATA[return "AIFMDSA";]]></expr>
+            </Node>
+          </Node>
+          <Node id="p@7811ft01" name="LASTCHGTMS" type="element">
+            <Node id="p@7911ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7A11ft01" name="LASTCHGUSRID" type="element">
+            <Node id="p@7B11ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7C11ft01" name="LEVELNUM" type="element">
+            <Node id="p@7D11ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7E11ft01" name="PRNTCLSFOID" type="element">
+            <Node id="p@7F11ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7G11ft01" name="PRNTCLVALUE" type="element">
+            <Node id="p@7H11ft01" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="p@7I11ft01" name="STARTTMS" type="element">
+            <Node id="p@7J11ft01" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="p@7K11ft01" name="CLSFPURPTYP" type="element">
+          <Node id="p@7L11ft01" name="VALUE" type="attribute">
+            <expr><![CDATA[return "REGCLS2";]]></expr>
+          </Node>
+        </Node>
+        <Node id="p@7M11ft01" name="CLVALUE" type="element">
+          <Node id="p@7N11ft01" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(AIFMD_Sub_Asset_Type_Code))
+	return AIFMD_Sub_Asset_Type_Code__Previous;
+else
+	return AIFMD_Sub_Asset_Type_Code;]]></expr>
+          </Node>
+        </Node>
+        <Node id="p@7O11ft01" name="DATAREDISTRIBUTORID" type="element">
+          <Node id="p@7P11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7Q11ft01" name="DATASRCID" type="element">
+          <Node id="p@7R11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7S11ft01" name="DATASTATTYP" type="element">
+          <Node id="p@7T11ft01" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="p@7U11ft01" name="EINCOID" type="element">
+          <Node id="p@7V11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7W11ft01" name="ENDTMS" type="element">
+          <Node id="p@7X11ft01" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(AIFMD_Sub_Asset_Type_Code))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="p@7Y11ft01" name="GUCNT" type="element">
+          <Node id="p@7Z11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7a11ft01" name="GUID" type="element">
+          <Node id="p@7b11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7c11ft01" name="GUTYP" type="element">
+          <Node id="p@7d11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7e11ft01" name="INDUSCLSETID" type="element">
+          <Node id="p@7f11ft01" name="VALUE" type="attribute">
+            <expr><![CDATA[return "AIFMDSA";]]></expr>
+          </Node>
+        </Node>
+        <Node id="p@7g11ft01" name="INSTRID" type="element">
+          <Node id="p@7h11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7i11ft01" name="ISIDOID" type="element">
+          <Node id="p@7j11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7k11ft01" name="ISSCLSFDESC" type="element">
+          <Node id="p@7l11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7m11ft01" name="ISSCLSFOID" type="element">
+          <Node id="p@7n11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7o11ft01" name="LASTCHGTMS" type="element">
+          <Node id="p@7p11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7q11ft01" name="LASTCHGUSRID" type="element">
+          <Node id="p@7r11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7s11ft01" name="NLSCDE" type="element">
+          <Node id="p@7t11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7u11ft01" name="ORIGDATAPROVID" type="element">
+          <Node id="p@7v11ft01" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="p@7w11ft01" name="STARTTMS" type="element">
+          <Node id="p@7x11ft01" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+          <Node id="p@7(11ft01" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+        <Node id="p@7y11ft01" name="VALFORCLSFCAMT" type="element">
+          <Node id="p@7z11ft01" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

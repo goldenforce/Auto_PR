@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-12-29 at 01:39:09 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.27</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="aTD801epW1" name="Issuer" type="segment">
+        <Node id="aTD901epW1" name="ACTION" type="attribute">
+          <expr><![CDATA[
+if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "YES"))
+	return "UNKNOWN";
+else if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO"))
+	return "REFERENCE";
+else if (!OneHasValue(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive")))
+	return "REFERENCE";
+else if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"),
+		"NO_SILENT"))
+	return "REFERENCE";
+else if (!OneOf(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "YES", "NO",
+		"NO_SILENT"))
+	return ThrowMapError(
+			Strcat(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"),
+					Strcat("--",
+							"Wrong value in Config_Option file against CreateNewIssuer. It is other than permitted value YES, NO, No value and NO_SILENT used in Config_option file.")),
+			"");
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="aTDA01epW1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "Issuer";]]></expr>
+        </Node>
+        <Node id="CQEHA1~/W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (Strcmp(Translate(Config_Options, true, "CreateNewIssuer", "Refinitiv_DataScope_Plus_EQ_Descriptive"), "NO_SILENT"))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="aTDB01epW1" name="FinancialInstitutionIdentifier" type="segment">
+          <condition id="aTDC01epW1"><![CDATA[if (OneHasValue(Issuer_OrgID))
+	return "FinancialInstitutionIdentifier";
+else
+	return "";]]></condition>
+          <Node id="aTDD01epW1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="aTDE01epW1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "FinancialInstitutionIdentifier";]]></expr>
+          </Node>
+          <Node id="aTDF01epW1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "INST_MNEM";]]></expr>
+          </Node>
+          <Node id="aTDG01epW1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "FINS_INST_MNEM";]]></expr>
+          </Node>
+          <Node id="aTDH01epW1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "FIID1_ID_CTXT_FINSID";]]></expr>
+          </Node>
+          <Node id="aTDI01epW1" name="NESTED_ERR_LVL" type="attribute"/>
+          <Node id="aTDJ01epW1" name="NESTED_ERR_TXT" type="attribute"/>
+          <Node id="aTDK01epW1" name="DATASTATTYP" type="element">
+            <Node id="aTDL01epW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="aTDM01epW1" name="FINSID" type="element">
+            <Node id="aTDN01epW1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(Issuer_OrgID))
+	return Issuer_OrgID;
+else
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node id="aTDO01epW1" name="FINSIDCTXTTYP" type="element">
+            <Node id="aTDP01epW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "RTORGLID";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="aTDQ01epW1" name="GOVTAGENCYFILINGIND" type="element">
+          <Node id="aTDR01epW1" name="VALUE" type="attribute">
+            <expr><![CDATA[ if (OneHasValue(Securities_Flag_13F))
+	return Securities_Flag_13F;
+else if ((IsFieldDeleted(Securities_Flag_13F) && Strcmp(Securities_Flag_13F__Change_Flag, "Y")) && OneHasValue(Securities_Flag_13F__Previous))
+	return Securities_Flag_13F;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="aTDS01epW1" name="ISSRDESC" type="element">
+          <Node id="v67J11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name, Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="aTDT01epW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+        </Node>
+        <Node id="3A8k31.Lm1" name="DATASTATTYP" type="element">
+          <Node id="3A8l31.Lm1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="aTDU01epW1" name="ISSRNME" type="element">
+          <Node id="v67K11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name, Company_Short_Name))
+	return "";
+else if (OneHasValue(Issuer_OrgID))
+	return "Y";
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="aTDV01epW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Issuer_Name))
+	return Issuer_Name;
+else if (OneHasValue(Company_Short_Name))
+	return Company_Short_Name;
+else
+	return Issuer_OrgID;]]></expr>
+          </Node>
+        </Node>
+        <Node id="aTDW01epW1" name="ISSRTYP" type="element">
+          <Node id="aTDX01epW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "CORP";]]></expr>
+          </Node>
+          <Node id="v67v11@pe1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

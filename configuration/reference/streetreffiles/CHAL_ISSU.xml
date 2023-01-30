@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE changeApprovalEntity SYSTEM "ChangeApprovalConfiguration.dtd">
+<changeApprovalEntity>
+	<occurrence id="ISSU_01_UI" table="FT_T_ISSU">
+		<where>
+		<field name="ft_t_issu.MSG_CLASSIFICATION" dataType="STRING" value="WEBMSG"/>
+		</where>
+	</occurrence>
+	<occurrence id="ISSU_01" table="FT_T_ISSU">
+		<changeApprovalFields/>
+	</occurrence>
+	<occurrence id="ISID_CUSIP" parentId="ISSU_01" table="FT_T_ISID">
+		<changeApprovalFields>
+			<field approval="SINGLE" label="InstrumentLevelIdentifiers.CUSIP" name="FT_T_ISID.ISS_ID"/>
+		</changeApprovalFields>
+		<where>
+			<field isNull="true" name="FT_T_ISID.MKT_OID"/>
+			<field name="FT_T_ISID.ID_CTXT_TYP">
+				<value>CUSIP</value>
+			</field>
+		</where>
+	</occurrence>
+	<occurrence id="MKIS_PRIMARY" parentId="ISSU_01" table="FT_T_MKIS">
+		<changeApprovalFields/>
+	</occurrence>
+	<occurrence id="MIXR_PRIMARY_SEDOL" parentId="MKIS_PRIMARY" table="FT_T_MIXR">
+		<changeApprovalFields/>
+	</occurrence>
+	<occurrence id="ISID_PRIMARY_SEDOL" parentId="ISSU_01" table="FT_T_ISID">
+		<changeApprovalFields>
+			<field approval="SINGLE" label="PrimaryMarket.PrimaryMarketSEDOL" name="FT_T_ISID.ISS_ID"/>
+		</changeApprovalFields>
+		<where>
+			<field isNull="false" name="FT_T_ISID.MKT_OID"/>
+			<field name="FT_T_ISID.ID_CTXT_TYP">
+				<value>SEDOL</value>
+			</field>
+		</where>
+	</occurrence>
+	<occurrence id="ISID_ISIN" parentId="ISSU_01" table="FT_T_ISID">
+		<changeApprovalFields>
+			<field approval="SINGLE" label="InstrumentLevelIdentifiers.ISIN" name="FT_T_ISID.ISS_ID"/>
+		</changeApprovalFields>
+		<where>
+			<field isNull="true" name="FT_T_ISID.MKT_OID"/>
+			<field name="FT_T_ISID.ID_CTXT_TYP">
+				<value>ISIN</value>
+			</field>
+		</where>
+	</occurrence>
+</changeApprovalEntity>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <relations>
+    <relation id="++8gQNymhG5Qe003" name="FT_T_NTEL-To-FT_T_MKIS00" nameSpace="POINT72" srcTable="FT_T_NTEL" tgtTable="FT_T_MKIS">
+      <field fromColumn="XREF_TBL_2_OID" id="++8gQNymhG5Qe004" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+  </relations>
+  <occurrences>
+    <occurrence desc="Occurrence for Notification Entity Log Details" id="++5mLxey2etqS000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="NTEL_01" nameSpace="GSC" table="FT_T_NTEL" timeSeries="NONE">
+      <field id="++8gQNymhG5Qe002" nameSpace="POINT72" relationId="++8gQNymhG5Qe003"/>
+      <field id="++8XThhGhG5AW000" name="PARM_VAL_TXT" nameSpace="POINT72"/>
+      <field id="++8Zv3AmhG5AW000" name="RULE_NME" nameSpace="POINT72"/>
+      <field id="008gQF30hG5Qe001" name="XREF_TBL_2_OID" nameSpace="POINT72"/>
+      <field id="008gQF30hG5Qe000" name="XREF_TBL_2_TYP" nameSpace="POINT72"/>
+      <option id="++5mLxey2etqS00E" nameSpace="GSC" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beRelationId="=000000191" groupMapping="0" id="008dxr00hG6Mu0BA" nameSpace="POINT72" occFieldId="=00000019A"/>
+  </mappings>
+  <entityRelations>
+    <entityRelation desc="CUSTOM:Relation Participant" entityId="005pV3ni2etne00D" id="=000000191" lookupField="005Q5i8i2etse002" multiplicity="SINGLE_OR_NULL" name="ExceptionOnInstrument" nameSpace="GSC" rltdEntityId="++5SQ0Ly2etse000">
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS003" nameSpace="GSC" partId="++4u-kJy2etzO00d"/>
+      <part forPublishing="1" forUI="1" id="++5tGVZS2etsm00v" nameSpace="GSC" partId="++5PNZ5y2etz400o"/>
+      <part forPublishing="1" forUI="1" id="++5tGVZS2etsm00u" nameSpace="GSC" partId="004aIFeC2etv4008"/>
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS001" nameSpace="GSC" partId="005Q5i8i2etse002"/>
+      <part forPublishing="1" forUI="1" id="++5mbr9S2etqS002" nameSpace="GSC" partId="005Q5i8i2etse003"/>
+      <part forPublishing="0" forUI="1" id="++8XThhGhG5AW003" nameSpace="POINT72" partId="008QTTk0hG5sq003"/>
+    </entityRelation>
+  </entityRelations>
+</entities>

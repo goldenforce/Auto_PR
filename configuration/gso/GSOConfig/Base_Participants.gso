@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Soft Call Basis" entityTypeId="++3qwBhS2etxm003" id="008rox10hG5BG00x" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72SoftCallBasis" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Coupon Frequency" entityTypeId="++3qwBhS2etxm003" id="008tLRTWhG5Ba00H" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72CouponFrequency" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Day Count" entityTypeId="++3qwBhS2etxm003" id="008tLRTWhG5Ba00J" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72DayCount" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Day Count Description" entityTypeId="++3qwBhS2etxm003" id="008tLRTWhG5Ba00L" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72DayCountDescription" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Fix To Float Day Count" entityTypeId="++3qwBhS2etxm003" id="008tLRTWhG5Ba00P" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72FixFloatDayCount" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Fix To Float Coupon Frequency" entityTypeId="++3qwBhS2etxm003" id="008tLRTWhG5Ba00N" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72FixFloatCouponFrequency" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Yrs To Mty Issue" entityTypeId="++3qwBhS2etxm003" id="++8oKpKmhG5Ba00A" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72YrsToMtyIssue" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Instrument Statistic" displayCaption="Instrument Statistic" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="005QX23C2etse0AW" multiplicity="SINGLE_OR_NULL" name="InstrumentStatistic" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8oKpKmhG5Ba00A" id="++8oKpKmhG5Ba00B" prntReqdInd="0" seq="71"/>
+      <part defNameSpace="POINT72" fieldId="008rox10hG5BG00x" id="008rox10hG5BG00z" prntReqdInd="0" seq="90"/>
+      <part defNameSpace="POINT72" fieldId="008tLRTWhG5Ba00H" id="008tLRTWhG5Ba00R" prntReqdInd="0" seq="91"/>
+      <part defNameSpace="POINT72" fieldId="008tLRTWhG5Ba00J" id="008tLRTWhG5Ba00S" prntReqdInd="0" seq="92"/>
+      <part defNameSpace="POINT72" fieldId="008tLRTWhG5Ba00L" id="008tLRTWhG5Ba00T" prntReqdInd="0" seq="93"/>
+      <part defNameSpace="POINT72" fieldId="008tLRTWhG5Ba00P" id="008tLRTWhG5Ba00U" prntReqdInd="0" seq="94"/>
+      <part defNameSpace="POINT72" fieldId="008tLRTWhG5Ba00N" id="008tLRTWhG5Ba00V" prntReqdInd="0" seq="95"/>
+    </dataGroup>
+  </dataGroups>
+  <occurrences>
+    <occurrence desc="Occurrence for Issue Statistic" id="008rox10hG5BG00u" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72_SFCALBAS" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="008rox10hG5BG00w" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008rox10hG5BG00v" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="SFCALBAS" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="008tLRTWhG5Ba007" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72_CPNFREQ" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="008tLRTWhG5Ba009" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008tLRTWhG5Ba008" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="CPNFREQ" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="008tLRTWhG5Ba004" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72_DAY_CNT" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="008tLRTWhG5Ba006" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008tLRTWhG5Ba005" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="DAY_CNT" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="008tLRTWhG5Ba000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72_DAYCNTDES" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="008tLRTWhG5Ba002" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008tLRTWhG5Ba001" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="DAYCNT" valueType="CONSTANT"/>
+      <option id="008tLRTWhG5Ba003" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="008tLRTWhG5Ba00A" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72_FXFLDCN" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="008tLRTWhG5Ba00C" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008tLRTWhG5Ba00B" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="FXFLDCN" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="008tLRTWhG5Ba00D" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72_FXFLCPF" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="008tLRTWhG5Ba00G" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="008tLRTWhG5Ba00F" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="FXFLCPF" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Issue Statistic" id="++8oKpKmhG5Ba007" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISST_P72_YRS_TO_MTY_ISSUE" nameSpace="POINT72" parentId="++4Gmmty2ettS01A" table="FT_T_ISST" timeSeries="LOGICAL_DELETE">
+      <field id="++8oKpKmhG5Ba009" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="++8oKpKmhG5Ba008" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="YRSTOMTY" valueType="CONSTANT"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="008rox10hG5BG00x" groupMapping="0" id="008rox10hG5BG00y" nameSpace="POINT72" occFieldId="008rox10hG5BG00w"/>
+    <mapping beFieldId="008tLRTWhG5Ba00H" groupMapping="0" id="008tLRTWhG5Ba00I" nameSpace="POINT72" occFieldId="008tLRTWhG5Ba009"/>
+    <mapping beFieldId="008tLRTWhG5Ba00J" groupMapping="0" id="008tLRTWhG5Ba00K" nameSpace="POINT72" occFieldId="008tLRTWhG5Ba006"/>
+    <mapping beFieldId="008tLRTWhG5Ba00L" groupMapping="0" id="008tLRTWhG5Ba00M" nameSpace="POINT72" occFieldId="008tLRTWhG5Ba002"/>
+    <mapping beFieldId="008tLRTWhG5Ba00P" groupMapping="0" id="008tLRTWhG5Ba00Q" nameSpace="POINT72" occFieldId="008tLRTWhG5Ba00C"/>
+    <mapping beFieldId="008tLRTWhG5Ba00N" groupMapping="0" id="008tLRTWhG5Ba00O" nameSpace="POINT72" occFieldId="008tLRTWhG5Ba00G"/>
+    <mapping beFieldId="++8oKpKmhG5Ba00A" groupMapping="0" id="++8thR0mhG51a008" nameSpace="POINT72" occFieldId="++8oKpKmhG5Ba009"/>
+  </mappings>
+</entities>

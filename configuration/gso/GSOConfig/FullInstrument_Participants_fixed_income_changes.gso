@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BEDEC" displayCaption="Scaling Factor" entityTypeId="++3qwBhS2etxm003" id="++8UgBrGhG5q400B" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="MktLstCountryP72ScalingFactor" nameSpace="POINT72"/>
+    <beField class="BETEXT" customDesc="" customDomainSQL="SELECT DOMAIN_VAL_TXT CODE,DOMAIN_VAL_NME DISPLAY_NAME FROM FT_T_STDV WHERE STAT_DEF_ID='SACCRNCY'" desc="" displayCaption="P72 Currency" entityTypeId="++3qwBhS2etxm003" id="++8UgBrGhG5q400L" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="MktLstCountryP72Currency" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="P72 Exchange" entityTypeId="++3qwBhS2etxm003" id="++8UgBrGhG5q400V" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="MktLstCountryP72Exchange" nameSpace="POINT72"/>
+    <beField class="BEDATE" displayCaption="Inactive Date" entityTypeId="++3qwBhS2etxm003" id="008XRwa0hG5AW008" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="MktLstCountryP72InactiveDate" nameSpace="POINT72"/>
+    <beField class="BEDATE" customDesc="" desc="" displayCaption="Inactive Date End Date/Time" entityTypeId="++3qwBhS2etxm003" id="++8iEWsmhG5R0003" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="MktLstCountryP72InactiveDateEndDate" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" displayCaption="Country's Primary Exchange" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="008Nypzi2euLO000" multiplicity="MULTIPLE_OR_NULL" name="CountrysPrimaryExchange" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8UgBrGhG5q400L" id="++8UgBrGhG5q400Z" prntReqdInd="0" seq="144"/>
+      <part defNameSpace="POINT72" fieldId="++8UgBrGhG5q400V" id="++8UgBrGhG5q400b" prntReqdInd="0" seq="146"/>
+      <part defNameSpace="POINT72" fieldId="++8UgBrGhG5q400B" id="++8UgBrGhG5q400c" prntReqdInd="0" seq="147"/>
+      <part defNameSpace="POINT72" fieldId="008XRwa0hG5AW008" id="008XRwa0hG5AW00G" prntReqdInd="0" seq="150"/>
+      <part defNameSpace="POINT72" fieldId="++8iEWsmhG5R0003" id="++8iEWsmhG5R0005" prntReqdInd="0" seq="166"/>
+    </dataGroup>
+  </dataGroups>
+  <occurrences>
+    <occurrence desc="Occurrence for Market Issue Statistic" id="++8UgBrGhG5q4008" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_P72_SCFACT" nameSpace="POINT72" parentId="PZLTKJBRPOWQDLGR" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field id="++8UgBrGhG5q400A" name="STAT_VAL_CAMT" nameSpace="POINT72"/>
+      <value id="++8UgBrGhG5q4009" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="SCFACT" valueType="CONSTANT"/>
+      <option id="++8ikPImhG5OC000" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MUST_MATCH_P72"/>
+      <option id="++8ikPImhG5OC001" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Statistic" id="++8UgBrGhG5q400I" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_P72_SACCRNCY" nameSpace="POINT72" parentId="PZLTKJBRPOWQDLGR" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field id="++8UgBrGhG5q400K" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="++8UgBrGhG5q400J" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="SACCRNCY" valueType="CONSTANT"/>
+      <option id="++8ikPImhG5OC004" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MUST_MATCH_P72"/>
+      <option id="++8ikPImhG5OC005" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Statistic" id="++8UgBrGhG5q400S" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_P72_SACEXCH" nameSpace="POINT72" parentId="PZLTKJBRPOWQDLGR" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field id="++8UgBrGhG5q400U" name="STAT_CHAR_VAL_TXT" nameSpace="POINT72"/>
+      <value id="++8UgBrGhG5q400T" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="SACEXCH" valueType="CONSTANT"/>
+      <option id="++8ikPImhG5OC002" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MUST_MATCH_P72"/>
+      <option id="++8ikPImhG5OC003" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Market Issue Statistic" id="008XRwa0hG5AW005" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="MUST_COUNTRY_P72_P72INADT" nameSpace="POINT72" parentId="PZLTKJBRPOWQDLGR" table="FT_T_MUST" timeSeries="LOGICAL_DELETE">
+      <field id="++8iEWsmhG5R0002" name="END_TMS" nameSpace="POINT72"/>
+      <field id="008XRwa0hG5AW007" name="STAT_VAL_DTE" nameSpace="POINT72"/>
+      <value id="008XRwa0hG5AW006" name="STAT_DEF_ID" nameSpace="POINT72" type="FILTER_FIELD" value="P72INADT" valueType="CONSTANT"/>
+      <option id="++8iEWsmhG5R0000" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+      <option id="++8iEWsmhG5R0001" nameSpace="POINT72" type="DEFAULT_MATCH_KEY" value="MUST_MATCH_P72"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="++8UgBrGhG5q400B" groupMapping="0" id="++8UgBrGhG5q400C" nameSpace="POINT72" occFieldId="++8UgBrGhG5q400A"/>
+    <mapping beFieldId="++8UgBrGhG5q400L" groupMapping="0" id="++8UgBrGhG5q400M" nameSpace="POINT72" occFieldId="++8UgBrGhG5q400K"/>
+    <mapping beFieldId="++8UgBrGhG5q400V" groupMapping="0" id="++8UgBrGhG5q400W" nameSpace="POINT72" occFieldId="++8UgBrGhG5q400U"/>
+    <mapping beFieldId="008XRwa0hG5AW008" groupMapping="0" id="008XRwa0hG5AW009" nameSpace="POINT72" occFieldId="008XRwa0hG5AW007"/>
+    <mapping beFieldId="++8iEWsmhG5R0003" groupMapping="0" id="++8iEWsmhG5R0004" nameSpace="POINT72" occFieldId="++8iEWsmhG5R0002"/>
+  </mappings>
+</entities>

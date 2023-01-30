@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-10-23 at 08:45:56 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Country_of_Incorporation" id="VZ5Y31y6W1" name="FinancialInstitutionGeoUnitPrt" type="segment">
+        <condition id="VZ5Z31y6W1"><![CDATA[if ((OneHasValue(Country_of_Incorporation))||((IsFieldDeleted(Country_of_Incorporation) && Strcmp(Country_of_Incorporation__Change_Flag, "Y")) && OneHasValue(Country_of_Incorporation__Previous)))
+	return "FinancialInstitutionGeoUnitPrt";
+else
+	return "";]]></condition>
+        <Node id="VZ5a31y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Country_of_Incorporation))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5b31y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "FinancialInstitutionGeoUnitPrt";]]></expr>
+        </Node>
+        <Node id="VZ5c31y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Country_of_Incorporation))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5d31y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Country_of_Incorporation))
+	return "FIGU_MATCH_3";
+else
+	return "FIGU_GUTP_PURP";]]></expr>
+        </Node>
+        <Node id="VZ5e31y6W1" name="GeographicUnit" type="segment">
+          <Node id="VZ5f31y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ5g31y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "GeographicUnit";]]></expr>
+          </Node>
+          <Node id="VZ5h31y6W1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "PRNT_GU_CNT,PRNT_GU_ID,PRNT_GU_TYP";]]></expr>
+          </Node>
+          <Node id="VZ5i31y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "GU_CNT,GU_ID,GU_TYP";]]></expr>
+          </Node>
+          <Node id="VZ5j31y6W1" name="MATCH" type="attribute"/>
+          <Node id="VZ5k31y6W1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="VZ5l31y6W1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Country_of_Incorporation))
+	return Strcat("11|CONCTNS|NESTED|PRNTGUTYP|COUNTRY|PRNTGUID|", Strcat(Country_of_Incorporation, "|DATASRCID|RFTDSP"));
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="VZ5m31y6W1" name="PRNTGUCNT" type="element">
+            <Node id="VZ5n31y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5o31y6W1" name="PRNTGUID" type="element">
+            <Node id="VZ5p31y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(Country_of_Incorporation))
+	return Country_of_Incorporation;
+else if (OneHasValue(Country_of_Incorporation__Previous))
+	return Country_of_Incorporation__Previous;
+else 
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5q31y6W1" name="PRNTGUTYP" type="element">
+            <Node id="VZ5r31y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "COUNTRY";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="VZ5s31y6W1" name="DATASRCID" type="element">
+          <Node id="VZ5t31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5u31y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5v31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5w31y6W1" name="FIGUOID" type="element">
+          <Node id="VZ5x31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5y31y6W1" name="FINSGUDESC" type="element">
+          <Node id="VZ5z31y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5$31y6W1" name="FINSGUPURPTYP" type="element">
+          <Node id="VZ5%31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "INCRPRTE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5@31y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5&amp;31y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="VZ5*31y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ5-31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5.31y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5/31y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Country_of_Incorporation))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

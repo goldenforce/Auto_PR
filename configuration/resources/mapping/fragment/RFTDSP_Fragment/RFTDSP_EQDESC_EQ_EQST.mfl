@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2021-03-04 at 11:13:51 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.27</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="-z7T11H381" name="EquityStatistics" type="segment">
+        <condition id="-z7U11H381"><![CDATA[if (OneHasValue(Listing_Status))
+	return "EquityStatistics";
+else
+	return "";]]></condition>
+        <Node id="-z7V11H381" name="ACTION" type="attribute">
+          <expr><![CDATA[return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="-z7W11H381" name="TYPE" type="attribute">
+          <expr><![CDATA[return "EquityStatistics";]]></expr>
+        </Node>
+        <Node id="-z7X11H381" name="COPY_FROM" type="attribute"/>
+        <Node id="-z7Y11H381" name="COPY_TO" type="attribute"/>
+        <Node id="-z7Z11H381" name="DUP_CHECK" type="attribute"/>
+        <Node id="-z7a11H381" name="ENDDATEIND" type="attribute"/>
+        <Node id="-z7b11H381" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="-z7c11H381" name="ERROR" type="attribute"/>
+        <Node id="-z7d11H381" name="LOOKUP" type="attribute"/>
+        <Node id="-z7e11H381" name="MATCH" type="attribute"/>
+        <Node id="-z7f11H381" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="-z7g11H381" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="-z7h11H381" name="ONLY" type="attribute"/>
+        <Node id="-z7i11H381" name="PARENT_LINK" type="attribute"/>
+        <Node id="-z7j11H381" name="PUBLISH" type="attribute"/>
+        <Node id="-z7k11H381" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="-z7l11H381" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="-z7m11H381" name="TRANSLATE" type="attribute"/>
+        <Node id="-z7n11H381" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="-z7o11H381" name="TSOPTION" type="attribute"/>
+        <Node id="-z7p11H381" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="-z7q11H381" name="TSTOLERANCE" type="attribute"/>
+        <Node id="-z7r11H381" name="AJFACTORCRTE" type="element">
+          <Node id="-z7s11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7t11H381" name="ANDIVYLDCPCT" type="element">
+          <Node id="-z7u11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7v11H381" name="CSHDIVINCRCRTE" type="element">
+          <Node id="-z7w11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7x11H381" name="DATASRCID" type="element">
+          <Node id="-z7y11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7z11H381" name="DATASTATTYP" type="element">
+          <Node id="-z7$11H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7%11H381" name="DERIVEDANDIVAMT" type="element">
+          <Node id="-z7@11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7&amp;11H381" name="DIVDECLAREDTMS" type="element">
+          <Node id="-z7*11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7-11H381" name="DIVESTYLDCPCT" type="element">
+          <Node id="-z7.11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7/11H381" name="DIVEXTMS" type="element">
+          <Node id="-z7(11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7)11H381" name="DIVEXTODAYIND" type="element">
+          <Node id="-z7~11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7?11H381" name="DIVPAIDTMS" type="element">
+          <Node id="-z7&lt;11H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7&gt;11H381" name="DIVRCDTTMS" type="element">
+          <Node id="-z7021H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7121H381" name="DIVYLD12MCPCT" type="element">
+          <Node id="-z7221H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7321H381" name="DIVYLD12MPOPCPCT" type="element">
+          <Node id="-z7421H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7521H381" name="DIVYLDCPCT" type="element">
+          <Node id="-z7621H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7721H381" name="DPSANCRTE" type="element">
+          <Node id="-z7821H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7921H381" name="ISSUQUOTESTATCDE" type="element">
+          <Node id="-z7A21H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return Listing_Status;]]></expr>
+          </Node>
+          <Node id="-z7V31H381" name="TRANSLATE" type="attribute">
+            <expr><![CDATA[return "YES";]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7B21H381" name="EQSTOID" type="element">
+          <Node id="-z7C21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7D21H381" name="EQTYGROWTHCRTE" type="element">
+          <Node id="-z7E21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7F21H381" name="ESTANINCCAMT" type="element">
+          <Node id="-z7G21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7H21H381" name="ESTANIPSCAMT" type="element">
+          <Node id="-z7I21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7J21H381" name="ESTPERATIOCRTE" type="element">
+          <Node id="-z7K21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7L21H381" name="FGNRSHRCQTY" type="element">
+          <Node id="-z7M21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7N21H381" name="FLTCQTY" type="element">
+          <Node id="-z7O21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7P21H381" name="FRANKEDDIVCPCT" type="element">
+          <Node id="-z7Q21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7R21H381" name="FREEFLTADJFACTCRTE" type="element">
+          <Node id="-z7S21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7T21H381" name="GRSDPS12MCRTE" type="element">
+          <Node id="-z7U21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7V21H381" name="GRSDPS1YRCRTE" type="element">
+          <Node id="-z7W21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7X21H381" name="GRSDPS3YRCRTE" type="element">
+          <Node id="-z7Y21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7Z21H381" name="GRSDPS5YRCRTE" type="element">
+          <Node id="-z7a21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7b21H381" name="GRSDPSAN12MCRTE" type="element">
+          <Node id="-z7c21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7d21H381" name="GRSDPSANCRTE" type="element">
+          <Node id="-z7e21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7f21H381" name="GRSDPSCRTE" type="element">
+          <Node id="-z7g21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7h21H381" name="GRSDPSFLYRCRTE" type="element">
+          <Node id="-z7i21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7j21H381" name="GRSDPSQUOTETYP" type="element">
+          <Node id="-z7k21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7l21H381" name="GRSDPSUNITTYP" type="element">
+          <Node id="-z7m21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7n21H381" name="INSTRID" type="element">
+          <Node id="-z7o21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7p21H381" name="LASTCHGTMS" type="element">
+          <Node id="-z7q21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7r21H381" name="LASTCHGUSRID" type="element">
+          <Node id="-z7s21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7t21H381" name="LASTDIVPAIDTYP" type="element">
+          <Node id="-z7u21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7v21H381" name="LISTSHRJPNCQTY" type="element">
+          <Node id="-z7w21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7x21H381" name="MKTCPTLZNCQTY" type="element">
+          <Node id="-z7y21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7z21H381" name="MKTOID" type="element">
+          <Node id="-z7$21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7%21H381" name="NETDPS12MCRTE" type="element">
+          <Node id="-z7@21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7&amp;21H381" name="NETDPS1YRCRTE" type="element">
+          <Node id="-z7*21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7-21H381" name="NETDPS3YRCRTE" type="element">
+          <Node id="-z7.21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7/21H381" name="NETDPS5YRCRTE" type="element">
+          <Node id="-z7(21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7)21H381" name="NETDPSAN12MCRTE" type="element">
+          <Node id="-z7~21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7?21H381" name="NETDPSANCRTE" type="element">
+          <Node id="-z7&lt;21H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7&gt;21H381" name="NETDPSCRTE" type="element">
+          <Node id="-z7031H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7131H381" name="NETDPSFLYRCRTE" type="element">
+          <Node id="-z7231H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7331H381" name="OUTSTVOTINGRIGHTSQTY" type="element">
+          <Node id="-z7431H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7531H381" name="PAYCRTE" type="element">
+          <Node id="-z7631H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7731H381" name="PERATIOCRTE" type="element">
+          <Node id="-z7831H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7931H381" name="PRCEBITDACRTE" type="element">
+          <Node id="-z7A31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7B31H381" name="PRCTOBKRATIOCRTE" type="element">
+          <Node id="-z7C31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7D31H381" name="RECMDCONSENTCRTE" type="element">
+          <Node id="-z7E31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7F31H381" name="SHROUTSTCQTY" type="element">
+          <Node id="-z7G31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7H31H381" name="SPLITRATIOCRTE" type="element">
+          <Node id="-z7I31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7J31H381" name="SPLITTMS" type="element">
+          <Node id="-z7K31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7L31H381" name="STATSCURRCDE" type="element">
+          <Node id="-z7M31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7N31H381" name="STATSEFFTMS" type="element">
+          <Node id="-z7O31H381" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate("19000101", "YYYYMMDD");]]></expr>
+          </Node>
+        </Node>
+        <Node id="-z7P31H381" name="TRADABLEMKTVALCAMT" type="element">
+          <Node id="-z7Q31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7R31H381" name="VOTESAFTERHOLDQTY" type="element">
+          <Node id="-z7S31H381" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="-z7T31H381" name="VOTINGRIGHTSCRTE" type="element">
+          <Node id="-z7U31H381" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

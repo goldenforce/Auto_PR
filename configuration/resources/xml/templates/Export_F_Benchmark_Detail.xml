@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="nick.sekouris@point72.com" entityName="Benchmark" entitySubType="[]" id="g%rEz&gt;&lt;m01" isDefault="Y" isPublic="Y" screenType="SYSTEMFORM" title="F: Benchmark_Detail">
+  <control caption="Benchmark Details" columns="3" fullQualPath="Benchmark.BenchmarkDetails" hideDetail="N" id="5r0h916F81" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Benchmark Name" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkName" hideDetail="N" id="5r0(916F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Short Name" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkShortName" hideDetail="N" id="5r0~916F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Enterprise Short Name" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkToEnterprise.Enterprise.EnterpriseInformation.EnterpriseShortName" hideDetail="N" id="5r0&amp;lt;916F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="5r0h916F81" relatedPath="Benchmark.BenchmarkDetails.BenchmarkToEnterprise" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"TEMPLATE_FLD_PRPT_CONFIG":[{"IS_REL_EDITABLE":"false"}],"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Type" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkType" hideDetail="N" id="5r00A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Description" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkDescription" hideDetail="N" id="5r02A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="First Payable Date" columns="3" fullQualPath="Benchmark.BenchmarkDetails.FirstPayableDate" hideDetail="N" id="5r04A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Preferred Id" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkPreferredId" hideDetail="N" id="5r06A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Category Type" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BNCHBenchmarkCategoryType" hideDetail="N" id="5r08A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Preferred Id Type" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkPreferredIdType" hideDetail="N" id="5r0AA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Level" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BNCHBenchmarkLevel" hideDetail="N" id="5r0CA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Maturity Date" columns="3" fullQualPath="Benchmark.BenchmarkDetails.MaturityDate" hideDetail="N" id="5r0EA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Effective Date" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkEffectiveDate" hideDetail="N" id="5r0GA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Provider Name" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkProviderName" hideDetail="N" id="5r0IA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Fund Investment Category" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BNCLBNCHFundInvestmentCategory" hideDetail="N" id="5r0KA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Security Type" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkSecurityType" hideDetail="N" id="5r0MA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Mark-It Version Number" columns="3" fullQualPath="Benchmark.BenchmarkDetails.MarkItVersionNumber" hideDetail="N" id="5r0OA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Re-Balance Frequency Span" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BNCHReBalanceFrequencySpan" hideDetail="N" id="5r0QA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Series" columns="3" fullQualPath="Benchmark.BenchmarkDetails.Series" hideDetail="N" id="5r0SA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Weighting Method" columns="3" fullQualPath="Benchmark.BenchmarkDetails.WeightingMethod" hideDetail="N" id="5r0UA16F81" isColumnInTable="N" labelName="Miscellaneous" lazyInd="N" orderNum="18" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Created On" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkCreatedOn" hideDetail="N" id="5r0WA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Data Source" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkDataSourceID" hideDetail="N" id="5r0YA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Last Change Date/Time" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkLastChangeDateTime" hideDetail="N" id="5r0aA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="21" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Active Until" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkActiveUntil" hideDetail="N" id="5r0cA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="22" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Data Status" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkDataStatus" hideDetail="N" id="5r0eA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="23" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Last Change User Id" columns="3" fullQualPath="Benchmark.BenchmarkDetails.BenchmarkLastChangeUserId" hideDetail="N" id="5r0gA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="24" pageSize="0" parentId="5r0h916F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+  <control caption="Benchmark Currency" columns="3" fullQualPath="Benchmark.BenchmarkCurrency" hideDetail="N" id="5r0iA16F81" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Base Currency" columns="3" fullQualPath="Benchmark.BenchmarkCurrency.BaseCurrency" hideDetail="N" id="5r0mA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0iA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Local Currency" columns="3" fullQualPath="Benchmark.BenchmarkCurrency.LocalCurrency" hideDetail="N" id="5r0oA16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0iA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+  <control caption="Identifiers" columns="4" fullQualPath="" hideDetail="N" id="5r0qA16F81" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+    <control caption="ISIN" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.ISIN" hideDetail="N" id="5r0$A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0qA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+    <control caption="CUSIP" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.CUSIP" hideDetail="N" id="5r0@A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0qA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+    <control caption="Benchmark ID" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.BNIDBenchmarkID" hideDetail="N" id="5r0*A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="5r0qA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+    <control caption="Benchmark Stock Symbol" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.BNIDBenchmarkStockSymbol" hideDetail="N" id="5r0.A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="5r0qA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+    <control caption="Bloomberg Index" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.P72BNIDBloombergIndex" hideDetail="N" id="5r0(A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="5r0qA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+    <control caption="Ticker" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.Ticker" hideDetail="N" id="5r0~A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="5r0qA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+    <control caption="RIC" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.P72BNIDRIC" hideDetail="N" id="5r0&amp;lt;A16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="5r0qA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+    <control caption="SEDOL" columns="2" fullQualPath="Benchmark.BenchmarkIdentifiers.P72BNIDSEDOL" hideDetail="N" id="5r00B16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="5r0qA16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+  </control>
+  <control caption="Details" columns="2" fullQualPath="" hideDetail="N" id="5r02B16F81" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+    <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Benchmark Participants" columns="3" fullQualPath="Benchmark.BenchmarkParticipants" hideDetail="Y" id="5r0vB16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="20" parentId="5r02B16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Benchmark Name" columns="3" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkAsParticipant.Benchmark.BenchmarkDetails.BenchmarkName" hideDetail="N" id="5r0&amp;gt;B16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0vB16F81" relatedPath="Benchmark.BenchmarkParticipants.BenchmarkAsParticipant" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"TEMPLATE_FLD_PRPT_CONFIG":[{"IS_REL_EDITABLE":"false"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Instrument Name" columns="3" fullQualPath="Benchmark.BenchmarkParticipants.InstrumentAsAParticipant.Base.InstrumentDetails.PreferredInstrumentName" hideDetail="N" id="5r01C16F81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0vB16F81" relatedPath="Benchmark.BenchmarkParticipants.InstrumentAsAParticipant" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"TEMPLATE_FLD_PRPT_CONFIG":[{"IS_REL_EDITABLE":"false"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Instrument Type" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.InstrumentAsAParticipant.Base.InstrumentDetails.InstrumentType" hideDetail="N" id="5r03C16F81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      <control caption="Country Primary RIC" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.CountryPrimaryParticipant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryRIC" hideDetail="N" id="5r05C16F81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      <control caption="Country Primary Ticker" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.CountryPrimaryParticipant.CountryPrimaryPublish.CountryPrimaryPublishDetails.P72CountryPrimaryTicker" hideDetail="N" id="5r07C16F81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      <control caption="Denominated Currency" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.InstrumentAsAParticipant.Base.InstrumentDetails.PrincipalCurrency" hideDetail="N" id="5r09C16F81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      <control caption="Participant Open Weight" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.P72BenchmarkParticipantOpenWeight" hideDetail="N" id="5r0BC16F81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      <control caption="Participant Weight Date" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.P72BenchmarkParticipantWeightDate" hideDetail="N" id="5r0DC16F81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      <control caption="Effective Date" columns="3" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkParticipantEffectiveDate" hideDetail="N" id="5r0FC16F81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Mandated Weights" columns="3" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkMandatedWeights" hideDetail="N" id="5r0HC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Benchmark Mandated Weight" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkMandatedWeights.BenchmarkMandatedWeight" hideDetail="N" id="5r0LC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0HC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Benchmark Mandated Weight"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Weighting Effective From" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkMandatedWeights.WeightingEffectiveFrom" hideDetail="N" id="5r0NC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0HC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Weighting Effective From"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Closing Weights" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkClosingWeights" hideDetail="N" id="5r0PC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="5r0vB16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Benchmark Opening Weight" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkClosingWeights.P72BenchmarkOpeningWeight" hideDetail="N" id="5r0UC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0PC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Benchmark Closing Weight" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkClosingWeights.BenchmarkClosingWeight" hideDetail="N" id="5r0WC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0PC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Effective Date" columns="2" fullQualPath="Benchmark.BenchmarkParticipants.BenchmarkClosingWeights.BenchmarkClosingWeightEffDate" hideDetail="N" id="5r0YC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="5r0PC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Benchmark Comment" columns="3" fullQualPath="Benchmark.BenchmarkComment" hideDetail="N" id="5r0aC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r02B16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Comment Reason" columns="2" fullQualPath="Benchmark.BenchmarkComment.CommentReason" hideDetail="N" id="5r0iC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0aC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Comment Text" columns="2" fullQualPath="Benchmark.BenchmarkComment.CommentText" hideDetail="N" id="5r0kC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0aC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Language Code" columns="2" fullQualPath="Benchmark.BenchmarkComment.LanguageCode" hideDetail="N" id="5r0mC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="5r0aC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Line Number" columns="2" fullQualPath="Benchmark.BenchmarkComment.LineNumber" hideDetail="N" id="5r0oC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="5r0aC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Comment Date" columns="2" fullQualPath="Benchmark.BenchmarkComment.CommentDate" hideDetail="N" id="5r0qC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="5r0aC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Comment Status" columns="2" fullQualPath="Benchmark.BenchmarkComment.CommentStatus" hideDetail="N" id="5r0sC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="5r0aC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Documents" columns="3" fullQualPath="Benchmark.BenchmarkDocuments" hideDetail="N" id="5r0uC16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="5r02B16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Document Name" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef.DocumentDefinition.DocumentDefinitionDetail.DCDFDocumentName" hideDetail="N" id="5r0AD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0uC16F81" relatedPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"TEMPLATE_FLD_PRPT_CONFIG":[{"IS_REL_EDITABLE":"false"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Type" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef.DocumentDefinition.DocumentDefinitionDetail.DCDFDocumentType" hideDetail="N" id="5r0CD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0uC16F81" relatedPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Text" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef.DocumentDefinition.DocumentDefinitionDetail.DCXTDCDFDocumentText" hideDetail="N" id="5r0ED16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="5r0uC16F81" relatedPath="Benchmark.BenchmarkDocuments.BnchGenDocToDocDef" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="General Document Purpose" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHGeneralDocumentPurpose" hideDetail="N" id="5r0GD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="General Document Description" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHGeneralDocumentDescription" hideDetail="N" id="5r0ID16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Number of Documents Required" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHNumberofDocumentsRequired" hideDetail="N" id="5r0KD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Required" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDocumentRequired" hideDetail="N" id="5r0MD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Required by Bank" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDocumentRequiredbyBank" hideDetail="N" id="5r0OD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Required by Law" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDocumentRequiredbyLaw" hideDetail="N" id="5r0QD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Document Instance" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist" hideDetail="N" id="5r0SD16F81" isColumnInTable="N" labelName="Miscellaneous" lazyInd="N" orderNum="9" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Language" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHNLSCode" hideDetail="N" id="5r0gD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Language"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Comment" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentComment" hideDetail="N" id="5r0iD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Comment"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Status" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentStatus" hideDetail="N" id="5r0kD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Status"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Upload" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentUpload" hideDetail="N" id="5r0mD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Upload"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Internal ID" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentInternalID" hideDetail="N" id="5r0oD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Internal ID"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Document Status DateTime" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDocumentStatusDateTime" hideDetail="N" id="5r0qD16F81" isColumnInTable="N" labelName="Miscellaneous" lazyInd="N" orderNum="5" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Document Status DateTime"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Start DateTime" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHStartDateTime" hideDetail="N" id="5r0sD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Start DateTime"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Data Source ID" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDataSourceID" hideDetail="N" id="5r0uD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Data Source ID"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Last Change DateTime" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHLastChangeDateTime" hideDetail="N" id="5r0wD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Last Change DateTime"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="End DateTime" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHEndDateTime" hideDetail="N" id="5r0yD16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"End DateTime"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Data Status" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHDataStatus" hideDetail="N" id="5r0$D16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Data Status"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Last Change User ID" columns="2" fullQualPath="Benchmark.BenchmarkDocuments.BenchmarkDocHist.GDCHBNCHLastChangeUserID" hideDetail="N" id="5r0@D16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="5r0SD16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"CAPTION_OVERRIDE":[{"LABEL":"Last Change User ID"}],"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Start DateTime" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHStartDateTime" hideDetail="N" id="5r0*D16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Data Source ID" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDataSourceID" hideDetail="N" id="5r0.D16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Last Change DateTime" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHLastChangeDateTime" hideDetail="N" id="5r0(D16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="End DateTime" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHEndDateTime" hideDetail="N" id="5r0~D16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Data Status" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHDataStatus" hideDetail="N" id="5r0&amp;lt;D16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Last Change User ID" columns="3" fullQualPath="Benchmark.BenchmarkDocuments.GDOCBNCHLastChangeUserID" hideDetail="N" id="5r00E16F81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="5r0uC16F81" relatedPath="" screenId="g%rEz&amp;gt;&amp;lt;m01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+</root>

@@ -1,0 +1,2 @@
+--EINC for EXT_CL_VALUE = 'BDR'
+INSERT INTO ft_t_einc (einc_oid, clsf_oid, cl_value, ext_cl_value, indus_cl_set_id, start_tms, last_chg_tms, last_chg_usr_id, ext_clsf_nme, ext_clsf_desc, data_src_id, nls_cde)  SELECT 'EINC00642','P72UNDRC01','Equity','BDR','P72UNDRC',SYSDATE(),SYSDATE(),'GS:PSG:P72','GDR','GDR','RFTDSP','ENGLISH'     FROM DUAL WHERE NOT EXISTS (SELECT 1 FROM ft_t_einc WHERE clsf_oid = 'P72UNDRC01' AND ext_cl_value = 'BDR' AND indus_cl_set_id = 'P72UNDRC' AND data_src_id = 'RFTDSP');

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-12-01 at 09:38:24 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Company_Legal_Domicile" id="VZ5881y6W1" name="IssuerGeoUnit" type="segment">
+        <condition id="VZ5981y6W1"><![CDATA[if ((OneHasValue(Company_Legal_Domicile))||((IsFieldDeleted(Company_Legal_Domicile) && Strcmp(Company_Legal_Domicile__Change_Flag, "Y")) && OneHasValue(Company_Legal_Domicile__Previous)))
+	return "IssuerGeoUnit";
+else
+	return "";]]></condition>
+        <Node id="VZ5A81y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Company_Legal_Domicile))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="VZ5B81y6W1" name="MATCH" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Company_Legal_Domicile))
+	return "IRGU_MATCH_1";
+else
+	return "IRGU_GUTP_PURP";]]></expr>
+        </Node>
+        <Node id="VZ5C81y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Company_Legal_Domicile))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="VZ5D81y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssuerGeoUnit";]]></expr>
+        </Node>
+        <Node id="VZ5E81y6W1" name="DATASRCID" type="element">
+          <Node id="VZ5F81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5G81y6W1" name="GeographicUnit" type="segment">
+          <Node id="VZ5H81y6W1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="VZ5I81y6W1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "GeographicUnit";]]></expr>
+          </Node>
+          <Node id="VZ5J81y6W1" name="COPY_FROM" type="attribute">
+            <expr><![CDATA[return "PRNT_GU_CNT,PRNT_GU_ID,PRNT_GU_TYP";]]></expr>
+          </Node>
+          <Node id="VZ5K81y6W1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "GU_CNT,GU_ID,GU_TYP";]]></expr>
+          </Node>
+          <Node id="VZ5L81y6W1" name="MATCH" type="attribute"/>
+          <Node id="VZ5M81y6W1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "ERROR";]]></expr>
+          </Node>
+          <Node id="VZ5N81y6W1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Company_Legal_Domicile))
+	return Strcat("11|CONCTNS|NESTED|PRNTGUTYP|COUNTRY|PRNTGUID|",
+		Strcat(If(OneHasValue(Translate(ReutersETT, false, "COUNTRY",Company_Legal_Domicile)), Translate(ReutersETT, false, "COUNTRY", Company_Legal_Domicile), Company_Legal_Domicile), "|DATASRCID|RFTDSP"));
+else
+	return "";]]></expr>
+          </Node>
+          <Node id="VZ5O81y6W1" name="PRNTGUCNT" type="element">
+            <Node id="VZ5P81y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "1";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5Q81y6W1" name="PRNTGUID" type="element">
+            <Node id="VZ5R81y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (OneHasValue(Company_Legal_Domicile))
+	if (OneHasValue(Translate(ReutersETT, false, "COUNTRY", Company_Legal_Domicile)))
+		return Translate(ReutersETT, false, "COUNTRY", Company_Legal_Domicile);
+	else
+		return Company_Legal_Domicile;
+else if (OneHasValue(Company_Legal_Domicile__Previous))
+  	if (OneHasValue(Translate(ReutersETT, false, "COUNTRY", Company_Legal_Domicile__Previous)))
+		return Translate(ReutersETT, false, "COUNTRY", Company_Legal_Domicile__Previous);
+	else
+		return Company_Legal_Domicile__Previous;
+else 
+	return "";]]></expr>
+            </Node>
+          </Node>
+          <Node id="VZ5S81y6W1" name="PRNTGUTYP" type="element">
+            <Node id="VZ5T81y6W1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "COUNTRY";]]></expr>
+            </Node>
+          </Node>
+        </Node>
+        <Node id="VZ5U81y6W1" name="DATASTATTYP" type="element">
+          <Node id="VZ5V81y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5W81y6W1" name="ISSRGUPURPTYP" type="element">
+          <Node id="VZ5X81y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "DOMICILE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5Y81y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5Z81y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Company_Legal_Domicile))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5a81y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5b81y6W1" name="INSERT_ONLY" type="attribute">
+            <expr><![CDATA[return "Y";]]></expr>
+          </Node>
+          <Node id="VZ5c81y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="VZ5d81y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Transform2FTIDate(SubString(TimeStamp(), 1, 10), "MM-DD-YYYY");]]></expr>
+          </Node>
+        </Node>
+        <Node id="VZ5e81y6W1" name="ENDTMS" type="element">
+          <Node id="VZ5f81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5g81y6W1" name="GUCNT" type="element">
+          <Node id="VZ5h81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5i81y6W1" name="GUID" type="element">
+          <Node id="VZ5j81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5k81y6W1" name="GUTYP" type="element">
+          <Node id="VZ5l81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5m81y6W1" name="INSTRISSRID" type="element">
+          <Node id="VZ5n81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5o81y6W1" name="IRGUOID" type="element">
+          <Node id="VZ5p81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5q81y6W1" name="ISSRGUDESC" type="element">
+          <Node id="VZ5r81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5s81y6W1" name="LASTCHGTMS" type="element">
+          <Node id="VZ5t81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5u81y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="VZ5v81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5w81y6W1" name="PARTCAMT" type="element">
+          <Node id="VZ5x81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5y81y6W1" name="PARTCPCT" type="element">
+          <Node id="VZ5z81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5$81y6W1" name="PARTCURRCDE" type="element">
+          <Node id="VZ5%81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="VZ5@81y6W1" name="STARTTMS" type="element">
+          <Node id="VZ5&amp;81y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

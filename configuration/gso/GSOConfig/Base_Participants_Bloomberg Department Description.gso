@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" customDesc="" desc="" displayCaption="Bloomberg Department Description" entityTypeId="++3qwBhS2etxm003" id="008rox10hG5BG00r" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72RealBloombergDeptDes" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Classification" displayCaption="Classification" entityTypeId="++3qwBhS2etxm003" frequencyInd="0" id="004QlAvC2ettS00B" multiplicity="SINGLE_OR_NULL" name="InstrumentClassification" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="008rox10hG5BG00r" id="008rox10hG5BG00t" prntReqdInd="0" seq="105"/>
+    </dataGroup>
+  </dataGroups>
+  <occurrences>
+    <occurrence desc="Occurrence for Issue Classification" id="++4HAJ0y2ettS00R" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="ISCL_BBMKTSCT" nameSpace="GSC" parentId="++4Gmmty2ettS01A" table="FT_T_ISCL" timeSeries="LOGICAL_DELETE">
+      <field id="++5YmLQS2etse001" name="CL_VALUE" nameSpace="GSC"/>
+      <field id="008rox10hG5BG00q" name="ISS_CLSF_DESC" nameSpace="POINT72"/>
+      <value id="004NhW0C2ettS000" name="CLSF_PURP_TYP" nameSpace="GSC" type="FILTER_FIELD" value="INDCLASS" valueType="CONSTANT"/>
+      <value id="++4J3xQy2ettS00E" name="INDUS_CL_SET_ID" nameSpace="GSC" type="FILTER_FIELD" value="BBMKTSCT" valueType="CONSTANT"/>
+      <option id="++4OluOS2ettS00L" nameSpace="GSC" type="DEFAULT_MATCH_KEY" value="ISCL_MATCH_SET_PURP"/>
+      <option id="++4OluOS2ettS00N" nameSpace="GSC" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="008rox10hG5BG00r" groupMapping="0" id="008rox10hG5BG00s" nameSpace="POINT72" occFieldId="008rox10hG5BG00q"/>
+  </mappings>
+</entities>

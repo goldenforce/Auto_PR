@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE vsh SYSTEM "VSH.dtd">
+<vsh process_unknown_vendor="low" update_empty_field="low_equal" update_equal_rank="true">
+	<occurrence table="ft_t_issu">
+		<vendorSource>
+			<source rank="1" vendor="BB"></source>
+			<source rank="2" vendor="RFTDSP"></source>
+		</vendorSource>
+		<where>
+			<field dataType="STRING" name="ft_t_issu.iss_typ" value="CVTPFD"></field>
+		</where>
+	</occurrence>
+	<occurrence table="ft_t_mkis">
+		<vendorSource>
+			<source rank="1" vendor="BB"></source>
+			<source rank="2" vendor="RFTDSP"></source>
+		</vendorSource>
+		<occurrenceFields>
+			<field dataType="STRING" name="ft_t_mkis.ofcl_place_listing_ind">
+				<vendorSource>
+					<source rank="1" vendor="RFTDSP"></source>
+					<source rank="2" vendor="BB"></source>
+				</vendorSource>
+			</field>
+			<field dataType="STRING" name="ft_t_mkis.specialist_id">
+				<vendorSource>
+					<source rank="1" vendor="P72"></source>
+					<source rank="1" vendor="RFTDSP"></source>
+					<source rank="1" vendor="BB"></source>
+				</vendorSource>
+			</field>
+		</occurrenceFields>		
+	</occurrence>
+	<occurrence table="ft_t_must">
+        <option id="MUST-1">
+            <vendorSource>
+                <source rank="1" vendor="BB"/>
+                <source rank="1" vendor="RFTDSP"/>
+                <source rank="1" vendor="P72"/>
+            </vendorSource>
+            <where>
+                <field dataType="STRING" name="ft_t_must.stat_def_id" value="LISTVERN"></field>
+            </where>
+        </option>
+        </occurrence>
+	<occurrence table="ft_t_irid">
+		<vendorSource>
+			<source rank="1" vendor="BB"></source>
+			<source rank="2" vendor="RFTDSP"></source>
+		</vendorSource>
+		<where>
+			<field dataType="STRING" name="ft_t_irid.issr_id_ctxt_typ" value="BBCMPYID"></field>
+		</where>
+	</occurrence>
+	<!-- Issue Type -->
+	<occurrence table="ft_t_iscl">
+		<!-- Specifies that the issue classifications being processed should follow the vendor source hierarchy below, only if the ISS_TYP, which is taken from the header of the processing message, is set to value of BOND, then an ISCL segment processing will follow the VSH defined below --> 
+		<option id="iscl-1">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<field dataType="STRING" lookup="header" name="iss_typ" value="CVTPFD"></field>
+				<field dataType="STRING" name="ft_t_iscl.cl_value" value="2500"></field>
+			</where>
+		</option>
+		<option id="iscl-2">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<field dataType="STRING" lookup="header" name="iss_typ" value="CVTBOND"></field>
+				
+				<field dataType="STRING" name="ft_t_iscl.indus_cl_set_id" valueOf="ft_t_incs.indus_cl_set_id">
+					<where match="INCS_MNEM">
+						<field dataType="STRING" name="ft_t_incs.clsf_set_mnem" value="SIC"></field>
+					</where>
+				</field>
+			</where>
+		</option>
+		<option id="iscl-3">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+			</where>
+		</option>
+	</occurrence>
+	<!-- Occurrence/Issue Type -->
+	<!-- This occurrence contains two defined instances of VSH for ISID segment processing -->
+	<occurrence table="ft_t_isid">
+		<!-- First instance -->
+		<option id="isid-1">
+			<!-- Option tag that specifies that the instance of an FT_T_ISID table has more than one definition of VSH for any occurrence, meaning that there are two criteria to match a processing segment -->
+			<vendorSource expiration_timespan="1">
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<!-- Specifies that the issue identifier being processed should follow the vendor source hierarchy below, only if ID_CTXT_TYP is equal to BBCMPSEC, then an ISID segment processing will follow the VSH defined below -->
+				<field dataType="STRING" name="ft_t_isid.id_ctxt_typ" value="BBCMPSEC"></field>
+			</where>
+		</option>
+		<option id="isid-2">
+			<!-- Option tag that specifies that the instance of an FT_T_ISID table has more than one definition of VSH for any occurrence, meaning that there are two criteria to match a processing segment -->
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<!-- Specifies that the issue identifier being processed should follow the vendor source hierarchy below, only if the ID_CTXT_TYP is equal to BBUNIQUE, then an ISID segment processing will follow the VSH defined below -->
+				<field dataType="STRING" name="ft_t_isid.id_ctxt_typ" value="BBUNIQUE"></field>
+			</where>
+		</option>
+		<option id="isid-3">
+			<!-- Option tag that specifies that the instance of an FT_T_ISID table has more than one definition of VSH for any occurrence, meaning that there are two criteria to match a processing segment -->
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<!-- Specifies that the issue identifier being processed should follow the vendor source hierarchy below, only if the ISS_TYP, which is taken from the header of the processing message, is set to value of BOND and ID_CTXT_TYP is equal to CUSIP, then an ISID segment processing will follow the VSH defined below -->
+				<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+				<field dataType="STRING" name="ft_t_isid.id_ctxt_typ" value="CUSIP"></field>
+			</where>
+		</option>
+		<option id="isid-4">
+			<!-- Option tag that specifies that the instance of an FT_T_ISID table has more than one definition of VSH for any occurrence, meaning that there are two criteria to match a processing segment -->
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<!-- Specifies that the issue identifier being processed should follow the vendor source hierarchy below, only if the ISS_TYP, which is taken from the header of the processing message, is set to value of CVTPFD and ID_CTXT_TYP is equal to CINS, and a MArket of ALL, then an ISID segment processing will follow the VSH defined below -->
+				<field dataType="STRING" name="ft_t_isid.id_ctxt_typ" value="CINS"></field>
+				<field dataType="STRING" lookup="header" name="iss_typ" value="CVTPFD"></field>
+				<field dataType="STRING" name="ft_t_isid.mkt_oid" valueOf="ft_t_mrkt.mkt_oid">
+					<where match="MRKT1_MARKET_NAME">
+						<field dataType="STRING" name="ft_t_mrkt.mkt_nme" value="ALL"></field>
+					</where>
+				</field>
+			</where>
+		</option>
+		<!-- Second instance -->
+		<option id="isid-5">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<field dataType="STRING" name="ft_t_isid.id_ctxt_typ" value="SEDOL"></field>
+				<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+			</where>
+		</option>
+		<option id="isid-6">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<field dataType="STRING" name="ft_t_isid.id_ctxt_typ" value="ISIN"></field>
+				<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+			</where>
+		</option>
+	</occurrence>
+	<!-- Issue Type/Geo Unit -->
+	<occurrence table="ft_t_isst">
+		<option id="isst-1">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<!-- Specifies that the issue statistics being processed should follow the VSH below, only if the ISS_TYP and CNTRY_CDE, which are both taken from the header of the processing message, are set to value of BOND and US accordingly, then an ISST segment processing will follow the VSH defined below -->
+				<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+				<field dataType="STRING" lookup="header" name="cntry_cde" value="US"></field>
+			</where>
+		</option>
+		<option id="isst-2">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<!-- Specifies that the issue statistics being processed should follow the VSH below, only if the ISS_TYP and CNTRY_CDE, which are both taken from the header of the processing message, are set to value of BOND and US accordingly, then an ISST segment processing will follow the VSH defined below -->
+				<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+				<field dataType="STRING" lookup="header" name="cntry_cde" value="UK"></field>
+			</where>
+		</option>
+	</occurrence>
+	<!-- Occurrence -->
+	<occurrence table="ft_t_isde">
+		<vendorSource>
+			<source rank="1" vendor="BB"></source>
+			<source rank="2" vendor="RFTDSP"></source>
+		</vendorSource>
+		<where>
+			<!-- Specifies that the issue description being processed should follow the vendor source hierarchy below, only if the NLS_CDE is set to value of ENGLISH, and DESC_USAGE_TYP is set to value of BBERG1, then an ISDE segment processing will follow the VSH defined below -->
+			<field dataType="STRING" name="ft_t_isde.nls_cde" value="ENGLISH"></field>
+			<field dataType="STRING" name="ft_t_isde.desc_usage_typ" value="PRIMARY"></field>
+		</where>
+	</occurrence>
+	<occurrence table="ft_t_frip">
+		<vendorSource>
+			<source rank="1" vendor="BB"></source>
+			<source rank="2" vendor="RFTDSP"></source>
+		</vendorSource>
+		<where>
+			<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+			
+			<field dataType="STRING" name="ft_t_frip.inst_mnem" valueOf="ft_t_fins.inst_mnem">
+				<where match="FINS1_NME">
+					<field dataType="STRING" name="ft_t_fins.inst_nme" value="Federal Reserve Bank Of New York"></field>
+				</where>
+			</field>
+			
+		</where>
+	</occurrence>
+	<occurrence table="ft_t_iedf">
+		<vendorSource>
+			<source rank="1" vendor="BB"></source>
+			<source rank="2" vendor="RFTDSP"></source>
+		</vendorSource>
+		<where>
+			<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+			<field dataType="STRING" name="ft_t_iedf.ev_typ" value="INTEREST"></field>
+		</where>
+	</occurrence>
+	<occurrence table="ft_t_ievp">
+		<vendorSource>
+			<source rank="1" vendor="BB"></source>
+			<source rank="2" vendor="RFTDSP"></source>
+		</vendorSource>
+		<where>
+			<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+			<field dataType="STRING" name="ft_t_ievp.prt_purp_typ" value="INTEREST"></field>
+		</where>
+	</occurrence>
+	<occurrence table="ft_t_ipdf">
+		<vendorSource>
+			<source rank="1" vendor="BB"></source>
+			<source rank="2" vendor="RFTDSP"></source>
+		</vendorSource>
+		<where>
+			<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+			<field dataType="STRING" name="ft_t_ipdf.ev_rate_typ" value="PERCENT"></field>
+		</where>
+	</occurrence>
+	<!-- Default for a particular Issue Type-->
+	<!-- If table for an occurrence element is set to value of ALL, that means that the VSH listed is being applied as a default VSH to every segment that comes from a message containing an ISS_TYP in the message header information set to value of BOND-->
+	<occurrence table="all">
+		<option id="all-1">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+			<where>
+				<field dataType="STRING" lookup="header" name="iss_typ" value="BOND"></field>
+			</where>
+		</option>
+		<!-- Default for all Issue Types-->
+		<!-- If table for an occurrence element is set to value of ALL, that means that the VSH listed is being applied as a default VSH to every segment that did not match any of the above table occurrences.-->
+		<option id="all-2">
+			<vendorSource>
+				<source rank="1" vendor="BB"></source>
+				<source rank="2" vendor="RFTDSP"></source>
+			</vendorSource>
+		</option>
+		</occurrence>
+</vsh>

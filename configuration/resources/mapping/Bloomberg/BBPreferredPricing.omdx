@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OMDX" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="RCode"/>
+    <Option key="LastChangedTms">2022-08-17 at 04:21:40 IST</Option>
+    <Option key="MappingDesignerVersion">8.8.1.05</Option>
+    <Option key="OMDX.Base">BBPreferredPricing.mdx</Option>
+  </Options>
+  <Input vendorType="BB">
+    <Options/>
+    <Layout>
+      <Override/>
+    </Layout>
+  </Input>
+  <Output>
+    <MappingFragments/>
+    <OutputDef/>
+  </Output>
+  <Translation/>
+  <Expressions>
+    <Expression enabled="true" ident="GSDMFiltering">
+      <expr><![CDATA[if (OneHasValue(ID_ISIN, ID_CUSIP, ID_SEDOL1, ID_SEDOL2, ID_SEDOL3, ID_SEDOL4, ID_SEDOL5))
+	return "false";
+else
+	return "true";]]></expr>
+    </Expression>
+  </Expressions>
+</MappingDef>

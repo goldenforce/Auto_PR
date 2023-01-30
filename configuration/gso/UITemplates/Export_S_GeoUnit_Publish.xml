@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="prasanth.mandadi@point72.com" entityName="GeographicalUnit" entitySubType="[]" id="d46401QJG1" isDefault="N" isPublic="N" screenType="SYSTEMGRID" title="S: GeoUnit_Publish">
+  <control caption="" fullQualPath="GeographicalUnit.GeographicUnitInformation" id="d46601QJG1" lazyInd="N" orderNum="0" parentId="" relatedPath="" screenId="d46401QJG1" show="Y">
+    <control caption="" fullQualPath="GeographicalUnit.GeographicUnitInformation.ParentGeographicUnitID" id="d46D01QJG1" lazyInd="N" orderNum="0" parentId="d46601QJG1" relatedPath="" screenType="d46401QJG1" show="Y"/>
+    <control caption="" fullQualPath="GeographicalUnit.GeographicUnitInformation.GeographicUnitName" id="d46F01QJG1" lazyInd="N" orderNum="1" parentId="d46601QJG1" relatedPath="" screenType="d46401QJG1" show="Y"/>
+    <control caption="" fullQualPath="GeographicalUnit.GeographicUnitInformation.ParentGeographicUnitType" id="d46H01QJG1" lazyInd="N" orderNum="2" parentId="d46601QJG1" relatedPath="" screenType="d46401QJG1" show="Y"/>
+    <control caption="" fullQualPath="GeographicalUnit.GeographicUnitInformation.ParentGeographicUnitCount" id="d46J01QJG1" lazyInd="N" orderNum="3" parentId="d46601QJG1" relatedPath="" screenType="d46401QJG1" show="Y"/>
+    <control caption="" fullQualPath="GeographicalUnit.GeographicUnitInformation.StopPaymentIndicator" id="d46L01QJG1" lazyInd="N" orderNum="4" parentId="d46601QJG1" relatedPath="" screenType="d46401QJG1" show="Y"/>
+  </control>
+</root>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<entities cleanUnusedFields="false" nameSpace="POINT72">
+  <beFields>
+    <beField class="BETEXT" displayCaption="Bloomberg Index" entityTypeId="=00000000000012C" id="++8X808mhG5AW00B" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72BNIDBloombergIndex" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="RIC" entityTypeId="=00000000000012C" id="++8X808mhG5AW00A" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72BNIDRIC" nameSpace="POINT72"/>
+    <beField class="BETEXT" displayCaption="SEDOL" entityTypeId="=00000000000012C" id="++8X808mhG5AW009" mandatory="0" multiplicity="SINGLE_OR_NULL" name="P72BNIDSEDOL" nameSpace="POINT72"/>
+    <beField class="BEDEC" displayCaption="Benchmark Opening Weight" entityTypeId="=00000000000012C" id="++8X808mhG5AW00H" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="P72BenchmarkOpeningWeight" nameSpace="POINT72"/>
+    <beField class="BEDEC" displayCaption="Participant Open Weight" entityTypeId="=00000000000012C" id="008XDXAWhG5AW004" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="P72BenchmarkParticipantOpenWeight" nameSpace="POINT72"/>
+    <beField class="BEDATE" displayCaption="Participant Weight Date" entityTypeId="=00000000000012C" id="++8XH6lmhG5AW002" mandatory="0" multiplicity="MULTIPLE_OR_NULL" name="P72BenchmarkParticipantWeightDate" nameSpace="POINT72"/>
+  </beFields>
+  <dataGroups>
+    <dataGroup customInd="0" desc="Benchmark Identifiers" displayCaption="Benchmark Identifiers" entityTypeId="=00000000000012C" frequencyInd="0" id="++5zowGS2etvy01b" multiplicity="SINGLE_OR_NULL" name="BenchmarkIdentifiers" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8X808mhG5AW00B" id="++8X808mhG5AW00M" prntReqdInd="0" seq="9"/>
+      <part defNameSpace="POINT72" fieldId="++8X808mhG5AW00A" id="++8X808mhG5AW00N" prntReqdInd="0" seq="10"/>
+      <part defNameSpace="POINT72" fieldId="++8X808mhG5AW009" id="++8X808mhG5AW00O" prntReqdInd="0" seq="11"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Benchmark Closing Weights" displayCaption="Closing Weights" entityTypeId="=00000000000012C" frequencyInd="0" id="007kr5ZgmIA-i008" multiplicity="MULTIPLE_OR_NULL" name="BenchmarkClosingWeights" nameSpace="GSC">
+      <part defNameSpace="POINT72" fieldId="++8X808mhG5AW00H" id="++8X808mhG5AW00Q" prntReqdInd="0" seq="2"/>
+    </dataGroup>
+    <dataGroup customInd="0" desc="Benchmark Participants" displayCaption="Benchmark Participants" entityTypeId="=00000000000012C" frequencyInd="0" id="++5zowGS2etvy02n" multiplicity="MULTIPLE_OR_NULL" name="BenchmarkParticipants" nameSpace="GSC">
+      <part beRelationId="++8ZSt7mhG5AW006" defNameSpace="POINT72" id="++8ZSt7mhG5AW007" label="CountryPrimaryParticipant" prntReqdInd="0" seq="2"/>
+      <part defNameSpace="POINT72" fieldId="008XDXAWhG5AW004" id="008XDXAWhG5AW006" prntReqdInd="0" seq="10"/>
+      <part defNameSpace="POINT72" fieldId="++8XH6lmhG5AW002" id="++8XH6lmhG5AW004" prntReqdInd="0" seq="11"/>
+    </dataGroup>
+  </dataGroups>
+  <relations>
+    <relation id="++8ZSt7mhG5AW009" name="FT_T_BNPT-To-FT_T_MKIS01" nameSpace="POINT72" srcTable="FT_T_BNPT" tgtTable="FT_T_MKIS">
+      <field fromColumn="MKT_ISS_OID" id="++8ZSt7mhG5AW00A" nameSpace="POINT72" toColumn="MKT_ISS_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+    <relation customSQL="bnchmrk_val_tms=(SELECT MAX(BNVL_MAX.bnchmrk_val_tms) FROM FT_T_BNVL BNVL_MAX WHERE BNVL_MAX.BNPT_OID=BNPT_01.BNPT_OID)" id="008XDXAWhG5AW001" name="FT_T_BNPT-To-FT_T_BNVL02" nameSpace="POINT72" srcTable="FT_T_BNPT" tgtTable="FT_T_BNVL">
+      <field fromColumn="BNPT_OID" id="008XDXAWhG5AW002" nameSpace="POINT72" toColumn="BNPT_OID" type="RELATION_FIELD" valueType="COLUMN"/>
+    </relation>
+  </relations>
+  <occurrences>
+    <occurrence desc="Occurrence for Benchmark Identifier" id="++8X808mhG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="BNID_SEDOL" nameSpace="POINT72" parentId="++5zowGS2etvy008" table="FT_T_BNID" timeSeries="LOGICAL_DELETE">
+      <field id="++8X808mhG5AW002" name="BNCHMRK_ID" nameSpace="POINT72"/>
+      <value id="++8X808mhG5AW001" name="BNCHMRK_ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="SEDOL" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Benchmark Identifier" id="++8X808mhG5AW003" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="BNID_RIC" nameSpace="POINT72" parentId="++5zowGS2etvy008" table="FT_T_BNID" timeSeries="LOGICAL_DELETE">
+      <field id="++8X808mhG5AW005" name="BNCHMRK_ID" nameSpace="POINT72"/>
+      <value id="++8X808mhG5AW004" name="BNCHMRK_ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="RIC" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Benchmark Identifier" id="++8X808mhG5AW006" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="BNID_BBINDX" nameSpace="POINT72" parentId="++5zowGS2etvy008" table="FT_T_BNID" timeSeries="LOGICAL_DELETE">
+      <field id="++8X808mhG5AW008" name="BNCHMRK_ID" nameSpace="POINT72"/>
+      <value id="++8X808mhG5AW007" name="BNCHMRK_ID_CTXT_TYP" nameSpace="POINT72" type="FILTER_FIELD" value="BBINDX" valueType="CONSTANT"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Benchmark Participant" id="++5zowGS2etvy02U" ignoreDeleteChildren="false" multiplicity="MULTIPLE_OR_NULL" name="BNPT_01" nameSpace="GSC" parentId="++5zowGS2etvy008" relationId="++5zowGS2etvy02V" table="FT_T_BNPT" timeSeries="LOGICAL_DELETE">
+      <field id="++8ZSt7mhG5AW008" nameSpace="POINT72" relationId="++8ZSt7mhG5AW009"/>
+      <option id="006WE0lC2etrC03u" nameSpace="GSC" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Benchmark Values" id="007kr5ZgmIA-i000" ignoreDeleteChildren="false" multiplicity="MULTIPLE_OR_NULL" name="BNVL_BNPT" nameSpace="GSC" parentId="++5zowGS2etvy02U" relationId="++87TTsS2euPC00C" table="FT_T_BNVL" timeSeries="LOGICAL_DELETE">
+      <field id="++8X808mhG5AW00G" name="OPEN_WGT_BMRK_CRTE" nameSpace="POINT72"/>
+      <option id="++87TTsS2euPC000" nameSpace="GSC" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+    <occurrence desc="Occurrence for Benchmark Values" id="008XDXAWhG5AW000" ignoreDeleteChildren="false" multiplicity="SINGLE_OR_NULL" name="BNVL_BNPT_P72_LATEST" nameSpace="POINT72" parentId="++5zowGS2etvy02U" relationId="008XDXAWhG5AW001" table="FT_T_BNVL" timeSeries="LOGICAL_DELETE">
+      <field id="++8XH6lmhG5AW001" name="BNCHMRK_VAL_TMS" nameSpace="POINT72"/>
+      <field id="008XDXAWhG5AW003" name="OPEN_WGT_BMRK_CRTE" nameSpace="POINT72"/>
+      <option id="++8XH6lmhG5AW000" nameSpace="POINT72" type="DEFAULT_ACTION" value="UNKNOWN"/>
+    </occurrence>
+  </occurrences>
+  <mappings>
+    <mapping beFieldId="++8X808mhG5AW00B" groupMapping="0" id="++8X808mhG5AW00C" nameSpace="POINT72" occFieldId="++8X808mhG5AW008"/>
+    <mapping beFieldId="++8X808mhG5AW00A" groupMapping="0" id="++8X808mhG5AW00D" nameSpace="POINT72" occFieldId="++8X808mhG5AW005"/>
+    <mapping beFieldId="++8X808mhG5AW009" groupMapping="0" id="++8X808mhG5AW00E" nameSpace="POINT72" occFieldId="++8X808mhG5AW002"/>
+    <mapping beFieldId="++8X808mhG5AW00H" groupMapping="0" id="++8X9DEmhG5AW000" nameSpace="POINT72" occFieldId="++8X808mhG5AW00G"/>
+    <mapping beFieldId="++8XH6lmhG5AW002" groupMapping="0" id="++8XH6lmhG5AW003" nameSpace="POINT72" occFieldId="++8XH6lmhG5AW001"/>
+    <mapping beRelationId="++8ZSt7mhG5AW006" groupMapping="0" id="++8ZSt7mhG5AW00B" nameSpace="POINT72" occFieldId="++8ZSt7mhG5AW008"/>
+    <mapping beFieldId="008XDXAWhG5AW004" groupMapping="0" id="008XDXAWhG5AW005" nameSpace="POINT72" occFieldId="008XDXAWhG5AW003"/>
+  </mappings>
+  <entityRelations>
+    <entityRelation desc="CUSTOM:Relation Participant" entityId="++5zowGS2etvy005" id="++5zowGS2etvy02p" lookupField="005Q5i8i2etse002" multiplicity="MULTIPLE_OR_NULL" name="InstrumentParticipant" nameSpace="GSC" rltdEntityId="++5SQ0Ly2etse000">
+      <part forPublishing="1" forUI="1" id="008WtOMWhG5q4000" nameSpace="POINT72" partId="++4u-kJy2etzO00a"/>
+      <part forPublishing="1" forUI="1" id="++8WtDZGhG5q4000" nameSpace="POINT72" partId="++4u-kJy2etzO00d"/>
+      <part forPublishing="1" forUI="1" id="++5zowGS2etvy02w" nameSpace="GSC" partId="005Q5i8i2etse002"/>
+      <part forPublishing="1" forUI="1" id="008WtOMWhG5q4001" nameSpace="POINT72" partId="008Nypzi2euLO02w"/>
+      <part forPublishing="1" forUI="1" id="008WtOMWhG5q4002" nameSpace="POINT72" partId="008Nypzi2euLO02z"/>
+      <part forPublishing="1" forUI="1" id="008WtOMWhG5q4003" nameSpace="POINT72" partId="008Nypzi2euLO04v"/>
+    </entityRelation>
+    <entityRelation entityId="++5zowGS2etvy005" id="++8ZSt7mhG5AW006" lookupField="++8W7OKmhG5q400j" multiplicity="MULTIPLE_OR_NULL" name="CountryPrimaryParticipant" nameSpace="POINT72" rltdEntityId="008W3DOWhG5q4005">
+      <part forPublishing="1" forUI="1" id="++8ZSt7mhG5AW00H" nameSpace="POINT72" partId="++8W3a4mhG5q400Q"/>
+      <part forPublishing="1" forUI="1" id="++8ZSt7mhG5AW00I" nameSpace="POINT72" partId="++8W3a4mhG5q400R"/>
+      <part forPublishing="1" forUI="1" id="++8ZSt7mhG5AW00G" nameSpace="POINT72" partId="++8W3a4mhG5q400S"/>
+      <part forPublishing="1" forUI="1" id="++8ZSt7mhG5AW00F" nameSpace="POINT72" partId="++8W3a4mhG5q400T"/>
+      <part forPublishing="1" forUI="1" id="++8ZSt7mhG5AW00C" nameSpace="POINT72" partId="++8W7OKmhG5q400j"/>
+      <part forPublishing="1" forUI="1" id="++8ZSt7mhG5AW00D" nameSpace="POINT72" partId="++8W7OKmhG5q400k"/>
+      <part forPublishing="1" forUI="1" id="++8ZSt7mhG5AW00E" nameSpace="POINT72" partId="++8W7OKmhG5q400l"/>
+      <part forPublishing="1" forUI="1" id="++8ZsRZmhG5AW00C" nameSpace="POINT72" partId="++8ZsRZmhG5AW00A"/>
+      <part forPublishing="1" forUI="1" id="++8ZsRZmhG5AW00D" nameSpace="POINT72" partId="++8ZsRZmhG5AW00B"/>
+      <part forPublishing="1" forUI="1" id="008Zv+50hG5AW00x" nameSpace="POINT72" partId="008Zv+50hG5AW00p"/>
+      <part forPublishing="1" forUI="1" id="008Zv+50hG5AW00y" nameSpace="POINT72" partId="008Zv+50hG5AW00q"/>
+      <part forPublishing="1" forUI="1" id="008Zv+50hG5AW00z" nameSpace="POINT72" partId="008Zv+50hG5AW00r"/>
+      <part forPublishing="1" forUI="1" id="008Zv+50hG5AW00-" nameSpace="POINT72" partId="008Zv+50hG5AW00s"/>
+    </entityRelation>
+  </entityRelations>
+  <naturalKeys>
+    <naturalKey dataGroupId="007kr5ZgmIA-i008" id="007kr5ZgmIA-i00B" name="BenchmarkClosingWeightNaturalKey" nameSpace="GSC">
+      <part beFieldId="++8X808mhG5AW00Q" id="++8X8KnmhG5AW000" nameSpace="POINT72"/>
+      <part beFieldId="007kr5ZgmIA-i009" id="007kr5ZgmIA-i00C" nameSpace="GSC"/>
+      <part beFieldId="007kr5ZgmIA-i00A" id="007kr5ZgmIA-i00D" nameSpace="GSC"/>
+    </naturalKey>
+  </naturalKeys>
+</entities>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<vendor-definition>
+<name>CAPCO</name>
+<encoding>ISO-8859-15</encoding>
+<messageSplitter type="com.j2fe.feeds.generic.splitters.StartTagSplitter">
+<startTag>S</startTag>
+<lineFilter type="com.j2fe.feeds.generic.filters.StartTagFilter">
+<startTagPos>0</startTagPos>
+<startTag>X</startTag>
+<startTag>F</startTag>
+<startTag>B</startTag>
+</lineFilter>
+</messageSplitter>
+</vendor-definition>

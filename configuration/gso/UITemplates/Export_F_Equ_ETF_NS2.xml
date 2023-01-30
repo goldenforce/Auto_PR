@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root createdUser="nick.sekouris@point72.com" entityName="Equity" entitySubType="[]" id="4%wQq&gt;Is01" isDefault="N" isPublic="Y" screenType="SYSTEMFORM" title="F: Equ_ETF_NS2">
+  <control caption="Equity" columns="2" fullQualPath="" hideDetail="N" id="Mrxtq&amp;gt;gT81" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="TABSHEET">
+    <config>{"CAPTION_OVERRIDE":[{"LABEL":"Tab Sheet 11"}],"DETAIL_CHART_CONFIG":[]}</config>
+    <control caption="Security Main" columns="2" fullQualPath="" hideDetail="N" id="MrxMt&amp;gt;gT81" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrxtq&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Security Information" columns="4" fullQualPath="" hideDetail="N" id="Mrxxt&amp;gt;gT81" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="MrxMt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Instrument Name" columns="2" fullQualPath="Equity.InstrumentDetails.PreferredInstrumentName" hideDetail="N" id="Mrx-t&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrxxt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Country Of Domicile" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.ISOGeographicDetails.CountryOfDomicile" hideDetail="N" id="Mrx/t&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrxxt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Distribution Currency" columns="2" fullQualPath="Equity.InstrumentDetails.DistributionCurrency" hideDetail="N" id="Mrx)t&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrxxt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Par Value" columns="2" fullQualPath="Equity.InstrumentDetails.ParValue" hideDetail="N" id="Mrx?t&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrxxt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Offer Date" columns="2" fullQualPath="Equity.LastOfferDetails.LastOfferDate" hideDetail="N" id="Mrx&amp;gt;t&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="Mrxxt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Instrument Type" columns="2" fullQualPath="Equity.InstrumentDetails.InstrumentType" hideDetail="N" id="Mrx1u&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="Mrxxt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"CAPTION_OVERRIDE":[{"LABEL":"Issuance Information"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Identifiers" columns="4" fullQualPath="" hideDetail="N" id="Mrx3u&amp;gt;gT81" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="MrxMt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="ISIN" columns="2" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.ISIN" hideDetail="N" id="MrxAu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrx3u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Common Number" columns="2" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.CommonNumber" hideDetail="N" id="MrxCu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrx3u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="CUSIP" columns="2" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.CUSIP" hideDetail="N" id="MrxEu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrx3u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="CINS Code" columns="2" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.CINSCode" hideDetail="N" id="MrxGu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrx3u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Refinitiv Asset Id" columns="2" fullQualPath="Equity.Identifiers.InstrumentLevelIdentifiers.RefinitivAssetId" hideDetail="N" id="MrxIu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="Mrx3u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"CAPTION_OVERRIDE":[{"LABEL":"Identifiers"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Instrument Type" columns="4" fullQualPath="" hideDetail="N" id="MrxKu&amp;gt;gT81" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="MrxMt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="P72 Instrument Type 4" columns="2" fullQualPath="Equity.InstrumentClassification.P72InsTypLevel4" hideDetail="N" id="MrxQu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="MrxKu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 3" columns="2" fullQualPath="Equity.InstrumentClassification.p72InsTypLevel3" hideDetail="N" id="MrxSu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="MrxKu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 2" columns="2" fullQualPath="Equity.InstrumentClassification.p72InsTypLevel2" hideDetail="N" id="MrxUu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="MrxKu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Instrument Type 1" columns="2" fullQualPath="Equity.InstrumentClassification.P72InsTypLevel1" hideDetail="N" id="MrxWu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="MrxKu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Classification" columns="4" fullQualPath="" hideDetail="N" id="MrxYu&amp;gt;gT81" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="MrxMt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="BB Market Sector" columns="2" fullQualPath="Equity.InstrumentClassification.BBMarketSector" hideDetail="N" id="Mrxju&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Security Type" columns="2" fullQualPath="Equity.InstrumentClassification.BBSectorType" hideDetail="N" id="Mrxlu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Sub-Security Type" columns="2" fullQualPath="Equity.InstrumentClassification.BBSubSectorType" hideDetail="N" id="Mrxnu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="ISO CFI" columns="2" fullQualPath="Equity.InstrumentClassification.ISOCFI" hideDetail="N" id="Mrxpu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Region" columns="2" fullQualPath="Equity.InstrumentClassification.BBRegion" hideDetail="N" id="Mrxru&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Pano Security Type" columns="2" fullQualPath="Equity.InstrumentClassification.P72PanoSecurityType" hideDetail="N" id="Mrxtu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Geneva Asset Type" columns="2" fullQualPath="Equity.InstrumentClassification.P72GenevaAssetType" hideDetail="N" id="Mrxvu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Geneva Investment Type" columns="2" fullQualPath="Equity.InstrumentClassification.P72GenevaInvestmentType" hideDetail="N" id="Mrxxu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Geneva Print Group" columns="2" fullQualPath="Equity.InstrumentClassification.P72GenevaPrintGroup" hideDetail="N" id="Mrxzu&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="MrxYu&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <config>{"CAPTION_OVERRIDE":[{"LABEL":"Classification"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Issue Outstanding" columns="4" fullQualPath="" hideDetail="N" id="Mrx%u&amp;gt;gT81" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="MrxMt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Current Outstanding Shares" columns="2" fullQualPath="Equity.PrimaryMarket.PrimaryMktOutstandingShares" hideDetail="N" id="Mrx(u&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrx%u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Outstanding Shares Date" columns="2" fullQualPath="Equity.PrimaryMarket.PrimaryMktOutstandingSharesDate" hideDetail="N" id="Mrx~u&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrx%u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Shares to ADR Ratio" columns="2" fullQualPath="Equity.P72ADR.P72SharestoADRRatio" hideDetail="N" id="Mrx&amp;lt;u&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrx%u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Underlying Ticker" columns="2" fullQualPath="Equity.P72ADR.P72ADRUnderlyingTicker" hideDetail="N" id="Mrx0v&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrx%u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="ADR Underlying Currency Code" columns="2" fullQualPath="Equity.P72ADR.P72ADRUnderlyingCurrencyCode" hideDetail="N" id="Mrx2v&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="Mrx%u&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      </control>
+      <control caption="Benchmark Details" columns="2" fullQualPath="Equity.BenchmarkDetails" hideDetail="N" id="Mrx4v&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="MrxMt&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST"/>
+      <config>{"CAPTION_OVERRIDE":[{"LABEL":"Issuance"}],"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Issuer" columns="4" fullQualPath="" hideDetail="N" id="Mrx6v&amp;gt;gT81" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrxtq&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Entity Information" columns="4" fullQualPath="" hideDetail="N" id="Mrxkv&amp;gt;gT81" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrx6v&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Issuer Long Name" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerInformation.IssuerName" hideDetail="N" id="Mrxrv&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrxkv&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Issuer - Institution Name" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRInstitutionName" hideDetail="N" id="Mrxtv&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrxkv&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Issuer - Institution Description" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRInstitutionDescription" hideDetail="N" id="Mrxvv&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrxkv&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Issuer - Institution Type" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRInstitutionType" hideDetail="N" id="Mrxxv&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrxkv&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Issuer Parent Company Name" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72IssuerParentCompanyName" hideDetail="N" id="Mrxzv&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="Mrxkv&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      </control>
+      <control caption="Credit Risk Information" columns="4" fullQualPath="" hideDetail="N" id="Mrx%v&amp;gt;gT81" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrx6v&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Country Of Incorporation" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.ISOGeographicDetails.CountryOfIncorporation" hideDetail="N" id="Mrx/v&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrx%v&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Issuer - Country Of Risk" columns="2" fullQualPath="Equity.IssuerDetails.P72FINSCountryOfRisk" hideDetail="N" id="Mrx)v&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrx%v&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Issuer - State Of Domicile" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRStateOfDomicile" hideDetail="N" id="Mrx?v&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrx%v&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Issuer - State Of Incorporation" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerInstitution.P72ISSRStateOfIncorporation" hideDetail="N" id="Mrx&amp;gt;v&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrx%v&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      </control>
+      <control caption="Issuer Identifiers" columns="3" fullQualPath="" hideDetail="N" id="Mrx1w&amp;gt;gT81" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrx6v&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Legal Entity Identifier" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerIdentifiers.LegalEntityIdentifier" hideDetail="N" id="Mrx6w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrx1w&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="BB Company Identifier" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerIdentifiers.BBCompanyIdentifier" hideDetail="N" id="Mrx8w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrx1w&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="BB Global Company" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerIdentifiers.BBGlobalCompany" hideDetail="N" id="MrxAw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrx1w&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      </control>
+      <control caption="Industry Classifications" columns="4" fullQualPath="" hideDetail="N" id="MrxCw&amp;gt;gT81" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrx6v&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="GICS Sector" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.GICSSector" hideDetail="N" id="Mrxaw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="GICS Industry Group" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.GICSIndustryGroup" hideDetail="N" id="Mrxcw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="GICS Industry" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.GICSIndustry" hideDetail="N" id="Mrxew&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="GICS Sub Industry" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.GICSSubIndustry" hideDetail="N" id="Mrxgw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="BICS Level 1" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.BICSLevel1" hideDetail="N" id="Mrxiw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="BICS Level 2" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.BICSLevel2" hideDetail="N" id="Mrxkw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="BICS Level 3" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.BICSLevel3" hideDetail="N" id="Mrxmw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="FTSE Issuer Classification" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.FTSEIssuerClassification" hideDetail="N" id="Mrxow&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="SIC Code - Level 1" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.SICCodeLevel1" hideDetail="N" id="Mrxqw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="SIC Code - Level 2" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.SICCodeLevel2" hideDetail="N" id="Mrxsw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="SIC Code - Level 3" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.SICCodeLevel3" hideDetail="N" id="Mrxuw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Primary Insurance NAICS" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.PrimaryInsuranceNAICS" hideDetail="N" id="Mrxww&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="NAICS Code - Level 1" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel1" hideDetail="N" id="Mrxyw&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="NAICS Code - Level 2" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel2" hideDetail="N" id="Mrx$w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="NAICS Code - Level 3" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel3" hideDetail="N" id="Mrx@w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="NAICS Code - Level 4" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel4" hideDetail="N" id="Mrx*w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="NAICS Code - Level 5" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.NAICSCodeLevel5" hideDetail="N" id="Mrx.w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Refinitiv Internal Classification" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivInternalClassification" hideDetail="N" id="Mrx(w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Refinitiv Industry Code" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivIndustryCode" hideDetail="N" id="Mrx~w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="18" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Refinitiv Industry Sector Code" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivIndustrySectorCode" hideDetail="N" id="Mrx&amp;lt;w&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Refinitiv Industry Sub-Sector" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivIndustrySubSector" hideDetail="N" id="Mrx0x&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Refinitiv Business Classification Code" columns="2" fullQualPath="Equity.InstrumentDetails.Issuer.Issuer.IssuerClassification.RefinitivBusinessClassificationCode" hideDetail="N" id="Mrx2x&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="21" pageSize="0" parentId="MrxCw&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+      </control>
+    </control>
+    <control caption="Listings" columns="2" fullQualPath="" hideDetail="N" id="Mrx4x&amp;gt;gT81" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrxtq&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Country&amp;apos;s Primary Exchange" columns="4" fullQualPath="Equity.CountrysPrimaryExchange" hideDetail="N" id="Mrx@x&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="10" parentId="Mrx4x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="MIC Code" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountryPrimaryExchange.FinancialMarket.MarketDetails.MICCode" hideDetail="N" id="Mrxly&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Exchange Name" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountryPrimaryExchange.FinancialMarket.MarketDetails.MarketName" hideDetail="N" id="Mrxny&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Geo ID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryGeographicUnitID" hideDetail="N" id="Mrxpy&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="SEDOL" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountrySEDOL" hideDetail="N" id="Mrxry&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="P72 Security ID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryP72CountryPrimaryID" hideDetail="N" id="Mrxty&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Listing Version Number" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryListingVersionNumber" hideDetail="N" id="Mrxvy&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="PointID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryPointID" hideDetail="N" id="Mrxxy&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Position ID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryPositionID" hideDetail="N" id="Mrxzy&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="RIC" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryRICP72" hideDetail="N" id="Mrx%y&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Consolidated RIC" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryConsolidatedRIC" hideDetail="N" id="Mrx&amp;amp;y&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Ticker" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryTicker" hideDetail="N" id="Mrx-y&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Ticker Exchange Code" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryBBTickerExchangeCode" hideDetail="N" id="Mrx/y&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="BB Global" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryBBGlobal" hideDetail="N" id="Mrx)y&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Unique" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryBBUnique" hideDetail="N" id="Mrx?y&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Barra ID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryBarra" hideDetail="N" id="Mrx&amp;gt;y&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Compustat" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryCompustat" hideDetail="N" id="Mrx1z&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="IBES Ticker" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryIBESTKR" hideDetail="N" id="Mrx3z&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="StarMine" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryStarMine" hideDetail="N" id="Mrx5z&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="WorldScope WSID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryWorldScope" hideDetail="N" id="Mrx7z&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="18" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="GV Underlying Position ID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryGVUNDL" hideDetail="N" id="Mrx9z&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="19" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="P72 Bloomberg Ticker" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryP72BBGTICK" hideDetail="N" id="MrxBz&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="20" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Singapore Code" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountrySingapore" hideDetail="N" id="MrxDz&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="21" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="PANO Risk Underlying" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryPANORISKPOSID" hideDetail="N" id="MrxFz&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="22" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Trading Currency" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryTradingCurrency" hideDetail="N" id="MrxHz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="23" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Round Lot Size" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryRoundLotSize" hideDetail="N" id="MrxJz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="24" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Days to Settlement" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryDaystoSettlement" hideDetail="N" id="MrxLz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="25" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Primary Trading Market" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryPrimaryTradingMarket" hideDetail="N" id="MrxNz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="26" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Trading Status" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryTradingStatus" hideDetail="N" id="MrxPz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="27" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Trading Floor Location" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryTradingFloorLocation" hideDetail="N" id="MrxRz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="28" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Country&amp;apos;s Local Exchange" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange" hideDetail="N" id="MrxTz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="29" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+          <control caption="MIC Code" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.CountryLocalExchange.FinancialMarket.MarketDetails.MICCode" hideDetail="N" id="Mrxnz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Exchange Name" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.CountryLocalExchange.FinancialMarket.MarketDetails.MarketName" hideDetail="N" id="Mrxpz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Geographic Unit ID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalGeographicUnitID" hideDetail="N" id="Mrxrz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Geographic Unit Type" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalGeographicUnitType" hideDetail="N" id="Mrxtz&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Listing Version Number" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalListingVersionNumber" hideDetail="N" id="Mrxvz&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+          <control caption="SEDOL" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalSEDOL" hideDetail="N" id="Mrxxz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="RIC" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalRIC" hideDetail="N" id="Mrxzz&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Consolidated RIC" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalConsolidatedRIC" hideDetail="N" id="Mrx%z&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Ticker" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalTicker" hideDetail="N" id="Mrx&amp;amp;z&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="BB Ticker Exchange Code" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalBBTickerExchangeCode" hideDetail="N" id="Mrx-z&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+          <control caption="BB Global" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalBBGlobal" hideDetail="N" id="Mrx/z&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="BB Unique" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalBBUnique" hideDetail="N" id="Mrx)z&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Trading Currency" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalTradingCurrency" hideDetail="N" id="Mrx?z&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="12" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Round Lot Size" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalRoundLotSize" hideDetail="N" id="Mrx&amp;gt;z&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="13" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Primary Trading Market" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalPrimaryTradingMarket" hideDetail="N" id="Mrx1$&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="14" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+          <control caption="Trading Status" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalTradingStatus" hideDetail="N" id="Mrx3$&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="15" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+            <config>{"DETAIL_CHART_CONFIG":[]}</config>
+          </control>
+          <control caption="Days to Settlement" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalDaystoSettlement" hideDetail="N" id="Mrx5$&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="16" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+          <control caption="Trading Floor Location" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.CountrysLocalExchange.MktLstLocalTradingFloorLocation" hideDetail="N" id="Mrx7$&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="17" pageSize="0" parentId="MrxTz&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="ICS Mapping" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryICSMAPPING" hideDetail="N" id="Mrx9$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="30" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Ultimate Underlying Position ID" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryULTUNDLPOSID" hideDetail="N" id="MrxB$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="31" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Pano Investment Category" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryPANOINCT" hideDetail="N" id="MrxD$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="32" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="P72 ADR Underlying Currency" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryP72ADRUnderlyingCurrency" hideDetail="N" id="MrxF$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="33" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="China Share Class" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryP72ChinaShareClass" hideDetail="N" id="MrxH$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="34" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="Scaling Factor" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryP72ScalingFactor" hideDetail="N" id="MrxJ$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="35" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="P72 Currency" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryP72Currency" hideDetail="N" id="MrxL$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="36" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="P72 Default Region" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryP72DefaultRegion" hideDetail="N" id="MrxN$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="37" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <control caption="P72 Exchange" columns="2" fullQualPath="Equity.CountrysPrimaryExchange.MktLstCountryP72Exchange" hideDetail="N" id="MrxP$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="38" pageSize="0" parentId="Mrx@x&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD"/>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"CAPTION_OVERRIDE":[{"LABEL":"Listed On"}],"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Dvd Schedule" columns="2" fullQualPath="" hideDetail="N" id="MrxR$&amp;gt;gT81" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrxtq&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LAYOUT">
+      <control caption="Dividend" columns="3" fullQualPath="" hideDetail="N" id="Mrxj$&amp;gt;gT81" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="MrxR$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="SECTION">
+        <control caption="Dividend Frequency Unit Qty" columns="2" fullQualPath="Equity.EquityFeatures.DividendFreqUnitQty" hideDetail="N" id="Mrxn$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrxj$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Dividend Frequency Time Unit" columns="2" fullQualPath="Equity.EquityFeatures.DividendFreqTimeUnit" hideDetail="N" id="Mrxp$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrxj$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"CAPTION_OVERRIDE":[{"LABEL":"Dividend"}],"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Instrument Statistics &amp;amp; Analytics" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics" hideDetail="N" id="Mrxr$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="10" parentId="MrxR$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Exchange Name" columns="2" fullQualPath="Equity.InstrumentStatisticsAnalytics.Market.FinancialMarket.MarketDetails.MarketName" hideDetail="N" id="Mrx-$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Dividend Type" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.DividendType" hideDetail="N" id="Mrx/$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Currency" columns="2" fullQualPath="Equity.InstrumentStatisticsAnalytics.StatisticsAnalyticsCurrency" hideDetail="N" id="Mrx)$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Ex-Date Flag" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.ExDateFlag" hideDetail="N" id="Mrx?$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Dividend Declared Date" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.DividendDeclaredDate" hideDetail="N" id="Mrx&amp;gt;$&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Dividend Record Date" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.DividendRecordDate" hideDetail="N" id="Mrx1%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Dividend Payable Date" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.DividendPayableDate" hideDetail="N" id="Mrx3%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Dividend Ex Date" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.DividendExDate" hideDetail="N" id="Mrx5%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Dividend Per Share" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.DividendPerShare" hideDetail="N" id="Mrx7%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="8" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Dividend Per Share(Net)" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.DividendPerShareNet" hideDetail="N" id="Mrx9%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="9" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Equity Split Date" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.EquitySplitDate" hideDetail="N" id="MrxB%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="10" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Equity Split Ratio" columns="3" fullQualPath="Equity.InstrumentStatisticsAnalytics.EquitySplitRatio" hideDetail="N" id="MrxD%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="11" pageSize="0" parentId="Mrxr$&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"CAPTION_OVERRIDE":[{"LABEL":"Events"}],"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Related Instrument" columns="3" fullQualPath="Equity.RelatedInstrument" hideDetail="N" id="MrxF%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="5" parentId="Mrxtq&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="Y" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <control caption="Relationship Type" columns="2" fullQualPath="Equity.RelatedInstrument.RelationshipType" hideDetail="N" id="MrxV%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="MrxF%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Underlying Currency Code" columns="2" fullQualPath="Equity.RelatedInstrument.UnderlyingCurrencyCode" hideDetail="N" id="MrxX%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="MrxF%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Sponsored Indicator" columns="2" fullQualPath="Equity.RelatedInstrument.SponsoredIndicator" hideDetail="N" id="MrxZ%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="MrxF%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Related Instrument Details" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentDetails" hideDetail="N" id="Mrxb%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="MrxF%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+        <control caption="Underlying Asset Name" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentDetails.UnderlyingAssetName" hideDetail="N" id="Mrxk%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrxb%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Instrument Name" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentDetails.UnderlyingEquity.Base.InstrumentDetails.PreferredInstrumentName" hideDetail="N" id="Mrxm%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrxb%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Company Security" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentDetails.UnderlyingEquity.Base.Identifiers.InstrumentLevelIdentifiers.BBCompanySecurityInstrumentLevel" hideDetail="N" id="Mrxo%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrxb%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Ticker" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentDetails.UnderlyingEquity.Base.Identifiers.InstrumentLevelIdentifiers.BBTickerInstrumentLevel" hideDetail="N" id="Mrxq%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrxb%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Relationship Type" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentDetails.RelationshipRoleType" hideDetail="N" id="Mrxs%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="Mrxb%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Unit Type" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentDetails.RelatedInstrumentUnitType" hideDetail="N" id="Mrxu%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="Mrxb%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="BB Unique" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentDetails.UnderlyingEquity.Base.Identifiers.InstrumentLevelIdentifiers.BBUniqueIDInstrumentLevel" hideDetail="N" id="Mrxw%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="Mrxb%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Related Instruments Statistics" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentsStatistics" hideDetail="N" id="Mrxy%&amp;gt;gT81" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="MrxF%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="RECORD">
+        <control caption="Shares Per Depository Receipt" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentsStatistics.SharesPerDepositoryReceipt" hideDetail="N" id="Mrx@%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrxy%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <control caption="Depository Receipt Per Share" columns="2" fullQualPath="Equity.RelatedInstrument.RelatedInstrumentsStatistics.DepositoryReceiptPerShare" hideDetail="N" id="Mrx*%&amp;gt;gT81" isColumnInTable="Y" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrxy%&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+          <config>{"DETAIL_CHART_CONFIG":[]}</config>
+        </control>
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="SOI" columns="2" fullQualPath="Equity.InstrumentAsAParticipant" hideDetail="N" id="Mrx.%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="10" parentId="Mrxtq&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="Y" showDetailOnTop="Y" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Exceptions" columns="3" fullQualPath="Equity.Exceptions" hideDetail="N" id="Mrx(%&amp;gt;gT81" isColumnInTable="N" labelName="" lazyInd="D" orderNum="6" pageSize="10" parentId="Mrxtq&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="Y" showDetailOnTop="Y" showOneBelowAnother="N" type="LIST">
+      <buttons>
+        <button caption="Resubmit" id="ZfB301gT81">
+          <property name="Shared Role" value=""/>
+          <property name="Shared User" value=""/>
+          <property name="Shared Group" value=""/>
+          <property name="Type" value="event"/>
+          <property name="Current User" value="Logged in User"/>
+          <property name="Event Type" value="GenericEvent"/>
+          <property name="Event Name" value="My Event"/>
+        </button>
+        <button caption="Close" id="ZfBB01gT81">
+          <property name="Shared User" value=""/>
+          <property name="Event Name" value="My Event"/>
+          <property name="Current User" value="Logged in User"/>
+          <property name="Shared Role" value=""/>
+          <property name="Event Type" value="GenericEvent"/>
+          <property name="Type" value="event"/>
+          <property name="Shared Group" value=""/>
+        </button>
+      </buttons>
+      <control caption="Details" columns="3" fullQualPath="Equity.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.Details" hideDetail="N" id="ZfBK01gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="0" pageSize="0" parentId="Mrx(%&amp;gt;gT81" relatedPath="Equity.Exceptions.ExceptionOnInstr" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Latest Notification DateTime" columns="3" fullQualPath="Equity.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.LatestNotificationDate" hideDetail="N" id="ZfBM01gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="1" pageSize="0" parentId="Mrx(%&amp;gt;gT81" relatedPath="Equity.Exceptions.ExceptionOnInstr" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Message Type" columns="3" fullQualPath="Equity.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.MessageType" hideDetail="N" id="ZfBO01gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="2" pageSize="0" parentId="Mrx(%&amp;gt;gT81" relatedPath="Equity.Exceptions.ExceptionOnInstr" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Notification Creation DateTime" columns="3" fullQualPath="Equity.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.NotificationCreationDate" hideDetail="N" id="ZfBQ01gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="3" pageSize="0" parentId="Mrx(%&amp;gt;gT81" relatedPath="Equity.Exceptions.ExceptionOnInstr" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Notification Occurrence Count" columns="3" fullQualPath="Equity.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.NotificationOccurrenceCount" hideDetail="N" id="ZfBS01gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="4" pageSize="0" parentId="Mrx(%&amp;gt;gT81" relatedPath="Equity.Exceptions.ExceptionOnInstr" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Source Id" columns="3" fullQualPath="Equity.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.SourceId" hideDetail="N" id="ZfBU01gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="5" pageSize="0" parentId="Mrx(%&amp;gt;gT81" relatedPath="Equity.Exceptions.ExceptionOnInstr" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Notification Status" columns="3" fullQualPath="Equity.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.NotificationStatus" hideDetail="N" id="ZfBW01gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="6" pageSize="0" parentId="Mrx(%&amp;gt;gT81" relatedPath="Equity.Exceptions.ExceptionOnInstr" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <control caption="Exception Sub-Type" columns="3" fullQualPath="Equity.Exceptions.ExceptionOnInstr.Exception.ExceptionDetail.ExceptionSubType" hideDetail="N" id="ZfBY01gT81" isColumnInTable="N" labelName="" lazyInd="N" orderNum="7" pageSize="0" parentId="Mrx(%&amp;gt;gT81" relatedPath="Equity.Exceptions.ExceptionOnInstr" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="FIELD">
+        <config>{"DETAIL_CHART_CONFIG":[]}</config>
+      </control>
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+    <control caption="Corporate Actions" columns="3" fullQualPath="Equity.UnderlyingCorporateActions" hideDetail="N" id="ZfBa01gT81" isColumnInTable="N" labelName="" lazyInd="D" orderNum="7" pageSize="0" parentId="Mrxtq&amp;gt;gT81" relatedPath="" screenId="4%wQq&amp;gt;Is01" show="Y" showAsTable="N" showDetailOnTop="N" showOneBelowAnother="N" type="LIST">
+      <config>{"DETAIL_CHART_CONFIG":[]}</config>
+    </control>
+  </control>
+</root>

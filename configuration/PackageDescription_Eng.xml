@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<PackageDescription minInstallCenterVersion="8.8.1.01" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PackageDescription.xsd" custom="true" destination="Engine Binaries">
+    <Package name="Point72 Custom Engine Rules" type="full" version="8.8.1.24">
+        <Description>Point72_Custom Engine Rules</Description>
+        <Component>Point72 Custom Engine Rules</Component>
+        <Content>
+            <File path="P72_Custom_Package.tar.gz" type="Package"/>            
+        </Content> 
+    </Package>
+    <Deployment> 
+        <Prerequisites>
+            <Product id="BaseComp" name="Base Components" type="GOLDENSOURCE">
+                <Version min="8.8.1.01"/>
+            </Product>
+            <Product id="EngineConfig" name="Reference Engine Default Configuration" type="GOLDENSOURCE">
+                <Version min="8.8.1.01"/>
+            </Product>            
+            <Product id="datamodel" name="Datamodel GSDM" type="GOLDENSOURCE">
+                <Version min="8.8.1.01"/>
+            </Product>
+            <Product id="datamodelvddb" name="Datamodel VDDB" type="GOLDENSOURCE">
+                <Version min="8.8.1.01"/>
+            </Product>			
+            <Product id="starterset" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+            	<Version min="8.8.1.01"/>
+        	</Product>
+        	<Product id="startersetEXM" name="Starterset Exception Management" type="GOLDENSOURCE">
+            	<Version min="8.8.1.01"/>
+        	</Product>
+        </Prerequisites>
+
+		
+        <Locations>
+            <Location id="ReferenceInstall" type="EngineInstallation">
+                <Description>Filesystem location where the engine should be installed.</Description>
+                <Prerequisites>
+                    <and name="ReferencePrerequisites">
+                        <Prerequisite id="BaseComp"/>                        
+                    </and>
+                </Prerequisites>
+            </Location>
+            <Location id="DataModel" multiple="true" type="Database">
+                <Description>The database where the Datamodel was installed.</Description>
+                <Prerequisites>
+                    <Prerequisite id="EngineConfig"/>                                
+                    <or name="GSDM Datamodel" required="true">
+                        <Prerequisite id="datamodel"/>
+                        <Prerequisite id="datamodelvddb"/>                        
+                    </or>                    
+					<or name="BaseStarterSet" required="true">
+						<Prerequisite id="starterset"/>						
+					</or>
+                    <Prerequisite id="startersetEXM"/>
+                </Prerequisites>
+            </Location>
+        </Locations>
+
+        <Tasks>
+            <tgz description="Unzip package archive" destLoc="ReferenceInstall" name="Unzip Package" src="P72_Custom_Package.tar.gz" srcLoc="PackageZip"/>
+        </Tasks>
+    </Deployment>
+</PackageDescription>

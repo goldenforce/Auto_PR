@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-09-18 at 10:58:13 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Equities.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node displayName="Underlying ISIN" id="gB6XC1y6W1" name="IssueStatistic" type="segment">
+        <condition id="gB6YC1y6W1"><![CDATA[if ((OneHasValue(Underlying_ISIN))||((IsFieldDeleted(Underlying_ISIN) && Strcmp(Underlying_ISIN__Change_Flag, "Y")) && OneHasValue(Underlying_ISIN__Previous)))
+	return "IssueStatistic";
+else
+	return "";]]></condition>
+        <Node id="gB6ZC1y6W1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Underlying_ISIN))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="gB6aC1y6W1" name="COPY_FROM" type="attribute"/>
+        <Node id="gB6bC1y6W1" name="COPY_TO" type="attribute"/>
+        <Node id="gB6cC1y6W1" name="DUP_CHECK" type="attribute"/>
+        <Node id="gB6dC1y6W1" name="ENDDATEIND" type="attribute"/>
+        <Node id="gB6eC1y6W1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="gB6fC1y6W1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Underlying_ISIN))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="gB6gC1y6W1" name="LOOKUP" type="attribute"/>
+        <Node id="gB6hC1y6W1" name="MATCH" type="attribute"/>
+        <Node id="gB6iC1y6W1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="gB6jC1y6W1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="gB6kC1y6W1" name="ONLY" type="attribute"/>
+        <Node id="gB6lC1y6W1" name="PARENT_LINK" type="attribute"/>
+        <Node id="gB6mC1y6W1" name="PUBLISH" type="attribute"/>
+        <Node id="gB6nC1y6W1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="gB6oC1y6W1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="gB6pC1y6W1" name="TRANSLATE" type="attribute"/>
+        <Node id="gB6qC1y6W1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="gB6rC1y6W1" name="TSOPTION" type="attribute"/>
+        <Node id="gB6sC1y6W1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="gB6tC1y6W1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "IssueStatistic";]]></expr>
+        </Node>
+        <Node id="gB6uC1y6W1" name="DATASRCID" type="element">
+          <Node id="gB6vC1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6wC1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6xC1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6yC1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6zC1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6$C1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6%C1y6W1" name="DATASTATTYP" type="element">
+          <Node id="gB6@C1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6&amp;C1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6*C1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6-C1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6.C1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6/C1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="gB6(C1y6W1" name="DENOMCURRCDE" type="element">
+          <Node id="gB6)C1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6~C1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6?C1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6&lt;C1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6&gt;C1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB60D1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB61D1y6W1" name="ENDTMS" type="element">
+          <Node id="gB62D1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB63D1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB64D1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB65D1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB66D1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB67D1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB68D1y6W1" name="INSTRID" type="element">
+          <Node id="gB69D1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6AD1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6BD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6CD1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6DD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6ED1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6FD1y6W1" name="LASTCHGTMS" type="element">
+          <Node id="gB6GD1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6HD1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6ID1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6JD1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6KD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6LD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6MD1y6W1" name="LASTCHGUSRID" type="element">
+          <Node id="gB6ND1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6OD1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6PD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6QD1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6RD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6SD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6TD1y6W1" name="ORIGDATAPROVID" type="element">
+          <Node id="gB6UD1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6VD1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6WD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6XD1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6YD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6ZD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6aD1y6W1" name="STARTTMS" type="element">
+          <Node id="gB6bD1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6cD1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6dD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6eD1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6fD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6gD1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6hD1y6W1" name="STATCHARVALTXT" type="element">
+          <Node id="gB6iD1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6jD1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6kD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6lD1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6mD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6nD1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (OneHasValue(Underlying_ISIN))
+	return Underlying_ISIN;
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="gB6oD1y6W1" name="ENDTMS" type="element">
+          <Node id="gB6pD1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6qD1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6rD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6sD1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6tD1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6uD1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Underlying_ISIN))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="gB6vD1y6W1" name="STATDEFID" type="element">
+          <Node id="gB6wD1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6xD1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6yD1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6zD1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6$D1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6%D1y6W1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "MAINISIN";]]></expr>
+          </Node>
+        </Node>
+        <Node id="gB6@D1y6W1" name="STATID" type="element">
+          <Node id="gB6&amp;D1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6*D1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6-D1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6.D1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6/D1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6(D1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6)D1y6W1" name="STATINTVALNUM" type="element">
+          <Node id="gB6~D1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6?D1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6&lt;D1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6&gt;D1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB60E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB61E1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB62E1y6W1" name="STATVALCAMT" type="element">
+          <Node id="gB63E1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB64E1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB65E1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB66E1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB67E1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB68E1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB69E1y6W1" name="STATVALDTE" type="element">
+          <Node id="gB6AE1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6BE1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6CE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6DE1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6EE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6FE1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="gB6GE1y6W1" name="STATVALTMS" type="element">
+          <Node id="gB6HE1y6W1" name="DEFAULT" type="attribute"/>
+          <Node id="gB6IE1y6W1" name="ERR_LVL" type="attribute"/>
+          <Node id="gB6JE1y6W1" name="INSERT_ONLY" type="attribute"/>
+          <Node id="gB6KE1y6W1" name="STRIP_FAILED_DOMAIN" type="attribute"/>
+          <Node id="gB6LE1y6W1" name="TRANSLATE" type="attribute"/>
+          <Node id="gB6ME1y6W1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

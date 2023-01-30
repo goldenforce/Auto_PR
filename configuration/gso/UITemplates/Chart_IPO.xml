@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root chartName="IPO" chartTemplateId="5ADi91EW81" createdUser="nitin.bangar@point72.com" id="5AD&amp;91EW81" screenType="SYSTEMCHART">
+  <property>{"CHART_TYPE":"PIE","ENTITY_NAME":"BasicCorporateAction","Y_FIELD":"BasicCorporateAction.EventSummary.P72CAREGION","SHOW_3D":false,"DRILL_TOP":false,"SHOW_DONUT":false,"Y_GROUP_FIELD":["BasicCorporateAction.EventSummary.P72ISSTYP"],"Y_GROUP_FIELD_TYPE":["COLUMN"],"ADDON_CONFIG":{"BasicCorporateAction.EventSummary.P72CAREGION":{"CHART_TYPE":"PIE","SKIP_GROUP_BY_CLAUSE":"N"},"BasicCorporateAction.EventSummary.P72ISSTYP":{"CHART_TYPE":"COLUMN","SKIP_GROUP_BY_CLAUSE":"N"}},"OPEN_IN_EXCEL":false,"SHOW_SPLINE":false,"SHOW_GRADIENT":false,"SKIP_GROUP_BY_CLAUSE":false,"SIMPLE_DATA_STORE":false,"TOGGLE_DATA_SERIES":false,"AGGREGATION":true}</property>
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+  <Subscriptions>
+    <Subscription description="profile to publish region" id="008eWps0hG5AW003" name="GS_FLAT_REGION" ruleText="0 0 0 1 1 ? *" sourceId="" type="BATCH" workflow="PublishingWorkflow">
+      <destinations>
+        <destination id="++8ez2RmhG5AW0DB" outputType="JSON" participantRules="">
+          <downstream connectionFactory="jms/KafkaConnectionFactory1" deadline="" deadlineTime="" description="GeoUnitKafkaOut" downstreamDestinationType="JMS" downstreamValue="jms/topic/gs-out-publish-country" dwdfOid="++8ez2RmhG5AW0Cp" id="++8ez2RmhG5AW0Cq" name="GeoUnitKafkaOut" preferredLanguageCode="" preferredVendorId="" subscriberType="" typeFlag="" validityPriority="null"/>
+        </destination>
+      </destinations>
+      <messageTypes/>
+      <filters>
+        <filter dataSourceId="" deltaMode="NONE" entity="++4hOgWS2etqm000" entityCaption="Geographical Unit" entityName="GeographicalUnit" entityType="BUSINESS_ENTITY" filterEQLJsonText="" filterRuleText="&lt;sql&gt;UPPER(prnt_gu_typ) = 'REGION' and prnt_gu_cnt=1 and end_tms is null and (data_stat_typ ='ACTIVE' or data_stat_typ is null)&lt;/sql&gt;" id="008eWps0hG5AW001" publishingModelName="GeographicalUnit" ruleText="" screen="d46401QJG1" tableType="GUNT">
+          <formats>
+            <format destination="++8ez2RmhG5AW0DB" filter="008eWps0hG5AW001" id="++8ez2RmhG5AW0DD" outputType="" resource="GB9101(PG1">
+              <resource binary="N" compressed="N" description="" id="GB9101(PG1" type="mdx" uri="db://resource/mapping/Custom/GeoUnit_Translate_JSONToJSON.mdx"/>
+            </format>
+          </formats>
+        </filter>
+      </filters>
+    </Subscription>
+  </Subscriptions>
+</root>

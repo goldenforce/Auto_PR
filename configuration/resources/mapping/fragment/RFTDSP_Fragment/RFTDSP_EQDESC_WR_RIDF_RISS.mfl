@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MappingDef type="OPF" version="1.0">
+  <Options>
+    <Option key="MappingComment"/>
+    <Option key="MappingVersion">1.0.0.0</Option>
+    <Option key="MappingAuthor"/>
+    <Option key="MessageTranslatorVersion">8.1.1.1</Option>
+    <Option key="LastChangedTms">2020-12-16 at 12:06:00 IST</Option>
+    <Option key="MappingDesignerVersion">8.7.0.25</Option>
+    <Option key="BaseMDX">./../../reuters/RFTDSP_Warrants.mdx</Option>
+  </Options>
+  <Output>
+    <MappingFragments vendorType="VARIABLE">
+      <Node id="$xE091eQW1" name="RelatedIssueDefinition" type="segment">
+        <condition id="$xE391eQW1"><![CDATA[if ((OneHasValue(Warrant_Underlying_RIC))||((IsFieldDeleted(Warrant_Underlying_RIC) && Strcmp(Warrant_Underlying_RIC__Change_Flag, "Y")) && OneHasValue(Warrant_Underlying_RIC__Previous)))
+	return "RelatedIssueDefinition";
+else
+	return "";]]></condition>
+        <Node id="$xE491eQW1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return "REFERENCE";
+else
+	return "UNKNOWN";
+]]></expr>
+        </Node>
+        <Node id="$xE591eQW1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "RelatedIssueDefinition";]]></expr>
+        </Node>
+        <Node id="$xE691eQW1" name="COPY_FROM" type="attribute"/>
+        <Node id="$xE791eQW1" name="COPY_TO" type="attribute"/>
+        <Node id="$xE891eQW1" name="ENDDATEIND" type="attribute"/>
+        <Node id="$xE991eQW1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return "N";
+else
+	return "";
+]]></expr>
+        </Node>
+        <Node id="$xEA91eQW1" name="MATCH" type="attribute">
+          <expr><![CDATA[return "RIDF_MATCH_1";]]></expr>
+        </Node>
+        <Node id="$xEB91eQW1" name="DUP_CHECK" type="attribute"/>
+        <Node id="$xEC91eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="$xED91eQW1" name="LOOKUP" type="attribute"/>
+        <Node id="$xEE91eQW1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="$xEF91eQW1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="$xEG91eQW1" name="ONLY" type="attribute"/>
+        <Node id="$xEH91eQW1" name="PARENT_LINK" type="attribute"/>
+        <Node id="$xEI91eQW1" name="PUBLISH" type="attribute"/>
+        <Node id="$xEJ91eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="$xEK91eQW1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="$xEL91eQW1" name="TRANSLATE" type="attribute"/>
+        <Node id="$xEM91eQW1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="$xEN91eQW1" name="TSOPTION" type="attribute"/>
+        <Node id="$xEO91eQW1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="$xEP91eQW1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="$xEQ91eQW1" name="ACTLCNTRCTSIZECAMT" type="element">
+          <Node id="$xER91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xES91eQW1" name="ADVANCENOTICEQTY" type="element">
+          <Node id="$xET91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEU91eQW1" name="BARRIERPROTECTCPCT" type="element">
+          <Node id="$xEV91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEW91eQW1" name="BUFFERPROTECTCPCT" type="element">
+          <Node id="$xEX91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEY91eQW1" name="BUYSELLTYP" type="element">
+          <Node id="$xEZ91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEa91eQW1" name="CALLPUTTYP" type="element">
+          <Node id="$xEb91eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return Put_Call_Indicator;]]></expr>
+          </Node>
+          <Node id="$xEc91eQW1" name="TRANSLATE" type="attribute">
+            <expr><![CDATA[return "YES";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEd91eQW1" name="CAPIND" type="element">
+          <Node id="$xEe91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEf91eQW1" name="CAPTYP" type="element">
+          <Node id="$xEg91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEh91eQW1" name="CNTRCTADJSTIND" type="element">
+          <Node id="$xEi91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEj91eQW1" name="CNVRCOSTCAMT" type="element">
+          <Node id="$xEk91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEl91eQW1" name="CNVRCRITTYP" type="element">
+          <Node id="$xEm91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEn91eQW1" name="CNVRCURRCDE" type="element">
+          <Node id="$xEo91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEp91eQW1" name="CNVREXERCPRC" type="element">
+          <Node id="$xEq91eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (AllHaveValue(Strike_Price_Multiplier,Strike_Price))
+	return String2Float(Strike_Price_Multiplier, 0) * String2Float(Strike_Price, 0);
+else if ((IsFieldDeleted(Strike_Price_Multiplier) && Strcmp(Strike_Price_Multiplier__Change_Flag, "Y")) && OneHasValue(Strike_Price_Multiplier__Previous))
+	return Strike_Price_Multiplier;
+else
+	return Strike_Price;
+	]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEr91eQW1" name="CNVREXERFEATTYP" type="element">
+          <Node id="$xEs91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEt91eQW1" name="CNVREXERPRCMETHTXT" type="element">
+          <Node id="$xEu91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEv91eQW1" name="CNVREXERPRCUNITTYP" type="element">
+          <Node id="$xEw91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEx91eQW1" name="CNVREXERTERMSTYP" type="element">
+          <Node id="$xEy91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEz91eQW1" name="CNVREXERTYP" type="element">
+          <Node id="$xE$91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE%91eQW1" name="CONTINGENTCNVRTYP" type="element">
+          <Node id="$xE@91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE&amp;91eQW1" name="CSAIND" type="element">
+          <Node id="$xE*91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE-91eQW1" name="CSAREQCOLLTYP" type="element">
+          <Node id="$xE.91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE/91eQW1" name="CSARTNGTRIGGERIND" type="element">
+          <Node id="$xE(91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE)91eQW1" name="DATASRCID" type="element">
+          <Node id="$xE~91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE?91eQW1" name="DATASTATTYP" type="element">
+          <Node id="$xE&lt;91eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE&gt;91eQW1" name="DOWNSIDEPRTCPCT" type="element">
+          <Node id="$xE0A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE1A1eQW1" name="ENDTMS" type="element">
+          <Node id="$xE2A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE3A1eQW1" name="EXERFEECAMT" type="element">
+          <Node id="$xE4A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE5A1eQW1" name="EXERPAYMETHTYP" type="element">
+          <Node id="$xE6A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE7A1eQW1" name="EXERTYP" type="element">
+          <Node id="$xE8A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE9A1eQW1" name="FLOORIND" type="element">
+          <Node id="$xEAA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEBA1eQW1" name="FLOORTYP" type="element">
+          <Node id="$xECA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEDA1eQW1" name="FREEOFCHARGEIND" type="element">
+          <Node id="$xEEA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEFA1eQW1" name="INSTRID" type="element">
+          <Node id="$xEGA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEHA1eQW1" name="INTERESTCMPNTIND" type="element">
+          <Node id="$xEIA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEJA1eQW1" name="ISSRELFQDYTYP" type="element">
+          <Node id="$xEKA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xELA1eQW1" name="ISSRELFQQTY" type="element">
+          <Node id="$xEMA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xENA1eQW1" name="ISSRELFQSPTYP" type="element">
+          <Node id="$xEOA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEPA1eQW1" name="LASTCHGTMS" type="element">
+          <Node id="$xEQA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xERA1eQW1" name="LASTCHGUSRID" type="element">
+          <Node id="$xESA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xETA1eQW1" name="LEGNUM" type="element">
+          <Node id="$xEUA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEVA1eQW1" name="MANDVOLUNIND" type="element">
+          <Node id="$xEWA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEXA1eQW1" name="MNEXERCAMT" type="element">
+          <Node id="$xEYA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEZA1eQW1" name="MNEXERCPRC" type="element">
+          <Node id="$xEaA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEbA1eQW1" name="MNEXERCQTY" type="element">
+          <Node id="$xEcA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEdA1eQW1" name="MODELTIERTYP" type="element">
+          <Node id="$xEeA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEfA1eQW1" name="PRCDECPRECNUM" type="element">
+          <Node id="$xEgA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEhA1eQW1" name="PRCFIXMETHTYP" type="element">
+          <Node id="$xEiA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEjA1eQW1" name="PRCMODELTYP" type="element">
+          <Node id="$xEkA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xElA1eQW1" name="PRCUNITTYP" type="element">
+          <Node id="$xEmA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEnA1eQW1" name="PRCUTDENOMCAMT" type="element">
+          <Node id="$xEoA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEpA1eQW1" name="PROTCTBUYSELLTYP" type="element">
+          <Node id="$xEqA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xErA1eQW1" name="RELDESC" type="element">
+          <Node id="$xEsA1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "Warrant";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEtA1eQW1" name="RELTYP" type="element">
+          <Node id="$xEuA1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "WARRANT";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEvA1eQW1" name="RLDISSFEATID" type="element">
+          <Node id="$xEwA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xExA1eQW1" name="RLDRIDFPURPTYP" type="element">
+          <Node id="$xEyA1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEzA1eQW1" name="RLDRIDFSQNUM" type="element">
+          <Node id="$xE$A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE%A1eQW1" name="RLDRLDISSFEATID" type="element">
+          <Node id="$xE@A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE&amp;A1eQW1" name="SPONSOREDIND" type="element">
+          <Node id="$xE*A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE-A1eQW1" name="STARTTMS" type="element">
+          <Node id="$xE.A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE/A1eQW1" name="SYNTHETICIND" type="element">
+          <Node id="$xE(A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE)A1eQW1" name="TICK1PTVALCAMT" type="element">
+          <Node id="$xE~A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE?A1eQW1" name="TICK1PTVALTXT" type="element">
+          <Node id="$xE&lt;A1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE&gt;A1eQW1" name="TICKBASECRTE" type="element">
+          <Node id="$xE0B1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE1B1eQW1" name="TICKSZCAMT" type="element">
+          <Node id="$xE2B1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE3B1eQW1" name="TICKVALCAMT" type="element">
+          <Node id="$xE4B1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE5B1eQW1" name="TOFFTYP" type="element">
+          <Node id="$xE6B1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE7B1eQW1" name="UITTYP" type="element">
+          <Node id="$xE8B1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE9B1eQW1" name="UNDERLYCNTRCTVALCAMT" type="element">
+          <Node id="$xEAB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEBB1eQW1" name="UNDERLYCURRCDE" type="element">
+          <Node id="$xECB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEDB1eQW1" name="UNDERLYINSTRTYP" type="element">
+          <Node id="$xEEB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEFB1eQW1" name="UNDERLYISSID" type="element">
+          <Node id="$xEGB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEHB1eQW1" name="UNDERLYMGTTYP" type="element">
+          <Node id="$xEIB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEJB1eQW1" name="UNDERLYSWAPTYP" type="element">
+          <Node id="$xEKB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xELB1eQW1" name="UPSIDEPRTCPCT" type="element">
+          <Node id="$xEMB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xENB1eQW1" name="XPDENDAJBASTYP" type="element">
+          <Node id="$xEOB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEPB1eQW1" name="XPDENDDYAJQTY" type="element">
+          <Node id="$xEQB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xERB1eQW1" name="XPDENDMTHAJQTY" type="element">
+          <Node id="$xESB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xETB1eQW1" name="XPDENDTMS" type="element">
+          <Node id="$xEUB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEVB1eQW1" name="XPDFQDYTYP" type="element">
+          <Node id="$xEWB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEXB1eQW1" name="XPDFQQTY" type="element">
+          <Node id="$xEYB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEZB1eQW1" name="XPDFQSPTYP" type="element">
+          <Node id="$xEaB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEbB1eQW1" name="XPDSTARTTMS" type="element">
+          <Node id="$xEcB1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+      <Node id="$xE291eQW1" name="RelatedIssue" type="segment">
+        <condition id="$xEdB1eQW1"><![CDATA[if ((OneHasValue(Warrant_Underlying_RIC))||((IsFieldDeleted(Warrant_Underlying_RIC) && Strcmp(Warrant_Underlying_RIC__Change_Flag, "Y")) && OneHasValue(Warrant_Underlying_RIC__Previous)))
+	return "RelatedIssue";
+else
+	return "";]]></condition>
+        <Node id="$xEeB1eQW1" name="ACTION" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return "UPDATE";
+else
+	return "UNKNOWN";]]></expr>
+        </Node>
+        <Node id="$xEfB1eQW1" name="TYPE" type="attribute">
+          <expr><![CDATA[return "RelatedIssue";]]></expr>
+        </Node>
+        <Node id="$xEgB1eQW1" name="COPY_FROM" type="attribute"/>
+        <Node id="$xEhB1eQW1" name="COPY_TO" type="attribute"/>
+        <Node id="$xEiB1eQW1" name="DUP_CHECK" type="attribute"/>
+        <Node id="$xEjB1eQW1" name="ENDDATEIND" type="attribute"/>
+        <Node id="$xEkB1eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+        <Node id="$xElB1eQW1" name="ERROR" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return "N";
+else
+	return "";]]></expr>
+        </Node>
+        <Node id="$xEmB1eQW1" name="LOOKUP" type="attribute"/>
+        <Node id="$xEnB1eQW1" name="MATCH" type="attribute">
+          <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return "";
+else
+	return "RISS_MATCH_1";]]></expr>
+        </Node>
+        <Node id="$xEoB1eQW1" name="NESTED_ERR_LVL" type="attribute"/>
+        <Node id="$xEpB1eQW1" name="NESTED_ERR_TXT" type="attribute"/>
+        <Node id="$xEqB1eQW1" name="ONLY" type="attribute"/>
+        <Node id="$xErB1eQW1" name="PARENT_LINK" type="attribute"/>
+        <Node id="$xEsB1eQW1" name="PUBLISH" type="attribute"/>
+        <Node id="$xEtB1eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+        <Node id="$xEuB1eQW1" name="START_TMS_MATCH" type="attribute"/>
+        <Node id="$xEvB1eQW1" name="TRANSLATE" type="attribute"/>
+        <Node id="$xEwB1eQW1" name="TSATTRIBUTE" type="attribute"/>
+        <Node id="$xExB1eQW1" name="TSOPTION" type="attribute"/>
+        <Node id="$xEyB1eQW1" name="TSOVERLAPOVERRIDE" type="attribute"/>
+        <Node id="$xEzB1eQW1" name="TSTOLERANCE" type="attribute"/>
+        <Node id="$xE$B1eQW1" name="IssueIdentifier" type="segment">
+          <condition id="$xE%B1eQW1"><![CDATA[ if (OneHasValue(Warrant_Underlying_RIC))
+	return "IssueIdentifier";
+else
+	return "";]]></condition>
+          <Node id="$xE@B1eQW1" name="ACTION" type="attribute">
+            <expr><![CDATA[return "REFERENCE";]]></expr>
+          </Node>
+          <Node id="$xE&amp;B1eQW1" name="COPY_FROM" type="attribute"/>
+          <Node id="$xE*B1eQW1" name="COPY_TO" type="attribute">
+            <expr><![CDATA[return "INSTR_ID";]]></expr>
+          </Node>
+          <Node id="$xE-B1eQW1" name="DUP_CHECK" type="attribute"/>
+          <Node id="$xE.B1eQW1" name="ENDDATEIND" type="attribute"/>
+          <Node id="$xE/B1eQW1" name="ERRLVL_UNIQ_CHK" type="attribute"/>
+          <Node id="$xE(B1eQW1" name="ERROR" type="attribute"/>
+          <Node id="$xE)B1eQW1" name="LOOKUP" type="attribute"/>
+          <Node id="$xE~B1eQW1" name="MATCH" type="attribute">
+            <expr><![CDATA[return "ISID3_ID_CTXT_ISS_ID";]]></expr>
+          </Node>
+          <Node id="$xE?B1eQW1" name="PARENT_LINK" type="attribute"/>
+          <Node id="$xE&lt;B1eQW1" name="PUBLISH" type="attribute"/>
+          <Node id="$xE&gt;B1eQW1" name="SEGPROCESSEDIND" type="attribute"/>
+          <Node id="$xE0C1eQW1" name="START_TMS_MATCH" type="attribute"/>
+          <Node id="$xE1C1eQW1" name="TRANSLATE" type="attribute"/>
+          <Node id="$xE2C1eQW1" name="TSATTRIBUTE" type="attribute"/>
+          <Node id="$xE3C1eQW1" name="TSOPTION" type="attribute"/>
+          <Node id="$xE4C1eQW1" name="TSTOLERANCE" type="attribute"/>
+          <Node id="$xE5C1eQW1" name="TYPE" type="attribute">
+            <expr><![CDATA[return "IssueIdentifier";]]></expr>
+          </Node>
+          <Node id="y*BX01a3m1" name="NESTED_ERR_LVL" type="attribute">
+            <expr><![CDATA[return "WARNING";]]></expr>
+          </Node>
+          <Node id="y*BY01a3m1" name="NESTED_ERR_TXT" type="attribute">
+            <expr><![CDATA[return Strcat("5|CONCTNS|NESTED|ISSPRTRLTYP|UNDLYING|IDCTXTTYP|RIC|ISSID|",
+		Strcat(Warrant_Underlying_RIC, "|DATASRCID|RFTDSP"));]]></expr>
+          </Node>
+          <Node id="$xE6C1eQW1" name="DATASRCID" type="element">
+            <Node id="$xE7C1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xE8C1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xE9C1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEAC1eQW1" name="DATASTATTYP" type="element">
+            <Node id="$xEBC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xECC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEDC1eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "ACTIVE";]]></expr>
+            </Node>
+          </Node>
+          <Node id="$xEEC1eQW1" name="ENDTMS" type="element">
+            <Node id="$xEFC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEGC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEHC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEIC1eQW1" name="ERGONOMICSYMBOLIND" type="element">
+            <Node id="$xEJC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEKC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xELC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEMC1eQW1" name="IDCTXTTYP" type="element">
+            <Node id="$xENC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEOC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEPC1eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[return "RIC";]]></expr>
+            </Node>
+          </Node>
+          <Node id="$xEQC1eQW1" name="INSTRID" type="element">
+            <Node id="$xERC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xESC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xETC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEUC1eQW1" name="INSTRSYMBOLSTATTYP" type="element">
+            <Node id="$xEVC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEWC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEXC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEYC1eQW1" name="ISIDOID" type="element">
+            <Node id="$xEZC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEaC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEbC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEcC1eQW1" name="ISSID" type="element">
+            <Node id="$xEdC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEeC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEfC1eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return Warrant_Underlying_RIC__Previous;
+else
+	return Warrant_Underlying_RIC;]]></expr>
+            </Node>
+          </Node>
+          <Node id="$xEgC1eQW1" name="ISSUSAGETYP" type="element">
+            <Node id="$xEhC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEiC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEjC1eQW1" name="VALUE" type="attribute">
+              <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return Warrant_Underlying_RIC__Previous;
+else
+	return Warrant_Underlying_RIC;]]></expr>
+            </Node>
+          </Node>
+          <Node id="$xEkC1eQW1" name="LASTCHGTMS" type="element">
+            <Node id="$xElC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEmC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEnC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEoC1eQW1" name="LASTCHGUSRID" type="element">
+            <Node id="$xEpC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEqC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xErC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEsC1eQW1" name="LISTINGSYMBOLIND" type="element">
+            <Node id="$xEtC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEuC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEvC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEwC1eQW1" name="MKTID" type="element">
+            <Node id="$xExC1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xEyC1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEzC1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xE$C1eQW1" name="MKTIDCTXTTYP" type="element">
+            <Node id="$xE%C1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xE@C1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xE&amp;C1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xE*C1eQW1" name="MKTNME" type="element">
+            <Node id="$xE-C1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xE.C1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xE/C1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xE(C1eQW1" name="MKTOID" type="element">
+            <Node id="$xE)C1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xE~C1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xE?C1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xE&lt;C1eQW1" name="MULTISEDOLSYMBOLIND" type="element">
+            <Node id="$xE&gt;C1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xE0D1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xE1D1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xE2D1eQW1" name="STARTTMS" type="element">
+            <Node id="$xE3D1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xE4D1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xE5D1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xE6D1eQW1" name="TRADERSYMBOLIND" type="element">
+            <Node id="$xE7D1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xE8D1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xE9D1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+          <Node id="$xEAD1eQW1" name="TRDNGCURRCDE" type="element">
+            <Node id="$xEBD1eQW1" name="INSERT_ONLY" type="attribute"/>
+            <Node id="$xECD1eQW1" name="TRANSLATE" type="attribute"/>
+            <Node id="$xEDD1eQW1" name="VALUE" type="attribute"/>
+          </Node>
+        </Node>
+        <Node id="$xEED1eQW1" name="ASSIMILATIONASSUMEDIND" type="element">
+          <Node id="$xEFD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEGD1eQW1" name="ASSIMILATIONTMS" type="element">
+          <Node id="$xEHD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEID1eQW1" name="BASKETWGTCAMT" type="element">
+          <Node id="$xEJD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEKD1eQW1" name="BASKETWGTTYP" type="element">
+          <Node id="$xELD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEMD1eQW1" name="CNVRFACTORCRTE" type="element">
+          <Node id="$xEND1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEOD1eQW1" name="COMPONENTINSTRCQTY" type="element">
+          <Node id="$xEPD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEQD1eQW1" name="COMPONENTSEPARATIONIND" type="element">
+          <Node id="$xERD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xESD1eQW1" name="COMPULSORYSEPARATIONTMS" type="element">
+          <Node id="$xETD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEUD1eQW1" name="DATASRCID" type="element">
+          <Node id="$xEVD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEWD1eQW1" name="DATASTATTYP" type="element">
+          <Node id="$xEXD1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ACTIVE";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEYD1eQW1" name="ENDTMS" type="element">
+          <Node id="$xEZD1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[if (IsFieldDeleted(Warrant_Underlying_RIC))
+	return TimeStamp();
+else
+	return "";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEaD1eQW1" name="EVAMTBASTYP" type="element">
+          <Node id="$xEbD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEcD1eQW1" name="EVAMTTYP" type="element">
+          <Node id="$xEdD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEeD1eQW1" name="EVBASPRTCAMT" type="element">
+          <Node id="$xEfD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEgD1eQW1" name="EVPARTCAMT" type="element">
+          <Node id="$xEhD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEiD1eQW1" name="EXERCRTE" type="element">
+          <Node id="$xEjD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEkD1eQW1" name="EXERRTETYP" type="element">
+          <Node id="$xElD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEmD1eQW1" name="FRACSETTLETYP" type="element">
+          <Node id="$xEnD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEoD1eQW1" name="INITHEDGECAMT" type="element">
+          <Node id="$xEpD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEqD1eQW1" name="INITHEDGEEFFTMS" type="element">
+          <Node id="$xErD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEsD1eQW1" name="INSTRID" type="element">
+          <Node id="$xEtD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEuD1eQW1" name="ISIDOID" type="element">
+          <Node id="$xEvD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEwD1eQW1" name="ISSPARTRLTYP" type="element">
+          <Node id="$xExD1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "UNDLYING";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xEyD1eQW1" name="ISSPARTSUBRLTYP" type="element">
+          <Node id="$xEzD1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE$D1eQW1" name="ISSUANCEDELTACRTE" type="element">
+          <Node id="$xE%D1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE@D1eQW1" name="ISSUANCEDELTAEFFTMS" type="element">
+          <Node id="$xE&amp;D1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE*D1eQW1" name="LASTCHGTMS" type="element">
+          <Node id="$xE-D1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE.D1eQW1" name="LASTCHGUSRID" type="element">
+          <Node id="$xE/D1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE(D1eQW1" name="MKTOID" type="element">
+          <Node id="$xE)D1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE~D1eQW1" name="PARTNUM" type="element">
+          <Node id="$xE?D1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE&lt;D1eQW1" name="PARTRATIOCRTE" type="element">
+          <Node id="$xE&gt;D1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE0E1eQW1" name="PARTUNITSTYP" type="element">
+          <Node id="$xE1E1eQW1" name="VALUE" type="attribute">
+            <expr><![CDATA[return "ALL";]]></expr>
+          </Node>
+        </Node>
+        <Node id="$xE2E1eQW1" name="PRININCIND" type="element">
+          <Node id="$xE3E1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE4E1eQW1" name="RISSOID" type="element">
+          <Node id="$xE5E1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE6E1eQW1" name="RLDISSFEATID" type="element">
+          <Node id="$xE7E1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xE8E1eQW1" name="RLDMSGTYP" type="element">
+          <Node id="$xE9E1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEAE1eQW1" name="SEPARATIONSTARTTMS" type="element">
+          <Node id="$xEBE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xECE1eQW1" name="SEPARATIONSTRTDTEIND" type="element">
+          <Node id="$xEDE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEEE1eQW1" name="STARTTMS" type="element">
+          <Node id="$xEFE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEGE1eQW1" name="UDRLYASSETIDCTXTTYP" type="element">
+          <Node id="$xEHE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEIE1eQW1" name="UDRLYASSETISSID" type="element">
+          <Node id="$xEJE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEKE1eQW1" name="UDRLYASSETNME" type="element">
+          <Node id="$xELE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEME1eQW1" name="UDRLYASSETSUBTYP" type="element">
+          <Node id="$xENE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEOE1eQW1" name="UDRLYASSETTENORDESC" type="element">
+          <Node id="$xEPE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEQE1eQW1" name="UDRLYASSETTYP" type="element">
+          <Node id="$xERE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xESE1eQW1" name="UDRLYCURRCDE" type="element">
+          <Node id="$xETE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEUE1eQW1" name="UDRLYMKTNME" type="element">
+          <Node id="$xEVE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEWE1eQW1" name="UDRLYTENORTYP" type="element">
+          <Node id="$xEXE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEYE1eQW1" name="UDRLYTICK1PTVALTXT" type="element">
+          <Node id="$xEZE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEaE1eQW1" name="UDRLYTICKSZCAMT" type="element">
+          <Node id="$xEbE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEcE1eQW1" name="UNDERLYSETTLESTATDESC" type="element">
+          <Node id="$xEdE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+        <Node id="$xEeE1eQW1" name="UNDERLYSETTLESTATTYP" type="element">
+          <Node id="$xEfE1eQW1" name="VALUE" type="attribute"/>
+        </Node>
+      </Node>
+    </MappingFragments>
+    <OutputDef/>
+  </Output>
+</MappingDef>

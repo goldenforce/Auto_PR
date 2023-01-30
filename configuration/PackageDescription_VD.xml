@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackageDescription custom="true" minInstallCenterVersion="8.8.1.01" version="1.0" xsi:noNamespaceSchemaLocation="PackageDescription.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" destination="VendorDetail">
+	<Package type="full" name="Point72_Custom_Package_VDDB" version="8.8.1.09" reinstallable="true">
+		<Description>Point72_Custom_Package_VDDB</Description>
+		<Component>Point72_Custom_Package_VDDB</Component>
+		<Content>
+			<File type="Package" path="P72_Custom_Package.tar.gz"></File>
+		</Content>
+	</Package>
+	<Deployment>
+		<Prerequisites>
+			
+			<Product id="VDDB" type="GOLDENSOURCE" name="Datamodel VDDB">
+				<Version min="8.8.1.01"/>
+			</Product>
+
+			<Product id="Starterset" name="Starterset GSDM VDDB" type="GOLDENSOURCE">
+				<Version min="8.8.1.01"/>
+			</Product>
+			<!--
+			<Product id="Ora19" name="Oracle Server Version" type="ORACLE_SERVER">
+				<Version min="19.0.0.0" max="19.0.x.x"/>
+			</Product>-->
+		</Prerequisites>
+
+		<Locations>			
+			<Location id="VDDBDataModel" type="Database" multiple="true">
+				<Description>The destination where the VDDB Datamodel was installed.</Description>
+				<Prerequisites>
+					<!--<Prerequisite id="VDDB"/>-->
+					<Prerequisite id="Starterset"/>
+					<!--<Prerequisite id="Ora19" required="true"/>-->
+				</Prerequisites>
+			</Location>			
+		</Locations>
+
+		<Tasks>
+			<!--<unzip description="Unzip package archive temporarily" name="Unzip Package" src="package.zip" srcLoc="PackageZip"/>-->
+			<tgz description="Unzip package archive" dest="/" name="Unzip Package" src="P72_Custom_Package.tar.gz" srcLoc="PackageZip"/>
+			<!-- Replace environment variable in the sql file for roles-->
+			<replace id="replace_pkg" name="Replace Environment Variables" description="Replaces the Environment Variables with your specified value" src="sql/DDL/" evalLoc="VDDBDataModel" dest="tmp_out_vddb_replaced/sql/DDL/" includes="*.sql">
+					<token name="#VD_DBOWNER#" path="$OWNER"/>
+					<token name="#VD_APPUSER#" path="$APPUSER"/>		
+				</replace>
+
+			<!-- END - Replace environment variable in the sql file for roles-->
+	
+			
+			<!-- Customized SQL DML Installation VDDB-->
+			<!--
+			<sql id="P72_DSID.sql" name="VDDB - Data Setup - P72_DSID.sql" description="VDDB - Data Setup - P72_DSID.sql" src="sql/DML/P72_DSID.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_MKEY.sql" name="VDDB - Data Setup - P72_MKEY.sql" description="VDDB - Data Setup - P72_MKEY.sql" src="sql/DML/P72_MKEY.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDCS.sql" name="VDDB - Data Setup - P72_IDCS.sql" description="VDDB - Data Setup - P72_IDCS.sql" src="sql/DML/P72_IDCS.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV.sql" name="VDDB - Data Setup - P72_IDMV.sql" description="VDDB - Data Setup - P72_IDMV.sql" src="sql/DML/P72_IDMV.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_BARRA.sql" name="VDDB - Data Setup - P72_IDMV_BARRA.sql" description="VDDB - Data Setup - P72_IDMV_BARRA.sql" src="sql/DML/P72_IDMV_BARRA.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_GvKey.sql" name="VDDB - Data Setup - P72_IDMV_GvKey.sql" description="VDDB - Data Setup - P72_IDMV_GvKey.sql" src="sql/DML/P72_IDMV_GvKey.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_IBES.sql" name="VDDB - Data Setup - P72_IDMV_IBES.sql" description="VDDB - Data Setup - P72_IDMV_IBES.sql" src="sql/DML/P72_IDMV_IBES.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_PointId.sql" name="VDDB - Data Setup - P72_IDMV_PointId.sql" description="VDDB - Data Setup - P72_IDMV_PointId.sql" src="sql/DML/P72_IDMV_PointId.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_PositionId.sql" name="VDDB - Data Setup - P72_IDMV_PositionId.sql" description="VDDB - Data Setup - P72_IDMV_PositionId.sql" src="sql/DML/P72_IDMV_PositionId.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_Starmine.sql" name="VDDB - Data Setup - P72_IDMV_Starmine.sql" description="VDDB - Data Setup - P72_IDMV_Starmine.sql" src="sql/DML/P72_IDMV_Starmine.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_WorldScope_VDDB.sql" name="VDDB - Data Setup - P72_IDMV_WorldScope_VDDB.sql" description="VDDB - Data Setup - P72_IDMV_WorldScope_VDDB.sql" src="sql/DML/P72_IDMV_WorldScope_VDDB.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_INCS.sql" name="VDDB - Data Setup - P72_INCS.sql" description="VDDB - Data Setup - P72_INCS.sql" src="sql/DML/P72_INCS.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_INCL.sql" name="VDDB - Data Setup - P72_INCL.sql" description="VDDB - Data Setup - P72_INCL.sql" src="sql/DML/P72_INCL.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_EINC.sql" name="VDDB - Data Setup - P72_EINC.sql" description="VDDB - Data Setup - P72_EINC.sql" src="sql/DML/P72_EINC.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_STDF.sql" name="VDDB - Data Setup - P72_STDF.sql" description="VDDB - Data Setup - P72_STDF.sql" src="sql/DML/P72_STDF.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_GUID_BARRA.sql" name="VDDB - Data Setup - P72_GUID_BARRA.sql" description="VDDB - Data Setup - P72_GUID_BARRA.sql" src="sql/DML/P72_GUID_BARRA.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_GUID_IBES_IDK.sql" name="VDDB - Data Setup - P72_GUID_IBES_IDK.sql" description="VDDB - Data Setup - P72_GUID_IBES_IDK.sql" src="sql/DML/P72_GUID_IBES_IDK.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_GUID_Starmine.sql" name="VDDB - Data Setup - P72_GUID_Starmine.sql" description="VDDB - Data Setup - P72_GUID_Starmine.sql" src="sql/DML/P72_GUID_Starmine.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_GUID_WorldScope_VDDB.sql" name="VDDB - Data Setup - P72_GUID_WorldScope_VDDB.sql" description="VDDB - Data Setup - P72_GUID_WorldScope_VDDB.sql" src="sql/DML/P72_GUID_WorldScope_VDDB.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_BNSY.sql" name="VDDB - Data Setup - P72_BNSY.sql" description="VDDB - Data Setup - P72_BNSY.sql" src="sql/DML/P72_BNSY.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_Equity_Form_ISTY.sql" name="VDDB - Data Setup - P72_Equity_Form_ISTY.sql" description="VDDB - Data Setup - P72_Equity_Form_ISTY.sql" src="sql/DML/P72_Equity_Form_ISTY.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_FT_T_DSRC.sql" name="VDDB - Data Setup - P72_FT_T_DSRC.sql" description="VDDB - Data Setup - P72_FT_T_DSRC.sql" src="sql/DML/P72_FT_T_DSRC.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_FT_T_MMRL.sql" name="VDDB - Data Setup - P72_FT_T_MMRL.sql" description="VDDB - Data Setup - P72_FT_T_MMRL.sql" src="sql/DML/P72_FT_T_MMRL.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_VRCD.sql" name="VDDB - Data Setup - P72_IDMV_VRCD.sql" description="VDDB - Data Setup - P72_IDMV_VRCD.sql" src="sql/DML/P72_IDMV_VRCD.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDCS_Local.sql" name="VDDB - Data Setup - P72_IDCS_Local.sql" description="VDDB - Data Setup - P72_IDCS_Local.sql" src="sql/DML/P72_IDCS_Local.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_CleanupScripts.sql" name="VDDB - Data Setup - P72_CleanupScripts.sql" description="VDDB - Data Setup - P72_CleanupScripts.sql" src="sql/DML/P72_CleanupScripts.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_IDMV_P72BBGLOBAL.sql" name="VDDB - Data Setup - P72_IDMV_P72BBGLOBAL.sql" description="VDDB - Data Setup - P72_IDMV_P72BBGLOBAL.sql" src="sql/DML/P72_IDMV_P72BBGLOBAL.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72UDF_MUST_MKEY.sql" name="VDDB - Data Setup - P72UDF_MUST_MKEY.sql" description="VDDB - Data Setup - P72UDF_MUST_MKEY.sql" src="sql/DML/P72UDF_MUST_MKEY.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>-->
+			
+			<sql id="P72_STDF_FixedIncome.sql" name="VDDB - Data Setup - P72_STDF_FixedIncome.sql" description="VDDB - Data Setup - P72_STDF_FixedIncome.sql" src="sql/DML/P72_STDF_FixedIncome.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72CntryIssuance_GU_ID_IDMV.sql" name="VDDB - Data Setup - P72CntryIssuance_GU_ID_IDMV.sql" description="VDDB - Data Setup - P72CntryIssuance_GU_ID_IDMV.sql" src="sql/DML/P72CntryIssuance_GU_ID_IDMV.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72Currency_Inserts.sql" name="VDDB - Data Setup - P72Currency_Inserts.sql" description="VDDB - Data Setup - P72Currency_Inserts.sql" src="sql/DML/P72Currency_Inserts.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72GVPRNGGR_INCL_Scripts.sql" name="VDDB - Data Setup - P72GVPRNGGR_INCL_Scripts.sql" description="VDDB - Data Setup - P72GVPRNGGR_INCL_Scripts.sql" src="sql/DML/P72GVPRNGGR_INCL_Scripts.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72GVPRNGGR_EINC_Scripts.sql" name="VDDB - Data Setup - P72GVPRNGGR_EINC_Scripts.sql" description="VDDB - Data Setup - P72GVPRNGGR_EINC_Scripts.sql" src="sql/DML/P72GVPRNGGR_EINC_Scripts.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72ISGP_PrtPurpTyp_Domain.sql" name="VDDB - Data Setup - P72ISGP_PrtPurpTyp_Domain.sql" description="VDDB - Data Setup - P72ISGP_PrtPurpTyp_Domain.sql" src="sql/DML/P72ISGP_PrtPurpTyp_Domain.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_EINC_FixedIncome.sql" name="VDDB - Data Setup - P72_EINC_FixedIncome.sql" description="VDDB - Data Setup - P72_EINC_FixedIncome.sql" src="sql/DML/P72_EINC_FixedIncome.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_RTVL_FITCH_SP_ratings.sql" name="VDDB - Data Setup - P72_RTVL_FITCH_SP_ratings.sql" description="VDDB - Data Setup - P72_RTVL_FITCH_SP_ratings.sql" src="sql/DML/P72_RTVL_FITCH_SP_ratings.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_Update_RTVL_rank_num.sql" name="VDDB - Data Setup - P72_Update_RTVL_rank_num.sql" description="VDDB - Data Setup - P72_Update_RTVL_rank_num.sql" src="sql/DML/P72_Update_RTVL_rank_num.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_STDF_BOND_TIER.sql" name="VDDB - Data Setup - P72_STDF_BOND_TIER.sql" description="VDDB - Data Setup - P72_STDF_BOND_TIER.sql" src="sql/DML/P72_STDF_BOND_TIER.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			
+			<sql id="P72GVASTTYP_Bond_INCL_Script.sql" name="VDDB - Data Setup - P72GVASTTYP_Bond_INCL_Script.sql" description="VDDB - Data Setup - P72GVASTTYP_Bond_INCL_Script.sql" src="sql/DML/P72GVASTTYP_Bond_INCL_Script.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72GVINVTYP_INCL_Scripts.sql" name="VDDB - Data Setup - P72GVINVTYP_INCL_Scripts.sql" description="VDDB - Data Setup - P72GVINVTYP_INCL_Scripts.sql" src="sql/DML/P72GVINVTYP_INCL_Scripts.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72GVINVTYP_EINC_Scripts.sql" name="VDDB - Data Setup - P72GVINVTYP_EINC_Scripts.sql" description="VDDB - Data Setup - P72GVINVTYP_EINC_Scripts.sql" src="sql/DML/P72GVINVTYP_EINC_Scripts.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			
+			<sql id="P72_Insert_FT_T_UIBL.sql" name="VDDB - Data Setup - P72_Insert_FT_T_UIBL.sql" description="VDDB - Data Setup - P72_Insert_FT_T_UIBL.sql" src="sql/DML/P72_Insert_FT_T_UIBL.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_Insert_FT_T_STDF.sql" name="VDDB - Data Setup - P72_Insert_FT_T_STDF.sql" description="VDDB - Data Setup - P72_Insert_FT_T_STDF.sql" src="sql/DML/P72_Insert_FT_T_STDF.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72UDF_MUST_MKEY.sql" name="VDDB - Data Setup - P72UDF_MUST_MKEY.sql" description="VDDB - Data Setup - P72UDF_MUST_MKEY.sql" src="sql/DML/P72UDF_MUST_MKEY.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			
+			<sql id="P72CntryIssuance_GUID_Inserts.sql" name="VDDB -  Data Setup - P72CntryIssuance_GUID_Inserts.sql" description="VDDB -  Data Setup - P72CntryIssuance_GUID_Inserts.sql" src="sql/DML/P72CntryIssuance_GUID_Inserts.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_FT_T_DSRC_BBEXT.sql" name="VDDB -  Data Setup - P72_FT_T_DSRC_BBEXT.sql" description="VDDB -  Data Setup - P72_FT_T_DSRC_BBEXT.sql" src="sql/DML/P72_FT_T_DSRC_BBEXT.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_ISGR_FISOI.sql" name="VDDB -  Data Setup - P72_ISGR_FISOI.sql" description="VDDB -  Data Setup - P72_ISGR_FISOI.sql" src="sql/DML/P72_ISGR_FISOI.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_ISGP_PrtPurpTyp_Domain.sql" name="VDDB -  Data Setup - P72_ISGP_PrtPurpTyp_Domain.sql" description="VDDB -  Data Setup - P72_ISGP_PrtPurpTyp_Domain.sql" src="sql/DML/P72_ISGP_PrtPurpTyp_Domain.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_FT_T_ISTY.sql" name="VDDB - Data Setup - P72_FT_T_ISTY.sql" description="VDDB - Data Setup - P72_FT_T_ISTY.sql" src="sql/DML/P72_FT_T_ISTY.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_Insert_FT_T_IDMV.sql" name="VDDB -  Data Setup - P72_Insert_FT_T_IDMV.sql" description="VDDB -  Data Setup - P72_Insert_FT_T_IDMV.sql" src="sql/DML/P72_Insert_FT_T_IDMV.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			<sql id="P72_ft_t_eiat.sql" name="VDDB -  Data Setup - P72_ft_t_eiat.sql" description="VDDB -  Data Setup - P72_ft_t_eiat.sql" src="sql/DML/P72_ft_t_eiat.sql" destLoc="VDDBDataModel" patchLevel="8.8.1.09"/>
+			
+			 
+			
+		</Tasks>
+	</Deployment>
+</PackageDescription>
